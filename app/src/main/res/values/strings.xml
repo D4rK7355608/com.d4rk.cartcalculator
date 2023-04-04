@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name" translatable="false">Cart Calculator</string>
+    <string name="app_version">Version %1$s (%2$d)</string>
+    <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
+    <string name="android_studio_tutorials_java" translatable="false">Android Studio Tutorials: Java Edition</string>
+    <string name="android_studio_tutorials_kotlin" translatable="false">Android Studio Tutorials: Kotlin Edition</string>
+    <string name="music_sleep_timer" translatable="false">Music Sleep Timer Plus</string>
+    <string name="english_with_lidia" translatable="false">English with Lidia Plus</string>
+    <string name="qr_code_scanner" translatable="false">QR &amp; Bar Code Scanner Plus</string>
+    <string name="low_brightness" translatable="false">Low Brightness</string>
+    <string name="cleaner_plus" translatable="false">Cleaner Plus</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate_us">Rate our app!</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="youtube" translatable="false">YouTube</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="xda" translatable="false">XDA</string>
+    <string name="google_dev" translatable="false">Google Dev</string>
+    <string name="home">Home</string>
+    <string name="about">About</string>
+    <string name="more">More</string>
+    <string name="refresh">Refresh</string>
+    <string name="summary_empty">Your shopping cart is empty.</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="total">Total:\n%1$f $</string>
+    <string name="total_default_value" translatable="false">0.00 $</string>
+    <string name="support_me">Support me</string>
+    <string name="check_for_updates">Check for updates…</string>
+    <string name="changelog">Changelog</string>
+    <string name="permissions">Permissions</string>
+
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="hint_name">Enter name</string>
+    <string name="hint_price">Enter price</string>
+    <string name="hint_quantity">Enter quantity</string>
+
+    <string name="notifications">Notifications</string>
+    <string name="notification_settings">Notification settings</string>
+    <string name="app_usage_notifications">App Usage Notifications</string>
+    <string name="update_notifications">Update Notifications</string>
+    <string name="faq">FAQ</string>
+    <string name="more_apps">More apps…</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="code_of_conduct">Code of Conduct</string>
+    <string name="settings">Settings</string>
+    <string name="license">License</string>
+    <string name="theme">Theme</string>
+    <string name="normal">Normal</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="find_us">Find us on</string>
+    <string name="website">Website</string>
+    <string name="follow_system">Follow System Mode</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="auto_battery_mode">Auto Battery Dark Mode</string>
+    <string name="open_me">Open me :)</string>
+    <string name="appearance">Appearance</string>
+    <string name="share">Share</string>
+    <string name="share_subject">Try it now!!!</string>
+    <string name="share_using">Share using…</string>
+    <string name="made_in">Made with ❤ in Romania!</string>
+    <string name="copyright">© Copyright %1$s, made by D4rK!</string>
+    <string name="agree">Agree</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
+    <string name="welcome">Welcome</string>
+    <string name="copied_to_clipboard">Copied to clipboard!</string>
+    <string name="subscribe_to_beta">Subscribe to beta updates</string>
+    <string name="app_updates">App updates</string>
+    <string name="privacy_and_security">Privacy and security</string>
+    <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
+    <string name="music">Music</string>
+    <string name="info">Info</string>
+    <string name="device_info">Device Info</string>
+    <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Manufacturer:</string>
+    <string name="device_model">Device Model:</string>
+    <string name="android_version">Android Version:</string>
+    <string name="api_level">API Level:</string>
+    <string name="arch" translatable="false">Arch:</string>
+    <string name="toast_feedback">Thanks for rating us!</string>
+    <string name="ad_id">Ad id [AD_ID]</string>
+    <string name="language">Language</string>
+    <string name="firebase">Firebase</string>
+    <string name="close">Close?</string>
+    <string name="mail_to_dev">Email to dev</string>
+    <string name="system_default">System default</string>
+    <string name="current_language">Current in-app language is %1$s!</string>
+    <string name="recommended">Recommended</string>
+    <string name="all_languages">All languages</string>
+    <string name="notification_last_time_used_title">It\'s been a while!</string>
+    <string name="notification_update_title">A new update available!</string>
+    <string name="add_your_item">Add your item</string>
+    <string name="question_1">What is Cart Calculator?</string>
+    <string name="question_2">How does Cart Calculator work?</string>
+    <string name="question_3">Why should I use Cart Calculator?</string>
+    <string name="question_4">Can I use Cart Calculator outside of grocery stores or markets?</string>
+    <string name="question_5">How do I add an item to my cart using Cart Calculator?</string>
+    <string name="question_6">How do I increase or decrease the quantity of an item in my cart using Cart Calculator?</string>
+    <string name="question_7">How do I remove an item from my cart using Cart Calculator?</string>
+    <string name="question_8">Is Cart Calculator free software?</string>
+    <string name="question_9">How can I contribute to Cart Calculator?</string>
+    <string name="summary_preference_faq_1">Cart Calculator is a simple, generic and free shopping cart manager and total due calculator that replaces the ordinary device\’s calculator for when you are at the grocery store or at the market.</string>
+    <string name="summary_preference_faq_2">Cart Calculator allows you to manage your shopping cart by adding products and increasing or decreasing their quantities. At any time, the Cart Calculator displays the total due of the products in your cart based on their prices and quantities.</string>
+    <string name="summary_preference_faq_3">Cart Calculator helps you to always be aware of how much you’re spending even before reaching the checkout. This is especially useful for when you have to go shopping on a budget.</string>
+    <string name="summary_preference_faq_4">Yes! Since Cart Calculator is shockingly simple and generic, you can also use it in pubs, restaurants, the movies etc.</string>
+    <string name="summary_preference_faq_5">From the Home screen, press the \"Add item\" button in the Action Bar to add a new product to your cart. You inform its name and price and then click on the \"Add\" button.</string>
+    <string name="summary_preference_faq_6">Simply find the item in the list and then press the \"+ (plus)\" button to increase its quantity or the \"- (less)\" button to decrease its quantity.</string>
+    <string name="summary_preference_faq_7">To remove a product from your cart, simply drop its quantity to zero or long click it in the list and then select the \"Delete item\" button.</string>
+    <string name="summary_preference_faq_8">Yes! Cart Calculator is proudly free software distributed under the GNU General Public License version 3.</string>
+    <string name="summary_preference_faq_9">The best way to contribute to Cart Calculator is through its <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository. From there, you can fork it and work on your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.</string>
+    <string name="summary_close">Are you sure you want to exit?</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
+    <string name="summary_preference_permissions_internet">Used to send error reports.</string>
+    <string name="summary_preference_permissions_ad_id">Used to allow ads to be shown in Android 13+ devices.</string>
+    <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
+    <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
+    <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
+    <string name="summary_preference_settings_language">Set application language.</string>
+    <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
+    <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
+    <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
+    <string name="changes" translatable="false">\n
+        • Initial stable version.
+    </string>
+</resources>

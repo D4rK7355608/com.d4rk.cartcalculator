@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_shopping_bag"
+        android:layout_gravity="center"/>
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/MaterialAlertDialog.Material3.Title.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_your_item"
+        android:layout_gravity="center"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_name" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/price" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_price"
+        android:inputType="numberDecimal" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_view_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_quantity"
+        android:inputType="number"/>
+</LinearLayout>
