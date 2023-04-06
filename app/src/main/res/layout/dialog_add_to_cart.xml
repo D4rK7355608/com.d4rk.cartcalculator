@@ -19,28 +19,28 @@
         android:id="@+id/text_view_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name" />
+        android:text="@string/name"/>
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_text_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_name" />
+        android:hint="@string/hint_name"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/price" />
+        android:text="@string/price"/>
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_text_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_price"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quantity" />
+        android:text="@string/quantity"/>
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_text_quantity"
         android:layout_width="match_parent"

@@ -17,11 +17,11 @@
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_list_cart_items_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_list_cart_items_price"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/rightLayout"
@@ -44,7 +44,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/text_view_list_cart_items_quantity"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_list_cart_items_quantity"
             android:layout_width="wrap_content"
@@ -65,6 +65,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_view_list_cart_items_quantity"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

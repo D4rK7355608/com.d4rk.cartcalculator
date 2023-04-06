@@ -28,14 +28,18 @@
     <string name="check_for_updates">Check for updates…</string>
     <string name="changelog">Changelog</string>
     <string name="permissions">Permissions</string>
-
+    <string name="runtime">Runtime</string>
     <string name="name">Name</string>
     <string name="price">Price</string>
     <string name="quantity">Quantity</string>
     <string name="hint_name">Enter name</string>
     <string name="hint_price">Enter price</string>
     <string name="hint_quantity">Enter quantity</string>
-
+    <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
+    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
+    <string name="check_license">Check license [CHECK_LICENSE]</string>
+    <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
+    <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
     <string name="notifications">Notifications</string>
     <string name="notification_settings">Notification settings</string>
     <string name="app_usage_notifications">App Usage Notifications</string>
@@ -50,8 +54,6 @@
     <string name="theme">Theme</string>
     <string name="normal">Normal</string>
     <string name="internet">Internet [INTERNET]</string>
-    <string name="find_us">Find us on</string>
-    <string name="website">Website</string>
     <string name="follow_system">Follow System Mode</string>
     <string name="light_mode">Light Mode</string>
     <string name="dark_mode">Dark Mode</string>
@@ -111,6 +113,10 @@
     <string name="summary_preference_faq_7">To remove a product from your cart, simply drop its quantity to zero or long click it in the list and then select the \"Delete item\" button.</string>
     <string name="summary_preference_faq_8">Yes! Cart Calculator is proudly free software distributed under the GNU General Public License version 3.</string>
     <string name="summary_preference_faq_9">The best way to contribute to Cart Calculator is through its <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository. From there, you can fork it and work on your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.</string>
+    <string name="summary_preference_permissions_post_notifications">Used to show notifications on Android 13+ devices.</string>
+    <string name="summary_preference_permissions_check_license">Used to verify that the app is being used in accordance with the terms of the license agreement, and to enforce licensing terms and protect intellectual property.</string>
+    <string name="summary_preference_permissions_foreground_service">Used to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
+    <string name="summary_preference_permissions_access_notification_policy">Used to access and modify the notification policy of the device, controlling how and when notifications are shown to the user and providing custom notification management features.</string>
     <string name="summary_close">Are you sure you want to exit?</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
     <string name="summary_preference_permissions_internet">Used to send error reports.</string>

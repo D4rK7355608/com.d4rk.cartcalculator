@@ -12,8 +12,8 @@ android {
         applicationId 'com.d4rk.cartcalculator'
         minSdk 26
         targetSdk 33
-        versionCode 5
-        versionName "1.0_b1"
+        versionCode 6
+        versionName "1.0_b2"
         archivesBaseName = "${applicationId}-v${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
