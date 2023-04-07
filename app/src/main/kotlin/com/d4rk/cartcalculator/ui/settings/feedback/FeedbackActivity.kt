@@ -26,12 +26,12 @@ class FeedbackActivity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.dev_mail -> {
-            val email = Intent(Intent.ACTION_SEND)
-            email.type = "text/email"
-            email.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
-            email.putExtra(Intent.EXTRA_SUBJECT, "Feedback for Android Studio Tutorials")
-            email.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
-            startActivity(Intent.createChooser(email, "Send mail to Developer:"))
+            val emailIntent = Intent(Intent.ACTION_SEND)
+            emailIntent.type = "text/email"
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for " + getString(R.string.app_name))
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear developer, ")
+            startActivity(Intent.createChooser(emailIntent, "Send mail to Developer:"))
             true
         }  else -> {
             super.onOptionsItemSelected(item)

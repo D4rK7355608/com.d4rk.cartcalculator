@@ -35,9 +35,6 @@ Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.cartcalculat
 - Create an code/general bug.  🐞
 
 ## 🛠️ Features!
-⭐️ Kotlin & XML examples. \
-⭐️ Binding examples. \
-⭐️ Easy to understand examples. \
 ⭐️ No internet required. \
 ⭐️ Adaptive themes + Material-You. \
 ⭐️ Simple and easy to use. \
@@ -48,7 +45,7 @@ Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.cartcalculat
 
 ## 🖼️ App preview:
 
-<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main_items.png" width="400">
+<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/3-screenshot_main_items.png" width="400">
 
 ## 🛑 Disclaimer!
 - Only use the GitHub Issues section if you discover issues with the code itself. Do not mistake the Issues page as a help desk. For support, information and requests, please contact d4rk7355608@gmail.com.

@@ -15,7 +15,7 @@ import com.d4rk.cartcalculator.adapters.CartItemAdapter
 import com.d4rk.cartcalculator.data.CartItem
 import com.d4rk.cartcalculator.databinding.FragmentHomeBinding
 import com.d4rk.cartcalculator.ui.viewmodel.ViewModel
-class HomeFragment : Fragment(), MainActivity.CartListener {
+class HomeFragment : Fragment(), MainActivity.CartListener, CartItemAdapter.OnQuantityChangeListener {
     private lateinit var viewModel: ViewModel
     private lateinit var cartItemAdapter: CartItemAdapter
     private var _binding: FragmentHomeBinding? = null
@@ -27,7 +27,7 @@ class HomeFragment : Fragment(), MainActivity.CartListener {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val recyclerView = binding.recyclerViewCart
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        cartItemAdapter = CartItemAdapter(emptyList())
+        cartItemAdapter = CartItemAdapter(emptyList(), this)
         recyclerView.adapter = cartItemAdapter
         originalNavBarColor = activity?.window?.navigationBarColor
         binding.textViewTotal.text = getString(R.string.total_default_value)
@@ -38,6 +38,7 @@ class HomeFragment : Fragment(), MainActivity.CartListener {
         super.onViewCreated(view, savedInstanceState)
         val drawerLayout: DrawerLayout? = activity?.findViewById(R.id.drawer_layout)
         drawerLayout?.addDrawerListener(drawerListener)
+        setNavigationBarColor()
     }
     override fun onDestroy() {
         super.onDestroy()
@@ -52,19 +53,17 @@ class HomeFragment : Fragment(), MainActivity.CartListener {
     override fun onPause() {
         super.onPause()
         activity?.window?.navigationBarColor = originalNavBarColor!!
+        setNavigationBarColor()
     }
     override fun onResume() {
         super.onResume()
         activity?.window?.navigationBarColor = originalNavBarColor!!
+        setNavigationBarColor()
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         (activity as? MainActivity)?.setCartListener(this)
-    }
-    private fun updateTotalCost(cartItems: List<CartItem>) {
-        totalCost = cartItems.sumOf { it.price }
-        binding.textViewTotal.text = String.format("%.2f $", totalCost).replace(",", ".")
     }
     override fun onCartUpdated(cartItems: List<CartItem>) {
         cartItemAdapter.setItems(cartItems)
@@ -77,12 +76,19 @@ class HomeFragment : Fragment(), MainActivity.CartListener {
         }
         updateTotalCost(cartItems)
     }
+    override fun onQuantityChanged(cartItems: List<CartItem>) {
+        updateTotalCost(cartItems)
+    }
+    private fun updateTotalCost(cartItems: List<CartItem>) {
+        totalCost = cartItems.sumOf { it.totalPrice() }
+        binding.textViewTotal.text = String.format("%.2f $", totalCost).replace(",", ".")
+    }
     private fun setNavigationBarColor() {
         when (findNavController().currentDestination?.id) {
             R.id.nav_home -> {
                 val typedValue = TypedValue()
                 val theme = requireContext().theme
-                theme.resolveAttribute(R.attr.colorTertiaryContainer, typedValue, true)
+                theme.resolveAttribute(R.attr.colorPrimaryContainer, typedValue, true)
                 val color = typedValue.data
                 activity?.window?.navigationBarColor = color
             }

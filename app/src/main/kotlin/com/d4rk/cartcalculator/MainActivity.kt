@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                     if (itemPrice != null) {
                         val newItem = CartItem(itemName, itemPrice, itemQuantity)
                         cartItems.add(newItem)
-                        total += newItem.price
+                        total += newItem.unitPrice
                         cartListener?.onCartUpdated(cartItems)
                     }
                 }

@@ -6,7 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:padding="24dp"
-    android:descendantFocusability="blocksDescendants">
+    android:descendantFocusability="blocksDescendants"
+    android:id="@+id/constraint_layout_item_list_cart"
+    android:selectable="true">
     <LinearLayout
         android:id="@+id/leftLayout"
         android:layout_width="wrap_content"
