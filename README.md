@@ -32,7 +32,7 @@ Our app is designed to be simple and easy to use, while also being fast and ligh
 ## ⚠ Opening Issues!
 Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.cartcalculator/issues).
 
-- Create an code/general bug.  🐞
+- Create a calculator/currency/general bug. 🐞
 
 ## 🛠️ Features!
 ⭐️ No internet required. \
