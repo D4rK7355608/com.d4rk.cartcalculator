@@ -1,6 +1,8 @@
 package com.d4rk.cartcalculator.ui.startup
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.cartcalculator.MainActivity
@@ -18,6 +20,9 @@ class StartupActivity : AppCompatActivity() {
         }
         binding.floatingButtonAgree.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
         }
     }
 }

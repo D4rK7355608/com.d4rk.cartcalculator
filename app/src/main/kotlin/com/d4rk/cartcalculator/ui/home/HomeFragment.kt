@@ -15,6 +15,8 @@ import com.d4rk.cartcalculator.adapters.CartItemAdapter
 import com.d4rk.cartcalculator.data.CartItem
 import com.d4rk.cartcalculator.databinding.FragmentHomeBinding
 import com.d4rk.cartcalculator.ui.viewmodel.ViewModel
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 class HomeFragment : Fragment(), MainActivity.CartListener, CartItemAdapter.OnQuantityChangeListener {
     private lateinit var viewModel: ViewModel
     private lateinit var cartItemAdapter: CartItemAdapter
@@ -25,6 +27,8 @@ class HomeFragment : Fragment(), MainActivity.CartListener, CartItemAdapter.OnQu
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        MobileAds.initialize(requireContext())
+        binding.adView.loadAd(AdRequest.Builder().build())
         val recyclerView = binding.recyclerViewCart
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         cartItemAdapter = CartItemAdapter(emptyList(), this)
@@ -62,6 +66,7 @@ class HomeFragment : Fragment(), MainActivity.CartListener, CartItemAdapter.OnQu
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        @Suppress("DEPRECATION")
         super.onActivityCreated(savedInstanceState)
         (activity as? MainActivity)?.setCartListener(this)
     }
