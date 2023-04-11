@@ -48,7 +48,7 @@
         </activity>
         <activity
             android:name=".ui.startup.StartupActivity"
-            android:theme="@style/AppThemeActionBar"/>
+            android:theme="@style/AppThemeStartup"/>
         <activity
             android:name=".ui.settings.language.LanguageActivity"
             android:exported="false"

@@ -12,25 +12,32 @@ class CartItemAdapter(private var cartItems: List<CartItem>, private val listene
     }
     override fun onBindViewHolder(holder: CartItemViewHolder, position: Int) {
         val cartItem = cartItems[position]
-        holder.binding.textViewListCartItemsName.text = cartItem.name
-        holder.binding.textViewListCartItemsPrice.text = cartItem.totalPrice().toString()
-        holder.binding.textViewListCartItemsQuantity.text = cartItem.quantity.toString()
-        holder.binding.buttonListCartItemsPlusItem.setOnClickListener {
-            cartItem.quantity++
-            listener!!.onQuantityChanged(cartItems)
-            notifyItemChanged(position)
-        }
-        holder.binding.buttonListCartItemsMinusItem.setOnClickListener {
-            if (cartItem.quantity > 1) {
-                cartItem.quantity--
-                listener!!.onQuantityChanged(cartItems)
+        if (cartItem.quantity > 0) {
+            holder.binding.textViewListCartItemsName.text = cartItem.name
+            holder.binding.textViewListCartItemsPrice.text = cartItem.totalPrice().toString()
+            holder.binding.textViewListCartItemsQuantity.text = cartItem.quantity.toString()
+            holder.binding.buttonListCartItemsPlusItem.setOnClickListener {
+                cartItem.quantity++
+                listener?.onQuantityChanged(cartItems)
                 notifyItemChanged(position)
             }
+            holder.binding.buttonListCartItemsMinusItem.setOnClickListener {
+                cartItem.quantity--
+                if (cartItem.quantity <= 0) {
+                    cartItems = cartItems.filter { it != cartItem }
+                }
+                listener?.onQuantityChanged(cartItems)
+                notifyDataSetChanged()
+            }
+        } else {
+            cartItems = cartItems.filter { it != cartItem }
+            listener?.onQuantityChanged(cartItems)
+            notifyDataSetChanged()
         }
     }
     override fun getItemCount() = cartItems.size
     fun setItems(items: List<CartItem>) {
-        cartItems = items
+        cartItems = items.filter { it.quantity > 0 }
         notifyDataSetChanged()
     }
     interface OnQuantityChangeListener {

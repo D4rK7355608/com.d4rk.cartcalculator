@@ -1,3 +1,7 @@
+# Version 1.1_r1:
+- Added ability to remove items from cart.
+- Made minor under-the-hood improvements for a better overall app experience.
+
 # Version 1.0_r3:
 - Added functionality to "Music" chip.
 
