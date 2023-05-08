@@ -48,7 +48,7 @@
     <string name="appearance">Aspetto</string>
     <string name="share">Condividere</string>
     <string name="share_subject">Provalo ora!!!</string>
-    <string name="share_using">Condividi usando...</string>
+    <string name="share_using">Condividi usando…</string>
     <string name="made_in">Fatto con ❤ in Romania!</string>
     <string name="copyright">© Copyright %1$s, realizzato da D4rK!</string>
     <string name="agree">Essere d\'accordo</string>
@@ -73,10 +73,6 @@
     <string name="firebase">Base di fuoco</string>
     <string name="close">Vicino?</string>
     <string name="mail_to_dev">Invia un\'e-mail a dev</string>
-    <string name="system_default">Default del sistema</string>
-    <string name="current_language">L\'attuale lingua in-app è %1$s!</string>
-    <string name="recommended">Consigliato</string>
-    <string name="all_languages">Tutte le lingue</string>
     <string name="notification_last_time_used_title">È passato un po \'di tempo!</string>
     <string name="notification_update_title">Un nuovo aggiornamento disponibile!</string>
     <string name="add_your_item">Aggiungi il tuo articolo</string>

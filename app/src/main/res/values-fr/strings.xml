@@ -73,10 +73,6 @@
     <string name="firebase">Base de feu</string>
     <string name="close">Fermer?</string>
     <string name="mail_to_dev">Envoyer un e-mail au développeur</string>
-    <string name="system_default">Défaillance du système</string>
-    <string name="current_language">La langue actuelle de l\'application est %1$s!</string>
-    <string name="recommended">Recommandé</string>
-    <string name="all_languages">Toutes les langues</string>
     <string name="notification_last_time_used_title">Cela fait longtemps!</string>
     <string name="notification_update_title">Une nouvelle mise à jour disponible !</string>
     <string name="add_your_item">Ajoutez votre article</string>

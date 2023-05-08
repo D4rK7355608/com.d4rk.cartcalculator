@@ -73,10 +73,6 @@
     <string name="firebase">Firebase</string>
     <string name="close">Закрити?</string>
     <string name="mail_to_dev">Надіслати електронною поштою розробнику</string>
-    <string name="system_default">Система за умовчанням</string>
-    <string name="current_language">Поточна мова програми – %1$s!</string>
-    <string name="recommended">Рекомендовано</string>
-    <string name="all_languages">Всі мови</string>
     <string name="notification_last_time_used_title">Пройшло багато часу!</string>
     <string name="notification_update_title">Доступне нове оновлення!</string>
     <string name="add_your_item">Додайте свій товар</string>

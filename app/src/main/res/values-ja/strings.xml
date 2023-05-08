@@ -73,10 +73,6 @@
     <string name="firebase">ファイアベース</string>
     <string name="close">近い？</string>
     <string name="mail_to_dev">開発者にメール</string>
-    <string name="system_default">システムのデフォルト</string>
-    <string name="current_language">現在のアプリ内言語は %1$s!</string>
-    <string name="recommended">おすすめされた</string>
-    <string name="all_languages">すべての言語</string>
     <string name="notification_last_time_used_title">お久しぶりです！</string>
     <string name="notification_update_title">新しいアップデートが利用可能です！</string>
     <string name="add_your_item">アイテムを追加</string>

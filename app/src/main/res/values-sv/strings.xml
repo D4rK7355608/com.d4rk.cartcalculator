@@ -48,7 +48,7 @@
     <string name="appearance">Utseende</string>
     <string name="share">Dela med sig</string>
     <string name="share_subject">Prova det nu!!!</string>
-    <string name="share_using">Dela med...</string>
+    <string name="share_using">Dela med…</string>
     <string name="made_in">Tillverkad med ❤ i Rumänien!</string>
     <string name="copyright">© Copyright %1$s, gjord av D4rK!</string>
     <string name="agree">Hålla med</string>
@@ -73,10 +73,6 @@
     <string name="firebase">Firebase</string>
     <string name="close">Stänga?</string>
     <string name="mail_to_dev">Mejla till dev</string>
-    <string name="system_default">Systemfel</string>
-    <string name="current_language">Det aktuella språket i appen är %1$s!</string>
-    <string name="recommended">Rekommenderad</string>
-    <string name="all_languages">Alla språk</string>
     <string name="notification_last_time_used_title">Det var ett tag sedan!</string>
     <string name="notification_update_title">En ny uppdatering tillgänglig!</string>
     <string name="add_your_item">Lägg till ditt föremål</string>

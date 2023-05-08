@@ -73,10 +73,6 @@
     <string name="firebase">Baza ogniowa</string>
     <string name="close">Zamknąć?</string>
     <string name="mail_to_dev">E-mail do dev</string>
-    <string name="system_default">Domyślne ustawienie systemowe</string>
-    <string name="current_language">Bieżący język aplikacji to %1$s!</string>
-    <string name="recommended">Zalecana</string>
-    <string name="all_languages">Wszystkie języki</string>
     <string name="notification_last_time_used_title">Minęło trochę czasu!</string>
     <string name="notification_update_title">Dostępna nowa aktualizacja!</string>
     <string name="add_your_item">Dodaj swój przedmiot</string>

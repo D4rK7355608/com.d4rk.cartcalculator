@@ -73,10 +73,6 @@
     <string name="firebase">Firebase</string>
     <string name="close">Menutup?</string>
     <string name="mail_to_dev">Email ke dev</string>
-    <string name="system_default">Standar sistem</string>
-    <string name="current_language">Bahasa dalam aplikasi saat ini adalah %1$s!</string>
-    <string name="recommended">Direkomendasikan</string>
-    <string name="all_languages">Semua bahasa</string>
     <string name="notification_last_time_used_title">Sudah lama!</string>
     <string name="notification_update_title">Pembaruan baru tersedia!</string>
     <string name="add_your_item">Tambahkan item Anda</string>

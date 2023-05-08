@@ -73,10 +73,6 @@
     <string name="firebase">Firebase</string>
     <string name="close">Kapalı?</string>
     <string name="mail_to_dev">geliştiriciye e-posta</string>
-    <string name="system_default">Sistem varsayılanı</string>
-    <string name="current_language">Mevcut uygulama içi dil %1$s!</string>
-    <string name="recommended">Tavsiye edilen</string>
-    <string name="all_languages">Bütün diller</string>
     <string name="notification_last_time_used_title">Bir süre oldu!</string>
     <string name="notification_update_title">Yeni bir güncelleme mevcut!</string>
     <string name="add_your_item">öğenizi ekleyin</string>
