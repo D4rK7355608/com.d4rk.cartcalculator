@@ -2,6 +2,7 @@
     <string name="key_theme" translatable="false">theme</string>
     <string name="key_language" translatable="false">language</string>
     <string name="key_firebase" translatable="false">firebase</string>
+    <string name="key_feedback" translatable="false">feedback</string>
     <string name="key_changelog" translatable="false">changelog</string>
     <string name="key_notifications_settings" translatable="false">notifications_settings</string>
     <string name="key_share" translatable="false">share</string>

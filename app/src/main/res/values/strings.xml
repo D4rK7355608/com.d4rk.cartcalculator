@@ -1,72 +1,41 @@
 <resources>
-    <string name="app_name" translatable="false">Cart Calculator</string>
-    <string name="app_version">Version %1$s (%2$d)</string>
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
-    <string name="feedback">Feedback</string>
-    <string name="rate_us">Rate our app!</string>
-    <string name="twitter" translatable="false">Twitter</string>
-    <string name="youtube" translatable="false">YouTube</string>
-    <string name="github" translatable="false">GitHub</string>
-    <string name="xda" translatable="false">XDA</string>
-    <string name="google_dev" translatable="false">Google Dev</string>
     <string name="home">Home</string>
-    <string name="about">About</string>
-    <string name="more">More</string>
     <string name="refresh">Refresh</string>
-    <string name="summary_empty">Your shopping cart is empty.</string>
     <string name="add_to_cart">Add to Cart</string>
-    <string name="total">Total:\n%1$f $</string>
-    <string name="total_default_value" translatable="false">0.00 $</string>
-    <string name="support_me">Support me</string>
-    <string name="check_for_updates">Check for updates…</string>
-    <string name="changelog">Changelog</string>
-    <string name="permissions">Permissions</string>
-    <string name="runtime">Runtime</string>
+    <string name="add_your_item">Add your item</string>
     <string name="name">Name</string>
     <string name="price">Price</string>
     <string name="quantity">Quantity</string>
-    <string name="hint_name">Enter name</string>
-    <string name="hint_price">Enter price</string>
-    <string name="hint_quantity">Enter quantity</string>
-    <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
-    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
-    <string name="check_license">Check license [CHECK_LICENSE]</string>
-    <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
-    <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="notifications">Notifications</string>
-    <string name="notification_settings">Notification settings</string>
-    <string name="app_usage_notifications">App Usage Notifications</string>
-    <string name="update_notifications">Update Notifications</string>
-    <string name="faq">FAQ</string>
-    <string name="more_apps">More apps…</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_of_service">Terms of Service</string>
-    <string name="code_of_conduct">Code of Conduct</string>
+    <string name="total">Total:\n%1$f $</string>
     <string name="settings">Settings</string>
-    <string name="license">License</string>
+    <string name="appearance">Appearance</string>
     <string name="theme">Theme</string>
-    <string name="normal">Normal</string>
-    <string name="internet">Internet [INTERNET]</string>
     <string name="follow_system">Follow System Mode</string>
     <string name="light_mode">Light Mode</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="auto_battery_mode">Auto Battery Dark Mode</string>
-    <string name="open_me">Open me :)</string>
-    <string name="appearance">Appearance</string>
-    <string name="share">Share</string>
-    <string name="share_subject">Try it now!!!</string>
-    <string name="share_using">Share using…</string>
-    <string name="made_in">Made with ❤ in Romania!</string>
-    <string name="copyright">© Copyright %1$s, made by D4rK!</string>
-    <string name="agree">Agree</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
-    <string name="welcome">Welcome</string>
-    <string name="copied_to_clipboard">Copied to clipboard!</string>
-    <string name="subscribe_to_beta">Subscribe to beta updates</string>
+    <string name="language">Language</string>
+    <string name="advanced">Advanced</string>
+    <string name="firebase">Firebase</string>
     <string name="app_updates">App updates</string>
+    <string name="check_for_updates">Check for updates…</string>
+    <string name="subscribe_to_beta">Subscribe to beta updates</string>
+    <string name="changelog">Changelog</string>
     <string name="privacy_and_security">Privacy and security</string>
-    <string name="tooltip_feedback">Send us your review on Google Play Store.</string>
-    <string name="music">Music</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="code_of_conduct">Code of Conduct</string>
+    <string name="permissions">Permissions</string>
+    <string name="normal">Normal</string>
+    <string name="runtime">Runtime</string>
+    <string name="license">License</string>
+    <string name="more">More</string>
+    <string name="share">Share</string>
+    <string name="share_using">Share using…</string>
+    <string name="share_subject">Try it now!!!</string>
+    <string name="more_apps">More apps…</string>
+    <string name="support_me">Support me</string>
     <string name="info">Info</string>
     <string name="device_info">Device Info</string>
     <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
@@ -74,31 +43,35 @@
     <string name="device_model">Device Model:</string>
     <string name="android_version">Android Version:</string>
     <string name="api_level">API Level:</string>
-    <string name="arch" translatable="false">Arch:</string>
-    <string name="toast_feedback">Thanks for rating us!</string>
-    <string name="ad_id">Ad id [AD_ID]</string>
-    <string name="language">Language</string>
-    <string name="bulgarian" translatable="false">Български</string>
-    <string name="english" translatable="false">English</string>
-    <string name="french" translatable="false">Français</string>
-    <string name="hungarian" translatable="false">Magyar</string>
-    <string name="german" translatable="false">Deutsch</string>
-    <string name="hindi" translatable="false">हिन्दी</string>
-    <string name="indonesian" translatable="false">Bahasa Indonesia</string>
-    <string name="italian" translatable="false">Italiano</string>
-    <string name="japanese" translatable="false">日本語</string>
-    <string name="polish" translatable="false">Polski</string>
-    <string name="romanian" translatable="false">Română</string>
-    <string name="russian" translatable="false">Русский</string>
-    <string name="spanish" translatable="false">Español</string>
-    <string name="turkish" translatable="false">Türkçe</string>
-    <string name="ukrainian" translatable="false">Українська</string>
-    <string name="firebase">Firebase</string>
+    <string name="help_and_feedback">Help &amp; feedback</string>
+    <string name="help">Help</string>
+    <string name="mail_to_dev">Email developer 📧</string>
+    <string name="faq">FAQ</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="about">About</string>
+    <string name="open_me">Open me 🌐</string>
+    <string name="app_version">Version %1$s (%2$d)</string>
+    <string name="music">Music</string>
+    <string name="made_in">Made with ❤ in Romania!</string>
+    <string name="copyright">© Copyright %1$s, made by D4rK!</string>
+    <string name="app_usage_notifications">App Usage Notifications</string>
+    <string name="update_notifications">Update Notifications</string>
+    <string name="agree">Agree</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
+    <string name="welcome">Welcome</string>
+    <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="close">Close?</string>
-    <string name="mail_to_dev">Email to dev</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="ad_id">Ad id [AD_ID]</string>
+    <string name="access_network_state">Access network state [ACCESS_NETWORK_STATE]</string>
+    <string name="post_notifications">Post notifications [POST_NOTIFICATIONS]</string>
+    <string name="check_license">Check license [CHECK_LICENSE]</string>
+    <string name="access_notification_policy">Access notification policy [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
+    <string name="notifications">Notifications</string>
+    <string name="notification_settings">Notification settings</string>
     <string name="notification_last_time_used_title">It\'s been a while!</string>
     <string name="notification_update_title">A new update available!</string>
-    <string name="add_your_item">Add your item</string>
     <string name="question_1">What is Cart Calculator?</string>
     <string name="question_2">How does Cart Calculator work?</string>
     <string name="question_3">Why should I use Cart Calculator?</string>
@@ -117,25 +90,24 @@
     <string name="summary_preference_faq_7">To remove a product from your cart, simply drop its quantity to zero or long click it in the list and then select the \"Delete item\" button.</string>
     <string name="summary_preference_faq_8">Yes! Cart Calculator is proudly free software distributed under the GNU General Public License version 3.</string>
     <string name="summary_preference_faq_9">The best way to contribute to Cart Calculator is through its <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository. From there, you can fork it and work on your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.</string>
-    <string name="summary_preference_permissions_post_notifications">Used to show notifications on Android 13+ devices.</string>
-    <string name="summary_preference_permissions_check_license">Used to verify that the app is being used in accordance with the terms of the license agreement, and to enforce licensing terms and protect intellectual property.</string>
-    <string name="summary_preference_permissions_foreground_service">Used to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
-    <string name="summary_preference_permissions_access_notification_policy">Used to access and modify the notification policy of the device, controlling how and when notifications are shown to the user and providing custom notification management features.</string>
-    <string name="summary_close">Are you sure you want to exit?</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
-    <string name="summary_preference_permissions_internet">Used to send error reports.</string>
-    <string name="summary_preference_permissions_ad_id">Used to allow ads to be shown in Android 13+ devices.</string>
+    <string name="summary_preference_permissions_access_network_state">Allows the app to check network connectivity and retrieve information about Wi-Fi, including enabled status and connected Wi-Fi device names.</string>
+    <string name="summary_preference_permissions_ad_id">Allows the app to retrieve and use the advertising identifier associated with the user\'s device, providing personalized ads, measuring ad effectiveness, and showing ads on Android 13 or later devices.</string>
+    <string name="summary_preference_permissions_internet">Allows the app to establish an internet connection to send error reports or check for updates.</string>
+    <string name="summary_preference_permissions_post_notifications">Allows the app to display notifications on the devices with Android 13 or later.</string>
+    <string name="summary_preference_permissions_check_license">Allows the app to verify its compliance with the license agreement and enforce licensing terms to protect intellectual property.</string>
+    <string name="summary_preference_permissions_access_notification_policy">Allows the app to access and modify the device\'s notification policy, controlling how and when notifications are displayed to the user and providing custom notification management features.</string>
+    <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
     <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
-    <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
-    <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an add.</string>
+    <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
     <string name="summary_preference_settings_language">Set application language.</string>
     <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
     <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
-    <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
-    <string name="changes" translatable="false">\n
-        • Added language support for Hungarian.\n\n
-        • Reworked language system, making it more accurate and user-friendly.\n\n
-        • Fixed various bugs and improved readability, consistency, app performance, and responsiveness by optimizing and styling the outdated code.\n\n
-        • Made minor under-the-hood improvements for a better overall app experience.
-    </string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
+    <string name="summary_empty">Your shopping cart is empty.</string>
+    <string name="summary_close">Are you sure you want to exit?</string>
+    <string name="snack_unable_to_open_google_play_store">Unable to open Google Play Store.</string>
+    <string name="snack_feedback">Thanks for rating us!</string>
+    <string name="hint_name">Enter name</string>
+    <string name="hint_price">Enter price</string>
+    <string name="hint_quantity">Enter quantity</string>
 </resources>

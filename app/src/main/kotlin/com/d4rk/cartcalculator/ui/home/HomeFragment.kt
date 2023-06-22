@@ -72,7 +72,7 @@ class HomeFragment : Fragment(), MainActivity.CartListener, CartItemAdapter.OnQu
     }
     override fun onCartUpdated(cartItems: List<CartItem>) {
         cartItemAdapter.setItems(cartItems)
-        cartItemAdapter.notifyDataSetChanged()
+        cartItemAdapter.notifyItemRangeChanged(0, cartItems.size)
         val textView = binding.textViewEmpty
         if (cartItems.isEmpty()) {
             textView.visibility = View.VISIBLE

@@ -19,4 +19,9 @@
         android:name="com.d4rk.cartcalculator.ui.settings.SettingsActivity"
         android:label="@string/settings"
         tools:layout="@layout/activity_settings"/>
+    <activity
+        android:id="@+id/nav_help"
+        android:name="com.d4rk.cartcalculator.ui.help.HelpActivity"
+        android:label="@string/help"
+        tools:layout="@layout/activity_help"/>
 </navigation>

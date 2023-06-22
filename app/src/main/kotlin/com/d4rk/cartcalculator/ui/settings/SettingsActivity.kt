@@ -7,7 +7,6 @@ import android.content.ClipData
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
@@ -19,6 +18,8 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.databinding.ActivitySettingsBinding
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
+
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var binding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +34,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         val themeKey = getString(R.string.key_theme)
         key?.let {
             if (it == themeKey) sharedPreferences?.let { pref ->
-                val themeValues = resources.getStringArray(R.array.dark_mode_values)
+                val themeValues = resources.getStringArray(R.array.preference_theme_values)
                 when (pref.getString(themeKey, themeValues[0])) {
                     themeValues[0] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                     themeValues[1] -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -95,7 +96,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 val clip = ClipData.newPlainText("text", version)
                 clipboard.setPrimaryClip(clip)
                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
-                    Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
+                    Snackbar.make(requireView(), R.string.copied_to_clipboard, Snackbar.LENGTH_SHORT).show()
                 }
                 true
             }

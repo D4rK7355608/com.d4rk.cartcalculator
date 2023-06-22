@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.d4rk.cartcalculator.BuildConfig
@@ -18,6 +17,7 @@ import com.d4rk.cartcalculator.databinding.FragmentAboutBinding
 import com.d4rk.cartcalculator.ui.viewmodel.ViewModel
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.snackbar.Snackbar
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -46,7 +46,7 @@ class AboutFragment : Fragment() {
             val clipData: ClipData = ClipData.newPlainText("Label", binding.textViewAppVersion.text)
             clipboardManager.setPrimaryClip(clipData)
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
-                Toast.makeText(context, R.string.copied_to_clipboard, Toast.LENGTH_SHORT).show()
+                Snackbar.make(requireView(), R.string.copied_to_clipboard, Snackbar.LENGTH_SHORT).show()
             true
         }
         binding.imageViewAppIcon.setOnClickListener {

@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/ad_view"
+        app:layout_constraintBottom_toTopOf="@id/card_view_ad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <com.google.android.material.textview.MaterialTextView
@@ -22,15 +22,20 @@
         app:layout_constraintBottom_toTopOf="@id/card_view_total"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/ad_view"
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Material3.CardView.Outlined"
+        android:id="@+id/card_view_ad"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        ads:adSize="BANNER"
         android:layout_margin="24dp"
-        app:layout_constraintBottom_toTopOf="@id/card_view_total"
-        ads:adUnitId="ca-app-pub-5294151573817700/8040893463"/>
+        app:layout_constraintBottom_toTopOf="@id/card_view_total">
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            ads:adSize="FULL_BANNER"
+            ads:adUnitId="ca-app-pub-5294151573817700/8040893463"/>
+    </com.google.android.material.card.MaterialCardView>
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.Material3.CardView.Elevated"
         android:id="@+id/card_view_total"

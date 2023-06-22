@@ -23,7 +23,7 @@
         app:iconSpaceReserved="false">
         <androidx.preference.Preference
             app:title="@string/access_network_state"
-            app:summary="@string/summary_preference_permissions_internet"
+            app:summary="@string/summary_preference_permissions_access_network_state"
             app:iconSpaceReserved="false"/>
         <androidx.preference.Preference
             app:title="@string/access_notification_policy"

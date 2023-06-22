@@ -7,7 +7,7 @@
         <androidx.preference.ListPreference
             app:defaultValue="@string/default_value_theme"
             app:entries="@array/preference_theme_entries"
-            app:entryValues="@array/dark_mode_values"
+            app:entryValues="@array/preference_theme_values"
             app:icon="@drawable/ic_theme"
             app:key="@string/key_theme"
             app:title="@string/theme"
@@ -30,7 +30,7 @@
             app:title="@string/notification_settings"/>
     </androidx.preference.PreferenceCategory>
     <androidx.preference.PreferenceCategory
-        app:title="Advanced"
+        app:title="@string/advanced"
         app:icon="@drawable/ic_build_tinted">
         <androidx.preference.SwitchPreferenceCompat
             app:title="@string/firebase"
@@ -97,13 +97,6 @@
             app:title="@string/oss_license_title"
             app:icon="@drawable/ic_libraries"/>
         <androidx.preference.Preference
-            app:icon="@drawable/ic_faq"
-            app:title="@string/faq">
-            <intent
-                android:targetPackage="com.d4rk.cartcalculator"
-                android:targetClass="com.d4rk.cartcalculator.ui.settings.faq.FaqActivity"/>
-        </androidx.preference.Preference>
-        <androidx.preference.Preference
             app:icon="@drawable/ic_license"
             app:title="@string/license"
             app:summary="@string/summary_preference_settings_license">
@@ -114,13 +107,6 @@
     <androidx.preference.PreferenceCategory
         app:title="@string/more"
         app:icon="@drawable/ic_more">
-        <androidx.preference.Preference
-            android:icon="@drawable/ic_feedback"
-            app:title="@string/feedback">
-            <intent
-                android:targetPackage="com.d4rk.cartcalculator"
-                android:targetClass="com.d4rk.cartcalculator.ui.settings.feedback.FeedbackActivity"/>
-        </androidx.preference.Preference>
         <androidx.preference.Preference
             app:key="share"
             app:icon="@drawable/ic_share"

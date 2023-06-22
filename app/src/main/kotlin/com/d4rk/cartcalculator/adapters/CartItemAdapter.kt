@@ -25,20 +25,23 @@ class CartItemAdapter(private var cartItems: List<CartItem>, private val listene
                 cartItem.quantity--
                 if (cartItem.quantity <= 0) {
                     cartItems = cartItems.filter { it != cartItem }
+                    listener?.onQuantityChanged(cartItems)
+                    notifyItemRemoved(position)
+                } else {
+                    listener?.onQuantityChanged(cartItems)
+                    notifyItemChanged(position)
                 }
-                listener?.onQuantityChanged(cartItems)
-                notifyDataSetChanged()
             }
         } else {
             cartItems = cartItems.filter { it != cartItem }
             listener?.onQuantityChanged(cartItems)
-            notifyDataSetChanged()
+            notifyItemRemoved(position)
         }
     }
     override fun getItemCount() = cartItems.size
     fun setItems(items: List<CartItem>) {
         cartItems = items.filter { it.quantity > 0 }
-        notifyDataSetChanged()
+        notifyItemRangeChanged(0, cartItems.size)
     }
     interface OnQuantityChangeListener {
         fun onQuantityChanged(cartItems: List<CartItem>)
