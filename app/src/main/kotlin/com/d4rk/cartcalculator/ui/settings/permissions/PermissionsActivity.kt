@@ -15,7 +15,7 @@ class PermissionsActivity : AppCompatActivity() {
     }
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.permissions_preferences, rootKey)
+            setPreferencesFromResource(R.xml.preferences_permissions, rootKey)
         }
     }
 }
