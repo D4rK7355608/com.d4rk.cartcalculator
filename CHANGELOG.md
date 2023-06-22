@@ -1,3 +1,6 @@
+# Version 3.0_r2:
+- Fixed some typos.
+
 # Version 3.0_r1:
 - Added a new GDPR message to comply with Google Play policy.
 - Added a new help center, with more comprehensive documentation and support options.

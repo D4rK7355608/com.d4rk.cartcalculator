@@ -65,9 +65,9 @@ class HelpActivity : AppCompatActivity() {
                 val emailIntent = Intent(Intent.ACTION_SEND)
                 emailIntent.type = "text/email"
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("d4rk7355608@gmail.com"))
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for " + getString(R.string.app_name))
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear deveLOVER, ")
-                startActivity(Intent.createChooser(emailIntent, "Send mail to your Developer:"))
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback_for) + getString(R.string.app_name))
+                emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.dear_developer))
+                startActivity(Intent.createChooser(emailIntent, getString(R.string.send_email_using)))
                 true
             }
             else -> super.onOptionsItemSelected(item)
