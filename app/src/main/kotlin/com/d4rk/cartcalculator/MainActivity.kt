@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -39,7 +38,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var cartListener: CartListener? = null
     private lateinit var binding: ActivityMainBinding
-    private lateinit var prefs: SharedPreferences
     private val cartItems = mutableListOf<CartItem>()
     private lateinit var cartItemAdapter: CartItemAdapter
     private var total: Double = 0.0
@@ -50,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         cartItemAdapter = CartItemAdapter(cartItems)
-        prefs = getSharedPreferences("startup", MODE_PRIVATE)
         binding = ActivityMainBinding.inflate(layoutInflater)
         appUpdateManager = AppUpdateManagerFactory.create(this)
         appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
@@ -170,10 +167,6 @@ class MainActivity : AppCompatActivity() {
         val appUsageNotificationsManager = AppUsageNotificationsManager(this)
         appUsageNotificationsManager.checkAndSendAppUsageNotification()
         appUpdateNotificationsManager.checkAndSendUpdateNotification()
-        if (prefs.getBoolean("value", true)) {
-            prefs.edit().putBoolean("value", false).apply()
-            startActivity(Intent(this, StartupActivity::class.java))
-        }
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val preferenceFirebaseKey = getString(R.string.key_firebase)
         val preferenceFirebase = sharedPreferences.getBoolean(preferenceFirebaseKey, true)
@@ -187,6 +180,14 @@ class MainActivity : AppCompatActivity() {
                 @Suppress("DEPRECATION")
                 appUpdateManager.startUpdateFlowForResult(appUpdateInfo, AppUpdateType.FLEXIBLE, this, requestUpdateCode)
             }
+        }
+        startupScreen()
+    }
+    private fun startupScreen() {
+        val startupPreference = getSharedPreferences("startup", MODE_PRIVATE)
+        if (startupPreference.getBoolean("value", true)) {
+            startupPreference.edit().putBoolean("value", false).apply()
+            startActivity(Intent(this, StartupActivity::class.java))
         }
     }
     @Deprecated("Deprecated in Java")
