@@ -49,7 +49,6 @@
     <string name="faq">Preguntas frecuentes</string>
     <string name="send_feedback">Enviar comentarios</string>
     <string name="about">Acerca de</string>
-    <string name="open_me">Ábreme 🌐</string>
     <string name="app_version">Versión %1$s (%2$d)</string>
     <string name="music">Música</string>
     <string name="made_in">Hecho con ❤ en Rumania</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">Ingresa el nombre</string>
     <string name="hint_price">Ingresa el precio</string>
     <string name="hint_quantity">Ingresa la cantidad</string>
+    <string name="tooltip_agree">Aceptar los términos y condiciones.</string>
+    <string name="tooltip_button_minus">Restar 1 artículo del carrito</string>
+    <string name="tooltip_button_plus">Añadir 1 artículo al carrito</string>
+    <string name="tooltip_open_me">Ábreme 🌐</string>
 </resources>

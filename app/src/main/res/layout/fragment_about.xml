@@ -28,7 +28,7 @@
                     android:layout_marginTop="8dp"
                     android:clickable="true"
                     android:src="@mipmap/ic_launcher"
-                    android:tooltipText="@string/open_me"
+                    android:tooltipText="@string/tooltip_open_me"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

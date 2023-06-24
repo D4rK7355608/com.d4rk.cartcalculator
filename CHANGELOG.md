@@ -1,3 +1,7 @@
+# Version 3.0_r3:
+- Added tooltips for all buttons.
+- Made minor under-the-hood improvements for a better overall app experience.
+
 # Version 3.0_r2:
 - Fixed some typos.
 

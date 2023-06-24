@@ -26,7 +26,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportFragmentManager.beginTransaction().replace(R.id.settings, SettingsFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame_layout_settings, SettingsFragment()).commit()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
     }

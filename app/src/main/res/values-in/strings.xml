@@ -49,7 +49,6 @@
     <string name="faq">FAQ</string>
     <string name="send_feedback">Kirim umpan balik</string>
     <string name="about">Tentang</string>
-    <string name="open_me">Buka saya 🌐</string>
     <string name="app_version">Versi %1$s (%2$d)</string>
     <string name="music">Musik</string>
     <string name="made_in">Dibuat dengan ❤ di Rumania!</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">Masukkan nama</string>
     <string name="hint_price">Masukkan harga</string>
     <string name="hint_quantity">Masukkan kuantitas</string>
+    <string name="tooltip_agree">Terima syarat dan ketentuan.</string>
+    <string name="tooltip_button_minus">Kurangi 1 item dari keranjang</string>
+    <string name="tooltip_button_plus">Tambahkan 1 item ke keranjang</string>
+    <string name="tooltip_open_me">Buka saya 🌐</string>
 </resources>

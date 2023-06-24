@@ -49,7 +49,6 @@
     <string name="faq">FAQ</string>
     <string name="send_feedback">Send feedback</string>
     <string name="about">About</string>
-    <string name="open_me">Open me 🌐</string>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="music">Music</string>
     <string name="made_in">Made with ❤ in Romania!</string>
@@ -90,10 +89,10 @@
     <string name="summary_preference_faq_7">To remove a product from your cart, simply drop its quantity to zero or long click it in the list and then select the \"Delete item\" button.</string>
     <string name="summary_preference_faq_8">Yes! Cart Calculator is proudly free software distributed under the GNU General Public License version 3.</string>
     <string name="summary_preference_faq_9">The best way to contribute to Cart Calculator is through its <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository. From there, you can fork it and work on your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.</string>
-    <string name="summary_preference_permissions_access_network_state">Allows the app to check network connectivity and retrieve information about Wi-Fi, including enabled status and connected Wi-Fi device names.</string>
     <string name="summary_preference_permissions_ad_id">Allows the app to retrieve and use the advertising identifier associated with the user\'s device, providing personalized ads, measuring ad effectiveness, and showing ads on Android 13 or later devices.</string>
     <string name="summary_preference_permissions_internet">Allows the app to establish an internet connection to send error reports or check for updates.</string>
     <string name="summary_preference_permissions_post_notifications">Allows the app to display notifications on the devices with Android 13 or later.</string>
+    <string name="summary_preference_permissions_access_network_state">Allows the app to check network connectivity and retrieve information about Wi-Fi, including enabled status and connected Wi-Fi device names.</string>
     <string name="summary_preference_permissions_check_license">Allows the app to verify its compliance with the license agreement and enforce licensing terms to protect intellectual property.</string>
     <string name="summary_preference_permissions_access_notification_policy">Allows the app to access and modify the device\'s notification policy, controlling how and when notifications are displayed to the user and providing custom notification management features.</string>
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">Enter name</string>
     <string name="hint_price">Enter price</string>
     <string name="hint_quantity">Enter quantity</string>
+    <string name="tooltip_agree">Accept the terms and conditions.</string>
+    <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
+    <string name="tooltip_button_plus">Add 1 item to the cart</string>
+    <string name="tooltip_open_me">Open me 🌐</string>
 </resources>

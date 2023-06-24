@@ -18,6 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/summary_empty"
+        android:textColor="?android:textColorPrimary"
+        android:drawableEnd="@drawable/ic_shopping_cart_alert"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/card_view_total"
         app:layout_constraintEnd_toEndOf="parent"

@@ -49,7 +49,6 @@
     <string name="faq">SSS</string>
     <string name="send_feedback">Geri Bildirim Gönder</string>
     <string name="about">Hakkında</string>
-    <string name="open_me">Beni Aç 🌐</string>
     <string name="app_version">Sürüm %1$s (%2$d)</string>
     <string name="music">Müzik</string>
     <string name="made_in">Romanya\'da ❤ ile yapıldı!</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">İsim girin</string>
     <string name="hint_price">Fiyat girin</string>
     <string name="hint_quantity">Miktar girin</string>
+    <string name="tooltip_agree">Şartları ve koşulları kabul edin.</string>
+    <string name="tooltip_button_minus">Sepetten 1 ürün çıkarın</string>
+    <string name="tooltip_button_plus">Sepete 1 ürün ekleyin</string>
+    <string name="tooltip_open_me">Beni Aç 🌐</string>
 </resources>

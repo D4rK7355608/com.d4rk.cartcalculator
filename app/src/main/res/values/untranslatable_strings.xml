@@ -28,6 +28,7 @@
     <string name="send_email_using" translatable="false">Send mail using:</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
-        • Fixed some typos.
+        • Added tooltips for all buttons.\n\n
+        • Made minor under-the-hood improvements for a better overall app experience.
     </string>
 </resources>

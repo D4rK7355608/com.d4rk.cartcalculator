@@ -49,7 +49,6 @@
     <string name="faq">Vanliga frågor</string>
     <string name="send_feedback">Skicka feedback</string>
     <string name="about">Om</string>
-    <string name="open_me">Öppna mig 🌐</string>
     <string name="app_version">Version %1$s (%2$d)</string>
     <string name="music">Musik</string>
     <string name="made_in">Skapad med ❤ i Rumänien!</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">Ange namn</string>
     <string name="hint_price">Ange pris</string>
     <string name="hint_quantity">Ange kvantitet</string>
+    <string name="tooltip_agree">Acceptera villkoren och bestämmelserna.</string>
+    <string name="tooltip_button_minus">Ta bort 1 artikel från varukorgen</string>
+    <string name="tooltip_button_plus">Lägg till 1 artikel i varukorgen</string>
+    <string name="tooltip_open_me">Öppna mig 🌐</string>
 </resources>

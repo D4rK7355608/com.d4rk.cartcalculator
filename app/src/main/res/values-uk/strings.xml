@@ -49,7 +49,6 @@
     <string name="faq">Часті питання</string>
     <string name="send_feedback">Надіслати відгук</string>
     <string name="about">Про програму</string>
-    <string name="open_me">Відкрити</string>
     <string name="app_version">Версія %1$s (%2$d)</string>
     <string name="music">Музика</string>
     <string name="made_in">Створено з ❤ в Румунії!</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">Введіть назву</string>
     <string name="hint_price">Введіть ціну</string>
     <string name="hint_quantity">Введіть кількість</string>
+    <string name="tooltip_agree">Прийміть умови та положення.</string>
+    <string name="tooltip_button_minus">Видалити 1 товар з кошика</string>
+    <string name="tooltip_button_plus">Додати 1 товар у кошик</string>
+    <string name="tooltip_open_me">Відкрити</string>
 </resources>

@@ -49,7 +49,6 @@
     <string name="faq">सामान्य प्रश्न</string>
     <string name="send_feedback">प्रतिक्रिया भेजें</string>
     <string name="about">के बारे में</string>
-    <string name="open_me">मुझे खोलो 🌐</string>
     <string name="app_version">संस्करण %1$s (%2$d)</string>
     <string name="music">संगीत</string>
     <string name="made_in">रोमानिया में ❤ से बनाया गया!</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">नाम दर्ज करें</string>
     <string name="hint_price">मूल्य दर्ज करें</string>
     <string name="hint_quantity">मात्रा दर्ज करें</string>
+    <string name="tooltip_agree">शर्तें और नियम स्वीकार करें।</string>
+    <string name="tooltip_button_minus">कार्ट से 1 आइटम कम करें</string>
+    <string name="tooltip_button_plus">कार्ट में 1 आइटम जोड़ें</string>
+    <string name="tooltip_open_me">मुझे खोलो 🌐</string>
 </resources>

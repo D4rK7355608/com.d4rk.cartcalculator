@@ -48,7 +48,6 @@
     <string name="faq">FAQ</string>
     <string name="send_feedback">Trimite feedback</string>
     <string name="about">Despre</string>
-    <string name="open_me">Deschide-mă 🌐</string>
     <string name="app_version">Versiune %1$s (%2$d)</string>
     <string name="music">Muzică</string>
     <string name="made_in">Realizat cu ❤ în România!</string>
@@ -109,4 +108,8 @@
     <string name="hint_name">Introdu numele</string>
     <string name="hint_price">Introdu prețul</string>
     <string name="hint_quantity">Introdu cantitatea</string>
+    <string name="tooltip_agree">Acceptați termenii și condițiile.</string>
+    <string name="tooltip_button_minus">Scădeți un articol din coș</string>
+    <string name="tooltip_button_plus">Adăugați un articol în coș</string>
+    <string name="tooltip_open_me">Deschide-mă 🌐</string>
 </resources>

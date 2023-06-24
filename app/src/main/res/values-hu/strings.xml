@@ -49,7 +49,6 @@
     <string name="faq">GYIK</string>
     <string name="send_feedback">Visszajelzés küldése</string>
     <string name="about">Névjegy</string>
-    <string name="open_me">Nyitott kapcsolat 🌐</string>
     <string name="app_version">Verzió %1$s (%2$d)</string>
     <string name="music">Zene</string>
     <string name="made_in">Készült ❤ Romániában!</string>
@@ -110,4 +109,8 @@
     <string name="hint_name">Név megadása</string>
     <string name="hint_price">Ár megadása</string>
     <string name="hint_quantity">Mennyiség megadása</string>
+    <string name="tooltip_agree">Elfogadom a feltételeket és az általános szerződési feltételeket.</string>
+    <string name="tooltip_button_minus">1 termék eltávolítása a kosárból</string>
+    <string name="tooltip_button_plus">1 termék hozzáadása a kosárhoz</string>
+    <string name="tooltip_open_me">Nyitott kapcsolat 🌐</string>
 </resources>
