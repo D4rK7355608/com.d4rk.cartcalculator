@@ -73,7 +73,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.airbnb.android:lottie:6.0.1'
+    implementation 'com.airbnb.android:lottie:6.1.0'
     implementation 'me.zhanghai.android.fastscroll:library:1.2.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
