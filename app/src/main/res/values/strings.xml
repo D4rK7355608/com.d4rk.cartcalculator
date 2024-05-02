@@ -1,5 +1,10 @@
 <resources>
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
+    <string name="app_usage_notifications">App Usage Notifications</string>
+    <string name="update_notifications">Update Notifications</string>
+    <string name="welcome">Welcome</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
+    <string name="agree">Agree</string>
     <string name="home">Home</string>
     <string name="refresh">Refresh</string>
     <string name="add_to_cart">Add to Cart</string>
@@ -53,11 +58,6 @@
     <string name="music">Music</string>
     <string name="made_in">Made with ❤ in Romania!</string>
     <string name="copyright">© Copyright %1$s, made by D4rK!</string>
-    <string name="app_usage_notifications">App Usage Notifications</string>
-    <string name="update_notifications">Update Notifications</string>
-    <string name="agree">Agree</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Browse the <i><u>Terms of Service</u></i> and <i><u>Privacy Policy</u></i></string>
-    <string name="welcome">Welcome</string>
     <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="close">Close?</string>
     <string name="internet">Internet [INTERNET]</string>

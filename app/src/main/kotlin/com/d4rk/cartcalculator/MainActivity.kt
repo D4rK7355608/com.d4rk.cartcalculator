@@ -24,6 +24,8 @@ import com.d4rk.cartcalculator.databinding.ActivityMainBinding
 import com.d4rk.cartcalculator.notifications.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.notifications.AppUsageNotificationsManager
 import com.d4rk.cartcalculator.ui.startup.StartupActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.textfield.TextInputEditText
@@ -84,6 +86,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add_to_cart -> {
             val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_to_cart, null)
+            val adView = dialogView.findViewById<AdView>(R.id.ad_view)
+            adView.loadAd(AdRequest.Builder().build())
             MaterialAlertDialogBuilder(this)
                 .setView(dialogView)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
@@ -154,7 +158,6 @@ class MainActivity : AppCompatActivity() {
             .setTitle(R.string.close)
             .setMessage(R.string.summary_close)
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                @Suppress("DEPRECATION")
                 super.onBackPressed()
                 moveTaskToBack(true)
             }
@@ -192,7 +195,6 @@ class MainActivity : AppCompatActivity() {
     }
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        @Suppress("DEPRECATION")
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == requestUpdateCode) {
             when (resultCode) {

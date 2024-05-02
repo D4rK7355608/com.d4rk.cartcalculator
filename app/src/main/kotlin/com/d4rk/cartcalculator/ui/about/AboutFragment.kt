@@ -23,13 +23,12 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.Calendar
 class AboutFragment : Fragment() {
-    private lateinit var _binding: FragmentAboutBinding
-    private val binding get() = _binding
+    private lateinit var binding: FragmentAboutBinding
     private val calendar: Calendar = Calendar.getInstance()
     private var originalNavBarColor: Int? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         ViewModelProvider(this)[ViewModel::class.java]
-        _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        binding = FragmentAboutBinding.inflate(inflater, container, false)
         originalNavBarColor = activity?.window?.navigationBarColor
         setOriginalNavigationBarColor()
         FastScrollerBuilder(binding.scrollView).useMd2Style().build()
@@ -75,7 +74,6 @@ class AboutFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         activity?.window?.navigationBarColor = originalNavBarColor!!
-        _binding
     }
 
     private fun setOriginalNavigationBarColor() {

@@ -17,8 +17,9 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.appopen.AppOpenAd
 import java.util.Date
 private const val AD_UNIT_ID = "ca-app-pub-5294151573817700/9208287867"
+
 class AppOpenAdManager : MultiDexApplication(), Application.ActivityLifecycleCallbacks,
-  LifecycleObserver {
+    LifecycleObserver {
   private lateinit var appOpenAdManager: AppOpenAdManager
   private var currentActivity: Activity? = null
   override fun onCreate() {
@@ -79,9 +80,9 @@ class AppOpenAdManager : MultiDexApplication(), Application.ActivityLifecycleCal
       return appOpenAd != null && wasLoadTimeLessThanNHoursAgo(4)
     }
     fun showAdIfAvailable(activity: Activity) {
-      showAdIfAvailable(activity, object : OnShowAdCompleteListener {
-          override fun onShowAdComplete() {
-          }
+        showAdIfAvailable(activity, object : OnShowAdCompleteListener {
+            override fun onShowAdComplete() {
+            }
         }
       )
     }
