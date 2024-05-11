@@ -17,24 +17,40 @@
 
 ## Let's go to shopping! 🛒
 
-The Cart Calculator app is a convenient and simple tool that helps you to manage your shopping cart easily and efficiently. Whether you are grocery shopping or just buying household items, this app helps you to keep track of everything in one place.
+The Cart Calculator app is a convenient and simple tool that helps you to manage your shopping cart
+easily and efficiently. Whether you are grocery shopping or just buying household items, this app
+helps you to keep track of everything in one place.
 
-With the Cart Calculator app, you can add items to the cart, set the quantity, and calculate the total cost of your purchase. You can also update the quantity of each item and see the updated total cost in real-time. The app is user-friendly and easy to navigate, making it a perfect choice for people of all ages.
+With the Cart Calculator app, you can add items to the cart, set the quantity, and calculate the
+total cost of your purchase. You can also update the quantity of each item and see the updated total
+cost in real-time. The app is user-friendly and easy to navigate, making it a perfect choice for
+people of all ages.
 
-The Cart Calculator app features a simple and intuitive interface that allows you to add and manage items quickly and easily. It also provides a detailed list of your purchases, including the name, price, and quantity of each item. You can customize the list according to your preferences, and the app will calculate the total cost for you automatically.
+The Cart Calculator app features a simple and intuitive interface that allows you to add and manage
+items quickly and easily. It also provides a detailed list of your purchases, including the name,
+price, and quantity of each item. You can customize the list according to your preferences, and the
+app will calculate the total cost for you automatically.
 
-In addition to managing your shopping cart, the Cart Calculator app also allows you to track your expenses and monitor your spending. This feature helps you to stick to your budget and avoid overspending.
+In addition to managing your shopping cart, the Cart Calculator app also allows you to track your
+expenses and monitor your spending. This feature helps you to stick to your budget and avoid
+overspending.
 
-Overall, the Cart Calculator app is an essential tool for anyone who wants to manage their shopping cart efficiently and stay on top of their expenses. Whether you are a busy mom or a student on a budget, this app is perfect for you. Download it now and start managing your shopping cart like a pro!
+Overall, the Cart Calculator app is an essential tool for anyone who wants to manage their shopping
+cart efficiently and stay on top of their expenses. Whether you are a busy mom or a student on a
+budget, this app is perfect for you. Download it now and start managing your shopping cart like a
+pro!
 
-Our app is designed to be simple and easy to use, while also being fast and lightweight. Plus, it's free and open-source software!
+Our app is designed to be simple and easy to use, while also being fast and lightweight. Plus, it's
+free and open-source software!
 
 ## ⚠ Opening Issues!
+
 Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.cartcalculator/issues).
 
 - Create a calculator/currency/general bug. 🐞
 
 ## 🛠️ Features!
+
 ⭐️ No internet required. \
 ⭐️ Adaptive themes + Material-You. \
 ⭐️ Simple and easy to use. \
@@ -48,14 +64,23 @@ Bugs can be reported [here](https://github.com/D4rK7355608/com.d4rk.cartcalculat
 <img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/3-screenshot_main_items.png" width="400">
 
 ## 🛑 Disclaimer!
-- Only use the GitHub Issues section if you discover issues with the code itself. Do not mistake the Issues page as a help desk. For support, information and requests, please contact d4rk7355608@gmail.com.
+
+- Only use the GitHub Issues section if you discover issues with the code itself. Do not mistake the
+  Issues page as a help desk. For support, information and requests, please contact
+  d4rk7355608@gmail.com.
 
 ## 💬 Feedback!
-We are constantly updating and improving Cart Calculator to give you the best possible experience. If you have any suggested features or improvements, please leave a review. In case something is not working correctly please let me know. When posting a low rating please describe what is wrong to give the possibility to fix that issue.
 
-Thank you for choosing Cart Calculator. We hope you enjoy using our app as much as we enjoyed creating it for you! Rate us 5 stars ⭐⭐⭐⭐⭐ if you are happy with the app! ❤
+We are constantly updating and improving Cart Calculator to give you the best possible experience.
+If you have any suggested features or improvements, please leave a review. In case something is not
+working correctly please let me know. When posting a low rating please describe what is wrong to
+give the possibility to fix that issue.
+
+Thank you for choosing Cart Calculator. We hope you enjoy using our app as much as we enjoyed
+creating it for you! Rate us 5 stars ⭐⭐⭐⭐⭐ if you are happy with the app! ❤
 
 ## 👨🏻‍💻 &nbsp;More About Me:
+
 <a href="mailto:d4rk7355608@gmail.com"><img src="https://img.shields.io/badge/d4rk7355608@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 <a href="https://developers.google.com/profile/u/D4rK7355608"><img src="https://img.shields.io/badge/Android%20Developers-white?style=for-the-badge&logo=android"/></a>
 <a href="https://forum.xda-developers.com/m/d4rk7355608.10095012/"><img src="https://img.shields.io/badge/XDA%20Developers-grey?style=for-the-badge&logo=xdadevelopers"/></a>

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
  *
  * @property context The application context used for scheduling app usage checks.
  */
-class AppUsageNotificationsManager(private val context: Context) {
+class AppUsageNotificationsManager(private val context : Context) {
 
     /**
      * Schedules a periodic check for app usage notifications.
@@ -25,8 +25,7 @@ class AppUsageNotificationsManager(private val context: Context) {
      */
     fun scheduleAppUsageCheck() {
         val workRequest = PeriodicWorkRequestBuilder<AppUsageNotificationWorker>(
-            repeatInterval = 3,
-            repeatIntervalTimeUnit = TimeUnit.DAYS
+            repeatInterval = 3 , repeatIntervalTimeUnit = TimeUnit.DAYS
         ).build()
         WorkManager.getInstance(context).enqueue(workRequest)
     }

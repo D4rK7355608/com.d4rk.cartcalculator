@@ -127,38 +127,38 @@ fun MainComposable() {
                                              Text(text = item.badgeCount.toString())
                                          }
                                      } ,
-                                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
-                )
+                                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding))
             }
         }
 
     } , content = {
-        Scaffold(topBar = {
-            TopAppBar(title = {
-                Text(text = stringResource(R.string.app_name))
-            } , navigationIcon = {
-                IconButton(onClick = {
-                    scope.launch {
-                        drawerState.apply {
-                            if (isClosed) open() else close()
+        Scaffold(
+            topBar = {
+                TopAppBar(title = {
+                    Text(text = stringResource(R.string.app_name))
+                } , navigationIcon = {
+                    IconButton(onClick = {
+                        scope.launch {
+                            drawerState.apply {
+                                if (isClosed) open() else close()
+                            }
                         }
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.Menu , contentDescription = "Menu"
+                        )
                     }
-                }) {
-                    Icon(
-                        imageVector = Icons.Default.Menu , contentDescription = "Menu"
-                    )
-                }
-            } , actions = {
-                IconButton(onClick = {
-                    // Utils.openActivity(context , SupportActivity::class.java)
-                }) {
-                    Icon(
-                        Icons.Outlined.VolunteerActivism ,
-                        contentDescription = "Support"
-                    )
-                }
-            })
-        },) { innerPadding ->
+                } , actions = {
+                    IconButton(onClick = {
+                        // Utils.openActivity(context , SupportActivity::class.java)
+                    }) {
+                        Icon(
+                            Icons.Outlined.VolunteerActivism , contentDescription = "Support"
+                        )
+                    }
+                })
+            } ,
+        ) { innerPadding ->
             Box(modifier = Modifier.padding(innerPadding)) {
                 HomeComposable()
             }

@@ -26,7 +26,7 @@ private val LightColorScheme = lightColorScheme()
 
 @Composable
 fun AppTheme(
-    content: @Composable () -> Unit
+    content : @Composable () -> Unit
 ) {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
@@ -45,39 +45,41 @@ fun AppTheme(
         isDarkTheme && isAmoledMode && isDynamicColors && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> dynamicDarkColorScheme(
             context
         ).copy(
-            surface = Color.Black,
-            background = Color.Black,
+            surface = Color.Black ,
+            background = Color.Black ,
         )
 
         isDarkTheme && isAmoledMode -> darkColorScheme(
-            surface = Color.Black,
-            background = Color.Black,
+            surface = Color.Black ,
+            background = Color.Black ,
         )
 
         isDarkTheme -> if (isDynamicColors && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             dynamicDarkColorScheme(context)
-        } else {
+        }
+        else {
             DarkColorScheme
         }
 
         else -> if (isDynamicColors && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             dynamicLightColorScheme(context)
-        } else {
+        }
+        else {
             LightColorScheme
         }
     }
 
     val view = LocalView.current
-    if (!view.isInEditMode) {
+    if (! view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
             window.statusBarColor = Color.Transparent.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars =
-                !isDarkTheme
+            WindowCompat.getInsetsController(window , view).isAppearanceLightStatusBars =
+                    ! isDarkTheme
         }
     }
 
     MaterialTheme(
-        colorScheme = colorScheme, typography = Typography, content = content
+        colorScheme = colorScheme , typography = Typography , content = content
     )
 }

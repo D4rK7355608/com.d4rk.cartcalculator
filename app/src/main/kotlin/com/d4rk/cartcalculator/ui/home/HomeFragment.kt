@@ -1,21 +1,5 @@
 package com.d4rk.cartcalculator.ui.home
-import android.os.Bundle
-import android.util.TypedValue
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.adapters.CartItemAdapter
-import com.d4rk.cartcalculator.data.CartItem
-import com.d4rk.cartcalculator.databinding.FragmentHomeBinding
-import com.d4rk.cartcalculator.ui.viewmodel.ViewModel
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
+
 /*
 class HomeFragment : Fragment(), MainActivity.CartListener, CartItemAdapter.OnQuantityChangeListener {
     private lateinit var viewModel: ViewModel

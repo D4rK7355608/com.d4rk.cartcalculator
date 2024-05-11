@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_short_description">Verwalten und berechnen Sie Ihre Warenkorbartikel effizient mit Cart Calculator. 🛒</string>    <string name="home">Startseite</string>
+    <string name="app_short_description">Verwalten und berechnen Sie Ihre Warenkorbartikel effizient mit Cart Calculator. 🛒</string>
+    <string name="home">Startseite</string>
     <string name="refresh">Aktualisieren</string>
     <string name="add_to_cart">In den Warenkorb</string>
     <string name="add_your_item">Artikel hinzufügen</string>

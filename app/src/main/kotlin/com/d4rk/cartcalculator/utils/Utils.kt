@@ -58,19 +58,28 @@ object Utils {
     fun openAppLocaleSettings(context : Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val localeIntent = Intent(Settings.ACTION_APP_LOCALE_SETTINGS).setData(
-                Uri.fromParts("package", context.packageName, null)
+                Uri.fromParts("package" , context.packageName , null)
             )
             val detailsIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(
-                Uri.fromParts("package", context.packageName, null)
+                Uri.fromParts("package" , context.packageName , null)
             )
             when {
-                context.packageManager.resolveActivity(localeIntent, 0) != null -> context.startActivity(localeIntent)
-                context.packageManager.resolveActivity(detailsIntent, 0) != null -> context.startActivity(detailsIntent)
+                context.packageManager.resolveActivity(
+                    localeIntent ,
+                    0
+                ) != null -> context.startActivity(localeIntent)
+
+                context.packageManager.resolveActivity(
+                    detailsIntent ,
+                    0
+                ) != null -> context.startActivity(detailsIntent)
+
                 else -> {
                     // TODO: Handle the case where neither Intent can be resolved
                 }
             }
-        } else {
+        }
+        else {
             // TODO: Handle the case for Android versions lower than 13
         }
     }

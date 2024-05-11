@@ -1,12 +1,12 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
-        android:shortcutId="openSettings"
         android:enabled="true"
         android:icon="@mipmap/ic_shortcut_settings"
+        android:shortcutId="openSettings"
         android:shortcutShortLabel="@string/settings">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.d4rk.cartcalculator"
-            android:targetClass="com.d4rk.cartcalculator.ui.settings.SettingsActivity"/>
+            android:targetClass="com.d4rk.cartcalculator.ui.settings.SettingsActivity"
+            android:targetPackage="com.d4rk.cartcalculator" />
     </shortcut>
 </shortcuts>

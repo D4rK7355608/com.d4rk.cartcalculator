@@ -30,11 +30,11 @@ import kotlinx.coroutines.tasks.await
 
 class MainActivity : ComponentActivity() {
     private lateinit var dataStore : DataStore
-    private lateinit var appUpdateManager: AppUpdateManager
-    private var appUpdateNotificationsManager: AppUpdateNotificationsManager =
+    private lateinit var appUpdateManager : AppUpdateManager
+    private var appUpdateNotificationsManager : AppUpdateNotificationsManager =
             AppUpdateNotificationsManager(this)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
@@ -76,14 +76,14 @@ class MainActivity : ComponentActivity() {
      */
     @Suppress("DEPRECATION")
     @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityResult(requestCode : Int , resultCode : Int , data : Intent?) {
+        super.onActivityResult(requestCode , resultCode , data)
         if (requestCode == 1) {
             when (resultCode) {
                 RESULT_OK -> {
                     val snackbar = Snackbar.make(
                         findViewById(android.R.id.content) ,
-                        R.string.snack_app_updated,
+                        R.string.snack_app_updated ,
                         Snackbar.LENGTH_LONG
                     ).setAction(android.R.string.ok , null)
                     snackbar.show()

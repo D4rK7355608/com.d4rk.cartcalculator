@@ -1,14 +1,14 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_item_list_cart"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="blocksDescendants"
     android:gravity="center"
     android:padding="24dp"
-    android:descendantFocusability="blocksDescendants"
-    android:id="@+id/constraint_layout_item_list_cart"
     android:selectable="true">
+
     <LinearLayout
         android:id="@+id/leftLayout"
         android:layout_width="wrap_content"
@@ -16,27 +16,31 @@
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_list_cart_items_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_list_cart_items_price"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/rightLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
+
         <com.google.android.material.button.MaterialButton
-            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
             android:id="@+id/button_list_cart_items_minus_item"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="24dp"
@@ -47,19 +51,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/text_view_list_cart_items_quantity"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
+            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_list_cart_items_quantity"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            app:layout_constraintStart_toEndOf="@+id/button_list_cart_items_minus_item"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_list_cart_items_plus_item"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/button_list_cart_items_minus_item"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.button.MaterialButton
-            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
             android:id="@+id/button_list_cart_items_plus_item"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="24dp"
@@ -69,6 +75,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_view_list_cart_items_quantity"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
+            tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
