@@ -113,4 +113,14 @@
     <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
     <string name="tooltip_button_plus">Add 1 item to the cart</string>
     <string name="tooltip_open_me">Open me 🌐</string>
+
+    <!--TODO: Arrange the strings-->
+    <string name="snack_support">Would you like to support our app? ❤️</string>
+    <string name="snack_update_failed">The update process encountered an issue</string>
+    <string name="snack_app_updated">The app has been successfully updated</string>
+    <string name="snack_validate_file">Please select a valid file size</string>
+    <string name="try_again">Try again</string>
+    <string name="updates">Updates</string>
+    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
+
 </resources>

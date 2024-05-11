@@ -5,11 +5,6 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.d4rk.cartcalculator.ui.home.HomeFragment"
-        android:label="@string/home"
-        tools:layout="@layout/fragment_home"/>
-    <fragment
         android:id="@+id/nav_about"
         android:name="com.d4rk.cartcalculator.ui.about.AboutFragment"
         android:label="@string/about"
