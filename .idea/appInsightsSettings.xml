@@ -22,6 +22,23 @@
             </InsightsFilterSettings>
           </value>
         </entry>
+        <entry key="Firebase Crashlytics">
+          <value>
+            <InsightsFilterSettings>
+              <option name="connection">
+                <ConnectionSetting>
+                  <option name="appId" value="com.d4rk.cartcalculator" />
+                  <option name="mobileSdkAppId" value="1:289497233341:android:b6cda4b7325bf96e2c84d4" />
+                  <option name="projectId" value="d4rk-apps" />
+                  <option name="projectNumber" value="289497233341" />
+                </ConnectionSetting>
+              </option>
+              <option name="signal" value="SIGNAL_UNSPECIFIED" />
+              <option name="timeIntervalDays" value="THIRTY_DAYS" />
+              <option name="visibilityType" value="ALL" />
+            </InsightsFilterSettings>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

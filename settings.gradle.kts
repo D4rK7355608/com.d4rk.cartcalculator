@@ -3,23 +3,27 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven {
+            setUrl("https://jitpack.io")
+        }
     }
     resolutionStrategy {
         eachPlugin {
-            if (requested.id.id == 'com.google.android.gms.oss-licenses-plugin') {
+            if (requested.id.id == "com.google.android.gms.oss-licenses-plugin") {
                 useModule("com.google.android.gms:oss-licenses-plugin:${requested.version}")
             }
         }
     }
 }
-dependencyResolutionManagement {
+@Suppress("UnstableApiUsage") dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven {
+            setUrl("https://jitpack.io")
+        }
     }
 }
 rootProject.name = "Cart Calculator"
-include ':app'
+include(":app")
