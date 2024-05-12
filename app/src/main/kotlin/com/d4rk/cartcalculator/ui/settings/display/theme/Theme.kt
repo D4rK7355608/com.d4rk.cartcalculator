@@ -123,12 +123,12 @@ private fun getColorScheme(
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) dynamicLightColorScheme(context) else lightScheme
 
     return when {
-        isAmoledMode && isDynamicColors -> dynamicDark.copy(
+        isAmoledMode && isDarkTheme && isDynamicColors -> dynamicDark.copy(
             surface = Color.Black ,
             background = Color.Black ,
         )
 
-        isAmoledMode -> darkScheme.copy(
+        isAmoledMode && isDarkTheme -> darkScheme.copy(
             surface = Color.Black ,
             background = Color.Black ,
         )

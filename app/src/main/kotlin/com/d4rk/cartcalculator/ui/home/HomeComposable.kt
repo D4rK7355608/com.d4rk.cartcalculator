@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AddShoppingCart
 import androidx.compose.material.icons.outlined.DeleteForever
@@ -26,6 +27,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -33,6 +36,8 @@ import com.d4rk.cartcalculator.MyApp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import com.d4rk.cartcalculator.dialogs.NewCartDialog
+import com.d4rk.cartcalculator.ui.cart.CartActivity
+import com.d4rk.cartcalculator.utils.Utils
 import com.d4rk.cartcalculator.utils.bounceClick
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -41,6 +46,7 @@ import java.util.Locale
 
 @Composable
 fun HomeComposable() {
+    val context = LocalContext.current
     val openDialog = remember { mutableStateOf(false) }
     val carts = remember { mutableStateListOf<ShoppingCartTable>() }
     val lifecycleScope = rememberCoroutineScope()
@@ -71,6 +77,10 @@ fun HomeComposable() {
                         lifecycleScope.launch(Dispatchers.IO) {
                             MyApp.database.newCartDao().delete(cartToDelete)
                         }
+                    } , onCardClick = {
+                        Utils.openActivity(
+                            context , CartActivity::class.java
+                        )
                     })
                 }
             }
@@ -100,44 +110,51 @@ fun HomeComposable() {
 }
 
 @Composable
-fun CartItemComposable(cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit) {
+fun CartItemComposable(
+    cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit
+) {
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString = dateFormat.format(cart.date)
 
     OutlinedCard(
+        shape = RoundedCornerShape(12.dp) ,
         modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
+                .padding(8.dp) , onClick = {
+            onCardClick()
+        }
     ) {
-        Column(
-            modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp)
-        ) {
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween ,
-                modifier = Modifier.fillMaxWidth()
+        Box(modifier = Modifier.clip(MaterialTheme.shapes.medium)) {
+            Column(
+                modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp)
             ) {
-                Text(
-                    text = cart.name ,
-                    style = MaterialTheme.typography.titleMedium ,
-                    modifier = Modifier.weight(1f)
-                )
-
-                IconButton(onClick = { onDelete(cart) }) {
-                    Icon(
-                        imageVector = Icons.Outlined.DeleteForever ,
-                        contentDescription = "Delete cart" ,
-                        tint = MaterialTheme.colorScheme.error
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween ,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = cart.name ,
+                        style = MaterialTheme.typography.titleMedium ,
+                        modifier = Modifier.weight(1f)
                     )
-                }
-            }
 
-            Text(
-                text = "Created on $dateString" ,
-                style = MaterialTheme.typography.bodyMedium ,
-                textAlign = TextAlign.End
-            )
+                    IconButton(onClick = { onDelete(cart) }) {
+                        Icon(
+                            imageVector = Icons.Outlined.DeleteForever ,
+                            contentDescription = "Delete cart" ,
+                            tint = MaterialTheme.colorScheme.error
+                        )
+                    }
+                }
+
+                Text(
+                    text = "Created on $dateString" ,
+                    style = MaterialTheme.typography.bodyMedium ,
+                    textAlign = TextAlign.End
+                )
+            }
         }
     }
 }

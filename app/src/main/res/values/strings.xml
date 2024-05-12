@@ -138,6 +138,8 @@
     <string name="error_reporting">Error reporting</string>
     <string name="bug_report">Bug report</string>
     <string name="summary_dark_theme">Dark theme uses a deep background to help keep your battery alive longer.</string>
+    <string name="dynamic_colors">Dynamic colors</string>
+    <string name="summary_preference_settings_dynamic_colors">Apply colors from wallpapers to the app theme</string>
     <string name="summary_preference_settings_dark_mode_system"></string>
     <string name="summary_preference_settings_dark_mode_dark"></string>
     <string name="summary_preference_settings_dark_mode_light"></string>

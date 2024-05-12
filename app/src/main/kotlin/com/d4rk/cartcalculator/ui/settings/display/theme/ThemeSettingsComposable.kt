@@ -23,7 +23,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -45,19 +44,13 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
     val dataStore = DataStore.getInstance(context)
     val scope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    val themeMode = dataStore.themeMode.collectAsState(initial = "follow_system")
+    val themeMode = dataStore.themeMode.collectAsState(initial = "follow_system").value
     val isAmoledMode = dataStore.amoledMode.collectAsState(initial = false)
-    val darkModeString = stringResource(R.string.dark_mode)
-    LaunchedEffect(themeMode.value) {
-        val isDarkMode = themeMode.value == darkModeString
-        dataStore.saveDarkMode(isDarkMode)
-    }
 
     val themeOptions = listOf(
         stringResource(R.string.follow_system),
         stringResource(R.string.dark_mode),
         stringResource(R.string.light_mode),
-        stringResource(R.string.auto_battery_mode)
     )
     Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
         LargeTopAppBar(
@@ -78,8 +71,8 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
+                        .fillMaxSize()
+                        .padding(paddingValues),
             ) {
                 item {
                     SwitchCardComposable(
@@ -93,15 +86,15 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(24.dp)
+                                .fillMaxWidth()
+                                .padding(24.dp)
                     ) {
                         themeOptions.forEach { text ->
                             Row(
                                 Modifier.fillMaxWidth(),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                RadioButton(selected = (text == themeMode.value), onClick = {
+                                RadioButton(selected = (text == themeMode) , onClick = {
                                     scope.launch(Dispatchers.IO) {
                                         dataStore.saveThemeMode(text)
                                         dataStore.themeModeState.value = text
@@ -119,8 +112,8 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(24.dp)
+                                .fillMaxWidth()
+                                .padding(24.dp)
                     ) {
                         Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
                         Spacer(modifier = Modifier.height(24.dp))
