@@ -26,6 +26,7 @@
     <string name="feedback_for" translatable="false">Feedback for </string>
     <string name="dear_developer" translatable="false">Dear developer, </string>
     <string name="send_email_using" translatable="false">Send mail using:</string>
+    <string name="copyright" translatable="false">Copyright ©2023-2024, D4rK</string>
     <string name="changelog_title" translatable="false">Changelog - Version %1s</string>
     <string name="changes" translatable="false">\n
         • Made various under-the-hood improvements for a better overall app experience.

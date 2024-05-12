@@ -19,21 +19,21 @@ android {
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
-            "en" ,
-            "de" ,
-            "es" ,
-            "fr" ,
-            "hi" ,
-            "hu" ,
-            "in" ,
-            "it" ,
-            "ja" ,
-            "ro" ,
-            "ru" ,
-            "tr" ,
-            "sv" ,
-            "bg" ,
-            "pl" ,
+            "en",
+            "de",
+            "es",
+            "fr",
+            "hi",
+            "hu",
+            "in",
+            "it",
+            "ja",
+            "ro",
+            "ru",
+            "tr",
+            "sv",
+            "bg",
+            "pl",
             "uk"
         )
         vectorDrawables {
@@ -48,7 +48,7 @@ android {
             isDebuggable = false
             versionNameSuffix = null
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt") , "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
         debug {
@@ -58,7 +58,7 @@ android {
             isDebuggable = true
             versionNameSuffix = null
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt") , "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -112,8 +112,9 @@ dependencies {
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.constraintlayout.compose)
     implementation(libs.ui.tooling)
-    implementation("androidx.datastore:datastore-core:1.1.1")
+    implementation(libs.androidx.datastore.core)
     implementation(libs.androidx.navigation.compose)
 
     // AndroidX

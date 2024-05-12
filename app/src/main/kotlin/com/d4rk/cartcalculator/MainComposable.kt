@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator
 
-import android.content.Intent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -45,98 +44,84 @@ import kotlinx.coroutines.launch
 fun MainComposable() {
     val drawerItems = listOf(
         NavigationItem(
-            title = R.string.settings ,
-            selectedIcon = Icons.Outlined.Settings ,
-        ) ,
+            title = R.string.settings,
+            selectedIcon = Icons.Outlined.Settings,
+        ),
         NavigationItem(
-            title = R.string.help_and_feedback ,
-            selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline ,
-        ) ,
+            title = R.string.help_and_feedback,
+            selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline,
+        ),
         NavigationItem(
-            title = R.string.updates ,
-            selectedIcon = Icons.AutoMirrored.Outlined.EventNote ,
-        ) ,
+            title = R.string.updates,
+            selectedIcon = Icons.AutoMirrored.Outlined.EventNote,
+        ),
         NavigationItem(
-            title = R.string.share , selectedIcon = Icons.Outlined.Share
-        ) ,
+            title = R.string.share, selectedIcon = Icons.Outlined.Share
+        ),
     )
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
-    val selectedItemIndex by rememberSaveable { mutableIntStateOf(- 1) }
-    ModalNavigationDrawer(drawerState = drawerState , drawerContent = {
+    val selectedItemIndex by rememberSaveable { mutableIntStateOf(-1) }
+    ModalNavigationDrawer(drawerState = drawerState, drawerContent = {
         ModalDrawerSheet {
             Spacer(modifier = Modifier.height(16.dp))
-            drawerItems.forEachIndexed { index , item ->
+            drawerItems.forEachIndexed { index, item ->
                 val title = stringResource(item.title)
-                NavigationDrawerItem(label = { Text(text = title) } ,
-                                     selected = index == selectedItemIndex ,
-                                     onClick = {
-                                         when (item.title) {
+                NavigationDrawerItem(
+                    label = { Text(text = title) },
+                    selected = index == selectedItemIndex,
+                    onClick = {
+                        when (item.title) {
 
-                                             R.string.settings -> {
-                                                 Utils.openActivity(
-                                                     context , SettingsActivity::class.java
-                                                 )
-                                             }
+                            R.string.settings -> {
+                                Utils.openActivity(
+                                    context, SettingsActivity::class.java
+                                )
+                            }
 
-                                             R.string.help_and_feedback -> {
-                                                 Utils.openActivity(
-                                                     context , HelpActivity::class.java
-                                                 )
-                                             }
+                            R.string.help_and_feedback -> {
+                                Utils.openActivity(
+                                    context, HelpActivity::class.java
+                                )
+                            }
 
-                                             R.string.updates -> {
-                                                 Utils.openUrl(
-                                                     context ,
-                                                     "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
-                                                 )
-                                             }
+                            R.string.updates -> {
+                                Utils.openUrl(
+                                    context,
+                                    "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
+                                )
+                            }
 
-                                             R.string.share -> {
-                                                 val shareIntent = Intent().apply {
-                                                     this.action = Intent.ACTION_SEND
-                                                     this.putExtra(
-                                                         Intent.EXTRA_TEXT , context.getString(
-                                                             R.string.summary_share_message ,
-                                                             "https://play.google.com/store/apps/details?id=${context.packageName}"
-                                                         )
-                                                     )
-                                                     this.type = "text/plain"
-                                                 }
-                                                 context.startActivity(
-                                                     Intent.createChooser(
-                                                         shareIntent , context.resources.getText(
-                                                             R.string.send_email_using
-                                                         )
-                                                     )
-                                                 )
-                                             }
-                                         }
-                                         scope.launch {
-                                             drawerState.close()
-                                         }
-                                     } ,
-                                     icon = {
-                                         Icon(
-                                             item.selectedIcon , contentDescription = title
-                                         )
-                                     } ,
-                                     badge = {
-                                         item.badgeCount?.let {
-                                             Text(text = item.badgeCount.toString())
-                                         }
-                                     } ,
-                                     modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding))
+                            R.string.share -> {
+                                Utils.shareApp(context)
+                            }
+                        }
+                        scope.launch {
+                            drawerState.close()
+                        }
+                    },
+                    icon = {
+                        Icon(
+                            item.selectedIcon, contentDescription = title
+                        )
+                    },
+                    badge = {
+                        item.badgeCount?.let {
+                            Text(text = item.badgeCount.toString())
+                        }
+                    },
+                    modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
+                )
             }
         }
 
-    } , content = {
+    }, content = {
         Scaffold(
             topBar = {
                 TopAppBar(title = {
                     Text(text = stringResource(R.string.app_name))
-                } , navigationIcon = {
+                }, navigationIcon = {
                     IconButton(onClick = {
                         scope.launch {
                             drawerState.apply {
@@ -145,19 +130,19 @@ fun MainComposable() {
                         }
                     }) {
                         Icon(
-                            imageVector = Icons.Default.Menu , contentDescription = "Menu"
+                            imageVector = Icons.Default.Menu, contentDescription = "Menu"
                         )
                     }
-                } , actions = {
+                }, actions = {
                     IconButton(onClick = {
                         // Utils.openActivity(context , SupportActivity::class.java)
                     }) {
                         Icon(
-                            Icons.Outlined.VolunteerActivism , contentDescription = "Support"
+                            Icons.Outlined.VolunteerActivism, contentDescription = "Support"
                         )
                     }
                 })
-            } ,
+            },
         ) { innerPadding ->
             Box(modifier = Modifier.padding(innerPadding)) {
                 HomeComposable()
