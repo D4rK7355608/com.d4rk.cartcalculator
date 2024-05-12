@@ -162,5 +162,6 @@
     <string name="version">Version %1$s</string>
     <string name="beta_program">Beta program</string>
     <string name="add_new_cart">Add new cart</string>
-
+    <string name="shopping_cart">Shopping cart</string>
+    <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
 </resources>

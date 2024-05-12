@@ -1,8 +1,10 @@
 package com.d4rk.cartcalculator.ui.settings.display.theme
 
 import android.app.Activity
+import android.content.Context
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
@@ -20,9 +22,121 @@ import androidx.core.view.WindowCompat
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.store.DataStore
 
-private val DarkColorScheme = darkColorScheme()
+private val lightScheme = lightColorScheme(
+    primary = primaryLight ,
+    onPrimary = onPrimaryLight ,
+    primaryContainer = primaryContainerLight ,
+    onPrimaryContainer = onPrimaryContainerLight ,
+    secondary = secondaryLight ,
+    onSecondary = onSecondaryLight ,
+    secondaryContainer = secondaryContainerLight ,
+    onSecondaryContainer = onSecondaryContainerLight ,
+    tertiary = tertiaryLight ,
+    onTertiary = onTertiaryLight ,
+    tertiaryContainer = tertiaryContainerLight ,
+    onTertiaryContainer = onTertiaryContainerLight ,
+    error = errorLight ,
+    onError = onErrorLight ,
+    errorContainer = errorContainerLight ,
+    onErrorContainer = onErrorContainerLight ,
+    background = backgroundLight ,
+    onBackground = onBackgroundLight ,
+    surface = surfaceLight ,
+    onSurface = onSurfaceLight ,
+    surfaceVariant = surfaceVariantLight ,
+    onSurfaceVariant = onSurfaceVariantLight ,
+    outline = outlineLight ,
+    outlineVariant = outlineVariantLight ,
+    scrim = scrimLight ,
+    inverseSurface = inverseSurfaceLight ,
+    inverseOnSurface = inverseOnSurfaceLight ,
+    inversePrimary = inversePrimaryLight ,
+    surfaceDim = surfaceDimLight ,
+    surfaceBright = surfaceBrightLight ,
+    surfaceContainerLowest = surfaceContainerLowestLight ,
+    surfaceContainerLow = surfaceContainerLowLight ,
+    surfaceContainer = surfaceContainerLight ,
+    surfaceContainerHigh = surfaceContainerHighLight ,
+    surfaceContainerHighest = surfaceContainerHighestLight ,
+)
 
-private val LightColorScheme = lightColorScheme()
+private val darkScheme = darkColorScheme(
+    primary = primaryDark ,
+    onPrimary = onPrimaryDark ,
+    primaryContainer = primaryContainerDark ,
+    onPrimaryContainer = onPrimaryContainerDark ,
+    secondary = secondaryDark ,
+    onSecondary = onSecondaryDark ,
+    secondaryContainer = secondaryContainerDark ,
+    onSecondaryContainer = onSecondaryContainerDark ,
+    tertiary = tertiaryDark ,
+    onTertiary = onTertiaryDark ,
+    tertiaryContainer = tertiaryContainerDark ,
+    onTertiaryContainer = onTertiaryContainerDark ,
+    error = errorDark ,
+    onError = onErrorDark ,
+    errorContainer = errorContainerDark ,
+    onErrorContainer = onErrorContainerDark ,
+    background = backgroundDark ,
+    onBackground = onBackgroundDark ,
+    surface = surfaceDark ,
+    onSurface = onSurfaceDark ,
+    surfaceVariant = surfaceVariantDark ,
+    onSurfaceVariant = onSurfaceVariantDark ,
+    outline = outlineDark ,
+    outlineVariant = outlineVariantDark ,
+    scrim = scrimDark ,
+    inverseSurface = inverseSurfaceDark ,
+    inverseOnSurface = inverseOnSurfaceDark ,
+    inversePrimary = inversePrimaryDark ,
+    surfaceDim = surfaceDimDark ,
+    surfaceBright = surfaceBrightDark ,
+    surfaceContainerLowest = surfaceContainerLowestDark ,
+    surfaceContainerLow = surfaceContainerLowDark ,
+    surfaceContainer = surfaceContainerDark ,
+    surfaceContainerHigh = surfaceContainerHighDark ,
+    surfaceContainerHighest = surfaceContainerHighestDark ,
+)
+
+/**
+ * Determines and returns the appropriate color scheme based on user preferences and system capabilities.
+ *
+ * This function considers the following factors:
+ * - **Dark Theme:** If enabled by the user (isDarkTheme).
+ * - **AMOLED Mode:** If enabled by the user (isAmoledMode).
+ * - **Dynamic Colors:** If supported by the device (Build Version) and enabled by the user (isDynamicColors).
+ * - **System Context:** Used to access dynamic color resources if available (context).
+ *
+ * @param isDarkTheme Whether the user prefers a dark theme.
+ * @param isAmoledMode Whether the user prefers AMOLED-optimized colors.
+ * @param isDynamicColors Whether the user has enabled dynamic colors (if supported).
+ * @param context The current application context, used for accessing system resources.
+ *
+ * @return The most suitable color scheme based on the provided parameters.
+ */
+private fun getColorScheme(
+    isDarkTheme : Boolean , isAmoledMode : Boolean , isDynamicColors : Boolean , context : Context
+) : ColorScheme {
+    val dynamicDark =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) dynamicDarkColorScheme(context) else darkScheme
+    val dynamicLight =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) dynamicLightColorScheme(context) else lightScheme
+
+    return when {
+        isAmoledMode && isDynamicColors -> dynamicDark.copy(
+            surface = Color.Black ,
+            background = Color.Black ,
+        )
+
+        isAmoledMode -> darkScheme.copy(
+            surface = Color.Black ,
+            background = Color.Black ,
+        )
+
+        isDynamicColors -> if (isDarkTheme) dynamicDark else dynamicLight
+        else -> if (isDarkTheme) darkScheme else lightScheme
+    }
+}
 
 @Composable
 fun AppTheme(
@@ -41,31 +155,7 @@ fun AppTheme(
         else -> isSystemDarkTheme
     }
 
-    val colorScheme = when {
-        isDarkTheme && isAmoledMode && isDynamicColors && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> dynamicDarkColorScheme(
-            context
-        ).copy(
-            surface = Color.Black,
-            background = Color.Black,
-        )
-
-        isDarkTheme && isAmoledMode -> darkColorScheme(
-            surface = Color.Black,
-            background = Color.Black,
-        )
-
-        isDarkTheme -> if (isDynamicColors && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            dynamicDarkColorScheme(context)
-        } else {
-            DarkColorScheme
-        }
-
-        else -> if (isDynamicColors && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            dynamicLightColorScheme(context)
-        } else {
-            LightColorScheme
-        }
-    }
+    val colorScheme = getColorScheme(isDarkTheme , isAmoledMode , isDynamicColors , context)
 
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -73,7 +163,7 @@ fun AppTheme(
             val window = (view.context as Activity).window
             window.statusBarColor = Color.Transparent.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars =
-                !isDarkTheme
+                    ! isDarkTheme
         }
     }
 
