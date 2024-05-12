@@ -161,5 +161,6 @@
     <string name="version_info">Version info</string>
     <string name="version">Version %1$s</string>
     <string name="beta_program">Beta program</string>
+    <string name="add_new_cart">Add new cart</string>
 
 </resources>

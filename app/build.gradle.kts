@@ -6,6 +6,7 @@ plugins {
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
     id("com.google.android.gms.oss-licenses-plugin")
+    id("com.google.devtools.ksp")
 }
 android {
     compileSdk = 34
@@ -132,6 +133,11 @@ dependencies {
     implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("androidx.multidex:multidex:2.0.1")
     implementation(libs.androidx.work.runtime.ktx)
+
+    // KSP
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
 
     // Other
     implementation("com.airbnb.android:lottie:6.4.0")

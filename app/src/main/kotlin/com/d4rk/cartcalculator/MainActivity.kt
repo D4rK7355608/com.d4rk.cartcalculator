@@ -11,6 +11,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
+import androidx.room.Room
+import com.d4rk.cartcalculator.data.db.AppDatabase
 import com.d4rk.cartcalculator.data.store.DataStore
 import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.notifications.managers.AppUsageNotificationsManager
@@ -34,11 +36,16 @@ class MainActivity : ComponentActivity() {
     private var appUpdateNotificationsManager: AppUpdateNotificationsManager =
         AppUpdateNotificationsManager(this)
 
+    companion object {
+        lateinit var database: AppDatabase
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
         dataStore = DataStore.getInstance(this@MainActivity)
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "my_database").build()
         startupScreen()
         setupUpdateNotifications()
         setContent {

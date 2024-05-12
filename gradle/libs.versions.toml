@@ -19,6 +19,7 @@ google-services = "4.4.1"
 google-oss-services = "0.10.6"
 google-firebase-crashlytics = "2.9.9"
 google-devtools-ksp = "1.9.23-1.0.20"
+roomKtx = "2.6.1"
 playServicesAds = "23.1.0"
 playServicesOssLicenses = "17.0.1"
 reviewKtx = "2.0.1"
@@ -38,6 +39,9 @@ androidx-material3 = { module = "androidx.compose.material3:material3" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 androidx-runtime = { module = "androidx.compose.runtime:runtime" }
 androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
 androidx-ui = { module = "androidx.compose.ui:ui" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }

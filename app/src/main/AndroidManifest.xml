@@ -18,7 +18,7 @@
     </queries>
 
     <application
-        android:name=".ads.managers.ApplicationOpenAdManager"
+        android:name=".MyApp"
         android:appCategory="productivity"
         android:banner="@drawable/tv_banner"
         android:description="@string/app_short_description"
