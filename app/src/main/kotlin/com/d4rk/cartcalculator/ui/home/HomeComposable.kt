@@ -1,5 +1,6 @@
 package com.d4rk.cartcalculator.ui.home
 
+import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,7 +38,6 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import com.d4rk.cartcalculator.dialogs.NewCartDialog
 import com.d4rk.cartcalculator.ui.cart.CartActivity
-import com.d4rk.cartcalculator.utils.Utils
 import com.d4rk.cartcalculator.utils.bounceClick
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -76,11 +76,13 @@ fun HomeComposable() {
                         carts.remove(cartToDelete)
                         lifecycleScope.launch(Dispatchers.IO) {
                             MyApp.database.newCartDao().delete(cartToDelete)
+                            MyApp.database.shoppingCartItemsDao()
+                                    .deleteItemsFromCart(cartToDelete.cartId)
                         }
                     } , onCardClick = {
-                        Utils.openActivity(
-                            context , CartActivity::class.java
-                        )
+                        val intent = Intent(context , CartActivity::class.java)
+                        intent.putExtra("cartId" , cart.cartId)
+                        context.startActivity(intent)
                     })
                 }
             }

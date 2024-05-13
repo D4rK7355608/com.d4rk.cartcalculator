@@ -27,7 +27,9 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -36,20 +38,35 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.MyApp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
+import com.d4rk.cartcalculator.dialogs.NewCartItemDialog
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CartActivityComposable(activity : CartActivity) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val cartItems = remember { mutableStateListOf<ShoppingCartItemsTable>() }
+    val openDialog = remember { mutableStateOf(false) }
+    val lifecycleScope = rememberCoroutineScope()
+    val cartId = activity.intent.getIntExtra("cartId" , 0)
+    val cart = remember { mutableStateOf<ShoppingCartTable?>(null) }
 
-
-    val cartId = activity.intent.getIntExtra("cartId", 0)
+    LaunchedEffect(key1 = "loadCartItems") {
+        lifecycleScope.launch {
+            val loadedItems = MyApp.database.shoppingCartItemsDao().getItemsByCartId(cartId)
+            cartItems.addAll(loadedItems)
+            cart.value = MyApp.database.newCartDao().getCartById(cartId)
+        }
+    }
 
     Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
-
-        // TODO: add as name the name of the cart
-        LargeTopAppBar(title = { Text(stringResource(R.string.settings)) } , navigationIcon = {
+        LargeTopAppBar(title = {
+            Text(
+                cart.value?.name ?: stringResource(R.string.shopping_cart)
+            )
+        } , navigationIcon = {
             IconButton(onClick = {
                 activity.finish()
             }) {
@@ -57,10 +74,10 @@ fun CartActivityComposable(activity : CartActivity) {
             }
         } , actions = {
             IconButton(onClick = {
-                // TODO: Open the create new item in cart dialog
+                openDialog.value = true
             }) {
                 Icon(
-                    Icons.Outlined.AddShoppingCart , contentDescription = null,
+                    Icons.Outlined.AddShoppingCart , contentDescription = null ,
                 )
             }
         } , scrollBehavior = scrollBehavior)
@@ -72,21 +89,32 @@ fun CartActivityComposable(activity : CartActivity) {
         ) {
             if (cartItems.isEmpty()) {
                 Text(
-                    text = "Your shopping cart is empty" , modifier = Modifier.align(Alignment.Center)
+                    text = "Your shopping cart is empty" ,
+                    modifier = Modifier.align(Alignment.Center)
                 )
             }
             else {
                 LazyColumn {
                     items(cartItems) { cartItem ->
-                        CartItemComposable(
-                            cartName = cartItem.name,
-                            cartPrice = cartItem.price,
-                            onMinusClick = { /* Handle minus click */ },
-                            quantity = cartItem.quantity,
-                            onPlusClick = { /* Handle plus click */ }
-                        )
+                        CartItemComposable(cartName = cartItem.name ,
+                                           cartPrice = cartItem.price ,
+                                           onMinusClick = { /* Handle minus click */ } ,
+                                           quantity = cartItem.quantity ,
+                                           onPlusClick = { /* Handle plus click */ })
                     }
                 }
+            }
+
+            if (openDialog.value) {
+                NewCartItemDialog(cartId ,
+                                  onDismiss = { openDialog.value = false } ,
+                                  onCartCreated = { cartItem ->
+                                      cartItems.add(cartItem)
+                                      openDialog.value = false
+                                      lifecycleScope.launch(Dispatchers.IO) {
+                                          MyApp.database.shoppingCartItemsDao().insert(cartItem)
+                                      }
+                                  })
             }
 
             ElevatedCard(Modifier.fillMaxWidth()) {
@@ -113,8 +141,8 @@ fun CartItemComposable(
             modifier = Modifier.fillMaxSize() , horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Column {
-                Text(text = cartName , style = MaterialTheme.typography.displayMedium)
-                Text(text = cartPrice , style = MaterialTheme.typography.bodySmall)
+                Text(text = cartName , style = MaterialTheme.typography.bodyLarge)
+                Text(text = cartPrice , style = MaterialTheme.typography.bodyMedium)
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -127,7 +155,7 @@ fun CartItemComposable(
 
                 Text(
                     text = quantity.toString() ,
-                    style = MaterialTheme.typography.bodySmall ,
+                    style = MaterialTheme.typography.bodyMedium ,
                     modifier = Modifier.padding(horizontal = 16.dp)
                 )
 

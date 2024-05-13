@@ -29,4 +29,7 @@ interface ShoppingCartItemsDao {
 
     @Query("SELECT * FROM cart_items WHERE cartId = :cartId")
     suspend fun getItemsByCartId(cartId: Int): List<ShoppingCartItemsTable>
+
+    @Query("DELETE FROM cart_items WHERE cartId = :cartId")
+    suspend fun deleteItemsFromCart(cartId : Int)
 }

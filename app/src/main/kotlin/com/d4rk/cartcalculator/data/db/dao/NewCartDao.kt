@@ -16,4 +16,7 @@ interface NewCartDao {
 
     @Query("SELECT * FROM ShoppingCartTable")
     suspend fun getAll() : List<ShoppingCartTable>
+
+    @Query("SELECT * FROM ShoppingCartTable WHERE cartId = :cartId")
+    suspend fun getCartById(cartId : Int) : ShoppingCartTable
 }
