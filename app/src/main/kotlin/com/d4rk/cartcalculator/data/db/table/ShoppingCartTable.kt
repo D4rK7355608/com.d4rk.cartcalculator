@@ -9,7 +9,6 @@ import java.util.Date
 @Entity
 @TypeConverters(DateConverter::class)
 data class ShoppingCartTable(
-    @PrimaryKey(autoGenerate = true) val cartId : Int = 0 ,
-    val name : String , // I WANT TO USE THIS NAME
+    @PrimaryKey(autoGenerate = true) val cartId : Int = 0 , val name : String ,
     val date: Date
 )

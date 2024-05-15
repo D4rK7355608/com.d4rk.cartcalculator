@@ -98,6 +98,7 @@ dependencies {
 
     // Google
     implementation(libs.play.services.ads)
+    implementation(libs.billing)
     implementation("com.google.android.material:material:1.12.0")
     implementation(libs.play.services.oss.licenses)
     implementation(libs.review.ktx)

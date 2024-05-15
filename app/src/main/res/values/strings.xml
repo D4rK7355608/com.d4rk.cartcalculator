@@ -165,5 +165,10 @@
     <string name="beta_program">Beta program</string>
     <string name="add_new_cart">Add new cart</string>
     <string name="shopping_cart">Shopping cart</string>
+    <string name="support_us">Support Us</string>
+    <string name="paid_support">Paid Support</string>
+    <string name="non_paid_support">Non-Paid Support</string>
+    <string name="web_ad">Web Ad</string>
+    <string name="summary_donations">No matter how much you donate, you will help us keep our app running and improve our features. We appreciate your generosity and kindness!</string>
     <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
 </resources>

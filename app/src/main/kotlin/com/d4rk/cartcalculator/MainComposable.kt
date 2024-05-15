@@ -36,6 +36,7 @@ import com.d4rk.cartcalculator.data.navigation.NavigationItem
 import com.d4rk.cartcalculator.ui.help.HelpActivity
 import com.d4rk.cartcalculator.ui.home.HomeComposable
 import com.d4rk.cartcalculator.ui.settings.SettingsActivity
+import com.d4rk.cartcalculator.ui.support.SupportActivity
 import com.d4rk.cartcalculator.utils.Utils
 import kotlinx.coroutines.launch
 
@@ -135,7 +136,7 @@ fun MainComposable() {
                     }
                 }, actions = {
                     IconButton(onClick = {
-                        // Utils.openActivity(context , SupportActivity::class.java)
+                        Utils.openActivity(context , SupportActivity::class.java)
                     }) {
                         Icon(
                             Icons.Outlined.VolunteerActivism, contentDescription = "Support"

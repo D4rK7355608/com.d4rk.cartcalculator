@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AddShoppingCart
 import androidx.compose.material.icons.outlined.DeleteForever
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -21,11 +22,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,30 +29,19 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.d4rk.cartcalculator.MyApp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import com.d4rk.cartcalculator.dialogs.NewCartDialog
 import com.d4rk.cartcalculator.ui.cart.CartActivity
 import com.d4rk.cartcalculator.utils.bounceClick
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
 fun HomeComposable() {
     val context = LocalContext.current
-    val openDialog = remember { mutableStateOf(false) }
-    val carts = remember { mutableStateListOf<ShoppingCartTable>() }
-    val lifecycleScope = rememberCoroutineScope()
-
-    LaunchedEffect(key1 = "loadCarts") {
-        lifecycleScope.launch {
-            val loadedCarts = MyApp.database.newCartDao().getAll()
-            carts.addAll(loadedCarts)
-        }
-    }
+    val viewModel : HomeViewModel = viewModel()
 
     Box(
         modifier = Modifier
@@ -64,21 +49,19 @@ fun HomeComposable() {
                 .padding(24.dp)
     ) {
 
-        if (carts.isEmpty()) {
+        if (viewModel.isLoading.value) {
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+        }
+        else if (viewModel.carts.isEmpty()) {
             Text(
                 text = "No carts available" , modifier = Modifier.align(Alignment.Center)
             )
         }
         else {
             LazyColumn {
-                items(carts) { cart ->
+                items(viewModel.carts) { cart ->
                     CartItemComposable(cart , onDelete = { cartToDelete ->
-                        carts.remove(cartToDelete)
-                        lifecycleScope.launch(Dispatchers.IO) {
-                            MyApp.database.newCartDao().delete(cartToDelete)
-                            MyApp.database.shoppingCartItemsDao()
-                                    .deleteItemsFromCart(cartToDelete.cartId)
-                        }
+                        viewModel.deleteCart(cartToDelete)
                     } , onCardClick = {
                         val intent = Intent(context , CartActivity::class.java)
                         intent.putExtra("cartId" , cart.cartId)
@@ -88,11 +71,11 @@ fun HomeComposable() {
             }
         }
 
-        if (openDialog.value) {
-            NewCartDialog(onDismiss = { openDialog.value = false } , onCartCreated = { cart ->
-                carts.add(cart)
-                openDialog.value = false
-            })
+        if (viewModel.openDialog.value) {
+            NewCartDialog(onDismiss = { viewModel.openDialog.value = false } ,
+                          onCartCreated = { cart ->
+                              viewModel.addCart(cart)
+                          })
         }
 
         ExtendedFloatingActionButton(modifier = Modifier
@@ -100,7 +83,7 @@ fun HomeComposable() {
                 .align(Alignment.BottomEnd) ,
                                      text = { Text(stringResource(R.string.add_new_cart)) } ,
                                      onClick = {
-                                         openDialog.value = true
+                                         viewModel.openDialog.value = true
                                      } ,
                                      icon = {
                                          Icon(
@@ -118,14 +101,13 @@ fun CartItemComposable(
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString = dateFormat.format(cart.date)
 
-    OutlinedCard(
-        shape = RoundedCornerShape(12.dp) ,
-        modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp) , onClick = {
-            onCardClick()
-        }
-    ) {
+    OutlinedCard(shape = RoundedCornerShape(12.dp) ,
+                 modifier = Modifier
+                         .fillMaxWidth()
+                         .padding(top = 8.dp) ,
+                 onClick = {
+                     onCardClick()
+                 }) {
         Box(modifier = Modifier.clip(MaterialTheme.shapes.medium)) {
             Column(
                 modifier = Modifier

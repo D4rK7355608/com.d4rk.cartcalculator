@@ -10,8 +10,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.d4rk.cartcalculator.ui.settings.display.theme.AppTheme
 
-class CartActivity  : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+class CartActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
@@ -19,7 +19,7 @@ class CartActivity  : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
-                  CartActivityComposable(activity = this@CartActivity)
+                    CartActivityComposable(activity = this@CartActivity)
                 }
             }
         }

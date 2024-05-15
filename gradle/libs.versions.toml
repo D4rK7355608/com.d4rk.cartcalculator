@@ -3,12 +3,13 @@ agp = "8.4.0"
 appUpdateKtx = "2.1.0"
 composeBom = "2024.05.00"
 coreKtx = "1.13.1"
+billing = "7.0.0"
 datastoreCore = "1.1.1"
-lifecycleCommonJava8 = "2.7.0"
-lifecycleLivedataKtx = "2.7.0"
-lifecycleProcess = "2.7.0"
-lifecycleRuntimeKtx = "2.7.0"
-lifecycleViewmodelKtx = "2.7.0"
+lifecycleCommonJava8 = "2.8.0"
+lifecycleLivedataKtx = "2.8.0"
+lifecycleProcess = "2.8.0"
+lifecycleRuntimeKtx = "2.8.0"
+lifecycleViewmodelKtx = "2.8.0"
 multidex = "2.0.1"
 workRuntimeKtx = "2.9.0"
 coreSplashscreen = "1.0.1"
@@ -57,6 +58,7 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 androidx-ui = { module = "androidx.compose.ui:ui" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
 app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdateKtx" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
