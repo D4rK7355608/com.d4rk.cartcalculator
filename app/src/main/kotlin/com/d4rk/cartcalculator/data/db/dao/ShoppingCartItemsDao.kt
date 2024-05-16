@@ -31,5 +31,5 @@ interface ShoppingCartItemsDao {
     suspend fun getItemsByCartId(cartId: Int): List<ShoppingCartItemsTable>
 
     @Query("DELETE FROM cart_items WHERE cartId = :cartId")
-    suspend fun deleteItemsFromCart(cartId : Int)
+    suspend fun deleteItemsFromCart(cartId: Int)
 }

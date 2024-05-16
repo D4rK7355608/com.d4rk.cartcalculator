@@ -31,7 +31,7 @@ class HomeViewModel : ViewModel() {
      *
      * @param cartToDelete The [ShoppingCartTable] object representing the cart to be deleted.
      */
-    fun deleteCart(cartToDelete : ShoppingCartTable) {
+    fun deleteCart(cartToDelete: ShoppingCartTable) {
         carts.remove(cartToDelete)
         viewModelScope.launch(Dispatchers.IO) {
             MyApp.database.newCartDao().delete(cartToDelete)
@@ -44,7 +44,7 @@ class HomeViewModel : ViewModel() {
      *
      * @param cart The [ShoppingCartTable] object representing the new cart to be added.
      */
-    fun addCart(cart : ShoppingCartTable) {
+    fun addCart(cart: ShoppingCartTable) {
         carts.add(cart)
         openDialog.value = false
     }

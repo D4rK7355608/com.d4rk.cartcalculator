@@ -136,7 +136,7 @@ fun MainComposable() {
                     }
                 }, actions = {
                     IconButton(onClick = {
-                        Utils.openActivity(context , SupportActivity::class.java)
+                        Utils.openActivity(context, SupportActivity::class.java)
                     }) {
                         Icon(
                             Icons.Outlined.VolunteerActivism, contentDescription = "Support"

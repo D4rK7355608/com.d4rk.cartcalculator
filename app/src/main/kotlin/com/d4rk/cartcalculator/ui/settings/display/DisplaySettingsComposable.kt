@@ -37,7 +37,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
+fun DisplaySettingsComposable(activity: DisplaySettingsActivity) {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -46,63 +46,62 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
     val darkModeString = stringResource(R.string.dark_mode)
     val lightModeString = stringResource(R.string.light_mode)
     val themeSummary = when (themeMode) {
-        darkModeString , lightModeString -> "Will never turn on automatically"
-        else -> "Will turn on automatically by the system"
+        darkModeString, lightModeString -> stringResource(R.string.will_never_turn_on_automatically)
+        else -> stringResource(R.string.will_turn_on_automatically_by_system)
     }
     val switchState = remember { mutableStateOf(themeMode == darkModeString) }
 
     val isDynamicColors = dataStore.dynamicColors.collectAsState(initial = true)
     val scope = rememberCoroutineScope()
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
-        LargeTopAppBar(title = { Text(stringResource(R.string.display)) } , navigationIcon = {
+    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
+        LargeTopAppBar(title = { Text(stringResource(R.string.display)) }, navigationIcon = {
             IconButton(onClick = {
                 activity.finish()
             }) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
             }
-        } , scrollBehavior = scrollBehavior)
+        }, scrollBehavior = scrollBehavior)
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                    .fillMaxHeight()
-                    .padding(paddingValues) ,
+                .fillMaxHeight()
+                .padding(paddingValues),
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(R.string.appearance))
-                SwitchPreferenceItemWithDivider(title = stringResource(R.string.dark_theme) ,
-                                                summary = themeSummary ,
-                                                checked = switchState.value ,
-                                                onCheckedChange = { isChecked ->
-                                                    switchState.value = isChecked
-                                                } ,
-                                                onSwitchClick = { isChecked ->
+                SwitchPreferenceItemWithDivider(title = stringResource(R.string.dark_theme),
+                    summary = themeSummary,
+                    checked = switchState.value,
+                    onCheckedChange = { isChecked ->
+                        switchState.value = isChecked
+                    },
+                    onSwitchClick = { isChecked ->
 
-                                                    // this code does not working
-                                                    scope.launch(Dispatchers.IO) {
-                                                        if (isChecked) {
-                                                            dataStore.saveThemeMode(darkModeString)
-                                                            dataStore.themeModeState.value =
-                                                                    darkModeString
-                                                        }
-                                                        else {
-                                                            dataStore.saveThemeMode(lightModeString)
-                                                            dataStore.themeModeState.value =
-                                                                    lightModeString
-                                                        }
-                                                    }
-                                                } ,
-                                                onClick = {
-                                                    Utils.openActivity(
-                                                        context , ThemeSettingsActivity::class.java
-                                                    )
-                                                })
+                        // this code does not working
+                        scope.launch(Dispatchers.IO) {
+                            if (isChecked) {
+                                dataStore.saveThemeMode(darkModeString)
+                                dataStore.themeModeState.value =
+                                    darkModeString
+                            } else {
+                                dataStore.saveThemeMode(lightModeString)
+                                dataStore.themeModeState.value =
+                                    lightModeString
+                            }
+                        }
+                    },
+                    onClick = {
+                        Utils.openActivity(
+                            context, ThemeSettingsActivity::class.java
+                        )
+                    })
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                     SwitchPreferenceItem(
-                        title = stringResource(R.string.dynamic_colors) ,
-                        summary = stringResource(R.string.summary_preference_settings_dynamic_colors) ,
-                        checked = isDynamicColors.value ,
+                        title = stringResource(R.string.dynamic_colors),
+                        summary = stringResource(R.string.summary_preference_settings_dynamic_colors),
+                        checked = isDynamicColors.value,
                     ) { isChecked ->
                         CoroutineScope(Dispatchers.IO).launch {
                             dataStore.saveDynamicColors(isChecked)
@@ -112,11 +111,11 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
             }
             item {
                 PreferenceCategoryItem(title = stringResource(R.string.language))
-                PreferenceItem(title = stringResource(R.string.language) ,
-                               summary = "Changes the language used in the app" ,
-                               onClick = {
-                                   Utils.openAppLocaleSettings(context)
-                               })
+                PreferenceItem(title = stringResource(R.string.language),
+                    summary = stringResource(id = R.string.summary_preference_settings_language),
+                    onClick = {
+                        Utils.openAppLocaleSettings(context)
+                    })
             }
         }
     }

@@ -1,13 +1,8 @@
 package com.d4rk.cartcalculator.ui.startup
 
 import android.Manifest
-import android.app.AppOpsManager
-import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -15,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.core.app.ActivityCompat
 import com.d4rk.cartcalculator.ui.settings.display.theme.AppTheme
 import com.google.android.ump.ConsentForm
 import com.google.android.ump.ConsentInformation
@@ -70,58 +64,18 @@ class StartupActivity : ComponentActivity() {
     }
 
     /**
-     * Checks if the access to usage statistics is granted for the application.
+     * Handles the application's permission requirements.
      *
-     * This property retrieves the current access status for usage statistics based on the app's UID.
-     * It uses deprecated methods due to the nature of permissions and operations involved.
-     * The property determines if the access to usage statistics is allowed (`true`) or not (`false`).
+     * This function is responsible for checking and requesting the necessary permissions for the application. It takes into account the Android version to manage specific permission scenarios.
+     * For Android versions Tiramisu or later, it requests the POST_NOTIFICATIONS permission.
      *
-     * @return `true` if access to usage statistics is granted, `false` otherwise.
-     * @suppress Use of deprecated methods for checking usage statistics access.
-     */
-    @Suppress("DEPRECATION")
-    private val isAccessGranted: Boolean
-        get() {
-            val packageManager = packageManager
-            val applicationInfo = packageManager.getApplicationInfo(packageName, 0)
-            val appOpsManager = getSystemService(APP_OPS_SERVICE) as AppOpsManager
-            @Suppress("DEPRECATION") val mode: Int = appOpsManager.checkOpNoThrow(
-                AppOpsManager.OPSTR_GET_USAGE_STATS,
-                applicationInfo.uid,
-                applicationInfo.packageName
-            )
-            return mode == AppOpsManager.MODE_ALLOWED
-        }
-
-    /**
-     * Requests necessary permissions required for the application.
-     *
-     * This function checks and requests permissions required for the application, particularly for storage access.
-     * It checks the Android version to handle specific permission scenarios.
-     * If running on Android 11 or later, it directs the user to manage app storage access settings if not granted.
-     * Additionally, it prompts for usage access settings if usage access is not granted.
-     *
-     * @see android.Manifest.permission.WRITE_EXTERNAL_STORAGE
-     * @see android.Manifest.permission.READ_EXTERNAL_STORAGE
+     * @see android.Manifest.permission.POST_NOTIFICATIONS
      * @see android.os.Build.VERSION.SDK_INT
-     * @see android.os.Build.VERSION_CODES.R
+     * @see android.os.Build.VERSION_CODES.TIRAMISU
      */
     private fun requestPermissions() {
-        val requiredPermissions = mutableListOf(
-            Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE
-        )
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            if (!Environment.isExternalStorageManager()) {
-                val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                val uri = Uri.fromParts("package", packageName, null)
-                intent.data = uri
-                startActivity(intent)
-            }
-            if (!isAccessGranted) {
-                val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
-                startActivity(intent)
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
         }
-        ActivityCompat.requestPermissions(this, requiredPermissions.toTypedArray(), 1)
     }
 }

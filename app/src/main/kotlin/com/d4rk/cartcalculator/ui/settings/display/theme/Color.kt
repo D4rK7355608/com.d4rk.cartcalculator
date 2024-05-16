@@ -1,4 +1,5 @@
 package com.d4rk.cartcalculator.ui.settings.display.theme
+
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF6A5F00)

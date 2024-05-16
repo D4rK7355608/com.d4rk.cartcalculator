@@ -71,8 +71,8 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
-                        .fillMaxSize()
-                        .padding(paddingValues),
+                    .fillMaxSize()
+                    .padding(paddingValues),
             ) {
                 item {
                     SwitchCardComposable(
@@ -86,15 +86,15 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(24.dp)
+                            .fillMaxWidth()
+                            .padding(24.dp)
                     ) {
                         themeOptions.forEach { text ->
                             Row(
                                 Modifier.fillMaxWidth(),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                RadioButton(selected = (text == themeMode) , onClick = {
+                                RadioButton(selected = (text == themeMode), onClick = {
                                     scope.launch(Dispatchers.IO) {
                                         dataStore.saveThemeMode(text)
                                         dataStore.themeModeState.value = text
@@ -112,8 +112,8 @@ fun ThemeSettingsComposable(activity: ThemeSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(24.dp)
+                            .fillMaxWidth()
+                            .padding(24.dp)
                     ) {
                         Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
                         Spacer(modifier = Modifier.height(24.dp))

@@ -15,7 +15,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 19
+        versionCode = 20
         versionName = "0.0.1"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -123,15 +123,11 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation(libs.androidx.core.splashscreen)
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.process)
     implementation(libs.androidx.lifecycle.common.java8)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("androidx.preference:preference-ktx:1.2.1")
     implementation(libs.androidx.multidex)
     implementation(libs.androidx.work.runtime.ktx)
 
@@ -139,10 +135,6 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
-
-    // Other
-    implementation("com.airbnb.android:lottie:6.4.0")
-    implementation("me.zhanghai.android.fastscroll:library:1.3.0")
 
     // Test
     testImplementation(libs.junit)

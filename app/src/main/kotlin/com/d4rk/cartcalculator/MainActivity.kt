@@ -29,12 +29,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
 class MainActivity : ComponentActivity() {
-    private lateinit var dataStore : DataStore
-    private lateinit var appUpdateManager : AppUpdateManager
-    private var appUpdateNotificationsManager : AppUpdateNotificationsManager =
-            AppUpdateNotificationsManager(this)
+    private lateinit var dataStore: DataStore
+    private lateinit var appUpdateManager: AppUpdateManager
+    private var appUpdateNotificationsManager: AppUpdateNotificationsManager =
+        AppUpdateNotificationsManager(this)
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
                     MainComposable()
                 }
@@ -78,15 +78,15 @@ class MainActivity : ComponentActivity() {
      */
     @Suppress("DEPRECATION")
     @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode : Int , resultCode : Int , data : Intent?) {
-        super.onActivityResult(requestCode , resultCode , data)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1) {
             when (resultCode) {
                 RESULT_OK -> {
                     val snackbar = Snackbar.make(
-                        findViewById(android.R.id.content) , R.string.snack_app_updated ,
+                        findViewById(android.R.id.content), R.string.snack_app_updated,
                         Snackbar.LENGTH_LONG
-                    ).setAction(android.R.string.ok , null)
+                    ).setAction(android.R.string.ok, null)
                     snackbar.show()
                 }
 
@@ -126,7 +126,7 @@ class MainActivity : ComponentActivity() {
                             info.clientVersionStalenessDays()?.let {
                                 if (it > 90) {
                                     appUpdateManager.startUpdateFlowForResult(
-                                        info , AppUpdateType.IMMEDIATE , this@MainActivity , 1
+                                        info, AppUpdateType.IMMEDIATE, this@MainActivity, 1
                                     )
                                 }
                             }
@@ -138,7 +138,7 @@ class MainActivity : ComponentActivity() {
                             info.clientVersionStalenessDays()?.let {
                                 if (it < 90) {
                                     appUpdateManager.startUpdateFlowForResult(
-                                        info , AppUpdateType.FLEXIBLE , this@MainActivity , 1
+                                        info, AppUpdateType.FLEXIBLE, this@MainActivity, 1
                                     )
                                 }
                             }
@@ -158,7 +158,7 @@ class MainActivity : ComponentActivity() {
      */
     private fun showUpdateFailedSnackbar() {
         val snackbar = Snackbar.make(
-            findViewById(android.R.id.content) , R.string.snack_update_failed , Snackbar.LENGTH_LONG
+            findViewById(android.R.id.content), R.string.snack_update_failed, Snackbar.LENGTH_LONG
         ).setAction(R.string.try_again) {
             checkForFlexibleUpdate()
         }
@@ -187,7 +187,7 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             val isEnabled = dataStore.usageAndDiagnostics.first()
             FirebaseAnalytics.getInstance(this@MainActivity)
-                    .setAnalyticsCollectionEnabled(isEnabled)
+                .setAnalyticsCollectionEnabled(isEnabled)
             FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(isEnabled)
         }
     }
@@ -196,7 +196,7 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             if (dataStore.startup.first()) {
                 dataStore.saveStartup(false)
-                startActivity(Intent(this@MainActivity , StartupActivity::class.java))
+                startActivity(Intent(this@MainActivity, StartupActivity::class.java))
             }
         }
     }

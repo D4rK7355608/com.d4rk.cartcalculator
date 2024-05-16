@@ -97,7 +97,7 @@
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
     <string name="summary_preference_settings_firebase">This let us collect information about app performance and crash logs.</string>
     <string name="summary_preference_settings_support_me">Click here if you want to support me without paying money. Just some time for viewing an ad.</string>
-    <string name="summary_preference_settings_language">Set application language.</string>
+    <!-- <string name="summary_preference_settings_language">Set application language.</string>-->
     <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
     <string name="summary_notification_update">A new version of the app is available. Click to update!</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
@@ -123,6 +123,17 @@
     <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
     <string name="display">Display</string>
     <string name="dark_theme">Dark theme</string>
+    <string name="will_never_turn_on_automatically">Will never turn on automatically</string>
+    <string name="will_turn_on_automatically_by_system">Will turn on automatically by the system</string>
+    <string name="summary_preference_settings_language">Changes the language used in the app</string>
+
+    <string name="summary_preference_settings_privacy_policy">View the policy that governs how we handle your data</string>
+    <string name="summary_preference_settings_terms_of_service">Review the terms you agree to when using our service</string>
+    <string name="summary_preference_settings_code_of_conduct">Understand the rules and guidelines for behavior within our service</string>
+    <string name="summary_preference_settings_permissions">Manage the permissions granted to our service</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Share data to help improve Cart Calculator</string>
+    <string name="summary_preference_settings_legal_notices">View legal information about our service</string>
+
     <string name="summary_preference_settings_display">Personalize your app\'s look and feel</string>
     <string name="summary_preference_settings_amoled_mode">Experience enhanced visuals and deeper backgrounds</string>
     <string name="app_info">App info</string>
@@ -140,10 +151,6 @@
     <string name="summary_dark_theme">Dark theme uses a deep background to help keep your battery alive longer.</string>
     <string name="dynamic_colors">Dynamic colors</string>
     <string name="summary_preference_settings_dynamic_colors">Apply colors from wallpapers to the app theme</string>
-    <string name="summary_preference_settings_dark_mode_system"></string>
-    <string name="summary_preference_settings_dark_mode_dark"></string>
-    <string name="summary_preference_settings_dark_mode_light"></string>
-    <string name="summary_preference_settings_dark_mode_auto_battery"></string>
     <string name="summary_preference_settings_bug_report">Send bug reports and feature requests to the app\'s GitHub repository issues page</string>
     <string name="ads">Ads</string>
     <string name="display_ads">Display ads</string>

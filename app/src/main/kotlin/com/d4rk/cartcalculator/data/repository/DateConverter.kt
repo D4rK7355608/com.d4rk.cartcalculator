@@ -1,7 +1,7 @@
 package com.d4rk.cartcalculator.data.repository
 
 import androidx.room.TypeConverter
-import java.util.*
+import java.util.Date
 
 class DateConverter {
     @TypeConverter

@@ -56,16 +56,16 @@ fun SwitchCardComposable(
     title: String, switchState: State<Boolean>, onSwitchToggled: (Boolean) -> Unit
 ) {
     Card(modifier = Modifier
-            .fillMaxWidth()
-            .padding(24.dp)
-            .clip(RoundedCornerShape(28.dp))
-            .clickable {
-                onSwitchToggled(! switchState.value)
-            }) {
+        .fillMaxWidth()
+        .padding(24.dp)
+        .clip(RoundedCornerShape(28.dp))
+        .clickable {
+            onSwitchToggled(!switchState.value)
+        }) {
         Row(
             modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
+                .fillMaxWidth()
+                .padding(16.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -125,9 +125,9 @@ fun PreferenceItem(
 ) {
     Row(
         modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(16.dp))
+            .clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically
     ) {
         icon?.let {
             Spacer(modifier = Modifier.width(16.dp))
@@ -169,9 +169,9 @@ fun SwitchPreferenceItem(
 ) {
     Row(
         modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = { onCheckedChange(! checked) }),
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(16.dp))
+            .clickable(onClick = { onCheckedChange(!checked) }),
         verticalAlignment = Alignment.CenterVertically
     ) {
         icon?.let {
@@ -181,8 +181,8 @@ fun SwitchPreferenceItem(
         }
         Column(
             modifier = Modifier
-                    .padding(16.dp)
-                    .weight(1f)
+                .padding(16.dp)
+                .weight(1f)
         ) {
             Text(text = title, style = MaterialTheme.typography.titleLarge)
             summary?.let {
@@ -218,13 +218,13 @@ fun SwitchPreferenceItemWithDivider(
     title: String,
     summary: String,
     checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit, onClick : () -> Unit , onSwitchClick : (Boolean) -> Unit
+    onCheckedChange: (Boolean) -> Unit, onClick: () -> Unit, onSwitchClick: (Boolean) -> Unit
 ) {
     Row(
         modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(16.dp))
+            .clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically
     ) {
         icon?.let {
             Spacer(modifier = Modifier.width(16.dp))
@@ -233,8 +233,8 @@ fun SwitchPreferenceItemWithDivider(
         }
         Column(
             modifier = Modifier
-                    .padding(16.dp)
-                    .weight(1f)
+                .padding(16.dp)
+                .weight(1f)
         ) {
             Text(text = title, style = MaterialTheme.typography.titleLarge)
             Text(text = summary, style = MaterialTheme.typography.bodyMedium)
@@ -242,8 +242,8 @@ fun SwitchPreferenceItemWithDivider(
 
         VerticalDivider(
             modifier = Modifier
-                    .height(32.dp)
-                    .align(Alignment.CenterVertically),
+                .height(32.dp)
+                .align(Alignment.CenterVertically),
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
             thickness = 1.dp
         )
@@ -251,7 +251,7 @@ fun SwitchPreferenceItemWithDivider(
             checked = checked, onCheckedChange = { isChecked ->
                 onCheckedChange(isChecked)
                 onSwitchClick(isChecked)
-            } ,
+            },
             modifier = Modifier.padding(16.dp)
         )
 
@@ -268,23 +268,22 @@ fun Modifier.bounceClick() = composed {
         if (buttonState == ButtonState.Pressed) 0.95f else 1f, label = ""
     )
     this
-            .graphicsLayer {
-                scaleX = scale
-                scaleY = scale
-            }
-            .clickable(interactionSource = remember { MutableInteractionSource() } ,
-                       indication = null ,
-                       onClick = { })
-            .pointerInput(buttonState) {
-                awaitPointerEventScope {
-                    buttonState = if (buttonState == ButtonState.Pressed) {
-                        waitForUpOrCancellation()
-                        ButtonState.Idle
-                    }
-                    else {
-                        awaitFirstDown(false)
-                        ButtonState.Pressed
-                    }
+        .graphicsLayer {
+            scaleX = scale
+            scaleY = scale
+        }
+        .clickable(interactionSource = remember { MutableInteractionSource() },
+            indication = null,
+            onClick = { })
+        .pointerInput(buttonState) {
+            awaitPointerEventScope {
+                buttonState = if (buttonState == ButtonState.Pressed) {
+                    waitForUpOrCancellation()
+                    ButtonState.Idle
+                } else {
+                    awaitFirstDown(false)
+                    ButtonState.Pressed
                 }
             }
+        }
 }

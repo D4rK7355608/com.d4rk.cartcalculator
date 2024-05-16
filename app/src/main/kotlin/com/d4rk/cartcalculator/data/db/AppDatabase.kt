@@ -9,9 +9,9 @@ import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.repository.DateConverter
 
-@Database(entities = [ShoppingCartTable::class , ShoppingCartItemsTable::class] , version = 1)
+@Database(entities = [ShoppingCartTable::class, ShoppingCartItemsTable::class], version = 1)
 @TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun newCartDao(): NewCartDao
-    abstract fun shoppingCartItemsDao() : ShoppingCartItemsDao
+    abstract fun shoppingCartItemsDao(): ShoppingCartItemsDao
 }

@@ -23,15 +23,19 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 
 @Composable
-fun NewCartItemDialog(cartId: Int, onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit) { // FIXME: Parameter 'cartId' is never used
+fun NewCartItemDialog(
+    cartId: Int,
+    onDismiss: () -> Unit,
+    onCartCreated: (ShoppingCartItemsTable) -> Unit
+) { // FIXME: Parameter 'cartId' is never used
     val newCartItem = remember { mutableStateOf<ShoppingCartItemsTable?>(null) }
-    AlertDialog(onDismissRequest = onDismiss , text = {
+    AlertDialog(onDismissRequest = onDismiss, text = {
         NewCartItemDialogContent(cartId, newCartItem)
-    } , icon = {
+    }, icon = {
         Icon(
-            Icons.Outlined.ShoppingBag , contentDescription = null
+            Icons.Outlined.ShoppingBag, contentDescription = null
         )
-    } , confirmButton = {
+    }, confirmButton = {
         TextButton(onClick = {
             newCartItem.value?.let { cartItem ->
                 onCartCreated(cartItem)
@@ -39,7 +43,7 @@ fun NewCartItemDialog(cartId: Int, onDismiss : () -> Unit , onCartCreated : (Sho
         }) {
             Text(stringResource(android.R.string.ok))
         }
-    } , dismissButton = {
+    }, dismissButton = {
         TextButton(onClick = {
             onDismiss()
         }) {
@@ -49,29 +53,30 @@ fun NewCartItemDialog(cartId: Int, onDismiss : () -> Unit , onCartCreated : (Sho
 }
 
 @Composable
-fun NewCartItemDialogContent(cartId: Int, newCartItem : MutableState<ShoppingCartItemsTable?>) {
+fun NewCartItemDialogContent(cartId: Int, newCartItem: MutableState<ShoppingCartItemsTable?>) {
     val nameText = remember { mutableStateOf("") }
     val priceText = remember { mutableStateOf("") }
     val quantityText = remember { mutableStateOf("") }
 
     Column {
-        OutlinedTextField(value = nameText.value ,
-            onValueChange = { nameText.value = it } ,
-            label = { Text("Item Name") } ,
+        OutlinedTextField(value = nameText.value,
+            onValueChange = { nameText.value = it },
+            label = { Text("Item Name") },
             placeholder = { Text("Enter item name") })
-        OutlinedTextField(value = priceText.value ,
-            onValueChange = { priceText.value = it } ,
-            label = { Text("Item Price") } ,
+        OutlinedTextField(value = priceText.value,
+            onValueChange = { priceText.value = it },
+            label = { Text("Item Price") },
             placeholder = { Text("Enter item price") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
-        OutlinedTextField(value = quantityText.value ,
-            onValueChange = { quantityText.value = it } ,
-            label = { Text("Quantity") } ,
+        OutlinedTextField(value = quantityText.value,
+            onValueChange = { quantityText.value = it },
+            label = { Text("Quantity") },
             placeholder = { Text("Enter quantity") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
         Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text("Enter the details of the item you want to add to the cart.")
     }
