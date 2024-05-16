@@ -1,10 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">Cart Calculator</string>
-    <string name="twitter" translatable="false">Twitter</string>
-    <string name="youtube" translatable="false">YouTube</string>
-    <string name="github" translatable="false">GitHub</string>
-    <string name="xda" translatable="false">XDA</string>
-    <string name="google_dev" translatable="false">Google Dev</string>
     <string name="arch" translatable="false">Arch:</string>
     <string name="bulgarian" translatable="false">Български</string>
     <string name="english" translatable="false">English</string>

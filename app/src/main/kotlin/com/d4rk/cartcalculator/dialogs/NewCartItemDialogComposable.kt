@@ -3,10 +3,10 @@ package com.d4rk.cartcalculator.dialogs
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.ShoppingBag
-import androidx.compose.material.icons.outlined.ShoppingCartCheckout
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 
@@ -55,17 +56,20 @@ fun NewCartItemDialogContent(cartId: Int, newCartItem : MutableState<ShoppingCar
 
     Column {
         OutlinedTextField(value = nameText.value ,
-                          onValueChange = { nameText.value = it } ,
-                          label = { Text("Item Name") } ,
-                          placeholder = { Text("Enter item name") })
+            onValueChange = { nameText.value = it } ,
+            label = { Text("Item Name") } ,
+            placeholder = { Text("Enter item name") })
         OutlinedTextField(value = priceText.value ,
-                          onValueChange = { priceText.value = it } ,
-                          label = { Text("Item Price") } ,
-                          placeholder = { Text("Enter item price") })
+            onValueChange = { priceText.value = it } ,
+            label = { Text("Item Price") } ,
+            placeholder = { Text("Enter item price") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
         OutlinedTextField(value = quantityText.value ,
-                          onValueChange = { quantityText.value = it } ,
-                          label = { Text("Quantity") } ,
-                          placeholder = { Text("Enter quantity") })
+            onValueChange = { quantityText.value = it } ,
+            label = { Text("Quantity") } ,
+            placeholder = { Text("Enter quantity") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))

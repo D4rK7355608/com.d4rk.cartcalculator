@@ -2,7 +2,6 @@ package com.d4rk.cartcalculator.ui.cart
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.MyApp
