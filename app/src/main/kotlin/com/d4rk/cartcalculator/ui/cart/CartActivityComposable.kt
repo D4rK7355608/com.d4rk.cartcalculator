@@ -28,6 +28,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -91,7 +92,7 @@ fun CartActivityComposable(activity: CartActivity) {
                                     cartItem = cartItem,
                                     onMinusClick = { viewModel.decreaseQuantity(cartItem) },
                                     onPlusClick = { viewModel.increaseQuantity(cartItem) },
-                                    viewModel = viewModel
+                                    quantityState = viewModel.getQuantityStateForItem(cartItem)
                                 )
                             }
                         }
@@ -120,6 +121,7 @@ fun CartActivityComposable(activity: CartActivity) {
             if (viewModel.openDialog.value) {
                 NewCartItemDialog(cartId, onDismiss = { viewModel.openDialog.value = false },
                     onCartCreated = { cartItem ->
+                        cartItem.cartId = cartId
                         viewModel.addCartItem(cartItem)
                         viewModel.openDialog.value = false
                     })
@@ -129,22 +131,21 @@ fun CartActivityComposable(activity: CartActivity) {
 }
 
 /**
- * This is a composable function that represents a single item in the cart.
- * It displays the name, price, and quantity of the item, and allows the user to increase or decrease the quantity.
+ * This Composable function displays a cart item with the ability to modify its quantity.
+ * It shows the item's name, price, and a numeric representation of quantity, which can be adjusted via plus and minus buttons.
  *
- * @param cartItem The ShoppingCartItemsTable object that represents the cart item.
- * @param onMinusClick The function to be called when the minus button is clicked.
- * @param onPlusClick The function to be called when the plus button is clicked.
- * @param viewModel The CartViewModel that manages the state and operations of the cart.
+ * @param cartItem The ShoppingCartItemsTable object representing the cart item.
+ * @param onMinusClick Lambda function invoked when the minus button is clicked, decreasing the quantity.
+ * @param onPlusClick Lambda function invoked when the plus button is clicked, increasing the quantity.
+ * @param quantityState A MutableState that holds and updates the quantity of the cart item.
  */
 @Composable
 fun CartItemComposable(
     cartItem: ShoppingCartItemsTable,
     onMinusClick: (ShoppingCartItemsTable) -> Unit,
     onPlusClick: (ShoppingCartItemsTable) -> Unit,
-    viewModel: CartViewModel,
+    quantityState: MutableState<Int>
 ) {
-    val viewModelCartItem = viewModel.cartItems.find { it.id == cartItem.id }
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -159,23 +160,19 @@ fun CartItemComposable(
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = {
-                    onMinusClick(cartItem)
-                }) {
+                IconButton(onClick = { onMinusClick(cartItem) }) {
                     Icon(
                         imageVector = Icons.Outlined.RemoveCircleOutline,
                         contentDescription = "Decrease Quantity"
                     )
                 }
                 Text(
-                    text = viewModelCartItem?.quantity.toString(),
+                    text = quantityState.value.toString(),
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(horizontal = 16.dp)
                 )
 
-                IconButton(onClick = {
-                    onPlusClick(cartItem)
-                }) {
+                IconButton(onClick = { onPlusClick(cartItem) }) {
                     Icon(
                         imageVector = Icons.Outlined.AddCircleOutline,
                         contentDescription = "Increase Quantity"

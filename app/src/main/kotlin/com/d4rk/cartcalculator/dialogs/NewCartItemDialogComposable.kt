@@ -27,7 +27,7 @@ fun NewCartItemDialog(
     cartId: Int,
     onDismiss: () -> Unit,
     onCartCreated: (ShoppingCartItemsTable) -> Unit
-) { // FIXME: Parameter 'cartId' is never used
+) {
     val newCartItem = remember { mutableStateOf<ShoppingCartItemsTable?>(null) }
     AlertDialog(onDismissRequest = onDismiss, text = {
         NewCartItemDialogContent(cartId, newCartItem)
@@ -63,13 +63,15 @@ fun NewCartItemDialogContent(cartId: Int, newCartItem: MutableState<ShoppingCart
             onValueChange = { nameText.value = it },
             label = { Text("Item Name") },
             placeholder = { Text("Enter item name") })
-        OutlinedTextField(value = priceText.value,
+        OutlinedTextField(
+            value = priceText.value,
             onValueChange = { priceText.value = it },
             label = { Text("Item Price") },
             placeholder = { Text("Enter item price") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
-        OutlinedTextField(value = quantityText.value,
+        OutlinedTextField(
+            value = quantityText.value,
             onValueChange = { quantityText.value = it },
             label = { Text("Quantity") },
             placeholder = { Text("Enter quantity") },
