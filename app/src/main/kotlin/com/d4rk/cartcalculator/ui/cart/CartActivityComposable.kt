@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.AddCircleOutline
@@ -28,9 +29,13 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -43,6 +48,15 @@ import com.d4rk.cartcalculator.dialogs.NewCartItemDialog
 fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val cartId = activity.intent.getIntExtra("cartId", 0)
+    val primaryColor = MaterialTheme.colorScheme.primary
+
+    LaunchedEffect(viewModel.cartItems) {
+        if (viewModel.cartItems.isEmpty()) {
+            activity.window.navigationBarColor = Color.Transparent.toArgb()
+        } else {
+            activity.window.navigationBarColor = primaryColor.toArgb()
+        }
+    }
 
     Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
         LargeTopAppBar(title = {
@@ -98,10 +112,11 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
                             modifier = Modifier
                                     .fillMaxWidth()
                                     .height(144.dp)
-                                    .padding(24.dp) ,
+                                    .clip(RoundedCornerShape(topStart = 16.dp , topEnd = 16.dp , bottomEnd = 0.dp , bottomStart = 0.dp)) ,
+                            shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp, bottomEnd = 0.dp, bottomStart = 0.dp),
                             colors = CardDefaults.cardColors(
                                 containerColor = MaterialTheme.colorScheme.primary,
-                            ),
+                            ) ,
                         ) {
                             Box(
                                 modifier = Modifier.fillMaxSize(),

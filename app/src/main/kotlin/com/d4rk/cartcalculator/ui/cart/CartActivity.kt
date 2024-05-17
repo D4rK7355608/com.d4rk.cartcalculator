@@ -19,9 +19,8 @@ class CartActivity : ComponentActivity() {
         enableEdgeToEdge()
         val cartId = intent.getIntExtra("cartId" , 0)
         viewModel = ViewModelProvider(
-            this ,
-            CartViewModelFactory(cartId)
-        ).get(CartViewModel::class.java)
+            this , CartViewModelFactory(cartId)
+        )[CartViewModel::class.java]
         setContent {
             AppTheme {
                 Surface(
