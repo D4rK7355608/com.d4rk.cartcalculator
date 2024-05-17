@@ -20,10 +20,10 @@ interface ShoppingCartItemsDao {
     @Delete
     suspend fun delete(item: ShoppingCartItemsTable)
 
-    @Query("SELECT * FROM cart_items WHERE cartId = :cartId")
+    @Query("SELECT * FROM ShoppingCartItemsTable WHERE cartId = :cartId")
     suspend fun getItemsByCartId(cartId: Int): List<ShoppingCartItemsTable>
 
-    @Query("DELETE FROM cart_items WHERE cartId = :cartId")
+    @Query("DELETE FROM ShoppingCartItemsTable WHERE cartId = :cartId")
     suspend fun deleteItemsFromCart(cartId: Int)
 
 }

@@ -14,21 +14,23 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
- * This ViewModel manages the state and interactions of the shopping cart within CartActivity.
+ * This ViewModel is responsible for managing the state and interactions of the shopping cart within the CartActivity.
+ * It handles the loading, addition, deletion, and updating of cart items in the database.
  *
  * @property cartId The unique identifier for the cart being managed.
  * @property cartItems A mutable list of cart items, represented by [ShoppingCartItemsTable] objects.
  * @property cart A mutable state holding the [ShoppingCartTable] object of the current cart, if any.
  * @property isLoading A mutable state indicating whether the cart data is being loaded.
  * @property openDialog A mutable state that determines if a dialog related to cart operations is displayed.
+ * @property itemQuantities A mutable map that holds the quantity state of each cart item.
  */
-class CartViewModel(private val cartId: Int) : ViewModel() {
+class CartViewModel(private val cartId : Int) : ViewModel() {
 
     val cartItems = mutableStateListOf<ShoppingCartItemsTable>()
     val cart = mutableStateOf<ShoppingCartTable?>(null)
     val isLoading = mutableStateOf(true)
     var openDialog = mutableStateOf(false)
-    private val itemQuantities = mutableMapOf<Int, MutableState<Int>>()
+    private val itemQuantities = mutableMapOf<Int , MutableState<Int>>()
 
     init {
         loadCartItems()
@@ -40,7 +42,7 @@ class CartViewModel(private val cartId: Int) : ViewModel() {
      * @param cartItem The cart item for which the quantity state is needed.
      * @return The MutableState representing the quantity of the cart item.
      */
-    fun getQuantityStateForItem(cartItem: ShoppingCartItemsTable): MutableState<Int> {
+    fun getQuantityStateForItem(cartItem : ShoppingCartItemsTable) : MutableState<Int> {
         return itemQuantities.getOrPut(cartItem.id) { mutableIntStateOf(cartItem.quantity) }
     }
 
@@ -60,7 +62,7 @@ class CartViewModel(private val cartId: Int) : ViewModel() {
      *
      * @param cartItem The new cart item to be added.
      */
-    fun addCartItem(cartItem: ShoppingCartItemsTable) {
+    fun addCartItem(cartItem : ShoppingCartItemsTable) {
         cartItem.cartId = this.cartId
         cartItems.add(cartItem)
         viewModelScope.launch(Dispatchers.IO) {
@@ -74,7 +76,7 @@ class CartViewModel(private val cartId: Int) : ViewModel() {
      *
      * @param cartItem The cart item whose quantity is to be increased.
      */
-    fun increaseQuantity(cartItem: ShoppingCartItemsTable) {
+    fun increaseQuantity(cartItem : ShoppingCartItemsTable) {
         val quantityState = getQuantityStateForItem(cartItem)
         viewModelScope.launch(Dispatchers.IO) {
             val newQuantity = quantityState.value + 1
@@ -89,19 +91,32 @@ class CartViewModel(private val cartId: Int) : ViewModel() {
      *
      * @param cartItem The cart item whose quantity is to be decreased.
      */
-    fun decreaseQuantity(cartItem: ShoppingCartItemsTable) {
+    fun decreaseQuantity(cartItem : ShoppingCartItemsTable) {
         val quantityState = getQuantityStateForItem(cartItem)
         viewModelScope.launch(Dispatchers.IO) {
-            val newQuantity = maxOf(quantityState.value - 1, 0)
+            val newQuantity = maxOf(quantityState.value - 1 , 0)
             if (newQuantity > 0) {
                 quantityState.value = newQuantity
                 cartItem.quantity = newQuantity
                 MyApp.database.shoppingCartItemsDao().update(cartItem)
-            } else {
+            }
+            else {
                 MyApp.database.shoppingCartItemsDao().delete(cartItem)
                 withContext(Dispatchers.Main) {
                     cartItems.remove(cartItem)
                 }
+            }
+        }
+    }
+
+    /**
+     * Saves the current state of cart items to the database. This includes any changes made to the quantity of the cart items.
+     * This function is called when the user decides to save their changes and exit the cart.
+     */
+    fun saveCartItems() {
+        viewModelScope.launch(Dispatchers.IO) {
+            cartItems.forEach { cartItem ->
+                MyApp.database.shoppingCartItemsDao().update(cartItem)
             }
         }
     }

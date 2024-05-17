@@ -9,7 +9,7 @@ import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 @Dao
 interface NewCartDao {
     @Insert
-    suspend fun insert(cart: ShoppingCartTable)
+    suspend fun insert(cart : ShoppingCartTable) : Long
 
     @Delete
     suspend fun delete(cart: ShoppingCartTable)

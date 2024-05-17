@@ -34,17 +34,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.dialogs.NewCartItemDialog
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CartActivityComposable(activity: CartActivity) {
+fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val cartId = activity.intent.getIntExtra("cartId", 0)
-    val viewModel: CartViewModel = viewModel(factory = CartViewModelFactory(cartId))
 
     Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
         LargeTopAppBar(title = {
@@ -69,8 +67,8 @@ fun CartActivityComposable(activity: CartActivity) {
     }) { paddingValues ->
         Box(
             modifier = Modifier
-                .padding(paddingValues)
-                .fillMaxSize()
+                    .padding(paddingValues)
+                    .fillMaxSize()
         ) {
             if (viewModel.isLoading.value) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
@@ -98,9 +96,9 @@ fun CartActivityComposable(activity: CartActivity) {
                         }
                         Card(
                             modifier = Modifier
-                                .fillMaxWidth()
-                                .height(144.dp)
-                                .padding(24.dp),
+                                    .fillMaxWidth()
+                                    .height(144.dp)
+                                    .padding(24.dp) ,
                             colors = CardDefaults.cardColors(
                                 containerColor = MaterialTheme.colorScheme.primary,
                             ),
@@ -119,12 +117,14 @@ fun CartActivityComposable(activity: CartActivity) {
             }
 
             if (viewModel.openDialog.value) {
-                NewCartItemDialog(cartId, onDismiss = { viewModel.openDialog.value = false },
-                    onCartCreated = { cartItem ->
-                        cartItem.cartId = cartId
-                        viewModel.addCartItem(cartItem)
-                        viewModel.openDialog.value = false
-                    })
+                NewCartItemDialog(cartId ,
+                                  onDismiss = { viewModel.openDialog.value = false } ,
+                                  onCartCreated = { cartItem ->
+                                      cartItem.cartId = cartId
+                                      viewModel.addCartItem(cartItem)
+                                      viewModel.openDialog.value = false
+                                  })
+
             }
         }
     }
@@ -148,8 +148,8 @@ fun CartItemComposable(
 ) {
     Box(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(24.dp)
+                .fillMaxWidth()
+                .padding(24.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween
