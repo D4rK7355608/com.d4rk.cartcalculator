@@ -96,6 +96,20 @@ class DataStore(context: Context) {
             }
         }*/
 
+    private val currencyKey = stringPreferencesKey("preferred_currency")
+
+    suspend fun getCurrency() : Flow<String> {
+        return dataStore.data.map { preferences ->
+            preferences[currencyKey] ?: ""
+        }
+    }
+
+    suspend fun saveCurrency(currency : String) {
+        dataStore.edit { preferences ->
+            preferences[currencyKey] = currency
+        }
+    }
+
     // Usage and Diagnostics
     private val usageAndDiagnosticsKey = booleanPreferencesKey("usage_and_diagnostics")
     val usageAndDiagnostics: Flow<Boolean> = dataStore.data.map { preferences ->

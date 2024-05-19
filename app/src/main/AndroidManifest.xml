@@ -76,6 +76,10 @@
             android:parentActivityName=".ui.settings.display.DisplaySettingsActivity" />
 
         <activity
+            android:name=".ui.settings.cart.CartSettingsActivity"
+            android:parentActivityName=".ui.settings.SettingsActivity" />
+
+        <activity
             android:name=".ui.settings.advanced.AdvancedSettingsActivity"
             android:parentActivityName=".ui.settings.SettingsActivity" />
 

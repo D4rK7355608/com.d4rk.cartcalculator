@@ -10,6 +10,7 @@ import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.SafetyCheck
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -26,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.settings.about.AboutSettingsActivity
 import com.d4rk.cartcalculator.ui.settings.advanced.AdvancedSettingsActivity
+import com.d4rk.cartcalculator.ui.settings.cart.CartSettingsActivity
 import com.d4rk.cartcalculator.ui.settings.display.DisplaySettingsActivity
 import com.d4rk.cartcalculator.ui.settings.privacy.PrivacySettingsActivity
 import com.d4rk.cartcalculator.utils.PreferenceItem
@@ -47,8 +49,8 @@ fun SettingsComposable(activity: SettingsActivity) {
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(paddingValues),
+                    .fillMaxHeight()
+                    .padding(paddingValues) ,
         ) {
             item {
                 PreferenceItem(Icons.Outlined.Palette,
@@ -57,6 +59,14 @@ fun SettingsComposable(activity: SettingsActivity) {
                     onClick = {
                         Utils.openActivity(context, DisplaySettingsActivity::class.java)
                     })
+            }
+            item {
+                PreferenceItem(Icons.Outlined.ShoppingCart ,
+                               title = stringResource(R.string.cart_settings) ,
+                               summary = stringResource(R.string.summary_preference_settings_cart) ,
+                               onClick = {
+                                   Utils.openActivity(context , CartSettingsActivity::class.java)
+                               })
             }
             item {
                 PreferenceItem(Icons.Outlined.Notifications,

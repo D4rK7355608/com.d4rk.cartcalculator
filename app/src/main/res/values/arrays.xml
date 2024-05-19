@@ -1,4 +1,13 @@
 <resources>
+    <string-array name="currency">
+        <item>CNY ¥</item>
+        <item>EUR €</item>
+        <item>GBP £</item>
+        <item>JPY ¥</item>
+        <item>RON</item>
+        <item>USD $</item>
+    </string-array>
+
     <string-array name="preference_language_entries">
         <item>@string/bulgarian</item>
         <item>@string/english</item>

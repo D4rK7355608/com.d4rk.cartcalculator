@@ -4,10 +4,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -112,7 +114,14 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
                             modifier = Modifier
                                     .fillMaxWidth()
                                     .height(144.dp)
-                                    .clip(RoundedCornerShape(topStart = 16.dp , topEnd = 16.dp , bottomEnd = 0.dp , bottomStart = 0.dp)) ,
+                                    .clip(
+                                        RoundedCornerShape(
+                                            topStart = 16.dp ,
+                                            topEnd = 16.dp ,
+                                            bottomEnd = 0.dp ,
+                                            bottomStart = 0.dp
+                                        )
+                                    ) ,
                             shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp, bottomEnd = 0.dp, bottomStart = 0.dp),
                             colors = CardDefaults.cardColors(
                                 containerColor = MaterialTheme.colorScheme.primary,
@@ -122,9 +131,26 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
                                 modifier = Modifier.fillMaxSize(),
                                 contentAlignment = Alignment.Center
                             ) {
-                                Text(
-                                    text = "Total", style = MaterialTheme.typography.titleMedium
-                                )
+                                Column(
+                                    horizontalAlignment = Alignment.CenterHorizontally
+                                ) {
+                                    Text(
+                                        text = "Total" ,
+                                        style = MaterialTheme.typography.titleMedium
+                                    )
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    Row {
+                                        Text(
+                                            text = "[number]" ,
+                                            style = MaterialTheme.typography.bodyLarge
+                                        )
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Text(
+                                            text = "[currency text]" ,
+                                            style = MaterialTheme.typography.bodyLarge
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
@@ -171,7 +197,13 @@ fun CartItemComposable(
         ) {
             Column {
                 Text(text = cartItem.name, style = MaterialTheme.typography.bodyLarge)
-                Text(text = cartItem.price, style = MaterialTheme.typography.bodyMedium)
+                Row {
+                    Text(text = cartItem.price , style = MaterialTheme.typography.bodyMedium)
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = "[currency text]" , style = MaterialTheme.typography.bodyLarge
+                    )
+                }
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {
