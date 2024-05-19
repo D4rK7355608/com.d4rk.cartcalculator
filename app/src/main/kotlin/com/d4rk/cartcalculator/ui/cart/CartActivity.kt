@@ -9,17 +9,19 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModelProvider
+import com.d4rk.cartcalculator.data.store.DataStore
 import com.d4rk.cartcalculator.ui.settings.display.theme.AppTheme
 
 class CartActivity : ComponentActivity() {
     private lateinit var viewModel : CartViewModel
+    val dataStore = DataStore.getInstance(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val cartId = intent.getIntExtra("cartId" , 0)
         viewModel = ViewModelProvider(
-            this , CartViewModelFactory(cartId)
+            this , CartViewModelFactory(cartId , dataStore)
         )[CartViewModel::class.java]
         setContent {
             AppTheme {

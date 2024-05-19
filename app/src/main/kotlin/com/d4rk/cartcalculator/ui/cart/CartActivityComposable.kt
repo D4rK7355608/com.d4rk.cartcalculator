@@ -90,7 +90,7 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             } else if (viewModel.cartItems.isEmpty()) {
                 Text(
-                    text = "Your shopping cart is empty",
+                    text = stringResource(id = R.string.summary_empty),
                     modifier = Modifier.align(Alignment.Center)
                 )
             } else {
@@ -103,6 +103,7 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
                         ) {
                             items(viewModel.cartItems) { cartItem ->
                                 CartItemComposable(
+                                    viewModel = viewModel ,
                                     cartItem = cartItem,
                                     onMinusClick = { viewModel.decreaseQuantity(cartItem) },
                                     onPlusClick = { viewModel.increaseQuantity(cartItem) },
@@ -141,12 +142,12 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
                                     Spacer(modifier = Modifier.height(8.dp))
                                     Row {
                                         Text(
-                                            text = "[number]" ,
+                                            text = viewModel.totalPrice.doubleValue.toString() ,
                                             style = MaterialTheme.typography.bodyLarge
                                         )
                                         Spacer(modifier = Modifier.width(4.dp))
                                         Text(
-                                            text = "[currency text]" ,
+                                            text = viewModel.selectedCurrency.value ,
                                             style = MaterialTheme.typography.bodyLarge
                                         )
                                     }
@@ -182,10 +183,11 @@ fun CartActivityComposable(activity : CartActivity , viewModel : CartViewModel) 
  */
 @Composable
 fun CartItemComposable(
+    viewModel : CartViewModel ,
     cartItem: ShoppingCartItemsTable,
     onMinusClick: (ShoppingCartItemsTable) -> Unit,
     onPlusClick: (ShoppingCartItemsTable) -> Unit,
-    quantityState: MutableState<Int>
+    quantityState : MutableState<Int> ,
 ) {
     Box(
         modifier = Modifier
@@ -201,7 +203,8 @@ fun CartItemComposable(
                     Text(text = cartItem.price , style = MaterialTheme.typography.bodyMedium)
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
-                        text = "[currency text]" , style = MaterialTheme.typography.bodyLarge
+                        text = viewModel.selectedCurrency.value ,
+                        style = MaterialTheme.typography.bodyLarge
                     )
                 }
             }

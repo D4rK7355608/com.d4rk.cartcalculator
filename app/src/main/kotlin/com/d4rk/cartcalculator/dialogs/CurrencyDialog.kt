@@ -1,5 +1,6 @@
 package com.d4rk.cartcalculator.dialogs
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -75,7 +76,8 @@ fun CurrencyDialogContent(
                     Modifier
                             .fillMaxWidth()
                             .padding(start = 16.dp) ,
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically ,
+                    horizontalArrangement = Arrangement.Start
                 ) {
                     RadioButton(selected = selectedCurrency.value == currency ,
                                 onClick = { selectedCurrency.value = currency })

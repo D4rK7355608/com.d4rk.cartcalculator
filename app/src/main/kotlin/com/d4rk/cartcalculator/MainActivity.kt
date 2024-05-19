@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
         appUpdateNotificationsManager.checkAndSendUpdateNotification()
 
         // TODO: Test on release
-        //checkForFlexibleUpdate()
+        checkForFlexibleUpdate()
     }
 
     /**
