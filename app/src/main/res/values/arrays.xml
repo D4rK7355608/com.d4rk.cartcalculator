@@ -1,16 +1,13 @@
 <resources>
-    <string-array name="preference_theme_entries">
-        <item>@string/follow_system</item>
-        <item>@string/light_mode</item>
-        <item>@string/dark_mode</item>
-        <item>@string/auto_battery_mode</item>
+    <string-array name="currency">
+        <item>CNY ¥</item>
+        <item>EUR €</item>
+        <item>GBP £</item>
+        <item>JPY ¥</item>
+        <item>RON</item>
+        <item>USD $</item>
     </string-array>
-    <string-array name="preference_theme_values">
-        <item>MODE_NIGHT_FOLLOW_SYSTEM</item>
-        <item>MODE_NIGHT_NO</item>
-        <item>MODE_NIGHT_YES</item>
-        <item>MODE_NIGHT_AUTO_BATTERY</item>
-    </string-array>
+
     <string-array name="preference_language_entries">
         <item>@string/bulgarian</item>
         <item>@string/english</item>
