@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Money
@@ -65,17 +64,13 @@ fun CurrencyDialogContent(
     }
 
     Column {
-        Text("Select your preferred currency:")
+        Text(stringResource(id = R.string.dialog_currency_subtitle))
         Column(
-            modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(24.dp)
-        ){
+            modifier = Modifier.fillMaxWidth()
+        ) {
             currencies.forEach { currency ->
                 Row(
-                    Modifier
-                            .fillMaxWidth()
-                            .padding(start = 16.dp) ,
+                    Modifier.fillMaxWidth() ,
                     verticalAlignment = Alignment.CenterVertically ,
                     horizontalArrangement = Arrangement.Start
                 ) {

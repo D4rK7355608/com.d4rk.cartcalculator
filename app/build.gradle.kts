@@ -54,8 +54,6 @@ android {
         }
         debug {
             multiDexEnabled = true
-            isMinifyEnabled = true
-            isShrinkResources = true
             isDebuggable = true
             versionNameSuffix = null
             proguardFiles(
