@@ -11,11 +11,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
+import com.android.volley.NoConnectionError
+import com.android.volley.TimeoutError
 import com.d4rk.cartcalculator.data.store.DataStore
 import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.notifications.managers.AppUsageNotificationsManager
-import com.d4rk.cartcalculator.ui.settings.display.theme.AppTheme
+import com.d4rk.cartcalculator.ui.settings.display.theme.style.AppTheme
 import com.d4rk.cartcalculator.ui.startup.StartupActivity
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -39,6 +42,7 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         enableEdgeToEdge()
         dataStore = DataStore.getInstance(this@MainActivity)
+        MobileAds.initialize(this@MainActivity)
         startupScreen()
         setupUpdateNotifications()
         setContent {
@@ -58,9 +62,7 @@ class MainActivity : ComponentActivity() {
         val appUsageNotificationsManager = AppUsageNotificationsManager(this)
         appUsageNotificationsManager.scheduleAppUsageCheck()
         appUpdateNotificationsManager.checkAndSendUpdateNotification()
-
-        // TODO: Test on release
-        //checkForFlexibleUpdate()
+        checkForFlexibleUpdate()
     }
 
     /**
@@ -114,35 +116,57 @@ class MainActivity : ComponentActivity() {
      */
     private fun checkForFlexibleUpdate() {
         lifecycleScope.launch {
-            val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(
-                    AppUpdateType.IMMEDIATE
-                ) && appUpdateInfo.updateAvailability() != UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
-            ) {
-                @Suppress("DEPRECATION") appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
-                    when {
-                        info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && info.isUpdateTypeAllowed(
-                            AppUpdateType.IMMEDIATE
-                        ) -> {
-                            info.clientVersionStalenessDays()?.let {
-                                if (it > 90) {
-                                    appUpdateManager.startUpdateFlowForResult(
-                                        info , AppUpdateType.IMMEDIATE , this@MainActivity , 1
-                                    )
+            try {
+                val appUpdateInfo = appUpdateManager.appUpdateInfo.await()
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(
+                        AppUpdateType.IMMEDIATE
+                    ) && appUpdateInfo.updateAvailability() != UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
+                ) {
+                    @Suppress("DEPRECATION") appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
+                        when {
+                            info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && info.isUpdateTypeAllowed(
+                                AppUpdateType.IMMEDIATE
+                            ) -> {
+                                info.clientVersionStalenessDays()?.let {
+                                    if (it > 90) {
+                                        appUpdateManager.startUpdateFlowForResult(
+                                            info , AppUpdateType.IMMEDIATE , this@MainActivity , 1
+                                        )
+                                    }
+                                }
+                            }
+
+                            info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && info.isUpdateTypeAllowed(
+                                AppUpdateType.FLEXIBLE
+                            ) -> {
+                                info.clientVersionStalenessDays()?.let {
+                                    if (it < 90) {
+                                        appUpdateManager.startUpdateFlowForResult(
+                                            info , AppUpdateType.FLEXIBLE , this@MainActivity , 1
+                                        )
+                                    }
                                 }
                             }
                         }
+                    }
+                }
+            } catch (e : Exception) {
+                if (! BuildConfig.DEBUG) {
+                    when (e) {
+                        is NoConnectionError , is TimeoutError -> {
+                            Snackbar.make(
+                                findViewById(android.R.id.content) ,
+                                "Network error occurred while checking for updates." ,
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        }
 
-                        info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && info.isUpdateTypeAllowed(
-                            AppUpdateType.FLEXIBLE
-                        ) -> {
-                            info.clientVersionStalenessDays()?.let {
-                                if (it < 90) {
-                                    appUpdateManager.startUpdateFlowForResult(
-                                        info , AppUpdateType.FLEXIBLE , this@MainActivity , 1
-                                    )
-                                }
-                            }
+                        else -> {
+                            Snackbar.make(
+                                findViewById(android.R.id.content) ,
+                                "An error occurred while checking for updates." ,
+                                Snackbar.LENGTH_LONG
+                            ).show()
                         }
                     }
                 }

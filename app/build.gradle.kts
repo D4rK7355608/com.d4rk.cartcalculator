@@ -15,26 +15,26 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 24
+        versionCode = 25
         versionName = "0.0.1"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
-            "en",
-            "de",
-            "es",
-            "fr",
-            "hi",
-            "hu",
-            "in",
-            "it",
-            "ja",
-            "ro",
-            "ru",
-            "tr",
-            "sv",
-            "bg",
-            "pl",
+            "en" ,
+            "de" ,
+            "es" ,
+            "fr" ,
+            "hi" ,
+            "hu" ,
+            "in" ,
+            "it" ,
+            "ja" ,
+            "ro" ,
+            "ru" ,
+            "tr" ,
+            "sv" ,
+            "bg" ,
+            "pl" ,
             "uk"
         )
         vectorDrawables {
@@ -49,7 +49,7 @@ android {
             isDebuggable = false
             versionNameSuffix = null
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt") , "proguard-rules.pro"
             )
         }
         debug {
@@ -57,7 +57,7 @@ android {
             isDebuggable = true
             versionNameSuffix = null
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt") , "proguard-rules.pro"
             )
         }
     }
@@ -101,6 +101,7 @@ dependencies {
     implementation(libs.play.services.oss.licenses)
     implementation(libs.review.ktx)
     implementation(libs.app.update.ktx)
+    implementation(libs.volley)
 
     // Compose
     implementation(platform(libs.androidx.compose.bom))

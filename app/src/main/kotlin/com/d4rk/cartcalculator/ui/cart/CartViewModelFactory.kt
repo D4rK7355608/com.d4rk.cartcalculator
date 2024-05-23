@@ -29,7 +29,7 @@ class CartViewModelFactory(private val cartId : Int , private val dataStore : Da
      * @return A newly created ViewModel instance.
      */
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass : Class<T>) : T {
         if (modelClass.isAssignableFrom(CartViewModel::class.java)) {
             return CartViewModel(cartId , dataStore) as T
         }

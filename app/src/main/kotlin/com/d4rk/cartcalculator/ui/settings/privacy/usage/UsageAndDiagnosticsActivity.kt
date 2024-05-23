@@ -8,17 +8,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.d4rk.cartcalculator.ui.settings.display.theme.AppTheme
+import com.d4rk.cartcalculator.ui.settings.display.theme.style.AppTheme
 
 class UsageAndDiagnosticsActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             AppTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
                     UsageAndDiagnosticsComposable(this@UsageAndDiagnosticsActivity)
                 }

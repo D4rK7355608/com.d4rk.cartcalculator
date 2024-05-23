@@ -31,7 +31,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.ads.BannerAdsComposable
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.store.DataStore
 import com.d4rk.cartcalculator.dialogs.NewCartDialog
 import com.d4rk.cartcalculator.ui.cart.CartActivity
 import com.d4rk.cartcalculator.utils.bounceClick
@@ -42,6 +44,7 @@ import java.util.Locale
 @Composable
 fun HomeComposable() {
     val context = LocalContext.current
+    val dataStore = DataStore.getInstance(context)
     val viewModel : HomeViewModel = viewModel()
 
     Box(
@@ -50,51 +53,62 @@ fun HomeComposable() {
                 .padding(24.dp)
     ) {
 
-        if (viewModel.isLoading.value) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-        }
-        else if (viewModel.carts.isEmpty()) {
-            Text(
-                text = "No carts available" , modifier = Modifier.align(Alignment.Center)
-            )
-        }
-        else {
-            LazyColumn {
-                items(viewModel.carts) { cart ->
-                    CartItemComposable(cart , onDelete = { cartToDelete ->
-                        viewModel.deleteCart(cartToDelete)
-                    } , onCardClick = {
-                        val intent = Intent(context , CartActivity::class.java)
-                        intent.putExtra("cartId" , cart.cartId)
-                        context.startActivity(intent)
-                    })
+        Column(
+            modifier = Modifier.fillMaxSize()
+        ) {
+
+            if (viewModel.isLoading.value) {
+                CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+            }
+            else if (viewModel.carts.isEmpty()) {
+                Text(
+                    text = "No carts available" ,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                )
+            }
+            else {
+                LazyColumn(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    items(viewModel.carts) { cart ->
+                        CartItemComposable(cart , onDelete = { cartToDelete ->
+                            viewModel.deleteCart(cartToDelete)
+                        } , onCardClick = {
+                            val intent = Intent(context , CartActivity::class.java)
+                            intent.putExtra("cartId" , cart.cartId)
+                            context.startActivity(intent)
+                        })
+                    }
                 }
+
+            }
+
+            if (viewModel.openDialog.value) {
+                NewCartDialog(onDismiss = { viewModel.openDialog.value = false } ,
+                              onCartCreated = { cartId , cartName ->
+                                  val cart = ShoppingCartTable(
+                                      cartId = cartId.toInt() , name = cartName , date = Date()
+                                  )
+                                  viewModel.addCart(cart)
+                              })
             }
         }
 
-        if (viewModel.openDialog.value) {
-            NewCartDialog(onDismiss = { viewModel.openDialog.value = false } ,
-                          onCartCreated = { cartId , cartName ->
-                              val cart = ShoppingCartTable(
-                                  cartId = cartId.toInt() , name = cartName , date = Date()
-                              )
-                              viewModel.addCart(cart)
-                          })
-        }
+        Column(modifier = Modifier.align(Alignment.BottomEnd)) {
+            ExtendedFloatingActionButton(modifier = Modifier
+                    .bounceClick()
+                    .align(Alignment.End) ,
+                                         text = { Text(stringResource(R.string.add_new_cart)) } ,
+                                         onClick = { viewModel.openDialog.value = true } ,
+                                         icon = {
+                                             Icon(
+                                                 Icons.Outlined.AddShoppingCart ,
+                                                 contentDescription = null
+                                             )
+                                         })
 
-        ExtendedFloatingActionButton(modifier = Modifier
-                .bounceClick()
-                .align(Alignment.BottomEnd) ,
-                                     text = { Text(stringResource(R.string.add_new_cart)) } ,
-                                     onClick = {
-                                         viewModel.openDialog.value = true
-                                     } ,
-                                     icon = {
-                                         Icon(
-                                             Icons.Outlined.AddShoppingCart ,
-                                             contentDescription = null
-                                         )
-                                     })
+            BannerAdsComposable(modifier = Modifier.padding(top = 12.dp) , dataStore = dataStore)
+        }
     }
 }
 
@@ -123,7 +137,8 @@ fun CartItemComposable(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = cart.name , style = MaterialTheme.typography.titleMedium ,
+                        text = cart.name ,
+                        style = MaterialTheme.typography.titleMedium ,
                         modifier = Modifier.weight(1f)
                     )
 
@@ -137,7 +152,8 @@ fun CartItemComposable(
                 }
 
                 Text(
-                    text = "Created on $dateString" , style = MaterialTheme.typography.bodyMedium ,
+                    text = "Created on $dateString" ,
+                    style = MaterialTheme.typography.bodyMedium ,
                     textAlign = TextAlign.End
                 )
             }

@@ -1,9 +1,10 @@
 package com.d4rk.cartcalculator.notifications.managers
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
-import com.d4rk.cartcalculator.notifications.workers.AppUsageNotificationWorker
+import android.content.Intent
+import com.d4rk.cartcalculator.notifications.receivers.AppUsageNotificationReceiver
 import java.util.concurrent.TimeUnit
 
 /**
@@ -14,7 +15,12 @@ import java.util.concurrent.TimeUnit
  *
  * @property context The application context used for scheduling app usage checks.
  */
-class AppUsageNotificationsManager(private val context: Context) {
+class AppUsageNotificationsManager(private val context : Context) {
+    private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    private val notificationIntent =
+            Intent(context , AppUsageNotificationReceiver::class.java).let { intent ->
+                PendingIntent.getBroadcast(context , 0 , intent , PendingIntent.FLAG_IMMUTABLE)
+            }
 
     /**
      * Schedules a periodic check for app usage notifications.
@@ -24,9 +30,9 @@ class AppUsageNotificationsManager(private val context: Context) {
      * an instance of the AppUsageNotificationWorker to handle the app usage check.
      */
     fun scheduleAppUsageCheck() {
-        val workRequest = PeriodicWorkRequestBuilder<AppUsageNotificationWorker>(
-            repeatInterval = 3, repeatIntervalTimeUnit = TimeUnit.DAYS
-        ).build()
-        WorkManager.getInstance(context).enqueue(workRequest)
+        val triggerTime = System.currentTimeMillis() + TimeUnit.DAYS.toMillis(3)
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP , triggerTime , TimeUnit.DAYS.toMillis(3) , notificationIntent
+        )
     }
 }

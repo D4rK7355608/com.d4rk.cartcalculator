@@ -10,22 +10,22 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.d4rk.cartcalculator.ui.settings.display.theme.AppTheme
+import com.d4rk.cartcalculator.ui.settings.display.theme.style.AppTheme
 import com.google.android.ump.ConsentForm
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 
 class StartupActivity : ComponentActivity() {
-    private lateinit var consentInformation: ConsentInformation
-    private lateinit var consentForm: ConsentForm
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var consentInformation : ConsentInformation
+    private lateinit var consentForm : ConsentForm
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             AppTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
                     StartupComposable()
                 }
@@ -33,11 +33,11 @@ class StartupActivity : ComponentActivity() {
         }
         val params = ConsentRequestParameters.Builder().setTagForUnderAgeOfConsent(false).build()
         consentInformation = UserMessagingPlatform.getConsentInformation(this)
-        consentInformation.requestConsentInfoUpdate(this, params, {
+        consentInformation.requestConsentInfoUpdate(this , params , {
             if (consentInformation.isConsentFormAvailable) {
                 loadForm()
             }
-        }, {})
+        } , {})
         requestPermissions()
     }
 
@@ -53,14 +53,14 @@ class StartupActivity : ComponentActivity() {
      * @see com.google.ads.consent.ConsentInformation
      */
     private fun loadForm() {
-        UserMessagingPlatform.loadConsentForm(this, { consentForm ->
+        UserMessagingPlatform.loadConsentForm(this , { consentForm ->
             this.consentForm = consentForm
             if (consentInformation.consentStatus == ConsentInformation.ConsentStatus.REQUIRED) {
                 consentForm.show(this) {
                     loadForm()
                 }
             }
-        }, {})
+        } , {})
     }
 
     /**
@@ -75,7 +75,7 @@ class StartupActivity : ComponentActivity() {
      */
     private fun requestPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
+            requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS) , 1)
         }
     }
 }

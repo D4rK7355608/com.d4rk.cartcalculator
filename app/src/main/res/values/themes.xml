@@ -4,22 +4,5 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="dialogCornerRadius">24dp</item>
-        <item name="android:colorBackground">?attr/colorSurface</item>
-        <item name="actionBarStyle">@style/ActionBarTheme</item>
-        <item name="android:alertDialogTheme">
-            @style/ThemeOverlay.Material3.MaterialAlertDialog.Centered
-        </item>
-        <item name="materialAlertDialogTheme">
-            @style/ThemeOverlay.Material3.MaterialAlertDialog.Centered
-        </item>
-        <item name="alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered
-        </item>
-        <item name="panelMenuListTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog.Centered
-        </item>
-    </style>
-
-    <style name="ActionBarTheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="background">@android:color/transparent</item>
     </style>
 </resources>

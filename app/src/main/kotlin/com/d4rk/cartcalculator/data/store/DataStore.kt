@@ -12,14 +12,14 @@ import kotlinx.coroutines.flow.map
 
 val Context.dataStore by preferencesDataStore("settings")
 
-class DataStore(context: Context) {
+class DataStore(context : Context) {
     private val dataStore = context.dataStore
 
     companion object {
         @Volatile
-        private var instance: DataStore? = null
+        private var instance : DataStore? = null
 
-        fun getInstance(context: Context): DataStore {
+        fun getInstance(context : Context) : DataStore {
             return instance ?: synchronized(this) {
                 instance ?: DataStore(context).also { instance = it }
             }
@@ -28,11 +28,11 @@ class DataStore(context: Context) {
 
     // Last used app notifications
     private val lastUsedKey = longPreferencesKey("last_used")
-    val lastUsed: Flow<Long> = dataStore.data.map { preferences ->
+    val lastUsed : Flow<Long> = dataStore.data.map { preferences ->
         preferences[lastUsedKey] ?: 0
     }
 
-    suspend fun saveLastUsed(timestamp: Long) {
+    suspend fun saveLastUsed(timestamp : Long) {
         dataStore.edit { preferences ->
             preferences[lastUsedKey] = timestamp
         }
@@ -41,11 +41,11 @@ class DataStore(context: Context) {
 
     // Startup
     private val startupKey = booleanPreferencesKey("value")
-    val startup: Flow<Boolean> = dataStore.data.map { preferences ->
+    val startup : Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[startupKey] ?: true
     }
 
-    suspend fun saveStartup(isFirstTime: Boolean) {
+    suspend fun saveStartup(isFirstTime : Boolean) {
         dataStore.edit { preferences ->
             preferences[startupKey] = isFirstTime
         }
@@ -54,33 +54,33 @@ class DataStore(context: Context) {
     // Display
     val themeModeState = mutableStateOf("follow_system")
     private val themeModeKey = stringPreferencesKey("theme_mode")
-    val themeMode: Flow<String> = dataStore.data.map { preferences ->
+    val themeMode : Flow<String> = dataStore.data.map { preferences ->
         preferences[themeModeKey] ?: "follow_system"
     }
 
-    suspend fun saveThemeMode(mode: String) {
+    suspend fun saveThemeMode(mode : String) {
         dataStore.edit { preferences ->
             preferences[themeModeKey] = mode
         }
     }
 
     private val amoledModeKey = booleanPreferencesKey("amoled_mode")
-    val amoledMode: Flow<Boolean> = dataStore.data.map { preferences ->
+    val amoledMode : Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[amoledModeKey] ?: false
     }
 
-    suspend fun saveAmoledMode(isChecked: Boolean) {
+    suspend fun saveAmoledMode(isChecked : Boolean) {
         dataStore.edit { preferences ->
             preferences[amoledModeKey] = isChecked
         }
     }
 
     private val dynamicColorsKey = booleanPreferencesKey("dynamic_colors")
-    val dynamicColors: Flow<Boolean> = dataStore.data.map { preferences ->
+    val dynamicColors : Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[dynamicColorsKey] ?: true
     }
 
-    suspend fun saveDynamicColors(isChecked: Boolean) {
+    suspend fun saveDynamicColors(isChecked : Boolean) {
         dataStore.edit { preferences ->
             preferences[dynamicColorsKey] = isChecked
         }
@@ -98,7 +98,7 @@ class DataStore(context: Context) {
 
     private val currencyKey = stringPreferencesKey("preferred_currency")
 
-    suspend fun getCurrency() : Flow<String> {
+    fun getCurrency() : Flow<String> {
         return dataStore.data.map { preferences ->
             preferences[currencyKey] ?: ""
         }
@@ -112,11 +112,11 @@ class DataStore(context: Context) {
 
     // Usage and Diagnostics
     private val usageAndDiagnosticsKey = booleanPreferencesKey("usage_and_diagnostics")
-    val usageAndDiagnostics: Flow<Boolean> = dataStore.data.map { preferences ->
+    val usageAndDiagnostics : Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[usageAndDiagnosticsKey] ?: true
     }
 
-    suspend fun saveUsageAndDiagnostics(isChecked: Boolean) {
+    suspend fun saveUsageAndDiagnostics(isChecked : Boolean) {
         dataStore.edit { preferences ->
             preferences[usageAndDiagnosticsKey] = isChecked
         }
@@ -124,11 +124,11 @@ class DataStore(context: Context) {
 
     // Ads
     private val adsKey = booleanPreferencesKey("ads")
-    val ads: Flow<Boolean> = dataStore.data.map { preferences ->
+    val ads : Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[adsKey] ?: true
     }
 
-    suspend fun saveAds(isChecked: Boolean) {
+    suspend fun saveAds(isChecked : Boolean) {
         dataStore.edit { preferences ->
             preferences[adsKey] = isChecked
         }

@@ -23,65 +23,61 @@ import com.d4rk.cartcalculator.utils.PreferenceItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PermissionsSettingsComposable(activity: PermissionsSettingsActivity) {
+fun PermissionsSettingsComposable(activity : PermissionsSettingsActivity) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
-        LargeTopAppBar(
-            title = { Text(stringResource(R.string.permissions)) },
-            navigationIcon = {
-                IconButton(onClick = {
-                    activity.finish()
-                }) {
-                    Icon(
-                        Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = null
-                    )
-                }
-            },
-            scrollBehavior = scrollBehavior
+    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
+        LargeTopAppBar(title = { Text(stringResource(R.string.permissions)) } , navigationIcon = {
+            IconButton(onClick = {
+                activity.finish()
+            }) {
+                Icon(
+                    Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null
+                )
+            }
+        } , scrollBehavior = scrollBehavior
         )
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(paddingValues),
+                    .fillMaxHeight()
+                    .padding(paddingValues) ,
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(R.string.normal))
                 PreferenceItem(
-                    title = stringResource(R.string.internet),
-                    summary = stringResource(R.string.summary_preference_permissions_internet),
+                    title = stringResource(R.string.internet) ,
+                    summary = stringResource(R.string.summary_preference_permissions_internet) ,
                 )
                 PreferenceItem(
-                    title = stringResource(R.string.ad_id),
-                    summary = stringResource(R.string.summary_preference_permissions_ad_id),
+                    title = stringResource(R.string.ad_id) ,
+                    summary = stringResource(R.string.summary_preference_permissions_ad_id) ,
                 )
                 PreferenceItem(
-                    title = stringResource(R.string.post_notifications),
-                    summary = stringResource(R.string.summary_preference_permissions_post_notifications),
+                    title = stringResource(R.string.post_notifications) ,
+                    summary = stringResource(R.string.summary_preference_permissions_post_notifications) ,
                 )
             }
             item {
                 PreferenceCategoryItem(title = stringResource(R.string.runtime))
                 PreferenceItem(
-                    title = stringResource(R.string.access_network_state),
-                    summary = stringResource(R.string.summary_preference_permissions_access_network_state),
+                    title = stringResource(R.string.access_network_state) ,
+                    summary = stringResource(R.string.summary_preference_permissions_access_network_state) ,
                 )
                 PreferenceItem(
-                    title = stringResource(R.string.access_notification_policy),
-                    summary = stringResource(R.string.summary_preference_permissions_access_notification_policy),
+                    title = stringResource(R.string.access_notification_policy) ,
+                    summary = stringResource(R.string.summary_preference_permissions_access_notification_policy) ,
                 )
                 PreferenceItem(
-                    title = stringResource(R.string.billing),
-                    summary = stringResource(R.string.summary_preference_permissions_billing),
+                    title = stringResource(R.string.billing) ,
+                    summary = stringResource(R.string.summary_preference_permissions_billing) ,
                 )
                 PreferenceItem(
-                    title = stringResource(R.string.check_license),
-                    summary = stringResource(R.string.summary_preference_permissions_check_license),
+                    title = stringResource(R.string.check_license) ,
+                    summary = stringResource(R.string.summary_preference_permissions_check_license) ,
                 )
                 PreferenceItem(
-                    title = stringResource(R.string.foreground_service),
-                    summary = stringResource(R.string.summary_preference_permissions_foreground_service),
+                    title = stringResource(R.string.foreground_service) ,
+                    summary = stringResource(R.string.summary_preference_permissions_foreground_service) ,
                 )
             }
         }

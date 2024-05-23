@@ -111,6 +111,7 @@
 
     <string name="cart_settings">Cart settings</string>
     <string name="currency">Currency</string>
+    <string name="feedback">Feedback</string>
     <string name="summary_preference_settings_currency">Set your preferred currency for displaying prices</string>
     <string name="summary_preference_settings_cart">Manage how your cart behaves</string>
     <string name="dialog_info_currency">This currency selection will be utilized across the platform for displaying product prices, processing transactions, and providing a more personalized shopping experience</string>
