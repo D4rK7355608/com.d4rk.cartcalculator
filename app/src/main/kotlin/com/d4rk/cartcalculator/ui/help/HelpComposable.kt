@@ -1,18 +1,24 @@
 package com.d4rk.cartcalculator.ui.help
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.MailOutline
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.outlined.QuestionAnswer
 import androidx.compose.material3.Card
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -112,7 +118,7 @@ fun HelpComposable(activity : HelpActivity) {
                     .safeDrawingPadding()
         ) {
             ConstraintLayout(modifier = Modifier.padding(paddingValues)) {
-                val (faqTitle , faqCard , fabButton) = createRefs()
+                val (faqTitle , faqCard) = createRefs()
                 Text(text = stringResource(R.string.faq) ,
                      modifier = Modifier
                              .padding(bottom = 24.dp)
@@ -210,13 +216,29 @@ fun FAQComposable() {
 
 @Composable
 fun QuestionComposable(title : String , summary : String) {
-    Column(
+    Row(
         modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(16.dp) ,
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(text = title , style = MaterialTheme.typography.titleMedium)
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(text = summary)
+        Icon(
+            Icons.Outlined.QuestionAnswer ,
+            contentDescription = null ,
+            modifier = Modifier
+                    .size(48.dp)
+                    .background(
+                        color = MaterialTheme.colorScheme.primaryContainer , shape = CircleShape
+                    )
+                    .padding(8.dp)
+        )
+        Spacer(modifier = Modifier.width(16.dp))
+        Column {
+            Text(
+                text = title , style = MaterialTheme.typography.titleMedium
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(text = summary)
+        }
     }
 }

@@ -97,7 +97,7 @@ dependencies {
     // Google
     implementation(libs.play.services.ads)
     implementation(libs.billing)
-    implementation("com.google.android.material:material:1.12.0")
+    implementation(libs.material)
     implementation(libs.play.services.oss.licenses)
     implementation(libs.review.ktx)
     implementation(libs.app.update.ktx)
@@ -113,6 +113,7 @@ dependencies {
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.graphics.shapes)
     implementation(libs.androidx.constraintlayout.compose)
     implementation(libs.ui.tooling)
     implementation(libs.androidx.datastore.core)
@@ -120,7 +121,7 @@ dependencies {
 
     // AndroidX
     implementation(libs.androidx.core.ktx)
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.process)
