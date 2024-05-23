@@ -163,8 +163,9 @@ fun CartActivityComposable(activity: CartActivity, viewModel: CartViewModel) {
                                     )
                                     Spacer(modifier = Modifier.height(8.dp))
                                     Row {
+                                        val locale = LocalContext.current.resources.configuration.locales[0]
                                         Text(
-                                            text = viewModel.totalPrice.doubleValue.toString(),
+                                            text = String.format(locale, "%.0f", viewModel.totalPrice.doubleValue),
                                             style = MaterialTheme.typography.bodyLarge
                                         )
                                         Spacer(modifier = Modifier.width(4.dp))
@@ -211,6 +212,7 @@ fun CartItemComposable(
     onPlusClick: (ShoppingCartItemsTable) -> Unit,
     quantityState: MutableState<Int>,
 ) {
+    val locale = LocalContext.current.resources.configuration.locales[0]
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -222,7 +224,10 @@ fun CartItemComposable(
             Column {
                 Text(text = cartItem.name, style = MaterialTheme.typography.bodyLarge)
                 Row {
-                    Text(text = cartItem.price, style = MaterialTheme.typography.bodyMedium)
+                    Text(
+                        text = String.format(locale, "%.0f", cartItem.price.toDouble()),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = viewModel.selectedCurrency.value,
