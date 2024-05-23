@@ -14,7 +14,7 @@ import com.d4rk.cartcalculator.data.store.DataStore
  * @property cartId The ID of the cart to be managed by the created ViewModel.
  * @property dataStore The DataStore instance for managing data persistence in the created ViewModel.
  */
-class CartViewModelFactory(private val cartId : Int , private val dataStore : DataStore) :
+class CartViewModelFactory(private val cartId: Int, private val dataStore: DataStore) :
     ViewModelProvider.Factory {
 
     /**
@@ -29,9 +29,9 @@ class CartViewModelFactory(private val cartId : Int , private val dataStore : Da
      * @return A newly created ViewModel instance.
      */
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass : Class<T>) : T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CartViewModel::class.java)) {
-            return CartViewModel(cartId , dataStore) as T
+            return CartViewModel(cartId, dataStore) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

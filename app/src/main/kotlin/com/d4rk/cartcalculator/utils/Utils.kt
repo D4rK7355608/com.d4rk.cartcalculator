@@ -24,8 +24,8 @@ object Utils {
      * @param context The Android context in which the URL should be opened.
      * @param url The URL to open.
      */
-    fun openUrl(context : Context , url : String) {
-        Intent(Intent.ACTION_VIEW , Uri.parse(url)).let { intent ->
+    fun openUrl(context: Context, url: String) {
+        Intent(Intent.ACTION_VIEW, Uri.parse(url)).let { intent ->
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
@@ -39,8 +39,8 @@ object Utils {
      * @param context The Android context in which the activity should be opened.
      * @param activityClass The class of the activity to open.
      */
-    fun openActivity(context : Context , activityClass : Class<*>) {
-        Intent(context , activityClass).let { intent ->
+    fun openActivity(context: Context, activityClass: Class<*>) {
+        Intent(context, activityClass).let { intent ->
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
@@ -54,9 +54,9 @@ object Utils {
      *
      * @param context The Android context in which the app's notification settings should be opened.
      */
-    fun openAppNotificationSettings(context : Context) {
+    fun openAppNotificationSettings(context: Context) {
         val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
-            putExtra(Settings.EXTRA_APP_PACKAGE , context.packageName)
+            putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         context.startActivity(intent)
@@ -67,29 +67,28 @@ object Utils {
      *
      * @param context The Android context.
      */
-    fun openAppLocaleSettings(context : Context) {
+    fun openAppLocaleSettings(context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val localeIntent = Intent(Settings.ACTION_APP_LOCALE_SETTINGS).setData(
-                Uri.fromParts("package" , context.packageName , null)
+                Uri.fromParts("package", context.packageName, null)
             )
             val detailsIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(
-                Uri.fromParts("package" , context.packageName , null)
+                Uri.fromParts("package", context.packageName, null)
             )
             when {
                 context.packageManager.resolveActivity(
-                    localeIntent , 0
+                    localeIntent, 0
                 ) != null -> context.startActivity(localeIntent)
 
                 context.packageManager.resolveActivity(
-                    detailsIntent , 0
+                    detailsIntent, 0
                 ) != null -> context.startActivity(detailsIntent)
 
                 else -> {
                     // TODO: Handle the case where neither Intent can be resolved
                 }
             }
-        }
-        else {
+        } else {
             // TODO: Handle the case for Android versions lower than 13
         }
     }
@@ -102,19 +101,19 @@ object Utils {
      *
      * @param context The Android context in which the share sheet should be opened.
      */
-    fun shareApp(context : Context) {
+    fun shareApp(context: Context) {
         val shareMessage = context.getString(
-            R.string.summary_share_message ,
+            R.string.summary_share_message,
             "https://play.google.com/store/apps/details?id=${context.packageName}"
         )
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT , shareMessage)
+            putExtra(Intent.EXTRA_TEXT, shareMessage)
             type = "text/plain"
         }
         context.startActivity(
             Intent.createChooser(
-                shareIntent , context.resources.getText(R.string.send_email_using)
+                shareIntent, context.resources.getText(R.string.send_email_using)
             )
         )
     }
@@ -129,7 +128,7 @@ object Utils {
      *
      * @param context The Android context used to access resources and start the activity.
      */
-    fun sendEmailToDeveloper(context : Context) {
+    fun sendEmailToDeveloper(context: Context) {
         val developerEmail = "d4rk7355608@gmail.com"
         val appName = context.getString(R.string.app_name)
         val subject = context.getString(R.string.feedback_for) + appName
@@ -137,13 +136,13 @@ object Utils {
 
         val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:$developerEmail")
-            putExtra(Intent.EXTRA_SUBJECT , subject)
-            putExtra(Intent.EXTRA_TEXT , body)
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, body)
         }
 
         context.startActivity(
             Intent.createChooser(
-                emailIntent , context.resources.getText(R.string.send_email_using)
+                emailIntent, context.resources.getText(R.string.send_email_using)
             )
         )
     }

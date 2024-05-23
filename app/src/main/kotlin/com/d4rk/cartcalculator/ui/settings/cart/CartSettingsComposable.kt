@@ -28,40 +28,40 @@ import com.d4rk.cartcalculator.utils.PreferenceItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CartSettingsComposable(activity : CartSettingsActivity) {
+fun CartSettingsComposable(activity: CartSettingsActivity) {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val showDialog = remember { mutableStateOf(false) }
 
-    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) , topBar = {
-        LargeTopAppBar(title = { Text(stringResource(R.string.cart_settings)) } , navigationIcon = {
+    Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection), topBar = {
+        LargeTopAppBar(title = { Text(stringResource(R.string.cart_settings)) }, navigationIcon = {
             IconButton(onClick = {
                 activity.finish()
             }) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
             }
-        } , scrollBehavior = scrollBehavior)
+        }, scrollBehavior = scrollBehavior)
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                    .fillMaxHeight()
-                    .padding(paddingValues) ,
+                .fillMaxHeight()
+                .padding(paddingValues),
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(R.string.shopping_cart))
-                PreferenceItem(title = stringResource(R.string.currency) ,
-                               summary = stringResource(id = R.string.summary_preference_settings_currency) ,
-                               onClick = { showDialog.value = true })
+                PreferenceItem(title = stringResource(R.string.currency),
+                    summary = stringResource(id = R.string.summary_preference_settings_currency),
+                    onClick = { showDialog.value = true })
             }
         }
     }
 
     if (showDialog.value) {
-        CurrencyDialog(dataStore = dataStore ,
-                       onDismiss = { showDialog.value = false } ,
-                       onCurrencySelected = {
-                           showDialog.value = false
-                       })
+        CurrencyDialog(dataStore = dataStore,
+            onDismiss = { showDialog.value = false },
+            onCurrencySelected = {
+                showDialog.value = false
+            })
     }
 }

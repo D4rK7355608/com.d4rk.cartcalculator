@@ -25,24 +25,24 @@ import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 
 @Composable
 fun NewCartItemDialog(
-    cartId : Int , onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit
+    cartId: Int, onDismiss: () -> Unit, onCartCreated: (ShoppingCartItemsTable) -> Unit
 ) {
     val newCartItem = remember { mutableStateOf<ShoppingCartItemsTable?>(null) }
-    AlertDialog(onDismissRequest = onDismiss , text = {
-        NewCartItemDialogContent(cartId , newCartItem)
-    } , icon = {
+    AlertDialog(onDismissRequest = onDismiss, text = {
+        NewCartItemDialogContent(cartId, newCartItem)
+    }, icon = {
         Icon(
-            Icons.Outlined.ShoppingBag , contentDescription = null
+            Icons.Outlined.ShoppingBag, contentDescription = null
         )
-    } , confirmButton = {
+    }, confirmButton = {
         TextButton(onClick = {
             newCartItem.value?.let { cartItem ->
                 onCartCreated(cartItem)
             }
-        }) {
+        }, enabled = newCartItem.value != null) {
             Text(stringResource(android.R.string.ok))
         }
-    } , dismissButton = {
+    }, dismissButton = {
         TextButton(onClick = {
             onDismiss()
         }) {
@@ -52,35 +52,50 @@ fun NewCartItemDialog(
 }
 
 @Composable
-fun NewCartItemDialogContent(cartId : Int , newCartItem : MutableState<ShoppingCartItemsTable?>) {
+fun NewCartItemDialogContent(cartId: Int, newCartItem: MutableState<ShoppingCartItemsTable?>) {
     val nameText = remember { mutableStateOf("") }
     val priceText = remember { mutableStateOf("") }
     val quantityText = remember { mutableStateOf("") }
-
     Column {
-        OutlinedTextField(value = nameText.value ,
-                          onValueChange = { nameText.value = it } ,
-                          label = { Text(stringResource(id = R.string.item_name)) } ,
-                          placeholder = { Text(stringResource(id = R.string.enter_item_name)) })
-        OutlinedTextField(value = priceText.value ,
-                          onValueChange = { priceText.value = it } ,
-                          label = { Text(stringResource(id = R.string.item_price)) } ,
-                          placeholder = { Text(stringResource(id = R.string.enter_item_price)) } ,
-                          keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
-        OutlinedTextField(value = quantityText.value ,
-                          onValueChange = { quantityText.value = it } ,
-                          label = { Text(stringResource(id = R.string.quantity)) } ,
-                          placeholder = { Text(stringResource(id = R.string.hint_quantity)) } ,
-                          keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+        OutlinedTextField(value = nameText.value,
+            onValueChange = {
+                nameText.value = it
+            },
+            label = { Text(stringResource(id = R.string.item_name)) },
+            placeholder = { Text(stringResource(id = R.string.enter_item_name)) })
+        OutlinedTextField(
+            value = priceText.value,
+            onValueChange = { priceText.value = it },
+            label = { Text(stringResource(id = R.string.item_price)) },
+            placeholder = { Text(stringResource(id = R.string.enter_item_price)) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+        OutlinedTextField(
+            value = quantityText.value,
+            onValueChange = { quantityText.value = it },
+            label = { Text(stringResource(id = R.string.quantity)) },
+            placeholder = { Text(stringResource(id = R.string.hint_quantity)) },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
         Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text(stringResource(id = R.string.dialog_info_cart_item))
     }
-    newCartItem.value = ShoppingCartItemsTable(
-        cartId = cartId ,
-        name = nameText.value ,
-        price = priceText.value.replace(',' , '.') ,
-        quantity = if (quantityText.value.isNotEmpty()) quantityText.value.toInt() else 1
-    )
+    if (nameText.value.isNotEmpty() && priceText.value.isNotEmpty() && quantityText.value.isNotEmpty()) {
+        val price = priceText.value.replace(',', '.').toDoubleOrNull()
+        val quantity = quantityText.value.toIntOrNull()
+        if (price != null && quantity != null) {
+            newCartItem.value = ShoppingCartItemsTable(
+                cartId = cartId,
+                name = nameText.value,
+                price = price.toString(),
+                quantity = quantity
+            )
+        } else {
+            newCartItem.value = null
+        }
+    } else {
+        newCartItem.value = null
+    }
 }

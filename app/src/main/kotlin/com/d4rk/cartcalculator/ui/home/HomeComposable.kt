@@ -45,12 +45,12 @@ import java.util.Locale
 fun HomeComposable() {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
-    val viewModel : HomeViewModel = viewModel()
+    val viewModel: HomeViewModel = viewModel()
 
     Box(
         modifier = Modifier
-                .fillMaxSize()
-                .padding(24.dp)
+            .fillMaxSize()
+            .padding(24.dp)
     ) {
 
         Column(
@@ -59,23 +59,21 @@ fun HomeComposable() {
 
             if (viewModel.isLoading.value) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
-            }
-            else if (viewModel.carts.isEmpty()) {
+            } else if (viewModel.carts.isEmpty()) {
                 Text(
-                    text = "No carts available" ,
+                    text = "No carts available",
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
-            }
-            else {
+            } else {
                 LazyColumn(
                     modifier = Modifier.weight(1f)
                 ) {
                     items(viewModel.carts) { cart ->
-                        CartItemComposable(cart , onDelete = { cartToDelete ->
+                        CartItemComposable(cart, onDelete = { cartToDelete ->
                             viewModel.deleteCart(cartToDelete)
-                        } , onCardClick = {
-                            val intent = Intent(context , CartActivity::class.java)
-                            intent.putExtra("cartId" , cart.cartId)
+                        }, onCardClick = {
+                            val intent = Intent(context, CartActivity::class.java)
+                            intent.putExtra("cartId", cart.cartId)
                             context.startActivity(intent)
                         })
                     }
@@ -84,76 +82,76 @@ fun HomeComposable() {
             }
 
             if (viewModel.openDialog.value) {
-                NewCartDialog(onDismiss = { viewModel.openDialog.value = false } ,
-                              onCartCreated = { cartId , cartName ->
-                                  val cart = ShoppingCartTable(
-                                      cartId = cartId.toInt() , name = cartName , date = Date()
-                                  )
-                                  viewModel.addCart(cart)
-                              })
+                NewCartDialog(onDismiss = { viewModel.openDialog.value = false },
+                    onCartCreated = { cartId, cartName ->
+                        val cart = ShoppingCartTable(
+                            cartId = cartId.toInt(), name = cartName, date = Date()
+                        )
+                        viewModel.addCart(cart)
+                    })
             }
         }
 
         Column(modifier = Modifier.align(Alignment.BottomEnd)) {
             ExtendedFloatingActionButton(modifier = Modifier
-                    .bounceClick()
-                    .align(Alignment.End) ,
-                                         text = { Text(stringResource(R.string.add_new_cart)) } ,
-                                         onClick = { viewModel.openDialog.value = true } ,
-                                         icon = {
-                                             Icon(
-                                                 Icons.Outlined.AddShoppingCart ,
-                                                 contentDescription = null
-                                             )
-                                         })
+                .bounceClick()
+                .align(Alignment.End),
+                text = { Text(stringResource(R.string.add_new_cart)) },
+                onClick = { viewModel.openDialog.value = true },
+                icon = {
+                    Icon(
+                        Icons.Outlined.AddShoppingCart,
+                        contentDescription = null
+                    )
+                })
 
-            BannerAdsComposable(modifier = Modifier.padding(top = 12.dp) , dataStore = dataStore)
+            BannerAdsComposable(modifier = Modifier.padding(top = 12.dp), dataStore = dataStore)
         }
     }
 }
 
 @Composable
 fun CartItemComposable(
-    cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit
+    cart: ShoppingCartTable, onDelete: (ShoppingCartTable) -> Unit, onCardClick: () -> Unit
 ) {
-    val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
+    val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
     val dateString = dateFormat.format(cart.date)
 
-    OutlinedCard(shape = RoundedCornerShape(12.dp) ,
-                 modifier = Modifier
-                         .fillMaxWidth()
-                         .padding(top = 8.dp) ,
-                 onClick = {
-                     onCardClick()
-                 }) {
+    OutlinedCard(shape = RoundedCornerShape(12.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp),
+        onClick = {
+            onCardClick()
+        }) {
         Box(modifier = Modifier.clip(MaterialTheme.shapes.medium)) {
             Column(
                 modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp)
+                    .fillMaxWidth()
+                    .padding(8.dp)
             ) {
                 Row(
-                    horizontalArrangement = Arrangement.SpaceBetween ,
+                    horizontalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = cart.name ,
-                        style = MaterialTheme.typography.titleMedium ,
+                        text = cart.name,
+                        style = MaterialTheme.typography.titleMedium,
                         modifier = Modifier.weight(1f)
                     )
 
                     IconButton(onClick = { onDelete(cart) }) {
                         Icon(
-                            imageVector = Icons.Outlined.DeleteForever ,
-                            contentDescription = "Delete cart" ,
+                            imageVector = Icons.Outlined.DeleteForever,
+                            contentDescription = "Delete cart",
                             tint = MaterialTheme.colorScheme.error
                         )
                     }
                 }
 
                 Text(
-                    text = "Created on $dateString" ,
-                    style = MaterialTheme.typography.bodyMedium ,
+                    text = "Created on $dateString",
+                    style = MaterialTheme.typography.bodyMedium,
                     textAlign = TextAlign.End
                 )
             }

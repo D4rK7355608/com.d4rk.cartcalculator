@@ -30,7 +30,7 @@ import kotlinx.coroutines.withContext
  * @property openDialog A mutable state that determines if a dialog related to cart operations is displayed.
  * @property itemQuantities A mutable map that holds the quantity state of each cart item.
  */
-class CartViewModel(private val cartId : Int , private val dataStore : DataStore) : ViewModel() {
+class CartViewModel(private val cartId: Int, private val dataStore: DataStore) : ViewModel() {
 
     val selectedCurrency = mutableStateOf("")
     val totalPrice = mutableDoubleStateOf(0.0)
@@ -38,7 +38,7 @@ class CartViewModel(private val cartId : Int , private val dataStore : DataStore
     val cart = mutableStateOf<ShoppingCartTable?>(null)
     val isLoading = mutableStateOf(true)
     var openDialog = mutableStateOf(false)
-    private val itemQuantities = mutableMapOf<Int , MutableState<Int>>()
+    private val itemQuantities = mutableMapOf<Int, MutableState<Int>>()
 
     init {
         loadCartItems()
@@ -101,7 +101,7 @@ class CartViewModel(private val cartId : Int , private val dataStore : DataStore
      * @param cartItem The new cart item to be added. This should be a [ShoppingCartItemsTable] object.
      * @throws Exception If there is an error while inserting the new cart item into the database.
      */
-    fun addCartItem(cartItem : ShoppingCartItemsTable) {
+    fun addCartItem(cartItem: ShoppingCartItemsTable) {
         cartItem.cartId = this.cartId
         cartItems.add(cartItem)
         calculateTotalPrice()
@@ -119,7 +119,7 @@ class CartViewModel(private val cartId : Int , private val dataStore : DataStore
      * @param cartItem The cart item for which the quantity state is needed.
      * @return The MutableState representing the quantity of the cart item.
      */
-    fun getQuantityStateForItem(cartItem : ShoppingCartItemsTable) : MutableState<Int> {
+    fun getQuantityStateForItem(cartItem: ShoppingCartItemsTable): MutableState<Int> {
         return itemQuantities.getOrPut(cartItem.id) { mutableIntStateOf(cartItem.quantity) }
     }
 
@@ -138,7 +138,7 @@ class CartViewModel(private val cartId : Int , private val dataStore : DataStore
      * @param cartItem The cart item whose quantity is to be increased. This should be a [ShoppingCartItemsTable] object.
      * @throws Exception If there is an error while updating the quantity of the cart item in the database.
      */
-    fun increaseQuantity(cartItem : ShoppingCartItemsTable) {
+    fun increaseQuantity(cartItem: ShoppingCartItemsTable) {
         val quantityState = getQuantityStateForItem(cartItem)
         viewModelScope.launch(Dispatchers.IO) {
             val newQuantity = quantityState.value + 1
@@ -165,16 +165,15 @@ class CartViewModel(private val cartId : Int , private val dataStore : DataStore
      * @param cartItem The cart item whose quantity is to be decreased. This should be a [ShoppingCartItemsTable] object.
      * @throws Exception If there is an error while updating or deleting the cart item in the database.
      */
-    fun decreaseQuantity(cartItem : ShoppingCartItemsTable) {
+    fun decreaseQuantity(cartItem: ShoppingCartItemsTable) {
         val quantityState = getQuantityStateForItem(cartItem)
         viewModelScope.launch(Dispatchers.IO) {
-            val newQuantity = maxOf(quantityState.value - 1 , 0)
+            val newQuantity = maxOf(quantityState.value - 1, 0)
             if (newQuantity > 0) {
                 quantityState.value = newQuantity
                 cartItem.quantity = newQuantity
                 MyApp.database.shoppingCartItemsDao().update(cartItem)
-            }
-            else {
+            } else {
                 MyApp.database.shoppingCartItemsDao().delete(cartItem)
                 withContext(Dispatchers.Main) {
                     cartItems.remove(cartItem)

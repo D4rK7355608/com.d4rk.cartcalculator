@@ -9,14 +9,14 @@ import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 @Dao
 interface NewCartDao {
     @Insert
-    suspend fun insert(cart : ShoppingCartTable) : Long
+    suspend fun insert(cart: ShoppingCartTable): Long
 
     @Delete
-    suspend fun delete(cart : ShoppingCartTable)
+    suspend fun delete(cart: ShoppingCartTable)
 
     @Query("SELECT * FROM ShoppingCartTable")
-    suspend fun getAll() : List<ShoppingCartTable>
+    suspend fun getAll(): List<ShoppingCartTable>
 
     @Query("SELECT * FROM ShoppingCartTable WHERE cartId = :cartId")
-    suspend fun getCartById(cartId : Int) : ShoppingCartTable
+    suspend fun getCartById(cartId: Int): ShoppingCartTable
 }

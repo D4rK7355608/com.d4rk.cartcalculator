@@ -26,18 +26,18 @@ import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
 
 @Composable
-fun VersionInfoDialog(onDismiss : () -> Unit) {
-    AlertDialog(onDismissRequest = onDismiss ,
-                text = { VersionInfoContent() } ,
-                confirmButton = {} ,
-                dismissButton = {})
+fun VersionInfoDialog(onDismiss: () -> Unit) {
+    AlertDialog(onDismissRequest = onDismiss,
+        text = { VersionInfoContent() },
+        confirmButton = {},
+        dismissButton = {})
 }
 
 @Composable
 fun VersionInfoContent() {
     val context = LocalContext.current
     val appName = context.getString(R.string.app_name)
-    val version = String.format(context.getString(R.string.version) , BuildConfig.VERSION_NAME)
+    val version = String.format(context.getString(R.string.version), BuildConfig.VERSION_NAME)
     val copyright = context.getString(R.string.copyright)
 
     val appIcon = context.packageManager.getApplicationIcon(context.packageName)
@@ -47,28 +47,28 @@ fun VersionInfoContent() {
         modifier = Modifier.fillMaxWidth()
     ) {
         Image(
-            bitmap = bitmapDrawable.bitmap.asImageBitmap() ,
-            contentDescription = null ,
+            bitmap = bitmapDrawable.bitmap.asImageBitmap(),
+            contentDescription = null,
             modifier = Modifier.size(48.dp)
         )
         Spacer(modifier = Modifier.width(24.dp))
         Column {
             Text(
-                text = appName ,
-                style = MaterialTheme.typography.titleLarge ,
+                text = appName,
+                style = MaterialTheme.typography.titleLarge,
             )
             Text(
-                text = version , style = MaterialTheme.typography.bodyMedium
+                text = version, style = MaterialTheme.typography.bodyMedium
             )
             Spacer(modifier = Modifier.height(24.dp))
             Text(
-                text = copyright , style = MaterialTheme.typography.bodyMedium
+                text = copyright, style = MaterialTheme.typography.bodyMedium
             )
         }
     }
 }
 
-fun convertAdaptiveIconDrawableToBitmap(drawable : Drawable) : BitmapDrawable {
+fun convertAdaptiveIconDrawableToBitmap(drawable: Drawable): BitmapDrawable {
     return when (drawable) {
         is BitmapDrawable -> {
             drawable
@@ -76,12 +76,12 @@ fun convertAdaptiveIconDrawableToBitmap(drawable : Drawable) : BitmapDrawable {
 
         is AdaptiveIconDrawable -> {
             val bitmap = Bitmap.createBitmap(
-                drawable.intrinsicWidth , drawable.intrinsicHeight , Bitmap.Config.ARGB_8888
+                drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888
             )
             val canvas = Canvas(bitmap)
-            drawable.setBounds(0 , 0 , canvas.width , canvas.height)
+            drawable.setBounds(0, 0, canvas.width, canvas.height)
             drawable.draw(canvas)
-            BitmapDrawable(Resources.getSystem() , bitmap)
+            BitmapDrawable(Resources.getSystem(), bitmap)
         }
 
         else -> {

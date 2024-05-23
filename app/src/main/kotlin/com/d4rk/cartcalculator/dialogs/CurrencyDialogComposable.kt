@@ -31,33 +31,33 @@ import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
 fun CurrencyDialog(
-    dataStore : DataStore , onDismiss : () -> Unit , onCurrencySelected : (String) -> Unit
+    dataStore: DataStore, onDismiss: () -> Unit, onCurrencySelected: (String) -> Unit
 ) {
     val selectedCurrency = remember { mutableStateOf("") }
     val currencies = stringArrayResource(R.array.currency).toList()
 
-    AlertDialog(onDismissRequest = onDismiss ,
-                text = { CurrencyDialogContent(selectedCurrency , dataStore , currencies) } ,
-                icon = {
-                    Icon(Icons.Outlined.Money , contentDescription = null)
-                } ,
-                confirmButton = {
-                    TextButton(onClick = {
-                        onCurrencySelected(selectedCurrency.value)
-                    }) {
-                        Text(stringResource(android.R.string.ok))
-                    }
-                } ,
-                dismissButton = {
-                    TextButton(onClick = onDismiss) {
-                        Text(stringResource(android.R.string.cancel))
-                    }
-                })
+    AlertDialog(onDismissRequest = onDismiss,
+        text = { CurrencyDialogContent(selectedCurrency, dataStore, currencies) },
+        icon = {
+            Icon(Icons.Outlined.Money, contentDescription = null)
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                onCurrencySelected(selectedCurrency.value)
+            }) {
+                Text(stringResource(android.R.string.ok))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(android.R.string.cancel))
+            }
+        })
 }
 
 @Composable
 fun CurrencyDialogContent(
-    selectedCurrency : MutableState<String> , dataStore : DataStore , currencies : List<String>
+    selectedCurrency: MutableState<String>, dataStore: DataStore, currencies: List<String>
 ) {
     LaunchedEffect(Unit) {
         selectedCurrency.value = dataStore.getCurrency().firstOrNull() ?: ""
@@ -70,20 +70,20 @@ fun CurrencyDialogContent(
         ) {
             currencies.forEach { currency ->
                 Row(
-                    Modifier.fillMaxWidth() ,
-                    verticalAlignment = Alignment.CenterVertically ,
+                    Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Start
                 ) {
-                    RadioButton(selected = selectedCurrency.value == currency ,
-                                onClick = { selectedCurrency.value = currency })
+                    RadioButton(selected = selectedCurrency.value == currency,
+                        onClick = { selectedCurrency.value = currency })
                     Text(
-                        text = currency , style = MaterialTheme.typography.bodyMedium.merge()
+                        text = currency, style = MaterialTheme.typography.bodyMedium.merge()
                     )
                 }
             }
         }
         Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text(stringResource(id = R.string.dialog_info_currency))
     }
