@@ -19,6 +19,7 @@ import com.d4rk.cartcalculator.notifications.managers.AppUsageNotificationsManag
 import com.d4rk.cartcalculator.ui.settings.display.theme.style.AppTheme
 import com.d4rk.cartcalculator.ui.startup.StartupActivity
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -63,6 +64,30 @@ class MainActivity : ComponentActivity() {
         appUsageNotificationsManager.scheduleAppUsageCheck()
         appUpdateNotificationsManager.checkAndSendUpdateNotification()
         checkForFlexibleUpdate()
+    }
+
+    /**
+     * This method overrides the `onBackPressed()` method **(deprecated in Java)** to display a confirmation dialog
+     * before closing the activity. While this method might work, it's recommended to use more modern approaches
+     * for handling back button presses, such as using Navigation components or Activity lifecycles.
+     *
+     * This method is annotated with `@Deprecated` and `@Suppress("DEPRECATION")` to explicitly mark it as deprecated
+     * and suppress compiler warnings during its usage.
+     *
+     * Consider utilizing alternative approaches for handling back button events.
+     */
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.close)
+            .setMessage(R.string.summary_close)
+            .setPositiveButton(android.R.string.yes) { _, _ ->
+                super.onBackPressed()
+                moveTaskToBack(true)
+            }
+            .setNegativeButton(android.R.string.no, null)
+            .apply { show() }
     }
 
     /**
