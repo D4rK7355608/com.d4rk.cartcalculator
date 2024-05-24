@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.ui.settings.display
 
 import android.os.Build
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -16,15 +17,19 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.core.os.LocaleListCompat
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.dialogs.LanguageDialog
 import com.d4rk.cartcalculator.ui.settings.display.theme.ThemeSettingsActivity
 import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
 import com.d4rk.cartcalculator.utils.PreferenceItem
@@ -41,7 +46,7 @@ fun DisplaySettingsComposable(activity: DisplaySettingsActivity) {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
-
+    var showLanguageDialog by remember { mutableStateOf(false) }
     val themeMode = dataStore.themeMode.collectAsState(initial = "follow_system").value
     val darkModeString = stringResource(R.string.dark_mode)
     val lightModeString = stringResource(R.string.light_mode)
@@ -112,8 +117,17 @@ fun DisplaySettingsComposable(activity: DisplaySettingsActivity) {
                 PreferenceItem(title = stringResource(R.string.language),
                     summary = stringResource(id = R.string.summary_preference_settings_language),
                     onClick = {
-                        Utils.openAppLocaleSettings(context)
+                        Utils.openAppLocaleSettings(context, showLanguageDialog)
                     })
+                if (showLanguageDialog) {
+                    LanguageDialog(
+                        dataStore = dataStore,
+                        onDismiss = { showLanguageDialog = false },
+                        onLanguageSelected = { newLanguageCode ->
+                            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(newLanguageCode))
+                        }
+                    )
+                }
             }
         }
     }

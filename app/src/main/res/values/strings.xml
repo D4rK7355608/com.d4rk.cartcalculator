@@ -81,7 +81,7 @@
     <string name="item_price">Item price</string>
     <string name="enter_item_price">Enter item price</string>
     <string name="hint_quantity">Enter quantity</string>
-    <string name="tooltip_agree">Accept the terms and conditions.</string>
+    <string name="tooltip_agree">Accept the terms and conditions</string>
     <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
     <string name="tooltip_button_plus">Add 1 item to the cart</string>
 
@@ -112,8 +112,12 @@
     <string name="summary_preference_settings_currency">Set your preferred currency for displaying prices</string>
     <string name="summary_preference_settings_cart">Manage how your cart behaves</string>
     <string name="dialog_info_currency">This currency selection will be utilized across the platform for displaying product prices, processing transactions, and providing a more personalized shopping experience</string>
-    <string name="dialog_info_cart_item">To ensure a seamless checkout experience, please provide details about the items you\'re adding to your cart.</string>
+    <string name="dialog_info_cart_item">To ensure a seamless checkout experience, please provide details about the items you\'re adding to your cart</string>
     <string name="dialog_currency_subtitle">Select your preferred currency:</string>
+
+    <string name="dialog_language_subtitle">Select your preferred language</string>
+    <string name="dialog_info_language">Personalize your experience with your preferred language. Any language changes you make take effect right away, ensuring a seamless experience in your chosen language</string>
+
     <string name="summary_preference_settings_display">Personalize your app\'s look and feel</string>
     <string name="summary_preference_settings_amoled_mode">Experience enhanced visuals and deeper backgrounds</string>
     <string name="app_info">App info</string>
@@ -128,7 +132,7 @@
     <string name="amoled_mode">AMOLED mode</string>
     <string name="error_reporting">Error reporting</string>
     <string name="bug_report">Bug report</string>
-    <string name="summary_dark_theme">Dark theme uses a deep background to help keep your battery alive longer.</string>
+    <string name="summary_dark_theme">Dark theme uses a deep background to help keep your battery alive longer</string>
     <string name="dynamic_colors">Dynamic colors</string>
     <string name="summary_preference_settings_dynamic_colors">Apply colors from wallpapers to the app theme</string>
     <string name="summary_preference_settings_bug_report">Send bug reports and feature requests to the app\'s GitHub repository issues page</string>

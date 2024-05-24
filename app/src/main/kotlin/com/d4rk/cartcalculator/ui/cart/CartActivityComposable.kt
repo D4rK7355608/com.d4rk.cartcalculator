@@ -164,8 +164,13 @@ fun CartActivityComposable(activity: CartActivity, viewModel: CartViewModel) {
                                     Spacer(modifier = Modifier.height(8.dp))
                                     Row {
                                         val locale = LocalContext.current.resources.configuration.locales[0]
+                                        val priceText = if (viewModel.totalPrice.doubleValue.rem(1) == 0.0) {
+                                            String.format(locale, "%.0f", viewModel.totalPrice.doubleValue)
+                                        } else {
+                                            String.format(locale, "%.2f", viewModel.totalPrice.doubleValue)
+                                        }
                                         Text(
-                                            text = String.format(locale, "%.0f", viewModel.totalPrice.doubleValue),
+                                            text = priceText,
                                             style = MaterialTheme.typography.bodyLarge
                                         )
                                         Spacer(modifier = Modifier.width(4.dp))
@@ -213,6 +218,11 @@ fun CartItemComposable(
     quantityState: MutableState<Int>,
 ) {
     val locale = LocalContext.current.resources.configuration.locales[0]
+    val priceText = if (viewModel.totalPrice.doubleValue.rem(1) == 0.0) {
+        String.format(locale, "%.0f", viewModel.totalPrice.doubleValue)
+    } else {
+        String.format(locale, "%.2f", viewModel.totalPrice.doubleValue)
+    }
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -225,8 +235,8 @@ fun CartItemComposable(
                 Text(text = cartItem.name, style = MaterialTheme.typography.bodyLarge)
                 Row {
                     Text(
-                        text = String.format(locale, "%.0f", cartItem.price.toDouble()),
-                        style = MaterialTheme.typography.bodyMedium
+                        text = priceText,
+                        style = MaterialTheme.typography.bodyLarge
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(

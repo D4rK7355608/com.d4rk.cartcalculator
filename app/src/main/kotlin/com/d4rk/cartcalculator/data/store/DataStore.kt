@@ -86,15 +86,17 @@ class DataStore(context: Context) {
         }
     }
 
-    /*    private val languageKey = stringPreferencesKey("language")
-        val language: Flow<String> = dataStore.data.map { preferences ->
-            preferences[languageKey] ?: getString(R.string.default_value_language)
+    private val languageKey = stringPreferencesKey("language")
+
+    fun getLanguage(): Flow<String> = dataStore.data.map { preferences ->
+        preferences[languageKey] ?: "en"
+    }
+
+    suspend fun saveLanguage(language: String) {
+        dataStore.edit { preferences ->
+            preferences[languageKey] = language
         }
-        suspend fun saveLanguage(language: String) {
-            dataStore.edit { preferences ->
-                preferences[languageKey] = language
-            }
-        }*/
+    }
 
     private val currencyKey = stringPreferencesKey("preferred_currency")
 

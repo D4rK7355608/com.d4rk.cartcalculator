@@ -67,7 +67,7 @@ object Utils {
      *
      * @param context The Android context.
      */
-    fun openAppLocaleSettings(context: Context) {
+    fun openAppLocaleSettings(context: Context, showLanguageDialog: Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val localeIntent = Intent(Settings.ACTION_APP_LOCALE_SETTINGS).setData(
                 Uri.fromParts("package", context.packageName, null)
@@ -89,7 +89,7 @@ object Utils {
                 }
             }
         } else {
-            // TODO: Handle the case for Android versions lower than 13
+            showLanguageDialog.value = true
         }
     }
 
