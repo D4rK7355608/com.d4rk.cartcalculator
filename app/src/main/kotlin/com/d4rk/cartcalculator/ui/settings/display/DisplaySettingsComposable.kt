@@ -1,6 +1,9 @@
 package com.d4rk.cartcalculator.ui.settings.display
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
+import android.provider.Settings
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
@@ -117,7 +120,29 @@ fun DisplaySettingsComposable(activity: DisplaySettingsActivity) {
                 PreferenceItem(title = stringResource(R.string.language),
                     summary = stringResource(id = R.string.summary_preference_settings_language),
                     onClick = {
-                        Utils.openAppLocaleSettings(context, showLanguageDialog)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                            val localeIntent = Intent(Settings.ACTION_APP_LOCALE_SETTINGS).setData(
+                                Uri.fromParts("package", context.packageName, null)
+                            )
+                            val detailsIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(
+                                Uri.fromParts("package", context.packageName, null)
+                            )
+                            when {
+                                context.packageManager.resolveActivity(
+                                    localeIntent, 0
+                                ) != null -> context.startActivity(localeIntent)
+
+                                context.packageManager.resolveActivity(
+                                    detailsIntent, 0
+                                ) != null -> context.startActivity(detailsIntent)
+
+                                else -> {
+                                    // TODO: Handle the case where neither Intent can be resolved
+                                }
+                            }
+                        } else {
+                            showLanguageDialog = true
+                        }
                     })
                 if (showLanguageDialog) {
                     LanguageDialog(

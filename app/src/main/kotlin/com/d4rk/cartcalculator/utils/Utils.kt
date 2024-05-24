@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import androidx.compose.runtime.MutableState
 import com.d4rk.cartcalculator.R
 
 /**
@@ -60,37 +61,6 @@ object Utils {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         context.startActivity(intent)
-    }
-
-    /**
-     * Opens the app locale settings if available, otherwise opens the app details settings.
-     *
-     * @param context The Android context.
-     */
-    fun openAppLocaleSettings(context: Context, showLanguageDialog: Boolean) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val localeIntent = Intent(Settings.ACTION_APP_LOCALE_SETTINGS).setData(
-                Uri.fromParts("package", context.packageName, null)
-            )
-            val detailsIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(
-                Uri.fromParts("package", context.packageName, null)
-            )
-            when {
-                context.packageManager.resolveActivity(
-                    localeIntent, 0
-                ) != null -> context.startActivity(localeIntent)
-
-                context.packageManager.resolveActivity(
-                    detailsIntent, 0
-                ) != null -> context.startActivity(detailsIntent)
-
-                else -> {
-                    // TODO: Handle the case where neither Intent can be resolved
-                }
-            }
-        } else {
-            showLanguageDialog.value = true
-        }
     }
 
     /**
