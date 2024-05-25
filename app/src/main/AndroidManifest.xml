@@ -30,7 +30,7 @@
         android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeActionBar"
+        android:theme="@style/AppTheme"
         tools:targetApi="33">
 
         <activity android:name=".ui.startup.StartupActivity" />
@@ -111,6 +111,14 @@
         <activity
             android:name=".ui.settings.about.AboutSettingsActivity"
             android:parentActivityName=".ui.settings.SettingsActivity" />
+
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
+            android:theme="@style/AppThemeActionBar" />
+
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
+            android:theme="@style/AppThemeActionBar" />
 
         <activity
             android:name=".ui.help.HelpActivity"

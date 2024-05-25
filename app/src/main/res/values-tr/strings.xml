@@ -1,116 +1,180 @@
 <resources>
-    <string name="app_short_description">Sepetinizi verimli bir şekilde yönetin ve hesaplayın. 🛒</string>
-    <string name="home">Ana Sayfa</string>
-    <string name="refresh">Yenile</string>
-    <string name="add_to_cart">Sepete Ekle</string>
-    <string name="add_your_item">Ürününüzü Ekleyin</string>
-    <string name="name">İsim</string>
-    <string name="price">Fiyat</string>
+    <string name="app_short_description">Cart Calculator ile alışveriş sepetinizdeki ürünleri etkili bir şekilde yönetin ve hesaplayın. 🛒</string>
+    <string name="notification_update_title">Yeni bir güncelleme mevcut!</string>
+    <string name="summary_notification_update">Uygulamanın yeni bir sürümü mevcut. Güncellemek için tıklayın!</string>
+    <string name="notification_last_time_used_title">Uzun zaman oldu!</string>
+    <string name="summary_notification_last_time_used"> Alışveriş sepetinizdeki ürünleri etkili bir şekilde yönetelim!</string>
+
+    <string name="welcome">Hoş geldiniz</string>
+    <string name="browse_terms_of_service_and_privacy_policy"><i><u>Kullanım Şartlarını</u></i> ve <i><u>Gizlilik Politikasını</u></i> inceleyin</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Devam etmek için Kullanım Şartlarımızı ve Gizlilik Politikamızı okuyun ve kabul edin.</string>
+    <string name="agree">Kabul ediyorum</string>
+
+    <string name="no_carts_available">Kullanılabilir sepet yok</string>
+    <string name="add_new_cart">Yeni sepet ekle</string>
+    <string name="cart_name">Sepet adı</string>
+    <string name="shopping_cart">Alışveriş sepeti</string>
+    <string name="summary_cart_dialog">Herkes için kişiselleştirilmiş bir alışveriş deneyimi yaratmaya kararlıyız. Seçimlerinizin takibini kolaylaştırmak ve alışveriş yolculuğunuzu geliştirmek için, ürün eklemeden önce sepetinize bir isim vermeyi düşünün.</string>
+    <string name="created_on">%1$s tarihinde oluşturuldu</string>
+    <string name="close">Kapat?</string>
+    <string name="summary_close">Çıkmak istediğinizden emin misiniz?</string>
+
+    <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
+    <string name="item_name">Ürün adı</string>
+    <string name="enter_item_name">Ürün adı girin</string>
+    <string name="item_price">Ürün fiyatı</string>
+    <string name="enter_item_price">Ürün fiyatı girin</string>
     <string name="quantity">Miktar</string>
-    <string name="total">Toplam:\n%1$f $</string>
+    <string name="enter_quantity">Miktar girin</string>
+    <string name="dialog_info_cart_item">Sorunsuz bir ödeme deneyimi sağlamak için, sepetinize eklediğiniz ürünler hakkında ayrıntıları sağlayın</string>
+    <string name="total">Toplam</string>
+
     <string name="settings">Ayarlar</string>
+
+    <string name="display">Görünüm</string>
+    <string name="summary_preference_settings_display">Uygulamanızın görünümünü ve hissini kişiselleştirin</string>
+
     <string name="appearance">Görünüm</string>
-    <string name="theme">Tema</string>
+    <string name="dark_theme">Karanlık tema</string>
+    <string name="will_turn_on_automatically_by_system">Sistem tarafından otomatik olarak açılacak</string>
+    <string name="will_never_turn_on_automatically">Otomatik olarak asla açılmayacak</string>
+    <string name="amoled_mode">AMOLED modu</string>
     <string name="follow_system">Sistem Modunu Takip Et</string>
     <string name="light_mode">Açık Mod</string>
     <string name="dark_mode">Karanlık Mod</string>
-    <string name="auto_battery_mode">Otomatik Pil Karanlık Modu</string>
+    <string name="summary_dark_theme">Karanlık tema, pilinizi daha uzun süre çalışır durumda tutmaya yardımcı olmak için koyu bir arka plan kullanır</string>
+
+    <string name="dynamic_colors">Dinamik renkler</string>
+    <string name="summary_preference_settings_dynamic_colors">Uygulama temasına duvar kağıtlarından renkler uygulayın</string>
+
     <string name="language">Dil</string>
+    <string name="summary_preference_settings_language">Uygulamada kullanılan dili değiştirir</string>
+    <string name="dialog_language_subtitle">Tercih ettiğiniz dili seçin</string>
+    <string name="dialog_info_language">Tercih ettiğiniz dil ile deneyiminizi kişiselleştirin. Yaptığınız dil değişiklikleri hemen etkili olur ve seçtiğiniz dilde sorunsuz bir deneyim sağlar</string>
+
+    <string name="cart_settings">Sepet ayarları</string>
+    <string name="summary_preference_settings_cart">Sepetinizin nasıl davrandığını yönetin</string>
+
+    <string name="currency">Para birimi</string>
+    <string name="summary_preference_settings_currency">Fiyatları görüntülemek için tercih ettiğiniz para birimini ayarlayın</string>
+    <string name="dialog_currency_subtitle">Tercih ettiğiniz para birimini seçin</string>
+    <string name="dialog_info_currency">Bu para birimi seçimi, platform genelinde ürün fiyatlarını görüntülemek, işlemleri işlemek ve daha kişiselleştirilmiş bir alışveriş deneyimi sağlamak için kullanılacaktır</string>
+
+    <string name="notifications">Bildirimler</string>
+    <string name="summary_preference_settings_notifications">Uygulama bildirimlerini yönetin</string>
+
+    <string name="app_usage_notifications">Uygulama Kullanımı Bildirimleri</string>
+    <string name="update_notifications">Güncelleme Bildirimleri</string>
+
     <string name="advanced">Gelişmiş</string>
-    <string name="firebase">Firebase</string>
-    <string name="app_updates">Uygulama Güncellemeleri</string>
-    <string name="check_for_updates">Güncellemeleri Kontrol Et…</string>
-    <string name="subscribe_to_beta">Beta Güncellemelerine Abone Ol</string>
-    <string name="changelog">Değişiklik Günlüğü</string>
-    <string name="privacy_and_security">Gizlilik ve Güvenlik</string>
+    <string name="summary_preference_settings_advanced">Daha gelişmiş ayarları keşfedin</string>
+    <string name="error_reporting">Hata raporlama</string>
+    <string name="bug_report">Hata raporu</string>
+    <string name="summary_preference_settings_bug_report">Hata raporlarını ve özellik isteklerini uygulamanın GitHub deposu sorunlar sayfasına gönderin</string>
+
+    <string name="security_and_privacy">Güvenlik ve gizlilik</string>
+    <string name="summary_preference_settings_privacy_and_security">Gizlilik ayarlarınızı yönetin</string>
+    <string name="privacy">Gizlilik</string>
     <string name="privacy_policy">Gizlilik Politikası</string>
-    <string name="terms_of_service">Hizmet Şartları</string>
-    <string name="code_of_conduct">Davranış Kuralları</string>
+    <string name="summary_preference_settings_privacy_policy">Verilerinizi nasıl işlediğimizi düzenleyen politikayı inceleyin</string>
+    <string name="terms_of_service">Kullanım Şartları</string>
+    <string name="summary_preference_settings_terms_of_service">Hizmetimizi kullanırken kabul ettiğiniz şartları gözden geçirin</string>
+    <string name="code_of_conduct">Etik Kurallar</string>
+    <string name="summary_preference_settings_code_of_conduct">Hizmetimizdeki davranış için kuralları ve yönergeleri anlayın</string>
+
     <string name="permissions">İzinler</string>
+    <string name="summary_preference_settings_permissions">Hizmetimize verilen izinleri yönetin</string>
     <string name="normal">Normal</string>
-    <string name="runtime">Çalışma Süresi</string>
+    <string name="ad_id">Reklam kimliği [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Uygulamanın, kullanıcının cihazıyla ilişkili reklam tanımlayıcısını almasına ve kullanmasına izin verir, kişiselleştirilmiş reklamlar sağlar, reklam etkinliğini ölçer ve Android 13 veya üzeri cihazlarda reklamlar gösterir.</string>
+    <string name="internet">İnternet [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">Uygulamanın, hata raporları göndermek veya güncellemeleri kontrol etmek için bir internet bağlantısı kurmasına izin verir.</string>
+    <string name="post_notifications">Bildirimleri yayınla [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Uygulamanın Android 13 veya üzeri cihazlarda bildirimler göstermesine izin verir.</string>
+    <string name="runtime">Çalışma zamanı</string>
+    <string name="access_network_state">Ağ durumuna erişim [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">Uygulamanın ağ bağlantısını kontrol etmesine ve etkin durum ve bağlı Wi-Fi cihazı adları dahil olmak üzere Wi-Fi hakkında bilgi almasına izin verir.</string>
+    <string name="access_notification_policy">Bildirim politikasına erişim [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Uygulamanın cihazın bildirim politikasına erişmesine ve değiştirmesine izin verir, bildirimlerin kullanıcıya nasıl ve ne zaman gösterileceğini kontrol eder ve özel bildirim yönetimi özellikleri sağlar.</string>
+    <string name="billing">Fatura [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Uygulamanın, uygulama içi satın alımları ve bağışları işlemek için Google Play Fatura Kütüphanesini kullanmasına izin verir</string>
+    <string name="check_license">Lisansı kontrol et [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">Uygulamanın, lisans anlaşmasına uyumluluğunu doğrulamasına ve fikri mülkiyet haklarını korumak için lisans şartlarını uygulamamasına izin verir.</string>
+    <string name="foreground_service">Ön plan hizmeti [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">Uygulamanın, ön planda çalışan ve diğer arka plan işlemlerine göre öncelik veren hizmetler oluşturmasına ve kullanmasına izin verir, performansı ve güvenilirliği artırır.</string>
+
+    <string name="ads">Reklamlar</string>
+    <string name="summary_preference_settings_ads">İlgili reklamları göstermek için bilgilerinizi nasıl kullandığımızı kontrol edin</string>
+    <string name="display_ads">Reklamları göster</string>
+    <string name="personalized_ads">Kişiselleştirilmiş reklamlar</string>
+    <string name="summary_ads_personalized_ads">İlgi alanlarınıza göre reklamları nasıl kişiselleştirdiğimizi seçin</string>
+    <string name="summary_ads">Sizinle alakalı reklamları görün. Uygulama etkinliğinize göre kişiselleştirilmiş reklamları göstermek için kullanılan bilgileri yönetin. Kişiselleştirmeyi her zaman burada kapatabilirsiniz.\n</string>
+
+    <string name="usage_and_diagnostics">Kullanım ve tanılama</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Cart Calculator\'ı geliştirmeye yardımcı olmak için verileri paylaşın</string>
+    <string name="summary_usage_and_diagnostics">Otomatik olarak tanılama, cihaz ve uygulama kullanım verilerini bize göndererek deneyiminizi geliştirmeye yardımcı olun. Bu, uygulama performansını, kararlılığını ve diğer geliştirmeleri iyileştirmeye yardımcı olacaktır. Bazı toplu veriler de uygulamalarımızda yardımcı olacaktır.\n\nBu, cihazınız ve uygulamalarımızı nasıl kullandığınızla ilgili genel bilgilerdir (pil seviyesi, sistem ve uygulama etkinliği ve hatalar gibi). Veriler, uygulamalarımızı geliştirmek için kullanılacaktır.\n\nBu özelliği kapatmak, cihazınızın uygulama güncellemeleri ve güvenlik gibi temel hizmetler için gereken bilgileri gönderme yeteneğini etkilemez.\n</string>
+
+    <string name="legal">Yasal</string>
+    <string name="legal_notices">Yasal uyarılar</string>
+    <string name="summary_preference_settings_legal_notices">Hizmetimizle ilgili yasal bilgileri inceleyin</string>
     <string name="license">Lisans</string>
-    <string name="more">Daha Fazla</string>
-    <string name="share">Paylaş</string>
-    <string name="share_using">Şununla Paylaş…</string>
-    <string name="share_subject">Şimdi Deneyin!!!</string>
-    <string name="more_apps">Daha Fazla Uygulama…</string>
-    <string name="support_me">Bana Destek Ol</string>
-    <string name="info">Bilgi</string>
+
+    <string name="about">Hakkında</string>
+    <string name="summary_preference_settings_about">Cart Calculator hakkında daha fazla bilgi edinin</string>
+
+    <string name="app_info">Uygulama bilgisi</string>
+    <string name="app_build_version">Uygulama derleme sürümü</string>
+    <string name="summary_preference_settings_oss">Açık kaynaklı yazılımlar için lisans ayrıntıları</string>
     <string name="device_info">Cihaz Bilgisi</string>
-    <string name="app_build">Uygulama Sürümü: Yayın\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="app_build">Uygulama Derlemesi: Sürüm\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="manufacturer">Üretici:</string>
     <string name="device_model">Cihaz Modeli:</string>
     <string name="android_version">Android Sürümü:</string>
-    <string name="api_level">API Sürümü:</string>
-    <string name="help_and_feedback">Yardım ve Geri Bildirim</string>
+    <string name="api_level">API Seviyesi:</string>
+
+    <string name="help_and_feedback">Yardım ve geri bildirim</string>
     <string name="help">Yardım</string>
-    <string name="mail_to_dev">Geliştiriciye E-posta Gönder 📧</string>
     <string name="faq">SSS</string>
-    <string name="send_feedback">Geri Bildirim Gönder</string>
-    <string name="about">Hakkında</string>
-    <string name="app_version">Sürüm %1$s (%2$d)</string>
-    <string name="music">Müzik</string>
-    <string name="made_in">Romanya\'da ❤ ile yapıldı!</string>
-    <string name="copyright">© Telif Hakkı %1$s, D4rK tarafından yapıldı!</string>
-    <string name="app_usage_notifications">Uygulama Kullanım Bildirimleri</string>
-    <string name="update_notifications">Güncelleme Bildirimleri</string>
-    <string name="agree">Kabul Et</string>
-    <string name="browse_terms_of_service_and_privacy_policy"><i><u>Hizmet Şartları</u></i> ve <i><u>Gizlilik Politikası</u></i>ni inceleyin</string>
-    <string name="welcome">Hoş Geldiniz</string>
-    <string name="copied_to_clipboard">Panoya Kopyalandı!</string>
-    <string name="close">Kapat?</string>
-    <string name="internet">İnternet [INTERNET]</string>
-    <string name="ad_id">Reklam kimliği [AD_ID]</string>
-    <string name="access_network_state">Ağ durumuna erişme [ACCESS_NETWORK_STATE]</string>
-    <string name="post_notifications">Bildirim gönderme [POST_NOTIFICATIONS]</string>
-    <string name="check_license">Lisans kontrolü yapma [CHECK_LICENSE]</string>
-    <string name="access_notification_policy">Bildirim politikasına erişme [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="foreground_service">Ön planda çalışan hizmet [FOREGROUND_SERVICE]</string>
-    <string name="notifications">Bildirimler</string>
-    <string name="notification_settings">Bildirim ayarları</string>
-    <string name="notification_last_time_used_title">Bir süre oldu!</string>
-    <string name="notification_update_title">Yeni bir güncelleme mevcut!</string>
+    <string name="view_in_google_play_store">Google Play Store\'da Görüntüle</string>
+    <string name="version_info">Sürüm bilgisi</string>
+    <string name="version">Sürüm %1$s</string>
+    <string name="beta_program">Beta programı</string>
     <string name="question_1">Cart Calculator nedir?</string>
+    <string name="summary_preference_faq_1">Cart Calculator, alışveriş yaparken sıradan cihaz hesap makinesinin yerini alan basit, genel ve ücretsiz bir alışveriş sepeti yöneticisi ve toplam borç hesaplayıcısıdır.</string>
     <string name="question_2">Cart Calculator nasıl çalışır?</string>
-    <string name="question_3">Neden Cart Calculator kullanmalıyım?</string>
-    <string name="question_4">Cart Calculator\'ı market dışında da kullanabilir miyim?</string>
-    <string name="question_5">Cart Calculator kullanarak nasıl bir ürünü sepete eklerim?</string>
-    <string name="question_6">Cart Calculator kullanarak bir ürünün miktarını nasıl artırır veya azaltırım?</string>
-    <string name="question_7">Cart Calculator kullanarak bir ürünü nasıl sepetten çıkarırım?</string>
+    <string name="summary_preference_faq_2">Cart Calculator, ürün ekleyerek ve miktarlarını artırarak veya azaltarak alışveriş sepetinizi yönetmenizi sağlar. Cart Calculator, sepetinizdeki ürünlerin fiyatlarına ve miktarlarına göre toplam borcu her zaman görüntüler.</string>
+    <string name="question_3">Cart Calculator\'ı neden kullanmalıyım?</string>
+    <string name="summary_preference_faq_3">Cart Calculator, ödeme yapmadan önce ne kadar harcadığınızın her zaman farkında olmanıza yardımcı olur. Bu özellikle bütçeyle alışveriş yapmanız gerektiğinde faydalıdır.</string>
+    <string name="question_4">Cart Calculator\'ı marketler dışında da kullanabilir miyim?</string>
+    <string name="summary_preference_faq_4">Evet! Cart Calculator şaşırtıcı derecede basit ve genel olduğu için, barlarda, restoranlarda, sinemada vb. yerlerde de kullanabilirsiniz.</string>
+    <string name="question_5">Cart Calculator kullanarak sepetime nasıl ürün eklerim?</string>
+    <string name="summary_preference_faq_5">Ana ekrandan, Eylem Çubuğundaki "Ürün ekle" düğmesine basarak sepetinize yeni bir ürün ekleyin. Adını ve fiyatını bildirin ve ardından "Ekle" düğmesine tıklayın.</string>
+    <string name="question_6">Cart Calculator kullanarak sepetindeki bir ürünün miktarını nasıl artırırım veya azaltırım?</string>
+    <string name="summary_preference_faq_6">Listede ürünü bulun ve ardından miktarını artırmak için "+" (artı) düğmesine veya azaltmak için "-" (eksi) düğmesine basın.</string>
+    <string name="question_7">Cart Calculator kullanarak sepetindeki bir ürünü nasıl kaldırırım?</string>
+    <string name="summary_preference_faq_7">Sepetinizden bir ürünü kaldırmak için, miktarını sıfıra düşürün veya listede uzun basın ve ardından "Ürünü Sil" düğmesini seçin.</string>
     <string name="question_8">Cart Calculator ücretsiz bir yazılım mıdır?</string>
+    <string name="summary_preference_faq_8">Evet! Cart Calculator, GNU Genel Kamu Lisansı sürüm 3 uyarınca dağıtılan ücretsiz bir yazılımdır.</string>
     <string name="question_9">Cart Calculator\'a nasıl katkıda bulunabilirim?</string>
-    <string name="summary_preference_faq_1">Cart Calculator, alışveriş yaparken veya marketteyken sıradan cihazın hesap makinesini yerine geçen basit, genel ve ücretsiz bir alışveriş sepeti yöneticisi ve toplam tutar hesaplayıcısıdır.</string>
-    <string name="summary_preference_faq_2">Cart Calculator, ürünleri ekleyerek ve miktarlarını artırarak veya azaltarak alışveriş sepetinizi yönetmenize olanak sağlar. Cart Calculator, herhangi bir zamanda sepetinizdeki ürünlerin fiyatlarına ve miktarlarına dayanarak toplam tutarınızı gösterir.</string>
-    <string name="summary_preference_faq_3">Cart Calculator, kasaya ulaşmadan önce ne kadar harcadığınızı her zaman bilmek için size yardımcı olur. Özellikle bütçeyle alışveriş yapmanız gerektiğinde bu çok faydalıdır.</string>
-    <string name="summary_preference_faq_4">Evet! Cart Calculator şaşırtıcı derecede basit ve genel olduğu için publarda, restoranlarda, sinemalarda vb. kullanabilirsiniz.</string>
-    <string name="summary_preference_faq_5">Ana ekrandan, Sepete Öğe Ekle düğmesine Action Bar\'da basarak yeni bir ürünü sepetinize ekleyebilirsiniz. İsmini ve fiyatını bildirir ve ardından "Ekle" düğmesine tıklarsınız.</string>
-    <string name="summary_preference_faq_6">Listede ürünü bulun ve ardından miktarını artırmak için "+ (artı)" düğmesine veya miktarını azaltmak için "- (eksi)" düğmesine basın.</string>
-    <string name="summary_preference_faq_7">Bir ürünü sepetinizden çıkarmak için sadece miktarını sıfıra düşürün veya listede uzun süre tıklayın ve ardından "Öğeyi Sil" düğmesini seçin.</string>
-    <string name="summary_preference_faq_8">Evet! Cart Calculator, GNU Genel Kamu Lisansı sürüm 3 altında dağıtılan özgür bir yazılımdır.</string>
-    <string name="summary_preference_faq_9">Cart Calculator\'a katkıda bulunmanın en iyi yolu <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> deposudur. Oradan çatal alabilir ve katkılarınız üzerinde çalışabilir ve daha sonra pull isteği aracılığıyla geri gönderebilirsiniz. Hata bildirmek, yeni özellikler veya geliştirmeler önermek veya nasıl yardımcı olabileceğiniz konusunda fikirler edinmek için sorun takipçisini de kullanabilirsiniz.</string>
-    <string name="summary_preference_permissions_access_network_state">Uygulamanın ağ bağlantısını kontrol etmesine ve etkin durumunu ve bağlı Wi-Fi cihaz adlarını içeren Wi-Fi hakkında bilgi almasına izin verir.</string>
-    <string name="summary_preference_permissions_ad_id">Uygulamanın kullanıcının cihazıyla ilişkili reklam kimliğini almasına ve kullanmasına olanak tanır, kişiselleştirilmiş reklamlar sunar, reklam etkinliğini ölçer ve Android 13 veya sonraki cihazlarda reklamlar gösterir.</string>
-    <string name="summary_preference_permissions_internet">Uygulamanın hata raporları göndermek veya güncelleme bildirimleri almak için internete erişmesine izin verir.</string>
-    <string name="summary_preference_permissions_post_notifications">Uygulamanın bildirimler göndermesine izin verir, bu nedenle güncellemeler hakkında sizi bilgilendirebilir.</string>
-    <string name="summary_preference_permissions_check_license">Uygulamanın lisans durumunu doğrulamasına izin verir, böylece yasa dışı kullanımları tespit edebilir ve önleyebilir.</string>
-    <string name="summary_preference_permissions_access_notification_policy">Uygulamanın bildirim politikalarına erişmesine izin verir, böylece gerekirse bildirim ayarlarınızı yönetebilir.</string>
-    <string name="summary_preference_permissions_foreground_service">Uygulamanın öncelikli bir hizmet olarak çalışmasına izin verir, böylece arka planda çalışmaya devam edebilir ve bildirimler gönderebilir.</string>
-    <string name="summary_preference_settings_firebase">Bu, uygulama performansı ve çökme günlükleri hakkında bilgi toplamamıza olanak sağlar.</string>
-    <string name="summary_preference_settings_support_me">Para ödemeden beni desteklemek isterseniz buraya tıklayın. Sadece bir reklamı görüntülemek için biraz zaman harcayın.</string>
-    <string name="summary_preference_settings_language">Uygulama dilini ayarlayın.</string>
-    <string name="summary_notification_last_time_used">Alışveriş sepetinizi verimli bir şekilde yönetelim!</string>
-    <string name="summary_notification_update">Uygulamanın yeni bir sürümü mevcut. Güncellemek için tıklayın!</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Devam etmek için Hizmet Şartları ve Gizlilik Politikamızı okuyun ve kabul edin.</string>
-    <string name="summary_empty">Alışveriş sepetiniz boş.</string>
-    <string name="summary_close">Çıkmak istediğinizden emin misiniz?</string>
-    <string name="snack_unable_to_open_google_play_store">Google Play Store açılamıyor.</string>
-    <string name="snack_feedback">Bize puan verdiğiniz için teşekkür ederiz!</string>
-    <string name="hint_name">İsim girin</string>
-    <string name="hint_price">Fiyat girin</string>
-    <string name="hint_quantity">Miktar girin</string>
-    <string name="tooltip_agree">Şartları ve koşulları kabul edin.</string>
-    <string name="tooltip_button_minus">Sepetten 1 ürün çıkarın</string>
-    <string name="tooltip_button_plus">Sepete 1 ürün ekleyin</string>
-    <string name="tooltip_open_me">Beni Aç 🌐</string>
+    <string name="summary_preference_faq_9">Cart Calculator\'a katkıda bulunmanın en iyi yolu, <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> deposudur. Oradan çatallayabilir ve katkılarınıza çalışabilir ve daha sonra çekme isteği yoluyla geri gönderebilirsiniz. Ayrıca sorun izleyiciyi kullanarak hataları bildirebilir, yeni özellikler veya iyileştirmeler önerebilir veya nasıl yardımcı olabileceğinize dair fikirler alabilirsiniz.</string>
+    <string name="feedback">Geri bildirim</string>
+
+    <string name="updates">Güncellemeler</string>
+
+    <string name="share">Paylaş</string>
+
+    <string name="support_us">Bizi destekleyin</string>
+    <string name="paid_support">Ücretli Destek</string>
+    <string name="summary_donations">Ne kadar bağış yaparsanız yapın, uygulamamızı çalışır durumda tutmamıza ve özelliklerimizi geliştirmemize yardımcı olacaksınız. Cömertliğiniz ve nezaketiniz için teşekkür ederiz!</string>
+    <string name="non_paid_support">Ücretsiz Destek</string>
+    <string name="web_ad">Web Reklamları</string>
+
+    <string name="snack_app_updated">The app has been successfully updated</string>
+    <string name="snack_update_failed">The update process encountered an issue</string>
+    <string name="tooltip_agree">Accept the terms and conditions</string>
+    <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
+    <string name="tooltip_button_plus">Add 1 item to the cart</string>
+    <string name="try_again">Try again</string>
+    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
+    <string name="learn_more">Learn more</string>
 </resources>

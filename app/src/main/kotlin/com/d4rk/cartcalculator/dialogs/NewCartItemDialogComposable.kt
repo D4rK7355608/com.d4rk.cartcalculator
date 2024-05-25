@@ -74,7 +74,7 @@ fun NewCartItemDialogContent(cartId: Int, newCartItem: MutableState<ShoppingCart
             value = quantityText.value,
             onValueChange = { quantityText.value = it },
             label = { Text(stringResource(id = R.string.quantity)) },
-            placeholder = { Text(stringResource(id = R.string.hint_quantity)) },
+            placeholder = { Text(stringResource(id = R.string.enter_quantity)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
         Spacer(modifier = Modifier.height(24.dp))

@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Money
@@ -31,33 +33,33 @@ import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
 fun CurrencyDialog(
-    dataStore: DataStore, onDismiss: () -> Unit, onCurrencySelected: (String) -> Unit
+    dataStore : DataStore , onDismiss : () -> Unit , onCurrencySelected : (String) -> Unit
 ) {
     val selectedCurrency = remember { mutableStateOf("") }
     val currencies = stringArrayResource(R.array.currency).toList()
 
-    AlertDialog(onDismissRequest = onDismiss,
-        text = { CurrencyDialogContent(selectedCurrency, dataStore, currencies) },
-        icon = {
-            Icon(Icons.Outlined.Money, contentDescription = null)
-        },
-        confirmButton = {
-            TextButton(onClick = {
-                onCurrencySelected(selectedCurrency.value)
-            }) {
-                Text(stringResource(android.R.string.ok))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text(stringResource(android.R.string.cancel))
-            }
-        })
+    AlertDialog(onDismissRequest = onDismiss ,
+                text = { CurrencyDialogContent(selectedCurrency , dataStore , currencies) } ,
+                icon = {
+                    Icon(Icons.Outlined.Money , contentDescription = null)
+                } ,
+                confirmButton = {
+                    TextButton(onClick = {
+                        onCurrencySelected(selectedCurrency.value)
+                    }) {
+                        Text(stringResource(android.R.string.ok))
+                    }
+                } ,
+                dismissButton = {
+                    TextButton(onClick = onDismiss) {
+                        Text(stringResource(android.R.string.cancel))
+                    }
+                })
 }
 
 @Composable
 fun CurrencyDialogContent(
-    selectedCurrency: MutableState<String>, dataStore: DataStore, currencies: List<String>
+    selectedCurrency : MutableState<String> , dataStore : DataStore , currencies : List<String>
 ) {
     LaunchedEffect(Unit) {
         selectedCurrency.value = dataStore.getCurrency().firstOrNull() ?: ""
@@ -65,25 +67,26 @@ fun CurrencyDialogContent(
 
     Column {
         Text(stringResource(id = R.string.dialog_currency_subtitle))
-        Column(
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            currencies.forEach { currency ->
+        LazyColumn {
+            items(currencies.size) { index ->
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
+                    Modifier.fillMaxWidth() ,
+                    verticalAlignment = Alignment.CenterVertically ,
                     horizontalArrangement = Arrangement.Start
                 ) {
-                    RadioButton(selected = selectedCurrency.value == currency,
-                        onClick = { selectedCurrency.value = currency })
+                    RadioButton(selected = selectedCurrency.value == currencies[index] , onClick = {
+                        selectedCurrency.value = currencies[index]
+                    })
                     Text(
-                        text = currency, style = MaterialTheme.typography.bodyMedium.merge()
+                        modifier = Modifier.padding(start = 8.dp) ,
+                        text = currencies[index] ,
+                        style = MaterialTheme.typography.bodyMedium.merge()
                     )
                 }
             }
         }
         Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text(stringResource(id = R.string.dialog_info_currency))
     }

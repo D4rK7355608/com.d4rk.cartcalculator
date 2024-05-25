@@ -3,9 +3,9 @@ package com.d4rk.cartcalculator.ui.startup
 import android.Manifest
 import android.os.Build
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -16,7 +16,7 @@ import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 
-class StartupActivity : ComponentActivity() {
+class StartupActivity : AppCompatActivity() {
     private lateinit var consentInformation: ConsentInformation
     private lateinit var consentForm: ConsentForm
     override fun onCreate(savedInstanceState: Bundle?) {

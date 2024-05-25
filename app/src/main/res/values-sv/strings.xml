@@ -1,116 +1,180 @@
 <resources>
-    <string name="app_short_description">Hantera och beräkna dina varor i kundvagnen effektivt med Cart Calculator. 🛒</string>
-    <string name="home">Hem</string>
-    <string name="refresh">Uppdatera</string>
-    <string name="add_to_cart">Lägg till i kundvagn</string>
-    <string name="add_your_item">Lägg till din vara</string>
-    <string name="name">Namn</string>
-    <string name="price">Pris</string>
-    <string name="quantity">Antal</string>
-    <string name="total">Totalt:\n%1$f $</string>
+    <string name="app_short_description">Hantera och beräkna dina varor i kundvagnen effektivt med Varukorg-räknaren. 🛒</string>
+    <string name="notification_update_title">En ny uppdatering är tillgänglig!</string>
+    <string name="summary_notification_update">En ny version av appen är tillgänglig. Klicka för att uppdatera!</string>
+    <string name="notification_last_time_used_title">Det har gått ett tag!</string>
+    <string name="summary_notification_last_time_used"> Låt oss hantera dina varor i kundvagnen effektivt!</string>
+
+    <string name="welcome">Välkommen</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Bläddra bland <i><u>Användarvillkor</u></i> och <i><u>Integritetspolicy</u></i></string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Läs och godkänn våra Användarvillkor och Integritetspolicy för att fortsätta.</string>
+    <string name="agree">Godkänn</string>
+
+    <string name="no_carts_available">Inga kundvagnar tillgängliga</string>
+    <string name="add_new_cart">Lägg till ny kundvagn</string>
+    <string name="cart_name">Kundvagnsnamn</string>
+    <string name="shopping_cart">Kundvagn</string>
+    <string name="summary_cart_dialog">Vi strävar efter att skapa en personlig shoppingupplevelse för alla. För att göra det enklare för dig att hålla reda på dina val och förbättra din shoppingresa, överväg att ge din kundvagn ett namn innan du lägger till varor.</string>
+    <string name="created_on">Skapad den %1$s</string>
+    <string name="close">Stäng?</string>
+    <string name="summary_close">Är du säker på att du vill avsluta?</string>
+
+    <string name="your_shopping_cart_is_empty">Din kundvagn är tom</string>
+    <string name="item_name">Vara namn</string>
+    <string name="enter_item_name">Ange varans namn</string>
+    <string name="item_price">Varans pris</string>
+    <string name="enter_item_price">Ange varans pris</string>
+    <string name="quantity">Kvantitet</string>
+    <string name="enter_quantity">Ange kvantitet</string>
+    <string name="dialog_info_cart_item">För att säkerställa en smidig kassaupplevelse, vänligen ange detaljer om de varor du lägger till i din kundvagn.</string>
+    <string name="total">Totalt</string>
+
     <string name="settings">Inställningar</string>
+
+    <string name="display">Visa</string>
+    <string name="summary_preference_settings_display">Personanpassa appens utseende och känsla</string>
+
     <string name="appearance">Utseende</string>
-    <string name="theme">Tema</string>
-    <string name="follow_system">Följ systemläget</string>
+    <string name="dark_theme">Mörkt tema</string>
+    <string name="will_turn_on_automatically_by_system">Slås på automatiskt av systemet</string>
+    <string name="will_never_turn_on_automatically">Slås aldrig på automatiskt</string>
+    <string name="amoled_mode">AMOLED-läge</string>
+    <string name="follow_system">Följ systemläge</string>
     <string name="light_mode">Ljust läge</string>
     <string name="dark_mode">Mörkt läge</string>
-    <string name="auto_battery_mode">Automatiskt batteri mörkt läge</string>
+    <string name="summary_dark_theme">Mörkt tema använder en djup bakgrund för att hjälpa till att hålla batteriet igång längre</string>
+
+    <string name="dynamic_colors">Dynamiska färger</string>
+    <string name="summary_preference_settings_dynamic_colors">Använd färger från bakgrundsbilder till appens tema</string>
+
     <string name="language">Språk</string>
+    <string name="summary_preference_settings_language">Ändrar språket som används i appen</string>
+    <string name="dialog_language_subtitle">Välj ditt föredragna språk</string>
+    <string name="dialog_info_language">Personanpassa din upplevelse med ditt föredragna språk. Alla språkändringar du gör träder i kraft omedelbart, vilket säkerställer en smidig upplevelse på ditt valda språk</string>
+
+    <string name="cart_settings">Kundvagnsinställningar</string>
+    <string name="summary_preference_settings_cart">Hantera hur din kundvagn beter sig</string>
+
+    <string name="currency">Valuta</string>
+    <string name="summary_preference_settings_currency">Ställ in din föredragna valuta för att visa priser</string>
+    <string name="dialog_currency_subtitle">Välj din föredragna valuta</string>
+    <string name="dialog_info_currency">Detta valutaval kommer att användas över hela plattformen för att visa produktpriser, behandla transaktioner och ge en mer personlig shoppingupplevelse</string>
+
+    <string name="notifications">Meddelanden</string>
+    <string name="summary_preference_settings_notifications">Hantera appens meddelanden</string>
+
+    <string name="app_usage_notifications">Meddelanden om appanvändning</string>
+    <string name="update_notifications">Meddelanden om uppdatering</string>
+
     <string name="advanced">Avancerat</string>
-    <string name="firebase">Firebase</string>
-    <string name="app_updates">Appuppdateringar</string>
-    <string name="check_for_updates">Sök efter uppdateringar…</string>
-    <string name="subscribe_to_beta">Prenumerera på betaversioner</string>
-    <string name="changelog">Ändringslogg</string>
-    <string name="privacy_and_security">Sekretess och säkerhet</string>
+    <string name="summary_preference_settings_advanced">Utforska fler avancerade inställningar</string>
+    <string name="error_reporting">Felrapportering</string>
+    <string name="bug_report">Felrapport</string>
+    <string name="summary_preference_settings_bug_report">Skicka felrapporter och funktionsbegäran till appens GitHub-arkivs problem sida</string>
+
+    <string name="security_and_privacy">Säkerhet och integritet</string>
+    <string name="summary_preference_settings_privacy_and_security">Hantera dina integritetsinställningar</string>
+    <string name="privacy">Integritet</string>
     <string name="privacy_policy">Integritetspolicy</string>
+    <string name="summary_preference_settings_privacy_policy">Visa policyn som styr hur vi hanterar dina data</string>
     <string name="terms_of_service">Användarvillkor</string>
+    <string name="summary_preference_settings_terms_of_service">Granska de villkor som du godkänner när du använder vår tjänst</string>
     <string name="code_of_conduct">Uppförandekod</string>
+    <string name="summary_preference_settings_code_of_conduct">Förstå reglerna och riktlinjerna för beteende inom vår tjänst</string>
+
     <string name="permissions">Behörigheter</string>
-    <string name="normal">Normal</string>
-    <string name="runtime">Körd</string>
+    <string name="summary_preference_settings_permissions">Hantera behörigheter som beviljats till vår tjänst</string>
+    <string name="normal">Normalt</string>
+    <string name="ad_id">Annons-ID [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Tillåter appen att hämta och använda annonsidentifieraren som är associerad med användarens enhet, vilket ger personliga annonser, mäter annonsernas effektivitet och visar annonser på Android 13 eller senare enheter.</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">Tillåter appen att skapa en internetanslutning för att skicka felrapporter eller kontrollera om det finns uppdateringar.</string>
+    <string name="post_notifications">Skicka meddelanden [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Tillåter appen att visa meddelanden på enheter med Android 13 eller senare.</string>
+    <string name="runtime">Körtid</string>
+    <string name="access_network_state">Åtkomst till nätverksstatus [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">Tillåter appen att kontrollera nätverksanslutningen och hämta information om Wi-Fi, inklusive aktiverat tillstånd och anslutna Wi-Fi-enhetsnamn.</string>
+    <string name="access_notification_policy">Åtkomst till meddelandepolicy [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Tillåter appen att komma åt och ändra enhetens meddelandepolicy, vilket styr hur och när meddelanden visas för användaren och tillhandahåller anpassade meddelandehanteringsfunktioner.</string>
+    <string name="billing">Fakturering [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Tillåter appen att använda Google Play Billing Library för att hantera köp i appen och donationer</string>
+    <string name="check_license">Kontrollera licens [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">Tillåter appen att verifiera att den uppfyller licensavtalet och verkställa licensvillkoren för att skydda immateriella rättigheter.</string>
+    <string name="foreground_service">Förgrundstjänst [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">Tillåter appen att skapa och använda tjänster som körs i förgrunden, vilket ger dem prioritet framför andra bakgrundsprocesser och förbättrar prestanda och tillförlitlighet.</string>
+
+    <string name="ads">Annonser</string>
+    <string name="summary_preference_settings_ads">Kontrollera hur vi använder din information för att visa dig relevanta annonser</string>
+    <string name="display_ads">Visa annonser</string>
+    <string name="personalized_ads">Personliga annonser</string>
+    <string name="summary_ads_personalized_ads">Välj hur vi anpassar annonser för dig baserat på dina intressen</string>
+    <string name="summary_ads">Se annonser som är relevanta för dig. Hantera informationen som används för att visa personliga annonser baserat på din app-aktivitet. Du kan alltid stänga av anpassning här.\n</string>
+
+    <string name="usage_and_diagnostics">Användning och diagnostik</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Dela data för att hjälpa till att förbättra Varukorg-räknaren</string>
+    <string name="summary_usage_and_diagnostics">Hjälp till att förbättra din upplevelse genom att automatiskt skicka diagnostiska, enhets- och appanvändningsdata till oss. Detta kommer att bidra till att förbättra appens prestanda, stabilitet och andra förbättringar. Vissa aggregerade data kommer också att hjälpa våra appar.\n\nDetta är allmän information om din enhet och hur du använder våra appar (som batterinivå, system- och app-aktivitet och fel). Data kommer att användas för att förbättra våra appar.\n\nAtt stänga av den här funktionen påverkar inte din enhets förmåga att skicka information som behövs för viktiga tjänster, som appuppdateringar och säkerhet.\n</string>
+
+    <string name="legal">Juridiskt</string>
+    <string name="legal_notices">Juridiska meddelanden</string>
+    <string name="summary_preference_settings_legal_notices">Visa juridisk information om vår tjänst</string>
     <string name="license">Licens</string>
-    <string name="more">Mer</string>
-    <string name="share">Dela</string>
-    <string name="share_using">Dela via…</string>
-    <string name="share_subject">Prova nu!!!</string>
-    <string name="more_apps">Fler appar…</string>
-    <string name="support_me">Stöd mig</string>
-    <string name="info">Information</string>
-    <string name="device_info">Enhetens information</string>
-    <string name="app_build">Appbygge: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+
+    <string name="about">Om</string>
+    <string name="summary_preference_settings_about">Läs mer om Varukorg-räknaren</string>
+
+    <string name="app_info">App-information</string>
+    <string name="app_build_version">Applikationsbyggversion</string>
+    <string name="summary_preference_settings_oss">Licensdetaljer för öppen källkod</string>
+    <string name="device_info">Enhetsinformation</string>
+    <string name="app_build">App-byggnad: Utgivning\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="manufacturer">Tillverkare:</string>
     <string name="device_model">Enhetsmodell:</string>
-    <string name="android_version">Android-version:</string>
+    <string name="android_version">Androidversion:</string>
     <string name="api_level">API-nivå:</string>
+
     <string name="help_and_feedback">Hjälp och feedback</string>
     <string name="help">Hjälp</string>
-    <string name="mail_to_dev">E-posta utvecklaren 📧</string>
     <string name="faq">Vanliga frågor</string>
-    <string name="send_feedback">Skicka feedback</string>
-    <string name="about">Om</string>
-    <string name="app_version">Version %1$s (%2$d)</string>
-    <string name="music">Musik</string>
-    <string name="made_in">Skapad med ❤ i Rumänien!</string>
-    <string name="copyright">Upphovsrätt %1$s, skapad av D4rK!</string>
-    <string name="app_usage_notifications">Notifieringar om appanvändning</string>
-    <string name="update_notifications">Notifieringar om uppdateringar</string>
-    <string name="agree">Godkänn</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Läs <i><u>Användarvillkor</u></i> och <i><u>Integritetspolicy</u></i></string>
-    <string name="welcome">Välkommen</string>
-    <string name="copied_to_clipboard">Kopierad till Urklipp!</string>
-    <string name="close">Stänga?</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="ad_id">Annons-id [AD_ID]</string>
-    <string name="access_network_state">Åtkomst till nätverksstatus [ACCESS_NETWORK_STATE]</string>
-    <string name="post_notifications">Skicka notifieringar [POST_NOTIFICATIONS]</string>
-    <string name="check_license">Kontrollera licens [CHECK_LICENSE]</string>
-    <string name="access_notification_policy">Åtkomst till notifieringspolicy [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="foreground_service">Framgrundsprocess [FOREGROUND_SERVICE]</string>
-    <string name="notifications">Notifieringar</string>
-    <string name="notification_settings">Notiser-inställningar</string>
-    <string name="notification_last_time_used_title">Det var ett tag sedan!</string>
-    <string name="notification_update_title">En ny uppdatering finns tillgänglig!</string>
-    <string name="question_1">Vad är Cart Calculator?</string>
-    <string name="question_2">Hur fungerar Cart Calculator?</string>
-    <string name="question_3">Varför ska jag använda Cart Calculator?</string>
-    <string name="question_4">Kan jag använda Cart Calculator utanför mataffärer eller marknader?</string>
-    <string name="question_5">Hur lägger jag till en vara i min kundvagn med Cart Calculator?</string>
-    <string name="question_6">Hur ökar eller minskar jag antalet av en vara i min kundvagn med Cart Calculator?</string>
-    <string name="question_7">Hur tar jag bort en vara från min kundvagn med Cart Calculator?</string>
-    <string name="question_8">Är Cart Calculator gratisprogramvara?</string>
-    <string name="question_9">Hur kan jag bidra till Cart Calculator?</string>
-    <string name="summary_preference_faq_1">Cart Calculator är en enkel, generisk och gratis varukorgshanterare och totalbeloppsberäknare som ersätter den vanliga kalkylatorn på enheten när du är i mataffären eller på marknaden.</string>
-    <string name="summary_preference_faq_2">Cart Calculator låter dig hantera din kundvagn genom att lägga till produkter och öka eller minska deras antal. När som helst visar Cart Calculator det totala beloppet för produkterna i din kundvagn baserat på deras priser och antal.</string>
-    <string name="summary_preference_faq_3">Cart Calculator hjälper dig att alltid vara medveten om hur mycket du spenderar även innan du når kassan. Detta är särskilt användbart när du måste handla inom en budget.</string>
-    <string name="summary_preference_faq_4">Ja! Eftersom Cart Calculator är otroligt enkel och generisk kan du också använda den på pubar, restauranger, bio etc.</string>
-    <string name="summary_preference_faq_5">Från startsidan trycker du på knappen "Lägg till vara" i Aktionsfältet för att lägga till en ny produkt i din kundvagn. Du anger namnet och priset och klickar sedan på knappen "Lägg till".</string>
-    <string name="summary_preference_faq_6">Hitta helt enkelt varan i listan och tryck sedan på knappen "+ (plus)" för att öka antalet eller knappen "- (minus)" för att minska antalet.</string>
-    <string name="summary_preference_faq_7">För att ta bort en produkt från din kundvagn minskar du helt enkelt dess antal till noll eller klickar länge på den i listan och väljer sedan knappen "Radera vara".</string>
-    <string name="summary_preference_faq_8">Ja! Cart Calculator är stolt gratisprogramvara som distribueras under GNU General Public License version 3.</string>
-    <string name="summary_preference_faq_9">Det bästa sättet att bidra till Cart Calculator är genom dess <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-arkiv. Där kan du göra en kopia (fork) av det och arbeta med dina bidrag, och senare skicka dem via "pull request". Du kan också använda ärendehanteraren för att rapportera buggar, föreslå nya funktioner eller förbättringar eller få idéer om hur du kan hjälpa till.</string>
-    <string name="summary_preference_permissions_access_network_state">Tillåter appen att kontrollera nätverksanslutning och hämta information om Wi-Fi, inklusive aktiveringsstatus och anslutna Wi-Fi-enheternas namn.</string>
-    <string name="summary_preference_permissions_ad_id">Tillåter appen att hämta och använda annonsidentifieraren som är associerad med användarens enhet, för att visa anpassade annonser, mäta annonseffektivitet och visa annonser på enheter med Android 13 eller senare.</string>
-    <string name="summary_preference_permissions_internet">Tillåter appen att skapa en internetanslutning för att skicka felrapporter eller kontrollera efter uppdateringar.</string>
-    <string name="summary_preference_permissions_post_notifications">Tillåter appen att visa notifieringar på enheter med Android 13 eller senare.</string>
-    <string name="summary_preference_permissions_check_license">Tillåter appen att verifiera att den följer licensavtalet och upprätthålla licensvillkoren för att skydda immateriella rättigheter.</string>
-    <string name="summary_preference_permissions_access_notification_policy">Tillåter appen att komma åt och ändra enhetens notifieringspolicy, för att styra hur och när notifieringar visas för användaren och ge anpassade funktioner för hantering av notifieringar.</string>
-    <string name="summary_preference_permissions_foreground_service">Tillåter appen att skapa och använda tjänster som körs i förgrunden, vilket ger en ökad synlighet och fortsatt körning även när appen inte är aktiv.</string>
-    <string name="summary_preference_settings_firebase">Detta låter oss samla information om appens prestanda och kraschloggar.</string>
-    <string name="summary_preference_settings_support_me">Klicka här om du vill stödja mig utan att betala pengar. Bara lite tid för att titta på en annons.</string>
-    <string name="summary_preference_settings_language">Ställ in applikationsspråket.</string>
-    <string name="summary_notification_last_time_used">Låt oss hantera dina varor i kundvagnen effektivt!</string>
-    <string name="summary_notification_update">En ny version av appen finns tillgänglig. Klicka för att uppdatera!</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Läs och godkänn våra användarvillkor och integritetspolicy för att fortsätta.</string>
-    <string name="summary_empty">Din kundvagn är tom.</string>
-    <string name="summary_close">Är du säker på att du vill avsluta?</string>
-    <string name="snack_unable_to_open_google_play_store">Kan inte öppna Google Play Store.</string>
-    <string name="snack_feedback">Tack för att du betygsätter oss!</string>
-    <string name="hint_name">Ange namn</string>
-    <string name="hint_price">Ange pris</string>
-    <string name="hint_quantity">Ange kvantitet</string>
-    <string name="tooltip_agree">Acceptera villkoren och bestämmelserna.</string>
-    <string name="tooltip_button_minus">Ta bort 1 artikel från varukorgen</string>
-    <string name="tooltip_button_plus">Lägg till 1 artikel i varukorgen</string>
-    <string name="tooltip_open_me">Öppna mig 🌐</string>
+    <string name="view_in_google_play_store">Visa i Google Play Butik</string>
+    <string name="version_info">Versionsinformation</string>
+    <string name="version">Version %1$s</string>
+    <string name="beta_program">Betaprogram</string>
+    <string name="question_1">Vad är Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_1">Varukorg-räknaren är en enkel, generisk och gratis kundvagnshanterare och totalräknare som ersätter den vanliga enhetens räknare när du är i mataffären eller på marknaden.</string>
+    <string name="question_2">Hur fungerar Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_2">Varukorg-räknaren låter dig hantera din kundvagn genom att lägga till produkter och öka eller minska deras kvantiteter. Varukorg-räknaren visar när som helst den totala summan för produkterna i din kundvagn baserat på deras priser och kvantiteter.</string>
+    <string name="question_3">Varför ska jag använda Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_3">Varukorg-räknaren hjälper dig att alltid vara medveten om hur mycket du spenderar även innan du når kassan. Detta är särskilt användbart när du måste handla på en budget.</string>
+    <string name="question_4">Kan jag använda Varukorg-räknaren utanför mataffärer eller marknader?</string>
+    <string name="summary_preference_faq_4">Ja! Eftersom Varukorg-räknaren är förvånansvärt enkel och generisk kan du även använda den i pubar, restauranger, biografer etc.</string>
+    <string name="question_5">Hur lägger jag till en vara i min kundvagn med Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_5">Från startskärmen trycker du på knappen "Lägg till vara" i åtgärdsfältet för att lägga till en ny produkt i din kundvagn. Du anger namnet och priset och klickar sedan på knappen "Lägg till".</string>
+    <string name="question_6">Hur ökar eller minskar jag kvantiteten av en vara i min kundvagn med Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_6">Hitta bara varan i listan och tryck sedan på knappen "+ (plus)" för att öka dess kvantitet eller knappen "- (minus)" för att minska dess kvantitet.</string>
+    <string name="question_7">Hur tar jag bort en vara från min kundvagn med Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_7">För att ta bort en produkt från din kundvagn, ställ bara in dess kvantitet till noll eller tryck länge på den i listan och välj sedan knappen "Ta bort vara".</string>
+    <string name="question_8">Är Varukorg-räknaren gratis programvara?</string>
+    <string name="summary_preference_faq_8">Ja! Varukorg-räknaren är med stolthet fri programvara som distribueras under GNU General Public License version 3.</string>
+    <string name="question_9">Hur kan jag bidra till Varukorg-räknaren?</string>
+    <string name="summary_preference_faq_9">Det bästa sättet att bidra till Varukorg-räknaren är genom dess <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-arkiv. Därifrån kan du förgrena den och arbeta med dina bidrag, och senare skicka dem tillbaka via en pull-begäran. Du kan också använda problemspåraren för att rapportera buggar, föreslå nya funktioner eller förbättringar, eller få idéer om hur du kan hjälpa till.</string>
+    <string name="feedback">Feedback</string>
+
+    <string name="updates">Uppdateringar</string>
+
+    <string name="share">Dela</string>
+
+    <string name="support_us">Stöd oss</string>
+    <string name="paid_support">Betald support</string>
+    <string name="summary_donations">Oavsett hur mycket du donerar kommer du att hjälpa oss att hålla vår app igång och förbättra våra funktioner. Vi uppskattar din generositet och vänlighet!</string>
+    <string name="non_paid_support">Oavbetald support</string>
+    <string name="web_ad">Webbannons</string>
+
+    <string name="snack_app_updated">The app has been successfully updated</string>
+    <string name="snack_update_failed">The update process encountered an issue</string>
+    <string name="tooltip_agree">Accept the terms and conditions</string>
+    <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
+    <string name="tooltip_button_plus">Add 1 item to the cart</string>
+    <string name="try_again">Try again</string>
+    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
+    <string name="learn_more">Learn more</string>
 </resources>

@@ -1,9 +1,9 @@
 package com.d4rk.cartcalculator.ui.settings.privacy.ads
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -13,7 +13,7 @@ import com.google.android.ump.ConsentForm
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.UserMessagingPlatform
 
-class AdsSettingsActivity : ComponentActivity() {
+class AdsSettingsActivity : AppCompatActivity() {
     private lateinit var consentInformation: ConsentInformation
     private lateinit var consentForm: ConsentForm
     override fun onCreate(savedInstanceState: Bundle?) {

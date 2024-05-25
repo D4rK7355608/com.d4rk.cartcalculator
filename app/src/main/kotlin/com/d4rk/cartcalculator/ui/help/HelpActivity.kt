@@ -1,10 +1,9 @@
 package com.d4rk.cartcalculator.ui.help
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -14,7 +13,7 @@ import com.d4rk.cartcalculator.utils.Utils
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
 
-class HelpActivity : ComponentActivity() {
+class HelpActivity : AppCompatActivity() {
     private lateinit var reviewManager: ReviewManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,20 +42,16 @@ class HelpActivity : ComponentActivity() {
      * @param context The context used to create the ReviewManager instance and launch review flows.
      */
     fun feedback() {
-        Log.d("Testing", "Step 1")
         reviewManager = ReviewManagerFactory.create(this)
         val task = reviewManager.requestReviewFlow()
         task.addOnSuccessListener { reviewInfo ->
-            Log.d("Testing", "Step 1.1 - sssss")
             reviewManager.launchReviewFlow(this, reviewInfo)
         }.addOnFailureListener {
-            Log.d("Testing", "Step 2 - failure")
             Utils.openUrl(
                 this,
                 "https://play.google.com/store/apps/details?id=${this.packageName}&showAllReviews=true"
             )
         }.addOnFailureListener {
-            Log.d("Testing", "Step 3 - failure")
             Utils.sendEmailToDeveloper(this)
         }
     }

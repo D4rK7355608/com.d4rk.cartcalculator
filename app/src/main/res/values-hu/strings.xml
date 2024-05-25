@@ -1,116 +1,180 @@
 <resources>
-    <string name="app_short_description">Hatékonyan kezelje és számolja ki a bevásárlókosara elemeit a Cart Calculator segítségével. 🛒</string>
-    <string name="home">Kezdőlap</string>
-    <string name="refresh">Frissítés</string>
-    <string name="add_to_cart">Kosárba helyezés</string>
-    <string name="add_your_item">Elem hozzáadása</string>
-    <string name="name">Név</string>
-    <string name="price">Ár</string>
+    <string name="app_short_description">A bevásárlókosár elemeit hatékonyan kezelheti és kiszámolhatja a Cart Calculator segítségével. 🛒</string>
+    <string name="notification_update_title">Új frissítés érhető el!</string>
+    <string name="summary_notification_update">Az alkalmazás új verziója érhető el. Kattintson a frissítéshez!</string>
+    <string name="notification_last_time_used_title">Már rég volt!</string>
+    <string name="summary_notification_last_time_used"> Kezeljük hatékonyan a bevásárlókosár elemeit!</string>
+
+    <string name="welcome">Üdvözöljük</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Böngésszen a <i><u>Szolgáltatási feltételek</u></i> és a <i><u>Adatvédelmi szabályzat</u></i> között</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Olvassa el és fogadja el a Szolgáltatási feltételeinket és az Adatvédelmi szabályzatunkat a folytatáshoz.</string>
+    <string name="agree">Egyetértek</string>
+
+    <string name="no_carts_available">Nincsenek elérhető kosarak</string>
+    <string name="add_new_cart">Új kosár hozzáadása</string>
+    <string name="cart_name">Kosár neve</string>
+    <string name="shopping_cart">Bevásárlókosár</string>
+    <string name="summary_cart_dialog">Elkötelezettek vagyunk a személyre szabott vásárlási élmény megteremtése iránt mindenki számára. Hogy könnyebb legyen nyomon követnie a választásait és javítsa a vásárlási útját, fontolja meg kosarának elnevezését, mielőtt elemeket adna hozzá.</string>
+    <string name="created_on">Létrehozva: %1$s</string>
+    <string name="close">Bezárás?</string>
+    <string name="summary_close">Biztosan ki szeretne lépni?</string>
+
+    <string name="your_shopping_cart_is_empty">A bevásárlókosara üres</string>
+    <string name="item_name">Elem neve</string>
+    <string name="enter_item_name">Írja be az elem nevét</string>
+    <string name="item_price">Elem ára</string>
+    <string name="enter_item_price">Írja be az elem árát</string>
     <string name="quantity">Mennyiség</string>
-    <string name="total">Összesen:\n%1$f $</string>
+    <string name="enter_quantity">Írja be a mennyiséget</string>
+    <string name="dialog_info_cart_item">A zökkenőmentes fizetési élmény biztosítása érdekében kérjük, adjon meg részleteket a kosarába hozzáadott elemekről</string>
+    <string name="total">Összesen</string>
+
     <string name="settings">Beállítások</string>
+
+    <string name="display">Kijelző</string>
+    <string name="summary_preference_settings_display">Személyre szabhatja az alkalmazás megjelenését és hangulatát</string>
+
     <string name="appearance">Megjelenés</string>
-    <string name="theme">Téma</string>
-    <string name="follow_system">Kövesse a rendszer módot</string>
+    <string name="dark_theme">Sötét téma</string>
+    <string name="will_turn_on_automatically_by_system">A rendszer automatikusan bekapcsolja</string>
+    <string name="will_never_turn_on_automatically">Soha nem kapcsol be automatikusan</string>
+    <string name="amoled_mode">AMOLED mód</string>
+    <string name="follow_system">Rendszermód követése</string>
     <string name="light_mode">Világos mód</string>
     <string name="dark_mode">Sötét mód</string>
-    <string name="auto_battery_mode">Automatikus akkumulátor sötét mód</string>
+    <string name="summary_dark_theme">A sötét téma mély háttérrel segít a akkumulátor élettartamának meghosszabbításában</string>
+
+    <string name="dynamic_colors">Dinamikus színek</string>
+    <string name="summary_preference_settings_dynamic_colors">Alkalmazza a háttérképek színeit az alkalmazás témájára</string>
+
     <string name="language">Nyelv</string>
-    <string name="advanced">Haladó</string>
-    <string name="firebase">Firebase</string>
-    <string name="app_updates">App frissítések</string>
-    <string name="check_for_updates">Frissítések keresése…</string>
-    <string name="subscribe_to_beta">Feliratkozás béta frissítésekre</string>
-    <string name="changelog">Változások listája</string>
-    <string name="privacy_and_security">Adatvédelem és biztonság</string>
-    <string name="privacy_policy">Adatvédelmi irányelvek</string>
+    <string name="summary_preference_settings_language">Megváltoztatja az alkalmazásban használt nyelvet</string>
+    <string name="dialog_language_subtitle">Válassza ki a kívánt nyelvet</string>
+    <string name="dialog_info_language">Személyre szabhatja élményét a kívánt nyelvvel. A nyelvváltások azonnal hatályba lépnek, biztosítva a zökkenőmentes élményt a választott nyelvben</string>
+
+    <string name="cart_settings">Kosárbeállítások</string>
+    <string name="summary_preference_settings_cart">Kezelje, hogy a kosara hogyan viselkedik</string>
+
+    <string name="currency">Pénznem</string>
+    <string name="summary_preference_settings_currency">Állítsa be a kívánt pénznemet az árak megjelenítéséhez</string>
+    <string name="dialog_currency_subtitle">Válassza ki a kívánt pénznemet</string>
+    <string name="dialog_info_currency">Ez a pénznem választás a platformon a termékek árainak megjelenítésére, a tranzakciók feldolgozására és a személyre szabottabb vásárlási élmény biztosítására lesz felhasználva</string>
+
+    <string name="notifications">Értesítések</string>
+    <string name="summary_preference_settings_notifications">Az alkalmazás értesítéseinek kezelése</string>
+
+    <string name="app_usage_notifications">Alkalmazás-használat értesítések</string>
+    <string name="update_notifications">Frissítési értesítések</string>
+
+    <string name="advanced">Speciális</string>
+    <string name="summary_preference_settings_advanced">Fedezze fel a speciális beállításokat</string>
+    <string name="error_reporting">Hibabejelentés</string>
+    <string name="bug_report">Hibabejelentés</string>
+    <string name="summary_preference_settings_bug_report">Küldjön hibabejelentéseket és funkciókéréseket az alkalmazás GitHub adattárának problémák oldalára</string>
+
+    <string name="security_and_privacy">Biztonság és adatvédelem</string>
+    <string name="summary_preference_settings_privacy_and_security">Az adatvédelmi beállítások kezelése</string>
+    <string name="privacy">Adatvédelem</string>
+    <string name="privacy_policy">Adatvédelmi szabályzat</string>
+    <string name="summary_preference_settings_privacy_policy">Tekintse meg az adatkezelési szabályzatot</string>
     <string name="terms_of_service">Szolgáltatási feltételek</string>
-    <string name="code_of_conduct">Viselkedési kódex</string>
+    <string name="summary_preference_settings_terms_of_service">Tekintse át a szolgáltatásunk használatakor elfogadott feltételeket</string>
+    <string name="code_of_conduct">Magatartási kódex</string>
+    <string name="summary_preference_settings_code_of_conduct">Értsd meg a szolgáltatásunkban a viselkedésre vonatkozó szabályokat és útmutatókat</string>
+
     <string name="permissions">Engedélyek</string>
+    <string name="summary_preference_settings_permissions">Kezelje a szolgáltatásunknak adott engedélyeket</string>
     <string name="normal">Normál</string>
-    <string name="runtime">Futási idő</string>
-    <string name="license">Licenc</string>
-    <string name="more">Továbbiak</string>
-    <string name="share">Megosztás</string>
-    <string name="share_using">Megosztás ezzel…</string>
-    <string name="share_subject">Próbáld ki most!!!</string>
-    <string name="more_apps">További alkalmazások…</string>
-    <string name="support_me">Támogass engem</string>
-    <string name="info">Információ</string>
-    <string name="device_info">Eszköz információk</string>
-    <string name="app_build">App verzió: Kiadás\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="ad_id">Hirdetés azonosítója [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Lehetővé teszi az alkalmazás számára, hogy lekérje és felhasználja a hirdetés azonosítóját, amely a felhasználó eszközéhez kapcsolódik, személyre szabott hirdetéseket biztosítva, a hirdetések hatékonyságának mérésével és Android 13 vagy újabb eszközökön hirdetések megjelenítésével.</string>
+    <string name="internet">Internet [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">Lehetővé teszi az alkalmazás számára, hogy internetkapcsolatot létesítsen hibabejelentések küldéséhez vagy frissítések ellenőrzéséhez.</string>
+    <string name="post_notifications">Értesítések közzététele [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Lehetővé teszi az alkalmazás számára, hogy értesítéseket jelenítsen meg Android 13 vagy újabb eszközökön.</string>
+    <string name="runtime">Futásidejű</string>
+    <string name="access_network_state">Hálózati állapot elérése [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">Lehetővé teszi az alkalmazás számára, hogy ellenőrizze a hálózati kapcsolatot és lekérje a Wi-Fi-vel kapcsolatos információkat, beleértve az engedélyezett állapotot és a csatlakoztatott Wi-Fi-eszközök nevét.</string>
+    <string name="access_notification_policy">Értesítési szabályzat elérése [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Lehetővé teszi az alkalmazás számára, hogy hozzáférjen és módosítsa az eszköz értesítési szabályzatát, szabályozva, hogy a felhasználónak mikor és hogyan jelenjenek meg értesítések, valamint egyedi értesítési kezelési funkciók biztosításával.</string>
+    <string name="billing">Számla [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Lehetővé teszi az alkalmazás számára, hogy a Google Play Számlafizetési Könyvtárat használja az alkalmazáson belüli vásárlások és adományok kezeléséhez</string>
+    <string name="check_license">Licencszerződés ellenőrzése [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">Lehetővé teszi az alkalmazás számára, hogy ellenőrizze a licencszerződéssel való megfelelést és érvényesítse a licenc feltételeket a szellemi tulajdon védelme érdekében.</string>
+    <string name="foreground_service">Előtér-szolgáltatás [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">Lehetővé teszi az alkalmazás számára, hogy előtérben futó szolgáltatásokat hozzon létre és használjon, így prioritást kapnak más háttérfolyamatokkal szemben, és javítják a teljesítményt és a megbízhatóságot.</string>
+
+    <string name="ads">Hirdetések</string>
+    <string name="summary_preference_settings_ads">Irányítsa, hogy hogyan használjuk az adatait a releváns hirdetések megjelenítéséhez</string>
+    <string name="display_ads">Hirdetések megjelenítése</string>
+    <string name="personalized_ads">Személyre szabott hirdetések</string>
+    <string name="summary_ads_personalized_ads">Válassza ki, hogy hogyan személyre szabjuk a hirdetéseket az Ön érdeklődése alapján</string>
+    <string name="summary_ads">Releváns hirdetéseket lát. Kezelje azokat az információkat, amelyeket a személyre szabott hirdetések megjelenítéséhez használunk az alkalmazás tevékenysége alapján. A személyre szabást bármikor kikapcsolhatja itt.\n</string>
+
+    <string name="usage_and_diagnostics">Használat és diagnosztika</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Ossza meg az adatait, hogy segítsen javítani a Cart Calculatort</string>
+    <string name="summary_usage_and_diagnostics">Segítsen javítani az élményét azáltal, hogy automatikusan elküld nekünk diagnosztikai, eszköz- és alkalmazás-használati adatokat. Ez segít javítani az alkalmazás teljesítményét, stabilitását és egyéb fejlesztéseket. Néhány összesített adat az alkalmazásainkban is segít.\n\nEz általános információ az eszközéről és arról, hogyan használja az alkalmazásainkat (például az akkumulátor szintje, a rendszer- és az alkalmazástevékenység, valamint a hibák). A adatokat az alkalmazásaink javítására használják\n\nEnnek a funkciónak a kikapcsolása nem befolyásolja az eszköz képességét arra, hogy a lényeges szolgáltatásokhoz, például az alkalmazásfrissítésekhez és a biztonsághoz szükséges információkat küldje.\n</string>
+
+    <string name="legal">Jogi</string>
+    <string name="legal_notices">Jogi közlemények</string>
+    <string name="summary_preference_settings_legal_notices">Tekintse meg a szolgáltatásunkkal kapcsolatos jogi információkat</string>
+    <string name="license">Licencszerződés</string>
+
+    <string name="about">Rólunk</string>
+    <string name="summary_preference_settings_about">Többet megtudhat a Cart Calculatorról</string>
+
+    <string name="app_info">Alkalmazás információi</string>
+    <string name="app_build_version">Alkalmazás build verzió</string>
+    <string name="summary_preference_settings_oss">Nyílt forráskódú szoftverek licenc adatai</string>
+    <string name="device_info">Eszköz információi</string>
+    <string name="app_build">Alkalmazás build: Kiadás\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="manufacturer">Gyártó:</string>
     <string name="device_model">Eszköz modell:</string>
     <string name="android_version">Android verzió:</string>
     <string name="api_level">API szint:</string>
+
     <string name="help_and_feedback">Segítség és visszajelzés</string>
     <string name="help">Segítség</string>
-    <string name="mail_to_dev">Fejlesztő e-mail küldése 📧</string>
     <string name="faq">GYIK</string>
-    <string name="send_feedback">Visszajelzés küldése</string>
-    <string name="about">Névjegy</string>
-    <string name="app_version">Verzió %1$s (%2$d)</string>
-    <string name="music">Zene</string>
-    <string name="made_in">Készült ❤ Romániában!</string>
-    <string name="copyright">Szerzői jog %1$s által, D4rK által készítve!</string>
-    <string name="app_usage_notifications">Alkalmazás használati értesítések</string>
-    <string name="update_notifications">Frissítés értesítések</string>
-    <string name="agree">Elfogadás</string>
-    <string name="browse_terms_of_service_and_privacy_policy"><i><u>Szolgáltatási feltételek</u></i> és <i><u>Adatvédelmi irányelvek</u></i> böngészése</string>
-    <string name="welcome">Üdvözöljük</string>
-    <string name="copied_to_clipboard">Vágólapra másolva!</string>
-    <string name="close">Bezárás?</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="ad_id">Hirdetési azonosító [AD_ID]</string>
-    <string name="access_network_state">Hálózati állapot hozzáférés [ACCESS_NETWORK_STATE]</string>
-    <string name="post_notifications">Értesítések küldése [POST_NOTIFICATIONS]</string>
-    <string name="check_license">Licenc ellenőrzése [CHECK_LICENSE]</string>
-    <string name="access_notification_policy">Értesítési irányelvek hozzáférése [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="foreground_service">Előtérszolgáltatás [FOREGROUND_SERVICE]</string>
-    <string name="notifications">Értesítések</string>
-    <string name="notification_settings">Értesítési beállítások</string>
-    <string name="notification_last_time_used_title">Már egy ideje nem használtad!</string>
-    <string name="notification_update_title">Új frissítés érhető el!</string>
-    <string name="question_1">Mi az a Cart Calculator?</string>
+    <string name="view_in_google_play_store">Megtekintés a Google Play Áruházban</string>
+    <string name="version_info">Verzió információi</string>
+    <string name="version">Verzió %1$s</string>
+    <string name="beta_program">Béta program</string>
+    <string name="question_1">Mi a Cart Calculator?</string>
+    <string name="summary_preference_faq_1">A Cart Calculator egy egyszerű, általános és ingyenes bevásárlókosár-kezelő és teljes összeg-számláló, amely a szokásos eszközök számológépét helyettesíti, amikor a boltban vagy a piacon van.</string>
     <string name="question_2">Hogyan működik a Cart Calculator?</string>
-    <string name="question_3">Miért érdemes a Cart Calculator-t használni?</string>
-    <string name="question_4">Használhatom a Cart Calculator-t élelmiszerboltokon vagy piacokon kívül is?</string>
-    <string name="question_5">Hogyan adhatok hozzá egy tételt a kosaramhoz a Cart Calculator segítségével?</string>
-    <string name="question_6">Hogyan növelhetem vagy csökkenthetem egy tétel mennyiségét a kosaramban a Cart Calculator segítségével?</string>
-    <string name="question_7">Hogyan távolíthatok el egy tételt a kosaramból a Cart Calculator segítségével?</string>
-    <string name="question_8">A Cart Calculator ingyenes szoftver?</string>
-    <string name="question_9">Hogyan járulhatok hozzá a Cart Calculator fejlesztéséhez?</string>
-    <string name="summary_preference_faq_1">A Cart Calculator egy egyszerű, általános és ingyenes bevásárlókosár-kezelő és végösszeg-számoló, amely az átlagos eszköz számológépét helyettesíti, amikor élelmiszerboltban vagy piacon tartózkodsz.</string>
-    <string name="summary_preference_faq_2">A Cart Calculator segítségével kezelheted a bevásárlókosaradat a termékek hozzáadásával és mennyiségük növelésével vagy csökkentésével. Bármikor a Cart Calculator megjeleníti a kosaradban található termékek végösszegét az áruk ára és mennyisége alapján.</string>
-    <string name="summary_preference_faq_3">A Cart Calculator segít abban, hogy mindig tisztában legyél azzal, hogy mennyit költesz, még mielőtt a pénztárhoz érnél. Ez különösen hasznos, ha költségvetéssel vásárolsz.</string>
-    <string name="summary_preference_faq_4">Igen! Mivel a Cart Calculator meglepően egyszerű és általános, használhatod még kocsmákban, éttermekben, moziban stb.</string>
-    <string name="summary_preference_faq_5">A Kezdőképernyőről nyomd meg az „Elem hozzáadása” gombot az Action Bar-on, hogy új terméket adj a kosaradhoz. Add meg a nevét és az árát, majd kattints az „Hozzáadás” gombra.</string>
-    <string name="summary_preference_faq_6">Egyszerűen találd meg a tételt a listában, majd nyomd meg a „+” (plusz) gombot a mennyiség növeléséhez vagy a „-” (mínusz) gombot a mennyiség csökkentéséhez.</string>
-    <string name="summary_preference_faq_7">Egy termék eltávolításához egyszerűen állítsd a mennyiségét nullára, vagy hosszan kattints rá a listában, majd válaszd ki a „Tétel törlése” gombot.</string>
-    <string name="summary_preference_faq_8">Igen! A Cart Calculator büszkén ingyenes szoftver, amelyet a GNU General Public License 3. verziója szerint terjesztenek.</string>
-    <string name="summary_preference_faq_9">A legjobb módja a Cart Calculator fejlesztéséhez való hozzájárulásnak a <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> tárhelyen keresztül történik. Ott elágazhatsz és dolgozhatsz a hozzájárulásaidon, majd később elküldheted őket húzásos kérés formájában. Használhatod az probléma nyomkövetőt a hibák jelentésére, új funkciók vagy javítások javaslatára, vagy ötleteket szerezhetsz arról, hogyan segíthetsz.</string>
-    <string name="summary_preference_permissions_access_network_state">Lehetővé teszi az alkalmazás számára a hálózati kapcsolat ellenőrzését és a Wi-Fi hálózatról, beleértve az engedélyezési állapotot és a csatlakoztatott Wi-Fi eszközök neveit, származó információk lekérését.</string>
-    <string name="summary_preference_permissions_ad_id">Lehetővé teszi az alkalmazás számára a felhasználó eszközéhez kapcsolódó hirdetési azonosító lekérését és használatát, személyre szabott hirdetések biztosítását, hirdetések hatékonyságának mérését, és hirdetések megjelenítését Android 13 vagy újabb verziójú eszközökön.</string>
-    <string name="summary_preference_permissions_internet">Lehetővé teszi az alkalmazás számára az internetkapcsolat létesítését hibajelentések küldéséhez vagy frissítések ellenőrzéséhez.</string>
-    <string name="summary_preference_permissions_post_notifications">Lehetővé teszi az alkalmazás számára a értesítések megjelenítését az Android 13 vagy újabb verziójú eszközökön.</string>
-    <string name="summary_preference_permissions_check_license">Lehetővé teszi az alkalmazás számára, hogy ellenőrizze az licencmegállapodás betartását és az intellektuális tulajdon védelmének érdekében licencszerződési feltételeket érvényesítsen.</string>
-    <string name="summary_preference_permissions_access_notification_policy">Lehetővé teszi az alkalmazás számára a készülék értesítési irányelveinek elérését és módosítását, amelyek ellenőrzik, hogy mikor és hogyan jelennek meg értesítések a felhasználó számára, és biztosítanak testreszabott értesítéskezelési funkciókat.</string>
-    <string name="summary_preference_permissions_foreground_service">Az alkalmazás szolgáltatásokat hozhat létre és használhat, amelyek a foregroundben futnak, így prioritást élveznek a többi háttérfolyamathoz képest, és javítják a teljesítményt és a megbízhatóságot.</string>
-    <string name="summary_preference_settings_firebase">Ezzel gyűjtünk információkat az alkalmazás teljesítményéről és a hibajegyzékekről.</string>
-    <string name="summary_preference_settings_support_me">Kattints ide, ha támogatni szeretnél engem pénz nélkül. Csak egy kis időt igényel, hogy megnézz egy hirdetést.</string>
-    <string name="summary_preference_settings_language">Állítsd be az alkalmazás nyelvét.</string>
-    <string name="summary_notification_last_time_used">Hatékonyan kezeljük a bevásárlókosár elemeit!</string>
-    <string name="summary_notification_update">Elérhető az alkalmazás új verziója. Kattints az frissítéshez!</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Olvassa el és fogadja el az Általános Szerződési Feltételeket és Adatvédelmi Nyilatkozatunkat a folytatáshoz.</string>
-    <string name="summary_empty">Az Ön bevásárlókosara üres.</string>
-    <string name="summary_close">Biztosan ki szeretne lépni?</string>
-    <string name="snack_unable_to_open_google_play_store">Nem sikerült megnyitni a Google Play Áruházat.</string>
-    <string name="snack_feedback">Köszönjük az értékelést!</string>
-    <string name="hint_name">Név megadása</string>
-    <string name="hint_price">Ár megadása</string>
-    <string name="hint_quantity">Mennyiség megadása</string>
-    <string name="tooltip_agree">Elfogadom a feltételeket és az általános szerződési feltételeket.</string>
-    <string name="tooltip_button_minus">1 termék eltávolítása a kosárból</string>
-    <string name="tooltip_button_plus">1 termék hozzáadása a kosárhoz</string>
-    <string name="tooltip_open_me">Nyitott kapcsolat 🌐</string>
+    <string name="summary_preference_faq_2">A Cart Calculator lehetővé teszi a bevásárlókosár kezelését termékek hozzáadásával és mennyiségük növelésével vagy csökkentésével. Bármikor a Cart Calculator megjeleníti a kosárban lévő termékek teljes összegét az áruk és mennyiségek alapján.</string>
+    <string name="question_3">Miért kellene a Cart Calculatort használnom?</string>
+    <string name="summary_preference_faq_3">A Cart Calculator segít mindig tisztában lenni azzal, hogy mennyit költ, még a pénztárhoz érkezés előtt is. Ez különösen akkor hasznos, ha költségvetéssel kell vásárolnia.</string>
+    <string name="question_4">Használhatom a Cart Calculatort a boltok és piacok kívül?</string>
+    <string name="summary_preference_faq_4">Igen! Mivel a Cart Calculator meglepően egyszerű és általános, használhatja azt kocsmákban, éttermekben, mozikban stb. is.</string>
+    <string name="question_5">Hogyan adhatok hozzá egy elemet a kosaramhoz a Cart Calculator segítségével?</string>
+    <string name="summary_preference_faq_5">A Kezdőképernyőn nyomja meg az "Elem hozzáadása" gombot a műveleti sávban, hogy hozzáadjon egy új terméket a kosarához. Adja meg a nevét és az árát, majd kattintson a "Hozzáadás" gombra.</string>
+    <string name="question_6">Hogyan növelhetem vagy csökkenthetem egy elem mennyiségét a kosaramban a Cart Calculator segítségével?</string>
+    <string name="summary_preference_faq_6">Egyszerűen keresse meg az elemet a listában, majd nyomja meg a "+ (plusz)" gombot a mennyiség növeléséhez vagy a "- (mínusz)" gombot a mennyiség csökkentéséhez.</string>
+    <string name="question_7">Hogyan távolíthatok el egy elemet a kosaramhoz a Cart Calculator segítségével?</string>
+    <string name="summary_preference_faq_7">A termék eltávolításához a kosárból, egyszerűen állítsa a mennyiségét nullára, vagy nyomja meg hosszan a listában, majd válassza ki az "Elem törlése" gombot.</string>
+    <string name="question_8">Ingyenes szoftver a Cart Calculator?</string>
+    <string name="summary_preference_faq_8">Igen! A Cart Calculator büszkén ingyenes szoftver, amely a GNU General Public License 3. verziója alatt terjeszkedik.</string>
+    <string name="question_9">Hogyan járulhatok hozzá a Cart Calculatorhoz?</string>
+    <string name="summary_preference_faq_9">A Cart Calculatorhoz való hozzájárulás legjobb módja a <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> adattára. Onnan elágazhatja azt, dolgozhat a hozzájárulásokon, és később elküldi azokat pull requestként. A probléma nyomon követőjét is használhatja hibák jelentésére, új funkciók vagy fejlesztések javaslatára, vagy ötletekért, hogyan tudna segíteni.</string>
+    <string name="feedback">Visszajelzés</string>
+
+    <string name="updates">Frissítések</string>
+
+    <string name="share">Megosztás</string>
+
+    <string name="support_us">Támogasson minket</string>
+    <string name="paid_support">Fizetett támogatás</string>
+    <string name="summary_donations">Bármit is adományoz, segít nekünk futtatni az alkalmazást és javítani a funkcióit. Köszönjük nagylelkűségét és kedvességét!</string>
+    <string name="non_paid_support">Ingyenes támogatás</string>
+    <string name="web_ad">Webes hirdetés</string>
+
+    <string name="snack_app_updated">The app has been successfully updated</string>
+    <string name="snack_update_failed">The update process encountered an issue</string>
+    <string name="tooltip_agree">Accept the terms and conditions</string>
+    <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
+    <string name="tooltip_button_plus">Add 1 item to the cart</string>
+    <string name="try_again">Try again</string>
+    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
+    <string name="learn_more">Learn more</string>
 </resources>

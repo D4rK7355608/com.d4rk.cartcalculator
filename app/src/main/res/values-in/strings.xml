@@ -1,116 +1,180 @@
 <resources>
-    <string name="app_short_description">Kelola dan hitung item keranjang Anda dengan efisien menggunakan Cart Calculator. 🛒</string>
-    <string name="home">Beranda</string>
-    <string name="refresh">Segarkan</string>
-    <string name="add_to_cart">Tambah ke Keranjang</string>
-    <string name="add_your_item">Tambahkan item Anda</string>
-    <string name="name">Nama</string>
-    <string name="price">Harga</string>
+    <string name="app_short_description">Kelola dan hitung item keranjang Anda secara efisien dengan Cart Calculator. 🛒</string>
+    <string name="notification_update_title">Pembaruan baru tersedia!</string>
+    <string name="summary_notification_update">Versi baru aplikasi tersedia. Klik untuk memperbarui!</string>
+    <string name="notification_last_time_used_title">Sudah lama!</string>
+    <string name="summary_notification_last_time_used"> Mari kita kelola item keranjang Anda secara efisien!</string>
+
+    <string name="welcome">Selamat datang</string>
+    <string name="browse_terms_of_service_and_privacy_policy">Jelajahi <i><u>Syarat Layanan</u></i> dan <i><u>Kebijakan Privasi</u></i></string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Syarat Layanan dan Kebijakan Privasi kami untuk melanjutkan.</string>
+    <string name="agree">Setuju</string>
+
+    <string name="no_carts_available">Tidak ada keranjang yang tersedia</string>
+    <string name="add_new_cart">Tambahkan keranjang baru</string>
+    <string name="cart_name">Nama keranjang</string>
+    <string name="shopping_cart">Keranjang belanja</string>
+    <string name="summary_cart_dialog">Kami berkomitmen untuk menciptakan pengalaman berbelanja yang dipersonalisasi untuk semua orang. Untuk mempermudah Anda melacak pilihan Anda dan meningkatkan perjalanan berbelanja Anda, pertimbangkan untuk memberi nama pada keranjang Anda sebelum menambahkan barang.</string>
+    <string name="created_on">Dibuat pada %1$s</string>
+    <string name="close">Tutup?</string>
+    <string name="summary_close">Apakah Anda yakin ingin keluar?</string>
+
+    <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
+    <string name="item_name">Nama barang</string>
+    <string name="enter_item_name">Masukkan nama barang</string>
+    <string name="item_price">Harga barang</string>
+    <string name="enter_item_price">Masukkan harga barang</string>
     <string name="quantity">Kuantitas</string>
-    <string name="total">Total:\n%1$f $</string>
+    <string name="enter_quantity">Masukkan kuantitas</string>
+    <string name="dialog_info_cart_item">Untuk memastikan pengalaman pembayaran yang lancar, harap berikan detail tentang barang yang Anda tambahkan ke keranjang Anda</string>
+    <string name="total">Total</string>
+
     <string name="settings">Pengaturan</string>
-    <string name="appearance">Tampilan</string>
-    <string name="theme">Tema</string>
+
+    <string name="display">Tampilan</string>
+    <string name="summary_preference_settings_display">Personalisasi tampilan dan nuansa aplikasi Anda</string>
+
+    <string name="appearance">Penampilan</string>
+    <string name="dark_theme">Tema gelap</string>
+    <string name="will_turn_on_automatically_by_system">Akan dihidupkan secara otomatis oleh sistem</string>
+    <string name="will_never_turn_on_automatically">Tidak akan pernah dihidupkan secara otomatis</string>
+    <string name="amoled_mode">Mode AMOLED</string>
     <string name="follow_system">Ikuti Mode Sistem</string>
     <string name="light_mode">Mode Terang</string>
     <string name="dark_mode">Mode Gelap</string>
-    <string name="auto_battery_mode">Mode Gelap Baterai Otomatis</string>
+    <string name="summary_dark_theme">Tema gelap menggunakan latar belakang yang dalam untuk membantu menjaga baterai Anda tetap hidup lebih lama</string>
+
+    <string name="dynamic_colors">Warna dinamis</string>
+    <string name="summary_preference_settings_dynamic_colors">Terapkan warna dari wallpaper ke tema aplikasi</string>
+
     <string name="language">Bahasa</string>
-    <string name="advanced">Lanjutan</string>
-    <string name="firebase">Firebase</string>
-    <string name="app_updates">Pembaruan Aplikasi</string>
-    <string name="check_for_updates">Periksa pembaruan…</string>
-    <string name="subscribe_to_beta">Berlangganan pembaruan beta</string>
-    <string name="changelog">Catatan Perubahan</string>
-    <string name="privacy_and_security">Privasi dan Keamanan</string>
+    <string name="summary_preference_settings_language">Mengubah bahasa yang digunakan di aplikasi</string>
+    <string name="dialog_language_subtitle">Pilih bahasa yang Anda inginkan</string>
+    <string name="dialog_info_language">Personalisasi pengalaman Anda dengan bahasa yang Anda inginkan. Setiap perubahan bahasa yang Anda buat akan berlaku segera, memastikan pengalaman yang lancar dalam bahasa pilihan Anda</string>
+
+    <string name="cart_settings">Pengaturan keranjang</string>
+    <string name="summary_preference_settings_cart">Kelola cara keranjang Anda berperilaku</string>
+
+    <string name="currency">Mata uang</string>
+    <string name="summary_preference_settings_currency">Tetapkan mata uang yang Anda inginkan untuk menampilkan harga</string>
+    <string name="dialog_currency_subtitle">Pilih mata uang yang Anda inginkan</string>
+    <string name="dialog_info_currency">Pilihan mata uang ini akan digunakan di seluruh platform untuk menampilkan harga produk, memproses transaksi, dan memberikan pengalaman berbelanja yang lebih dipersonalisasi</string>
+
+    <string name="notifications">Pemberitahuan</string>
+    <string name="summary_preference_settings_notifications">Kelola pemberitahuan aplikasi</string>
+
+    <string name="app_usage_notifications">Pemberitahuan Penggunaan Aplikasi</string>
+    <string name="update_notifications">Pemberitahuan Pembaruan</string>
+
+    <string name="advanced">Tingkat lanjut</string>
+    <string name="summary_preference_settings_advanced">Jelajahi pengaturan tingkat lanjut lainnya</string>
+    <string name="error_reporting">Pelaporan kesalahan</string>
+    <string name="bug_report">Laporan bug</string>
+    <string name="summary_preference_settings_bug_report">Kirim laporan bug dan permintaan fitur ke halaman masalah repositori GitHub aplikasi</string>
+
+    <string name="security_and_privacy">Keamanan &amp; privasi</string>
+    <string name="summary_preference_settings_privacy_and_security">Kelola pengaturan privasi Anda</string>
+    <string name="privacy">Privasi</string>
     <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="summary_preference_settings_privacy_policy">Lihat kebijakan yang mengatur cara kami menangani data Anda</string>
     <string name="terms_of_service">Syarat Layanan</string>
+    <string name="summary_preference_settings_terms_of_service">Tinjau persyaratan yang Anda setujui saat menggunakan layanan kami</string>
     <string name="code_of_conduct">Kode Etik</string>
+    <string name="summary_preference_settings_code_of_conduct">Pahami aturan dan pedoman untuk perilaku dalam layanan kami</string>
+
     <string name="permissions">Izin</string>
+    <string name="summary_preference_settings_permissions">Kelola izin yang diberikan ke layanan kami</string>
     <string name="normal">Normal</string>
-    <string name="runtime">Runtime</string>
-    <string name="license">Lisensi</string>
-    <string name="more">Lainnya</string>
-    <string name="share">Bagikan</string>
-    <string name="share_using">Bagikan menggunakan…</string>
-    <string name="share_subject">Coba sekarang!!!</string>
-    <string name="more_apps">Aplikasi Lainnya…</string>
-    <string name="support_me">Dukung saya</string>
-    <string name="info">Info</string>
-    <string name="device_info">Info Perangkat</string>
-    <string name="app_build">Versi Aplikasi: Rilis\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="manufacturer">Produsen:</string>
-    <string name="device_model">Model Perangkat:</string>
-    <string name="android_version">Versi Android:</string>
-    <string name="api_level">Level API:</string>
-    <string name="help_and_feedback">Bantuan &amp; Umpan Balik</string>
-    <string name="help">Bantuan</string>
-    <string name="mail_to_dev">Kirim email ke pengembang 📧</string>
-    <string name="faq">FAQ</string>
-    <string name="send_feedback">Kirim umpan balik</string>
-    <string name="about">Tentang</string>
-    <string name="app_version">Versi %1$s (%2$d)</string>
-    <string name="music">Musik</string>
-    <string name="made_in">Dibuat dengan ❤ di Rumania!</string>
-    <string name="copyright">Hak Cipta © %1$s, dibuat oleh D4rK!</string>
-    <string name="app_usage_notifications">Notifikasi Penggunaan Aplikasi</string>
-    <string name="update_notifications">Notifikasi Pembaruan</string>
-    <string name="agree">Setuju</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Jelajahi <i><u>Syarat Layanan</u></i> dan <i><u>Kebijakan Privasi</u></i></string>
-    <string name="welcome">Selamat Datang</string>
-    <string name="copied_to_clipboard">Tersalin ke papan klip!</string>
-    <string name="close">Tutup?</string>
+    <string name="ad_id">ID iklan [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Memungkinkan aplikasi untuk mengambil dan menggunakan pengidentifikasi iklan yang terkait dengan perangkat pengguna, memberikan iklan yang dipersonalisasi, mengukur efektivitas iklan, dan menampilkan iklan di perangkat Android 13 atau yang lebih baru.</string>
     <string name="internet">Internet [INTERNET]</string>
-    <string name="ad_id">ID Iklan [AD_ID]</string>
+    <string name="summary_preference_permissions_internet">Memungkinkan aplikasi untuk membuat koneksi internet untuk mengirim laporan kesalahan atau memeriksa pembaruan.</string>
+    <string name="post_notifications">Posting pemberitahuan [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Memungkinkan aplikasi untuk menampilkan pemberitahuan di perangkat dengan Android 13 atau yang lebih baru.</string>
+    <string name="runtime">Runtime</string>
     <string name="access_network_state">Akses status jaringan [ACCESS_NETWORK_STATE]</string>
-    <string name="post_notifications">Kirim notifikasi [POST_NOTIFICATIONS]</string>
-    <string name="check_license">Periksa lisensi [CHECK_LICENSE]</string>
-    <string name="access_notification_policy">Akses kebijakan notifikasi [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="foreground_service">Layanan latar depan [FOREGROUND_SERVICE]</string>
-    <string name="notifications">Notifikasi</string>
-    <string name="notification_settings">Pengaturan Notifikasi</string>
-    <string name="notification_last_time_used_title">Sudah lama sekali!</string>
-    <string name="notification_update_title">Tersedia pembaruan baru!</string>
-    <string name="question_1">Apa itu Cart Calculator?</string>
-    <string name="question_2">Bagaimana Cart Calculator bekerja?</string>
-    <string name="question_3">Mengapa saya harus menggunakan Cart Calculator?</string>
-    <string name="question_4">Dapatkah saya menggunakan Cart Calculator di luar toko kelontong atau pasar?</string>
-    <string name="question_5">Bagaimana cara menambahkan item ke keranjang menggunakan Cart Calculator?</string>
-    <string name="question_6">Bagaimana cara menambah atau mengurangi kuantitas suatu item di keranjang menggunakan Cart Calculator?</string>
-    <string name="question_7">Bagaimana cara menghapus item dari keranjang menggunakan Cart Calculator?</string>
-    <string name="question_8">Apakah Cart Calculator adalah perangkat lunak gratis?</string>
-    <string name="question_9">Bagaimana cara saya berkontribusi pada Cart Calculator?</string>
-    <string name="summary_preference_faq_1">Cart Calculator adalah manajer keranjang belanja sederhana, umum, dan gratis yang menggantikan kalkulator perangkat biasa saat Anda berada di toko kelontong atau pasar.</string>
-    <string name="summary_preference_faq_2">Cart Calculator memungkinkan Anda mengelola keranjang belanja Anda dengan menambahkan produk dan meningkatkan atau mengurangi kuantitasnya. Setiap saat, Cart Calculator menampilkan total yang harus dibayarkan dari produk di keranjang Anda berdasarkan harga dan kuantitasnya.</string>
-    <string name="summary_preference_faq_3">Cart Calculator membantu Anda selalu menyadari berapa banyak yang Anda belanjakan bahkan sebelum mencapai kasir. Ini sangat berguna ketika Anda harus berbelanja dengan anggaran terbatas.</string>
-    <string name="summary_preference_faq_4">Ya! Karena Cart Calculator sangat sederhana dan generik, Anda juga dapat menggunakannya di pub, restoran, bioskop, dll.</string>
-    <string name="summary_preference_faq_5">Dari layar Beranda, tekan tombol "Tambah item" di Action Bar untuk menambahkan produk baru ke keranjang Anda. Anda akan diminta untuk memasukkan nama dan harga produk, kemudian klik tombol "Tambah".</string>
-    <string name="summary_preference_faq_6">Cari item di daftar, lalu tekan tombol "+ (plus)" untuk meningkatkan kuantitasnya atau tombol "- (kurang)" untuk mengurangi kuantitasnya.</string>
-    <string name="summary_preference_faq_7">Untuk menghapus produk dari keranjang Anda, cukup atur kuantitasnya menjadi nol atau tahan tekan lama pada item tersebut di daftar, lalu pilih tombol "Hapus item".</string>
-    <string name="summary_preference_faq_8">Ya! Cart Calculator adalah perangkat lunak gratis yang didistribusikan di bawah Lisensi Publik Umum GNU versi 3.</string>
-    <string name="summary_preference_faq_9">Cara terbaik untuk berkontribusi pada Cart Calculator adalah melalui repositori <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>nya. Dari sana, Anda dapat melakukan fork dan bekerja pada kontribusi Anda, kemudian mengirimkannya kembali melalui pull request. Anda juga dapat menggunakan pelacak masalah untuk melaporkan bug, mengusulkan fitur atau peningkatan baru, atau mendapatkan ide tentang bagaimana Anda bisa membantu.</string>
     <string name="summary_preference_permissions_access_network_state">Memungkinkan aplikasi untuk memeriksa konektivitas jaringan dan mengambil informasi tentang Wi-Fi, termasuk status yang diaktifkan dan nama perangkat Wi-Fi yang terhubung.</string>
-    <string name="summary_preference_permissions_ad_id">Memungkinkan aplikasi untuk mengambil dan menggunakan pengenal iklan yang terkait dengan perangkat pengguna, menyediakan iklan personalisasi, mengukur efektivitas iklan, dan menampilkan iklan di perangkat Android 13 atau versi terbaru.</string>
-    <string name="summary_preference_permissions_internet">Memungkinkan aplikasi untuk melakukan koneksi internet untuk mengirim laporan kesalahan atau memeriksa pembaruan.</string>
-    <string name="summary_preference_permissions_post_notifications">Memungkinkan aplikasi untuk menampilkan pemberitahuan pada perangkat dengan Android 13 atau versi terbaru.</string>
-    <string name="summary_preference_permissions_check_license">Memungkinkan aplikasi untuk memverifikasi kepatuhannya terhadap perjanjian lisensi dan menegakkan ketentuan lisensi untuk melindungi kekayaan intelektual.</string>
-    <string name="summary_preference_permissions_access_notification_policy">Memungkinkan aplikasi untuk mengakses dan mengubah kebijakan notifikasi perangkat, mengontrol cara dan kapan pemberitahuan ditampilkan kepada pengguna, serta menyediakan fitur manajemen pemberitahuan kustom.</string>
-    <string name="summary_preference_permissions_foreground_service">Memungkinkan aplikasi untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberikan prioritas kepada mereka dibandingkan dengan proses latar belakang lainnya, dan meningkatkan kinerja dan keandalan.</string>
-    <string name="summary_preference_settings_firebase">Ini memungkinkan kami mengumpulkan informasi tentang kinerja aplikasi dan log kesalahan.</string>
-    <string name="summary_preference_settings_support_me">Klik di sini jika Anda ingin mendukung saya tanpa membayar uang. Cukup berikan sedikit waktu untuk melihat iklan.</string>
-    <string name="summary_preference_settings_language">Atur bahasa aplikasi.</string>
-    <string name="summary_notification_last_time_used">Mari kelola item keranjang Anda dengan efisien!</string>
-    <string name="summary_notification_update">Versi baru aplikasi tersedia. Klik untuk memperbarui!</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Ketentuan Layanan dan Kebijakan Privasi kami untuk melanjutkan.</string>
-    <string name="summary_empty">Keranjang belanja Anda kosong.</string>
-    <string name="summary_close">Anda yakin ingin keluar?</string>
-    <string name="snack_unable_to_open_google_play_store">Tidak dapat membuka Google Play Store.</string>
-    <string name="snack_feedback">Terima kasih atas penilaian Anda!</string>
-    <string name="hint_name">Masukkan nama</string>
-    <string name="hint_price">Masukkan harga</string>
-    <string name="hint_quantity">Masukkan kuantitas</string>
-    <string name="tooltip_agree">Terima syarat dan ketentuan.</string>
-    <string name="tooltip_button_minus">Kurangi 1 item dari keranjang</string>
-    <string name="tooltip_button_plus">Tambahkan 1 item ke keranjang</string>
-    <string name="tooltip_open_me">Buka saya 🌐</string>
+    <string name="access_notification_policy">Akses kebijakan pemberitahuan [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Memungkinkan aplikasi untuk mengakses dan memodifikasi kebijakan pemberitahuan perangkat, mengontrol cara dan kapan pemberitahuan ditampilkan ke pengguna dan memberikan fitur manajemen pemberitahuan khusus.</string>
+    <string name="billing">Penagihan [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Memungkinkan aplikasi untuk menggunakan Perpustakaan Penagihan Google Play untuk menangani pembelian dalam aplikasi dan sumbangan</string>
+    <string name="check_license">Periksa lisensi [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">Memungkinkan aplikasi untuk memverifikasi kepatuhannya dengan perjanjian lisensi dan menegakkan persyaratan lisensi untuk melindungi kekayaan intelektual.</string>
+    <string name="foreground_service">Layanan latar depan [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">Memungkinkan aplikasi untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberi mereka prioritas daripada proses latar belakang lainnya dan meningkatkan kinerja dan keandalan.</string>
+
+    <string name="ads">Iklan</string>
+    <string name="summary_preference_settings_ads">Kontrol bagaimana kami menggunakan informasi Anda untuk menampilkan iklan yang relevan kepada Anda</string>
+    <string name="display_ads">Tampilkan iklan</string>
+    <string name="personalized_ads">Iklan yang dipersonalisasi</string>
+    <string name="summary_ads_personalized_ads">Pilih cara kami mempersonalisasi iklan untuk Anda berdasarkan minat Anda</string>
+    <string name="summary_ads">Lihat iklan yang relevan dengan Anda. Kelola informasi yang digunakan untuk menampilkan iklan yang dipersonalisasi berdasarkan aktivitas aplikasi Anda. Anda selalu dapat menonaktifkan personalisasi di sini.\n</string>
+
+    <string name="usage_and_diagnostics">Penggunaan dan diagnostik</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Bagikan data untuk membantu meningkatkan Cart Calculator</string>
+    <string name="summary_usage_and_diagnostics">Membantu meningkatkan pengalaman Anda dengan secara otomatis mengirim data diagnostik, perangkat, dan penggunaan aplikasi kepada kami. Ini akan membantu meningkatkan kinerja aplikasi, stabilitas, dan peningkatan lainnya. Beberapa data agregat juga akan membantu aplikasi kami.\n\nIni adalah informasi umum tentang perangkat Anda dan bagaimana Anda menggunakan aplikasi kami (seperti tingkat baterai, aktivitas sistem dan aplikasi, dan kesalahan). Data tersebut akan digunakan untuk meningkatkan aplikasi kami\n\nMenonaktifkan fitur ini tidak memengaruhi kemampuan perangkat Anda untuk mengirim informasi yang diperlukan untuk layanan penting seperti pembaruan aplikasi dan keamanan.\n</string>
+
+    <string name="legal">Legal</string>
+    <string name="legal_notices">Pemberitahuan hukum</string>
+    <string name="summary_preference_settings_legal_notices">Lihat informasi hukum tentang layanan kami</string>
+    <string name="license">Lisensi</string>
+
+    <string name="about">Tentang</string>
+    <string name="summary_preference_settings_about">Pelajari lebih lanjut tentang Cart Calculator</string>
+
+    <string name="app_info">Info aplikasi</string>
+    <string name="app_build_version">Versi build aplikasi</string>
+    <string name="summary_preference_settings_oss">Detail lisensi untuk perangkat lunak sumber terbuka</string>
+    <string name="device_info">Info Perangkat</string>
+    <string name="app_build">Build Aplikasi: Rilis\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="manufacturer">Produsen:</string>
+    <string name="device_model">Model perangkat:</string>
+    <string name="android_version">Versi Android:</string>
+    <string name="api_level">Tingkat API:</string>
+
+    <string name="help_and_feedback">Bantuan &amp; umpan balik</string>
+    <string name="help">Bantuan</string>
+    <string name="faq">FAQ</string>
+    <string name="view_in_google_play_store">Lihat di Google Play Store</string>
+    <string name="version_info">Info versi</string>
+    <string name="version">Versi %1$s</string>
+    <string name="beta_program">Program beta</string>
+    <string name="question_1">Apa itu Cart Calculator?</string>
+    <string name="summary_preference_faq_1">Cart Calculator adalah pengelola keranjang belanja sederhana, generik, dan gratis dan kalkulator total jatuh tempo yang menggantikan kalkulator perangkat biasa saat Anda berada di toko bahan makanan atau di pasar.</string>
+    <string name="question_2">Bagaimana cara kerja Cart Calculator?</string>
+    <string name="summary_preference_faq_2">Cart Calculator memungkinkan Anda untuk mengelola keranjang belanja Anda dengan menambahkan produk dan meningkatkan atau mengurangi kuantitasnya. Kapan saja, Cart Calculator menampilkan total jatuh tempo produk di keranjang Anda berdasarkan harga dan kuantitasnya.</string>
+    <string name="question_3">Mengapa saya harus menggunakan Cart Calculator?</string>
+    <string name="summary_preference_faq_3">Cart Calculator membantu Anda untuk selalu mengetahui berapa banyak yang Anda belanjakan bahkan sebelum mencapai kasir. Ini sangat berguna ketika Anda harus berbelanja dengan anggaran.</string>
+    <string name="question_4">Bisakah saya menggunakan Cart Calculator di luar toko bahan makanan atau pasar?</string>
+    <string name="summary_preference_faq_4">Ya! Karena Cart Calculator sangat sederhana dan generik, Anda juga dapat menggunakannya di pub, restoran, bioskop, dll.</string>
+    <string name="question_5">Bagaimana cara menambahkan item ke keranjang saya menggunakan Cart Calculator?</string>
+    <string name="summary_preference_faq_5">Dari layar Beranda, tekan tombol "Tambahkan item" di Bilah Aksi untuk menambahkan produk baru ke keranjang Anda. Anda memberi tahu nama dan harganya, lalu klik tombol "Tambahkan".</string>
+    <string name="question_6">Bagaimana cara meningkatkan atau mengurangi kuantitas item di keranjang saya menggunakan Cart Calculator?</string>
+    <string name="summary_preference_faq_6">Cukup temukan item di daftar, lalu tekan tombol "+ (plus)" untuk meningkatkan kuantitasnya atau tombol "- (kurang)" untuk mengurangi kuantitasnya.</string>
+    <string name="question_7">Bagaimana cara menghapus item dari keranjang saya menggunakan Cart Calculator?</string>
+    <string name="summary_preference_faq_7">Untuk menghapus produk dari keranjang Anda, cukup turunkan kuantitasnya menjadi nol atau klik lama di daftar, lalu pilih tombol "Hapus item".</string>
+    <string name="question_8">Apakah Cart Calculator adalah perangkat lunak gratis?</string>
+    <string name="summary_preference_faq_8">Ya! Cart Calculator dengan bangga adalah perangkat lunak gratis yang didistribusikan di bawah Lisensi Publik Umum GNU versi 3.</string>
+    <string name="question_9">Bagaimana saya dapat berkontribusi pada Cart Calculator?</string>
+    <string name="summary_preference_faq_9">Cara terbaik untuk berkontribusi pada Cart Calculator adalah melalui repositori <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> -nya. Dari sana, Anda dapat forking dan mengerjakan kontribusi Anda, dan kemudian mengirimkannya kembali melalui pull request. Anda juga dapat menggunakan pelacak masalah untuk melaporkan bug, mengusulkan fitur atau peningkatan baru, atau mendapatkan ide tentang cara Anda dapat membantu.</string>
+    <string name="feedback">Umpan balik</string>
+
+    <string name="updates">Pembaruan</string>
+
+    <string name="share">Bagikan</string>
+
+    <string name="support_us">Dukung Kami</string>
+    <string name="paid_support">Dukungan Berbayar</string>
+    <string name="summary_donations">Tidak peduli berapa banyak Anda menyumbang, Anda akan membantu kami menjaga aplikasi kami tetap berjalan dan meningkatkan fitur kami. Kami menghargai kemurahan hati dan kebaikan Anda!</string>
+    <string name="non_paid_support">Dukungan Non-Berbayar</string>
+    <string name="web_ad">Iklan Web</string>
+
+    <string name="snack_app_updated">The app has been successfully updated</string>
+    <string name="snack_update_failed">The update process encountered an issue</string>
+    <string name="tooltip_agree">Accept the terms and conditions</string>
+    <string name="tooltip_button_minus">Subtract 1 item from the cart</string>
+    <string name="tooltip_button_plus">Add 1 item to the cart</string>
+    <string name="try_again">Try again</string>
+    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
+    <string name="learn_more">Learn more</string>
 </resources>

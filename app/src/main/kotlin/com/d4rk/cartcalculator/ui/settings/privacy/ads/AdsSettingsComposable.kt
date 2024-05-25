@@ -65,8 +65,8 @@ fun AdsSettingsComposable(activity: AdsSettingsActivity) {
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
+                        .fillMaxSize()
+                        .padding(innerPadding),
             ) {
                 item {
                     SwitchCardComposable(
@@ -80,7 +80,7 @@ fun AdsSettingsComposable(activity: AdsSettingsActivity) {
                 item {
                     Box(modifier = Modifier.padding(horizontal = 8.dp)) {
                         PreferenceItem(title = stringResource(R.string.personalized_ads),
-                            summary = "Manage the personalized ads consent for this app",
+                            summary = stringResource(id = R.string.summary_ads_personalized_ads),
                             onClick = {
                                 val params = ConsentRequestParameters.Builder()
                                     .setTagForUnderAgeOfConsent(false).build()
@@ -100,8 +100,8 @@ fun AdsSettingsComposable(activity: AdsSettingsActivity) {
                 item {
                     Column(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(24.dp)
+                                .fillMaxWidth()
+                                .padding(24.dp)
                     ) {
                         Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
                         Spacer(modifier = Modifier.height(24.dp))

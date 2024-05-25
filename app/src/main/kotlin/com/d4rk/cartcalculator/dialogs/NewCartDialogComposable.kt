@@ -68,10 +68,10 @@ fun NewCartDialogContent(
     val currentDate = Date()
     val defaultName = stringResource(R.string.shopping_cart)
     Column {
-        OutlinedTextField(value = nameText.value,
-            onValueChange = { nameText.value = it },
-            label = { Text("Name") },
-            placeholder = { Text(stringResource(R.string.shopping_cart)) })
+        OutlinedTextField(value = nameText.value ,
+                          onValueChange = { nameText.value = it } ,
+                          label = { Text(stringResource(id = R.string.cart_name)) } ,
+                          placeholder = { Text(stringResource(R.string.shopping_cart)) })
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))

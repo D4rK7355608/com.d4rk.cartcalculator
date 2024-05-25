@@ -178,7 +178,7 @@ fun FAQComposable() {
         item {
             QuestionComposable(
                 title = stringResource(R.string.question_4),
-                summary = stringResource(R.string.summary_preference_faq_5)
+                summary = stringResource(R.string.summary_preference_faq_4)
             )
         }
         item {

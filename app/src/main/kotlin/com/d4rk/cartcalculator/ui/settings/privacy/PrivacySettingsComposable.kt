@@ -47,8 +47,8 @@ fun PrivacySettingsComposable(activity: PrivacySettingsActivity) {
     }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(paddingValues),
+                    .fillMaxHeight()
+                    .padding(paddingValues),
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(R.string.privacy))
@@ -84,7 +84,7 @@ fun PrivacySettingsComposable(activity: PrivacySettingsActivity) {
                         )
                     })
                 PreferenceItem(title = stringResource(R.string.ads),
-                    summary = "Manage the info to show you ads",
+                    summary = stringResource(id = R.string.summary_preference_settings_ads),
                     onClick = {
                         Utils.openActivity(
                             context, AdsSettingsActivity::class.java

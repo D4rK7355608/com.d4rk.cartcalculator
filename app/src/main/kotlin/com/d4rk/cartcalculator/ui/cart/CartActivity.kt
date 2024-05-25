@@ -1,9 +1,9 @@
 package com.d4rk.cartcalculator.ui.cart
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -13,7 +13,7 @@ import com.d4rk.cartcalculator.data.store.DataStore
 import com.d4rk.cartcalculator.ui.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
 
-class CartActivity : ComponentActivity() {
+class CartActivity : AppCompatActivity() {
     private lateinit var viewModel: CartViewModel
     val dataStore = DataStore.getInstance(this)
 
