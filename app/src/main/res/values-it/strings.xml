@@ -16,8 +16,15 @@
     <string name="shopping_cart">Carrello della spesa</string>
     <string name="summary_cart_dialog">Ci impegniamo a creare un\'esperienza di shopping personalizzata per tutti. Per rendere più facile per te tenere traccia delle tue selezioni e migliorare il tuo viaggio di shopping, prendi in considerazione l\'idea di dare un nome al tuo carrello prima di aggiungere articoli.</string>
     <string name="created_on">Creato il %1$s</string>
+    <string name="delete_cart_title">Elimina carrello</string>
+    <string name="delete_cart_message">Sei sicuro di voler eliminare questo carrello?</string>
+    <string name="delete_cart_warning">L\'eliminazione di questo carrello rimuoverà permanentemente tutti gli articoli da \"%s\" e non può essere annullata.</string>
+    <string name="snackbar_cart_deleted_success">Carrello eliminato correttamente!</string>
+    <string name="snackbar_cart_deleted_error">Errore durante l\'eliminazione del carrello. Riprova.</string>
     <string name="close">Chiudi?</string>
     <string name="summary_close">Sei sicuro di voler uscire?</string>
+    <string name="snack_network_error">Si è verificato un errore di rete durante il controllo degli aggiornamenti</string>
+    <string name="snack_general_error">Si è verificato un errore durante il controllo degli aggiornamenti</string>
 
     <string name="your_shopping_cart_is_empty">Il tuo carrello è vuoto</string>
     <string name="item_name">Nome articolo</string>

@@ -16,8 +16,15 @@
     <string name="shopping_cart">Корзина покупок</string>
     <string name="summary_cart_dialog">Мы стремимся создать персонализированный опыт покупок для каждого. Чтобы вам было проще отслеживать свой выбор и улучшать свои покупки, подумайте о том, чтобы дать своей корзине имя перед добавлением товаров.</string>
     <string name="created_on">Создано %1$s</string>
+    <string name="delete_cart_title">Удалить корзину</string>
+    <string name="delete_cart_message">Вы уверены, что хотите удалить эту корзину?</string>
+    <string name="delete_cart_warning">Удаление этой корзины навсегда удалит все товары из \"%s\" и не может быть отменено.</string>
+    <string name="snackbar_cart_deleted_success">Корзина успешно удалена!</string>
+    <string name="snackbar_cart_deleted_error">Ошибка при удалении корзины. Попробуйте снова.</string>
     <string name="close">Закрыть?</string>
     <string name="summary_close">Вы действительно хотите выйти?</string>
+    <string name="snack_network_error">Произошла ошибка сети при проверке обновлений</string>
+    <string name="snack_general_error">Произошла ошибка при проверке обновлений</string>
 
     <string name="your_shopping_cart_is_empty">Ваша корзина покупок пуста</string>
     <string name="item_name">Название товара</string>

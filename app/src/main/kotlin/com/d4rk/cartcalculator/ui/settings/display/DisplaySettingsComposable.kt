@@ -137,7 +137,7 @@ fun DisplaySettingsComposable(activity: DisplaySettingsActivity) {
                                 ) != null -> context.startActivity(detailsIntent)
 
                                 else -> {
-                                    // TODO: Handle the case where neither Intent can be resolved
+                                    showLanguageDialog = true
                                 }
                             }
                         } else {

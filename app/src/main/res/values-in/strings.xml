@@ -16,8 +16,15 @@
     <string name="shopping_cart">Keranjang belanja</string>
     <string name="summary_cart_dialog">Kami berkomitmen untuk menciptakan pengalaman berbelanja yang dipersonalisasi untuk semua orang. Untuk mempermudah Anda melacak pilihan Anda dan meningkatkan perjalanan berbelanja Anda, pertimbangkan untuk memberi nama pada keranjang Anda sebelum menambahkan barang.</string>
     <string name="created_on">Dibuat pada %1$s</string>
+    <string name="delete_cart_title">Hapus Keranjang</string>
+    <string name="delete_cart_message">Apakah Anda yakin ingin menghapus keranjang ini?</string>
+    <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>
+    <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
+    <string name="snackbar_cart_deleted_error">Kesalahan menghapus keranjang. Coba lagi.</string>
     <string name="close">Tutup?</string>
     <string name="summary_close">Apakah Anda yakin ingin keluar?</string>
+    <string name="snack_network_error">Terjadi kesalahan jaringan saat memeriksa pembaruan</string>
+    <string name="snack_general_error">Terjadi kesalahan saat memeriksa pembaruan</string>
 
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
     <string name="item_name">Nama barang</string>

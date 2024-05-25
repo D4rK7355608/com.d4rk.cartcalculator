@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.dialogs
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -67,21 +68,29 @@ fun CurrencyDialogContent(
 
     Column {
         Text(stringResource(id = R.string.dialog_currency_subtitle))
-        LazyColumn {
-            items(currencies.size) { index ->
-                Row(
-                    Modifier.fillMaxWidth() ,
-                    verticalAlignment = Alignment.CenterVertically ,
-                    horizontalArrangement = Arrangement.Start
-                ) {
-                    RadioButton(selected = selectedCurrency.value == currencies[index] , onClick = {
-                        selectedCurrency.value = currencies[index]
-                    })
-                    Text(
-                        modifier = Modifier.padding(start = 8.dp) ,
-                        text = currencies[index] ,
-                        style = MaterialTheme.typography.bodyMedium.merge()
-                    )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ) {
+            LazyColumn {
+                items(currencies.size) { index ->
+                    Row(
+                        Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        RadioButton(
+                            selected = selectedCurrency.value == currencies[index],
+                            onClick = {
+                                selectedCurrency.value = currencies[index]
+                            })
+                        Text(
+                            modifier = Modifier.padding(start = 8.dp),
+                            text = currencies[index],
+                            style = MaterialTheme.typography.bodyMedium.merge()
+                        )
+                    }
                 }
             }
         }

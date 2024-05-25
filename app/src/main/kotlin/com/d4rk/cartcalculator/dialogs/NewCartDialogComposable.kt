@@ -19,8 +19,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.d4rk.cartcalculator.MyApp
 import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,7 +43,7 @@ fun NewCartDialog(onDismiss: () -> Unit, onCartCreated: (Long, String) -> Unit) 
             TextButton(onClick = {
                 newCart.value?.let { cart ->
                     lifecycleScope.launch(Dispatchers.IO) {
-                        val cartId = MyApp.database.newCartDao().insert(cart)
+                        val cartId = AppCoreManager.database.newCartDao().insert(cart)
                         onCartCreated(cartId, cart.name)
                     }
                 }

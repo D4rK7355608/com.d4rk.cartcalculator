@@ -18,7 +18,7 @@
     </queries>
 
     <application
-        android:name=".MyApp"
+        android:name=".data.core.AppCoreManager"
         android:appCategory="productivity"
         android:banner="@drawable/tv_banner"
         android:description="@string/app_short_description"

@@ -16,8 +16,15 @@
     <string name="shopping_cart">買い物カート</string>
     <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに尽力しています。選択内容を追跡しやすく、ショッピングの旅を向上させるために、商品を追加する前にカートに名前を付けることを検討してください。</string>
     <string name="created_on">%1$s に作成</string>
+    <string name="delete_cart_title">カートを削除</string>
+    <string name="delete_cart_message">このカートを削除してもよろしいですか？</string>
+    <string name="delete_cart_warning">このカートを削除すると、「%s」からすべての商品が永久に削除され、元に戻すことはできません。</string>
+    <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
+    <string name="snackbar_cart_deleted_error">カートを削除できませんでした。もう一度お試しください。</string>
     <string name="close">閉じる？</string>
     <string name="summary_close">本当に終了しますか？</string>
+    <string name="snack_network_error">更新を確認中にネットワークエラーが発生しました</string>
+    <string name="snack_general_error">更新を確認中にエラーが発生しました</string>
 
     <string name="your_shopping_cart_is_empty">買い物カートは空です</string>
     <string name="item_name">商品名</string>

@@ -16,8 +16,15 @@
     <string name="shopping_cart">Alışveriş sepeti</string>
     <string name="summary_cart_dialog">Herkes için kişiselleştirilmiş bir alışveriş deneyimi yaratmaya kararlıyız. Seçimlerinizin takibini kolaylaştırmak ve alışveriş yolculuğunuzu geliştirmek için, ürün eklemeden önce sepetinize bir isim vermeyi düşünün.</string>
     <string name="created_on">%1$s tarihinde oluşturuldu</string>
+    <string name="delete_cart_title">Sepeti Sil</string>
+    <string name="delete_cart_message">Bu sepeti silmek istediğinizden emin misiniz?</string>
+    <string name="delete_cart_warning">Bu sepeti silmek, \"%s\" içindeki tüm ürünleri kalıcı olarak silecek ve geri alınamaz.</string>
+    <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
+    <string name="snackbar_cart_deleted_error">Sepeti silerken hata oluştu. Lütfen tekrar deneyin.</string>
     <string name="close">Kapat?</string>
     <string name="summary_close">Çıkmak istediğinizden emin misiniz?</string>
+    <string name="snack_network_error">Güncellemeleri kontrol ederken bir ağ hatası oluştu</string>
+    <string name="snack_general_error">Güncellemeleri kontrol ederken bir hata oluştu</string>
 
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
     <string name="item_name">Ürün adı</string>

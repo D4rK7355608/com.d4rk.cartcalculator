@@ -4,7 +4,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.d4rk.cartcalculator.MyApp
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,7 +20,7 @@ class HomeViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            val loadedCarts = MyApp.database.newCartDao().getAll()
+            val loadedCarts = AppCoreManager.database.newCartDao().getAll()
             carts.addAll(loadedCarts)
             isLoading.value = false
         }
@@ -30,12 +30,20 @@ class HomeViewModel : ViewModel() {
      * Deletes a shopping cart from the list and persists the deletion to the database.
      *
      * @param cartToDelete The [ShoppingCartTable] object representing the cart to be deleted.
+     * @param onDeleteFinished A callback function to be called after the deletion operation is completed.
+     *                          It takes a boolean parameter indicating whether the deletion was successful.
      */
-    fun deleteCart(cartToDelete: ShoppingCartTable) {
+    fun deleteCart(cartToDelete: ShoppingCartTable, onDeleteFinished: (Boolean) -> Unit) {
         carts.remove(cartToDelete)
         viewModelScope.launch(Dispatchers.IO) {
-            MyApp.database.newCartDao().delete(cartToDelete)
-            MyApp.database.shoppingCartItemsDao().deleteItemsFromCart(cartToDelete.cartId)
+            try {
+                AppCoreManager.database.newCartDao().delete(cartToDelete)
+                AppCoreManager.database.shoppingCartItemsDao()
+                    .deleteItemsFromCart(cartToDelete.cartId)
+                onDeleteFinished(true)
+            } catch (e: Exception) {
+                onDeleteFinished(false)
+            }
         }
     }
 

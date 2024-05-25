@@ -16,8 +16,15 @@
     <string name="shopping_cart">Пазарска количка</string>
     <string name="summary_cart_dialog">Ангажирани сме да създадем персонализирано пазаруване за всеки. За да ви улесним в следенето на вашите избори и да подобрим пазаруването ви, обмислете да дадете име на вашата количка преди да добавите артикули.</string>
     <string name="created_on">Създадено на %1$s</string>
+    <string name="delete_cart_title">Изтриване на количка</string>
+    <string name="delete_cart_message">Сигурни ли сте, че искате да изтриете тази количка?</string>
+    <string name="delete_cart_warning">Изтриването на тази количка ще премахне трайно всички артикули от \"%s\" и не може да бъде възстановено.</string>
+    <string name="snackbar_cart_deleted_success">Количката е изтрита успешно!</string>
+    <string name="snackbar_cart_deleted_error">Грешка при изтриване на количката. Моля, опитайте отново.</string>
     <string name="close">Затваряне?</string>
     <string name="summary_close">Сигурни ли сте, че искате да излезете?</string>
+    <string name="snack_network_error">Възникна грешка в мрежата при проверка за актуализации</string>
+    <string name="snack_general_error">Възникна грешка при проверка за актуализации</string>
 
     <string name="your_shopping_cart_is_empty">Вашата пазарска количка е празна</string>
     <string name="item_name">Име на артикул</string>

@@ -16,8 +16,15 @@
     <string name="shopping_cart">Кошик для покупок</string>
     <string name="summary_cart_dialog">Ми прагнемо створити персоналізований досвід покупок для всіх. Щоб полегшити вам відстеження ваших виборів і покращити вашу подорож покупками, подумайте про те, щоб дати своєму кошику назву перед додаванням товарів.</string>
     <string name="created_on">Створено %1$s</string>
+    <string name="delete_cart_title">Видалити кошик</string>
+    <string name="delete_cart_message">Ви впевнені, що хочете видалити цей кошик?</string>
+    <string name="delete_cart_warning">Видалення цього кошика призведе до постійного видалення всіх товарів з \"%s\" і не може бути відмінено.</string>
+    <string name="snackbar_cart_deleted_success">Кошик успішно видалено!</string>
+    <string name="snackbar_cart_deleted_error">Помилка під час видалення кошика. Спробуйте ще раз.</string>
     <string name="close">Закрити?</string>
     <string name="summary_close">Ви впевнені, що хочете вийти?</string>
+    <string name="snack_network_error">Виникла помилка мережі під час перевірки оновлень</string>
+    <string name="snack_general_error">Виникла помилка під час перевірки оновлень</string>
 
     <string name="your_shopping_cart_is_empty">Ваш кошик для покупок порожній</string>
     <string name="item_name">Назва товару</string>

@@ -16,8 +16,15 @@
     <string name="shopping_cart">Koszyk</string>
     <string name="summary_cart_dialog">Zobowiązujemy się do tworzenia spersonalizowanych wrażeń zakupowych dla wszystkich. Aby ułatwić śledzenie wyborów i ulepszenie podróży zakupowej, rozważ nadanie koszykowi nazwy przed dodaniem przedmiotów.</string>
     <string name="created_on">Utworzony %1$s</string>
+    <string name="delete_cart_title">Usuń koszyk</string>
+    <string name="delete_cart_message">Czy na pewno chcesz usunąć ten koszyk?</string>
+    <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich artykułów z \"%s\" i nie będzie można tego cofnąć.</string>
+    <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
+    <string name="snackbar_cart_deleted_error">Błąd podczas usuwania koszyka. Spróbuj ponownie.</string>
     <string name="close">Zamknij?</string>
     <string name="summary_close">Czy na pewno chcesz wyjść?</string>
+    <string name="snack_network_error">Wystąpił błąd sieci podczas sprawdzania aktualizacji</string>
+    <string name="snack_general_error">Wystąpił błąd podczas sprawdzania aktualizacji</string>
 
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
     <string name="item_name">Nazwa przedmiotu</string>

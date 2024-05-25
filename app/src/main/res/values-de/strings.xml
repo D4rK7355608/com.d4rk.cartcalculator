@@ -16,8 +16,15 @@
     <string name="shopping_cart">Einkaufswagen</string>
     <string name="summary_cart_dialog">Wir sind bestrebt, ein personalisiertes Einkaufserlebnis für alle zu schaffen. Um es Ihnen zu erleichtern, Ihre Auswahl zu verfolgen und Ihr Einkaufserlebnis zu verbessern, benennen Sie bitte Ihren Einkaufswagen, bevor Sie Artikel hinzufügen.</string>
     <string name="created_on">Erstellt am %1$s</string>
+    <string name="delete_cart_title">Warenkorb löschen</string>
+    <string name="delete_cart_message">Sind Sie sicher, dass Sie diesen Warenkorb löschen möchten?</string>
+    <string name="delete_cart_warning">Das Löschen dieses Warenkorbs entfernt dauerhaft alle Artikel aus \"%s\" und kann nicht rückgängig gemacht werden.</string>
+    <string name="snackbar_cart_deleted_success">Warenkorb erfolgreich gelöscht!</string>
+    <string name="snackbar_cart_deleted_error">Fehler beim Löschen des Warenkorbs. Bitte versuchen Sie es erneut.</string>
     <string name="close">Schließen?</string>
     <string name="summary_close">Sind Sie sicher, dass Sie beenden möchten?</string>
+    <string name="snack_network_error">Ein Netzwerkfehler ist beim Überprüfen auf Updates aufgetreten</string>
+    <string name="snack_general_error">Beim Überprüfen auf Updates ist ein Fehler aufgetreten</string>
 
     <string name="your_shopping_cart_is_empty">Ihr Einkaufswagen ist leer</string>
     <string name="item_name">Artikelname</string>

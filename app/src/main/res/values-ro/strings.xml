@@ -16,8 +16,15 @@
     <string name="shopping_cart">Coș de cumpărături</string>
     <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a vă facilita urmărirea selecțiilor și îmbunătățirea experienței de cumpărături, luați în considerare atribuirea unui nume coșului înainte de a adăuga articole.</string>
     <string name="created_on">Creat pe %1$s</string>
+    <string name="delete_cart_title">Ștergeți coșul</string>
+    <string name="delete_cart_message">Sunteți sigur că doriți să ștergeți acest coș?</string>
+    <string name="delete_cart_warning">Ștergerea acestui coș va elimina permanent toate articolele din \"%s\" și nu poate fi anulata.</string>
+    <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
+    <string name="snackbar_cart_deleted_error">Eroare la ștergerea coșului. Încercați din nou.</string>
     <string name="close">Închide?</string>
     <string name="summary_close">Sunteți sigur că doriți să ieșiți?</string>
+    <string name="snack_network_error">A apărut o eroare de rețea în timpul verificării actualizărilor</string>
+    <string name="snack_general_error">A apărut o eroare în timpul verificării actualizărilor</string>
 
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="item_name">Numele articolului</string>

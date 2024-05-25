@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.d4rk.cartcalculator.MyApp
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.store.DataStore
@@ -61,8 +61,10 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
      */
     private fun loadCartItems() {
         viewModelScope.launch {
-            cartItems.addAll(MyApp.database.shoppingCartItemsDao().getItemsByCartId(cartId))
-            cart.value = MyApp.database.newCartDao().getCartById(cartId)
+            cartItems.addAll(
+                AppCoreManager.database.shoppingCartItemsDao().getItemsByCartId(cartId)
+            )
+            cart.value = AppCoreManager.database.newCartDao().getCartById(cartId)
             isLoading.value = false
             calculateTotalPrice()
         }
@@ -106,7 +108,7 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
         cartItems.add(cartItem)
         calculateTotalPrice()
         viewModelScope.launch(Dispatchers.IO) {
-            MyApp.database.shoppingCartItemsDao().insert(cartItem)
+            AppCoreManager.database.shoppingCartItemsDao().insert(cartItem)
         }
     }
 
@@ -144,7 +146,7 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
             val newQuantity = quantityState.value + 1
             quantityState.value = newQuantity
             cartItem.quantity = newQuantity
-            MyApp.database.shoppingCartItemsDao().update(cartItem)
+            AppCoreManager.database.shoppingCartItemsDao().update(cartItem)
             calculateTotalPrice()
         }
     }
@@ -172,9 +174,9 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
             if (newQuantity > 0) {
                 quantityState.value = newQuantity
                 cartItem.quantity = newQuantity
-                MyApp.database.shoppingCartItemsDao().update(cartItem)
+                AppCoreManager.database.shoppingCartItemsDao().update(cartItem)
             } else {
-                MyApp.database.shoppingCartItemsDao().delete(cartItem)
+                AppCoreManager.database.shoppingCartItemsDao().delete(cartItem)
                 withContext(Dispatchers.Main) {
                     cartItems.remove(cartItem)
                 }
@@ -215,7 +217,7 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
     fun saveCartItems() {
         viewModelScope.launch(Dispatchers.IO) {
             cartItems.forEach { cartItem ->
-                MyApp.database.shoppingCartItemsDao().update(cartItem)
+                AppCoreManager.database.shoppingCartItemsDao().update(cartItem)
             }
         }
     }

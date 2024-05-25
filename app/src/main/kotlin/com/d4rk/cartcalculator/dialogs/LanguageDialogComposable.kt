@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.dialogs
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -33,26 +34,26 @@ import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
 fun LanguageDialog(
-    dataStore : DataStore , onDismiss : () -> Unit , onLanguageSelected : (String) -> Unit
+    dataStore: DataStore, onDismiss: () -> Unit, onLanguageSelected: (String) -> Unit
 ) {
     val selectedLanguage = remember { mutableStateOf("") }
     val languageEntries = stringArrayResource(R.array.preference_language_entries).toList()
     val languageValues = stringArrayResource(R.array.preference_language_values).toList()
 
-    AlertDialog(onDismissRequest = onDismiss , text = {
+    AlertDialog(onDismissRequest = onDismiss, text = {
         LanguageDialogContent(
-            selectedLanguage , dataStore , languageEntries , languageValues
+            selectedLanguage, dataStore, languageEntries, languageValues
         )
-    } , icon = {
-        Icon(Icons.Outlined.Language , contentDescription = null)
-    } , confirmButton = {
+    }, icon = {
+        Icon(Icons.Outlined.Language, contentDescription = null)
+    }, confirmButton = {
         TextButton(onClick = {
             onLanguageSelected(selectedLanguage.value)
             onDismiss()
         }) {
             Text(stringResource(android.R.string.ok))
         }
-    } , dismissButton = {
+    }, dismissButton = {
         TextButton(onClick = onDismiss) {
             Text(stringResource(android.R.string.cancel))
         }
@@ -61,10 +62,10 @@ fun LanguageDialog(
 
 @Composable
 fun LanguageDialogContent(
-    selectedLanguage : MutableState<String> ,
-    dataStore : DataStore ,
-    languageEntries : List<String> ,
-    languageValues : List<String>
+    selectedLanguage: MutableState<String>,
+    dataStore: DataStore,
+    languageEntries: List<String>,
+    languageValues: List<String>
 ) {
     LaunchedEffect(Unit) {
         selectedLanguage.value = dataStore.getLanguage().firstOrNull() ?: ""
@@ -72,30 +73,34 @@ fun LanguageDialogContent(
 
     Column {
         Text(stringResource(id = R.string.dialog_language_subtitle))
-        LazyColumn(
-            modifier = Modifier.weight(1f)
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
         ) {
-            items(languageEntries.size) { index ->
-                Row(
-                    Modifier.fillMaxWidth() ,
-                    verticalAlignment = Alignment.CenterVertically ,
-                    horizontalArrangement = Arrangement.Start
-                ) {
-                    RadioButton(
-                        selected = selectedLanguage.value == languageValues[index] ,
-                        onClick = {
-                            selectedLanguage.value = languageValues[index]
-                        })
-                    Text(
-                        modifier = Modifier.padding(start = 8.dp) ,
-                        text = languageEntries[index] ,
-                        style = MaterialTheme.typography.bodyMedium.merge()
-                    )
+            LazyColumn {
+                items(languageEntries.size) { index ->
+                    Row(
+                        Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        RadioButton(
+                            selected = selectedLanguage.value == languageValues[index],
+                            onClick = {
+                                selectedLanguage.value = languageValues[index]
+                            })
+                        Text(
+                            modifier = Modifier.padding(start = 8.dp),
+                            text = languageEntries[index],
+                            style = MaterialTheme.typography.bodyMedium.merge()
+                        )
+                    }
                 }
             }
         }
         Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text(stringResource(id = R.string.dialog_info_language))
     }

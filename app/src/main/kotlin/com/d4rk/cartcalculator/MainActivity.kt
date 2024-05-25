@@ -103,7 +103,6 @@ class MainActivity : AppCompatActivity() {
      * @param resultCode The integer result code returned by the child activity through its setResult().
      * @param data An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
      */
-    @Suppress("DEPRECATION")
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -181,7 +180,7 @@ class MainActivity : AppCompatActivity() {
                         is NoConnectionError, is TimeoutError -> {
                             Snackbar.make(
                                 findViewById(android.R.id.content),
-                                "Network error occurred while checking for updates.",
+                                getString(R.string.snack_network_error),
                                 Snackbar.LENGTH_LONG
                             ).show()
                         }
@@ -189,7 +188,7 @@ class MainActivity : AppCompatActivity() {
                         else -> {
                             Snackbar.make(
                                 findViewById(android.R.id.content),
-                                "An error occurred while checking for updates.",
+                                getString(R.string.snack_general_error),
                                 Snackbar.LENGTH_LONG
                             ).show()
                         }
