@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    id("com.google.gms.google-services")
     id("com.google.android.gms.oss-licenses-plugin")
     id("com.google.devtools.ksp")
 }
@@ -15,7 +15,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 30
+        versionCode = 31
         versionName = "0.1.0"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
