@@ -17,32 +17,40 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 
 @Composable
-fun DeleteCartDialog(
-    cart: ShoppingCartTable?, onDismiss: () -> Unit, onDeleteConfirmed: (ShoppingCartTable) -> Unit
+fun DeleteCartItemDialog(
+    cartItem: ShoppingCartItemsTable,
+    onDismiss: () -> Unit,
+    onDeleteConfirmed: (ShoppingCartItemsTable) -> Unit
 ) {
-    AlertDialog(onDismissRequest = onDismiss, title = {
-        Text(
-            text = stringResource(R.string.delete_cart_title),
-        )
-    }, text = { DeleteCartDialogContent(cart) }, confirmButton = {
-        TextButton(onClick = {
-            onDeleteConfirmed(cart!!)
-            onDismiss()
-        }) {
-            Text(stringResource(android.R.string.ok))
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                text = stringResource(R.string.delete_cart_item_title),
+            )
+        },
+        text = { DeleteCartItemDialogContent(cartItem) },
+        confirmButton = {
+            TextButton(onClick = {
+                onDeleteConfirmed(cartItem)
+                onDismiss()
+            }) {
+                Text(stringResource(android.R.string.ok))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(android.R.string.cancel))
+            }
         }
-    }, dismissButton = {
-        TextButton(onClick = onDismiss) {
-            Text(stringResource(android.R.string.cancel))
-        }
-    })
+    )
 }
 
 @Composable
-fun DeleteCartDialogContent(cart: ShoppingCartTable?) {
+fun DeleteCartItemDialogContent(cartItem: ShoppingCartItemsTable) {
     Column {
         Icon(
             imageVector = Icons.Outlined.RemoveShoppingCart,
@@ -52,14 +60,14 @@ fun DeleteCartDialogContent(cart: ShoppingCartTable?) {
         )
         Spacer(modifier = Modifier.height(24.dp))
         Text(
-            text = stringResource(R.string.delete_cart_message),
-            style = MaterialTheme.typography.bodyLarge
+            text = stringResource(R.string.delete_cart_item_message),
+            style = MaterialTheme.typography.bodyLarge,
         )
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text(
-            text = stringResource(R.string.delete_cart_warning, cart?.name ?: ""),
+            text = stringResource(R.string.delete_cart_item_warning, cartItem.name),
             style = MaterialTheme.typography.bodyLarge
         )
     }

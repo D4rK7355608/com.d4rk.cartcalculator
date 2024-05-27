@@ -14,6 +14,8 @@ import com.d4rk.cartcalculator.data.store.DataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 
 /**
@@ -38,7 +40,10 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
     val cart = mutableStateOf<ShoppingCartTable?>(null)
     val isLoading = mutableStateOf(true)
     var openDialog = mutableStateOf(false)
+    var openDeleteDialog = mutableStateOf(false)
+    var currentCartItemForDeletion: ShoppingCartItemsTable? = null
     private val itemQuantities = mutableMapOf<Int, MutableState<Int>>()
+    private val mutex = Mutex()
 
     init {
         loadCartItems()
@@ -104,11 +109,14 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
      * @throws Exception If there is an error while inserting the new cart item into the database.
      */
     fun addCartItem(cartItem: ShoppingCartItemsTable) {
-        cartItem.cartId = this.cartId
-        cartItems.add(cartItem)
-        calculateTotalPrice()
-        viewModelScope.launch(Dispatchers.IO) {
-            AppCoreManager.database.shoppingCartItemsDao().insert(cartItem)
+        viewModelScope.launch {
+            mutex.withLock {
+                cartItem.cartId = this@CartViewModel.cartId
+                val newItemId = AppCoreManager.database.shoppingCartItemsDao().insert(cartItem)
+                cartItem.itemId = newItemId.toInt()
+                cartItems.add(cartItem)
+                calculateTotalPrice()
+            }
         }
     }
 
@@ -122,7 +130,7 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
      * @return The MutableState representing the quantity of the cart item.
      */
     fun getQuantityStateForItem(cartItem: ShoppingCartItemsTable): MutableState<Int> {
-        return itemQuantities.getOrPut(cartItem.id) { mutableIntStateOf(cartItem.quantity) }
+        return itemQuantities.getOrPut(cartItem.itemId) { mutableIntStateOf(cartItem.quantity) }
     }
 
     /**
@@ -182,6 +190,21 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
                 }
             }
             calculateTotalPrice()
+        }
+    }
+
+    /**
+     * Deletes the specified cart item from the cart and database.
+     *
+     * @param cartItem The cart item to be deleted.
+     */
+    fun deleteCartItem(cartItem: ShoppingCartItemsTable) {
+        viewModelScope.launch(Dispatchers.IO) {
+            AppCoreManager.database.shoppingCartItemsDao().delete(cartItem)
+            withContext(Dispatchers.Main) {
+                cartItems.remove(cartItem)
+                calculateTotalPrice()
+            }
         }
     }
 

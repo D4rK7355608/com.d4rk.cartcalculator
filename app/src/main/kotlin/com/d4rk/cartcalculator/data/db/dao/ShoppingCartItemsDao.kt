@@ -12,7 +12,7 @@ import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
 interface ShoppingCartItemsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(item: ShoppingCartItemsTable)
+    suspend fun insert(item: ShoppingCartItemsTable): Long
 
     @Update
     suspend fun update(item: ShoppingCartItemsTable)
@@ -25,5 +25,4 @@ interface ShoppingCartItemsDao {
 
     @Query("DELETE FROM ShoppingCartItemsTable WHERE cartId = :cartId")
     suspend fun deleteItemsFromCart(cartId: Int)
-
 }
