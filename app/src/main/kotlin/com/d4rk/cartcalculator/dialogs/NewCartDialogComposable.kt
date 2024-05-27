@@ -1,7 +1,10 @@
 package com.d4rk.cartcalculator.dialogs
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.ShoppingCartCheckout
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
@@ -13,7 +16,9 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
@@ -67,7 +72,9 @@ fun NewCartDialogContent(
                           onValueChange = { nameText.value = it } ,
                           label = { Text(stringResource(id = R.string.cart_name)) } ,
                           placeholder = { Text(stringResource(R.string.shopping_cart)) })
-
+        Spacer(modifier = Modifier.height(24.dp))
+        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
+        Spacer(modifier = Modifier.height(12.dp))
         Text(stringResource(R.string.summary_cart_dialog))
     }
     newCart.value =

@@ -15,7 +15,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 36
+        versionCode = 37
         versionName = "0.1.0"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
