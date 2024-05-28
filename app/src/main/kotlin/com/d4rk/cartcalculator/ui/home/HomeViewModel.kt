@@ -22,6 +22,8 @@ import kotlinx.coroutines.withContext
  * @property showSnackbar A mutable state that controls the visibility of a snackbar.
  * @property snackbarMessage A mutable state that holds the message to be displayed in the snackbar.
  * @property fabAdHeight A mutable state that holds the height of the Floating Action Button (FAB) ad.
+ * @property showDeleteCartDialog A mutable state that controls the visibility of the cart deletion confirmation dialog.
+ * @property cartToDelete A mutable state that holds the `ShoppingCartTable` to be deleted, if any.
  */
 class HomeViewModel : ViewModel() {
     val openDialog = mutableStateOf(false)
@@ -30,6 +32,8 @@ class HomeViewModel : ViewModel() {
     val showSnackbar = mutableStateOf(false)
     val snackbarMessage = mutableStateOf("")
     val fabAdHeight = mutableStateOf(0.dp)
+    val showDeleteCartDialog = mutableStateOf(false)
+    val cartToDelete = mutableStateOf<ShoppingCartTable?>(null)
 
     init {
         loadCarts()

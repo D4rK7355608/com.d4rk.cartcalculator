@@ -25,8 +25,6 @@ import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -54,8 +52,6 @@ fun HomeComposable() {
     val context = LocalContext.current
     val dataStore = DataStore.getInstance(context)
     val viewModel: HomeViewModel = viewModel()
-    val showDeleteCartDialog = remember { mutableStateOf(false) }
-    val cartToDelete = remember { mutableStateOf<ShoppingCartTable?>(null) }
     val density = LocalDensity.current
 
     Box(
@@ -87,7 +83,7 @@ fun HomeComposable() {
                     ) {
                         items(viewModel.carts) { cart ->
                             CartItemComposable(cart, onDelete = {
-                                cartToDelete.value = it; showDeleteCartDialog.value = true
+                                viewModel.cartToDelete.value = it; viewModel.showDeleteCartDialog.value = true
                             }, onCardClick = {
                                 val intent = Intent(context, CartActivity::class.java)
                                 intent.putExtra("cartId", cart.cartId)
@@ -139,9 +135,9 @@ fun HomeComposable() {
             })
     }
 
-    if (showDeleteCartDialog.value) {
-        DeleteCartDialog(cart = cartToDelete.value,
-            onDismiss = { showDeleteCartDialog.value = false },
+    if (viewModel.showDeleteCartDialog.value) {
+        DeleteCartDialog(cart = viewModel.cartToDelete.value,
+            onDismiss = { viewModel.showDeleteCartDialog.value = false },
             onDeleteConfirmed = {
                 viewModel.deleteCart(it) { success ->
                     viewModel.showSnackbar.value = true
