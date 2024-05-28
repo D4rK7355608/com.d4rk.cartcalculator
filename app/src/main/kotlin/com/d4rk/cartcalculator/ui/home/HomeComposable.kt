@@ -56,36 +56,7 @@ fun HomeComposable() {
     val viewModel: HomeViewModel = viewModel()
     val showDeleteCartDialog = remember { mutableStateOf(false) }
     val cartToDelete = remember { mutableStateOf<ShoppingCartTable?>(null) }
-    val showSnackbar = remember { mutableStateOf(false) }
-    val snackbarMessage = remember { mutableStateOf("") }
-
-    val fabAdHeight = remember { mutableStateOf(0.dp) }
     val density = LocalDensity.current
-
-    if (viewModel.openDialog.value) {
-        NewCartDialog(onDismiss = { viewModel.openDialog.value = false },
-            onCartCreated = { cartId, cartName ->
-                val cart = ShoppingCartTable(
-                    cartId = cartId.toInt(), name = cartName, date = Date()
-                )
-                viewModel.addCart(cart)
-            })
-    }
-
-    if (showDeleteCartDialog.value) {
-        DeleteCartDialog(cart = cartToDelete.value,
-            onDismiss = { showDeleteCartDialog.value = false },
-            onDeleteConfirmed = {
-                viewModel.deleteCart(it) { success ->
-                    showSnackbar.value = true
-                    snackbarMessage.value = if (success) {
-                        context.getString(R.string.snackbar_cart_deleted_success)
-                    } else {
-                        context.getString(R.string.snackbar_cart_deleted_error)
-                    }
-                }
-            })
-    }
 
     Box(
         modifier = Modifier
@@ -112,7 +83,7 @@ fun HomeComposable() {
                     LazyColumn(
                         modifier = Modifier
                             .weight(1f)
-                            .padding(bottom = fabAdHeight.value)
+                            .padding(bottom = viewModel.fabAdHeight.value)
                     ) {
                         items(viewModel.carts) { cart ->
                             CartItemComposable(cart, onDelete = {
@@ -132,7 +103,7 @@ fun HomeComposable() {
             ExtendedFloatingActionButton(modifier = Modifier
                 .bounceClick()
                 .onGloballyPositioned { coordinates ->
-                    fabAdHeight.value = with(density) { coordinates.size.height.toDp() }
+                    viewModel.setFabHeight(with(density) { coordinates.size.height.toDp() })
                 }
                 .align(Alignment.End),
                 text = { Text(stringResource(R.string.add_new_cart)) },
@@ -145,17 +116,42 @@ fun HomeComposable() {
             BannerAdsComposable(modifier = Modifier.padding(top = 12.dp), dataStore = dataStore)
         }
 
-        if (showSnackbar.value) {
+        if (viewModel.showSnackbar.value) {
             Snackbar(action = {
-                TextButton(onClick = { showSnackbar.value = false }) {
-                    Text(text = "OK")
+                TextButton(onClick = { viewModel.showSnackbar.value = false }) {
+                    Text(text = stringResource(id = android.R.string.ok))
                 }
             }, modifier = Modifier
                 .padding(8.dp)
                 .align(Alignment.BottomCenter), content = {
-                Text(text = snackbarMessage.value)
+                Text(text = viewModel.snackbarMessage.value)
             })
         }
+    }
+
+    if (viewModel.openDialog.value) {
+        NewCartDialog(onDismiss = { viewModel.openDialog.value = false },
+            onCartCreated = { cartId, cartName ->
+                val cart = ShoppingCartTable(
+                    cartId = cartId.toInt(), name = cartName, date = Date()
+                )
+                viewModel.addCart(cart)
+            })
+    }
+
+    if (showDeleteCartDialog.value) {
+        DeleteCartDialog(cart = cartToDelete.value,
+            onDismiss = { showDeleteCartDialog.value = false },
+            onDeleteConfirmed = {
+                viewModel.deleteCart(it) { success ->
+                    viewModel.showSnackbar.value = true
+                    viewModel.snackbarMessage.value = if (success) {
+                        context.getString(R.string.snackbar_cart_deleted_success)
+                    } else {
+                        context.getString(R.string.snackbar_cart_deleted_error)
+                    }
+                }
+            })
     }
 }
 
