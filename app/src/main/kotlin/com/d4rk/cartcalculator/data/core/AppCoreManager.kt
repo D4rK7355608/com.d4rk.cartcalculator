@@ -39,7 +39,10 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
 
     override fun onCreate() {
         super.onCreate()
-        database = Room.databaseBuilder(this, AppDatabase::class.java, "my_database").build()
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "Cart Calculator")
+                .fallbackToDestructiveMigration()
+                .fallbackToDestructiveMigrationOnDowngrade()
+                .build()
         registerActivityLifecycleCallbacks(this)
         MobileAds.initialize(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
