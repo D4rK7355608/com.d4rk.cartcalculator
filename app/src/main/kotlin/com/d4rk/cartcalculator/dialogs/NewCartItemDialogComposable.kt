@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
@@ -62,16 +63,15 @@ fun NewCartItemDialogContent(cartId: Int, newCartItem: MutableState<ShoppingCart
                 nameText.value = it
             },
             label = { Text(stringResource(id = R.string.item_name)) },
+            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
             placeholder = { Text(stringResource(id = R.string.enter_item_name)) })
-        OutlinedTextField(
-            value = priceText.value,
+        OutlinedTextField(value = priceText.value,
             onValueChange = { priceText.value = it },
             label = { Text(stringResource(id = R.string.item_price)) },
             placeholder = { Text(stringResource(id = R.string.enter_item_price)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
-        OutlinedTextField(
-            value = quantityText.value,
+        OutlinedTextField(value = quantityText.value,
             onValueChange = { quantityText.value = it },
             label = { Text(stringResource(id = R.string.quantity)) },
             placeholder = { Text(stringResource(id = R.string.enter_quantity)) },

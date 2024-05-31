@@ -3,6 +3,7 @@ package com.d4rk.cartcalculator.dialogs
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.ShoppingCartCheckout
@@ -18,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
@@ -68,10 +70,11 @@ fun NewCartDialogContent(
     val currentDate = Date()
     val defaultName = stringResource(R.string.shopping_cart)
     Column {
-        OutlinedTextField(value = nameText.value ,
-                          onValueChange = { nameText.value = it } ,
-                          label = { Text(stringResource(id = R.string.cart_name)) } ,
-                          placeholder = { Text(stringResource(R.string.shopping_cart)) })
+        OutlinedTextField(value = nameText.value,
+            onValueChange = { nameText.value = it },
+            label = { Text(stringResource(id = R.string.cart_name)) },
+            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
+            placeholder = { Text(stringResource(R.string.shopping_cart)) })
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
