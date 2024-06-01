@@ -1,3 +1,13 @@
+# Version 1.0.0
+- **New**: Introduced multiple carts functionality, enhancing user flexibility.
+- **New**: Implemented 'Swipe to Delete' feature for carts, improving user experience.
+- **New**: Enabled dynamic color customization, offering personalized user interface.
+- **New**: Added support for custom currency, catering to international user base.
+- **New**: Enhanced privacy settings for better user control and trust.
+- **Major**: Undertook a major overhaul of the app for optimized performance.
+- **Major**: Migrated the app to Semantic Versioning (SemVer).
+- **Major**: Reset the version to 1.0.0 for a fresh start.
+
 # Version 3.1_r1:
 
 - Made various under-the-hood improvements for a better overall app experience.
