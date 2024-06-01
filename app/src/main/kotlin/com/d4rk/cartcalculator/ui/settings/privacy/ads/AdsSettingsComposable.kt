@@ -91,7 +91,7 @@ fun AdsSettingsComposable(activity : AdsSettingsActivity) {
                                            consentInformation.requestConsentInfoUpdate(activity ,
                                                                                        params ,
                                                                                        {
-                                                                                           activity.loadForm()
+                                                                                           activity.openForm()
                                                                                        } ,
                                                                                        {})
                                        })

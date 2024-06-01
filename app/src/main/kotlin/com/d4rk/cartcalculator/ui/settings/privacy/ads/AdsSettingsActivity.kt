@@ -11,18 +11,23 @@ import androidx.compose.ui.Modifier
 import com.d4rk.cartcalculator.ui.settings.display.theme.style.AppTheme
 import com.google.android.ump.ConsentForm
 import com.google.android.ump.ConsentInformation
+import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 
 class AdsSettingsActivity : AppCompatActivity() {
-    private lateinit var consentInformation: ConsentInformation
-    private lateinit var consentForm: ConsentForm
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var consentInformation : ConsentInformation
+    private val isPrivacyOptionsRequired : Boolean
+        get() = consentInformation.privacyOptionsRequirementStatus == ConsentInformation.PrivacyOptionsRequirementStatus.REQUIRED
+    private lateinit var consentForm : ConsentForm
+
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        consentInformation = UserMessagingPlatform.getConsentInformation(this@AdsSettingsActivity)
         setContent {
             AppTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
                     AdsSettingsComposable(this@AdsSettingsActivity)
                 }
@@ -30,14 +35,27 @@ class AdsSettingsActivity : AppCompatActivity() {
         }
     }
 
-    fun loadForm() {
-        UserMessagingPlatform.loadConsentForm(this, { consentForm ->
+    fun openForm() {
+        UserMessagingPlatform.loadConsentForm(this , { consentForm ->
             this.consentForm = consentForm
-            if (consentInformation.consentStatus == ConsentInformation.ConsentStatus.OBTAINED) {
+            if (consentInformation.consentStatus == ConsentInformation.ConsentStatus.REQUIRED || consentInformation.consentStatus == ConsentInformation.ConsentStatus.OBTAINED) {
                 consentForm.show(this) {
                     loadForm()
                 }
             }
-        }, {})
+        } , {})
+    }
+
+    private fun loadForm() {
+        val params = ConsentRequestParameters.Builder().setTagForUnderAgeOfConsent(false).build()
+        consentInformation.requestConsentInfoUpdate(this@AdsSettingsActivity , params , {
+            UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                this@AdsSettingsActivity
+            ) {
+                if (isPrivacyOptionsRequired) {
+                    invalidateOptionsMenu()
+                }
+            }
+        } , {})
     }
 }
