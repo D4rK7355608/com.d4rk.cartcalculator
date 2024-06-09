@@ -13,6 +13,7 @@ lifecycleProcess = "2.8.1"
 lifecycleRuntimeKtx = "2.8.1"
 lifecycleViewmodelKtx = "2.8.1"
 material = "1.12.0"
+kotlinxCoroutinesAndroid = "1.8.1"
 multidex = "2.0.1"
 volley = "1.2.1"
 workRuntimeKtx = "2.9.0"
@@ -62,6 +63,7 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
 androidx-ui = { module = "androidx.compose.ui:ui" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
