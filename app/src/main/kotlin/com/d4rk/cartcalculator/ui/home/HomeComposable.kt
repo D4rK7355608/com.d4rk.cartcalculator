@@ -42,10 +42,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ads.BannerAdsComposable
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
-import com.d4rk.cartcalculator.data.store.DataStore
-import com.d4rk.cartcalculator.dialogs.DeleteCartDialog
-import com.d4rk.cartcalculator.dialogs.NewCartDialog
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.dialogs.DeleteCartDialog
+import com.d4rk.cartcalculator.ui.dialogs.NewCartDialog
 import com.d4rk.cartcalculator.ui.cart.CartActivity
 import com.d4rk.cartcalculator.utils.bounceClick
 import java.text.SimpleDateFormat

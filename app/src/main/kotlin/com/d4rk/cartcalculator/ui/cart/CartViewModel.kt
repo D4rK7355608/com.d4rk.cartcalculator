@@ -8,9 +8,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
@@ -76,17 +76,17 @@ class CartViewModel(private val cartId: Int, private val dataStore: DataStore) :
     }
 
     /**
-     * Loads the selected currency from the data store and updates the UI state.
+     * Loads the selected currency from the data datastore and updates the UI state.
      *
      * This function is called during the initialization of the ViewModel. It launches a coroutine in the ViewModel's scope.
      * In the coroutine, it performs the following operations:
-     * 1. Fetches the selected currency from the data store.
+     * 1. Fetches the selected currency from the data datastore.
      * 2. If a currency is found, it sets the `selectedCurrency` state to the fetched currency.
      * 3. If no currency is found, it sets the `selectedCurrency` state to an empty string.
      *
-     * Note: The data store operation is performed asynchronously to avoid blocking the main thread.
+     * Note: The data datastore operation is performed asynchronously to avoid blocking the main thread.
      *
-     * @throws Exception If there is an error while fetching the selected currency from the data store.
+     * @throws Exception If there is an error while fetching the selected currency from the data datastore.
      */
     private fun loadSelectedCurrency() {
         viewModelScope.launch {

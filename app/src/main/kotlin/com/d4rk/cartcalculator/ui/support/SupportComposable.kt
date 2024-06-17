@@ -45,7 +45,7 @@ import com.android.billingclient.api.BillingResult
 import com.android.billingclient.api.SkuDetails
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ads.LargeBannerAdsComposable
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.utils.Utils
 import com.d4rk.cartcalculator.utils.bounceClick
 import kotlinx.coroutines.CoroutineScope

@@ -2,7 +2,7 @@ package com.d4rk.cartcalculator.ui.cart
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 
 /**
  * Factory class for creating instances of [CartViewModel].

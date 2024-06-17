@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.dialogs
+package com.d4rk.cartcalculator.ui.dialogs
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -23,7 +23,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.Date

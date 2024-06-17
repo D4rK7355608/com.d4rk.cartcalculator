@@ -45,7 +45,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.dialogs.VersionInfoDialog
+import com.d4rk.cartcalculator.ui.dialogs.VersionInfoDialog
 import com.d4rk.cartcalculator.utils.Utils
 import com.d4rk.cartcalculator.utils.bounceClick
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity

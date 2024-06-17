@@ -21,8 +21,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
-import com.d4rk.cartcalculator.dialogs.CurrencyDialog
+import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.dialogs.CurrencyDialog
 import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
 import com.d4rk.cartcalculator.utils.PreferenceItem
 

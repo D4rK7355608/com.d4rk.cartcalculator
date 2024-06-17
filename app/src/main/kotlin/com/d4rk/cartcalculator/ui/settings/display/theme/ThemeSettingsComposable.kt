@@ -32,7 +32,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.utils.SwitchCardComposable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

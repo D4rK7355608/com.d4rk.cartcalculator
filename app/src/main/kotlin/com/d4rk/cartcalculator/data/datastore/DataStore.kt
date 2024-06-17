@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.data.store
+package com.d4rk.cartcalculator.data.datastore
 
 import android.content.Context
 import androidx.compose.runtime.mutableStateOf

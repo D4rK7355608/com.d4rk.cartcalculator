@@ -31,8 +31,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.os.LocaleListCompat
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
-import com.d4rk.cartcalculator.dialogs.LanguageDialog
+import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.dialogs.LanguageDialog
 import com.d4rk.cartcalculator.ui.settings.display.theme.ThemeSettingsActivity
 import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
 import com.d4rk.cartcalculator.utils.PreferenceItem

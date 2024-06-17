@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

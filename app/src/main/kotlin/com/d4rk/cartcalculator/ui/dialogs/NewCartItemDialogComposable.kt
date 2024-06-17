@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.dialogs
+package com.d4rk.cartcalculator.ui.dialogs
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,7 +22,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 
 @Composable
 fun NewCartItemDialog(

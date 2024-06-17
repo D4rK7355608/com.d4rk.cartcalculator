@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.data.db.table
+package com.d4rk.cartcalculator.data.database.table
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

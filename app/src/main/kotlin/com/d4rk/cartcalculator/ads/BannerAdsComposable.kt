@@ -7,7 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import com.d4rk.cartcalculator.constants.ads.AdsConstants
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView

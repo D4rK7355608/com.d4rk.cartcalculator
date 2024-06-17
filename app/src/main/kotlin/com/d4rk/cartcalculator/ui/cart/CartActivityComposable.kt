@@ -45,10 +45,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ads.BannerAdsComposable
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartItemsTable
-import com.d4rk.cartcalculator.data.store.DataStore
-import com.d4rk.cartcalculator.dialogs.DeleteCartItemDialog
-import com.d4rk.cartcalculator.dialogs.NewCartItemDialog
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.dialogs.DeleteCartItemDialog
+import com.d4rk.cartcalculator.ui.dialogs.NewCartItemDialog
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -20,7 +20,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.core.view.WindowCompat
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 
 private val lightScheme = lightColorScheme(
     primary = primaryLight,

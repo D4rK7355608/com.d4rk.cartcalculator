@@ -7,7 +7,7 @@ import androidx.core.app.NotificationCompat
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 

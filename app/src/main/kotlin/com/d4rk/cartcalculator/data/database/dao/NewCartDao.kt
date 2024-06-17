@@ -1,10 +1,10 @@
-package com.d4rk.cartcalculator.data.db.dao
+package com.d4rk.cartcalculator.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.d4rk.cartcalculator.data.db.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 
 @Dao
 interface NewCartDao {

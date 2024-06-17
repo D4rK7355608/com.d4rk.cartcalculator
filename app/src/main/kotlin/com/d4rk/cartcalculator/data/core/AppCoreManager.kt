@@ -13,8 +13,8 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.multidex.MultiDexApplication
 import androidx.room.Room
 import com.d4rk.cartcalculator.constants.ads.AdsConstants
-import com.d4rk.cartcalculator.data.db.AppDatabase
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.database.AppDatabase
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.notifications.managers.AppUsageNotificationsManager
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest

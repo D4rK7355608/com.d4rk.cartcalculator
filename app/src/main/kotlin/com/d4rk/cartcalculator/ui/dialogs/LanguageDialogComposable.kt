@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.dialogs
+package com.d4rk.cartcalculator.ui.dialogs
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.Money
+import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -29,65 +29,70 @@ import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
-fun CurrencyDialog(
-    dataStore : DataStore , onDismiss : () -> Unit , onCurrencySelected : (String) -> Unit
+fun LanguageDialog(
+    dataStore: DataStore, onDismiss: () -> Unit, onLanguageSelected: (String) -> Unit
 ) {
-    val selectedCurrency = remember { mutableStateOf("") }
-    val currencies = stringArrayResource(R.array.currency).toList()
+    val selectedLanguage = remember { mutableStateOf("") }
+    val languageEntries = stringArrayResource(R.array.preference_language_entries).toList()
+    val languageValues = stringArrayResource(R.array.preference_language_values).toList()
 
-    AlertDialog(onDismissRequest = onDismiss ,
-                text = { CurrencyDialogContent(selectedCurrency , dataStore , currencies) } ,
-                icon = {
-                    Icon(Icons.Outlined.Money , contentDescription = null)
-                } ,
-                confirmButton = {
-                    TextButton(onClick = {
-                        onCurrencySelected(selectedCurrency.value)
-                    }) {
-                        Text(stringResource(android.R.string.ok))
-                    }
-                } ,
-                dismissButton = {
-                    TextButton(onClick = onDismiss) {
-                        Text(stringResource(android.R.string.cancel))
-                    }
-                })
+    AlertDialog(onDismissRequest = onDismiss, text = {
+        LanguageDialogContent(
+            selectedLanguage, dataStore, languageEntries, languageValues
+        )
+    }, icon = {
+        Icon(Icons.Outlined.Language, contentDescription = null)
+    }, confirmButton = {
+        TextButton(onClick = {
+            onLanguageSelected(selectedLanguage.value)
+            onDismiss()
+        }) {
+            Text(stringResource(android.R.string.ok))
+        }
+    }, dismissButton = {
+        TextButton(onClick = onDismiss) {
+            Text(stringResource(android.R.string.cancel))
+        }
+    })
 }
 
 @Composable
-fun CurrencyDialogContent(
-    selectedCurrency : MutableState<String> , dataStore : DataStore , currencies : List<String>
+fun LanguageDialogContent(
+    selectedLanguage: MutableState<String>,
+    dataStore: DataStore,
+    languageEntries: List<String>,
+    languageValues: List<String>
 ) {
     LaunchedEffect(Unit) {
-        selectedCurrency.value = dataStore.getCurrency().firstOrNull() ?: ""
+        selectedLanguage.value = dataStore.getLanguage().firstOrNull() ?: ""
     }
 
     Column {
-        Text(stringResource(id = R.string.dialog_currency_subtitle))
+        Text(stringResource(id = R.string.dialog_language_subtitle))
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
         ) {
             LazyColumn {
-                items(currencies.size) { index ->
+                items(languageEntries.size) { index ->
                     Row(
                         Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Start
                     ) {
                         RadioButton(
-                            selected = selectedCurrency.value == currencies[index],
+                            selected = selectedLanguage.value == languageValues[index],
                             onClick = {
-                                selectedCurrency.value = currencies[index]
+                                selectedLanguage.value = languageValues[index]
                             })
                         Text(
                             modifier = Modifier.padding(start = 8.dp),
-                            text = currencies[index],
+                            text = languageEntries[index],
                             style = MaterialTheme.typography.bodyMedium.merge()
                         )
                     }
@@ -95,12 +100,12 @@ fun CurrencyDialogContent(
             }
         }
         Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
-        Text(stringResource(id = R.string.dialog_info_currency))
+        Text(stringResource(id = R.string.dialog_info_language))
     }
 
-    LaunchedEffect(selectedCurrency.value) {
-        dataStore.saveCurrency(selectedCurrency.value)
+    LaunchedEffect(selectedLanguage.value) {
+        dataStore.saveLanguage(selectedLanguage.value)
     }
 }

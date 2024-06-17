@@ -34,7 +34,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.store.DataStore
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.utils.PreferenceItem
 import com.d4rk.cartcalculator.utils.SwitchCardComposable
 import com.d4rk.cartcalculator.utils.Utils
