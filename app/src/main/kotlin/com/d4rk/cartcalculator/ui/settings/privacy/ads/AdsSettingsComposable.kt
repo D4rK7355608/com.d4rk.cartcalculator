@@ -80,6 +80,7 @@ fun AdsSettingsComposable(activity : AdsSettingsActivity) {
                 item {
                     Box(modifier = Modifier.padding(horizontal = 8.dp)) {
                         PreferenceItem(title = stringResource(R.string.personalized_ads) ,
+                                       enabled = switchState.value ,
                                        summary = stringResource(id = R.string.summary_ads_personalized_ads) ,
                                        onClick = {
                                            val params = ConsentRequestParameters.Builder()

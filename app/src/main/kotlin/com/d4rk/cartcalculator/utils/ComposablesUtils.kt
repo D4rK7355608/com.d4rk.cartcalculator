@@ -20,6 +20,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
@@ -118,30 +119,40 @@ fun PreferenceCategoryItem(
  */
 @Composable
 fun PreferenceItem(
-    icon: ImageVector? = null,
-    title: String? = null,
-    summary: String? = null,
-    onClick: () -> Unit = {}
+    icon : ImageVector? = null ,
+    title : String? = null ,
+    summary : String? = null ,
+    enabled : Boolean = true ,
+    onClick : () -> Unit = {}
 ) {
     Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .clickable(onClick = onClick), verticalAlignment = Alignment.CenterVertically
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(16.dp))
+                .clickable(enabled = enabled , onClick = onClick) ,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         icon?.let {
             Spacer(modifier = Modifier.width(16.dp))
-            Icon(it, contentDescription = null)
+            Icon(it , contentDescription = null)
             Spacer(modifier = Modifier.width(16.dp))
         }
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
             title?.let {
-                Text(text = it, style = MaterialTheme.typography.titleLarge)
+                Text(
+                    text = it ,
+                    style = MaterialTheme.typography.titleLarge ,
+                    color = if (! enabled) LocalContentColor.current.copy(alpha = 0.38f) else LocalContentColor.current
+                )
             }
             summary?.let {
-                Text(text = it, style = MaterialTheme.typography.bodyMedium)
+                Text(
+                    text = it ,
+                    style = MaterialTheme.typography.bodyMedium ,
+                    color = if (! enabled) LocalContentColor.current.copy(alpha = 0.38f) else LocalContentColor.current
+                )
             }
         }
     }
