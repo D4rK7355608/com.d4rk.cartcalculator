@@ -1,3 +1,10 @@
+# Version 1.0.3
+- **Minor**: Updated the project props, for a better implementation of the app
+- **Minor**: Updated the app libraries for better optimization
+- **Minor**: Updated the personalized ads preference when the user turn off ads
+- **Minor**: Updated small portions of the project structure for better understanding and integration
+- **Fix**: Fixed the duplicated CHF currency
+
 # Version 1.0.0
 - **New**: Introduced multiple carts functionality, enhancing user flexibility.
 - **New**: Implemented 'Swipe to Delete' feature for carts, improving user experience.
