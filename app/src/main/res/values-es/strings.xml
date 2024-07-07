@@ -16,6 +16,8 @@
     <string name="shopping_cart">Carrito de compras</string>
     <string name="summary_cart_dialog">Nos comprometemos a crear una experiencia de compra personalizada para todos. Para facilitar el seguimiento de tus selecciones y mejorar tu experiencia de compra, considera darle un nombre a tu carrito antes de agregar artículos.</string>
     <string name="created_on">Creado el %1$s</string>
+    <string name="decrease_quantity">Disminuir cantidad</string>
+    <string name="increase_quantity">Aumentar cantidad</string>
     <string name="delete_cart_title">Eliminar carrito</string>
     <string name="delete_cart_message">¿Está seguro de que desea eliminar este carrito?</string>
     <string name="delete_cart_warning">Eliminar este carrito eliminará permanentemente todos los artículos de \"%s\" y no se puede deshacer.</string>

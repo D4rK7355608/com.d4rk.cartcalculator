@@ -16,6 +16,8 @@
     <string name="shopping_cart">Корзина покупок</string>
     <string name="summary_cart_dialog">Мы стремимся создать персонализированный опыт покупок для каждого. Чтобы вам было проще отслеживать свой выбор и улучшать свои покупки, подумайте о том, чтобы дать своей корзине имя перед добавлением товаров.</string>
     <string name="created_on">Создано %1$s</string>
+    <string name="decrease_quantity">Уменьшить количество</string>
+    <string name="increase_quantity">Увеличить количество</string>
     <string name="delete_cart_title">Удалить корзину</string>
     <string name="delete_cart_message">Вы уверены, что хотите удалить эту корзину?</string>
     <string name="delete_cart_warning">Удаление этой корзины навсегда удалит все товары из \"%s\" и не может быть отменено.</string>

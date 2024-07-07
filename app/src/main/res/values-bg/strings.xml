@@ -16,6 +16,8 @@
     <string name="shopping_cart">Пазарска количка</string>
     <string name="summary_cart_dialog">Ангажирани сме да създадем персонализирано пазаруване за всеки. За да ви улесним в следенето на вашите избори и да подобрим пазаруването ви, обмислете да дадете име на вашата количка преди да добавите артикули.</string>
     <string name="created_on">Създадено на %1$s</string>
+    <string name="decrease_quantity">Намаляване на количеството</string>
+    <string name="increase_quantity">Увеличаване на количеството</string>
     <string name="delete_cart_title">Изтриване на количка</string>
     <string name="delete_cart_message">Сигурни ли сте, че искате да изтриете тази количка?</string>
     <string name="delete_cart_warning">Изтриването на тази количка ще премахне трайно всички артикули от \"%s\" и не може да бъде възстановено.</string>

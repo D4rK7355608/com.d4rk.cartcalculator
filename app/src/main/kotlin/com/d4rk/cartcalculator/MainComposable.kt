@@ -32,7 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.d4rk.cartcalculator.data.navigation.NavigationItem
+import com.d4rk.cartcalculator.data.model.ui.navigation.NavigationItem
 import com.d4rk.cartcalculator.ui.help.HelpActivity
 import com.d4rk.cartcalculator.ui.home.HomeComposable
 import com.d4rk.cartcalculator.ui.settings.SettingsActivity
@@ -57,7 +57,8 @@ fun MainComposable() {
             selectedIcon = Icons.AutoMirrored.Outlined.EventNote,
         ),
         NavigationItem(
-            title = R.string.share, selectedIcon = Icons.Outlined.Share
+            title = R.string.share,
+            selectedIcon = Icons.Outlined.Share,
         ),
     )
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)

@@ -16,6 +16,8 @@
     <string name="shopping_cart">買い物カート</string>
     <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに尽力しています。選択内容を追跡しやすく、ショッピングの旅を向上させるために、商品を追加する前にカートに名前を付けることを検討してください。</string>
     <string name="created_on">%1$s に作成</string>
+    <string name="decrease_quantity">数量を減らす</string>
+    <string name="increase_quantity">数量を増やす</string>
     <string name="delete_cart_title">カートを削除</string>
     <string name="delete_cart_message">このカートを削除してもよろしいですか？</string>
     <string name="delete_cart_warning">このカートを削除すると、「%s」からすべての商品が永久に削除され、元に戻すことはできません。</string>

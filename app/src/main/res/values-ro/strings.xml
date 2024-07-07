@@ -16,6 +16,8 @@
     <string name="shopping_cart">Coș de cumpărături</string>
     <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a vă facilita urmărirea selecțiilor și îmbunătățirea experienței de cumpărături, luați în considerare atribuirea unui nume coșului înainte de a adăuga articole.</string>
     <string name="created_on">Creat pe %1$s</string>
+    <string name="decrease_quantity">Scădere cantitate</string>
+    <string name="increase_quantity">Creștere cantitate</string>
     <string name="delete_cart_title">Ștergeți coșul</string>
     <string name="delete_cart_message">Sunteți sigur că doriți să ștergeți acest coș?</string>
     <string name="delete_cart_warning">Ștergerea acestui coș va elimina permanent toate articolele din \"%s\" și nu poate fi anulata.</string>

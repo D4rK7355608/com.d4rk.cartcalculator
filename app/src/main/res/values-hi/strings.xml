@@ -16,6 +16,8 @@
     <string name="shopping_cart">शॉपिंग कार्ट</string>
     <string name="summary_cart_dialog">हम सभी के लिए एक व्यक्तिगत खरीदारी अनुभव बनाने के लिए प्रतिबद्ध हैं। अपने चयन पर नज़र रखने और अपनी खरीदारी यात्रा को बढ़ाने के लिए इसे आसान बनाने के लिए, आइटम जोड़ने से पहले अपने कार्ट को एक नाम देने पर विचार करें।</string>
     <string name="created_on">%1$s को बनाया गया</string>
+    <string name="decrease_quantity">मात्रा घटाएँ</string>
+    <string name="increase_quantity">मात्रा बढ़ाएँ</string>
     <string name="delete_cart_title">कार्ट हटाएं</string>
     <string name="delete_cart_message">क्या आप इस कार्ट को हटाना चाहते हैं?</string>
     <string name="delete_cart_warning">इस कार्ट को हटाने से \"%s\" से सभी आइटम स्थायी रूप से हटा दिए जाएँगे और इसे पूर्ववत नहीं किया जा सकता है।</string>

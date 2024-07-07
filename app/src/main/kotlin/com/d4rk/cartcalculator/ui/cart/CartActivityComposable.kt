@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.ui.cart
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,15 +12,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.outlined.AddShoppingCart
 import androidx.compose.material.icons.outlined.RemoveCircleOutline
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -34,6 +38,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -49,6 +54,7 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.ui.dialogs.DeleteCartItemDialog
 import com.d4rk.cartcalculator.ui.dialogs.NewCartItemDialog
+import com.d4rk.cartcalculator.utils.bounceClick
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -232,6 +238,7 @@ fun CartItemComposable(
     onPlusClick: (ShoppingCartItemsTable) -> Unit,
 ) {
     val quantityState = viewModel.getQuantityStateForItem(cartItem)
+    val interactionSource = remember { MutableInteractionSource() }
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -258,7 +265,12 @@ fun CartItemComposable(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(
                     modifier = Modifier
+                        .bounceClick()
+                        .size(40.dp)
+                        .clip(CircleShape)
                         .combinedClickable(
+                            interactionSource = interactionSource,
+                            indication = rememberRipple(bounded = true),
                             onClick = {
                                 onMinusClick(cartItem)
                             },
@@ -270,7 +282,8 @@ fun CartItemComposable(
                 ) {
                     Icon(
                         imageVector = Icons.Outlined.RemoveCircleOutline,
-                        contentDescription = "Decrease Quantity"
+                        contentDescription = stringResource(id = R.string.decrease_quantity),
+                        modifier = Modifier.align(Alignment.Center)
                     )
                 }
 
@@ -280,10 +293,11 @@ fun CartItemComposable(
                     modifier = Modifier.padding(horizontal = 16.dp)
                 )
 
-                IconButton(onClick = { onPlusClick(cartItem) }) {
+                IconButton(modifier = Modifier.bounceClick(),
+                    onClick = { onPlusClick(cartItem) }) {
                     Icon(
                         imageVector = Icons.Outlined.AddCircleOutline,
-                        contentDescription = "Increase Quantity"
+                        contentDescription = stringResource(id = R.string.increase_quantity)
                     )
                 }
             }

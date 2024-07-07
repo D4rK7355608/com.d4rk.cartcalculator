@@ -16,6 +16,8 @@
     <string name="shopping_cart">Кошик для покупок</string>
     <string name="summary_cart_dialog">Ми прагнемо створити персоналізований досвід покупок для всіх. Щоб полегшити вам відстеження ваших виборів і покращити вашу подорож покупками, подумайте про те, щоб дати своєму кошику назву перед додаванням товарів.</string>
     <string name="created_on">Створено %1$s</string>
+    <string name="decrease_quantity">Зменшити кількість</string>
+    <string name="increase_quantity">Збільшити кількість</string>
     <string name="delete_cart_title">Видалити кошик</string>
     <string name="delete_cart_message">Ви впевнені, що хочете видалити цей кошик?</string>
     <string name="delete_cart_warning">Видалення цього кошика призведе до постійного видалення всіх товарів з \"%s\" і не може бути відмінено.</string>

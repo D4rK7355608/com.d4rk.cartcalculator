@@ -16,6 +16,8 @@
     <string name="shopping_cart">Kundvagn</string>
     <string name="summary_cart_dialog">Vi strävar efter att skapa en personlig shoppingupplevelse för alla. För att göra det enklare för dig att hålla reda på dina val och förbättra din shoppingresa, överväg att ge din kundvagn ett namn innan du lägger till varor.</string>
     <string name="created_on">Skapad den %1$s</string>
+    <string name="decrease_quantity">Minska antal</string>
+    <string name="increase_quantity">Öka antal</string>
     <string name="delete_cart_title">Radera varukorgen</string>
     <string name="delete_cart_message">Är du säker på att du vill radera den här varukorgen?</string>
     <string name="delete_cart_warning">Att radera den här varukorgen kommer att ta bort alla artiklar från \"%s\" permanent och kan inte ångras.</string>

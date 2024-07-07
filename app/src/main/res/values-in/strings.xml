@@ -16,6 +16,8 @@
     <string name="shopping_cart">Keranjang belanja</string>
     <string name="summary_cart_dialog">Kami berkomitmen untuk menciptakan pengalaman berbelanja yang dipersonalisasi untuk semua orang. Untuk mempermudah Anda melacak pilihan Anda dan meningkatkan perjalanan berbelanja Anda, pertimbangkan untuk memberi nama pada keranjang Anda sebelum menambahkan barang.</string>
     <string name="created_on">Dibuat pada %1$s</string>
+    <string name="decrease_quantity">Kurangi jumlah</string>
+    <string name="increase_quantity">Tambahkan jumlah</string>
     <string name="delete_cart_title">Hapus Keranjang</string>
     <string name="delete_cart_message">Apakah Anda yakin ingin menghapus keranjang ini?</string>
     <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>

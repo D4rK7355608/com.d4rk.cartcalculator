@@ -16,6 +16,8 @@
     <string name="shopping_cart">Bevásárlókosár</string>
     <string name="summary_cart_dialog">Elkötelezettek vagyunk a személyre szabott vásárlási élmény megteremtése iránt mindenki számára. Hogy könnyebb legyen nyomon követnie a választásait és javítsa a vásárlási útját, fontolja meg kosarának elnevezését, mielőtt elemeket adna hozzá.</string>
     <string name="created_on">Létrehozva: %1$s</string>
+    <string name="decrease_quantity">Mennyiség csökkentése</string>
+    <string name="increase_quantity">Mennyiség növelése</string>
     <string name="delete_cart_title">Kosár törlése</string>
     <string name="delete_cart_message">Biztos benne, hogy törölni szeretné ezt a kosarat?</string>
     <string name="delete_cart_warning">Ennek a kosárnak a törlése véglegesen eltávolítja az összes elemet a \"%s\" kosárból, és nem lehet visszavonni.</string>

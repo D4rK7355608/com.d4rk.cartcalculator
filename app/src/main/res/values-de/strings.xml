@@ -16,6 +16,8 @@
     <string name="shopping_cart">Einkaufswagen</string>
     <string name="summary_cart_dialog">Wir sind bestrebt, ein personalisiertes Einkaufserlebnis für alle zu schaffen. Um es Ihnen zu erleichtern, Ihre Auswahl zu verfolgen und Ihr Einkaufserlebnis zu verbessern, benennen Sie bitte Ihren Einkaufswagen, bevor Sie Artikel hinzufügen.</string>
     <string name="created_on">Erstellt am %1$s</string>
+    <string name="decrease_quantity">Menge verringern</string>
+    <string name="increase_quantity">Menge erhöhen</string>
     <string name="delete_cart_title">Warenkorb löschen</string>
     <string name="delete_cart_message">Sind Sie sicher, dass Sie diesen Warenkorb löschen möchten?</string>
     <string name="delete_cart_warning">Das Löschen dieses Warenkorbs entfernt dauerhaft alle Artikel aus \"%s\" und kann nicht rückgängig gemacht werden.</string>

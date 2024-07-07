@@ -16,6 +16,8 @@
     <string name="shopping_cart">Shopping cart</string>
     <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
     <string name="created_on">Created on %1$s</string>
+    <string name="decrease_quantity">Decrease quantity</string>
+    <string name="increase_quantity">Increase quantity</string>
     <string name="delete_cart_title">Delete Cart</string>
     <string name="delete_cart_message">Are you sure you want to delete this cart?</string>
     <string name="delete_cart_warning">Deleting this cart will permanently remove all items from \"%s\" and cannot be undone.</string>

@@ -1,3 +1,11 @@
+# Version 1.0.5
+- **Minor**: Updated the project props, for a better implementation of the app
+- **Minor**: Added some missing translations
+- **Fix**: Fixed the ripple effect on minus button
+
+# Version 1.0.5
+- **Minor**: Updated the project props, for a better implementation of the app
+
 # Version 1.0.4
 - **Minor**: Updated the project props, for a better implementation of the app
 

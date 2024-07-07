@@ -15,8 +15,8 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 48
-        versionName = "1.0.4"
+        versionCode = 53
+        versionName = "1.0.6"
         archivesName = "${applicationId}-v${versionName}"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -35,7 +35,7 @@ android {
             "sv",
             "bg",
             "pl",
-            "uk"
+            "uk",
         )
         vectorDrawables {
             useSupportLibrary = true
