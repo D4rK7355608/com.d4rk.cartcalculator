@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0"
+agp = "8.5.1"
 appcompat = "1.7.0"
 appUpdateKtx = "2.1.0"
 composeBom = "2024.06.00"
@@ -15,7 +15,7 @@ volley = "1.2.1"
 workRuntimeKtx = "2.9.0"
 coreSplashscreen = "1.0.1"
 firebaseBom = "32.8.1"
-kotlin = "1.9.23"
+kotlin = "2.0.0"
 junit = "4.13.2"
 activityCompose = "1.9.0"
 junitVersion = "1.2.1"
@@ -26,7 +26,7 @@ composeUi = "1.6.8"
 google-services = "4.4.2"
 google-oss-services = "0.10.6"
 google-firebase-crashlytics = "3.0.2"
-google-devtools-ksp = "1.9.23-1.0.20"
+google-devtools-ksp = "2.0.0-1.0.23"
 roomKtx = "2.6.1"
 playServicesAds = "23.2.0"
 playServicesOssLicenses = "17.1.0"
@@ -87,3 +87,4 @@ googlePlayServices = { id = "com.google.gms.google-services", version.ref = "goo
 googleOssServices = { id = "com.google.android.gms.oss-licenses-plugin", version.ref = "google-oss-services" }
 googleFirebase = { id = "com.google.firebase.crashlytics", version.ref = "google-firebase-crashlytics" }
 devToolsKsp = { id = "com.google.devtools.ksp", version.ref = "google-devtools-ksp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
