@@ -54,7 +54,7 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.ui.dialogs.DeleteCartItemDialog
 import com.d4rk.cartcalculator.ui.dialogs.NewCartItemDialog
-import com.d4rk.cartcalculator.utils.bounceClick
+import com.d4rk.cartcalculator.utils.compose.bounceClick
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -34,11 +34,11 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.ui.dialogs.LanguageDialog
 import com.d4rk.cartcalculator.ui.settings.display.theme.ThemeSettingsActivity
-import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
-import com.d4rk.cartcalculator.utils.PreferenceItem
-import com.d4rk.cartcalculator.utils.SwitchPreferenceItem
-import com.d4rk.cartcalculator.utils.SwitchPreferenceItemWithDivider
-import com.d4rk.cartcalculator.utils.Utils
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceCategoryItem
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceItem
+import com.d4rk.cartcalculator.utils.compose.components.SwitchPreferenceItem
+import com.d4rk.cartcalculator.utils.compose.components.SwitchPreferenceItemWithDivider
+import com.d4rk.cartcalculator.utils.IntentUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -98,7 +98,7 @@ fun DisplaySettingsComposable(activity: DisplaySettingsActivity) {
                         }
                     },
                     onClick = {
-                        Utils.openActivity(
+                        IntentUtils.openActivity(
                             context, ThemeSettingsActivity::class.java
                         )
                     })

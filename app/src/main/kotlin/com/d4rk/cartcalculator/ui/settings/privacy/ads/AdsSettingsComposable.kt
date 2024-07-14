@@ -35,9 +35,9 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.utils.PreferenceItem
-import com.d4rk.cartcalculator.utils.SwitchCardComposable
-import com.d4rk.cartcalculator.utils.Utils
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceItem
+import com.d4rk.cartcalculator.utils.compose.components.SwitchCardComposable
+import com.d4rk.cartcalculator.utils.IntentUtils
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.UserMessagingPlatform
 import kotlinx.coroutines.Dispatchers
@@ -126,7 +126,7 @@ fun AdsSettingsComposable(activity : AdsSettingsActivity) {
                         ClickableText(text = annotatedString , onClick = { offset ->
                             annotatedString.getStringAnnotations("URL" , offset , offset)
                                     .firstOrNull()?.let { annotation ->
-                                        Utils.openUrl(context , annotation.item)
+                                        IntentUtils.openUrl(context , annotation.item)
                                     }
                         })
                     }

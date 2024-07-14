@@ -37,7 +37,7 @@ import com.d4rk.cartcalculator.ui.help.HelpActivity
 import com.d4rk.cartcalculator.ui.home.HomeComposable
 import com.d4rk.cartcalculator.ui.settings.SettingsActivity
 import com.d4rk.cartcalculator.ui.support.SupportActivity
-import com.d4rk.cartcalculator.utils.Utils
+import com.d4rk.cartcalculator.utils.IntentUtils
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -77,26 +77,26 @@ fun MainComposable() {
                         when (item.title) {
 
                             R.string.settings -> {
-                                Utils.openActivity(
+                                IntentUtils.openActivity(
                                     context, SettingsActivity::class.java
                                 )
                             }
 
                             R.string.help_and_feedback -> {
-                                Utils.openActivity(
+                                IntentUtils.openActivity(
                                     context, HelpActivity::class.java
                                 )
                             }
 
                             R.string.updates -> {
-                                Utils.openUrl(
+                                IntentUtils.openUrl(
                                     context,
                                     "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
                                 )
                             }
 
                             R.string.share -> {
-                                Utils.shareApp(context)
+                                IntentUtils.shareApp(context)
                             }
                         }
                         scope.launch {
@@ -137,7 +137,7 @@ fun MainComposable() {
                     }
                 }, actions = {
                     IconButton(onClick = {
-                        Utils.openActivity(context, SupportActivity::class.java)
+                        IntentUtils.openActivity(context, SupportActivity::class.java)
                     }) {
                         Icon(
                             Icons.Outlined.VolunteerActivism, contentDescription = "Support"

@@ -18,8 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
-import com.d4rk.cartcalculator.utils.PreferenceItem
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceCategoryItem
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

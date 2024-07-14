@@ -15,8 +15,8 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 54
-        versionName = "1.0.6"
+        versionCode = 56
+        versionName = "1.0.7"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
             "en",
@@ -35,6 +35,7 @@ android {
             "bg",
             "pl",
             "uk",
+            "pt-rBR",
         )
         vectorDrawables {
             useSupportLibrary = true
@@ -47,7 +48,6 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-            versionNameSuffix = "-release"
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
@@ -56,7 +56,6 @@ android {
         debug {
             multiDexEnabled = true
             isDebuggable = true
-            versionNameSuffix = "-debug"
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
@@ -91,6 +90,7 @@ android {
         }
     }
 }
+
 dependencies {
     // Firebase
     implementation(platform(libs.firebase.bom))

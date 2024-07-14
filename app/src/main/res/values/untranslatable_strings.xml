@@ -16,6 +16,7 @@
     <string name="spanish" translatable="false">Español</string>
     <string name="turkish" translatable="false">Türkçe</string>
     <string name="ukrainian" translatable="false">Українська</string>
+    <string name="portuguese_brazil" translatable="false">Português (Brasil)</string>
     <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
     <string name="feedback_for" translatable="false">Feedback for </string>
     <string name="dear_developer" translatable="false">Dear developer, </string>

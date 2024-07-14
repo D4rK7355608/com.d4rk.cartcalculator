@@ -24,9 +24,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
-import com.d4rk.cartcalculator.utils.PreferenceItem
-import com.d4rk.cartcalculator.utils.Utils
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceCategoryItem
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceItem
+import com.d4rk.cartcalculator.utils.IntentUtils
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,7 +62,7 @@ fun AboutSettingsComposable(activity: AboutSettingsActivity) {
                 PreferenceItem(title = stringResource(com.google.android.gms.oss.licenses.R.string.oss_license_title),
                     summary = stringResource(R.string.summary_preference_settings_oss),
                     onClick = {
-                        Utils.openActivity(context, OssLicensesMenuActivity::class.java)
+                        IntentUtils.openActivity(context, OssLicensesMenuActivity::class.java)
                     })
             }
             item {

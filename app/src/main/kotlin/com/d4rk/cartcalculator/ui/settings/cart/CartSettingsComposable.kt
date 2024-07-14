@@ -23,8 +23,8 @@ import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.ui.dialogs.CurrencyDialog
-import com.d4rk.cartcalculator.utils.PreferenceCategoryItem
-import com.d4rk.cartcalculator.utils.PreferenceItem
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceCategoryItem
+import com.d4rk.cartcalculator.utils.compose.components.PreferenceItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

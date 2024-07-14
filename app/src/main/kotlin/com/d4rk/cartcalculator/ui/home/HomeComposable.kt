@@ -44,10 +44,10 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ads.BannerAdsComposable
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.cart.CartActivity
 import com.d4rk.cartcalculator.ui.dialogs.DeleteCartDialog
 import com.d4rk.cartcalculator.ui.dialogs.NewCartDialog
-import com.d4rk.cartcalculator.ui.cart.CartActivity
-import com.d4rk.cartcalculator.utils.bounceClick
+import com.d4rk.cartcalculator.utils.compose.bounceClick
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
