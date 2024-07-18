@@ -7,6 +7,7 @@
     <string name="hungarian" translatable="false">Magyar</string>
     <string name="german" translatable="false">Deutsch</string>
     <string name="hindi" translatable="false">हिन्दी</string>
+    <string name="thai" translatable="false">ไทย</string>
     <string name="indonesian" translatable="false">Bahasa Indonesia</string>
     <string name="italian" translatable="false">Italiano</string>
     <string name="japanese" translatable="false">日本語</string>

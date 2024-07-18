@@ -1,3 +1,7 @@
+# Version 1.0.8
+
+- **New**: Added Thai translations and currency.
+
 # Version 1.0.5
 - **Minor**: Updated the project props, for a better implementation of the app
 - **Minor**: Added some missing translations

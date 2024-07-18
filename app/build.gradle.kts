@@ -15,8 +15,8 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 56
-        versionName = "1.0.7"
+        versionCode = 57
+        versionName = "1.0.8"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
             "en",
@@ -30,6 +30,7 @@ android {
             "ja",
             "ro",
             "ru",
+            "th",
             "tr",
             "sv",
             "bg",

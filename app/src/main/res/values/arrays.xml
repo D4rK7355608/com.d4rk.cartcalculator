@@ -3,7 +3,7 @@
         <item>AUD $</item>   <!-- Australian Dollar -->
         <item>BRL R$</item>  <!-- Brazilian Real -->
         <item>CAD $</item>   <!-- Canadian Dollar -->
-        <item>CHF</item> <!-- Swiss Franc -->
+        <item>CHF</item>     <!-- Swiss Franc -->
         <item>CNY ¥</item>   <!-- Chinese Yuan -->
         <item>EUR €</item>   <!-- Euro -->
         <item>GBP £</item>   <!-- British Pound Sterling -->
@@ -19,6 +19,7 @@
         <item>SAR ﷼</item>   <!-- Saudi Riyal -->
         <item>SEK kr</item>  <!-- Swedish Krona -->
         <item>SGD $</item>   <!-- Singapore Dollar -->
+        <item>THB ฿</item>   <!-- Thai Baht -->
         <item>TRY ₺</item>   <!-- Turkish Lira -->
         <item>USD $</item>   <!-- United States Dollar -->
         <item>ZAR R</item>   <!-- South African Rand -->
@@ -38,6 +39,7 @@
         <item>@string/romanian</item>
         <item>@string/russian</item>
         <item>@string/spanish</item>
+        <item>@string/thai</item>
         <item>@string/turkish</item>
         <item>@string/ukrainian</item>
         <item>@string/portuguese_brazil</item>
@@ -56,6 +58,7 @@
         <item>ro</item>
         <item>ru</item>
         <item>es</item>
+        <item>th</item>
         <item>tr</item>
         <item>uk</item>
         <item>pt-BR</item>

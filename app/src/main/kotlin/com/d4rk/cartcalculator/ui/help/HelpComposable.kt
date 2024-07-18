@@ -122,7 +122,7 @@ fun HelpComposable(activity : HelpActivity, viewModel: HelpViewModel) {
     }) { paddingValues ->
         Box(
             modifier = Modifier
-                .padding(start = 16.dp , end = 16.dp)
+                .padding(start = 16.dp, end = 16.dp)
                 .fillMaxSize()
                 .safeDrawingPadding()
         ) {
@@ -149,6 +149,8 @@ fun HelpComposable(activity : HelpActivity, viewModel: HelpViewModel) {
                 onClick = {
                     viewModel.reviewInfo.value?.let { safeReviewInfo ->
                         viewModel.launchReviewFlow(activity, safeReviewInfo)
+                    } ?: run {
+                        IntentUtils.sendEmailToDeveloper(context)
                     }
                 },
                 icon = {
@@ -239,7 +241,7 @@ fun QuestionComposable(title : String , summary : String) {
             modifier = Modifier
                 .size(48.dp)
                 .background(
-                    color = MaterialTheme.colorScheme.primaryContainer , shape = CircleShape
+                    color = MaterialTheme.colorScheme.primaryContainer, shape = CircleShape
                 )
                 .padding(8.dp)
         )
