@@ -1,4 +1,4 @@
-# Version 1.0.8
+# Version 1.0.9
 
 - **Minor**: Updated the project props, for a better implementation of the app
 
