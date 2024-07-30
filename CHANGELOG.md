@@ -1,26 +1,36 @@
 # Version 1.0.8
 
+- **Minor**: Updated the project props, for a better implementation of the app
+
+# Version 1.0.8
+
 - **New**: Added Thai translations and currency.
 
 # Version 1.0.5
+
 - **Minor**: Updated the project props, for a better implementation of the app
 - **Minor**: Added some missing translations
 - **Fix**: Fixed the ripple effect on minus button
 
 # Version 1.0.5
+
 - **Minor**: Updated the project props, for a better implementation of the app
 
 # Version 1.0.4
+
 - **Minor**: Updated the project props, for a better implementation of the app
 
 # Version 1.0.3
+
 - **Minor**: Updated the project props, for a better implementation of the app
 - **Minor**: Updated the app libraries for better optimization
 - **Minor**: Updated the personalized ads preference when the user turn off ads
-- **Minor**: Updated small portions of the project structure for better understanding and integration
+- **Minor**: Updated small portions of the project structure for better understanding and
+  integration
 - **Fix**: Fixed the duplicated CHF currency
 
 # Version 1.0.0
+
 - **New**: Introduced multiple carts functionality, enhancing user flexibility.
 - **New**: Implemented 'Swipe to Delete' feature for carts, improving user experience.
 - **New**: Enabled dynamic color customization, offering personalized user interface.
