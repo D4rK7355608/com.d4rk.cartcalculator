@@ -1,5 +1,6 @@
 package com.d4rk.cartcalculator
 
+import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -11,6 +12,7 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material.icons.outlined.VolunteerActivism
+import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -38,12 +40,13 @@ import com.d4rk.cartcalculator.ui.home.HomeComposable
 import com.d4rk.cartcalculator.ui.settings.SettingsActivity
 import com.d4rk.cartcalculator.ui.support.SupportActivity
 import com.d4rk.cartcalculator.utils.IntentUtils
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainComposable() {
-    val drawerItems = listOf(
+    val drawerItems : List<NavigationItem> = listOf(
         NavigationItem(
             title = R.string.settings,
             selectedIcon = Icons.Outlined.Settings,
@@ -61,15 +64,15 @@ fun MainComposable() {
             selectedIcon = Icons.Outlined.Share,
         ),
     )
-    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    val scope = rememberCoroutineScope()
-    val context = LocalContext.current
-    val selectedItemIndex by rememberSaveable { mutableIntStateOf(-1) }
+    val drawerState : DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val scope : CoroutineScope = rememberCoroutineScope()
+    val context : Context = LocalContext.current
+    val selectedItemIndex : Int by rememberSaveable { mutableIntStateOf(value = -1) }
     ModalNavigationDrawer(drawerState = drawerState, drawerContent = {
         ModalDrawerSheet {
             Spacer(modifier = Modifier.height(16.dp))
             drawerItems.forEachIndexed { index, item ->
-                val title = stringResource(item.title)
+                val title : String = stringResource(item.title)
                 NavigationDrawerItem(
                     label = { Text(text = title) },
                     selected = index == selectedItemIndex,
@@ -91,7 +94,7 @@ fun MainComposable() {
                             R.string.updates -> {
                                 IntentUtils.openUrl(
                                     context,
-                                    "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
+                                    url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
                                 )
                             }
 

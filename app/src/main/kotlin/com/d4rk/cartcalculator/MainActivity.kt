@@ -36,13 +36,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var dataStore: DataStore
     private lateinit var appUpdateManager: AppUpdateManager
     private var appUpdateNotificationsManager: AppUpdateNotificationsManager =
-        AppUpdateNotificationsManager(this)
+        AppUpdateNotificationsManager(context = this@MainActivity)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
-        dataStore = DataStore.getInstance(this@MainActivity)
+        dataStore = DataStore.getInstance(context = this@MainActivity)
         MobileAds.initialize(this@MainActivity)
         startupScreen()
         setupUpdateNotifications()
@@ -76,10 +76,10 @@ class MainActivity : AppCompatActivity() {
      *
      * Consider utilizing alternative approaches for handling back button events.
      */
-    @Deprecated("Deprecated in Java")
+    @Deprecated(message = "Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onBackPressed() {
-        MaterialAlertDialogBuilder(this)
+        MaterialAlertDialogBuilder(this@MainActivity)
             .setTitle(R.string.close)
             .setMessage(R.string.summary_close)
             .setPositiveButton(android.R.string.yes) { _, _ ->
