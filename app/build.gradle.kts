@@ -15,28 +15,29 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 60
+        versionCode = 62
         versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
             "en",
-            "de",
-            "es",
-            "fr",
-            "hi",
-            "hu",
-            "in",
-            "it",
-            "ja",
-            "ro",
-            "ru",
-            "th",
-            "tr",
-            "sv",
-            "bg",
-            "pl",
-            "uk",
+            "bg-rBG",
+            "de-rDE",
+            "es-rGQ",
+            "fr-rFR",
+            "hi-rIN",
+            "hu-rHU",
+            "in-rID",
+            "it-rIT",
+            "ja-rJP",
+            "pl-rPL",
             "pt-rBR",
+            "ro-rRO",
+            "ru-rRU",
+            "sv-rSE",
+            "th-rTH",
+            "tr-rTR",
+            "uk-rUA",
+            "zh-rTW",
         )
         vectorDrawables {
             useSupportLibrary = true

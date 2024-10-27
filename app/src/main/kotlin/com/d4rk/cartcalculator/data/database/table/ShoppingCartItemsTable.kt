@@ -19,5 +19,6 @@ data class ShoppingCartItemsTable(
     var cartId: Int,
     val name: String,
     val price: String,
-    var quantity: Int
+    var quantity: Int,
+    var isChecked: Boolean = false
 )

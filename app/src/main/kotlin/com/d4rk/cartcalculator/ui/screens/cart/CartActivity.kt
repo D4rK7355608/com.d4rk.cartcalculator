@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.ui.screens.cart
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -23,9 +22,7 @@ class CartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         MobileAds.initialize(this@CartActivity)
-        println("Shopping Cart Calculator -> [CartActivity] onCreate called, Intent flags: ${intent.flags}, launchMode: ${intent.component?.shortClassName}")
-        cartId = intent.getIntExtra("cartId" , 0) // Correct cartId should be received here.
-        println("Shopping Cart Calculator -> [CartActivity] onCreate called, cartId: $cartId")
+        cartId = intent.getIntExtra("cartId" , 0)
         viewModel.loadSelectedCurrency(dataStore)
         viewModel.loadCart(cartId)
 

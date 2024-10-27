@@ -14,6 +14,7 @@ import androidx.room.Room
 import com.d4rk.cartcalculator.data.core.ads.AdsCoreManager
 import com.d4rk.cartcalculator.data.core.datastore.DataStoreCoreManager
 import com.d4rk.cartcalculator.data.database.AppDatabase
+import com.d4rk.cartcalculator.data.database.AppDatabase.Companion.MIGRATION_2_3
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,8 +44,7 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
         database = Room.databaseBuilder(this , AppDatabase::class.java , "Cart Calculator")
-                .fallbackToDestructiveMigration()
-                .fallbackToDestructiveMigrationOnDowngrade()
+                .addMigrations(MIGRATION_2_3)
                 .build()
         CoroutineScope(Dispatchers.Main).launch {
             if (dataStoreCoreManager.initializeDataStore()) {

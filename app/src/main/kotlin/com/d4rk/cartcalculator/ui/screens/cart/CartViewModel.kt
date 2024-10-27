@@ -20,14 +20,14 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     private val _uiState = MutableStateFlow(UiCartModel())
     val uiState : StateFlow<UiCartModel> = _uiState
 
-    fun loadCart(cartId: Int) {
+    fun loadCart(cartId : Int) {
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
             val cart = repository.getCartById(cartId)
             repository.getCartItems(cartId) { items ->
                 _uiState.update {
                     it.copy(
-                        cartItems = items, cart = cart
+                        cartItems = items , cart = cart
                     )
                 }
                 calculateTotalPrice()
@@ -111,6 +111,13 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
+    fun onItemCheckedChange(cartItem : ShoppingCartItemsTable , isChecked : Boolean) {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            cartItem.isChecked = isChecked
+            repository.updateCartItem(cartItem) { }
+        }
+    }
+
     fun saveCartItems() {
         viewModelScope.launch(coroutineExceptionHandler) {
             val cartItems = uiState.value.cartItems
@@ -123,7 +130,13 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     private fun calculateTotalPrice() {
         val total = uiState.value.cartItems.sumOf { item -> item.price.toDouble() * item.quantity }
         _uiState.update {
-            println("Shopping Cart Calculator -> [CartViewModel] UiState updated, items: ${it.copy(totalPrice = total).cartItems}")
+            println(
+                "Shopping Cart Calculator -> [CartViewModel] UiState updated, items: ${
+                    it.copy(
+                        totalPrice = total
+                    ).cartItems
+                }"
+            )
             it.copy(totalPrice = total)
         }
     }
