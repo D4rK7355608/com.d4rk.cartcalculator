@@ -10,6 +10,8 @@
     <string name="summary_browse_terms_of_service_and_privacy_policy">Read and agree to our Terms of Service and Privacy Policy to continue.</string>
     <string name="agree">Agree</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+
     <string name="no_carts_available">No carts available</string>
     <string name="add_new_cart">Add new cart</string>
     <string name="cart_name">Cart name</string>
@@ -58,6 +60,10 @@
 
     <string name="dynamic_colors">Dynamic colors</string>
     <string name="summary_preference_settings_dynamic_colors">Apply colors from wallpapers to the app theme</string>
+
+    <string name="app_behavior">App behavior</string>
+    <string name="bounce_buttons">Bounce click</string>
+    <string name="summary_preference_settings_bounce_buttons">Applies a subtle bounce animation to all clickable elements when clicked</string>
 
     <string name="language">Language</string>
     <string name="summary_preference_settings_language">Changes the language used in the app</string>
@@ -138,11 +144,14 @@
     <string name="app_build_version">Application build version</string>
     <string name="summary_preference_settings_oss">License details for open source software</string>
     <string name="device_info">Device Info</string>
-    <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="app_build">App Build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Debug</string>
+    <string name="release">Release</string>
     <string name="manufacturer">Manufacturer:</string>
     <string name="device_model">Device Model:</string>
     <string name="android_version">Android Version:</string>
     <string name="api_level">API Level:</string>
+    <string name="snack_device_info_copied">Device info copied to clipboard</string>
 
     <string name="help_and_feedback">Help &amp; feedback</string>
     <string name="help">Help</string>
@@ -186,4 +195,16 @@
     <string name="try_again">Try again</string>
     <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
     <string name="learn_more">Learn more</string>
+
+
+
+
+
+    <string name="file_not_found">File not found.</string>
+    <string name="no_files_found">No files found</string>
+    <string name="activity_not_found">Activity not found.</string>
+    <string name="security_error">A security error occurred. Please try again later.</string>
+    <string name="io_error">An input/output error occurred. Please check your network connection or storage and try again.</string>
+    <string name="illegal_argument_error">Invalid input or argument provided. Please check the information and try again.</string>
+    <string name="unknown_error">An unknown error occurred.</string>
 </resources>

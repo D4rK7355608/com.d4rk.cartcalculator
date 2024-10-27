@@ -1,36 +1,37 @@
 [versions]
-agp = "8.6.0"
+agp = "8.7.1"
 appcompat = "1.7.0"
 appUpdateKtx = "2.1.0"
-composeBom = "2024.09.01"
+composeBom = "2024.10.00"
 coreKtx = "1.13.1"
-billing = "7.0.0"
+billing = "7.1.1"
 datastoreCore = "1.1.1"
 graphicsShapes = "1.0.1"
-lifecycle = "2.8.5"
+lifecycle = "2.8.6"
 material = "1.12.0"
-kotlinxCoroutinesAndroid = "1.8.1"
+kotlinxCoroutinesAndroid = "1.9.0"
 multidex = "2.0.1"
 volley = "1.2.1"
 workRuntimeKtx = "2.9.1"
 coreSplashscreen = "1.0.1"
-firebaseBom = "32.8.1"
-kotlin = "2.0.0"
+coilCompose = "2.7.0"
+firebaseBom = "33.5.1"
+kotlin = "2.0.10"
 junit = "4.13.2"
-activityCompose = "1.9.2"
+activityCompose = "1.9.3"
 junitVersion = "1.2.1"
-navigationCompose = "2.8.0"
+navigationCompose = "2.8.3"
 constraintlayoutCompose = "1.0.1"
 espressoCore = "3.6.1"
-composeUi = "1.7.1"
+composeUi = "1.7.4"
 google-services = "4.4.2"
 google-oss-services = "0.10.6"
 google-firebase-crashlytics = "3.0.2"
-google-devtools-ksp = "2.0.0-1.0.23"
+google-devtools-ksp = "2.0.10-1.0.24"
 roomKtx = "2.6.1"
 playServicesAds = "23.3.0"
 playServicesOssLicenses = "17.1.0"
-reviewKtx = "2.0.1"
+reviewKtx = "2.0.2"
 
 [libraries]
 androidx-animation-core = { module = "androidx.compose.animation:animation-core" }
@@ -40,7 +41,8 @@ androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = 
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
-androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "datastoreCore" }
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastoreCore" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-core", version.ref = "datastoreCore" }
 androidx-foundation = { module = "androidx.compose.foundation:foundation" }
 androidx-graphics-shapes = { module = "androidx.graphics:graphics-shapes", version.ref = "graphicsShapes" }
 androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
@@ -78,6 +80,7 @@ review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "rev
 ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "composeUi" }
 ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 volley = { module = "com.android.volley:volley", version.ref = "volley" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

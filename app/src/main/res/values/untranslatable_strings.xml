@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Cart Calculator</string>
+    <string name="app_full_name" translatable="false">Shopping Cart Calculator for Android</string>
     <string name="arch" translatable="false">Arch:</string>
     <string name="bulgarian" translatable="false">Български</string>
     <string name="english" translatable="false">English</string>

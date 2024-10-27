@@ -9,14 +9,14 @@ plugins {
 }
 
 android {
-    compileSdk = 34
+    compileSdk = 35
     namespace = "com.d4rk.cartcalculator"
     defaultConfig {
         applicationId = "com.d4rk.cartcalculator"
-        minSdk = 26
-        targetSdk = 34
-        versionCode = 58
-        versionName = "1.0.9"
+        minSdk = 23
+        targetSdk = 35
+        versionCode = 60
+        versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
             "en",
@@ -50,15 +50,14 @@ android {
             isShrinkResources = true
             isDebuggable = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
-
         debug {
             multiDexEnabled = true
             isDebuggable = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -120,7 +119,8 @@ dependencies {
     implementation(libs.androidx.graphics.shapes)
     implementation(libs.androidx.constraintlayout.compose)
     implementation(libs.ui.tooling)
-    implementation(libs.androidx.datastore.core)
+    implementation(libs.datastore.preferences)
+    implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.navigation.compose)
 
     // AndroidX
@@ -142,6 +142,9 @@ dependencies {
 
     // Kotlin
     implementation(libs.kotlinx.coroutines.android)
+
+    // Image Compression
+    implementation(libs.coil.compose)
 
     // Test
     testImplementation(libs.junit)
