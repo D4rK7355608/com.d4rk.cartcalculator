@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">A kosár sikeresen törölve!</string>
     <string name="close">Bezárás?</string>
     <string name="summary_close">Biztosan ki szeretne lépni?</string>
+    <string name="file_not_found">A fájl nem található.</string>
+    <string name="activity_not_found">Tevékenység nem található.</string>
+    <string name="security_error">Biztonsági hiba történt. Kérjük, próbálja meg később újra.</string>
+    <string name="io_error">Bemeneti/kimeneti hiba történt. Ellenőrizze a hálózati kapcsolatot vagy a tárhelyet, és próbálja újra.</string>
+    <string name="illegal_argument_error">Érvénytelen bemenet vagy argumentum. Kérjük, ellenőrizze az információkat, és próbálja újra.</string>
+    <string name="unknown_error">Ismeretlen hiba történt.</string>
     <string name="your_shopping_cart_is_empty">A bevásárlókosara üres</string>
     <string name="item_name">Elem neve</string>
     <string name="enter_item_name">Írja be az elem nevét</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Dinamikus színek</string>
     <string name="summary_preference_settings_dynamic_colors">Alkalmazza a háttérképek színeit az alkalmazás témájára</string>
+
+    <string name="app_behavior">Alkalmazás viselkedése</string>
+    <string name="bounce_buttons">Ugráló kattintás</string>
+    <string name="summary_preference_settings_bounce_buttons">Finom ugráló animációt alkalmaz az összes kattintható elemre kattintáskor</string>
 
     <string name="language">Nyelv</string>
     <string name="summary_preference_settings_language">Megváltoztatja az alkalmazásban használt nyelvet</string>

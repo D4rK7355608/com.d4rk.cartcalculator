@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
     <string name="close">閉じる？</string>
     <string name="summary_close">本当に終了しますか？</string>
+    <string name="file_not_found">ファイルが見つかりません。</string>
+    <string name="activity_not_found">アクティビティが見つかりません。</string>
+    <string name="security_error">セキュリティエラーが発生しました。後でもう一度お試しください。</string>
+    <string name="io_error">入出力エラーが発生しました。ネットワーク接続やストレージを確認してから、もう一度お試しください。</string>
+    <string name="illegal_argument_error">無効な入力または引数が指定されました。情報を確認して、もう一度やり直してください。</string>
+    <string name="unknown_error">不明なエラーが発生しました。</string>
     <string name="your_shopping_cart_is_empty">買い物カートは空です</string>
     <string name="item_name">商品名</string>
     <string name="enter_item_name">商品名を入力してください</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">ダイナミックカラー</string>
     <string name="summary_preference_settings_dynamic_colors">壁紙からアプリのテーマに色を適用します</string>
+
+    <string name="app_behavior">アプリの動作</string>
+    <string name="bounce_buttons">バウンスクリック</string>
+    <string name="summary_preference_settings_bounce_buttons">クリック可能なすべての要素をクリックしたときに、微妙なバウンスアニメーションを適用します</string>
 
     <string name="language">言語</string>
     <string name="summary_preference_settings_language">アプリで使用される言語を変更します</string>

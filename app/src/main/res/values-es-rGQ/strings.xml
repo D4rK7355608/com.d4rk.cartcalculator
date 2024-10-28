@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">¡Carrito eliminado correctamente!</string>
     <string name="close">¿Cerrar?</string>
     <string name="summary_close">¿Estás seguro de que quieres salir?</string>
+    <string name="file_not_found">Archivo no encontrado.</string>
+    <string name="activity_not_found">Actividad no encontrada.</string>
+    <string name="security_error">Se ha producido un error de seguridad. Por favor, inténtelo de nuevo más tarde.</string>
+    <string name="io_error">Se ha producido un error de entrada/salida. Por favor, revise su conexión a la red o el almacenamiento e inténtelo de nuevo.</string>
+    <string name="illegal_argument_error">Entrada o argumento no válido. Por favor, compruebe la información e inténtelo de nuevo.</string>
+    <string name="unknown_error">Se ha producido un error desconocido.</string>
     <string name="your_shopping_cart_is_empty">Tu carrito de compras está vacío</string>
     <string name="item_name">Nombre del artículo</string>
     <string name="enter_item_name">Introduce el nombre del artículo</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Colores dinámicos</string>
     <string name="summary_preference_settings_dynamic_colors">Aplica colores de los fondos de pantalla al tema de la aplicación</string>
+
+    <string name="app_behavior">Comportamiento de la aplicación</string>
+    <string name="bounce_buttons">Clic de rebote</string>
+    <string name="summary_preference_settings_bounce_buttons">Aplica una sutil animación de rebote a todos los elementos clicables cuando se hace clic en ellos</string>
 
     <string name="language">Idioma</string>
     <string name="summary_preference_settings_language">Cambia el idioma utilizado en la aplicación</string>

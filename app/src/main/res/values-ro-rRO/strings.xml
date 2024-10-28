@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
     <string name="close">Închide?</string>
     <string name="summary_close">Sunteți sigur că doriți să ieșiți?</string>
+    <string name="file_not_found">Fișierul nu a fost găsit.</string>
+    <string name="activity_not_found">Activitatea nu a fost găsită.</string>
+    <string name="security_error">A apărut o eroare de securitate. Vă rugăm să încercați din nou mai târziu.</string>
+    <string name="io_error">A apărut o eroare de intrare/ieșire. Verificați conexiunea la rețea sau spațiul de stocare și încercați din nou.</string>
+    <string name="illegal_argument_error">Intrare sau argument nevalid. Verificați informațiile și încercați din nou.</string>
+    <string name="unknown_error">A apărut o eroare necunoscută.</string>
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="item_name">Numele articolului</string>
     <string name="enter_item_name">Introduceți numele articolului</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Culori dinamice</string>
     <string name="summary_preference_settings_dynamic_colors">Aplicați culorile din tapet la tema aplicației</string>
+
+    <string name="app_behavior">Comportamet aplicație</string>
+    <string name="bounce_buttons">Animație la click</string>
+    <string name="summary_preference_settings_bounce_buttons">Aplică o animație subtilă de revenire tuturor elementelor pe care se poate face clic atunci când se face clic pe ele</string>
 
     <string name="language">Limbă</string>
     <string name="summary_preference_settings_language">Modifică limba utilizată în aplicație</string>

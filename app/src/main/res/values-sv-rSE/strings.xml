@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Varukorgen raderades!</string>
     <string name="close">Stäng?</string>
     <string name="summary_close">Är du säker på att du vill avsluta?</string>
+    <string name="file_not_found">Filen hittades inte.</string>
+    <string name="activity_not_found">Aktiviteten hittades inte.</string>
+    <string name="security_error">Ett säkerhetsfel inträffade. Försök igen senare.</string>
+    <string name="io_error">Ett in-/utmatningsfel inträffade. Kontrollera din nätverksanslutning eller lagring och försök igen.</string>
+    <string name="illegal_argument_error">Ogiltig inmatning eller argument. Kontrollera informationen och försök igen.</string>
+    <string name="unknown_error">Ett okänt fel inträffade.</string>
     <string name="your_shopping_cart_is_empty">Din kundvagn är tom</string>
     <string name="item_name">Vara namn</string>
     <string name="enter_item_name">Ange varans namn</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Dynamiska färger</string>
     <string name="summary_preference_settings_dynamic_colors">Använd färger från bakgrundsbilder till appens tema</string>
+
+    <string name="app_behavior">Appbeteende</string>
+    <string name="bounce_buttons">Studsande klick</string>
+    <string name="summary_preference_settings_bounce_buttons">Tillämpar en subtil studsanimation på alla klickbara element när de klickas på</string>
 
     <string name="language">Språk</string>
     <string name="summary_preference_settings_language">Ändrar språket som används i appen</string>

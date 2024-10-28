@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
     <string name="close">Zamknij?</string>
     <string name="summary_close">Czy na pewno chcesz wyjść?</string>
+    <string name="file_not_found">Plik nie znaleziony.</string>
+    <string name="activity_not_found">Nie znaleziono aktywności.</string>
+    <string name="security_error">Wystąpił błąd zabezpieczeń. Spróbuj ponownie później.</string>
+    <string name="io_error">Wystąpił błąd wejścia/wyjścia. Sprawdź połączenie sieciowe lub pamięć i spróbuj ponownie.</string>
+    <string name="illegal_argument_error">Podano nieprawidłowe dane wejściowe lub argument. Sprawdź informacje i spróbuj ponownie.</string>
+    <string name="unknown_error">Wystąpił nieznany błąd.</string>
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
     <string name="item_name">Nazwa przedmiotu</string>
     <string name="enter_item_name">Wprowadź nazwę przedmiotu</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Dynamiczne kolory</string>
     <string name="summary_preference_settings_dynamic_colors">Zastosuj kolory ze tapet do motywu aplikacji</string>
+
+    <string name="app_behavior">Zachowanie aplikacji</string>
+    <string name="bounce_buttons">Odbijające kliknięcie</string>
+    <string name="summary_preference_settings_bounce_buttons">Stosuje subtelną animację odbicia do wszystkich klikalnych elementów po kliknięciu</string>
 
     <string name="language">Język</string>
     <string name="summary_preference_settings_language">Zmienia język używany w aplikacji</string>

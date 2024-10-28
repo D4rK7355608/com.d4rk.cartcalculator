@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
     <string name="close">Fechar?</string>
     <string name="summary_close">Tem certeza de que deseja sair?</string>
+    <string name="file_not_found">Arquivo não encontrado.</string>
+    <string name="activity_not_found">Atividade não encontrada.</string>
+    <string name="security_error">Ocorreu um erro de segurança. Tente novamente mais tarde.</string>
+    <string name="io_error">Ocorreu um erro de entrada/saída. Verifique sua conexão de rede ou armazenamento e tente novamente.</string>
+    <string name="illegal_argument_error">Entrada ou argumento inválido fornecido. Verifique as informações e tente novamente.</string>
+    <string name="unknown_error">Ocorreu um erro desconhecido.</string>
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
     <string name="item_name">Nome do item</string>
     <string name="enter_item_name">Digite o nome do item</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Cores dinâmicas</string>
     <string name="summary_preference_settings_dynamic_colors">Aplique cores dos papéis de parede ao tema do aplicativo</string>
+
+    <string name="app_behavior">Comportamento do aplicativo</string>
+    <string name="bounce_buttons">Clique com efeito "bounce"</string>
+    <string name="summary_preference_settings_bounce_buttons">Aplica uma animação de "bounce" sutil a todos os elementos clicáveis quando clicados</string>
 
     <string name="language">Idioma</string>
     <string name="summary_preference_settings_language">Altera o idioma usado no aplicativo</string>

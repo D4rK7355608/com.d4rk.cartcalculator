@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">कार्ट सफलतापूर्वक हटा दिया गया!</string>
     <string name="close">बंद करें?</string>
     <string name="summary_close">क्या आप निश्चित हैं कि आप बाहर निकलना चाहते हैं?</string>
+    <string name="file_not_found">फ़ाइल नहीं मिली।</string>
+    <string name="activity_not_found">गतिविधि नहीं मिली।</string>
+    <string name="security_error">सुरक्षा त्रुटि हुई है। कृपया बाद में पुनः प्रयास करें।</string>
+    <string name="io_error">इनपुट/आउटपुट त्रुटि हुई है। कृपया अपनी नेटवर्क कनेक्शन या स्टोरेज की जांच करें और पुनः प्रयास करें।</string>
+    <string name="illegal_argument_error">अमान्य इनपुट या तर्क दिया गया है. कृपया जानकारी की जाँच करें और पुनः प्रयास करें.</string>
+    <string name="unknown_error">अज्ञात त्रुटि हुई है।</string>
     <string name="your_shopping_cart_is_empty">आपका शॉपिंग कार्ट खाली है</string>
     <string name="item_name">आइटम का नाम</string>
     <string name="enter_item_name">आइटम का नाम दर्ज करें</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">गतिशील रंग</string>
     <string name="summary_preference_settings_dynamic_colors">वॉलपेपर से ऐप थीम में रंग लागू करें</string>
+
+    <string name="app_behavior">ऐप व्यवहार</string>
+    <string name="bounce_buttons">उछाल क्लिक</string>
+    <string name="summary_preference_settings_bounce_buttons">क्लिक करने पर सभी क्लिक करने योग्य तत्वों पर एक सूक्ष्म उछाल एनीमेशन लागू करता है</string>
 
     <string name="language">भाषा</string>
     <string name="summary_preference_settings_language">ऐप में इस्तेमाल की जाने वाली भाषा बदलता है</string>

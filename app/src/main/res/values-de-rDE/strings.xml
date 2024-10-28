@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Warenkorb erfolgreich gelöscht!</string>
     <string name="close">Schließen?</string>
     <string name="summary_close">Sind Sie sicher, dass Sie beenden möchten?</string>
+    <string name="file_not_found">Datei nicht gefunden.</string>
+    <string name="activity_not_found">Aktivität nicht gefunden.</string>
+    <string name="security_error">Es ist ein Sicherheitsfehler aufgetreten. Bitte versuchen Sie es später erneut.</string>
+    <string name="io_error">Ein Ein-/Ausgabefehler ist aufgetreten. Bitte überprüfen Sie Ihre Netzwerkverbindung oder den Speicher und versuchen Sie es erneut.</string>
+    <string name="illegal_argument_error">Ungültige Eingabe oder Argument angegeben. Bitte überprüfen Sie die Informationen und versuchen Sie es erneut.</string>
+    <string name="unknown_error">Ein unbekannter Fehler ist aufgetreten.</string>
     <string name="your_shopping_cart_is_empty">Ihr Einkaufswagen ist leer</string>
     <string name="item_name">Artikelname</string>
     <string name="enter_item_name">Artikelname eingeben</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Dynamische Farben</string>
     <string name="summary_preference_settings_dynamic_colors">Wenden Sie Farben aus Hintergrundbildern auf das App-Thema an</string>
+
+    <string name="app_behavior">App-Verhalten</string>
+    <string name="bounce_buttons">Sprung-Klick</string>
+    <string name="summary_preference_settings_bounce_buttons">Wendet eine subtile Sprunganimation auf alle anklickbaren Elemente an, wenn sie angeklickt werden</string>
 
     <string name="language">Sprache</string>
     <string name="summary_preference_settings_language">Ändert die in der App verwendete Sprache</string>

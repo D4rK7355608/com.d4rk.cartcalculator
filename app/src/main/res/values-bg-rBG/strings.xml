@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Количката е изтрита успешно!</string>
     <string name="close">Затваряне?</string>
     <string name="summary_close">Сигурни ли сте, че искате да излезете?</string>
+    <string name="file_not_found">Файлът не е намерен.</string>
+    <string name="activity_not_found">Дейността не е намерена.</string>
+    <string name="security_error">Възникна грешка със сигурността. Моля, опитайте отново по-късно.</string>
+    <string name="io_error">Възникна грешка при вход/изход. Моля, проверете мрежовата връзка или паметта и опитайте отново.</string>
+    <string name="illegal_argument_error">Невалиден вход или аргумент. Моля, проверете информацията и опитайте отново.</string>
+    <string name="unknown_error">Възникна неизвестна грешка.</string>
     <string name="your_shopping_cart_is_empty">Вашата пазарска количка е празна</string>
     <string name="item_name">Име на артикул</string>
     <string name="enter_item_name">Въведете име на артикул</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Динамични цветове</string>
     <string name="summary_preference_settings_dynamic_colors">Прилагайте цветове от тапетите към темата на приложението</string>
+
+    <string name="app_behavior">Поведение на приложението</string>
+    <string name="bounce_buttons">Подскачащо щракване</string>
+    <string name="summary_preference_settings_bounce_buttons">Прилага фина анимация на подскачане към всички елементи, върху които може да се щракне, когато се щракне върху тях</string>
 
     <string name="language">Език</string>
     <string name="summary_preference_settings_language">Променя езика, използван в приложението</string>

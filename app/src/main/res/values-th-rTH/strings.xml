@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">ลบรถเข็นสำเร็จแล้ว!</string>
     <string name="close">ปิด?</string>
     <string name="summary_close">คุณแน่ใจหรือไม่ว่าต้องการออก?</string>
+    <string name="file_not_found">ไม่พบไฟล์</string>
+    <string name="activity_not_found">ไม่พบกิจกรรม</string>
+    <string name="security_error">เกิดข้อผิดพลาดด้านความปลอดภัย โปรดลองอีกครั้งในภายหลัง</string>
+    <string name="io_error">เกิดข้อผิดพลาดในการรับส่งข้อมูล โปรดตรวจสอบการเชื่อมต่อเครือข่ายหรือที่เก็บข้อมูลของคุณ แล้วลองอีกครั้ง</string>
+    <string name="illegal_argument_error">ข้อมูลหรืออาร์กิวเมนต์ที่ป้อนไม่ถูกต้อง โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง</string>
+    <string name="unknown_error">เกิดข้อผิดพลาดที่ไม่รู้จัก</string>
     <string name="your_shopping_cart_is_empty">รถเข็นของคุณว่างเปล่า</string>
     <string name="item_name">ชื่อรายการ</string>
     <string name="enter_item_name">ป้อนชื่อรายการ</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">สีแบบไดนามิก</string>
     <string name="summary_preference_settings_dynamic_colors">ใช้สีจากวอลล์เปเปอร์ไปยังธีมของแอป</string>
+
+    <string name="app_behavior">ลักษณะการทำงานของแอป</string>
+    <string name="bounce_buttons">คลิกแบบเด้ง</string>
+    <string name="summary_preference_settings_bounce_buttons">ใช้เอฟเฟกต์แอนิเมชันเด้งเล็กน้อยกับองค์ประกอบที่คลิกได้ทั้งหมดเมื่อคลิก</string>
 
     <string name="language">ภาษา</string>
     <string name="summary_preference_settings_language">เปลี่ยนภาษาที่ใช้ในแอป</string>

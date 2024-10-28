@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
     <string name="close">Kapat?</string>
     <string name="summary_close">Çıkmak istediğinizden emin misiniz?</string>
+    <string name="file_not_found">Dosya bulunamadı.</string>
+    <string name="activity_not_found">Etkinlik bulunamadı.</string>
+    <string name="security_error">Bir güvenlik hatası oluştu. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="io_error">Bir giriş/çıkış hatası oluştu. Ağ bağlantınızı veya depolamanızı kontrol edip tekrar deneyin.</string>
+    <string name="illegal_argument_error">Geçersiz giriş veya bağımsız değişken sağlandı. Lütfen bilgileri kontrol edin ve tekrar deneyin.</string>
+    <string name="unknown_error">Bilinmeyen bir hata oluştu.</string>
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
     <string name="item_name">Ürün adı</string>
     <string name="enter_item_name">Ürün adı girin</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Dinamik renkler</string>
     <string name="summary_preference_settings_dynamic_colors">Uygulama temasına duvar kağıtlarından renkler uygulayın</string>
+
+    <string name="app_behavior">Uygulama davranışı</string>
+    <string name="bounce_buttons">Zıplayan tıklama</string>
+    <string name="summary_preference_settings_bounce_buttons">Tıklandığında tüm tıklanabilir öğelere hafif bir zıplama animasyonu uygular</string>
 
     <string name="language">Dil</string>
     <string name="summary_preference_settings_language">Uygulamada kullanılan dili değiştirir</string>

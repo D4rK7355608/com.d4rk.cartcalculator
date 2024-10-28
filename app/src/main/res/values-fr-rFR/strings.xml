@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
     <string name="close">Fermer ?</string>
     <string name="summary_close">Êtes-vous sûr de vouloir quitter ?</string>
+    <string name="file_not_found">Fichier introuvable.</string>
+    <string name="activity_not_found">Activité introuvable.</string>
+    <string name="security_error">Une erreur de sécurité est survenue. Veuillez réessayer plus tard.</string>
+    <string name="io_error">Une erreur d\'entrée/sortie est survenue. Veuillez vérifier votre connexion réseau ou stockage et réessayer.</string>
+    <string name="illegal_argument_error">Entrée ou argument non valide. Veuillez vérifier les informations et réessayer.</string>
+    <string name="unknown_error">Une erreur inconnue est survenue.</string>
     <string name="your_shopping_cart_is_empty">Votre panier est vide</string>
     <string name="item_name">Nom de l\'article</string>
     <string name="enter_item_name">Entrez le nom de l\'article</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Couleurs dynamiques</string>
     <string name="summary_preference_settings_dynamic_colors">Appliquez les couleurs des fonds d\'écran au thème de l\'application</string>
+
+    <string name="app_behavior">Comportement de l\'application</string>
+    <string name="bounce_buttons">Clic rebondissant</string>
+    <string name="summary_preference_settings_bounce_buttons">Applique une animation de rebond subtile à tous les éléments cliquables lorsqu\'on clique dessus</string>
 
     <string name="language">Langue</string>
     <string name="summary_preference_settings_language">Changez la langue utilisée dans l\'application</string>

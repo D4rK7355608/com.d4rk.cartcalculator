@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Carrello eliminato correttamente!</string>
     <string name="close">Chiudi?</string>
     <string name="summary_close">Sei sicuro di voler uscire?</string>
+    <string name="file_not_found">File non trovato.</string>
+    <string name="activity_not_found">Attività non trovata.</string>
+    <string name="security_error">Si è verificato un errore di sicurezza. Riprova più tardi.</string>
+    <string name="io_error">Si è verificato un errore di input/output. Verifica la connessione di rete o lo spazio di archiviazione e riprova.</string>
+    <string name="illegal_argument_error">Input o argomento non valido. Si prega di controllare le informazioni e riprovare.</string>
+    <string name="unknown_error">Si è verificato un errore sconosciuto.</string>
     <string name="your_shopping_cart_is_empty">Il tuo carrello è vuoto</string>
     <string name="item_name">Nome articolo</string>
     <string name="enter_item_name">Inserisci il nome dell\'articolo</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Colori dinamici</string>
     <string name="summary_preference_settings_dynamic_colors">Applica i colori dagli sfondi al tema dell\'app</string>
+
+    <string name="app_behavior">Comportamento dell\'app</string>
+    <string name="bounce_buttons">Clic con rimbalzo</string>
+    <string name="summary_preference_settings_bounce_buttons">Applica una sottile animazione di rimbalzo a tutti gli elementi cliccabili quando vengono cliccati</string>
 
     <string name="language">Lingua</string>
     <string name="summary_preference_settings_language">Cambia la lingua utilizzata nell\'app</string>

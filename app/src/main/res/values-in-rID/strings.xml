@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
     <string name="close">Tutup?</string>
     <string name="summary_close">Apakah Anda yakin ingin keluar?</string>
+    <string name="file_not_found">File tidak ditemukan.</string>
+    <string name="activity_not_found">Aktivitas tidak ditemukan.</string>
+    <string name="security_error">Terjadi kesalahan keamanan. Silakan coba lagi nanti.</string>
+    <string name="io_error">Terjadi kesalahan input/output. Harap periksa koneksi jaringan atau penyimpanan Anda dan coba lagi.</string>
+    <string name="illegal_argument_error">Input atau argumen tidak valid. Harap periksa informasi dan coba lagi.</string>
+    <string name="unknown_error">Terjadi kesalahan yang tidak diketahui.</string>
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
     <string name="item_name">Nama barang</string>
     <string name="enter_item_name">Masukkan nama barang</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Warna dinamis</string>
     <string name="summary_preference_settings_dynamic_colors">Terapkan warna dari wallpaper ke tema aplikasi</string>
+
+    <string name="app_behavior">Perilaku aplikasi</string>
+    <string name="bounce_buttons">Klik pantul</string>
+    <string name="summary_preference_settings_bounce_buttons">Menerapkan animasi pantulan halus ke semua elemen yang dapat diklik saat diklik</string>
 
     <string name="language">Bahasa</string>
     <string name="summary_preference_settings_language">Mengubah bahasa yang digunakan di aplikasi</string>

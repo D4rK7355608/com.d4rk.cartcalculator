@@ -23,6 +23,12 @@
     <string name="snackbar_cart_deleted_success">Корзина успешно удалена!</string>
     <string name="close">Закрыть?</string>
     <string name="summary_close">Вы действительно хотите выйти?</string>
+    <string name="file_not_found">Файл не найден.</string>
+    <string name="activity_not_found">Действие не найдено.</string>
+    <string name="security_error">Произошла ошибка безопасности. Пожалуйста, попробуйте позже.</string>
+    <string name="io_error">Произошла ошибка ввода/вывода. Проверьте сетевое соединение или хранилище и попробуйте снова.</string>
+    <string name="illegal_argument_error">Неверный ввод или аргумент. Пожалуйста, проверьте информацию и попробуйте еще раз.</string>
+    <string name="unknown_error">Произошла неизвестная ошибка.</string>
     <string name="your_shopping_cart_is_empty">Ваша корзина покупок пуста</string>
     <string name="item_name">Название товара</string>
     <string name="enter_item_name">Введите название товара</string>
@@ -53,6 +59,10 @@
 
     <string name="dynamic_colors">Динамические цвета</string>
     <string name="summary_preference_settings_dynamic_colors">Применить цвета из обоев к теме приложения</string>
+
+    <string name="app_behavior">Поведение приложения</string>
+    <string name="bounce_buttons">Эффект отскока при нажатии</string>
+    <string name="summary_preference_settings_bounce_buttons">Применяет тонкую анимацию отскока ко всем кликабельным элементам при нажатии</string>
 
     <string name="language">Язык</string>
     <string name="summary_preference_settings_language">Изменяет язык, используемый в приложении</string>
