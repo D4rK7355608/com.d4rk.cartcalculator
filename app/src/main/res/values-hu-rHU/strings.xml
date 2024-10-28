@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Kezeljük hatékonyan a bevásárlókosár elemeit!</string>
 
     <string name="welcome">Üdvözöljük</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Böngésszen a <i><u>Szolgáltatási feltételek</u></i> és a <i><u>Adatvédelmi szabályzat</u></i> között</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Olvassa el és fogadja el a Szolgáltatási feltételeinket és az Adatvédelmi szabályzatunkat a folytatáshoz.</string>
     <string name="agree">Egyetértek</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Biztos benne, hogy törölni szeretné ezt a kosarat?</string>
     <string name="delete_cart_warning">Ennek a kosárnak a törlése véglegesen eltávolítja az összes elemet a \"%s\" kosárból, és nem lehet visszavonni.</string>
     <string name="snackbar_cart_deleted_success">A kosár sikeresen törölve!</string>
-    <string name="snackbar_cart_deleted_error">Hiba történt a kosár törlésekor. Kérjük, próbálja meg újra.</string>
     <string name="close">Bezárás?</string>
     <string name="summary_close">Biztosan ki szeretne lépni?</string>
-    <string name="snack_network_error">Hálózati hiba történt a frissítések ellenőrzése közben</string>
-    <string name="snack_general_error">Hiba történt a frissítések ellenőrzése közben</string>
-
     <string name="your_shopping_cart_is_empty">A bevásárlókosara üres</string>
     <string name="item_name">Elem neve</string>
     <string name="enter_item_name">Írja be az elem nevét</string>

@@ -1,3 +1,20 @@
+# Version 1.1.0
+
+- **New**: Integrated haptic feedback for swipe gestures, enhancing the tactile response and user
+  experience.
+- **New**: Implemented sound effects on tap interactions for a more engaging experience.
+- **New**: Redesigned the Settings page, aligning it with the modern aesthetics of the Android 15
+  design system.
+- **New**: Added an option to disable the bounce click effect for users who prefer a more
+  traditional interaction style.
+- **New**: Added swipe to delete functionality for cart items for a better user experience.
+- **Minor**: Improved edge-to-edge display support for Android 15 and above.
+- **Minor**: Backported the app to support devices running Android 6.0 and above.
+- **Misc**: Implemented a robust error handling mechanism to gracefully manage unexpected situations
+  and provide helpful feedback to users.
+- **Fix**: Fixed an issue where the swipe to delete action for carts could get stuck on the screen
+  edge.
+
 # Version 1.0.9
 
 - **Minor**: Updated the project props, for a better implementation of the app

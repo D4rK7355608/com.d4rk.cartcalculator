@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used">Нека ефективно управляваме вашите артикули!</string>
 
     <string name="welcome">Добре дошли</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Разгледайте <i><u>Условия за ползване</u></i> и <i><u>Политика за поверителност</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Прочетете и се съгласете с нашите Условия за ползване и Политика за поверителност, за да продължите.</string>
     <string name="agree">Съгласен</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Сигурни ли сте, че искате да изтриете тази количка?</string>
     <string name="delete_cart_warning">Изтриването на тази количка ще премахне трайно всички артикули от \"%s\" и не може да бъде възстановено.</string>
     <string name="snackbar_cart_deleted_success">Количката е изтрита успешно!</string>
-    <string name="snackbar_cart_deleted_error">Грешка при изтриване на количката. Моля, опитайте отново.</string>
     <string name="close">Затваряне?</string>
     <string name="summary_close">Сигурни ли сте, че искате да излезете?</string>
-    <string name="snack_network_error">Възникна грешка в мрежата при проверка за актуализации</string>
-    <string name="snack_general_error">Възникна грешка при проверка за актуализации</string>
-
     <string name="your_shopping_cart_is_empty">Вашата пазарска количка е празна</string>
     <string name="item_name">Име на артикул</string>
     <string name="enter_item_name">Въведете име на артикул</string>

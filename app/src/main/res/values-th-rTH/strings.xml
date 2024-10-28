@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> มาจัดการรายการในรถเข็นของคุณอย่างมีประสิทธิภาพกันเถอะ!</string>
 
     <string name="welcome">ยินดีต้อนรับ</string>
-    <string name="browse_terms_of_service_and_privacy_policy">ดู <i><u>ข้อกำหนดในการให้บริการ</u></i> และ <i><u>นโยบายความเป็นส่วนตัว</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">อ่านและยอมรับข้อกำหนดในการให้บริการและนโยบายความเป็นส่วนตัวของเราเพื่อดำเนินการต่อ</string>
     <string name="agree">ตกลง</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">คุณแน่ใจหรือไม่ว่าต้องการลบรถเข็นนี้?</string>
     <string name="delete_cart_warning">การลบรถเข็นนี้จะลบรายการทั้งหมดออกจาก "%s" อย่างถาวรและไม่สามารถย้อนกลับได้</string>
     <string name="snackbar_cart_deleted_success">ลบรถเข็นสำเร็จแล้ว!</string>
-    <string name="snackbar_cart_deleted_error">เกิดข้อผิดพลาดในการลบรถเข็น โปรดลองอีกครั้ง</string>
     <string name="close">ปิด?</string>
     <string name="summary_close">คุณแน่ใจหรือไม่ว่าต้องการออก?</string>
-    <string name="snack_network_error">เกิดข้อผิดพลาดในการเชื่อมต่อเครือข่ายขณะตรวจสอบการอัปเดต</string>
-    <string name="snack_general_error">เกิดข้อผิดพลาดขณะตรวจสอบการอัปเดต</string>
-
     <string name="your_shopping_cart_is_empty">รถเข็นของคุณว่างเปล่า</string>
     <string name="item_name">ชื่อรายการ</string>
     <string name="enter_item_name">ป้อนชื่อรายการ</string>

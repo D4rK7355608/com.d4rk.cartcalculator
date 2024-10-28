@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Hai să gestionăm articolele din coșul tău eficient!</string>
 
     <string name="welcome">Bun venit</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Parcurgeți <i><u>Termenii de Serviciu</u></i> și <i><u>Politica de Confidențialitate</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Citiți și acceptați Termenii de Serviciu și Politica de Confidențialitate pentru a continua.</string>
     <string name="agree">Sunt de acord</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Sunteți sigur că doriți să ștergeți acest coș?</string>
     <string name="delete_cart_warning">Ștergerea acestui coș va elimina permanent toate articolele din \"%s\" și nu poate fi anulata.</string>
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
-    <string name="snackbar_cart_deleted_error">Eroare la ștergerea coșului. Încercați din nou.</string>
     <string name="close">Închide?</string>
     <string name="summary_close">Sunteți sigur că doriți să ieșiți?</string>
-    <string name="snack_network_error">A apărut o eroare de rețea în timpul verificării actualizărilor</string>
-    <string name="snack_general_error">A apărut o eroare în timpul verificării actualizărilor</string>
-
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="item_name">Numele articolului</string>
     <string name="enter_item_name">Introduceți numele articolului</string>

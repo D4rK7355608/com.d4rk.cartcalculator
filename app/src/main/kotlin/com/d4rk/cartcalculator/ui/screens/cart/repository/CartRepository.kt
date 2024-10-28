@@ -9,7 +9,6 @@ class CartRepository : CartRepositoryImplementation() {
     suspend fun getCartItems(cartId: Int, onSuccess: (List<ShoppingCartItemsTable>) -> Unit) {
         withContext(Dispatchers.IO) {
             val items = getItemsByCartId(cartId)
-            println("Shopping Cart Calculator -> [CartRepository] getCartItems called for cartId: $cartId, Items retrieved: ${items}")
             withContext(Dispatchers.Main) {
                 onSuccess(items)
             }

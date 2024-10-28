@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used">Vamos gerenciar seus itens do carrinho de forma eficiente!</string>
 
     <string name="welcome">Bem-vindo</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Navegue pelos <i><u>Termos de serviço</u></i> e <i><u>Política de privacidade</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Leia e concorde com nossos Termos de serviço e Política de privacidade para continuar.</string>
     <string name="agree">Concordar</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Tem certeza de que deseja excluir este carrinho?</string>
     <string name="delete_cart_warning">Excluir este carrinho removerá permanentemente todos os itens de \"%s\" e não poderá ser desfeito.</string>
     <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
-    <string name="snackbar_cart_deleted_error">Erro ao excluir o carrinho. Tente novamente.</string>
     <string name="close">Fechar?</string>
     <string name="summary_close">Tem certeza de que deseja sair?</string>
-    <string name="snack_network_error">Erro de rede ocorreu ao verificar atualizações</string>
-    <string name="snack_general_error">Ocorreu um erro ao verificar atualizações</string>
-
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
     <string name="item_name">Nome do item</string>
     <string name="enter_item_name">Digite o nome do item</string>

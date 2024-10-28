@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Mari kita kelola item keranjang Anda secara efisien!</string>
 
     <string name="welcome">Selamat datang</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Jelajahi <i><u>Syarat Layanan</u></i> dan <i><u>Kebijakan Privasi</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Baca dan setujui Syarat Layanan dan Kebijakan Privasi kami untuk melanjutkan.</string>
     <string name="agree">Setuju</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Apakah Anda yakin ingin menghapus keranjang ini?</string>
     <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>
     <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
-    <string name="snackbar_cart_deleted_error">Kesalahan menghapus keranjang. Coba lagi.</string>
     <string name="close">Tutup?</string>
     <string name="summary_close">Apakah Anda yakin ingin keluar?</string>
-    <string name="snack_network_error">Terjadi kesalahan jaringan saat memeriksa pembaruan</string>
-    <string name="snack_general_error">Terjadi kesalahan saat memeriksa pembaruan</string>
-
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
     <string name="item_name">Nama barang</string>
     <string name="enter_item_name">Masukkan nama barang</string>

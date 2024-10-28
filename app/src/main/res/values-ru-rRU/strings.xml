@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Давайте эффективно управлять товарами в корзине!</string>
 
     <string name="welcome">Добро пожаловать</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Ознакомьтесь с <i><u>Условиями обслуживания</u></i> и <i><u>Политикой конфиденциальности</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Прочитайте и согласитесь с нашими Условиями обслуживания и Политикой конфиденциальности, чтобы продолжить.</string>
     <string name="agree">Согласен</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Вы уверены, что хотите удалить эту корзину?</string>
     <string name="delete_cart_warning">Удаление этой корзины навсегда удалит все товары из \"%s\" и не может быть отменено.</string>
     <string name="snackbar_cart_deleted_success">Корзина успешно удалена!</string>
-    <string name="snackbar_cart_deleted_error">Ошибка при удалении корзины. Попробуйте снова.</string>
     <string name="close">Закрыть?</string>
     <string name="summary_close">Вы действительно хотите выйти?</string>
-    <string name="snack_network_error">Произошла ошибка сети при проверке обновлений</string>
-    <string name="snack_general_error">Произошла ошибка при проверке обновлений</string>
-
     <string name="your_shopping_cart_is_empty">Ваша корзина покупок пуста</string>
     <string name="item_name">Название товара</string>
     <string name="enter_item_name">Введите название товара</string>

@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Gérons efficacement les articles de votre panier !</string>
 
     <string name="welcome">Bienvenue</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Consultez les <i><u>Conditions d\'utilisation</u></i> et la <i><u>Politique de confidentialité</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Lisez et acceptez nos Conditions d\'utilisation et notre Politique de confidentialité pour continuer.</string>
     <string name="agree">Accepter</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Êtes-vous sûr de vouloir supprimer ce panier ?</string>
     <string name="delete_cart_warning">La suppression de ce panier supprimera définitivement tous les articles de \"%s\" et ne peut pas être annulée.</string>
     <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
-    <string name="snackbar_cart_deleted_error">Erreur lors de la suppression du panier. Veuillez réessayer.</string>
     <string name="close">Fermer ?</string>
     <string name="summary_close">Êtes-vous sûr de vouloir quitter ?</string>
-    <string name="snack_network_error">Une erreur de réseau s\'est produite lors de la vérification des mises à jour</string>
-    <string name="snack_general_error">Une erreur s\'est produite lors de la vérification des mises à jour</string>
-
     <string name="your_shopping_cart_is_empty">Votre panier est vide</string>
     <string name="item_name">Nom de l\'article</string>
     <string name="enter_item_name">Entrez le nom de l\'article</string>

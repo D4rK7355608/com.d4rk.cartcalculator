@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Lassen Sie uns Ihre Einkaufswagenartikel effizient verwalten!</string>
 
     <string name="welcome">Willkommen</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Lesen Sie die <i><u>Nutzungsbedingungen</u></i> und <i><u>Datenschutzrichtlinien</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Lesen und stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu, um fortzufahren.</string>
     <string name="agree">Zustimmen</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Sind Sie sicher, dass Sie diesen Warenkorb löschen möchten?</string>
     <string name="delete_cart_warning">Das Löschen dieses Warenkorbs entfernt dauerhaft alle Artikel aus \"%s\" und kann nicht rückgängig gemacht werden.</string>
     <string name="snackbar_cart_deleted_success">Warenkorb erfolgreich gelöscht!</string>
-    <string name="snackbar_cart_deleted_error">Fehler beim Löschen des Warenkorbs. Bitte versuchen Sie es erneut.</string>
     <string name="close">Schließen?</string>
     <string name="summary_close">Sind Sie sicher, dass Sie beenden möchten?</string>
-    <string name="snack_network_error">Ein Netzwerkfehler ist beim Überprüfen auf Updates aufgetreten</string>
-    <string name="snack_general_error">Beim Überprüfen auf Updates ist ein Fehler aufgetreten</string>
-
     <string name="your_shopping_cart_is_empty">Ihr Einkaufswagen ist leer</string>
     <string name="item_name">Artikelname</string>
     <string name="enter_item_name">Artikelname eingeben</string>

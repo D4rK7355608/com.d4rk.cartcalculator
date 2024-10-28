@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> चलिए अपने कार्ट आइटम को कुशलतापूर्वक प्रबंधित करते हैं!</string>
 
     <string name="welcome">स्वागत है</string>
-    <string name="browse_terms_of_service_and_privacy_policy"><i><u>सेवा की शर्तें</u></i> और <i><u>गोपनीयता नीति</u></i> ब्राउज़ करें</string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">जारी रखने के लिए हमारी सेवा की शर्तों और गोपनीयता नीति को पढ़ें और स्वीकार करें।</string>
     <string name="agree">सहमत हूँ</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">क्या आप इस कार्ट को हटाना चाहते हैं?</string>
     <string name="delete_cart_warning">इस कार्ट को हटाने से \"%s\" से सभी आइटम स्थायी रूप से हटा दिए जाएँगे और इसे पूर्ववत नहीं किया जा सकता है।</string>
     <string name="snackbar_cart_deleted_success">कार्ट सफलतापूर्वक हटा दिया गया!</string>
-    <string name="snackbar_cart_deleted_error">कार्ट हटाने में त्रुटि. कृपया पुनः प्रयास करें.</string>
     <string name="close">बंद करें?</string>
     <string name="summary_close">क्या आप निश्चित हैं कि आप बाहर निकलना चाहते हैं?</string>
-    <string name="snack_network_error">अपडेट की जांच करते समय नेटवर्क त्रुटि हुई</string>
-    <string name="snack_general_error">अपडेट की जांच करते समय कोई त्रुटि हुई</string>
-
     <string name="your_shopping_cart_is_empty">आपका शॉपिंग कार्ट खाली है</string>
     <string name="item_name">आइटम का नाम</string>
     <string name="enter_item_name">आइटम का नाम दर्ज करें</string>

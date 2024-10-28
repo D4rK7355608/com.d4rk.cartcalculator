@@ -6,7 +6,6 @@
     <string name="summary_notification_last_time_used"> Давайте ефективно керувати товарами у вашому кошику!</string>
 
     <string name="welcome">Ласкаво просимо</string>
-    <string name="browse_terms_of_service_and_privacy_policy">Перегляньте <i><u>Умови обслуговування</u></i> та <i><u>Політику конфіденційності</u></i></string>
     <string name="summary_browse_terms_of_service_and_privacy_policy">Прочитайте та погодьтеся з нашими Умовами обслуговування та Політикою конфіденційності, щоб продовжити.</string>
     <string name="agree">Згоден</string>
 
@@ -22,12 +21,8 @@
     <string name="delete_cart_message">Ви впевнені, що хочете видалити цей кошик?</string>
     <string name="delete_cart_warning">Видалення цього кошика призведе до постійного видалення всіх товарів з \"%s\" і не може бути відмінено.</string>
     <string name="snackbar_cart_deleted_success">Кошик успішно видалено!</string>
-    <string name="snackbar_cart_deleted_error">Помилка під час видалення кошика. Спробуйте ще раз.</string>
     <string name="close">Закрити?</string>
     <string name="summary_close">Ви впевнені, що хочете вийти?</string>
-    <string name="snack_network_error">Виникла помилка мережі під час перевірки оновлень</string>
-    <string name="snack_general_error">Виникла помилка під час перевірки оновлень</string>
-
     <string name="your_shopping_cart_is_empty">Ваш кошик для покупок порожній</string>
     <string name="item_name">Назва товару</string>
     <string name="enter_item_name">Введіть назву товару</string>
