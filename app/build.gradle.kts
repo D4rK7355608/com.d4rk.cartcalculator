@@ -15,29 +15,29 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 63
+        versionCode = 64
         versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
-            "en",
-            "bg-rBG",
-            "de-rDE",
-            "es-rGQ",
-            "fr-rFR",
-            "hi-rIN",
-            "hu-rHU",
-            "in-rID",
-            "it-rIT",
-            "ja-rJP",
-            "pl-rPL",
-            "pt-rBR",
-            "ro-rRO",
-            "ru-rRU",
-            "sv-rSE",
-            "th-rTH",
-            "tr-rTR",
-            "uk-rUA",
-            "zh-rTW",
+            "en" ,
+            "bg-rBG" ,
+            "de-rDE" ,
+            "es-rGQ" ,
+            "fr-rFR" ,
+            "hi-rIN" ,
+            "hu-rHU" ,
+            "in-rID" ,
+            "it-rIT" ,
+            "ja-rJP" ,
+            "pl-rPL" ,
+            "pt-rBR" ,
+            "ro-rRO" ,
+            "ru-rRU" ,
+            "sv-rSE" ,
+            "th-rTH" ,
+            "tr-rTR" ,
+            "uk-rUA" ,
+            "zh-rTW" ,
         )
         vectorDrawables {
             useSupportLibrary = true
@@ -46,19 +46,21 @@ android {
 
     buildTypes {
         release {
-            multiDexEnabled = true
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-            proguardFiles(
-                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
         }
         debug {
-            multiDexEnabled = true
             isDebuggable = true
+        }
+    }
+
+    buildTypes.forEach { buildType ->
+        with(buildType) {
+            multiDexEnabled = true
             proguardFiles(
-                getDefaultProguardFile(name = "proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile(name = "proguard-android-optimize.txt") ,
+                "proguard-rules.pro"
             )
         }
     }
@@ -99,59 +101,59 @@ dependencies {
     implementation(libs.firebase.perf)
 
     // Google
-    implementation(libs.play.services.ads)
-    implementation(libs.billing)
-    implementation(libs.material)
-    implementation(libs.play.services.oss.licenses)
-    implementation(libs.review.ktx)
-    implementation(libs.app.update.ktx)
-    implementation(libs.volley)
+    implementation(dependencyNotation = libs.play.services.ads)
+    implementation(dependencyNotation = libs.billing)
+    implementation(dependencyNotation = libs.material)
+    implementation(dependencyNotation = libs.play.services.oss.licenses)
+    implementation(dependencyNotation = libs.review.ktx)
+    implementation(dependencyNotation = libs.app.update.ktx)
+    implementation(dependencyNotation = libs.volley)
 
     // Compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.animation.core)
-    implementation(libs.androidx.foundation)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.runtime)
-    implementation(libs.androidx.runtime.livedata)
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.graphics.shapes)
-    implementation(libs.androidx.constraintlayout.compose)
-    implementation(libs.ui.tooling)
-    implementation(libs.datastore.preferences)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.navigation.compose)
+    implementation(dependencyNotation = platform(libs.androidx.compose.bom))
+    implementation(dependencyNotation = libs.androidx.activity.compose)
+    implementation(dependencyNotation = libs.androidx.animation.core)
+    implementation(dependencyNotation = libs.androidx.foundation)
+    implementation(dependencyNotation = libs.androidx.material.icons.extended)
+    implementation(dependencyNotation = libs.androidx.material3)
+    implementation(dependencyNotation = libs.androidx.runtime)
+    implementation(dependencyNotation = libs.androidx.runtime.livedata)
+    implementation(dependencyNotation = libs.androidx.ui)
+    implementation(dependencyNotation = libs.androidx.graphics.shapes)
+    implementation(dependencyNotation = libs.androidx.constraintlayout.compose)
+    implementation(dependencyNotation = libs.ui.tooling)
+    implementation(dependencyNotation = libs.datastore.preferences)
+    implementation(dependencyNotation = libs.androidx.datastore.preferences)
+    implementation(dependencyNotation = libs.androidx.navigation.compose)
 
     // AndroidX
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.process)
-    implementation(libs.androidx.lifecycle.common.java8)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.multidex)
-    implementation(libs.androidx.work.runtime.ktx)
+    implementation(dependencyNotation = libs.androidx.core.ktx)
+    implementation(dependencyNotation = libs.androidx.appcompat)
+    implementation(dependencyNotation = libs.androidx.core.splashscreen)
+    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.process)
+    implementation(dependencyNotation = libs.androidx.lifecycle.common.java8)
+    implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(dependencyNotation = libs.androidx.multidex)
+    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
 
     // KSP
-    ksp(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.runtime)
+    ksp(dependencyNotation = libs.androidx.room.compiler)
+    implementation(dependencyNotation = libs.androidx.room.ktx)
+    implementation(dependencyNotation = libs.androidx.room.runtime)
 
     // Kotlin
-    implementation(libs.kotlinx.coroutines.android)
+    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
 
     // Image Compression
-    implementation(libs.coil.compose)
+    implementation(dependencyNotation = libs.coil.compose)
 
     // Test
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    testImplementation(dependencyNotation = libs.junit)
+    androidTestImplementation(dependencyNotation = libs.androidx.junit)
+    androidTestImplementation(dependencyNotation = libs.androidx.espresso.core)
+    androidTestImplementation(dependencyNotation = libs.ui.test.junit4)
+    debugImplementation(dependencyNotation = libs.androidx.ui.tooling)
+    debugImplementation(dependencyNotation = libs.androidx.ui.test.manifest)
 }

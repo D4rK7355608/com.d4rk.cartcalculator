@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">カート計算機を使ってカート内の商品を効率的に管理・計算しましょう。 🛒</string>
     <string name="notification_update_title">新しいアップデートが利用可能です！</string>
