@@ -95,10 +95,10 @@ android {
 
 dependencies {
     // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics.ktx)
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.perf)
+    implementation(dependencyNotation = platform(libs.firebase.bom))
+    implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
+    implementation(dependencyNotation = libs.firebase.analytics.ktx)
+    implementation(dependencyNotation = libs.firebase.perf)
 
     // Google
     implementation(dependencyNotation = libs.play.services.ads)
@@ -120,7 +120,6 @@ dependencies {
     implementation(dependencyNotation = libs.androidx.runtime.livedata)
     implementation(dependencyNotation = libs.androidx.ui)
     implementation(dependencyNotation = libs.androidx.graphics.shapes)
-    implementation(dependencyNotation = libs.androidx.constraintlayout.compose)
     implementation(dependencyNotation = libs.ui.tooling)
     implementation(dependencyNotation = libs.datastore.preferences)
     implementation(dependencyNotation = libs.androidx.datastore.preferences)
