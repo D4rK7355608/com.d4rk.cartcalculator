@@ -6,27 +6,27 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 
 abstract class CartRepositoryImplementation {
 
-    suspend fun getCartById(cartId : Int) : ShoppingCartTable {
+    suspend fun fetchCartByIdImplementation(cartId : Int) : ShoppingCartTable {
         return AppCoreManager.database.newCartDao().getCartById(cartId)
     }
 
-    suspend fun getItemsByCartId(cartId : Int) : List<ShoppingCartItemsTable> {
+    suspend fun fetchItemsForCartImplementation(cartId : Int) : List<ShoppingCartItemsTable> {
         return AppCoreManager.database.shoppingCartItemsDao().getItemsByCartId(cartId)
     }
 
-    suspend fun insertCartItem(cartItem : ShoppingCartItemsTable) : Long {
+    suspend fun addCartItemImplementation(cartItem : ShoppingCartItemsTable) : Long {
         return AppCoreManager.database.shoppingCartItemsDao().insert(cartItem)
     }
 
-    suspend fun updateCartItem(cartItem : ShoppingCartItemsTable) {
+    suspend fun modifyCartItemImplementation(cartItem : ShoppingCartItemsTable) {
         AppCoreManager.database.shoppingCartItemsDao().update(cartItem)
     }
 
-    suspend fun deleteCartItem(cartItem : ShoppingCartItemsTable) {
+    suspend fun removeCartItemImplementation(cartItem : ShoppingCartItemsTable) {
         AppCoreManager.database.shoppingCartItemsDao().delete(cartItem)
     }
 
-    suspend fun saveCartItemsInDatabase(cartItems: ShoppingCartItemsTable) {
+    suspend fun saveCartItemsImplementation(cartItems: ShoppingCartItemsTable) {
         AppCoreManager.database.shoppingCartItemsDao().update(cartItems)
     }
 }

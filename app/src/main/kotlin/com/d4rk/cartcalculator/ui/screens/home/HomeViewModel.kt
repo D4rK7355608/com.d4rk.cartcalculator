@@ -1,7 +1,6 @@
 package com.d4rk.cartcalculator.ui.screens.home
 
 import android.app.Application
-import androidx.compose.ui.unit.Dp
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
@@ -13,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeViewModel(application : Application) : BaseViewModel(application) {
-    private val repository = HomeRepository()
+    private val repository = HomeRepository(application = application)
 
     private val _uiState = MutableStateFlow(UiHomeModel())
     val uiState : StateFlow<UiHomeModel> = _uiState
@@ -25,16 +24,24 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     private fun loadCarts() {
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
-            repository.loadCarts { carts ->
+            repository.loadCartsRepository { carts ->
                 _uiState.update { it.copy(carts = carts.toMutableList()) }
             }
             hideLoading()
         }
     }
 
+    fun openCart(cart : ShoppingCartTable) {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            repository.openCartRepository(cart = cart) {
+
+            }
+        }
+    }
+
     fun addCart(cart : ShoppingCartTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            repository.addCart(cart) {
+            repository.addCartRepository(cart) {
                 _uiState.update {
                     val newList = it.carts.toMutableList()
                     newList.add(cart)
@@ -46,19 +53,13 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
 
     fun deleteCart(cartToDelete : ShoppingCartTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            repository.deleteCart(cartToDelete) {
+            repository.deleteCartRepository(cart = cartToDelete) {
                 _uiState.update {
                     val newList = it.carts.toMutableList()
-                    newList.remove(cartToDelete)
+                    newList.remove(element = cartToDelete)
                     it.copy(carts = newList)
                 }
             }
-        }
-    }
-
-    fun setFabHeight(height : Dp) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(fabAdHeight = height) }
         }
     }
 

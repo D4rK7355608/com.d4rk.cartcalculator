@@ -23,8 +23,8 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     fun loadCart(cartId : Int) {
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
-            val cart = repository.getCartById(cartId)
-            repository.getCartItems(cartId) { items ->
+            val cart = repository.fetchCartByIdImplementation(cartId)
+            repository.fetchCartItemsRepository(cartId) { items ->
                 _uiState.update {
                     it.copy(
                         cartItems = items , cart = cart
@@ -46,7 +46,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     fun addCartItem(cartId : Int , cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
             cartItem.cartId = cartId
-            repository.addItemToCart(cartItem) { newItem ->
+            repository.addItemToCartRepository(cartItem) { newItem ->
                 _uiState.update { currentState ->
                     val updatedItems = currentState.cartItems + newItem
                     currentState.copy(cartItems = updatedItems)
@@ -88,7 +88,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     private fun updateItemQuantity(cartItem : ShoppingCartItemsTable , newQuantity : Int) {
         viewModelScope.launch(coroutineExceptionHandler) {
             cartItem.quantity = newQuantity
-            repository.updateCartItem(cartItem) {
+            repository.updateCartItemRepository(cartItem) {
                 _uiState.update { currentState ->
                     val updatedQuantities = currentState.itemQuantities.toMutableMap()
                     updatedQuantities[cartItem.itemId] = newQuantity
@@ -101,7 +101,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
 
     fun deleteCartItem(cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            repository.deleteCartItem(cartItem) {
+            repository.deleteCartItemRepository(cartItem) {
                 _uiState.update { currentState ->
                     val updatedItems = currentState.cartItems.filter { it != cartItem }
                     currentState.copy(cartItems = updatedItems)
@@ -114,7 +114,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     fun onItemCheckedChange(cartItem : ShoppingCartItemsTable , isChecked : Boolean) {
         viewModelScope.launch(coroutineExceptionHandler) {
             cartItem.isChecked = isChecked
-            repository.updateCartItem(cartItem) { }
+            repository.updateCartItemRepository(cartItem) { }
         }
     }
 
@@ -122,7 +122,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
         viewModelScope.launch(coroutineExceptionHandler) {
             val cartItems = uiState.value.cartItems
             cartItems.forEach { cartItem ->
-                repository.saveCartItems(cartItem) { }
+                repository.saveCartItemsRepository(cartItem) { }
             }
         }
     }

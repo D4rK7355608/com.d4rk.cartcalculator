@@ -1,6 +1,6 @@
 package com.d4rk.cartcalculator.ui.screens.home
 
-import android.content.Intent
+import android.content.Context
 import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.layout.Arrangement
@@ -15,10 +15,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AddShoppingCart
 import androidx.compose.material.icons.outlined.DeleteForever
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -36,35 +34,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
-import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
-import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.animations.bounceClick
 import com.d4rk.cartcalculator.ui.components.animations.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
-import com.d4rk.cartcalculator.ui.screens.cart.CartActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
-fun HomeScreen() {
-    val context = LocalContext.current
-    val density = LocalDensity.current
-    val view : View = LocalView.current
-
-    val dataStore = DataStore.getInstance(context)
-    val viewModel : HomeViewModel = viewModel()
+fun HomeScreen(context : Context , view : View , viewModel : HomeViewModel) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
 
@@ -102,13 +86,7 @@ fun HomeScreen() {
                                                onDelete = { viewModel.openDeleteCartDialog(it) } ,
                                                onCardClick = {
                                                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                                                   val intent = Intent(
-                                                       context ,
-                                                       CartActivity::class.java
-                                                   )
-                                                   intent.putExtra("cartId" , cart.cartId)
-                                                   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                                                   context.startActivity(intent)
+                                                   viewModel.openCart(cart)
                                                } ,
                                                uiState = uiState ,
                                                modifier = Modifier.animateItem())
@@ -116,27 +94,6 @@ fun HomeScreen() {
                     }
                 }
             }
-        }
-
-        Column(modifier = Modifier.align(Alignment.BottomEnd)) {
-            ExtendedFloatingActionButton(modifier = Modifier
-                    .bounceClick()
-                    .onGloballyPositioned { coordinates ->
-                        viewModel.setFabHeight(with(density) { coordinates.size.height.toDp() })
-                    }
-                    .align(Alignment.End) ,
-                                         text = { Text(text =stringResource(R.string.add_new_cart)) } ,
-                                         onClick = {
-                                             view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             viewModel.openNewCartDialog()
-                                         } ,
-                                         icon = {
-                                             Icon(
-                                                 Icons.Outlined.AddShoppingCart ,
-                                                 contentDescription = null
-                                             )
-                                         })
-            AdBanner(modifier = Modifier.padding(top = 12.dp) , dataStore = dataStore)
         }
 
         if (uiState.showSnackbar) {
@@ -233,9 +190,8 @@ fun CartItemComposable(
                                               style = MaterialTheme.typography.titleMedium ,
                                               modifier = Modifier.weight(1f)
                                           )
-                                          IconButton(
-                                              modifier = Modifier.bounceClick() ,
-                                              onClick = { onDelete(cart) }) {
+                                          IconButton(modifier = Modifier.bounceClick() ,
+                                                     onClick = { onDelete(cart) }) {
                                               Icon(
                                                   imageVector = Icons.Outlined.DeleteForever ,
                                                   contentDescription = "Delete cart" ,

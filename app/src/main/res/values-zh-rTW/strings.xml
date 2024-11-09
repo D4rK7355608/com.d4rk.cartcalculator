@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">使用購物車計算器有效管理和計算您的購物車商品。 🛒</string>
+    <string name="notification_update_title">有新的更新！</string>
+    <string name="summary_notification_update">應用程式有新版本可用。點擊即可更新！</string>
+    <string name="notification_last_time_used_title">好久不見！</string>
+    <string name="summary_notification_last_time_used">讓我們有效管理您的購物車商品！</string>
+
+    <string name="welcome">歡迎</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">請閱讀並同意我們的服務條款和隱私權政策以繼續。</string>
+    <string name="agree">同意</string>
+
+    <string name="navigation_drawer_open">開啟導覽匣</string>
+
+    <string name="no_carts_available">沒有購物車</string>
+    <string name="add_new_cart">新增購物車</string>
+    <string name="cart_name">購物車名稱</string>
+    <string name="shopping_cart">購物車</string>
+    <string name="summary_cart_dialog">我們致力於為每個人創造個人化的購物體驗。為了讓您更容易追蹤您的選擇並提升您的購物旅程，請考慮在新增商品前為您的購物車命名。</string>
+    <string name="created_on">建立於 %1$s</string>
+    <string name="decrease_quantity">減少數量</string>
+    <string name="increase_quantity">增加數量</string>
+    <string name="delete_cart_title">刪除購物車</string>
+    <string name="delete_cart_message">您確定要刪除這個購物車嗎？</string>
+    <string name="delete_cart_warning">刪除這個購物車將永久移除「%s」中的所有商品，且無法復原。</string>
+    <string name="snackbar_cart_deleted_success">購物車已成功刪除！</string>
+    <string name="close">關閉？</string>
+    <string name="summary_close">您確定要退出嗎？</string>
+    <string name="file_not_found">找不到檔案。</string>
+    <string name="activity_not_found">找不到活動。</string>
+    <string name="security_error">發生安全性錯誤。請稍後再試。</string>
+    <string name="io_error">發生輸入/輸出錯誤。請檢查您的網路連線或儲存空間，然後再試一次。</string>
+    <string name="illegal_argument_error">提供的輸入或引數無效。請檢查資訊，然後再試一次。</string>
+    <string name="unknown_error">發生未知錯誤。</string>
+    <string name="your_shopping_cart_is_empty">您的購物車是空的</string>
+    <string name="item_name">商品名稱</string>
+    <string name="enter_item_name">輸入商品名稱</string>
+    <string name="item_price">商品價格</string>
+    <string name="enter_item_price">輸入商品價格</string>
+    <string name="quantity">數量</string>
+    <string name="enter_quantity">輸入數量</string>
+    <string name="dialog_info_cart_item">為了確保順暢的結帳體驗，請提供您新增至購物車的商品詳細資訊</string>
+    <string name="total">總計</string>
+    <string name="delete_cart_item_title">刪除購物車商品</string>
+    <string name="delete_cart_item_message">您確定要刪除這個商品嗎？</string>
+    <string name="delete_cart_item_warning">您即將從購物車中刪除「%s」。</string>
+
+    <string name="settings">設定</string>
+
+    <string name="display">顯示</string>
+    <string name="summary_preference_settings_display">個人化您的應用程式外觀和風格</string>
+
+    <string name="appearance">外觀</string>
+    <string name="dark_theme">深色主題</string>
+    <string name="will_turn_on_automatically_by_system">將由系統自動開啟</string>
+    <string name="will_never_turn_on_automatically">將永遠不會自動開啟</string>
+    <string name="amoled_mode">AMOLED 模式</string>
+    <string name="follow_system">跟隨系統模式</string>
+    <string name="light_mode">淺色模式</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="summary_dark_theme">深色主題使用深色背景，有助於延長電池續航力</string>
+
+    <string name="dynamic_colors">動態色彩</string>
+    <string name="summary_preference_settings_dynamic_colors">將桌布的顏色套用至應用程式主題</string>
+
+    <string name="app_behavior">應用程式行為</string>
+    <string name="bounce_buttons">彈跳點擊</string>
+    <string name="summary_preference_settings_bounce_buttons">點擊所有可點擊元素時套用微妙的彈跳動畫</string>
+
+    <string name="language">語言</string>
+    <string name="summary_preference_settings_language">變更應用程式使用的語言</string>
+    <string name="dialog_language_subtitle">選擇您的偏好語言</string>
+    <string name="dialog_info_language">使用您的偏好語言個人化您的體驗。您所做的任何語言變更都會立即生效，確保以您選擇的語言提供無縫體驗</string>
+
+    <string name="cart_settings">購物車設定</string>
+    <string name="summary_preference_settings_cart">管理您的購物車行為</string>
+
+
+    <string name="currency">貨幣</string>
+    <string name="summary_preference_settings_currency">設定您偏好的貨幣以顯示價格</string>
+    <string name="dialog_currency_subtitle">選擇您的偏好貨幣</string>
+    <string name="dialog_info_currency">此貨幣選擇將用於整個平台，以顯示產品價格、處理交易並提供更個人化的購物體驗</string>
+
+    <string name="notifications">通知</string>
+    <string name="summary_preference_settings_notifications">管理應用程式通知</string>
+
+    <string name="app_usage_notifications">應用程式使用情況通知</string>
+    <string name="update_notifications">更新通知</string>
+
+    <string name="advanced">進階</string>
+    <string name="summary_preference_settings_advanced">探索更多進階設定</string>
+    <string name="error_reporting">錯誤回報</string>
+    <string name="bug_report">錯誤回報</string>
+    <string name="summary_preference_settings_bug_report">將錯誤回報和功能請求傳送至應用程式的 GitHub 儲存庫議題頁面</string>
+
+    <string name="security_and_privacy">安全性和隱私權</string>
+    <string name="summary_preference_settings_privacy_and_security">管理您的隱私權設定</string>
+    <string name="privacy">隱私權</string>
+    <string name="privacy_policy">隱私權政策</string>
+    <string name="summary_preference_settings_privacy_policy">檢視規範我們如何處理您資料的政策</string>
+    <string name="terms_of_service">服務條款</string>
+    <string name="summary_preference_settings_terms_of_service">檢視您使用我們的服務時同意的條款</string>
+    <string name="code_of_conduct">行為準則</string>
+    <string name="summary_preference_settings_code_of_conduct">瞭解我們服務範圍內的行為規則和指導方針</string>
+
+
+    <string name="permissions">權限</string>
+    <string name="summary_preference_settings_permissions">管理授予我們服務的權限</string>
+    <string name="normal">一般</string>
+    <string name="ad_id">廣告 ID [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">允許應用程式擷取和使用與使用者裝置相關聯的廣告識別碼，以提供個人化廣告、衡量廣告成效，並在 Android 13 或更新版本的裝置上顯示廣告。</string>
+    <string name="internet">網際網路 [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">允許應用程式建立網際網路連線以傳送錯誤報告或檢查更新。</string>
+    <string name="post_notifications">發佈通知 [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">允許應用程式在 Android 13 或更新版本的裝置上顯示通知。</string>
+    <string name="runtime">執行階段</string>
+    <string name="access_network_state">存取網路狀態 [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">允許應用程式檢查網路連線並擷取有關 Wi-Fi 的資訊，包括啟用狀態和已連線的 Wi-Fi 裝置名稱。</string>
+    <string name="access_notification_policy">存取通知政策 [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">允許應用程式存取和修改裝置的通知政策，控制通知如何以及何時顯示給使用者，並提供自訂通知管理功能。</string>
+    <string name="billing">計費 [BILLING]</string>
+    <string name="summary_preference_permissions_billing">允許應用程式使用 Google Play 計費程式庫來處理應用程式內購買和捐贈</string>
+    <string name="check_license">檢查授權 [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">允許應用程式驗證其是否符合授權協議，並強制執行授權條款以保護智慧財產權。</string>
+    <string name="foreground_service">前景服務 [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">允許應用程式建立和使用在前台執行的服務，讓它們優先於其他背景處理程序，並改善效能和可靠性。</string>
+
+    <string name="ads">廣告</string>
+    <string name="summary_preference_settings_ads">控制我們如何使用您的資訊來顯示相關廣告</string>
+    <string name="display_ads">顯示廣告</string>
+    <string name="personalized_ads">個人化廣告</string>
+    <string name="summary_ads_personalized_ads">選擇我們如何根據您的興趣為您個人化廣告</string>
+    <string name="summary_ads">查看與您相關的廣告。管理用於根據您的應用程式活動顯示個人化廣告的資訊。您隨時可以在這裡關閉個人化。\n</string>
+
+    <string name="usage_and_diagnostics">使用情況和診斷</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">分享資料以協助改善購物車計算器</string>
+    <string name="summary_usage_and_diagnostics">透過自動將診斷、裝置和應用程式使用情況資料傳送給我們來協助改善您的體驗。這將有助於改善應用程式效能、穩定性和其他增強功能。一些彙總資料也將有助於我們的應用程式。\n\n這是關於您的裝置以及您如何使用我們的應用程式的一般資訊（例如電池電量、系統和應用程式活動以及錯誤）。這些資料將用於改善我們的應用程式\n\n關閉此功能不會影響您的裝置傳送基本服務所需資訊的能力，例如應用程式更新和安全性。\n</string>
+
+    <string name="legal">法律</string>
+    <string name="legal_notices">法律聲明</string>
+    <string name="summary_preference_settings_legal_notices">檢視關於我們服務的法律資訊</string>
+    <string name="license">授權</string>
+
+    <string name="about">關於</string>
+    <string name="summary_preference_settings_about">瞭解更多關於購物車計算器的資訊</string>
+
+    <string name="app_info">應用程式資訊</string>
+    <string name="app_build_version">應用程式建置版本</string>
+    <string name="summary_preference_settings_oss">開放原始碼軟體的授權詳細資訊</string>
+    <string name="device_info">裝置資訊</string>
+    <string name="app_build">應用程式版本： %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">偵錯</string>
+    <string name="release">發行</string>
+    <string name="manufacturer">製造商：</string>
+    <string name="device_model">裝置型號：</string>
+    <string name="android_version">Android 版本：</string>
+    <string name="api_level">API 級別：</string>
+    <string name="snack_device_info_copied">裝置資訊已複製到剪貼簿</string>
+
+    <string name="help_and_feedback">說明與意見回饋</string>
+    <string name="help">說明</string>
+    <string name="faq">常見問題</string>
+    <string name="view_in_google_play_store">在 Google Play 商店中檢視</string>
+    <string name="version_info">版本資訊</string>
+    <string name="version">版本 %1$s</string>
+    <string name="beta_program">Beta 測試計劃</string>
+    <string name="question_1">什麼是購物車計算器？</string>
+    <string name="summary_preference_faq_1">購物車計算器是一個簡單、通用且免費的購物車管理工具和應付總額計算器，可在您位於雜貨店或市場時取代普通的裝置計算器。</string>
+    <string name="question_2">購物車計算器如何運作？</string>
+    <string name="summary_preference_faq_2">購物車計算器允許您透過新增產品和增加或減少其數量來管理您的購物車。購物車計算器會隨時根據產品的價格和數量顯示您購物車中產品的應付總額。</string>
+    <string name="question_3">我為什麼應該使用購物車計算器？</string>
+    <string name="summary_preference_faq_3">購物車計算器可協助您在結帳前隨時掌握您的消費金額。這在您必須按預算購物時特別有用。</string>
+    <string name="question_4">我可以在雜貨店或市場以外的地方使用購物車計算器嗎？</string>
+    <string name="summary_preference_faq_4">可以！由於購物車計算器非常簡單且通用，您也可以在酒吧、餐廳、電影院等地方使用它。</string>
+    <string name="question_5">我如何使用購物車計算器將商品新增至我的購物車？</string>
+    <string name="summary_preference_faq_5">在主螢幕中，按下工具列中的「新增商品」按鈕，即可將新產品新增至您的購物車。您需告知其名稱和價格，然後點擊「新增」按鈕。</string>
+    <string name="question_6">我如何使用購物車計算器增加或減少購物車中商品的數量？</string>
+    <string name="summary_preference_faq_6">只需在清單中找到該商品，然後按下「+（加號）」按鈕即可增加其數量，或按下「-（減號）」按鈕即可減少其數量。</string>
+    <string name="question_7">我如何使用購物車計算器從我的購物車中移除商品？</string>
+    <string name="summary_preference_faq_7">要從購物車中移除產品，只需將其數量降至零，或在清單中長按它，然後選擇「刪除商品」按鈕即可。</string>
+    <string name="question_8">購物車計算器是免費軟體嗎？</string>
+    <string name="summary_preference_faq_8">是的！購物車計算器是根據 GNU 通用公共授權版本 3 發行的免費軟體，我們以此為榮。</string>
+    <string name="question_9">我如何為購物車計算器做出貢獻？</string>
+    <string name="summary_preference_faq_9">為購物車計算器做出貢獻的最佳方式是透過其 <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> 儲存庫。從那裡，您可以複製它並處理您的貢獻，然後透過提取請求將它們傳送回來。您也可以使用議題追蹤器來回報錯誤、建議新功能或增強功能，或獲得您可以如何提供協助的想法。</string>
+    <string name="feedback">意見回饋</string>
+
+    <string name="updates">更新</string>
+
+    <string name="share">分享</string>
+
+    <string name="support_us">支持我們</string>
+    <string name="paid_support">付費支持</string>
+    <string name="summary_donations">無論您捐贈多少，您都將幫助我們保持應用程式的運作並改善我們功能。感謝您的慷慨和善意！</string>
+    <string name="non_paid_support">非付費支持</string>
+    <string name="web_ad">網頁廣告</string>
+
+    <string name="snack_app_updated">應用程式已成功更新</string>
+    <string name="snack_update_failed">更新過程中發生問題</string>
+    <string name="try_again">再試一次</string>
+    <string name="summary_share_message">看看我正在使用的這個很棒的應用程式！它有一些您可能會覺得很有趣的酷炫功能。您可以從 Play 商店下載它： %1$s</string>
+    <string name="learn_more">瞭解更多</string>
+</resources>

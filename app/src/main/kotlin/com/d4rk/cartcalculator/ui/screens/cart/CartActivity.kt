@@ -23,6 +23,7 @@ class CartActivity : AppCompatActivity() {
         enableEdgeToEdge()
         MobileAds.initialize(this@CartActivity)
         cartId = intent.getIntExtra("cartId" , 0)
+        println("Shopping Cart Calculator -> CartActivity: onCreate - Received cartId: $cartId")
         viewModel.loadSelectedCurrency(dataStore)
         viewModel.loadCart(cartId)
 

@@ -1,32 +1,43 @@
 package com.d4rk.cartcalculator.ui.screens.home.repository
 
+import android.app.Application
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class HomeRepository : HomeRepositoryImplementation() {
+class HomeRepository(application : Application) :
+    HomeRepositoryImplementation(application = application) {
 
-    suspend fun loadCarts(onSuccess : (List<ShoppingCartTable>) -> Unit) {
+    suspend fun loadCartsRepository(onSuccess : (List<ShoppingCartTable>) -> Unit) {
         withContext(Dispatchers.IO) {
-            val carts = getCarts()
+            val carts = loadCartsImplementation()
             withContext(Dispatchers.Main) {
                 onSuccess(carts)
             }
         }
     }
 
-    suspend fun addCart(cart : ShoppingCartTable , onSuccess : () -> Unit) {
+    suspend fun openCartRepository(cart : ShoppingCartTable , onSuccess : () -> Unit) {
         withContext(Dispatchers.IO) {
-            addCartToDatabase(cart)
+            openCartImplementation(cart = cart)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }
         }
     }
 
-    suspend fun deleteCart(cart : ShoppingCartTable , onSuccess : () -> Unit) {
+    suspend fun addCartRepository(cart : ShoppingCartTable , onSuccess : () -> Unit) {
         withContext(Dispatchers.IO) {
-            deleteCartFromDatabase(cart)
+            addCartImplementation(cart)
+            withContext(Dispatchers.Main) {
+                onSuccess()
+            }
+        }
+    }
+
+    suspend fun deleteCartRepository(cart : ShoppingCartTable , onSuccess : () -> Unit) {
+        withContext(Dispatchers.IO) {
+            deleteCartImplementation(cart)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }
