@@ -41,11 +41,9 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
 
     fun addCart(cart : ShoppingCartTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            repository.addCartRepository(cart) {
-                _uiState.update {
-                    val newList = it.carts.toMutableList()
-                    newList.add(cart)
-                    it.copy(carts = newList)
+            repository.addCartRepository(cart) { addedCart ->
+                _uiState.update { currentState ->
+                    currentState.copy(carts = (currentState.carts + addedCart).toMutableList())
                 }
             }
         }

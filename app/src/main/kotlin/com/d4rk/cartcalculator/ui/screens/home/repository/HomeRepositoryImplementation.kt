@@ -13,22 +13,20 @@ abstract class HomeRepositoryImplementation(val application : Application) {
     }
 
     fun openCartImplementation(cart : ShoppingCartTable) {
-        println("Shopping Cart Calculator -> HomeRepositoryImplementation: Opening cart with ID: ${cart.cartId}")
-
         application.startActivity(
             Intent(application , CartActivity::class.java).putExtra("cartId" , cart.cartId)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         )
     }
 
-    suspend fun addCartImplementation(cart : ShoppingCartTable) {
-        AppCoreManager.database.newCartDao().insert(cart)
+    suspend fun addCartImplementation(cart : ShoppingCartTable) : ShoppingCartTable {
+        return cart.copy(cartId = AppCoreManager.database.newCartDao().insert(cart = cart).toInt())
     }
 
     suspend fun deleteCartImplementation(cart : ShoppingCartTable) {
         with(AppCoreManager.database) {
-            newCartDao().delete(cart)
-            shoppingCartItemsDao().deleteItemsFromCart(cart.cartId)
+            newCartDao().delete(cart = cart)
+            shoppingCartItemsDao().deleteItemsFromCart(cartId = cart.cartId)
         }
     }
 }

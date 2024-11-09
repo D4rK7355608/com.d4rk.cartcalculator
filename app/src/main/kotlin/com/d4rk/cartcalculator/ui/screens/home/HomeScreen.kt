@@ -81,7 +81,7 @@ fun HomeScreen(context : Context , view : View , viewModel : HomeViewModel) {
                                 .weight(1f)
                                 .padding(bottom = uiState.fabAdHeight)
                     ) {
-                        items(uiState.carts) { cart ->
+                        items(items = uiState.carts , key = { cart -> cart.cartId }) { cart ->
                             CartItemComposable(cart ,
                                                onDelete = { viewModel.openDeleteCartDialog(it) } ,
                                                onCardClick = {

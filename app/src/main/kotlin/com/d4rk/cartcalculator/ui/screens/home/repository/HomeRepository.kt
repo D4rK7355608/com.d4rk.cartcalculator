@@ -26,18 +26,18 @@ class HomeRepository(application : Application) :
         }
     }
 
-    suspend fun addCartRepository(cart : ShoppingCartTable , onSuccess : () -> Unit) {
+    suspend fun addCartRepository(cart : ShoppingCartTable , onSuccess : (ShoppingCartTable) -> Unit , ) {
         withContext(Dispatchers.IO) {
-            addCartImplementation(cart)
+            val addedCart = addCartImplementation(cart = cart)
             withContext(Dispatchers.Main) {
-                onSuccess()
+                onSuccess(addedCart)
             }
         }
     }
 
     suspend fun deleteCartRepository(cart : ShoppingCartTable , onSuccess : () -> Unit) {
         withContext(Dispatchers.IO) {
-            deleteCartImplementation(cart)
+            deleteCartImplementation(cart = cart)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }
