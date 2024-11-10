@@ -30,7 +30,10 @@
     <string name="io_error">Ett in-/utmatningsfel inträffade. Kontrollera din nätverksanslutning eller lagring och försök igen.</string>
     <string name="illegal_argument_error">Ogiltig inmatning eller argument. Kontrollera informationen och försök igen.</string>
     <string name="unknown_error">Ett okänt fel inträffade.</string>
+
     <string name="your_shopping_cart_is_empty">Din kundvagn är tom</string>
+    <string name="in_cart">I varukorgen</string>
+    <string name="items_to_pick_up">Att hämta</string>
     <string name="item_name">Vara namn</string>
     <string name="enter_item_name">Ange varans namn</string>
     <string name="item_price">Varans pris</string>

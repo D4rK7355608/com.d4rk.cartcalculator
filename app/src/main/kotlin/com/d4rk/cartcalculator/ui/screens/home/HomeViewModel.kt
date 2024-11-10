@@ -25,7 +25,9 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
             repository.loadCartsRepository { carts ->
-                _uiState.update { it.copy(carts = carts.toMutableList()) }
+                _uiState.update { currentState ->
+                    currentState.copy(carts = carts.toMutableList())
+                }
             }
             hideLoading()
         }
@@ -33,9 +35,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
 
     fun openCart(cart : ShoppingCartTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            repository.openCartRepository(cart = cart) {
-
-            }
+            repository.openCartRepository(cart = cart) {}
         }
     }
 
@@ -52,10 +52,10 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     fun deleteCart(cartToDelete : ShoppingCartTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
             repository.deleteCartRepository(cart = cartToDelete) {
-                _uiState.update {
-                    val newList = it.carts.toMutableList()
+                _uiState.update { currentState ->
+                    val newList = currentState.carts.toMutableList()
                     newList.remove(element = cartToDelete)
-                    it.copy(carts = newList)
+                    return@update currentState.copy(carts = newList)
                 }
             }
         }
@@ -63,37 +63,49 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
 
     fun openDeleteCartDialog(cart : ShoppingCartTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(showDeleteCartDialog = true , cartToDelete = cart) }
+            _uiState.update { currentState ->
+                currentState.copy(showDeleteCartDialog = true , cartToDelete = cart)
+            }
         }
     }
 
     fun dismissDeleteCartDialog() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(showDeleteCartDialog = false) }
+            _uiState.update { currentState ->
+                currentState.copy(showDeleteCartDialog = false)
+            }
         }
     }
 
     fun openNewCartDialog() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(showCreateCartDialog = true) }
+            _uiState.update { currentState ->
+                currentState.copy(showCreateCartDialog = true)
+            }
         }
     }
 
     fun dismissNewCartDialog() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(showCreateCartDialog = false) }
+            _uiState.update { currentState ->
+                currentState.copy(showCreateCartDialog = false)
+            }
         }
     }
 
     fun dismissSnackbar() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(showSnackbar = false) }
+            _uiState.update { currentState ->
+                currentState.copy(showSnackbar = false)
+            }
         }
     }
 
     fun showSnackbar(message : String) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            _uiState.update { it.copy(showSnackbar = true , snackbarMessage = message) }
+            _uiState.update { currentState ->
+                currentState.copy(showSnackbar = true , snackbarMessage = message)
+            }
         }
     }
 }

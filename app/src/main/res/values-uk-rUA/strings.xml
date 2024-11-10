@@ -30,7 +30,10 @@
     <string name="io_error">Сталася помилка введення/виведення. Перевірте мережеве з\'єднання або сховище і спробуйте знову.</string>
     <string name="illegal_argument_error">Недійсний ввід або аргумент. Перевірте інформацію та спробуйте ще раз.</string>
     <string name="unknown_error">Сталася невідома помилка.</string>
+
     <string name="your_shopping_cart_is_empty">Ваш кошик для покупок порожній</string>
+    <string name="in_cart">У кошику</string>
+    <string name="items_to_pick_up">Товари для отримання</string>
     <string name="item_name">Назва товару</string>
     <string name="enter_item_name">Введіть назву товару</string>
     <string name="item_price">Ціна товару</string>

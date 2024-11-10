@@ -30,7 +30,10 @@
     <string name="io_error">Възникна грешка при вход/изход. Моля, проверете мрежовата връзка или паметта и опитайте отново.</string>
     <string name="illegal_argument_error">Невалиден вход или аргумент. Моля, проверете информацията и опитайте отново.</string>
     <string name="unknown_error">Възникна неизвестна грешка.</string>
+
     <string name="your_shopping_cart_is_empty">Вашата пазарска количка е празна</string>
+    <string name="in_cart">В количката</string>
+    <string name="items_to_pick_up">Необходимите продукти</string>
     <string name="item_name">Име на артикул</string>
     <string name="enter_item_name">Въведете име на артикул</string>
     <string name="item_price">Цена на артикул</string>

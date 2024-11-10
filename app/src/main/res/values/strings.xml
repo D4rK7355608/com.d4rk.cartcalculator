@@ -32,7 +32,10 @@
     <string name="io_error">An input/output error occurred. Please check your network connection or storage and try again.</string>
     <string name="illegal_argument_error">Invalid input or argument provided. Please check the information and try again.</string>
     <string name="unknown_error">An unknown error occurred.</string>
+
     <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
+    <string name="in_cart">In Cart</string>
+    <string name="items_to_pick_up">Items to Pick Up</string>
     <string name="item_name">Item name</string>
     <string name="enter_item_name">Enter item name</string>
     <string name="item_price">Item price</string>

@@ -23,10 +23,10 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     fun loadCart(cartId : Int) {
         viewModelScope.launch(coroutineExceptionHandler) {
             showLoading()
-            val cart = repository.fetchCartByIdImplementation(cartId)
-            repository.fetchCartItemsRepository(cartId) { items ->
-                _uiState.update {
-                    it.copy(
+            val cart = repository.loadCartIdImplementation(cartId = cartId)
+            repository.loadCartItemsRepository(cartId = cartId) { items ->
+                _uiState.update { currentState ->
+                    currentState.copy(
                         cartItems = items , cart = cart
                     )
                 }
@@ -38,42 +38,40 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
 
     fun loadSelectedCurrency(dataStore : DataStore) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            val currency = dataStore.getCurrency().firstOrNull() ?: ""
-            _uiState.update { it.copy(selectedCurrency = currency) }
+            _uiState.update { currentState ->
+                currentState.copy(
+                    selectedCurrency = dataStore.getCurrency().firstOrNull() ?: ""
+                )
+            }
         }
     }
 
     fun addCartItem(cartId : Int , cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
             cartItem.cartId = cartId
-            repository.addItemToCartRepository(cartItem) { newItem ->
+            repository.addCartItemRepository(cartItem) { newItem ->
                 _uiState.update { currentState ->
-                    val updatedItems = currentState.cartItems + newItem
-                    currentState.copy(cartItems = updatedItems)
+                    val cartItems = currentState.cartItems + newItem
+                    currentState.copy(cartItems = cartItems)
                 }
                 calculateTotalPrice()
             }
         }
     }
 
-    fun getQuantityStateForItem(cartItem : ShoppingCartItemsTable) : Int {
-        return _uiState.value.itemQuantities[cartItem.itemId] ?: cartItem.quantity
-    }
-
     fun increaseQuantity(cartItem : ShoppingCartItemsTable) {
-        val currentQuantity = getQuantityStateForItem(cartItem)
         viewModelScope.launch(coroutineExceptionHandler) {
-            val newQuantity = currentQuantity + 1
-            updateItemQuantity(cartItem , newQuantity)
+            val currentQuantity = getQuantityStateForItem(cartItem = cartItem)
+            updateItemQuantity(cartItem = cartItem , newQuantity = currentQuantity + 1)
         }
     }
 
     fun decreaseQuantity(cartItem : ShoppingCartItemsTable) {
-        val currentQuantity = getQuantityStateForItem(cartItem)
         viewModelScope.launch(coroutineExceptionHandler) {
-            val newQuantity = maxOf(currentQuantity - 1 , 0)
+            val currentQuantity = getQuantityStateForItem(cartItem = cartItem)
+            val newQuantity = maxOf(a = currentQuantity - 1 , b = 0)
             if (newQuantity > 0) {
-                updateItemQuantity(cartItem , newQuantity)
+                updateItemQuantity(cartItem = cartItem , newQuantity = newQuantity)
             }
             else {
                 _uiState.update { currentState ->
@@ -85,14 +83,18 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
+    fun getQuantityStateForItem(cartItem : ShoppingCartItemsTable) : Int {
+        return _uiState.value.itemQuantities[cartItem.itemId] ?: cartItem.quantity
+    }
+
     private fun updateItemQuantity(cartItem : ShoppingCartItemsTable , newQuantity : Int) {
         viewModelScope.launch(coroutineExceptionHandler) {
             cartItem.quantity = newQuantity
-            repository.updateCartItemRepository(cartItem) {
+            repository.updateCartItemRepository(cartItem = cartItem) {
                 _uiState.update { currentState ->
                     val updatedQuantities = currentState.itemQuantities.toMutableMap()
                     updatedQuantities[cartItem.itemId] = newQuantity
-                    currentState.copy(itemQuantities = updatedQuantities)
+                    return@update currentState.copy(itemQuantities = updatedQuantities)
                 }
                 calculateTotalPrice()
             }
@@ -104,7 +106,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
             repository.deleteCartItemRepository(cartItem) {
                 _uiState.update { currentState ->
                     val updatedItems = currentState.cartItems.filter { it != cartItem }
-                    currentState.copy(cartItems = updatedItems)
+                    return@update currentState.copy(cartItems = updatedItems)
                 }
                 calculateTotalPrice()
             }
@@ -113,8 +115,11 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
 
     fun onItemCheckedChange(cartItem : ShoppingCartItemsTable , isChecked : Boolean) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            cartItem.isChecked = isChecked
-            repository.updateCartItemRepository(cartItem) { }
+            val updatedCartItems = _uiState.value.cartItems.map { item ->
+                if (item.itemId == cartItem.itemId) item.copy(isChecked = isChecked) else item
+            }
+            _uiState.value = _uiState.value.copy(cartItems = updatedCartItems)
+            repository.updateCartItemRepository(cartItem.copy(isChecked = isChecked)) { }
         }
     }
 
@@ -128,28 +133,30 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     private fun calculateTotalPrice() {
-        val total = uiState.value.cartItems.sumOf { item -> item.price.toDouble() * item.quantity }
-        _uiState.update {
-            println(
-                "Shopping Cart Calculator -> [CartViewModel] UiState updated, items: ${
-                    it.copy(
-                        totalPrice = total
-                    ).cartItems
-                }"
-            )
-            it.copy(totalPrice = total)
+        viewModelScope.launch(coroutineExceptionHandler) {
+            val total =
+                    uiState.value.cartItems.sumOf { item -> item.price.toDouble() * item.quantity }
+            _uiState.update { currentState ->
+                currentState.copy(totalPrice = total)
+            }
         }
     }
 
     fun toggleOpenDialog() {
-        _uiState.update { it.copy(openDialog = ! it.openDialog) }
+        viewModelScope.launch(coroutineExceptionHandler) {
+            _uiState.update { currentState ->
+                currentState.copy(openDialog = ! currentState.openDialog)
+            }
+        }
     }
 
     fun toggleDeleteDialog(cartItem : ShoppingCartItemsTable?) {
-        _uiState.update { currentState ->
-            currentState.copy(
-                openDeleteDialog = cartItem != null , currentCartItemForDeletion = cartItem
-            )
+        viewModelScope.launch(coroutineExceptionHandler) {
+            _uiState.update { currentState ->
+                currentState.copy(
+                    openDeleteDialog = cartItem != null , currentCartItemForDeletion = cartItem
+                )
+            }
         }
     }
 }

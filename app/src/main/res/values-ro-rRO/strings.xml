@@ -30,7 +30,10 @@
     <string name="io_error">A apărut o eroare de intrare/ieșire. Verificați conexiunea la rețea sau spațiul de stocare și încercați din nou.</string>
     <string name="illegal_argument_error">Intrare sau argument nevalid. Verificați informațiile și încercați din nou.</string>
     <string name="unknown_error">A apărut o eroare necunoscută.</string>
+
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
+    <string name="in_cart">În coș</string>
+    <string name="items_to_pick_up">Articole de ridicat</string>
     <string name="item_name">Numele articolului</string>
     <string name="enter_item_name">Introduceți numele articolului</string>
     <string name="item_price">Prețul articolului</string>

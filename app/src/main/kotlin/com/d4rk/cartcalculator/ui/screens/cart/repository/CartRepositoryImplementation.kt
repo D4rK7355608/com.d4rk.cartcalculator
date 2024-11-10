@@ -6,7 +6,7 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 
 abstract class CartRepositoryImplementation {
 
-    suspend fun fetchCartByIdImplementation(cartId : Int) : ShoppingCartTable {
+    suspend fun loadCartIdImplementation(cartId : Int) : ShoppingCartTable {
         return AppCoreManager.database.newCartDao().getCartById(cartId)
     }
 

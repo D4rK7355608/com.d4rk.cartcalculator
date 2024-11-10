@@ -6,7 +6,7 @@ import kotlinx.coroutines.withContext
 
 class CartRepository : CartRepositoryImplementation() {
 
-    suspend fun fetchCartItemsRepository(cartId: Int , onSuccess: (List<ShoppingCartItemsTable>) -> Unit) {
+    suspend fun loadCartItemsRepository(cartId: Int , onSuccess: (List<ShoppingCartItemsTable>) -> Unit) {
         withContext(Dispatchers.IO) {
             val items = fetchItemsForCartImplementation(cartId)
             withContext(Dispatchers.Main) {
@@ -15,7 +15,7 @@ class CartRepository : CartRepositoryImplementation() {
         }
     }
 
-    suspend fun addItemToCartRepository(
+    suspend fun addCartItemRepository(
         cartItem : ShoppingCartItemsTable ,
         onSuccess : (ShoppingCartItemsTable) -> Unit ,
     ) {

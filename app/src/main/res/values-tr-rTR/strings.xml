@@ -30,7 +30,10 @@
     <string name="io_error">Bir giriş/çıkış hatası oluştu. Ağ bağlantınızı veya depolamanızı kontrol edip tekrar deneyin.</string>
     <string name="illegal_argument_error">Geçersiz giriş veya bağımsız değişken sağlandı. Lütfen bilgileri kontrol edin ve tekrar deneyin.</string>
     <string name="unknown_error">Bilinmeyen bir hata oluştu.</string>
+
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
+    <string name="in_cart">Sepette</string>
+    <string name="items_to_pick_up">Alınacak Ürünler</string>
     <string name="item_name">Ürün adı</string>
     <string name="enter_item_name">Ürün adı girin</string>
     <string name="item_price">Ürün fiyatı</string>

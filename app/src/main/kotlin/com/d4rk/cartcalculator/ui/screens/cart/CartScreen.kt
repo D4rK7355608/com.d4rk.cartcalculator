@@ -131,6 +131,8 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                     )
                 }
                 else {
+
+                    val (checkedItems, uncheckedItems) = uiState.cartItems.partition { it.isChecked }
                     Box {
                         Column(
                             modifier = Modifier.fillMaxSize()
@@ -138,19 +140,48 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                             LazyColumn(
                                 modifier = Modifier.weight(1f)
                             ) {
-                                items(
-                                    items = uiState.cartItems ,
-                                    key = { item -> item.itemId }) { cartItem ->
-                                    CartItemComposable(viewModel = viewModel ,
-                                                       cartItem = cartItem ,
-                                                       onMinusClick = {
-                                                           viewModel.decreaseQuantity(cartItem)
-                                                       } ,
-                                                       onPlusClick = {
-                                                           viewModel.increaseQuantity(cartItem)
-                                                       } ,
-                                                       uiState = uiState ,
-                                                       modifier = Modifier.animateItem())
+                                if (checkedItems.isNotEmpty()) {
+                                    item {
+                                        Text(
+                                            text = stringResource(id = R.string.in_cart),
+                                            style = MaterialTheme.typography.titleMedium ,
+                                            modifier = Modifier.padding(start = 16.dp , top = 8.dp).animateItem()
+                                        )
+                                    }
+                                    items(
+                                        items = checkedItems ,
+                                        key = { item -> item.itemId }) { cartItem ->
+                                        CartItemComposable(
+                                            viewModel = viewModel ,
+                                            cartItem = cartItem ,
+                                            onMinusClick = { viewModel.decreaseQuantity(cartItem) } ,
+                                            onPlusClick = { viewModel.increaseQuantity(cartItem) } ,
+                                            uiState = uiState ,
+                                            modifier = Modifier.animateItem()
+                                        )
+                                    }
+                                }
+
+                                if (uncheckedItems.isNotEmpty()) {
+                                    item {
+                                        Text(
+                                            text = stringResource(id = R.string.items_to_pick_up),
+                                            style = MaterialTheme.typography.titleMedium ,
+                                            modifier = Modifier.padding(start = 16.dp , top = 8.dp).animateItem()
+                                        )
+                                    }
+                                    items(
+                                        items = uncheckedItems ,
+                                        key = { item -> item.itemId }) { cartItem ->
+                                        CartItemComposable(
+                                            viewModel = viewModel ,
+                                            cartItem = cartItem ,
+                                            onMinusClick = { viewModel.decreaseQuantity(cartItem) } ,
+                                            onPlusClick = { viewModel.increaseQuantity(cartItem) } ,
+                                            uiState = uiState ,
+                                            modifier = Modifier.animateItem()
+                                        )
+                                    }
                                 }
                             }
 

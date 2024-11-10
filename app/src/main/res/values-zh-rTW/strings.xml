@@ -32,7 +32,10 @@
     <string name="io_error">發生輸入/輸出錯誤。請檢查您的網路連線或儲存空間，然後再試一次。</string>
     <string name="illegal_argument_error">提供的輸入或引數無效。請檢查資訊，然後再試一次。</string>
     <string name="unknown_error">發生未知錯誤。</string>
+
     <string name="your_shopping_cart_is_empty">您的購物車是空的</string>
+    <string name="in_cart">購物車中</string>
+    <string name="items_to_pick_up">待取物品</string>
     <string name="item_name">商品名稱</string>
     <string name="enter_item_name">輸入商品名稱</string>
     <string name="item_price">商品價格</string>

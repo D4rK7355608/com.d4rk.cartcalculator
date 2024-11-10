@@ -21,11 +21,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
-import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.SwipeToDismissBox
 import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -48,9 +48,27 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
-fun HomeScreen(context : Context , view : View , viewModel : HomeViewModel) {
+fun HomeScreen(
+    context : Context ,
+    view : View ,
+    viewModel : HomeViewModel ,
+    snackbarHostState : SnackbarHostState
+) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
+    val okStringResource = stringResource(id = android.R.string.ok)
+
+    LaunchedEffect(uiState.showSnackbar) {
+        if (uiState.showSnackbar) {
+            val result = snackbarHostState.showSnackbar(
+                message = uiState.snackbarMessage ,
+                actionLabel = okStringResource ,
+            )
+            if (result == SnackbarResult.ActionPerformed || result == SnackbarResult.Dismissed) {
+                viewModel.dismissSnackbar()
+            }
+        }
+    }
 
     Box(
         modifier = Modifier
@@ -94,18 +112,6 @@ fun HomeScreen(context : Context , view : View , viewModel : HomeViewModel) {
                     }
                 }
             }
-        }
-
-        if (uiState.showSnackbar) {
-            Snackbar(action = {
-                TextButton(onClick = { viewModel.dismissSnackbar() }) {
-                    Text(text = stringResource(id = android.R.string.ok))
-                }
-            } , modifier = Modifier
-                    .padding(8.dp)
-                    .align(Alignment.BottomCenter) , content = {
-                Text(text = uiState.snackbarMessage)
-            })
         }
     }
 
@@ -190,8 +196,9 @@ fun CartItemComposable(
                                               style = MaterialTheme.typography.titleMedium ,
                                               modifier = Modifier.weight(1f)
                                           )
-                                          IconButton(modifier = Modifier.bounceClick() ,
-                                                     onClick = { onDelete(cart) }) {
+                                          IconButton(
+                                              modifier = Modifier.bounceClick() ,
+                                              onClick = { onDelete(cart) }) {
                                               Icon(
                                                   imageVector = Icons.Outlined.DeleteForever ,
                                                   contentDescription = "Delete cart" ,

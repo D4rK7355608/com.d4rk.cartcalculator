@@ -24,8 +24,8 @@ class CartActivity : AppCompatActivity() {
         MobileAds.initialize(this@CartActivity)
         cartId = intent.getIntExtra("cartId" , 0)
         println("Shopping Cart Calculator -> CartActivity: onCreate - Received cartId: $cartId")
-        viewModel.loadSelectedCurrency(dataStore)
-        viewModel.loadCart(cartId)
+        viewModel.loadSelectedCurrency(dataStore = dataStore)
+        viewModel.loadCart(cartId = cartId)
 
         setContent {
             AppTheme {

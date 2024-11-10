@@ -30,7 +30,10 @@
     <string name="io_error">入出力エラーが発生しました。ネットワーク接続やストレージを確認してから、もう一度お試しください。</string>
     <string name="illegal_argument_error">無効な入力または引数が指定されました。情報を確認して、もう一度やり直してください。</string>
     <string name="unknown_error">不明なエラーが発生しました。</string>
+
     <string name="your_shopping_cart_is_empty">買い物カートは空です</string>
+    <string name="in_cart">カートに入っています</string>
+    <string name="items_to_pick_up">受け取るアイテム</string>
     <string name="item_name">商品名</string>
     <string name="enter_item_name">商品名を入力してください</string>
     <string name="item_price">商品価格</string>

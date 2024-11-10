@@ -30,7 +30,10 @@
     <string name="io_error">Se ha producido un error de entrada/salida. Por favor, revise su conexión a la red o el almacenamiento e inténtelo de nuevo.</string>
     <string name="illegal_argument_error">Entrada o argumento no válido. Por favor, compruebe la información e inténtelo de nuevo.</string>
     <string name="unknown_error">Se ha producido un error desconocido.</string>
+
     <string name="your_shopping_cart_is_empty">Tu carrito de compras está vacío</string>
+    <string name="in_cart">En el carrito</string>
+    <string name="items_to_pick_up">Artículos para recoger</string>
     <string name="item_name">Nombre del artículo</string>
     <string name="enter_item_name">Introduce el nombre del artículo</string>
     <string name="item_price">Precio del artículo</string>

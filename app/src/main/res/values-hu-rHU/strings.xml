@@ -30,7 +30,10 @@
     <string name="io_error">Bemeneti/kimeneti hiba történt. Ellenőrizze a hálózati kapcsolatot vagy a tárhelyet, és próbálja újra.</string>
     <string name="illegal_argument_error">Érvénytelen bemenet vagy argumentum. Kérjük, ellenőrizze az információkat, és próbálja újra.</string>
     <string name="unknown_error">Ismeretlen hiba történt.</string>
+
     <string name="your_shopping_cart_is_empty">A bevásárlókosara üres</string>
+    <string name="in_cart">A kosárban</string>
+    <string name="items_to_pick_up">Felvenni való tételek</string>
     <string name="item_name">Elem neve</string>
     <string name="enter_item_name">Írja be az elem nevét</string>
     <string name="item_price">Elem ára</string>

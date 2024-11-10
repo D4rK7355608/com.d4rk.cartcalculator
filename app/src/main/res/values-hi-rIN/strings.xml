@@ -30,7 +30,10 @@
     <string name="io_error">इनपुट/आउटपुट त्रुटि हुई है। कृपया अपनी नेटवर्क कनेक्शन या स्टोरेज की जांच करें और पुनः प्रयास करें।</string>
     <string name="illegal_argument_error">अमान्य इनपुट या तर्क दिया गया है. कृपया जानकारी की जाँच करें और पुनः प्रयास करें.</string>
     <string name="unknown_error">अज्ञात त्रुटि हुई है।</string>
+
     <string name="your_shopping_cart_is_empty">आपका शॉपिंग कार्ट खाली है</string>
+    <string name="in_cart">कार्ट में</string>
+    <string name="items_to_pick_up">उठाने के लिए वस्तुएं</string>
     <string name="item_name">आइटम का नाम</string>
     <string name="enter_item_name">आइटम का नाम दर्ज करें</string>
     <string name="item_price">आइटम की कीमत</string>

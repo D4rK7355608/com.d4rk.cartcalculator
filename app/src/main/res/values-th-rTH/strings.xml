@@ -30,7 +30,10 @@
     <string name="io_error">เกิดข้อผิดพลาดในการรับส่งข้อมูล โปรดตรวจสอบการเชื่อมต่อเครือข่ายหรือที่เก็บข้อมูลของคุณ แล้วลองอีกครั้ง</string>
     <string name="illegal_argument_error">ข้อมูลหรืออาร์กิวเมนต์ที่ป้อนไม่ถูกต้อง โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง</string>
     <string name="unknown_error">เกิดข้อผิดพลาดที่ไม่รู้จัก</string>
+
     <string name="your_shopping_cart_is_empty">รถเข็นของคุณว่างเปล่า</string>
+    <string name="in_cart">ในรถเข็น</string>
+    <string name="items_to_pick_up">รายการที่ต้องรับ</string>
     <string name="item_name">ชื่อรายการ</string>
     <string name="enter_item_name">ป้อนชื่อรายการ</string>
     <string name="item_price">ราคาสินค้า</string>
