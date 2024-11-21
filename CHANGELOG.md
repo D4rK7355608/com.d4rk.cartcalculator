@@ -1,3 +1,14 @@
+# Version 1.1.1
+
+- **New**: Improved cart screen layout to better distinguish between in-cart and pickup items.
+- **Minor**: Enhanced snack bar animations for a more engaging user experience.
+- **Minor**: Added support for Traditional Chinese.
+- **Minor**: Performed quality improvements and updated project dependencies.
+- **Minor**: Implemented a new color palette to enhance the visual consistency and aesthetics of
+  static elements within the user interface.
+- **Fix**: Fixed a bug that caused the incorrect cart to be shown when quickly accessing a freshly
+  created one.
+
 # Version 1.1.0
 
 - **New**: Integrated haptic feedback for swipe gestures, enhancing the tactile response and user

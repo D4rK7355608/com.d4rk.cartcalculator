@@ -54,7 +54,7 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.components.animations.bounceClick
 import com.d4rk.cartcalculator.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.cartcalculator.utils.IntentUtils
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.d4rk.cartcalculator.utils.rememberHtmlData
 import com.google.android.play.core.review.ReviewInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -67,6 +67,11 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     val view : View = LocalView.current
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
+
+    val htmlData = rememberHtmlData()
+    val changelogHtmlString = htmlData.value.first
+    val eulaHtmlString = htmlData.value.second
+
     if (reviewInfo != null) {
         LaunchedEffect(key1 = reviewInfo) {
             viewModel.requestReviewFlow()
@@ -145,11 +150,13 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                                              )
                                          })
                         DropdownMenuItem(modifier = Modifier.bounceClick() ,
-                                         text = { Text(text = stringResource(com.google.android.gms.oss.licenses.R.string.oss_license_title)) } ,
+                                         text = { Text(text = stringResource(R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             IntentUtils.openActivity(
-                                                 context , OssLicensesMenuActivity::class.java
+                                             IntentUtils.openLicensesScreen(
+                                                 context = context ,
+                                                 eulaHtmlString = eulaHtmlString ,
+                                                 changelogHtmlString = changelogHtmlString
                                              )
                                          })
                     }
@@ -169,8 +176,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
                                              viewModel.reviewInfo.value?.let { safeReviewInfo ->
                                                  viewModel.launchReviewFlow(
-                                                     activity ,
-                                                     safeReviewInfo
+                                                     activity , safeReviewInfo
                                                  )
                                              }
                                          } ,
@@ -180,19 +186,18 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                                                  contentDescription = null
                                              )
                                          } ,
-                                         modifier = Modifier
-                                                 .bounceClick())
+                                         modifier = Modifier.bounceClick())
         } ,
     ) { paddingValues ->
         Box(
             modifier = Modifier
-                    .padding(start = 16.dp, end = 16.dp)
+                    .padding(start = 16.dp , end = 16.dp)
                     .fillMaxSize()
                     .safeDrawingPadding()
         ) {
             Column(modifier = Modifier.padding(paddingValues)) {
                 Text(
-                    text = stringResource(id = R.string.faq),
+                    text = stringResource(id = R.string.faq) ,
                     modifier = Modifier.padding(bottom = 24.dp)
                 )
                 Card(modifier = Modifier.fillMaxWidth()) {

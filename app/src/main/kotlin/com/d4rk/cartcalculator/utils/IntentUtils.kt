@@ -3,8 +3,11 @@ package com.d4rk.cartcalculator.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.provider.Settings
+import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
+import com.mikepenz.aboutlibraries.LibsBuilder
 
 /**
  * A utility object for performing common operations such as opening URLs, activities, and app notification settings.
@@ -23,8 +26,8 @@ object IntentUtils {
      * @param context The Android context in which the URL should be opened.
      * @param url The URL to open.
      */
-    fun openUrl(context: Context, url: String) {
-        Intent(Intent.ACTION_VIEW, Uri.parse(url)).let { intent ->
+    fun openUrl(context : Context , url : String) {
+        Intent(Intent.ACTION_VIEW , Uri.parse(url)).let { intent ->
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
@@ -38,8 +41,8 @@ object IntentUtils {
      * @param context The Android context in which the activity should be opened.
      * @param activityClass The class of the activity to open.
      */
-    fun openActivity(context: Context, activityClass: Class<*>) {
-        Intent(context, activityClass).let { intent ->
+    fun openActivity(context : Context , activityClass : Class<*>) {
+        Intent(context , activityClass).let { intent ->
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
@@ -53,11 +56,19 @@ object IntentUtils {
      *
      * @param context The Android context in which the app's notification settings should be opened.
      */
-    fun openAppNotificationSettings(context: Context) {
-        val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
-            putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    fun openAppNotificationSettings(context : Context) {
+        val intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
+                putExtra(Settings.EXTRA_APP_PACKAGE , context.packageName)
+            }
         }
+        else {
+            Intent().apply {
+                action = "android.settings.APPLICATION_DETAILS_SETTINGS"
+                data = Uri.fromParts("package" , context.packageName , null)
+            }
+        }
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
     }
 
@@ -69,19 +80,19 @@ object IntentUtils {
      *
      * @param context The Android context in which the share sheet should be opened.
      */
-    fun shareApp(context: Context) {
+    fun shareApp(context : Context) {
         val shareMessage = context.getString(
-            R.string.summary_share_message,
+            R.string.summary_share_message ,
             "https://play.google.com/store/apps/details?id=${context.packageName}"
         )
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, shareMessage)
+            putExtra(Intent.EXTRA_TEXT , shareMessage)
             type = "text/plain"
         }
         context.startActivity(
             Intent.createChooser(
-                shareIntent, context.resources.getText(R.string.send_email_using)
+                shareIntent , context.resources.getText(R.string.send_email_using)
             )
         )
     }
@@ -96,7 +107,7 @@ object IntentUtils {
      *
      * @param context The Android context used to access resources and start the activity.
      */
-    fun sendEmailToDeveloper(context: Context) {
+    fun sendEmailToDeveloper(context : Context) {
         val developerEmail = "d4rk7355608@gmail.com"
         val appName = context.getString(R.string.app_name)
         val subject = context.getString(R.string.feedback_for) + appName
@@ -104,14 +115,50 @@ object IntentUtils {
 
         val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:$developerEmail")
-            putExtra(Intent.EXTRA_SUBJECT, subject)
-            putExtra(Intent.EXTRA_TEXT, body)
+            putExtra(Intent.EXTRA_SUBJECT , subject)
+            putExtra(Intent.EXTRA_TEXT , body)
         }
 
         context.startActivity(
             Intent.createChooser(
-                emailIntent, context.resources.getText(R.string.send_email_using)
+                emailIntent , context.resources.getText(R.string.send_email_using)
             )
         )
+    }
+
+    fun openLicensesScreen(
+        context : Context ,
+        eulaHtmlString : String? ,
+        changelogHtmlString : String?
+    ) {
+        LibsBuilder().withActivityTitle(
+            activityTitle = context.getString(R.string.oss_license_title)
+        ).withEdgeToEdge(asEdgeToEdge = true).withShowLoadingProgress(showLoadingProgress = true)
+                .withSearchEnabled(searchEnabled = true).withAboutIconShown(aboutShowIcon = true)
+                .withAboutAppName(
+                    aboutAppName = context.getString(R.string.app_name)
+                ).withVersionShown(showVersion = true)
+                .withAboutVersionString(aboutVersionString = "${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})")
+
+                .withLicenseShown(showLicense = true).withAboutVersionShown(aboutShowVersion = true)
+                .withAboutVersionShownName(aboutShowVersion = true)
+                .withAboutVersionShownCode(aboutShowVersion = true)
+
+                .withAboutSpecial1(
+                    aboutAppSpecial1 = context.getString(
+                        R.string.eula_title
+                    )
+                ).withAboutSpecial1Description(
+                    aboutAppSpecial1Description = eulaHtmlString
+                        ?: context.getString(R.string.loading_eula)
+                ).withAboutSpecial2(
+                    aboutAppSpecial2 = context.getString(R.string.changelog)
+                ).withAboutSpecial2Description(
+                    aboutAppSpecial2Description = changelogHtmlString
+                        ?: context.getString(R.string.loading_changelog)
+                )
+
+                .withAboutDescription(context.getString(R.string.app_short_description))
+                .activity(context)
     }
 }

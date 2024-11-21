@@ -2,10 +2,10 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googlePlayServices)
-    alias(libs.plugins.googleOssServices)
     alias(libs.plugins.googleFirebase)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.devToolsKsp)
+    alias(libs.plugins.about.libraries)
 }
 
 android {
@@ -15,7 +15,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 66
+        versionCode = 67
         versionName = "1.1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
@@ -44,11 +44,21 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            keyAlias = "key0"
+            keyPassword = "GoogleD4rK10"
+            storeFile = file("C:/Users/mihai.condrea/StudioProjects/com.d4rk.cartcalculator/app/src/main/play/keys/com.d4rk.cartcalculator.jks")
+            storePassword = "GoogleD4rK10"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
+            signingConfig = signingConfigs.getByName("release")
         }
         debug {
             isDebuggable = true
@@ -104,7 +114,6 @@ dependencies {
     implementation(dependencyNotation = libs.play.services.ads)
     implementation(dependencyNotation = libs.billing)
     implementation(dependencyNotation = libs.material)
-    implementation(dependencyNotation = libs.play.services.oss.licenses)
     implementation(dependencyNotation = libs.review.ktx)
     implementation(dependencyNotation = libs.app.update.ktx)
     implementation(dependencyNotation = libs.volley)
@@ -147,6 +156,10 @@ dependencies {
 
     // Image Compression
     implementation(dependencyNotation = libs.coil.compose)
+
+    // About
+    implementation(dependencyNotation = libs.aboutlibraries)
+    implementation(dependencyNotation = libs.core)
 
     // Test
     testImplementation(dependencyNotation = libs.junit)

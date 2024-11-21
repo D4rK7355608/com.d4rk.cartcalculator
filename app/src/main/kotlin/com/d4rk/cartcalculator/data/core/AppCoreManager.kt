@@ -2,6 +2,7 @@
 
 package com.d4rk.cartcalculator.data.core
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
@@ -34,6 +35,9 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
 
     companion object {
         lateinit var database : AppDatabase
+        @SuppressLint("StaticFieldLeak")
+        lateinit var instance: AppCoreManager
+            private set
     }
 
     private var currentStage = AppInitializationStage.DATA_STORE
@@ -41,6 +45,7 @@ class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallb
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
         database = Room.databaseBuilder(this , AppDatabase::class.java , "Cart Calculator")
