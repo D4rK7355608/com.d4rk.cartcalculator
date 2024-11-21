@@ -1,4 +1,4 @@
-# Version 1.1.1
+# Version 1.1.1:
 
 - **New**: Improved cart screen layout to better distinguish between in-cart and pickup items.
 - **Minor**: Enhanced snack bar animations for a more engaging user experience.
@@ -9,7 +9,7 @@
 - **Fix**: Fixed a bug that caused the incorrect cart to be shown when quickly accessing a freshly
   created one.
 
-# Version 1.1.0
+# Version 1.1.0:
 
 - **New**: Integrated haptic feedback for swipe gestures, enhancing the tactile response and user
   experience.
@@ -26,29 +26,29 @@
 - **Fix**: Fixed an issue where the swipe to delete action for carts could get stuck on the screen
   edge.
 
-# Version 1.0.9
+# Version 1.0.9:
 
 - **Minor**: Updated the project props, for a better implementation of the app
 
-# Version 1.0.8
+# Version 1.0.8:
 
 - **New**: Added Thai translations and currency.
 
-# Version 1.0.5
+# Version 1.0.5:
 
 - **Minor**: Updated the project props, for a better implementation of the app
 - **Minor**: Added some missing translations
 - **Fix**: Fixed the ripple effect on minus button
 
-# Version 1.0.5
+# Version 1.0.5:
 
 - **Minor**: Updated the project props, for a better implementation of the app
 
-# Version 1.0.4
+# Version 1.0.4:
 
 - **Minor**: Updated the project props, for a better implementation of the app
 
-# Version 1.0.3
+# Version 1.0.3:
 
 - **Minor**: Updated the project props, for a better implementation of the app
 - **Minor**: Updated the app libraries for better optimization
@@ -57,7 +57,7 @@
   integration
 - **Fix**: Fixed the duplicated CHF currency
 
-# Version 1.0.0
+# Version 1.0.0:
 
 - **New**: Introduced multiple carts functionality, enhancing user flexibility.
 - **New**: Implemented 'Swipe to Delete' feature for carts, improving user experience.
