@@ -23,7 +23,7 @@ object OpenSourceLicensesUtils {
 
     private suspend fun getChangelogMarkdown(): String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/$packageName}/refs/heads/jetpack_compose_rework/CHANGELOG.md")
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/CHANGELOG.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -43,7 +43,7 @@ object OpenSourceLicensesUtils {
 
     private suspend fun getEulaMarkdown(): String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/$packageName}/refs/heads/jetpack_compose_rework/EULA.md")
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/EULA.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"

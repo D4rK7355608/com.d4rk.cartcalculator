@@ -44,21 +44,11 @@ android {
         }
     }
 
-    signingConfigs {
-        create("release") {
-            keyAlias = "key0"
-            keyPassword = "GoogleD4rK10"
-            storeFile = file("C:/Users/mihai.condrea/StudioProjects/com.d4rk.cartcalculator/app/src/main/play/keys/com.d4rk.cartcalculator.jks")
-            storePassword = "GoogleD4rK10"
-        }
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-            signingConfig = signingConfigs.getByName("release")
         }
         debug {
             isDebuggable = true
