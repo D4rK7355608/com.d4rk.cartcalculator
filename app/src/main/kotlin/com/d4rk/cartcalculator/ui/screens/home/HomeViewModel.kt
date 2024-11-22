@@ -6,6 +6,7 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
 import com.d4rk.cartcalculator.ui.screens.home.repository.HomeRepository
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -30,6 +31,20 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
                 }
             }
             hideLoading()
+            initializeVisibilityStates()
+        }
+    }
+
+    private fun initializeVisibilityStates() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            delay(timeMillis = 50L)
+            _visibilityStates.value = List(_uiState.value.carts.size) { false }
+            _uiState.value.carts.indices.forEach { index ->
+                delay(timeMillis = index * 8L)
+                _visibilityStates.value = List(_visibilityStates.value.size) { lessonIndex ->
+                    lessonIndex == index || _visibilityStates.value[lessonIndex]
+                }
+            }
         }
     }
 

@@ -4,14 +4,17 @@ import android.app.Application
 import android.content.ActivityNotFoundException
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.constants.error.ErrorType
 import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.utils.error.ErrorHandler
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import java.io.FileNotFoundException
 import java.io.IOException
 
@@ -26,6 +29,9 @@ open class BaseViewModel(application: Application) : AndroidViewModel(applicatio
         Log.e("BaseViewModel", "Coroutine Exception: ", exception)
         handleError(exception)
     }
+
+    val _visibilityStates = MutableStateFlow<List<Boolean>>(emptyList())
+    val visibilityStates : StateFlow<List<Boolean>> = _visibilityStates.asStateFlow()
 
     private fun handleError(exception: Throwable) {
         val errorType: ErrorType = when (exception) {

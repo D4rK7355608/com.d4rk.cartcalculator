@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.DeleteForever
@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
+import com.d4rk.cartcalculator.ui.components.animations.animateVisibility
 import com.d4rk.cartcalculator.ui.components.animations.bounceClick
 import com.d4rk.cartcalculator.ui.components.animations.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
@@ -56,6 +57,7 @@ fun HomeScreen(
 ) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
+    val visibilityStates by viewModel.visibilityStates.collectAsState()
     val okStringResource = stringResource(id = android.R.string.ok)
 
     LaunchedEffect(uiState.showSnackbar) {
@@ -99,15 +101,26 @@ fun HomeScreen(
                                 .weight(1f)
                                 .padding(bottom = uiState.fabAdHeight)
                     ) {
-                        items(items = uiState.carts , key = { cart -> cart.cartId }) { cart ->
-                            CartItemComposable(cart ,
-                                               onDelete = { viewModel.openDeleteCartDialog(it) } ,
-                                               onCardClick = {
-                                                   view.playSoundEffect(SoundEffectConstants.CLICK)
-                                                   viewModel.openCart(cart)
-                                               } ,
-                                               uiState = uiState ,
-                                               modifier = Modifier.animateItem())
+                        itemsIndexed(
+                            items = uiState.carts,
+                            key = { _, cart -> cart.cartId }
+                        ) { index, cart ->
+                            val isVisible = visibilityStates.getOrElse(index) { false }
+                            CartItemComposable(
+                                cart = cart,
+                                onDelete = { viewModel.openDeleteCartDialog(cart) },
+                                onCardClick = {
+                                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                                    viewModel.openCart(cart)
+                                },
+                                uiState = uiState,
+                                modifier = Modifier
+                                        .animateItem()
+                                        .animateVisibility(
+                                            visible = isVisible,
+                                            index = index
+                                        )
+                            )
                         }
                     }
                 }

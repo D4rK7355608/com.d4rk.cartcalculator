@@ -1,5 +1,6 @@
 # Version 1.1.1:
 
+- **New**: Added entry animations for carts and cart items.
 - **New**: Improved cart screen layout to better distinguish between in-cart and pickup items.
 - **Minor**: Enhanced snack bar animations for a more engaging user experience.
 - **Minor**: Added support for Traditional Chinese.

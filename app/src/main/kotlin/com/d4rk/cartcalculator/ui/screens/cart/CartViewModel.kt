@@ -7,6 +7,7 @@ import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
 import com.d4rk.cartcalculator.ui.screens.cart.repository.CartRepository
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.firstOrNull
@@ -33,6 +34,20 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
                 calculateTotalPrice()
             }
             hideLoading()
+            initializeVisibilityStates()
+        }
+    }
+
+    private fun initializeVisibilityStates() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            delay(timeMillis = 50L)
+            _visibilityStates.value = List(_uiState.value.cartItems.size) { false }
+            _uiState.value.cartItems.indices.forEach { index ->
+                delay(timeMillis = index * 8L)
+                _visibilityStates.value = List(_visibilityStates.value.size) { lessonIndex ->
+                    lessonIndex == index || _visibilityStates.value[lessonIndex]
+                }
+            }
         }
     }
 

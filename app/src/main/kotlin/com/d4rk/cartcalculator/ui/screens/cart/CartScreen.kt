@@ -21,7 +21,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -68,6 +68,7 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
+import com.d4rk.cartcalculator.ui.components.animations.animateVisibility
 import com.d4rk.cartcalculator.ui.components.animations.bounceClick
 import com.d4rk.cartcalculator.ui.components.animations.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartItemAlertDialog
@@ -86,33 +87,34 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
 
     val uiState : UiCartModel by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
+    val visibilityStates by viewModel.visibilityStates.collectAsState()
 
     val dataStore = DataStore.getInstance(context)
 
     Box(modifier = Modifier.fillMaxSize()) {
-        Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,
-                 topBar = {
-                     LargeTopAppBar(title = {
-                         Text(
-                             text = uiState.cart?.name
-                                 ?: stringResource(id = R.string.shopping_cart)
-                         )
-                     } , navigationIcon = {
-                         IconButton(onClick = {
-                             activity.finish()
-                         }) {
-                             Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
-                         }
-                     } , actions = {
-                         IconButton(onClick = {
-                             viewModel.toggleOpenDialog()
-                         }) {
-                             Icon(
-                                 Icons.Outlined.AddShoppingCart , contentDescription = null ,
-                             )
-                         }
-                     } , scrollBehavior = scrollBehavior)
-                 }) { paddingValues ->
+        Scaffold(
+            modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,
+            topBar = {
+                LargeTopAppBar(title = {
+                    Text(
+                        text = uiState.cart?.name ?: stringResource(id = R.string.shopping_cart)
+                    )
+                } , navigationIcon = {
+                    IconButton(onClick = {
+                        activity.finish()
+                    }) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
+                    }
+                } , actions = {
+                    IconButton(onClick = {
+                        viewModel.toggleOpenDialog()
+                    }) {
+                        Icon(
+                            Icons.Outlined.AddShoppingCart , contentDescription = null ,
+                        )
+                    }
+                } , scrollBehavior = scrollBehavior)
+            }) { paddingValues ->
             Box(
                 modifier = Modifier
                         .padding(paddingValues)
@@ -132,7 +134,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                 }
                 else {
 
-                    val (checkedItems, uncheckedItems) = uiState.cartItems.partition { it.isChecked }
+                    val (checkedItems , uncheckedItems) = uiState.cartItems.partition { it.isChecked }
                     Box {
                         Column(
                             modifier = Modifier.fillMaxSize()
@@ -143,21 +145,27 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                                 if (checkedItems.isNotEmpty()) {
                                     item {
                                         Text(
-                                            text = stringResource(id = R.string.in_cart),
+                                            text = stringResource(id = R.string.in_cart) ,
                                             style = MaterialTheme.typography.titleMedium ,
-                                            modifier = Modifier.padding(start = 16.dp , top = 8.dp).animateItem()
+                                            modifier = Modifier
+                                                    .padding(start = 16.dp , top = 8.dp)
+                                                    .animateItem()
                                         )
                                     }
-                                    items(
-                                        items = checkedItems ,
-                                        key = { item -> item.itemId }) { cartItem ->
+                                    itemsIndexed(items = checkedItems ,
+                                                 key = { _ , item -> item.itemId }) { index , cartItem ->
+                                        val isVisible = visibilityStates.getOrElse(index) { false }
                                         CartItemComposable(
                                             viewModel = viewModel ,
                                             cartItem = cartItem ,
                                             onMinusClick = { viewModel.decreaseQuantity(cartItem) } ,
                                             onPlusClick = { viewModel.increaseQuantity(cartItem) } ,
                                             uiState = uiState ,
-                                            modifier = Modifier.animateItem()
+                                            modifier = Modifier
+                                                    .animateItem()
+                                                    .animateVisibility(
+                                                        visible = isVisible , index = index
+                                                    )
                                         )
                                     }
                                 }
@@ -165,21 +173,27 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                                 if (uncheckedItems.isNotEmpty()) {
                                     item {
                                         Text(
-                                            text = stringResource(id = R.string.items_to_pick_up),
+                                            text = stringResource(id = R.string.items_to_pick_up) ,
                                             style = MaterialTheme.typography.titleMedium ,
-                                            modifier = Modifier.padding(start = 16.dp , top = 8.dp).animateItem()
+                                            modifier = Modifier
+                                                    .padding(start = 16.dp , top = 8.dp)
+                                                    .animateItem()
                                         )
                                     }
-                                    items(
-                                        items = uncheckedItems ,
-                                        key = { item -> item.itemId }) { cartItem ->
+                                    itemsIndexed(items = uncheckedItems ,
+                                                 key = { _ , item -> item.itemId }) { index , cartItem ->
+                                        val isVisible = visibilityStates.getOrElse(index) { false }
                                         CartItemComposable(
                                             viewModel = viewModel ,
                                             cartItem = cartItem ,
                                             onMinusClick = { viewModel.decreaseQuantity(cartItem) } ,
                                             onPlusClick = { viewModel.increaseQuantity(cartItem) } ,
                                             uiState = uiState ,
-                                            modifier = Modifier.animateItem()
+                                            modifier = Modifier
+                                                    .animateItem()
+                                                    .animateVisibility(
+                                                        visible = isVisible , index = index
+                                                    )
                                         )
                                     }
                                 }
@@ -357,8 +371,7 @@ fun CartItemComposable(
                                                    view.playSoundEffect(SoundEffectConstants.CLICK)
                                                    checkedState = isChecked
                                                    viewModel.onItemCheckedChange(
-                                                       cartItem ,
-                                                       isChecked
+                                                       cartItem , isChecked
                                                    )
                                                })
                                       Column {
