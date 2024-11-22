@@ -72,6 +72,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
                 calculateTotalPrice()
             }
         }
+        initializeVisibilityStates()
     }
 
     fun increaseQuantity(cartItem : ShoppingCartItemsTable) {

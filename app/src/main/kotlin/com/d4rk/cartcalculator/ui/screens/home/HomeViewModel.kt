@@ -61,6 +61,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
                     currentState.copy(carts = (currentState.carts + addedCart).toMutableList())
                 }
             }
+            initializeVisibilityStates()
         }
     }
 
