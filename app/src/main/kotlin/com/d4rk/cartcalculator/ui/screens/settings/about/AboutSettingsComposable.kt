@@ -57,7 +57,7 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     )
                 }
                 item(key = "oss_licenses") {
-                    PreferenceItem(title = stringResource(R.string.oss_license_title) ,
+                    PreferenceItem(title = stringResource(id= R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
                                        IntentUtils.openLicensesScreen(

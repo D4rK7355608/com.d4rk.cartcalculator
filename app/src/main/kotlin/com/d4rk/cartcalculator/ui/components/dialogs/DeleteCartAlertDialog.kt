@@ -28,7 +28,7 @@ fun DeleteCartAlertDialog(
     AlertDialog(onDismissRequest = {
         onDismiss() } , title = {
         Text(
-            text = stringResource(R.string.delete_cart_title) ,
+            text = stringResource(id= R.string.delete_cart_title) ,
         )
     } , text = { DeleteCartAlertDialogContent(cart) } , confirmButton = {
         TextButton(onClick = {
@@ -56,14 +56,14 @@ fun DeleteCartAlertDialogContent(cart : ShoppingCartTable?) {
         )
         Spacer(modifier = Modifier.height(24.dp))
         Text(
-            text = stringResource(R.string.delete_cart_message) ,
+            text = stringResource(id= R.string.delete_cart_message) ,
             style = MaterialTheme.typography.bodyLarge
         )
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
         Spacer(modifier = Modifier.height(12.dp))
         Text(
-            text = stringResource(R.string.delete_cart_warning , cart?.name ?: "") ,
+            text = stringResource(id= R.string.delete_cart_warning , cart?.name ?: "") ,
             style = MaterialTheme.typography.bodyLarge
         )
     }

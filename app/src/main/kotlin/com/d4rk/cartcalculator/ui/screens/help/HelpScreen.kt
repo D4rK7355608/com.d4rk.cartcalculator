@@ -26,7 +26,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LargeTopAppBar
@@ -51,6 +50,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.ui.components.AnimatedExtendedFloatingActionButton
 import com.d4rk.cartcalculator.ui.components.animations.bounceClick
 import com.d4rk.cartcalculator.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.cartcalculator.utils.IntentUtils
@@ -150,7 +150,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                                              )
                                          })
                         DropdownMenuItem(modifier = Modifier.bounceClick() ,
-                                         text = { Text(text = stringResource(R.string.oss_license_title)) } ,
+                                         text = { Text(text = stringResource(id= R.string.oss_license_title)) } ,
                                          onClick = {
                                              view.playSoundEffect(SoundEffectConstants.CLICK)
                                              IntentUtils.openLicensesScreen(
@@ -171,22 +171,18 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 )
         } ,
         floatingActionButton = {
-            ExtendedFloatingActionButton(text = { Text(text = stringResource(id = R.string.feedback)) } ,
-                                         onClick = {
-                                             view.playSoundEffect(SoundEffectConstants.CLICK)
-                                             viewModel.reviewInfo.value?.let { safeReviewInfo ->
-                                                 viewModel.launchReviewFlow(
-                                                     activity , safeReviewInfo
-                                                 )
-                                             }
-                                         } ,
-                                         icon = {
-                                             Icon(
-                                                 Icons.Default.MailOutline ,
-                                                 contentDescription = null
-                                             )
-                                         } ,
-                                         modifier = Modifier.bounceClick())
+            AnimatedExtendedFloatingActionButton(onClick = {
+                view.playSoundEffect(SoundEffectConstants.CLICK)
+                viewModel.reviewInfo.value?.let { safeReviewInfo ->
+                    viewModel.launchReviewFlow(
+                        activity , safeReviewInfo
+                    )
+                }
+            } , text = { Text(text = stringResource(id = R.string.feedback)) } , icon = {
+                Icon(
+                    Icons.Default.MailOutline , contentDescription = null
+                )
+            })
         } ,
     ) { paddingValues ->
         Box(

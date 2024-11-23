@@ -32,12 +32,12 @@ object OpenSourceLicensesUtils {
                             return@withContext reader.readText()
                         }
                     } else {
-                        getStringResource(R.string.error_loading_changelog)
+                        getStringResource(id= R.string.error_loading_changelog)
                     }
                 } finally {
                     connection.disconnect()
                 }
-            } ?: getStringResource(R.string.error_loading_changelog)
+            } ?: getStringResource(id= R.string.error_loading_changelog)
         }
     }
 
@@ -52,12 +52,12 @@ object OpenSourceLicensesUtils {
                             return@withContext reader.readText()
                         }
                     } else {
-                        getStringResource(R.string.error_loading_eula)
+                        getStringResource(id= R.string.error_loading_eula)
                     }
                 } finally {
                     connection.disconnect()
                 }
-            } ?: getStringResource(R.string.error_loading_eula)
+            } ?: getStringResource(id= R.string.error_loading_eula)
         }
     }
 

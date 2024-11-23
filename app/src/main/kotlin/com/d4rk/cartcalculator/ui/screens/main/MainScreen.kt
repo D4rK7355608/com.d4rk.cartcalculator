@@ -12,7 +12,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AddShoppingCart
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -20,6 +19,8 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -29,8 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.components.AnimatedExtendedFloatingActionButton
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.NavigationDrawer
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarMain
 import com.d4rk.cartcalculator.ui.screens.home.HomeScreen
@@ -56,20 +57,20 @@ fun MainScreenContent(
 ) {
     val viewModel : HomeViewModel = viewModel()
     val snackbarHostState = remember { SnackbarHostState() }
+    val isFabVisible by viewModel.isFabVisible.collectAsState()
 
     Scaffold(topBar = {
-        TopAppBarMain(view = view, drawerState = drawerState, context = context, coroutineScope = coroutineScope)
+        TopAppBarMain(
+            view = view ,
+            drawerState = drawerState ,
+            context = context ,
+            coroutineScope = coroutineScope
+        )
     } , floatingActionButton = {
-        ExtendedFloatingActionButton(modifier = Modifier.bounceClick() , text = {
-            Text(
-                text = stringResource(R.string.add_new_cart)
-            )
-        } , onClick = {
-            view.playSoundEffect(
-                SoundEffectConstants.CLICK
-            )
+        AnimatedExtendedFloatingActionButton(visible = isFabVisible , onClick = {
+            view.playSoundEffect(SoundEffectConstants.CLICK)
             viewModel.openNewCartDialog()
-        } , icon = {
+        } , text = { Text(text = stringResource(id = R.string.add_new_cart)) } , icon = {
             Icon(
                 Icons.Outlined.AddShoppingCart , contentDescription = null
             )

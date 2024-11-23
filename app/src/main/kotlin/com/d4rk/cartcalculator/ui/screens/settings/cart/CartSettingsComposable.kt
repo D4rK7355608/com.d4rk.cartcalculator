@@ -30,8 +30,8 @@ fun CartSettingsComposable(activity : CartSettingsActivity) {
                     .padding(paddingValues) ,
         ) {
             item {
-                PreferenceCategoryItem(title = stringResource(R.string.shopping_cart))
-                PreferenceItem(title = stringResource(R.string.currency) ,
+                PreferenceCategoryItem(title = stringResource(id= R.string.shopping_cart))
+                PreferenceItem(title = stringResource(id= R.string.currency) ,
                                summary = stringResource(id = R.string.summary_preference_settings_currency) ,
                                onClick = { showDialog.value = true })
             }

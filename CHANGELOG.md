@@ -1,3 +1,8 @@
+# Version 1.1.2:
+
+- **Minor**: Text fields now offer a more intuitive keyboard experience.
+- **Minor**: Floating action buttons (FABs) have subtle entry animations for a smoother visual flow.
+
 # Version 1.1.1:
 
 - **New**: Added entry animations for carts and cart items.
