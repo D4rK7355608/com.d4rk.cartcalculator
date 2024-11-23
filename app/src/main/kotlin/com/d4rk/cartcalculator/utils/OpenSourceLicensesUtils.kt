@@ -19,7 +19,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 object OpenSourceLicensesUtils {
-    val packageName = BuildConfig.APPLICATION_ID
+    const val packageName = BuildConfig.APPLICATION_ID
 
     private suspend fun getChangelogMarkdown(): String {
         return withContext(Dispatchers.IO) {

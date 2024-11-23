@@ -6,18 +6,31 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
 import com.d4rk.cartcalculator.utils.IntentUtils
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class HelpViewModel(application: Application) : AndroidViewModel(application) {
+class HelpViewModel(application: Application) : BaseViewModel(application) {
 
     private var _reviewInfo: MutableState<ReviewInfo?> = mutableStateOf(value = null)
     val reviewInfo: State<ReviewInfo?> = _reviewInfo
+
+    init {
+        initializeVisibilityStates()
+    }
+
+    private fun initializeVisibilityStates() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            delay(timeMillis = 50L)
+            showFab()
+        }
+    }
 
     fun requestReviewFlow() {
         viewModelScope.launch(Dispatchers.IO) {

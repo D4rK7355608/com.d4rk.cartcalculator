@@ -45,6 +45,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
                     lessonIndex == index || _visibilityStates.value[lessonIndex]
                 }
             }
+            delay(timeMillis = 50L)
             showFab()
         }
     }

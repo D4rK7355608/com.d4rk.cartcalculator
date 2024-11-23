@@ -26,7 +26,7 @@ class HomeRepository(application : Application) :
         }
     }
 
-    suspend fun addCartRepository(cart : ShoppingCartTable , onSuccess : (ShoppingCartTable) -> Unit , ) {
+    suspend fun addCartRepository(cart : ShoppingCartTable , onSuccess : (ShoppingCartTable) -> Unit) {
         withContext(Dispatchers.IO) {
             val addedCart = addCartImplementation(cart = cart)
             withContext(Dispatchers.Main) {

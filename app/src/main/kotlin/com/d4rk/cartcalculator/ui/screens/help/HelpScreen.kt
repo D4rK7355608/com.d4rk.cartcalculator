@@ -38,6 +38,7 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -65,6 +66,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
     var showMenu : Boolean by remember { mutableStateOf(value = false) }
     val context : Context = LocalContext.current
     val view : View = LocalView.current
+    val isFabVisible by viewModel.isFabVisible.collectAsState()
     val showDialog : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val reviewInfo : ReviewInfo? = viewModel.reviewInfo.value
 
@@ -171,7 +173,9 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 )
         } ,
         floatingActionButton = {
-            AnimatedExtendedFloatingActionButton(onClick = {
+            AnimatedExtendedFloatingActionButton(
+                visible = isFabVisible,
+                onClick = {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
                 viewModel.reviewInfo.value?.let { safeReviewInfo ->
                     viewModel.launchReviewFlow(

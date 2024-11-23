@@ -209,7 +209,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                             }
 
                             AdBanner(
-                                modifier = Modifier.padding(12.dp) , dataStore = dataStore
+                                modifier = Modifier.padding(all = 12.dp) , dataStore = dataStore
                             )
 
                             Card(
@@ -364,7 +364,7 @@ fun CartItemComposable(
                           Box(
                               modifier = modifier
                                       .fillMaxWidth()
-                                      .padding(24.dp)
+                                      .padding(all = 24.dp)
                           ) {
                               Row(
                                   modifier = Modifier.fillMaxSize() ,

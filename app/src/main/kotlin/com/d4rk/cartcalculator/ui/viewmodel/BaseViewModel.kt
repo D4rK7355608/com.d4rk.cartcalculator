@@ -24,7 +24,7 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
     private val _uiErrorModel = MutableStateFlow(UiErrorModel())
     val uiErrorModel : StateFlow<UiErrorModel> = _uiErrorModel.asStateFlow()
 
-    protected val coroutineExceptionHandler = CoroutineExceptionHandler { _ , exception ->
+    protected val coroutineExceptionHandler = CoroutineExceptionHandler { _ , exception : Throwable ->
         Log.e("BaseViewModel" , "Coroutine Exception: " , exception)
         handleError(exception)
     }
@@ -32,14 +32,8 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
     val _visibilityStates = MutableStateFlow<List<Boolean>>(emptyList())
     val visibilityStates : StateFlow<List<Boolean>> = _visibilityStates.asStateFlow()
 
-    private val _isFabVisible = MutableStateFlow(false)
+    private val _isFabVisible = MutableStateFlow(value= false)
     val isFabVisible : StateFlow<Boolean> = _isFabVisible.asStateFlow()
-
-    protected fun showFab() {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            _isFabVisible.value = true
-        }
-    }
 
     private fun handleError(exception : Throwable) {
         viewModelScope.launch(coroutineExceptionHandler) {
@@ -81,6 +75,12 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
     protected fun hideLoading() {
         viewModelScope.launch(coroutineExceptionHandler) {
             _isLoading.value = false
+        }
+    }
+
+    protected fun showFab() {
+        viewModelScope.launch(coroutineExceptionHandler) {
+            _isFabVisible.value = true
         }
     }
 }

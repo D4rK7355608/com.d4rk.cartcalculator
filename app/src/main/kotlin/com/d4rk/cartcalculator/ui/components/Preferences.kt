@@ -51,7 +51,7 @@ fun SwitchCardComposable(
     val view : View = LocalView.current
     Card(modifier = Modifier
             .fillMaxWidth()
-            .padding(24.dp)
+            .padding(all = 24.dp)
             .clip(RoundedCornerShape(28.dp))
             .clickable {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
@@ -60,7 +60,7 @@ fun SwitchCardComposable(
         Row(
             modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp) ,
+                    .padding(all = 16.dp) ,
             horizontalArrangement = Arrangement.SpaceBetween ,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -161,7 +161,7 @@ fun PreferenceItem(
             Icon(it , contentDescription = null)
         }
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(all = 16.dp)
         ) {
             title?.let {
                 Text(
@@ -218,7 +218,7 @@ fun SwitchPreferenceItem(
         }
         Column(
             modifier = Modifier
-                    .padding(16.dp)
+                    .padding(all = 16.dp)
                     .weight(1f)
         ) {
             Text(text = title , style = MaterialTheme.typography.titleLarge)
@@ -229,7 +229,7 @@ fun SwitchPreferenceItem(
         Switch(
             checked = checked , onCheckedChange = { isChecked ->
                 onCheckedChange(isChecked)
-            } , modifier = Modifier.padding(16.dp)
+            } , modifier = Modifier.padding(all = 16.dp)
         )
     }
 }
@@ -276,7 +276,7 @@ fun SwitchPreferenceItemWithDivider(
         }
         Column(
             modifier = Modifier
-                    .padding(16.dp)
+                    .padding(all = 16.dp)
                     .weight(1f)
         ) {
             Text(text = title , style = MaterialTheme.typography.titleLarge)
@@ -293,6 +293,6 @@ fun SwitchPreferenceItemWithDivider(
         Switch(checked = checked , onCheckedChange = { isChecked ->
             onCheckedChange(isChecked)
             onSwitchClick(isChecked)
-        } , modifier = Modifier.padding(16.dp))
+        } , modifier = Modifier.padding(all = 16.dp))
     }
 }
