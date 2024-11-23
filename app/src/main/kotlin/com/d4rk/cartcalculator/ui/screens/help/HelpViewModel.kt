@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
 import com.d4rk.cartcalculator.utils.IntentUtils
@@ -27,7 +26,7 @@ class HelpViewModel(application: Application) : BaseViewModel(application) {
 
     private fun initializeVisibilityStates() {
         viewModelScope.launch(coroutineExceptionHandler) {
-            delay(timeMillis = 50L)
+            delay(timeMillis = 100L)
             showFab()
         }
     }

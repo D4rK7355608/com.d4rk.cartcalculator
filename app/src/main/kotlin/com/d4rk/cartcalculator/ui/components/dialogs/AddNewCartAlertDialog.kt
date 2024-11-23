@@ -88,4 +88,6 @@ fun AddNewCartAlertDialogContent(
         Spacer(modifier = Modifier.height(12.dp))
         Text(text = stringResource(id = R.string.summary_cart_dialog))
     }
+    newCart.value =
+            ShoppingCartTable(name = nameText.value.ifEmpty { defaultName } , date = currentDate)
 }
