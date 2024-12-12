@@ -38,7 +38,7 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.components.ads.LargeBannerAdsComposable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.utils.IntentUtils
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 
 @Composable

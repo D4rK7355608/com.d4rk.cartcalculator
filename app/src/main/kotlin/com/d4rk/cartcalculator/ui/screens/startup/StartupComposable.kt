@@ -37,7 +37,7 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.screens.main.MainActivity
 import com.d4rk.cartcalculator.utils.IntentUtils
 import com.d4rk.cartcalculator.utils.PermissionsUtils
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffold
 
 @Composable

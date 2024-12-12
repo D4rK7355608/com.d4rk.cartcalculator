@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.ui.components.SwitchCardComposable
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

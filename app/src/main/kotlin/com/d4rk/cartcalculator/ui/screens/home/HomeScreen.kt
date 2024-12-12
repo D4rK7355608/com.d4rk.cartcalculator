@@ -40,9 +40,9 @@ import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
-import com.d4rk.cartcalculator.ui.components.animations.animateVisibility
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
-import com.d4rk.cartcalculator.ui.components.animations.hapticSwipeToDismissBox
+import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
 import java.text.SimpleDateFormat

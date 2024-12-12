@@ -70,6 +70,7 @@ fun AddNewCartAlertDialogContent(
 
     Column {
         OutlinedTextField(value = nameText.value ,
+                          singleLine = true ,
                           onValueChange = { nameText.value = it } ,
                           label = { Text(text = stringResource(id = R.string.cart_name)) } ,
                           keyboardOptions = KeyboardOptions(

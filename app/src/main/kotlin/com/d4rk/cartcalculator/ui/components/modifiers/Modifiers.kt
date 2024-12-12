@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.ui.components.animations
+package com.d4rk.cartcalculator.ui.components.modifiers
 
 import android.content.Context
 import androidx.compose.animation.core.animateFloatAsState

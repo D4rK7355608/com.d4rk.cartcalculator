@@ -1,3 +1,14 @@
+# Version 1.1.3:
+
+- **Fix**: Prevented users from navigating back to the onboarding screen after accepting the terms
+  and conditions on a fresh install.
+- **Fix**: Fixed an issue where text inputs would grow vertically when the user pressed enter
+  repeatedly.
+- **Minor**: Updated project dependencies to their latest versions.
+- **Minor**: Removed unused project dependencies to reduce build size and potential conflicts.
+- **Fix**: Corrected the privacy settings title from "Settings" to its proper name.
+- **Minor**: Removed unused resources to further optimize the application.
+
 # Version 1.1.2:
 
 - **Minor**: Text fields now offer a more intuitive keyboard experience.

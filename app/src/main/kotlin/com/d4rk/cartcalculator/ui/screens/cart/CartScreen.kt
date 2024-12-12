@@ -69,9 +69,9 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
-import com.d4rk.cartcalculator.ui.components.animations.animateVisibility
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
-import com.d4rk.cartcalculator.ui.components.animations.hapticSwipeToDismissBox
+import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartItemAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartItemAlertDialog
 import java.util.Locale

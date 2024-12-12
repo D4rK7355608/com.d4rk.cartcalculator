@@ -15,8 +15,8 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 75
-        versionName = "1.1.2"
+        versionCode = 76
+        versionName = "1.1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resourceConfigurations += listOf(
             "en" ,
@@ -94,19 +94,13 @@ android {
 }
 
 dependencies {
-    // Firebase
-    implementation(dependencyNotation = platform(libs.firebase.bom))
-    implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
-    implementation(dependencyNotation = libs.firebase.analytics.ktx)
-    implementation(dependencyNotation = libs.firebase.perf)
 
-    // Google
-    implementation(dependencyNotation = libs.play.services.ads)
-    implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.material)
-    implementation(dependencyNotation = libs.review.ktx)
-    implementation(dependencyNotation = libs.app.update.ktx)
-    implementation(dependencyNotation = libs.volley)
+    // AndroidX
+    implementation(dependencyNotation = libs.androidx.core.ktx)
+    implementation(dependencyNotation = libs.androidx.appcompat)
+    implementation(dependencyNotation = libs.androidx.core.splashscreen)
+    implementation(dependencyNotation = libs.androidx.multidex)
+    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
 
     // Compose
     implementation(dependencyNotation = platform(libs.androidx.compose.bom))
@@ -124,38 +118,40 @@ dependencies {
     implementation(dependencyNotation = libs.androidx.datastore.preferences)
     implementation(dependencyNotation = libs.androidx.navigation.compose)
 
-    // AndroidX
-    implementation(dependencyNotation = libs.androidx.core.ktx)
-    implementation(dependencyNotation = libs.androidx.appcompat)
-    implementation(dependencyNotation = libs.androidx.core.splashscreen)
+    // Firebase
+    implementation(dependencyNotation = platform(libs.firebase.bom))
+    implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
+    implementation(dependencyNotation = libs.firebase.analytics.ktx)
+    implementation(dependencyNotation = libs.firebase.perf)
+
+    // Google
+    implementation(dependencyNotation = libs.play.services.ads)
+    implementation(dependencyNotation = libs.billing)
+    implementation(dependencyNotation = libs.material)
+    implementation(dependencyNotation = libs.review.ktx)
+    implementation(dependencyNotation = libs.app.update.ktx)
+    implementation(dependencyNotation = libs.volley)
+
+    // Images
+    implementation(dependencyNotation = libs.coil.compose)
+
+    // Lifecycle
     implementation(dependencyNotation = libs.androidx.lifecycle.runtime.ktx)
-    implementation(dependencyNotation = libs.androidx.lifecycle.process)
-    implementation(dependencyNotation = libs.androidx.lifecycle.common.java8)
     implementation(dependencyNotation = libs.androidx.lifecycle.livedata.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.process)
     implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(dependencyNotation = libs.androidx.multidex)
-    implementation(dependencyNotation = libs.androidx.work.runtime.ktx)
+    implementation(dependencyNotation = libs.androidx.lifecycle.viewmodel.compose)
+    implementation(dependencyNotation = libs.androidx.lifecycle.runtime.compose)
+
+    // Kotlin
+    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)
     implementation(dependencyNotation = libs.androidx.room.ktx)
     implementation(dependencyNotation = libs.androidx.room.runtime)
 
-    // Kotlin
-    implementation(dependencyNotation = libs.kotlinx.coroutines.android)
-
-    // Image Compression
-    implementation(dependencyNotation = libs.coil.compose)
-
     // About
     implementation(dependencyNotation = libs.aboutlibraries)
     implementation(dependencyNotation = libs.core)
-
-    // Test
-    testImplementation(dependencyNotation = libs.junit)
-    androidTestImplementation(dependencyNotation = libs.androidx.junit)
-    androidTestImplementation(dependencyNotation = libs.androidx.espresso.core)
-    androidTestImplementation(dependencyNotation = libs.ui.test.junit4)
-    debugImplementation(dependencyNotation = libs.androidx.ui.tooling)
-    debugImplementation(dependencyNotation = libs.androidx.ui.test.manifest)
 }

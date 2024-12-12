@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.utils
 
-import android.app.Application
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
@@ -19,11 +18,11 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 object OpenSourceLicensesUtils {
-    const val packageName = BuildConfig.APPLICATION_ID
+    private const val PACKAGE_NAME = BuildConfig.APPLICATION_ID
 
     private suspend fun getChangelogMarkdown(): String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/CHANGELOG.md")
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$PACKAGE_NAME/refs/heads/master/CHANGELOG.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"
@@ -43,7 +42,7 @@ object OpenSourceLicensesUtils {
 
     private suspend fun getEulaMarkdown(): String {
         return withContext(Dispatchers.IO) {
-            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$packageName/refs/heads/master/EULA.md")
+            val url = URL("https://raw.githubusercontent.com/D4rK7355608/$PACKAGE_NAME/refs/heads/master/EULA.md")
             (url.openConnection() as? HttpURLConnection)?.let { connection ->
                 try {
                     connection.requestMethod = "GET"

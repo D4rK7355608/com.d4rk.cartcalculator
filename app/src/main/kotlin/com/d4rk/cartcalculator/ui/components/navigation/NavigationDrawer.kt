@@ -28,8 +28,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
-import com.d4rk.cartcalculator.ui.components.animations.hapticDrawerSwipe
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.hapticDrawerSwipe
 import com.d4rk.cartcalculator.ui.screens.help.HelpActivity
 import com.d4rk.cartcalculator.ui.screens.main.MainScreenContent
 import com.d4rk.cartcalculator.utils.IntentUtils
@@ -118,11 +118,6 @@ fun NavigationDrawer(
                                                                    item.selectedIcon ,
                                                                    contentDescription = title
                                                                )
-                                                           } ,
-                                                           badge = {
-                                                               item.badgeText.isNotBlank().let {
-                                                                   Text(text = item.badgeText)
-                                                               }
                                                            } ,
                                                            modifier = Modifier
                                                                    .padding(

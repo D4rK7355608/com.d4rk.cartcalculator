@@ -25,7 +25,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.screens.support.SupportActivity
 import com.d4rk.cartcalculator.utils.IntentUtils
 import kotlinx.coroutines.CoroutineScope

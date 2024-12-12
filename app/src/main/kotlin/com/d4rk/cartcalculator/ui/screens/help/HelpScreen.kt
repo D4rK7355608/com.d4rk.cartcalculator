@@ -52,7 +52,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.components.AnimatedExtendedFloatingActionButton
-import com.d4rk.cartcalculator.ui.components.animations.bounceClick
+import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.cartcalculator.utils.IntentUtils
 import com.d4rk.cartcalculator.utils.rememberHtmlData
