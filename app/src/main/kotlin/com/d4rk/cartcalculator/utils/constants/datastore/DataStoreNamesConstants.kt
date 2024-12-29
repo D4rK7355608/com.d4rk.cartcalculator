@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.constants.datastore
+package com.d4rk.cartcalculator.utils.constants.datastore
 
 object DataStoreNamesConstants {
     const val DATA_STORE_SETTINGS = "settings"

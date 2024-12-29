@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.ui.components.modifiers
 
-import android.content.Context
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -23,10 +22,10 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.button.ButtonState
 
@@ -35,8 +34,7 @@ fun Modifier.bounceClick(
     animationEnabled : Boolean = true ,
 ) : Modifier = composed {
     var buttonState : ButtonState by remember { mutableStateOf(ButtonState.Idle) }
-    val context : Context = LocalContext.current
-    val dataStore : DataStore = DataStore.getInstance(context = context)
+    val dataStore : DataStore = AppCoreManager.dataStore
     val bouncyButtonsEnabled : Boolean by dataStore.bouncyButtons.collectAsState(initial = true)
     val scale : Float by animateFloatAsState(
         if (buttonState == ButtonState.Pressed && animationEnabled && bouncyButtonsEnabled) 0.96f else 1f ,

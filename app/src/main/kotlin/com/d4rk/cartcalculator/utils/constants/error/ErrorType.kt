@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.constants.error
+package com.d4rk.cartcalculator.utils.constants.error
 
 enum class ErrorType {
     FILE_NOT_FOUND,

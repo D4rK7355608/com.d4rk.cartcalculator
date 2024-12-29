@@ -10,7 +10,7 @@ import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsMana
 import com.d4rk.cartcalculator.ui.screens.main.repository.MainRepository
 import com.d4rk.cartcalculator.ui.screens.startup.StartupActivity
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
-import com.d4rk.cartcalculator.utils.IntentUtils
+import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import com.google.android.play.core.appupdate.AppUpdateManager
 import kotlinx.coroutines.launch
 
@@ -42,7 +42,7 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
         viewModelScope.launch(coroutineExceptionHandler) {
             repository.checkAndHandleStartup { isFirstTime ->
                 if (isFirstTime) {
-                    IntentUtils.openActivity(getApplication() , StartupActivity::class.java)
+                    IntentsHelper.openActivity(getApplication() , StartupActivity::class.java)
                 }
             }
         }

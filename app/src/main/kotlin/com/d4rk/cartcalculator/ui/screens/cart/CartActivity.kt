@@ -9,13 +9,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.ui.screens.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
 
 class CartActivity : AppCompatActivity() {
     private val viewModel : CartViewModel by viewModels()
-    val dataStore = DataStore.getInstance(this)
+    val dataStore = AppCoreManager.dataStore
     private var cartId : Int = 0
 
     override fun onCreate(savedInstanceState : Bundle?) {

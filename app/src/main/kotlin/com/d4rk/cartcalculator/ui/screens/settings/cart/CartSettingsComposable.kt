@@ -11,16 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.ui.components.PreferenceCategoryItem
-import com.d4rk.cartcalculator.ui.components.PreferenceItem
+import com.d4rk.cartcalculator.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.cartcalculator.ui.components.preferences.PreferenceItem
 import com.d4rk.cartcalculator.ui.components.dialogs.SelectCurrencyAlertDialog
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 
 @Composable
 fun CartSettingsComposable(activity : CartSettingsActivity) {
     val context : Context = LocalContext.current
-    val dataStore = DataStore.getInstance(context)
+    val dataStore = AppCoreManager.dataStore
     val showDialog = remember { mutableStateOf(value = false) }
     TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.cart_settings) ,
                                     onBackClicked = { activity.finish() }) { paddingValues ->

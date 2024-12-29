@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.constants.error.ErrorType
+import com.d4rk.cartcalculator.utils.constants.error.ErrorType
 import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.utils.error.ErrorHandler
 import kotlinx.coroutines.CoroutineExceptionHandler

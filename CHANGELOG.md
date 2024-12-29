@@ -1,3 +1,7 @@
+# Version 1.1.4:
+
+- **Minor**: Small optimizations to ad initialization.
+
 # Version 1.1.3:
 
 - **Fix**: Prevented users from navigating back to the onboarding screen after accepting the terms

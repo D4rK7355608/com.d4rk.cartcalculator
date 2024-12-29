@@ -5,99 +5,177 @@ package com.d4rk.cartcalculator.data.core
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
+import android.database.sqlite.SQLiteException
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.multidex.MultiDexApplication
 import androidx.room.Room
+import androidx.room.migration.Migration
 import com.d4rk.cartcalculator.data.core.ads.AdsCoreManager
 import com.d4rk.cartcalculator.data.core.datastore.DataStoreCoreManager
 import com.d4rk.cartcalculator.data.database.AppDatabase
-import com.d4rk.cartcalculator.data.database.AppDatabase.Companion.MIGRATION_2_3
+import com.d4rk.cartcalculator.data.database.migrations.MIGRATION_2_3
+import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.utils.error.ErrorHandler.handleInitializationFailure
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
 
-class AppCoreManager : MultiDexApplication(), Application.ActivityLifecycleCallbacks,
+class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCallbacks ,
     LifecycleObserver {
 
-    private val dataStoreCoreManager: DataStoreCoreManager =
+    private val dataStoreCoreManager by lazy {
         DataStoreCoreManager(context = this)
-    private val adsCoreManager: AdsCoreManager =
+    }
+
+    private val adsCoreManager by lazy {
         AdsCoreManager(context = this)
-
-    private enum class AppInitializationStage {
-        DATA_STORE,
-        ADS
     }
 
-    companion object {
-        lateinit var database : AppDatabase
-        @SuppressLint("StaticFieldLeak")
-        lateinit var instance: AppCoreManager
-            private set
-    }
-
-    private var currentStage = AppInitializationStage.DATA_STORE
-    private var isAppLoaded = false
+    private var currentActivity : Activity? = null
 
     override fun onCreate() {
         super.onCreate()
         instance = this
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
-        database = Room.databaseBuilder(this , AppDatabase::class.java , "Cart Calculator")
-                .addMigrations(MIGRATION_2_3)
-                .build()
-        CoroutineScope(Dispatchers.Main).launch {
-            if (dataStoreCoreManager.initializeDataStore()) {
-                proceedToNextStage()
-            }
+        CoroutineScope(context = Dispatchers.IO).launch {
+            initializeApp()
         }
     }
 
-    private fun proceedToNextStage() {
-        when (currentStage) {
-            AppInitializationStage.DATA_STORE -> {
-                currentStage = AppInitializationStage.ADS
-                adsCoreManager.setDataStore(dataStoreCoreManager.dataStore)
-                adsCoreManager.initializeAds()
-                markAppAsLoaded()
-            }
+    private suspend fun initializeApp() = supervisorScope  {
+        val dataBase = async { initializeDatabase() }
+        val dataStore = async { initializeDataStore() }
 
-            else -> {
-                // All stages completed
-            }
+        dataBase.await()
+        dataStore.await()
+
+        adsCoreManager.initializeAds()
+
+        initializeAds()
+        finalizeInitialization()
+    }
+
+    private suspend fun initializeDatabase() {
+        runCatching {
+            database = Room.databaseBuilder(
+                context = this@AppCoreManager,
+                klass = AppDatabase::class.java,
+                name = "Android Studio Tutorials"
+            )
+                    .addMigrations(migrations = getMigrations())
+                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigrationOnDowngrade()
+                    .build()
+
+            database.openHelper.writableDatabase
+        }.onFailure {
+            handleDatabaseError(exception = it as Exception)
         }
     }
 
-    fun isAppLoaded(): Boolean {
-        return isAppLoaded
+    private fun getMigrations() : Array<Migration> {
+        return arrayOf(
+            MIGRATION_2_3 ,
+        )
+    }
+
+    private suspend fun initializeDataStore() {
+        runCatching {
+            dataStore = DataStore.getInstance(context = this@AppCoreManager)
+            dataStoreCoreManager.initializeDataStore()
+        }.onFailure {
+            handleInitializationFailure(
+                message = "DataStore initialization failed" ,
+                exception = it as Exception ,
+                applicationContext = applicationContext
+            )
+        }
+    }
+
+    private fun initializeAds() {
+        runCatching {
+            adsCoreManager.initializeAds()
+        }.onFailure {
+            handleInitializationFailure(
+                message = "Ads initialization failed" ,
+                exception = it as Exception ,
+                applicationContext = applicationContext
+            )
+        }
+    }
+
+    private fun finalizeInitialization() {
+        markAppAsLoaded()
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun onMoveToForeground() {
+        currentActivity?.let { adsCoreManager.showAdIfAvailable(activity = it) }
+    }
+
+    private suspend fun handleDatabaseError(exception : Exception) {
+        if (exception is SQLiteException || (exception is IllegalStateException && exception.message?.contains(other = "Migration failed") == true)) {
+            eraseDatabase()
+        }
+    }
+
+    private suspend fun eraseDatabase() {
+        runCatching {
+            deleteDatabase("Android Studio Tutorials")
+        }.onSuccess {
+            initializeDatabase()
+        }.onFailure {
+            logDatabaseError(exception = it as Exception)
+        }
+    }
+
+    private fun logDatabaseError(exception : Exception) {
+        Log.e("AppCoreManager" , "Database error: ${exception.message}" , exception)
     }
 
     private fun markAppAsLoaded() {
         isAppLoaded = true
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onMoveToForeground() {
-        currentActivity?.let { adsCoreManager.showAdIfAvailable(it) }
+    fun isAppLoaded() : Boolean {
+        return isAppLoaded
     }
 
-    private var currentActivity: Activity? = null
+    override fun onActivityCreated(activity : Activity , savedInstanceState : Bundle?) {}
 
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
-    override fun onActivityStarted(activity: Activity) {
-        if (!adsCoreManager.isShowingAd) {
+    override fun onActivityStarted(activity : Activity) {
+        if (! adsCoreManager.isShowingAd) {
             currentActivity = activity
         }
     }
 
-    override fun onActivityResumed(activity: Activity) {}
-    override fun onActivityPaused(activity: Activity) {}
-    override fun onActivityStopped(activity: Activity) {}
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
-    override fun onActivityDestroyed(activity: Activity) {}
+    override fun onActivityResumed(activity : Activity) {}
+    override fun onActivityPaused(activity : Activity) {}
+    override fun onActivityStopped(activity : Activity) {}
+    override fun onActivitySaveInstanceState(activity : Activity , outState : Bundle) {}
+    override fun onActivityDestroyed(activity : Activity) {}
+
+    companion object {
+
+        lateinit var dataStore : DataStore
+            private set
+
+        lateinit var database : AppDatabase
+            private set
+
+        @SuppressLint("StaticFieldLeak")
+        lateinit var instance : AppCoreManager
+            private set
+
+        var isAppLoaded : Boolean = false
+            private set
+    }
 }

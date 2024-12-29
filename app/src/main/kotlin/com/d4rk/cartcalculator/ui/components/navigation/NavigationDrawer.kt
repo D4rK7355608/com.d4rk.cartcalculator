@@ -32,7 +32,7 @@ import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticDrawerSwipe
 import com.d4rk.cartcalculator.ui.screens.help.HelpActivity
 import com.d4rk.cartcalculator.ui.screens.main.MainScreenContent
-import com.d4rk.cartcalculator.utils.IntentUtils
+import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -78,7 +78,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.openActivity(
+                                                                       IntentsHelper.openActivity(
                                                                            context ,
                                                                            com.d4rk.cartcalculator.ui.screens.settings.SettingsActivity::class.java
                                                                        )
@@ -88,7 +88,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.openActivity(
+                                                                       IntentsHelper.openActivity(
                                                                            context ,
                                                                            HelpActivity::class.java
                                                                        )
@@ -98,7 +98,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.openUrl(
+                                                                       IntentsHelper.openUrl(
                                                                            context ,
                                                                            url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
                                                                        )
@@ -108,7 +108,7 @@ fun NavigationDrawer(
                                                                        view.playSoundEffect(
                                                                            SoundEffectConstants.CLICK
                                                                        )
-                                                                       IntentUtils.shareApp(context)
+                                                                       IntentsHelper.shareApp(context)
                                                                    }
                                                                }
                                                                coroutineScope.launch { drawerState.close() }

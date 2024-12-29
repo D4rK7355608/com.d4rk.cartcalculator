@@ -65,6 +65,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
@@ -90,7 +91,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val visibilityStates by viewModel.visibilityStates.collectAsState()
 
-    val dataStore = DataStore.getInstance(context)
+    val dataStore = AppCoreManager.dataStore
 
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,

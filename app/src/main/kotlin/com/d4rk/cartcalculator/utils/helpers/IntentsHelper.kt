@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.utils
+package com.d4rk.cartcalculator.utils.helpers
 
 import android.content.Context
 import android.content.Intent
@@ -15,7 +15,7 @@ import com.mikepenz.aboutlibraries.LibsBuilder
  * This object provides functions to open a URL in the default browser, open an activity, and open the app's notification settings.
  * All operations are performed in the context of an Android application.
  */
-object IntentUtils {
+object IntentsHelper {
 
     /**
      * Opens a specified URL in the default browser.

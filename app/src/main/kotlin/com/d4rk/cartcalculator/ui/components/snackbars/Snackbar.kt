@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.ui.components
+package com.d4rk.cartcalculator.ui.components.snackbars
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

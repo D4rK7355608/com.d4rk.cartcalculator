@@ -1,11 +1,11 @@
-package com.d4rk.cartcalculator.utils
+package com.d4rk.cartcalculator.utils.helpers
 
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.os.Build
 
-object ClipboardUtil {
+object ClipboardHelper {
     fun copyTextToClipboard(
         context : Context , label : String , text : String , onShowSnackbar : () -> Unit = {}
     ) {

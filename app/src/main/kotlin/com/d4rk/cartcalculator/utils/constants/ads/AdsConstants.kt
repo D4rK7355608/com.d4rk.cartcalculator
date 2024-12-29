@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.constants.ads
+package com.d4rk.cartcalculator.utils.constants.ads
 
 import com.d4rk.cartcalculator.BuildConfig
 
