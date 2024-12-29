@@ -29,10 +29,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
+import com.d4rk.cartcalculator.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.cartcalculator.ui.components.navigation.NavigationDrawer
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarMain
 import com.d4rk.cartcalculator.ui.screens.home.HomeScreen
@@ -40,7 +38,7 @@ import com.d4rk.cartcalculator.ui.screens.home.HomeViewModel
 import kotlinx.coroutines.CoroutineScope
 
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModel : MainViewModel) {
     val drawerState : DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val context : Context = LocalContext.current
     val view : View = LocalView.current
@@ -49,6 +47,7 @@ fun MainScreen() {
         drawerState = drawerState ,
         view = view ,
         context = context ,
+        viewModel = viewModel
     )
 }
 
@@ -57,8 +56,8 @@ fun MainScreenContent(
     view : View , drawerState : DrawerState , context : Context , coroutineScope : CoroutineScope
 ) {
     val viewModel : HomeViewModel = viewModel()
-    val snackbarHostState = remember { SnackbarHostState() }
-    val isFabVisible by viewModel.isFabVisible.collectAsState()
+    val snackbarHostState : SnackbarHostState = remember { SnackbarHostState() }
+    val isFabVisible : Boolean by viewModel.isFabVisible.collectAsState()
 
     Scaffold(topBar = {
         TopAppBarMain(
@@ -79,16 +78,15 @@ fun MainScreenContent(
     } , snackbarHost = {
         SnackbarHost(hostState = snackbarHostState)
     } , bottomBar = {
-        val dataStore = AppCoreManager.dataStore
         AdBanner(
-            dataStore = dataStore , modifier = Modifier.padding(
+          modifier = Modifier.padding(
                 bottom = (WindowInsets.navigationBars.asPaddingValues()
                         .calculateBottomPadding() + 8.dp)
             )
         )
     }) { paddingValues ->
         Box(
-            modifier = Modifier.padding(paddingValues)
+            modifier = Modifier.padding(paddingValues = paddingValues)
         ) {
             HomeScreen(
                 context = context ,

@@ -4,11 +4,8 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -21,6 +18,8 @@ import coil.ImageLoader
 import coil.compose.AsyncImage
 import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.ui.components.spacers.LargeHorizontalSpacer
+import com.d4rk.cartcalculator.ui.components.spacers.LargeVerticalSpacer
 
 @Composable
 fun VersionInfoAlertDialog(onDismiss : () -> Unit) {
@@ -47,17 +46,17 @@ fun VersionInfoAlertDialogContent() {
             modifier = Modifier.size(48.dp) ,
             imageLoader = imageLoader
         )
-        Spacer(modifier = Modifier.width(16.dp))
+        LargeHorizontalSpacer()
         Column {
             Text(
-                text = context.getString(R.string.app_full_name) ,
+                text = context.getString(R.string.app_name) ,
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
                 text = stringResource(id = R.string.version , BuildConfig.VERSION_NAME) ,
                 style = MaterialTheme.typography.bodyMedium
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            LargeVerticalSpacer()
             Text(
                 text = copyright , style = MaterialTheme.typography.bodyMedium
             )

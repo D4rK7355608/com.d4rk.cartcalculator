@@ -12,11 +12,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceItem
 import com.d4rk.cartcalculator.ui.components.dialogs.SelectCurrencyAlertDialog
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
+import com.d4rk.cartcalculator.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.cartcalculator.ui.components.preferences.PreferenceItem
 
 @Composable
 fun CartSettingsComposable(activity : CartSettingsActivity) {

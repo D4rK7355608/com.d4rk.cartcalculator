@@ -22,6 +22,7 @@ import com.d4rk.cartcalculator.data.database.migrations.MIGRATION_2_3
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.utils.error.ErrorHandler.handleInitializationFailure
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -51,8 +52,8 @@ class AppCoreManager : MultiDexApplication() , Application.ActivityLifecycleCall
     }
 
     private suspend fun initializeApp() = supervisorScope  {
-        val dataBase = async { initializeDatabase() }
-        val dataStore = async { initializeDataStore() }
+        val dataBase : Deferred<Unit> = async { initializeDatabase() }
+        val dataStore : Deferred<Unit> = async { initializeDataStore() }
 
         dataBase.await()
         dataStore.await()

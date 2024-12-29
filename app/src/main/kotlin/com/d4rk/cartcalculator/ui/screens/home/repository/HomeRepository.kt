@@ -10,7 +10,7 @@ class HomeRepository(application : Application) :
 
     suspend fun loadCartsRepository(onSuccess : (List<ShoppingCartTable>) -> Unit) {
         withContext(Dispatchers.IO) {
-            val carts = loadCartsImplementation()
+            val carts : List<ShoppingCartTable> = loadCartsImplementation()
             withContext(Dispatchers.Main) {
                 onSuccess(carts)
             }
@@ -28,7 +28,7 @@ class HomeRepository(application : Application) :
 
     suspend fun addCartRepository(cart : ShoppingCartTable , onSuccess : (ShoppingCartTable) -> Unit) {
         withContext(Dispatchers.IO) {
-            val addedCart = addCartImplementation(cart = cart)
+            val addedCart : ShoppingCartTable = addCartImplementation(cart = cart)
             withContext(Dispatchers.Main) {
                 onSuccess(addedCart)
             }

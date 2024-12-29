@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeViewModel(application : Application) : BaseViewModel(application) {
-    private val repository = HomeRepository(application = application)
+    private val repository : HomeRepository = HomeRepository(application = application)
 
-    private val _uiState = MutableStateFlow(UiHomeModel())
+    private val _uiState : MutableStateFlow<UiHomeModel> = MutableStateFlow(UiHomeModel())
     val uiState : StateFlow<UiHomeModel> = _uiState
 
     init {
@@ -23,7 +23,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     private fun loadCarts() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
             repository.loadCartsRepository { carts ->
                 _uiState.update { currentState ->
@@ -36,12 +36,12 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     private fun initializeVisibilityStates() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             delay(timeMillis = 50L)
-            _visibilityStates.value = List(_uiState.value.carts.size) { false }
+            _visibilityStates.value = List(size = _uiState.value.carts.size) { false }
             _uiState.value.carts.indices.forEach { index ->
                 delay(timeMillis = index * 8L)
-                _visibilityStates.value = List(_visibilityStates.value.size) { lessonIndex ->
+                _visibilityStates.value = List(size = _visibilityStates.value.size) { lessonIndex ->
                     lessonIndex == index || _visibilityStates.value[lessonIndex]
                 }
             }
@@ -51,14 +51,14 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun openCart(cart : ShoppingCartTable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.openCartRepository(cart = cart) {}
         }
     }
 
     fun addCart(cart : ShoppingCartTable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.addCartRepository(cart) { addedCart ->
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.addCartRepository(cart = cart) { addedCart ->
                 _uiState.update { currentState ->
                     currentState.copy(carts = (currentState.carts + addedCart).toMutableList())
                 }
@@ -71,7 +71,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
         viewModelScope.launch(coroutineExceptionHandler) {
             repository.deleteCartRepository(cart = cartToDelete) {
                 _uiState.update { currentState ->
-                    val newList = currentState.carts.toMutableList()
+                    val newList : MutableList<ShoppingCartTable> = currentState.carts.toMutableList()
                     newList.remove(element = cartToDelete)
                     return@update currentState.copy(carts = newList)
                 }
@@ -80,7 +80,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun openDeleteCartDialog(cart : ShoppingCartTable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(showDeleteCartDialog = true , cartToDelete = cart)
             }
@@ -88,7 +88,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun dismissDeleteCartDialog() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(showDeleteCartDialog = false)
             }
@@ -96,7 +96,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun openNewCartDialog() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(showCreateCartDialog = true)
             }
@@ -104,7 +104,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun dismissNewCartDialog() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(showCreateCartDialog = false)
             }
@@ -112,7 +112,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun dismissSnackbar() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(showSnackbar = false)
             }
@@ -120,7 +120,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun showSnackbar(message : String) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(showSnackbar = true , snackbarMessage = message)
             }

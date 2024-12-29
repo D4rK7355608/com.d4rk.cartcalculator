@@ -4,53 +4,90 @@ import android.app.Activity
 import android.app.Application
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.EventNote
+import androidx.compose.material.icons.automirrored.outlined.HelpOutline
+import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.viewModelScope
-import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.R
+import com.d4rk.cartcalculator.data.core.AppCoreManager
+import com.d4rk.cartcalculator.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.cartcalculator.data.model.ui.screens.UiMainScreen
 import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.ui.screens.main.repository.MainRepository
 import com.d4rk.cartcalculator.ui.screens.startup.StartupActivity
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
 import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import com.google.android.play.core.appupdate.AppUpdateManager
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class MainViewModel(application : Application) : BaseViewModel(application) {
-    private val repository = MainRepository(DataStore(application) , application)
+    private val repository = MainRepository(
+        dataStore = AppCoreManager.dataStore ,
+        application = application
+    )
+    private val _uiState : MutableStateFlow<UiMainScreen> = MutableStateFlow(initializeUiState())
+    val uiState : StateFlow<UiMainScreen> = _uiState
 
     fun checkForUpdates(activity : Activity , appUpdateManager : AppUpdateManager) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.checkForUpdates(
                 appUpdateManager = appUpdateManager , activity = activity
             )
         }
     }
 
+    private fun initializeUiState() : UiMainScreen {
+        return UiMainScreen(
+            navigationDrawerItems = listOf(
+                NavigationDrawerItem(
+                    title = R.string.settings ,
+                    selectedIcon = Icons.Outlined.Settings ,
+                ) , NavigationDrawerItem(
+                    title = R.string.help_and_feedback ,
+                    selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline ,
+                ) , NavigationDrawerItem(
+                    title = R.string.updates ,
+                    selectedIcon = Icons.AutoMirrored.Outlined.EventNote ,
+                ) , NavigationDrawerItem(
+                    title = R.string.share ,
+                    selectedIcon = Icons.Outlined.Share ,
+                )
+            )
+        )
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun checkAndScheduleUpdateNotifications(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.checkAndScheduleUpdateNotifications(appUpdateNotificationsManager)
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.checkAndScheduleUpdateNotificationsRepository(appUpdateNotificationsManager = appUpdateNotificationsManager)
         }
     }
 
     fun checkAppUsageNotifications() {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.checkAppUsageNotifications()
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.checkAppUsageNotificationsRepository()
         }
     }
 
     fun checkAndHandleStartup() {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.checkAndHandleStartup { isFirstTime ->
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.checkAndHandleStartupRepository { isFirstTime ->
                 if (isFirstTime) {
-                    IntentsHelper.openActivity(getApplication() , StartupActivity::class.java)
+                    IntentsHelper.openActivity(
+                        context = getApplication() , activityClass = StartupActivity::class.java
+                    )
                 }
             }
         }
     }
 
     fun configureSettings() {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            repository.setupSettings()
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.setupSettingsRepository()
         }
     }
 }

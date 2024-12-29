@@ -30,32 +30,33 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.components.spacers.MediumVerticalSpacer
 import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
 fun SelectLanguageAlertDialog(
-    dataStore: DataStore, onDismiss: () -> Unit, onLanguageSelected: (String) -> Unit
+    dataStore : DataStore , onDismiss : () -> Unit , onLanguageSelected : (String) -> Unit
 ) {
-    val selectedLanguage: MutableState<String> = remember { mutableStateOf(value = "") }
-    val languageEntries: List<String> =
-        stringArrayResource(R.array.preference_language_entries).toList()
-    val languageValues: List<String> =
-        stringArrayResource(R.array.preference_language_values).toList()
+    val selectedLanguage : MutableState<String> = remember { mutableStateOf(value = "") }
+    val languageEntries : List<String> =
+            stringArrayResource(id = R.array.preference_language_entries).toList()
+    val languageValues : List<String> =
+            stringArrayResource(id = R.array.preference_language_values).toList()
 
-    AlertDialog(onDismissRequest = onDismiss, text = {
+    AlertDialog(onDismissRequest = onDismiss , text = {
         SelectLanguageAlertDialogContent(
-            selectedLanguage, dataStore, languageEntries, languageValues
+            selectedLanguage , dataStore , languageEntries , languageValues
         )
-    }, icon = {
-        Icon(Icons.Outlined.Language, contentDescription = null)
-    }, confirmButton = {
+    } , icon = {
+        Icon(Icons.Outlined.Language , contentDescription = null)
+    } , confirmButton = {
         TextButton(onClick = {
             onLanguageSelected(selectedLanguage.value)
             onDismiss()
         }) {
             Text(text = stringResource(id = android.R.string.ok))
         }
-    }, dismissButton = {
+    } , dismissButton = {
         TextButton(onClick = onDismiss) {
             Text(text = stringResource(id = android.R.string.cancel))
         }
@@ -64,12 +65,12 @@ fun SelectLanguageAlertDialog(
 
 @Composable
 fun SelectLanguageAlertDialogContent(
-    selectedLanguage: MutableState<String>,
-    dataStore: DataStore,
-    languageEntries: List<String>,
-    languageValues: List<String>
+    selectedLanguage : MutableState<String> ,
+    dataStore : DataStore ,
+    languageEntries : List<String> ,
+    languageValues : List<String>
 ) {
-    LaunchedEffect(Unit) {
+    LaunchedEffect(key1 = Unit) {
         selectedLanguage.value = dataStore.getLanguage().firstOrNull() ?: ""
     }
 
@@ -77,36 +78,37 @@ fun SelectLanguageAlertDialogContent(
         Text(text = stringResource(id = R.string.dialog_language_subtitle))
         Box(
             modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)
+                    .fillMaxWidth()
+                    .weight(weight = 1f)
         ) {
             LazyColumn {
                 items(languageEntries.size) { index ->
                     Row(
-                        Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
+                        Modifier.fillMaxWidth() ,
+                        verticalAlignment = Alignment.CenterVertically ,
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        RadioButton(selected = selectedLanguage.value == languageValues[index],
+                        RadioButton(
+                            selected = selectedLanguage.value == languageValues[index] ,
                             onClick = {
                                 selectedLanguage.value = languageValues[index]
                             })
                         Text(
-                            modifier = Modifier.padding(start = 8.dp),
-                            text = languageEntries[index],
+                            modifier = Modifier.padding(start = 8.dp) ,
+                            text = languageEntries[index] ,
                             style = MaterialTheme.typography.bodyMedium.merge()
                         )
                     }
                 }
             }
         }
-        Spacer(modifier = Modifier.height(24.dp))
-        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(height = 24.dp))
+        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+        MediumVerticalSpacer()
         Text(text = stringResource(id = R.string.dialog_info_language))
     }
 
-    LaunchedEffect(selectedLanguage.value) {
-        dataStore.saveLanguage(selectedLanguage.value)
+    LaunchedEffect(key1 = selectedLanguage.value) {
+        dataStore.saveLanguage(language = selectedLanguage.value)
     }
 }

@@ -24,7 +24,7 @@ abstract class HomeRepositoryImplementation(val application : Application) {
     }
 
     suspend fun deleteCartImplementation(cart : ShoppingCartTable) {
-        with(AppCoreManager.database) {
+        with(receiver = AppCoreManager.database) {
             newCartDao().delete(cart = cart)
             shoppingCartItemsDao().deleteItemsFromCart(cartId = cart.cartId)
         }

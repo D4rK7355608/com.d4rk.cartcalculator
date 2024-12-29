@@ -26,9 +26,9 @@ import kotlinx.coroutines.runBlocking
  */
 class AppUsageNotificationWorker(context: Context, workerParams: WorkerParameters) :
     Worker(context, workerParams) {
-    private val dataStore = AppCoreManager.dataStore
-    private val appUsageChannelId = "app_usage_channel"
-    private val appUsageNotificationId = 0
+    private val dataStore : DataStore = AppCoreManager.dataStore
+    private val appUsageChannelId : String = "app_usage_channel"
+    private val appUsageNotificationId : Int = 0
 
     /**
      * Performs the background work for app usage notification checks.
@@ -41,13 +41,13 @@ class AppUsageNotificationWorker(context: Context, workerParams: WorkerParameter
      */
     @RequiresApi(Build.VERSION_CODES.O)
     override fun doWork(): Result {
-        val currentTimestamp = System.currentTimeMillis()
-        val notificationThreshold = 3 * 24 * 60 * 60 * 1000
-        val lastUsedTimestamp = runBlocking { dataStore.lastUsed.first() }
+        val currentTimestamp : Long = System.currentTimeMillis()
+        val notificationThreshold : Int = 3 * 24 * 60 * 60 * 1000
+        val lastUsedTimestamp : Long = runBlocking { dataStore.lastUsed.first() }
         if (currentTimestamp - lastUsedTimestamp > notificationThreshold) {
-            val notificationManager =
+            val notificationManager : NotificationManager =
                 applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            val appUsageChannel = NotificationChannel(
+            val appUsageChannel : NotificationChannel = NotificationChannel(
                 appUsageChannelId,
                 applicationContext.getString(R.string.app_usage_notifications),
                 NotificationManager.IMPORTANCE_HIGH

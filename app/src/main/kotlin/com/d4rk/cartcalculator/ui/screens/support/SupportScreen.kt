@@ -35,18 +35,15 @@ import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.ui.components.ads.LargeBannerAdsComposable
-import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
+import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 
 @Composable
 fun SupportComposable(viewModel: SupportViewModel , activity: SupportActivity) {
     val context: Context = LocalContext.current
     val view: View = LocalView.current
-    val dataStore: DataStore = AppCoreManager.dataStore
     val billingClient: BillingClient = rememberBillingClient(context, viewModel)
     TopAppBarScaffoldWithBackButton(
         title = stringResource(id = R.string.support_us),
@@ -227,7 +224,7 @@ fun SupportComposable(viewModel: SupportViewModel , activity: SupportActivity) {
                 }
                 item {
                     LargeBannerAdsComposable(
-                        modifier = Modifier.padding(bottom = 12.dp), dataStore = dataStore
+                        modifier = Modifier.padding(bottom = 12.dp)
                     )
                 }
             }

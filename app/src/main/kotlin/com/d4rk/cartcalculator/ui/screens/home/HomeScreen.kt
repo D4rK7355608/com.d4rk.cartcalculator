@@ -24,6 +24,7 @@ import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.SwipeToDismissBox
+import androidx.compose.material3.SwipeToDismissBoxState
 import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSwipeToDismissBoxState
@@ -57,12 +58,12 @@ fun HomeScreen(
 ) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
-    val visibilityStates by viewModel.visibilityStates.collectAsState()
-    val okStringResource = stringResource(id = android.R.string.ok)
+    val visibilityStates : List<Boolean> by viewModel.visibilityStates.collectAsState()
+    val okStringResource : String = stringResource(id = android.R.string.ok)
 
-    LaunchedEffect(uiState.showSnackbar) {
+    LaunchedEffect(key1 = uiState.showSnackbar) {
         if (uiState.showSnackbar) {
-            val result = snackbarHostState.showSnackbar(
+            val result : SnackbarResult = snackbarHostState.showSnackbar(
                 message = uiState.snackbarMessage ,
                 actionLabel = okStringResource ,
             )
@@ -80,7 +81,7 @@ fun HomeScreen(
         Box(
             modifier = Modifier
                     .fillMaxSize()
-                    .wrapContentSize(Alignment.Center)
+                    .wrapContentSize(align = Alignment.Center)
         ) {
             Column(
                 verticalArrangement = Arrangement.Center ,
@@ -98,28 +99,24 @@ fun HomeScreen(
                 else {
                     LazyColumn(
                         modifier = Modifier
-                                .weight(1f)
+                                .weight(weight = 1f)
                                 .padding(bottom = uiState.fabAdHeight)
                     ) {
-                        itemsIndexed(
-                            items = uiState.carts,
-                            key = { _, cart -> cart.cartId }
-                        ) { index, cart ->
-                            val isVisible = visibilityStates.getOrElse(index) { false }
-                            CartItemComposable(
-                                cart = cart,
-                                onDelete = { viewModel.openDeleteCartDialog(cart) },
-                                onCardClick = {
-                                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                                    viewModel.openCart(cart)
-                                },
-                                uiState = uiState,
-                                modifier = Modifier
-                                        .animateItem()
-                                        .animateVisibility(
-                                            visible = isVisible,
-                                            index = index
-                                        )
+                        itemsIndexed(items = uiState.carts ,
+                                     key = { _ , cart -> cart.cartId }) { index , cart ->
+                            val isVisible : Boolean = visibilityStates.getOrElse(index) { false }
+                            CartItemComposable(cart = cart ,
+                                               onDelete = { viewModel.openDeleteCartDialog(cart) } ,
+                                               onCardClick = {
+                                                   view.playSoundEffect(SoundEffectConstants.CLICK)
+                                                   viewModel.openCart(cart = cart)
+                                               } ,
+                                               uiState = uiState ,
+                                               modifier = Modifier
+                                                       .animateItem()
+                                                       .animateVisibility(
+                                                           visible = isVisible , index = index
+                                                       )
                             )
                         }
                     }
@@ -131,7 +128,7 @@ fun HomeScreen(
     if (uiState.showCreateCartDialog) {
         AddNewCartAlertDialog(onDismiss = { viewModel.dismissNewCartDialog() } ,
                               onCartCreated = { cart ->
-                                  viewModel.addCart(cart)
+                                  viewModel.addCart(cart = cart)
                               })
     }
 
@@ -143,7 +140,7 @@ fun HomeScreen(
             } ,
             onDeleteConfirmed = {
                 with(viewModel) {
-                    deleteCart(it)
+                    deleteCart(cartToDelete = it)
                     showSnackbar(context.getString(R.string.snackbar_cart_deleted_success))
                 }
             } ,
@@ -160,16 +157,17 @@ fun CartItemComposable(
     modifier : Modifier ,
 ) {
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
-    val dateString = dateFormat.format(cart.date)
+    val dateString : String = dateFormat.format(cart.date)
 
-    val dismissState = rememberSwipeToDismissBoxState(confirmValueChange = {
-        if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
-            ! uiState.showDeleteCartDialog
-        }
-        else {
-            true
-        }
-    })
+    val dismissState : SwipeToDismissBoxState =
+            rememberSwipeToDismissBoxState(confirmValueChange = {
+                if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
+                    ! uiState.showDeleteCartDialog
+                }
+                else {
+                    true
+                }
+            })
 
     LaunchedEffect(key1 = dismissState.targetValue , key2 = dismissState.currentValue) {
         when {
@@ -183,22 +181,22 @@ fun CartItemComposable(
         }
     }
 
-    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(dismissState) ,
+    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState) ,
                       state = dismissState ,
                       backgroundContent = {} ,
                       content = {
-                          OutlinedCard(shape = RoundedCornerShape(12.dp) ,
+                          OutlinedCard(shape = RoundedCornerShape(size = 12.dp) ,
                                        modifier = Modifier
                                                .fillMaxWidth()
                                                .padding(top = 8.dp) ,
                                        onClick = {
                                            onCardClick()
                                        }) {
-                              Box(modifier = Modifier.clip(MaterialTheme.shapes.medium)) {
+                              Box(modifier = Modifier.clip(shape = MaterialTheme.shapes.medium)) {
                                   Column(
                                       modifier = Modifier
                                               .fillMaxWidth()
-                                              .padding(8.dp)
+                                              .padding(all = 8.dp)
                                   ) {
                                       Row(
                                           horizontalArrangement = Arrangement.SpaceBetween ,
@@ -207,11 +205,10 @@ fun CartItemComposable(
                                           Text(
                                               text = cart.name ,
                                               style = MaterialTheme.typography.titleMedium ,
-                                              modifier = Modifier.weight(1f)
+                                              modifier = Modifier.weight(weight = 1f)
                                           )
-                                          IconButton(
-                                              modifier = Modifier.bounceClick() ,
-                                              onClick = { onDelete(cart) }) {
+                                          IconButton(modifier = Modifier.bounceClick() ,
+                                                     onClick = { onDelete(cart) }) {
                                               Icon(
                                                   imageVector = Icons.Outlined.DeleteForever ,
                                                   contentDescription = "Delete cart" ,

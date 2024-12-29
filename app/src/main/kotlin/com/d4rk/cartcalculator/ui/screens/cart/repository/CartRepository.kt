@@ -8,7 +8,7 @@ class CartRepository : CartRepositoryImplementation() {
 
     suspend fun loadCartItemsRepository(cartId: Int , onSuccess: (List<ShoppingCartItemsTable>) -> Unit) {
         withContext(Dispatchers.IO) {
-            val items = fetchItemsForCartImplementation(cartId)
+            val items : List<ShoppingCartItemsTable> = fetchItemsForCartImplementation(cartId = cartId)
             withContext(Dispatchers.Main) {
                 onSuccess(items)
             }
@@ -20,7 +20,7 @@ class CartRepository : CartRepositoryImplementation() {
         onSuccess : (ShoppingCartItemsTable) -> Unit ,
     ) {
         withContext(Dispatchers.IO) {
-            val newItemId = addCartItemImplementation(cartItem).toInt()
+            val newItemId : Int = addCartItemImplementation(cartItem = cartItem).toInt()
             cartItem.itemId = newItemId
             withContext(Dispatchers.Main) {
                 onSuccess(cartItem)
@@ -30,7 +30,7 @@ class CartRepository : CartRepositoryImplementation() {
 
     suspend fun updateCartItemRepository(cartItem : ShoppingCartItemsTable , onSuccess : () -> Unit) {
         withContext(Dispatchers.IO) {
-            modifyCartItemImplementation(cartItem)
+            modifyCartItemImplementation(cartItem = cartItem)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }
@@ -39,7 +39,7 @@ class CartRepository : CartRepositoryImplementation() {
 
     suspend fun deleteCartItemRepository(cartItem : ShoppingCartItemsTable , onSuccess : () -> Unit) {
         withContext(Dispatchers.IO) {
-            removeCartItemImplementation(cartItem)
+            removeCartItemImplementation(cartItem = cartItem)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }
@@ -48,7 +48,7 @@ class CartRepository : CartRepositoryImplementation() {
 
     suspend fun saveCartItemsRepository(cartItem: ShoppingCartItemsTable , onSuccess: () -> Unit) {
         withContext(Dispatchers.IO) {
-            saveCartItemsImplementation(cartItem)
+            saveCartItemsImplementation(cartItems = cartItem)
             withContext(Dispatchers.Main) {
                 onSuccess()
             }

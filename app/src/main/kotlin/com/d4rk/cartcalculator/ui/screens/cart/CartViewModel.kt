@@ -3,6 +3,7 @@ package com.d4rk.cartcalculator.ui.screens.cart
 import android.app.Application
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
 import com.d4rk.cartcalculator.ui.screens.cart.repository.CartRepository
@@ -16,15 +17,15 @@ import kotlinx.coroutines.launch
 
 class CartViewModel(application : Application) : BaseViewModel(application) {
 
-    private val repository = CartRepository()
+    private val repository : CartRepository = CartRepository()
 
-    private val _uiState = MutableStateFlow(UiCartModel())
+    private val _uiState : MutableStateFlow<UiCartModel> = MutableStateFlow(UiCartModel())
     val uiState : StateFlow<UiCartModel> = _uiState
 
     fun loadCart(cartId : Int) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
-            val cart = repository.loadCartIdImplementation(cartId = cartId)
+            val cart : ShoppingCartTable = repository.loadCartIdImplementation(cartId = cartId)
             repository.loadCartItemsRepository(cartId = cartId) { items ->
                 _uiState.update { currentState ->
                     currentState.copy(
@@ -41,10 +42,10 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     private fun initializeVisibilityStates() {
         viewModelScope.launch(coroutineExceptionHandler) {
             delay(timeMillis = 50L)
-            _visibilityStates.value = List(_uiState.value.cartItems.size) { false }
+            _visibilityStates.value = List(size = _uiState.value.cartItems.size) { false }
             _uiState.value.cartItems.indices.forEach { index ->
                 delay(timeMillis = index * 8L)
-                _visibilityStates.value = List(_visibilityStates.value.size) { lessonIndex ->
+                _visibilityStates.value = List(size = _visibilityStates.value.size) { lessonIndex ->
                     lessonIndex == index || _visibilityStates.value[lessonIndex]
                 }
             }
@@ -52,7 +53,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun loadSelectedCurrency(dataStore : DataStore) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(
                     selectedCurrency = dataStore.getCurrency().firstOrNull() ?: ""
@@ -62,11 +63,11 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun addCartItem(cartId : Int , cartItem : ShoppingCartItemsTable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             cartItem.cartId = cartId
-            repository.addCartItemRepository(cartItem) { newItem ->
+            repository.addCartItemRepository(cartItem = cartItem) { newItem ->
                 _uiState.update { currentState ->
-                    val cartItems = currentState.cartItems + newItem
+                    val cartItems : List<ShoppingCartItemsTable> = currentState.cartItems + newItem
                     currentState.copy(cartItems = cartItems)
                 }
                 calculateTotalPrice()
@@ -76,16 +77,16 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun increaseQuantity(cartItem : ShoppingCartItemsTable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            val currentQuantity = getQuantityStateForItem(cartItem = cartItem)
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            val currentQuantity : Int = getQuantityStateForItem(cartItem = cartItem)
             updateItemQuantity(cartItem = cartItem , newQuantity = currentQuantity + 1)
         }
     }
 
     fun decreaseQuantity(cartItem : ShoppingCartItemsTable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            val currentQuantity = getQuantityStateForItem(cartItem = cartItem)
-            val newQuantity = maxOf(a = currentQuantity - 1 , b = 0)
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            val currentQuantity : Int = getQuantityStateForItem(cartItem = cartItem)
+            val newQuantity : Int = maxOf(a = currentQuantity - 1 , b = 0)
             if (newQuantity > 0) {
                 updateItemQuantity(cartItem = cartItem , newQuantity = newQuantity)
             }
@@ -104,11 +105,11 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     private fun updateItemQuantity(cartItem : ShoppingCartItemsTable , newQuantity : Int) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             cartItem.quantity = newQuantity
             repository.updateCartItemRepository(cartItem = cartItem) {
                 _uiState.update { currentState ->
-                    val updatedQuantities = currentState.itemQuantities.toMutableMap()
+                    val updatedQuantities : MutableMap<Int, Int> = currentState.itemQuantities.toMutableMap()
                     updatedQuantities[cartItem.itemId] = newQuantity
                     return@update currentState.copy(itemQuantities = updatedQuantities)
                 }
@@ -119,9 +120,9 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
 
     fun deleteCartItem(cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
-            repository.deleteCartItemRepository(cartItem) {
+            repository.deleteCartItemRepository(cartItem = cartItem) {
                 _uiState.update { currentState ->
-                    val updatedItems = currentState.cartItems.filter { it != cartItem }
+                    val updatedItems : List<ShoppingCartItemsTable> = currentState.cartItems.filter { it != cartItem }
                     return@update currentState.copy(cartItems = updatedItems)
                 }
                 calculateTotalPrice()
@@ -130,26 +131,26 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun onItemCheckedChange(cartItem : ShoppingCartItemsTable , isChecked : Boolean) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            val updatedCartItems = _uiState.value.cartItems.map { item ->
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            val updatedCartItems : List<ShoppingCartItemsTable> = _uiState.value.cartItems.map { item ->
                 if (item.itemId == cartItem.itemId) item.copy(isChecked = isChecked) else item
             }
             _uiState.value = _uiState.value.copy(cartItems = updatedCartItems)
-            repository.updateCartItemRepository(cartItem.copy(isChecked = isChecked)) { }
+            repository.updateCartItemRepository(cartItem = cartItem.copy(isChecked = isChecked)) { }
         }
     }
 
     fun saveCartItems() {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            val cartItems = uiState.value.cartItems
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            val cartItems : List<ShoppingCartItemsTable> = uiState.value.cartItems
             cartItems.forEach { cartItem ->
-                repository.saveCartItemsRepository(cartItem) { }
+                repository.saveCartItemsRepository(cartItem = cartItem) { }
             }
         }
     }
 
     private fun calculateTotalPrice() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             val total =
                     uiState.value.cartItems.sumOf { item -> item.price.toDouble() * item.quantity }
             _uiState.update { currentState ->
@@ -159,7 +160,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun toggleOpenDialog() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(openDialog = ! currentState.openDialog)
             }
@@ -167,7 +168,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     }
 
     fun toggleDeleteDialog(cartItem : ShoppingCartItemsTable?) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(
                     openDeleteDialog = cartItem != null , currentCartItemForDeletion = cartItem

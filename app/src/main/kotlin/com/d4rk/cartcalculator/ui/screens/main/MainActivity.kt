@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.ui.screens.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
@@ -26,7 +25,6 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.ActivityResult
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var dataStore : DataStore
     private val viewModel : MainViewModel by viewModels()
     private lateinit var appUpdateManager : AppUpdateManager
     private lateinit var appUpdateNotificationsManager : AppUpdateNotificationsManager
@@ -45,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen()
+                    MainScreen(viewModel = viewModel)
                 }
             }
         }
@@ -54,11 +52,11 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
-        with(viewModel) {
+        with(receiver = viewModel) {
             checkAndHandleStartup()
             configureSettings()
             checkForUpdates(activity = this@MainActivity , appUpdateManager = appUpdateManager)
-            checkAndScheduleUpdateNotifications(appUpdateNotificationsManager)
+            checkAndScheduleUpdateNotifications(appUpdateNotificationsManager = appUpdateNotificationsManager)
             checkAppUsageNotifications()
         }
     }
@@ -99,7 +97,6 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode : Int , resultCode : Int , data : Intent?) {
         super.onActivityResult(requestCode , resultCode , data)
-        println("Cleaner for Android -> Play Update: onActivityResult: requestCode=$requestCode, resultCode=$resultCode")
         if (requestCode == 1) {
             when (resultCode) {
                 RESULT_OK -> {
@@ -115,9 +112,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeActivityComponents() {
         MobileAds.initialize(this@MainActivity)
-        dataStore = AppCoreManager.dataStore
         appUpdateManager = AppUpdateManagerFactory.create(this@MainActivity)
-        appUpdateNotificationsManager = AppUpdateNotificationsManager(this)
+        appUpdateNotificationsManager = AppUpdateNotificationsManager(context = this)
     }
 
     private fun showUpdateSuccessfulSnackbar() {
