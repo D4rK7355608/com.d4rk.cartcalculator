@@ -2,17 +2,21 @@ package com.d4rk.cartcalculator.ui.screens.home
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.datastore.DataStore
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
 import com.d4rk.cartcalculator.ui.screens.home.repository.HomeRepository
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeViewModel(application : Application) : BaseViewModel(application) {
+    private val dataStore : DataStore = AppCoreManager.dataStore
     private val repository : HomeRepository = HomeRepository(application = application)
 
     private val _uiState : MutableStateFlow<UiHomeModel> = MutableStateFlow(UiHomeModel())
@@ -56,11 +60,16 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun addCart(cart : ShoppingCartTable) {
+    fun addCart(cart: ShoppingCartTable) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
+            val openCartsAfterCreation : Boolean = dataStore.openCartsAfterCreation.first()
             repository.addCartRepository(cart = cart) { addedCart ->
                 _uiState.update { currentState ->
                     currentState.copy(carts = (currentState.carts + addedCart).toMutableList())
+                }
+
+                if (openCartsAfterCreation) {
+                    openCart(cart = addedCart)
                 }
             }
             initializeVisibilityStates()

@@ -10,6 +10,7 @@ object DataStoreNamesConstants {
     const val DATA_STORE_BOUNCY_BUTTONS = "bouncy_buttons"
     const val DATA_STORE_LANGUAGE = "language"
     const val DATA_STORE_PREFERRED_CURRENCY = "preferred_currency"
+    const val DATA_STORE_OPEN_CARTS_AFTER_CREATION = "open_carts_after_creation"
     const val DATA_STORE_USAGE_AND_DIAGNOSTICS = "usage_and_diagnostics"
     const val DATA_STORE_ADS = "ads"
 }

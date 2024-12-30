@@ -18,25 +18,25 @@ import java.io.FileNotFoundException
 import java.io.IOException
 
 open class BaseViewModel(application : Application) : AndroidViewModel(application) {
-    private val _isLoading = MutableStateFlow(value = false)
+    private val _isLoading : MutableStateFlow<Boolean> = MutableStateFlow(value = false)
     val isLoading : StateFlow<Boolean> = _isLoading
 
-    private val _uiErrorModel = MutableStateFlow(UiErrorModel())
+    private val _uiErrorModel : MutableStateFlow<UiErrorModel> = MutableStateFlow(value = UiErrorModel())
     val uiErrorModel : StateFlow<UiErrorModel> = _uiErrorModel.asStateFlow()
 
-    protected val coroutineExceptionHandler = CoroutineExceptionHandler { _ , exception : Throwable ->
+    protected val coroutineExceptionHandler : CoroutineExceptionHandler = CoroutineExceptionHandler { _ , exception : Throwable ->
         Log.e("BaseViewModel" , "Coroutine Exception: " , exception)
-        handleError(exception)
+        handleError(exception = exception)
     }
 
-    val _visibilityStates = MutableStateFlow<List<Boolean>>(emptyList())
+    val _visibilityStates : MutableStateFlow<List<Boolean>> = MutableStateFlow(emptyList())
     val visibilityStates : StateFlow<List<Boolean>> = _visibilityStates.asStateFlow()
 
-    private val _isFabVisible = MutableStateFlow(value= false)
+    private val _isFabVisible : MutableStateFlow<Boolean> = MutableStateFlow(value= false)
     val isFabVisible : StateFlow<Boolean> = _isFabVisible.asStateFlow()
 
     private fun handleError(exception : Throwable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             val errorType : ErrorType = when (exception) {
                 is SecurityException -> ErrorType.SECURITY_EXCEPTION
                 is IOException -> ErrorType.IO_EXCEPTION
@@ -45,7 +45,7 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
                 is IllegalArgumentException -> ErrorType.ILLEGAL_ARGUMENT
                 else -> ErrorType.UNKNOWN_ERROR
             }
-            handleError(errorType , exception)
+            handleError(errorType = errorType , ignoredException = exception)
 
             _uiErrorModel.value = UiErrorModel(
                 showErrorDialog = true , errorMessage = when (errorType) {
@@ -61,25 +61,25 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
     }
 
     protected open fun handleError(errorType : ErrorType , ignoredException : Throwable) {
-        viewModelScope.launch(coroutineExceptionHandler) {
-            ErrorHandler.handleError(getApplication() , errorType)
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            ErrorHandler.handleError(applicationContext = getApplication() , errorType = errorType)
         }
     }
 
     protected fun showLoading() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _isLoading.value = true
         }
     }
 
     protected fun hideLoading() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _isLoading.value = false
         }
     }
 
     protected fun showFab() {
-        viewModelScope.launch(coroutineExceptionHandler) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
             _isFabVisible.value = true
         }
     }

@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -33,9 +34,10 @@ import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 fun AddNewCartItemAlertDialog(
     cartId : Int , onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit
 ) {
-    val newCartItem = remember { mutableStateOf<ShoppingCartItemsTable?>(null) }
+    val newCartItem : MutableState<ShoppingCartItemsTable?> =
+            remember { mutableStateOf(value = null) }
     AlertDialog(onDismissRequest = onDismiss , text = {
-        AddNewCartItemAlertDialogContent(cartId , newCartItem)
+        AddNewCartItemAlertDialogContent(cartId = cartId , newCartItem = newCartItem)
     } , icon = {
         Icon(
             Icons.Outlined.ShoppingBag , contentDescription = null
@@ -46,13 +48,13 @@ fun AddNewCartItemAlertDialog(
                 onCartCreated(cartItem)
             }
         } , enabled = newCartItem.value != null) {
-            Text(text = stringResource(android.R.string.ok))
+            Text(text = stringResource(id = android.R.string.ok))
         }
     } , dismissButton = {
         TextButton(onClick = {
             onDismiss()
         }) {
-            Text(text = stringResource(android.R.string.cancel))
+            Text(text = stringResource(id = android.R.string.cancel))
         }
     })
 }
@@ -61,14 +63,14 @@ fun AddNewCartItemAlertDialog(
 fun AddNewCartItemAlertDialogContent(
     cartId : Int , newCartItem : MutableState<ShoppingCartItemsTable?>
 ) {
-    val nameText = remember { mutableStateOf(value = "") }
-    val priceText = remember { mutableStateOf(value = "") }
-    val quantityText = remember { mutableStateOf(value = "") }
+    val nameText : MutableState<String> = remember { mutableStateOf(value = "") }
+    val priceText : MutableState<String> = remember { mutableStateOf(value = "") }
+    val quantityText : MutableState<String> = remember { mutableStateOf(value = "") }
 
-    val nameFocusRequester = remember { FocusRequester() }
-    val priceFocusRequester = remember { FocusRequester() }
-    val quantityFocusRequester = remember { FocusRequester() }
-    val keyboardController = LocalSoftwareKeyboardController.current
+    val nameFocusRequester : FocusRequester = remember { FocusRequester() }
+    val priceFocusRequester : FocusRequester = remember { FocusRequester() }
+    val quantityFocusRequester : FocusRequester = remember { FocusRequester() }
+    val keyboardController : SoftwareKeyboardController? = LocalSoftwareKeyboardController.current
 
     Column {
         OutlinedTextField(value = nameText.value ,
@@ -81,7 +83,7 @@ fun AddNewCartItemAlertDialogContent(
                           ) ,
                           keyboardActions = KeyboardActions(onNext = { priceFocusRequester.requestFocus() }) ,
                           placeholder = { Text(text = stringResource(id = R.string.enter_item_name)) } ,
-                          modifier = Modifier.focusRequester(nameFocusRequester))
+                          modifier = Modifier.focusRequester(focusRequester = nameFocusRequester))
 
         OutlinedTextField(value = priceText.value ,
                           singleLine = true ,
@@ -92,7 +94,7 @@ fun AddNewCartItemAlertDialogContent(
                               keyboardType = KeyboardType.Number , imeAction = ImeAction.Next
                           ) ,
                           keyboardActions = KeyboardActions(onNext = { quantityFocusRequester.requestFocus() }) ,
-                          modifier = Modifier.focusRequester(priceFocusRequester)
+                          modifier = Modifier.focusRequester(focusRequester = priceFocusRequester)
         )
 
         OutlinedTextField(value = quantityText.value ,
@@ -106,18 +108,19 @@ fun AddNewCartItemAlertDialogContent(
                           keyboardActions = KeyboardActions(onDone = {
                               keyboardController?.hide()
                           }) ,
-                          modifier = Modifier.focusRequester(quantityFocusRequester)
+                          modifier = Modifier.focusRequester(focusRequester = quantityFocusRequester)
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(12.dp))
-        Text(stringResource(id = R.string.dialog_info_cart_item))
+        Spacer(modifier = Modifier.height(height = 12.dp))
+        Text(text = stringResource(id = R.string.dialog_info_cart_item))
     }
 
     if (nameText.value.isNotBlank() && priceText.value.isNotBlank() && quantityText.value.isNotBlank()) {
-        val price = priceText.value.replace(oldChar = ',' , newChar = '.').toDoubleOrNull()
-        val quantity = quantityText.value.toIntOrNull()
+        val price : Double? =
+                priceText.value.replace(oldChar = ',' , newChar = '.').toDoubleOrNull()
+        val quantity : Int? = quantityText.value.toIntOrNull()
         if (price != null && quantity != null) {
             newCartItem.value = ShoppingCartItemsTable(
                 cartId = cartId ,

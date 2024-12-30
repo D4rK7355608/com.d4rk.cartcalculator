@@ -36,12 +36,14 @@
 
         <activity
             android:name=".ui.screens.startup.StartupActivity"
-            android:noHistory="true" />
+            android:noHistory="true"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.main.MainActivity"
             android:exported="true"
-            android:theme="@style/SplashScreenTheme">
+            android:theme="@style/SplashScreenTheme"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -55,18 +57,21 @@
 
         <activity
             android:name=".ui.screens.support.SupportActivity"
-            android:parentActivityName=".ui.screens.main.MainActivity" />
+            android:parentActivityName=".ui.screens.main.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.cart.CartActivity"
             android:launchMode="singleTask"
-            android:parentActivityName=".ui.screens.main.MainActivity" />
+            android:parentActivityName=".ui.screens.main.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.SettingsActivity"
             android:exported="true"
             android:label="@string/settings"
-            android:parentActivityName=".ui.screens.main.MainActivity">
+            android:parentActivityName=".ui.screens.main.MainActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
             </intent-filter>
@@ -74,29 +79,35 @@
 
         <activity
             android:name=".ui.screens.settings.display.DisplaySettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.display.theme.ThemeSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.display.DisplaySettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.display.DisplaySettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.cart.CartSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.advanced.AdvancedSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.privacy.PrivacySettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.privacy.permissions.PermissionsSettingsActivity"
             android:exported="true"
             android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
-            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
                 <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
@@ -107,19 +118,23 @@
 
         <activity
             android:name=".ui.screens.settings.privacy.usage.UsageAndDiagnosticsActivity"
-            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.privacy.ads.AdsSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.privacy.PrivacySettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.settings.about.AboutSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity" />
+            android:parentActivityName=".ui.screens.settings.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.screens.help.HelpActivity"
-            android:parentActivityName=".ui.screens.main.MainActivity" />
+            android:parentActivityName=".ui.screens.main.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"

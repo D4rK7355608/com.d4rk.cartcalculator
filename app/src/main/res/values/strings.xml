@@ -83,6 +83,8 @@
     <string name="summary_preference_settings_currency">Set your preferred currency for displaying prices</string>
     <string name="dialog_currency_subtitle">Select your preferred currency</string>
     <string name="dialog_info_currency">This currency selection will be utilized across the platform for displaying product prices, processing transactions, and providing a more personalized shopping experience</string>
+    <string name="open_carts_after_creation">Open Carts After Creation</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Automatically open a cart immediately after it is created.</string>
 
     <string name="notifications">Notifications</string>
     <string name="summary_preference_settings_notifications">Manage app notifications</string>

@@ -36,39 +36,33 @@ import kotlinx.coroutines.flow.firstOrNull
 fun SelectCurrencyAlertDialog(
     dataStore : DataStore , onDismiss : () -> Unit , onCurrencySelected : (String) -> Unit ,
 ) {
-    val selectedCurrency = remember { mutableStateOf("") }
-    val currencies = stringArrayResource(R.array.currency).toList()
+    val selectedCurrency : MutableState<String> = remember { mutableStateOf(value = "") }
+    val currencies : List<String> = stringArrayResource(id = R.array.currency).toList()
 
-    AlertDialog(onDismissRequest = onDismiss ,
-                text = {
-                    SelectCurrencyAlertDialogContent(
-                        selectedCurrency ,
-                        dataStore ,
-                        currencies
-                    )
-                } ,
-                icon = {
-                    Icon(Icons.Outlined.Money , contentDescription = null)
-                } ,
-                confirmButton = {
-                    TextButton(onClick = {
-                        onCurrencySelected(selectedCurrency.value)
-                    }) {
-                        Text(text = stringResource(id = android.R.string.ok))
-                    }
-                } ,
-                dismissButton = {
-                    TextButton(onClick = onDismiss) {
-                        Text(text = stringResource(id = android.R.string.cancel))
-                    }
-                })
+    AlertDialog(onDismissRequest = onDismiss , text = {
+        SelectCurrencyAlertDialogContent(
+            selectedCurrency , dataStore , currencies
+        )
+    } , icon = {
+        Icon(imageVector = Icons.Outlined.Money , contentDescription = null)
+    } , confirmButton = {
+        TextButton(onClick = {
+            onCurrencySelected(selectedCurrency.value)
+        }) {
+            Text(text = stringResource(id = android.R.string.ok))
+        }
+    } , dismissButton = {
+        TextButton(onClick = onDismiss) {
+            Text(text = stringResource(id = android.R.string.cancel))
+        }
+    })
 }
 
 @Composable
 fun SelectCurrencyAlertDialogContent(
     selectedCurrency : MutableState<String> , dataStore : DataStore , currencies : List<String> ,
 ) {
-    LaunchedEffect(Unit) {
+    LaunchedEffect(key1 = Unit) {
         selectedCurrency.value = dataStore.getCurrency().firstOrNull() ?: ""
     }
 
@@ -77,19 +71,20 @@ fun SelectCurrencyAlertDialogContent(
         Box(
             modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(weight = 1f)
         ) {
             LazyColumn {
-                items(currencies.size) { index ->
+                items(count = currencies.size) { index ->
                     Row(
                         Modifier.fillMaxWidth() ,
                         verticalAlignment = Alignment.CenterVertically ,
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        RadioButton(selected = selectedCurrency.value == currencies[index] ,
-                                    onClick = {
-                                        selectedCurrency.value = currencies[index]
-                                    })
+                        RadioButton(
+                            selected = selectedCurrency.value == currencies[index] ,
+                            onClick = {
+                                selectedCurrency.value = currencies[index]
+                            })
                         Text(
                             modifier = Modifier.padding(start = 8.dp) ,
                             text = currencies[index] ,
@@ -99,13 +94,13 @@ fun SelectCurrencyAlertDialogContent(
                 }
             }
         }
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(height = 12.dp))
         Text(text = stringResource(id = R.string.dialog_info_currency))
     }
 
-    LaunchedEffect(selectedCurrency.value) {
-        dataStore.saveCurrency(selectedCurrency.value)
+    LaunchedEffect(key1 = selectedCurrency.value) {
+        dataStore.saveCurrency(currency = selectedCurrency.value)
     }
 }

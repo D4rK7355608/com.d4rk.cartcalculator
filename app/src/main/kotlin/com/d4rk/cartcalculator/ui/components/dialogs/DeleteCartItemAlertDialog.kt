@@ -26,24 +26,24 @@ fun DeleteCartItemAlertDialog(
     onDeleteConfirmed: (ShoppingCartItemsTable) -> Unit
 ) {
     AlertDialog(
-        onDismissRequest = onDismiss,
+        onDismissRequest = onDismiss ,
         title = {
             Text(
                 text = stringResource(id= R.string.delete_cart_item_title),
             )
-        },
-        text = { DeleteCartItemAlertDialogContent(cartItem!!) },
+        } ,
+        text = { DeleteCartItemAlertDialogContent(cartItem = cartItem!!) } ,
         confirmButton = {
             TextButton(onClick = {
                 onDeleteConfirmed(cartItem!!)
                 onDismiss()
             }) {
-                Text(text =stringResource(android.R.string.ok))
+                Text(text =stringResource(id = android.R.string.ok))
             }
-        },
+        } ,
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text(text =stringResource(android.R.string.cancel))
+                Text(text =stringResource(id = android.R.string.cancel))
             }
         }
     )
@@ -53,9 +53,9 @@ fun DeleteCartItemAlertDialog(
 fun DeleteCartItemAlertDialogContent(cartItem: ShoppingCartItemsTable) {
     Column {
         Icon(
-            imageVector = Icons.Outlined.RemoveShoppingCart,
-            contentDescription = null,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            imageVector = Icons.Outlined.RemoveShoppingCart ,
+            contentDescription = null ,
+            modifier = Modifier.align(alignment = Alignment.CenterHorizontally) ,
             tint = MaterialTheme.colorScheme.error
         )
         Spacer(modifier = Modifier.height(24.dp))

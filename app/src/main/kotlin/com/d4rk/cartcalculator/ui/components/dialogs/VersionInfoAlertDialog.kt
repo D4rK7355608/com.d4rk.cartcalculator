@@ -49,7 +49,7 @@ fun VersionInfoAlertDialogContent() {
         LargeHorizontalSpacer()
         Column {
             Text(
-                text = context.getString(R.string.app_name) ,
+                text = context.getString(R.string.app_full_name) ,
                 style = MaterialTheme.typography.titleLarge
             )
             Text(

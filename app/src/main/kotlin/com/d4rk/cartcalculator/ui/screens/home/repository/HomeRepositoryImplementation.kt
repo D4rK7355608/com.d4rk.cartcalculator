@@ -14,7 +14,8 @@ abstract class HomeRepositoryImplementation(val application : Application) {
 
     fun openCartImplementation(cart : ShoppingCartTable) {
         application.startActivity(
-            Intent(application , CartActivity::class.java).putExtra("cartId" , cart.cartId)
+            Intent(application , CartActivity::class.java)
+                    .putExtra("cartId" , cart.cartId)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         )
     }

@@ -35,12 +35,12 @@ fun DeleteCartAlertDialog(
             onDeleteConfirmed(cart !!)
             onDismiss()
         }) {
-            Text(text =stringResource(android.R.string.ok))
+            Text(text =stringResource(id = android.R.string.ok))
         }
     } , dismissButton = {
         TextButton(onClick = {
             onDismiss() }) {
-            Text(text =stringResource(android.R.string.cancel))
+            Text(text =stringResource(id = android.R.string.cancel))
         }
     })
 }
@@ -54,14 +54,14 @@ fun DeleteCartAlertDialogContent(cart : ShoppingCartTable?) {
             modifier = Modifier.align(Alignment.CenterHorizontally) ,
             tint = MaterialTheme.colorScheme.error
         )
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(height = 24.dp))
         Text(
             text = stringResource(id= R.string.delete_cart_message) ,
             style = MaterialTheme.typography.bodyLarge
         )
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(height = 12.dp))
         Text(
             text = stringResource(id= R.string.delete_cart_warning , cart?.name ?: "") ,
             style = MaterialTheme.typography.bodyLarge

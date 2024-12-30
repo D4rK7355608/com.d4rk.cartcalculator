@@ -18,89 +18,84 @@ import com.d4rk.cartcalculator.ui.screens.settings.privacy.usage.UsageAndDiagnos
 import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 
 @Composable
-fun PrivacySettingsComposable(activity: PrivacySettingsActivity) {
-    val context: Context = LocalContext.current
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.security_and_privacy),
-        onBackClicked = { activity.finish() }) { paddingValues ->
+fun PrivacySettingsComposable(activity : PrivacySettingsActivity) {
+    val context : Context = LocalContext.current
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.security_and_privacy) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                     .fillMaxHeight()
-                    .padding(paddingValues),
+                    .padding(paddingValues = paddingValues) ,
         ) {
             item {
                 PreferenceCategoryItem(title = stringResource(id = R.string.privacy))
-                PreferenceItem(
-                    title = stringResource(id = R.string.privacy_policy),
-                    summary = stringResource(id = R.string.summary_preference_settings_privacy_policy),
-                    onClick = {
-                        IntentsHelper.openUrl(
-                            context,
-                            url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
-                        )
-                    })
-                PreferenceItem(
-                    title = stringResource(id = R.string.terms_of_service),
-                    summary = stringResource(id = R.string.summary_preference_settings_terms_of_service),
-                    onClick = {
-                        IntentsHelper.openUrl(
-                            context,
-                            url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
-                        )
-                    })
-                PreferenceItem(
-                    title = stringResource(id = R.string.code_of_conduct),
-                    summary = stringResource(id = R.string.summary_preference_settings_code_of_conduct),
-                    onClick = {
-                        IntentsHelper.openUrl(
-                            context,
-                            url = "https://sites.google.com/view/d4rk7355608/more/code-of-conduct"
-                        )
-                    })
-                PreferenceItem(
-                    title = stringResource(id = R.string.permissions),
-                    summary = stringResource(id = R.string.summary_preference_settings_permissions),
-                    onClick = {
-                        IntentsHelper.openActivity(
-                            context, PermissionsSettingsActivity::class.java
-                        )
-                    })
-                PreferenceItem(
-                    title = stringResource(id = R.string.ads),
-                    summary = stringResource(id = R.string.summary_preference_settings_ads),
-                    onClick = {
-                        IntentsHelper.openActivity(
-                            context, AdsSettingsActivity::class.java
-                        )
-                    })
-                PreferenceItem(
-                    title = stringResource(id = R.string.usage_and_diagnostics),
-                    summary = stringResource(id = R.string.summary_preference_settings_usage_and_diagnostics),
-                    onClick = {
-                        IntentsHelper.openActivity(
-                            context, UsageAndDiagnosticsActivity::class.java
-                        )
-                    })
+                PreferenceItem(title = stringResource(id = R.string.privacy_policy) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_privacy_policy) ,
+                               onClick = {
+                                   IntentsHelper.openUrl(
+                                       context = context ,
+                                       url = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy"
+                                   )
+                               })
+                PreferenceItem(title = stringResource(id = R.string.terms_of_service) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_terms_of_service) ,
+                               onClick = {
+                                   IntentsHelper.openUrl(
+                                       context = context ,
+                                       url = "https://sites.google.com/view/d4rk7355608/more/apps/terms-of-service"
+                                   )
+                               })
+                PreferenceItem(title = stringResource(id = R.string.code_of_conduct) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_code_of_conduct) ,
+                               onClick = {
+                                   IntentsHelper.openUrl(
+                                       context = context ,
+                                       url = "https://sites.google.com/view/d4rk7355608/more/code-of-conduct"
+                                   )
+                               })
+                PreferenceItem(title = stringResource(id = R.string.permissions) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_permissions) ,
+                               onClick = {
+                                   IntentsHelper.openActivity(
+                                       context = context ,
+                                       activityClass = PermissionsSettingsActivity::class.java
+                                   )
+                               })
+                PreferenceItem(title = stringResource(id = R.string.ads) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_ads) ,
+                               onClick = {
+                                   IntentsHelper.openActivity(
+                                       context = context ,
+                                       activityClass = AdsSettingsActivity::class.java
+                                   )
+                               })
+                PreferenceItem(title = stringResource(id = R.string.usage_and_diagnostics) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_usage_and_diagnostics) ,
+                               onClick = {
+                                   IntentsHelper.openActivity(
+                                       context = context ,
+                                       activityClass = UsageAndDiagnosticsActivity::class.java
+                                   )
+                               })
             }
             item {
                 PreferenceCategoryItem(title = stringResource(id = R.string.legal))
-                PreferenceItem(
-                    title = stringResource(id = R.string.legal_notices),
-                    summary = stringResource(id = R.string.summary_preference_settings_legal_notices),
-                    onClick = {
-                        IntentsHelper.openUrl(
-                            context,
-                            url = "https://sites.google.com/view/d4rk7355608/more/apps/legal-notices"
-                        )
-                    })
-                PreferenceItem(
-                    title = stringResource(id = R.string.license),
-                    summary = stringResource(id = R.string.summary_preference_settings_license),
-                    onClick = {
-                        IntentsHelper.openUrl(
-                            context, url = "https://www.gnu.org/licenses/gpl-3.0"
-                        )
-                    })
+                PreferenceItem(title = stringResource(id = R.string.legal_notices) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_legal_notices) ,
+                               onClick = {
+                                   IntentsHelper.openUrl(
+                                       context = context ,
+                                       url = "https://sites.google.com/view/d4rk7355608/more/apps/legal-notices"
+                                   )
+                               })
+                PreferenceItem(title = stringResource(id = R.string.license) ,
+                               summary = stringResource(id = R.string.summary_preference_settings_license) ,
+                               onClick = {
+                                   IntentsHelper.openUrl(
+                                       context = context ,
+                                       url = "https://www.gnu.org/licenses/gpl-3.0"
+                                   )
+                               })
             }
         }
     }

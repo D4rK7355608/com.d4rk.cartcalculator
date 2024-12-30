@@ -1,6 +1,14 @@
-# Version 1.1.4:
+# Version 1.2.0:
 
-- **Minor**: Small optimizations to ad initialization.
+- **New**: Added an "Open Cart After Creation" feature in settings, allowing you to automatically
+  view newly created carts.
+- **Minor**: Improved UI handling when the keyboard appears, ensuring smoother interactions during
+  cart creation.
+- **Minor**: Updated Gradle dependencies to the latest versions for enhanced stability and speed.
+- **Patch**: Fixed an issue where newly created carts wouldn’t open correctly.
+- **Patch**: Updated string resources for better clarity and consistency across the app.
+- **Patch**:  Cleaned up unused code and optimized existing features for better performance.
+- **Patch**: Refactored some parts of the code to improve maintainability and efficiency.
 
 # Version 1.1.3:
 

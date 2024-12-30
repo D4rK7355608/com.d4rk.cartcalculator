@@ -47,7 +47,7 @@ class AppUsageNotificationWorker(context: Context, workerParams: WorkerParameter
         if (currentTimestamp - lastUsedTimestamp > notificationThreshold) {
             val notificationManager : NotificationManager =
                 applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            val appUsageChannel : NotificationChannel = NotificationChannel(
+            val appUsageChannel = NotificationChannel(
                 appUsageChannelId,
                 applicationContext.getString(R.string.app_usage_notifications),
                 NotificationManager.IMPORTANCE_HIGH

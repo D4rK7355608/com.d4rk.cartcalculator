@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.data.datastore
 
 import android.content.Context
 import androidx.compose.runtime.mutableStateOf
+import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
@@ -117,7 +118,8 @@ class DataStore(context : Context) {
         }
     }
 
-    private val currencyKey = stringPreferencesKey(name = DataStoreNamesConstants.DATA_STORE_PREFERRED_CURRENCY)
+    // Carts
+    private val currencyKey : Preferences.Key<String> = stringPreferencesKey(name = DataStoreNamesConstants.DATA_STORE_PREFERRED_CURRENCY)
 
     fun getCurrency(): Flow<String> {
         return dataStore.data.map { preferences ->
@@ -128,6 +130,18 @@ class DataStore(context : Context) {
     suspend fun saveCurrency(currency: String) {
         dataStore.edit { preferences ->
             preferences[currencyKey] = currency
+        }
+    }
+
+    private val openCartsAfterCreationKey : Preferences.Key<Boolean> = booleanPreferencesKey(name = DataStoreNamesConstants.DATA_STORE_OPEN_CARTS_AFTER_CREATION)
+
+    val openCartsAfterCreation: Flow<Boolean> = dataStore.data.map { preferences ->
+        preferences[openCartsAfterCreationKey] ?: true
+    }
+
+    suspend fun saveOpenCartsAfterCreation(isEnabled: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[openCartsAfterCreationKey] = isEnabled
         }
     }
 

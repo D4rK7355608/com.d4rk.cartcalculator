@@ -37,31 +37,31 @@ import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun UsageAndDiagnosticsComposable(activity: UsageAndDiagnosticsActivity) {
-    val context: Context = LocalContext.current
-    val dataStore: DataStore = AppCoreManager.dataStore
-    val switchState: State<Boolean> = dataStore.usageAndDiagnostics.collectAsState(initial = ! BuildConfig.DEBUG)
-    val scope: CoroutineScope = rememberCoroutineScope()
-    TopAppBarScaffoldWithBackButton(
-        title = stringResource(id = R.string.usage_and_diagnostics),
-        onBackClicked = { activity.finish() }) { paddingValues ->
+fun UsageAndDiagnosticsComposable(activity : UsageAndDiagnosticsActivity) {
+    val context : Context = LocalContext.current
+    val dataStore : DataStore = AppCoreManager.dataStore
+    val switchState : State<Boolean> =
+            dataStore.usageAndDiagnostics.collectAsState(initial = ! BuildConfig.DEBUG)
+    val coroutineScope : CoroutineScope = rememberCoroutineScope()
+
+    TopAppBarScaffoldWithBackButton(title = stringResource(id = R.string.usage_and_diagnostics) ,
+                                    onBackClicked = { activity.finish() }) { paddingValues ->
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(
                 modifier = Modifier
                         .fillMaxSize()
-                        .padding(paddingValues),
+                        .padding(paddingValues = paddingValues) ,
             ) {
                 item {
                     SwitchCardComposable(
-                        title = stringResource(id = R.string.usage_and_diagnostics),
+                        title = stringResource(id = R.string.usage_and_diagnostics) ,
                         switchState = switchState
                     ) { isChecked ->
-                        scope.launch(Dispatchers.IO) {
-                            dataStore.saveUsageAndDiagnostics(isChecked)
+                        coroutineScope.launch {
+                            dataStore.saveUsageAndDiagnostics(isChecked = isChecked)
                         }
                     }
                 }
@@ -69,37 +69,37 @@ fun UsageAndDiagnosticsComposable(activity: UsageAndDiagnosticsActivity) {
                     Column(
                         modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(24.dp)
+                                .padding(all = 24.dp)
                     ) {
-                        Icon(imageVector = Icons.Outlined.Info, contentDescription = null)
-                        Spacer(modifier = Modifier.height(24.dp))
+                        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
+                        Spacer(modifier = Modifier.height(height = 24.dp))
                         Text(text = stringResource(id = R.string.summary_usage_and_diagnostics))
-                        val annotatedString: AnnotatedString = buildAnnotatedString {
-                            val startIndex: Int = length
+                        val annotatedString : AnnotatedString = buildAnnotatedString {
+                            val startIndex : Int = length
                             withStyle(
                                 style = SpanStyle(
-                                    color = MaterialTheme.colorScheme.primary,
+                                    color = MaterialTheme.colorScheme.primary ,
                                     textDecoration = TextDecoration.Underline
                                 )
                             ) {
                                 append(stringResource(id = R.string.learn_more))
                             }
-                            val endIndex: Int = length
+                            val endIndex : Int = length
 
                             addStringAnnotation(
-                                tag = "URL",
-                                annotation = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy",
-                                start = startIndex,
+                                tag = "URL" ,
+                                annotation = "https://sites.google.com/view/d4rk7355608/more/apps/privacy-policy" ,
+                                start = startIndex ,
                                 end = endIndex
                             )
                         }
-                        Text(text = annotatedString, modifier = Modifier
+                        Text(text = annotatedString , modifier = Modifier
                                 .bounceClick()
                                 .clickable {
                                     annotatedString
                                             .getStringAnnotations(
-                                                tag = "URL",
-                                                start = 0,
+                                                tag = "URL" ,
+                                                start = 0 ,
                                                 end = annotatedString.length
                                             )
                                             .firstOrNull()
