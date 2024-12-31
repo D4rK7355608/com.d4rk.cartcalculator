@@ -18,21 +18,21 @@ import java.io.FileNotFoundException
 import java.io.IOException
 
 open class BaseViewModel(application : Application) : AndroidViewModel(application) {
-    private val _isLoading : MutableStateFlow<Boolean> = MutableStateFlow(value = false)
+    private val _isLoading : MutableStateFlow<Boolean> = MutableStateFlow(false)
     val isLoading : StateFlow<Boolean> = _isLoading
 
-    private val _uiErrorModel : MutableStateFlow<UiErrorModel> = MutableStateFlow(value = UiErrorModel())
+    private val _uiErrorModel : MutableStateFlow<UiErrorModel> = MutableStateFlow(UiErrorModel())
     val uiErrorModel : StateFlow<UiErrorModel> = _uiErrorModel.asStateFlow()
 
-    protected val coroutineExceptionHandler : CoroutineExceptionHandler = CoroutineExceptionHandler { _ , exception : Throwable ->
-        Log.e("BaseViewModel" , "Coroutine Exception: " , exception)
+    protected val coroutineExceptionHandler : CoroutineExceptionHandler = CoroutineExceptionHandler { _ , exception ->
+        Log.e("BaseViewModel" , "Coroutine Exception:" , exception)
         handleError(exception = exception)
     }
 
     val _visibilityStates : MutableStateFlow<List<Boolean>> = MutableStateFlow(emptyList())
     val visibilityStates : StateFlow<List<Boolean>> = _visibilityStates.asStateFlow()
 
-    private val _isFabVisible : MutableStateFlow<Boolean> = MutableStateFlow(value= false)
+    private val _isFabVisible : MutableStateFlow<Boolean> = MutableStateFlow(value = false)
     val isFabVisible : StateFlow<Boolean> = _isFabVisible.asStateFlow()
 
     private fun handleError(exception : Throwable) {
@@ -45,24 +45,35 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
                 is IllegalArgumentException -> ErrorType.ILLEGAL_ARGUMENT
                 else -> ErrorType.UNKNOWN_ERROR
             }
-            handleError(errorType = errorType , ignoredException = exception)
 
             _uiErrorModel.value = UiErrorModel(
-                showErrorDialog = true , errorMessage = when (errorType) {
-                    ErrorType.SECURITY_EXCEPTION -> getApplication<Application>().getString(R.string.security_error)
-                    ErrorType.IO_EXCEPTION -> getApplication<Application>().getString(R.string.io_error)
-                    ErrorType.FILE_NOT_FOUND -> getApplication<Application>().getString(R.string.file_not_found)
-                    ErrorType.ACTIVITY_NOT_FOUND -> getApplication<Application>().getString(R.string.activity_not_found)
-                    ErrorType.ILLEGAL_ARGUMENT -> getApplication<Application>().getString(R.string.illegal_argument_error)
-                    ErrorType.UNKNOWN_ERROR -> getApplication<Application>().getString(R.string.unknown_error)
-                }
+                showErrorDialog = true , errorMessage = getErrorMessage(errorType = errorType)
+            )
+
+            ErrorHandler.handleError(
+                applicationContext = getApplication() ,
+                errorType = errorType ,
+                exception = exception
             )
         }
     }
 
-    protected open fun handleError(errorType : ErrorType , ignoredException : Throwable) {
+    private fun getErrorMessage(errorType : ErrorType) : String {
+        return getApplication<Application>().getString(
+            when (errorType) {
+                ErrorType.SECURITY_EXCEPTION -> R.string.security_error
+                ErrorType.IO_EXCEPTION -> R.string.io_error
+                ErrorType.FILE_NOT_FOUND -> R.string.file_not_found
+                ErrorType.ACTIVITY_NOT_FOUND -> R.string.activity_not_found
+                ErrorType.ILLEGAL_ARGUMENT -> R.string.illegal_argument_error
+                ErrorType.UNKNOWN_ERROR -> R.string.unknown_error
+            }
+        )
+    }
+
+    fun dismissErrorDialog() {
         viewModelScope.launch(context = coroutineExceptionHandler) {
-            ErrorHandler.handleError(applicationContext = getApplication() , errorType = errorType)
+            _uiErrorModel.value = UiErrorModel(showErrorDialog = false)
         }
     }
 

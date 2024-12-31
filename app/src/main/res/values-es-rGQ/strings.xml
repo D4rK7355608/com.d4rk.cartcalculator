@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">Administra y calcula eficientemente los artículos de tu carrito con Cart Calculator. 🛒</string>
-    <string name="notification_update_title">¡Una nueva actualización disponible!</string>
-    <string name="summary_notification_update">Una nueva versión de la aplicación está disponible. ¡Haz clic para actualizar!</string>
+    <string name="app_short_description">Administre y calcule eficientemente los artículos de su carrito con la Calculadora de Carrito. 🛒</string>
+    <string name="notification_update_title">¡Hay una nueva actualización disponible!</string>
+    <string name="summary_notification_update">Una nueva versión de la aplicación está disponible. ¡Haga clic para actualizar!</string>
     <string name="notification_last_time_used_title">¡Ha pasado un tiempo!</string>
-    <string name="summary_notification_last_time_used"> ¡Gestiona tus artículos del carrito de manera eficiente!</string>
+    <string name="summary_notification_last_time_used">¡Administremos los artículos de su carrito de manera eficiente!</string>
 
     <string name="welcome">Bienvenido</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Lee y acepta nuestros Términos de servicio y Política de privacidad para continuar.</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Lea y acepte nuestros Términos de Servicio y Política de Privacidad para continuar.</string>
     <string name="agree">Aceptar</string>
 
+    <string name="navigation_drawer_open">Abrir panel de navegación</string>
+
     <string name="no_carts_available">No hay carritos disponibles</string>
-    <string name="add_new_cart">Agregar nuevo carrito</string>
+    <string name="add_new_cart">Añadir nuevo carrito</string>
     <string name="cart_name">Nombre del carrito</string>
     <string name="shopping_cart">Carrito de compras</string>
-    <string name="summary_cart_dialog">Nos comprometemos a crear una experiencia de compra personalizada para todos. Para facilitar el seguimiento de tus selecciones y mejorar tu experiencia de compra, considera darle un nombre a tu carrito antes de agregar artículos.</string>
+    <string name="summary_cart_dialog">Estamos comprometidos a crear una experiencia de compra personalizada para todos. Para que le sea más fácil hacer un seguimiento de sus selecciones y mejorar su experiencia de compra, considere darle un nombre a su carrito antes de agregar artículos.</string>
     <string name="created_on">Creado el %1$s</string>
     <string name="decrease_quantity">Disminuir cantidad</string>
     <string name="increase_quantity">Aumentar cantidad</string>
     <string name="delete_cart_title">Eliminar carrito</string>
     <string name="delete_cart_message">¿Está seguro de que desea eliminar este carrito?</string>
     <string name="delete_cart_warning">Eliminar este carrito eliminará permanentemente todos los artículos de \"%s\" y no se puede deshacer.</string>
-    <string name="snackbar_cart_deleted_success">¡Carrito eliminado correctamente!</string>
+    <string name="snackbar_cart_deleted_success">¡Carrito eliminado con éxito!</string>
     <string name="close">¿Cerrar?</string>
-    <string name="summary_close">¿Estás seguro de que quieres salir?</string>
+    <string name="summary_close">¿Está seguro de que desea salir?</string>
     <string name="file_not_found">Archivo no encontrado.</string>
     <string name="activity_not_found">Actividad no encontrada.</string>
     <string name="security_error">Se ha producido un error de seguridad. Por favor, inténtelo de nuevo más tarde.</string>
-    <string name="io_error">Se ha producido un error de entrada/salida. Por favor, revise su conexión a la red o el almacenamiento e inténtelo de nuevo.</string>
-    <string name="illegal_argument_error">Entrada o argumento no válido. Por favor, compruebe la información e inténtelo de nuevo.</string>
+    <string name="io_error">Se ha producido un error de entrada/salida. Compruebe su conexión de red o almacenamiento y vuelva a intentarlo.</string>
+    <string name="illegal_argument_error">Entrada o argumento no válido. Compruebe la información y vuelva a intentarlo.</string>
     <string name="unknown_error">Se ha producido un error desconocido.</string>
+    <string name="initialization_error">Error de inicialización. Por favor, inténtelo de nuevo más tarde.</string>
 
-    <string name="your_shopping_cart_is_empty">Tu carrito de compras está vacío</string>
+    <string name="your_shopping_cart_is_empty">Su carrito de compras está vacío</string>
     <string name="in_cart">En el carrito</string>
     <string name="items_to_pick_up">Artículos para recoger</string>
     <string name="item_name">Nombre del artículo</string>
-    <string name="enter_item_name">Introduce el nombre del artículo</string>
+    <string name="enter_item_name">Introduzca el nombre del artículo</string>
     <string name="item_price">Precio del artículo</string>
-    <string name="enter_item_price">Introduce el precio del artículo</string>
+    <string name="enter_item_price">Introduzca el precio del artículo</string>
     <string name="quantity">Cantidad</string>
-    <string name="enter_quantity">Introduce la cantidad</string>
-    <string name="dialog_info_cart_item">Para asegurar una experiencia de pago sin problemas, por favor proporciona detalles sobre los artículos que estás agregando a tu carrito</string>
+    <string name="enter_quantity">Introduzca la cantidad</string>
+    <string name="dialog_info_cart_item">Para garantizar una experiencia de pago sin problemas, proporcione detalles sobre los artículos que está agregando a su carrito</string>
     <string name="total">Total</string>
     <string name="delete_cart_item_title">Eliminar artículo del carrito</string>
     <string name="delete_cart_item_message">¿Está seguro de que desea eliminar este artículo?</string>
-    <string name="delete_cart_item_warning">Está a punto de eliminar "%s" de su carrito.</string>
+    <string name="delete_cart_item_warning">Está a punto de eliminar \"%s\" de su carrito.</string>
 
-    <string name="settings">Configuraciones</string>
+    <string name="settings">Ajustes</string>
 
     <string name="display">Pantalla</string>
-    <string name="summary_preference_settings_display">Personaliza el aspecto y la sensación de tu aplicación</string>
+    <string name="summary_preference_settings_display">Personalice la apariencia de su aplicación</string>
 
     <string name="appearance">Apariencia</string>
     <string name="dark_theme">Tema oscuro</string>
@@ -59,99 +62,104 @@
     <string name="follow_system">Seguir el modo del sistema</string>
     <string name="light_mode">Modo claro</string>
     <string name="dark_mode">Modo oscuro</string>
-    <string name="summary_dark_theme">El tema oscuro utiliza un fondo profundo para ayudar a prolongar la vida útil de tu batería</string>
+    <string name="summary_dark_theme">El tema oscuro utiliza un fondo profundo para ayudar a prolongar la duración de la batería</string>
 
     <string name="dynamic_colors">Colores dinámicos</string>
-    <string name="summary_preference_settings_dynamic_colors">Aplica colores de los fondos de pantalla al tema de la aplicación</string>
+    <string name="summary_preference_settings_dynamic_colors">Aplicar colores de los fondos de pantalla al tema de la aplicación</string>
 
     <string name="app_behavior">Comportamiento de la aplicación</string>
-    <string name="bounce_buttons">Clic de rebote</string>
-    <string name="summary_preference_settings_bounce_buttons">Aplica una sutil animación de rebote a todos los elementos clicables cuando se hace clic en ellos</string>
+    <string name="bounce_buttons">Rebote al hacer clic</string>
+    <string name="summary_preference_settings_bounce_buttons">Aplica una sutil animación de rebote a todos los elementos en los que se puede hacer clic</string>
 
     <string name="language">Idioma</string>
     <string name="summary_preference_settings_language">Cambia el idioma utilizado en la aplicación</string>
-    <string name="dialog_language_subtitle">Selecciona tu idioma preferido</string>
-    <string name="dialog_info_language">Personaliza tu experiencia con tu idioma preferido. Cualquier cambio de idioma que realices se aplicará de inmediato, garantizando una experiencia continua en el idioma elegido</string>
+    <string name="dialog_language_subtitle">Seleccione su idioma preferido</string>
+    <string name="dialog_info_language">Personalice su experiencia con su idioma preferido. Cualquier cambio de idioma que realice tendrá efecto de inmediato, lo que garantiza una experiencia perfecta en el idioma elegido</string>
 
-    <string name="cart_settings">Configuraciones del carrito</string>
-    <string name="summary_preference_settings_cart">Gestiona el comportamiento de tu carrito</string>
+    <string name="cart_settings">Configuración del carrito</string>
+    <string name="summary_preference_settings_cart">Administre cómo se comporta su carrito</string>
 
     <string name="currency">Moneda</string>
-    <string name="summary_preference_settings_currency">Establece tu moneda preferida para mostrar precios</string>
-    <string name="dialog_currency_subtitle">Selecciona tu moneda preferida</string>
-    <string name="dialog_info_currency">Esta selección de moneda se utilizará en toda la plataforma para mostrar precios de productos, procesar transacciones y proporcionar una experiencia de compra más personalizada</string>
+    <string name="summary_preference_settings_currency">Establezca su moneda preferida para mostrar los precios</string>
+    <string name="dialog_currency_subtitle">Seleccione su moneda preferida</string>
+    <string name="dialog_info_currency">Esta selección de moneda se utilizará en toda la plataforma para mostrar los precios de los productos, procesar transacciones y brindar una experiencia de compra más personalizada</string>
+    <string name="open_carts_after_creation">Abrir carritos después de la creación</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Abrir automáticamente un carrito inmediatamente después de su creación.</string>
 
     <string name="notifications">Notificaciones</string>
-    <string name="summary_preference_settings_notifications">Gestiona las notificaciones de la aplicación</string>
+    <string name="summary_preference_settings_notifications">Administrar notificaciones de la aplicación</string>
 
     <string name="app_usage_notifications">Notificaciones de uso de la aplicación</string>
     <string name="update_notifications">Notificaciones de actualización</string>
 
     <string name="advanced">Avanzado</string>
-    <string name="summary_preference_settings_advanced">Explora configuraciones más avanzadas</string>
-    <string name="error_reporting">Informe de errores</string>
-    <string name="bug_report">Informe de errores</string>
-    <string name="summary_preference_settings_bug_report">Envía informes de errores y solicitudes de características a la página de problemas del repositorio de GitHub de la aplicación</string>
+    <string name="summary_preference_settings_advanced">Explore configuraciones más avanzadas</string>
+    <string name="error_reporting">Reporte de errores</string>
+    <string name="bug_report">Reporte de errores</string>
+    <string name="summary_preference_settings_bug_report">Envíe informes de errores y solicitudes de funciones a la página de incidencias del repositorio de GitHub de la aplicación</string>
 
     <string name="security_and_privacy">Seguridad y privacidad</string>
-    <string name="summary_preference_settings_privacy_and_security">Gestiona tus configuraciones de privacidad</string>
+    <string name="summary_preference_settings_privacy_and_security">Administre su configuración de privacidad</string>
     <string name="privacy">Privacidad</string>
     <string name="privacy_policy">Política de privacidad</string>
-    <string name="summary_preference_settings_privacy_policy">Consulta la política que rige cómo manejamos tus datos</string>
+    <string name="summary_preference_settings_privacy_policy">Consulte la política que rige cómo manejamos sus datos</string>
     <string name="terms_of_service">Términos de servicio</string>
-    <string name="summary_preference_settings_terms_of_service">Revisa los términos que aceptas al usar nuestro servicio</string>
+    <string name="summary_preference_settings_terms_of_service">Revise los términos que acepta al utilizar nuestro servicio</string>
     <string name="code_of_conduct">Código de conducta</string>
-    <string name="summary_preference_settings_code_of_conduct">Entiende las reglas y directrices para el comportamiento dentro de nuestro servicio</string>
+    <string name="summary_preference_settings_code_of_conduct">Comprenda las reglas y pautas de comportamiento dentro de nuestro servicio</string>
 
     <string name="permissions">Permisos</string>
-    <string name="summary_preference_settings_permissions">Gestiona los permisos otorgados a nuestro servicio</string>
+    <string name="summary_preference_settings_permissions">Administre los permisos otorgados a nuestro servicio</string>
     <string name="normal">Normal</string>
     <string name="ad_id">ID de anuncio [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Permite que la aplicación recupere y use el identificador de publicidad asociado con el dispositivo del usuario, proporcionando anuncios personalizados, midiendo la efectividad de los anuncios y mostrando anuncios en dispositivos con Android 13 o posterior.</string>
+    <string name="summary_preference_permissions_ad_id">Permite que la aplicación recupere y utilice el identificador de publicidad asociado con el dispositivo del usuario, proporcionando anuncios personalizados, midiendo la efectividad de los anuncios y mostrando anuncios en dispositivos Android 13 o posteriores.</string>
     <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Permite que la aplicación establezca una conexión a internet para enviar informes de errores o verificar actualizaciones.</string>
+    <string name="summary_preference_permissions_internet">Permite que la aplicación establezca una conexión a Internet para enviar informes de errores o buscar actualizaciones.</string>
     <string name="post_notifications">Publicar notificaciones [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Permite que la aplicación muestre notificaciones en dispositivos con Android 13 o posterior.</string>
+    <string name="summary_preference_permissions_post_notifications">Permite que la aplicación muestre notificaciones en los dispositivos con Android 13 o posterior.</string>
     <string name="runtime">Tiempo de ejecución</string>
     <string name="access_network_state">Acceder al estado de la red [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Permite que la aplicación verifique la conectividad de la red y recupere información sobre Wi-Fi, incluido el estado habilitado y los nombres de los dispositivos Wi-Fi conectados.</string>
-    <string name="access_notification_policy">Acceder a la política de notificaciones [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Permite que la aplicación acceda y modifique la política de notificaciones del dispositivo, controlando cómo y cuándo se muestran las notificaciones al usuario y proporcionando funciones de gestión de notificaciones personalizadas.</string>
+    <string name="access_notification_policy">Acceder a la política de notificación [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Permite que la aplicación acceda y modifique la política de notificación del dispositivo, controlando cómo y cuándo se muestran las notificaciones al usuario y proporcionando funciones personalizadas de administración de notificaciones.</string>
     <string name="billing">Facturación [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Permite que la aplicación use la Biblioteca de Facturación de Google Play para manejar compras dentro de la aplicación y donaciones</string>
+    <string name="summary_preference_permissions_billing">Permite que la aplicación utilice la biblioteca de facturación de Google Play para gestionar las compras y donaciones dentro de la aplicación</string>
     <string name="check_license">Verificar licencia [CHECK_LICENSE]</string>
     <string name="summary_preference_permissions_check_license">Permite que la aplicación verifique su cumplimiento con el acuerdo de licencia y haga cumplir los términos de la licencia para proteger la propiedad intelectual.</string>
     <string name="foreground_service">Servicio en primer plano [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Permite que la aplicación cree y use servicios que se ejecutan en primer plano, dándoles prioridad sobre otros procesos en segundo plano y mejorando el rendimiento y la confiabilidad.</string>
+    <string name="summary_preference_permissions_foreground_service">Permite que la aplicación cree y utilice servicios que se ejecutan en primer plano, dándoles prioridad sobre otros procesos en segundo plano y mejorando el rendimiento y la fiabilidad.</string>
 
     <string name="ads">Anuncios</string>
-    <string name="summary_preference_settings_ads">Controla cómo usamos tu información para mostrarte anuncios relevantes</string>
+    <string name="summary_preference_settings_ads">Controle cómo utilizamos su información para mostrarle anuncios relevantes</string>
     <string name="display_ads">Mostrar anuncios</string>
     <string name="personalized_ads">Anuncios personalizados</string>
-    <string name="summary_ads_personalized_ads">Elige cómo personalizamos los anuncios para ti en función de tus intereses</string>
-    <string name="summary_ads">Ve anuncios que sean relevantes para ti. Gestiona la información utilizada para mostrar anuncios personalizados según tu actividad en la aplicación. Siempre puedes desactivar la personalización aquí.\n</string>
+    <string name="summary_ads_personalized_ads">Elija cómo personalizamos los anuncios para usted en función de sus intereses</string>
+    <string name="summary_ads">Vea anuncios que sean relevantes para usted. Administre la información utilizada para mostrar anuncios personalizados en función de su actividad en la aplicación. Siempre puede desactivar la personalización aquí.\n</string>
 
-    <string name="usage_and_diagnostics">Uso y diagnósticos</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Comparte datos para ayudar a mejorar Cart Calculator</string>
-    <string name="summary_usage_and_diagnostics">Ayuda a mejorar tu experiencia enviando automáticamente datos de diagnóstico, del dispositivo y de uso de la aplicación. Esto ayudará a mejorar el rendimiento, la estabilidad y otras mejoras de la aplicación. Algunos datos agregados también ayudarán a nuestras aplicaciones.\n\nEsta es información general sobre tu dispositivo y cómo usas nuestras aplicaciones (como el nivel de batería, la actividad del sistema y de la aplicación, y errores). Los datos se utilizarán para mejorar nuestras aplicaciones\n\nDesactivar esta función no afecta la capacidad de tu dispositivo para enviar la información necesaria para servicios esenciales como actualizaciones de aplicaciones y seguridad.\n</string>
+    <string name="usage_and_diagnostics">Uso y diagnóstico</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Comparta datos para ayudar a mejorar la Calculadora de Carrito</string>
+    <string name="summary_usage_and_diagnostics">Ayude a mejorar su experiencia enviándonos automáticamente datos de diagnóstico, dispositivo y uso de la aplicación. Esto ayudará a mejorar el rendimiento, la estabilidad y otras mejoras de la aplicación. Algunos datos agregados también ayudarán a nuestras aplicaciones.\n\nEsta es información general sobre su dispositivo y cómo utiliza nuestras aplicaciones (como el nivel de batería, la actividad del sistema y de la aplicación, y los errores). Los datos se utilizarán para mejorar nuestras aplicaciones.\n\nDesactivar esta función no afecta la capacidad de su dispositivo para enviar la información necesaria para servicios esenciales como actualizaciones de aplicaciones y seguridad.\n</string>
 
     <string name="legal">Legal</string>
     <string name="legal_notices">Avisos legales</string>
-    <string name="summary_preference_settings_legal_notices">Consulta la información legal sobre nuestro servicio</string>
+    <string name="summary_preference_settings_legal_notices">Consulte la información legal sobre nuestro servicio</string>
     <string name="license">Licencia</string>
 
     <string name="about">Acerca de</string>
-    <string name="summary_preference_settings_about">Aprende más sobre Cart Calculator</string>
+    <string name="summary_preference_settings_about">Obtenga más información sobre la Calculadora de Carrito</string>
 
     <string name="app_info">Información de la aplicación</string>
     <string name="app_build_version">Versión de compilación de la aplicación</string>
-    <string name="summary_preference_settings_oss">Detalles de la licencia para software de código abierto</string>
+    <string name="summary_preference_settings_oss">Detalles de la licencia del software de código abierto</string>
     <string name="device_info">Información del dispositivo</string>
-    <string name="app_build">Compilación de la aplicación: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="app_build">Compilación de la aplicación: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Depuración</string>
+    <string name="release">Lanzamiento</string>
     <string name="manufacturer">Fabricante:</string>
     <string name="device_model">Modelo del dispositivo:</string>
     <string name="android_version">Versión de Android:</string>
     <string name="api_level">Nivel de API:</string>
+    <string name="snack_device_info_copied">Información del dispositivo copiada al portapapeles</string>
 
     <string name="help_and_feedback">Ayuda y comentarios</string>
     <string name="help">Ayuda</string>
@@ -160,24 +168,24 @@
     <string name="version_info">Información de la versión</string>
     <string name="version">Versión %1$s</string>
     <string name="beta_program">Programa beta</string>
-    <string name="question_1">¿Qué es Cart Calculator?</string>
-    <string name="summary_preference_faq_1">Cart Calculator es un sencillo, genérico y gratuito gestor de carritos de compras y calculadora de total a pagar que reemplaza la calculadora ordinaria del dispositivo cuando estás en el supermercado o en el mercado.</string>
-    <string name="question_2">¿Cómo funciona Cart Calculator?</string>
-    <string name="summary_preference_faq_2">Cart Calculator te permite gestionar tu carrito de compras agregando productos y aumentando o disminuyendo sus cantidades. En cualquier momento, Cart Calculator muestra el total a pagar de los productos en tu carrito según sus precios y cantidades.</string>
-    <string name="question_3">¿Por qué debería usar Cart Calculator?</string>
-    <string name="summary_preference_faq_3">Cart Calculator te ayuda a estar siempre consciente de cuánto estás gastando incluso antes de llegar a la caja. Esto es especialmente útil cuando tienes que ir de compras con un presupuesto.</string>
-    <string name="question_4">¿Puedo usar Cart Calculator fuera de los supermercados o mercados?</string>
-    <string name="summary_preference_faq_4">¡Sí! Dado que Cart Calculator es sorprendentemente simple y genérico, también puedes usarlo en bares, restaurantes, cines, etc.</string>
-    <string name="question_5">¿Cómo agrego un artículo a mi carrito usando Cart Calculator?</string>
-    <string name="summary_preference_faq_5">Desde la pantalla de inicio, presiona el botón "Agregar artículo" en la barra de acciones para agregar un nuevo producto a tu carrito. Informas su nombre y precio y luego haces clic en el botón "Agregar".</string>
-    <string name="question_6">¿Cómo aumento o disminuyo la cantidad de un artículo en mi carrito usando Cart Calculator?</string>
-    <string name="summary_preference_faq_6">Simplemente encuentra el artículo en la lista y luego presiona el botón \"+ (más)\" para aumentar su cantidad o el botón \"- (menos)\" para disminuir su cantidad.</string>
-    <string name="question_7">¿Cómo elimino un artículo de mi carrito usando Cart Calculator?</string>
-    <string name="summary_preference_faq_7">Para eliminar un producto de tu carrito, simplemente reduce su cantidad a cero o haz una pulsación larga sobre él en la lista y luego selecciona el botón "Eliminar artículo".</string>
-    <string name="question_8">¿Cart Calculator es software libre?</string>
-    <string name="summary_preference_faq_8">¡Sí! Cart Calculator es orgullosamente software libre distribuido bajo la Licencia Pública General de GNU versión 3.</string>
-    <string name="question_9">¿Cómo puedo contribuir a Cart Calculator?</string>
-    <string name="summary_preference_faq_9">La mejor manera de contribuir a Cart Calculator es a través de su repositorio en <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Desde allí, puedes hacer un fork y trabajar en tus contribuciones, y luego enviarlas de vuelta mediante un pull request. También puedes usar el rastreador de problemas para reportar errores, proponer nuevas características o mejoras, o obtener ideas sobre cómo podrías ayudar.</string>
+    <string name="question_1">¿Qué es la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_1">La Calculadora de Carrito es un administrador de carrito de compras simple, genérico y gratuito y una calculadora de total adeudado que reemplaza a la calculadora ordinaria del dispositivo para cuando estás en la tienda de comestibles o en el mercado.</string>
+    <string name="question_2">¿Cómo funciona la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_2">La Calculadora de Carrito le permite administrar su carrito de compras agregando productos y aumentando o disminuyendo sus cantidades. En cualquier momento, la Calculadora de Carrito muestra el total adeudado de los productos en su carrito en función de sus precios y cantidades.</string>
+    <string name="question_3">¿Por qué debería utilizar la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_3">La Calculadora de Carrito le ayuda a estar siempre al tanto de cuánto está gastando incluso antes de llegar a la caja. Esto es especialmente útil cuando tiene que ir de compras con un presupuesto limitado.</string>
+    <string name="question_4">¿Puedo usar la Calculadora de Carrito fuera de las tiendas de comestibles o los mercados?</string>
+    <string name="summary_preference_faq_4">¡Sí! Dado que la Calculadora de Carrito es sorprendentemente simple y genérica, también puede usarla en bares, restaurantes, cines, etc.</string>
+    <string name="question_5">¿Cómo agrego un artículo a mi carrito usando la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_5">Abra su carrito y presione el botón "Agregar artículo" en la barra de acciones para agregar un nuevo producto a su carrito. Informe su nombre, precio y cantidad y luego haga clic en el botón "Agregar".</string>
+    <string name="question_6">¿Cómo aumento o disminuyo la cantidad de un artículo en mi carrito usando la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_6">Simplemente busque el artículo en la lista y luego presione el botón "+ (más)" para aumentar su cantidad o el botón "- (menos)" para disminuir su cantidad.</string>
+    <string name="question_7">¿Cómo elimino un artículo de mi carrito usando la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_7">Para eliminar un producto de su carrito, simplemente deslice el dedo hacia la derecha o hacia la izquierda o reduzca su cantidad a cero y luego seleccione el botón "Eliminar artículo".</string>
+    <string name="question_8">¿Es la Calculadora de Carrito un software gratuito?</string>
+    <string name="summary_preference_faq_8">¡Sí! La Calculadora de Carrito es un software orgullosamente gratuito distribuido bajo la Licencia Pública General GNU versión 3.</string>
+    <string name="question_9">¿Cómo puedo contribuir a la Calculadora de Carrito?</string>
+    <string name="summary_preference_faq_9">La mejor manera de contribuir a la Calculadora de Carrito es a través de su repositorio <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Desde allí, puede bifurcarlo y trabajar en sus contribuciones, y luego enviarlas de vuelta a través de una solicitud de extracción. También puede usar el rastreador de problemas para informar errores, proponer nuevas funciones o mejoras, u obtener ideas sobre cómo podría ayudar.</string>
     <string name="feedback">Comentarios</string>
 
     <string name="updates">Actualizaciones</string>
@@ -185,14 +193,14 @@
     <string name="share">Compartir</string>
 
     <string name="support_us">Apóyanos</string>
-    <string name="paid_support">Soporte pagado</string>
-    <string name="summary_donations">No importa cuánto dones, nos ayudarás a mantener nuestra aplicación en funcionamiento y a mejorar nuestras características. ¡Apreciamos tu generosidad y amabilidad!</string>
-    <string name="non_paid_support">Soporte no pagado</string>
+    <string name="paid_support">Soporte de pago</string>
+    <string name="summary_donations">No importa cuánto done, nos ayudará a mantener nuestra aplicación en funcionamiento y mejorar nuestras funciones. ¡Apreciamos su generosidad y amabilidad!</string>
+    <string name="non_paid_support">Soporte no remunerado</string>
     <string name="web_ad">Anuncio web</string>
 
-    <string name="snack_app_updated">The app has been successfully updated</string>
-    <string name="snack_update_failed">The update process encountered an issue</string>
-    <string name="try_again">Try again</string>
-    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
-    <string name="learn_more">Learn more</string>
+    <string name="snack_app_updated">La aplicación se ha actualizado correctamente</string>
+    <string name="snack_update_failed">El proceso de actualización encontró un problema</string>
+    <string name="try_again">Intentar otra vez</string>
+    <string name="summary_share_message">¡Mira esta increíble aplicación que estoy usando! Tiene algunas características realmente interesantes que te pueden interesar. Puedes descargarlo desde Play Store en: %1$s</string>
+    <string name="learn_more">Aprende más</string>
 </resources>

@@ -1,198 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">Efektywnie zarządzaj i obliczaj przedmioty w koszyku za pomocą Kalkulatora Koszyka. 🛒</string>
-    <string name="notification_update_title">Dostępna jest nowa aktualizacja!</string>
+    <string name="app_short_description">Efektywnie zarządzaj i obliczaj pozycje w koszyku za pomocą Kalkulatora Koszyka. 🛒</string>
+    <string name="notification_update_title">Dostępna nowa aktualizacja!</string>
     <string name="summary_notification_update">Dostępna jest nowa wersja aplikacji. Kliknij, aby zaktualizować!</string>
-    <string name="notification_last_time_used_title">Dawno się nie widzieliśmy!</string>
-    <string name="summary_notification_last_time_used"> Zarządzajmy przedmiotami w koszyku efektywnie!</string>
+    <string name="notification_last_time_used_title">Minęło trochę czasu!</string>
+    <string name="summary_notification_last_time_used">Zarządzajmy efektywnie pozycjami w Twoim koszyku!</string>
 
-    <string name="welcome">Witamy</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Przeczytaj i zaakceptuj nasze Warunki świadczenia usług i Politykę prywatności, aby kontynuować.</string>
+    <string name="welcome">Witaj</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Przeczytaj i zaakceptuj nasze Warunki korzystania z usługi i Politykę prywatności, aby kontynuować.</string>
     <string name="agree">Zgadzam się</string>
+
+    <string name="navigation_drawer_open">Otwórz szufladę nawigacji</string>
 
     <string name="no_carts_available">Brak dostępnych koszyków</string>
     <string name="add_new_cart">Dodaj nowy koszyk</string>
     <string name="cart_name">Nazwa koszyka</string>
     <string name="shopping_cart">Koszyk</string>
-    <string name="summary_cart_dialog">Zobowiązujemy się do tworzenia spersonalizowanych wrażeń zakupowych dla wszystkich. Aby ułatwić śledzenie wyborów i ulepszenie podróży zakupowej, rozważ nadanie koszykowi nazwy przed dodaniem przedmiotów.</string>
-    <string name="created_on">Utworzony %1$s</string>
+    <string name="summary_cart_dialog">Dążymy do tworzenia spersonalizowanych doświadczeń zakupowych dla każdego. Aby ułatwić Ci śledzenie swoich wyborów i usprawnić proces zakupów, rozważ nadanie nazwy swojemu koszykowi przed dodaniem pozycji.</string>
+    <string name="created_on">Utworzono %1$s</string>
     <string name="decrease_quantity">Zmniejsz ilość</string>
     <string name="increase_quantity">Zwiększ ilość</string>
     <string name="delete_cart_title">Usuń koszyk</string>
     <string name="delete_cart_message">Czy na pewno chcesz usunąć ten koszyk?</string>
-    <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich artykułów z \"%s\" i nie będzie można tego cofnąć.</string>
+    <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich pozycji z „%s” i nie można tego cofnąć.</string>
     <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
-    <string name="close">Zamknij?</string>
+    <string name="close">Zamknąć?</string>
     <string name="summary_close">Czy na pewno chcesz wyjść?</string>
-    <string name="file_not_found">Plik nie znaleziony.</string>
+    <string name="file_not_found">Nie znaleziono pliku.</string>
     <string name="activity_not_found">Nie znaleziono aktywności.</string>
     <string name="security_error">Wystąpił błąd zabezpieczeń. Spróbuj ponownie później.</string>
     <string name="io_error">Wystąpił błąd wejścia/wyjścia. Sprawdź połączenie sieciowe lub pamięć i spróbuj ponownie.</string>
     <string name="illegal_argument_error">Podano nieprawidłowe dane wejściowe lub argument. Sprawdź informacje i spróbuj ponownie.</string>
     <string name="unknown_error">Wystąpił nieznany błąd.</string>
+    <string name="initialization_error">Inicjalizacja nie powiodła się. Spróbuj ponownie później.</string>
 
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
     <string name="in_cart">W koszyku</string>
-    <string name="items_to_pick_up">Rzeczy do odebrania</string>
-    <string name="item_name">Nazwa przedmiotu</string>
-    <string name="enter_item_name">Wprowadź nazwę przedmiotu</string>
-    <string name="item_price">Cena przedmiotu</string>
-    <string name="enter_item_price">Wprowadź cenę przedmiotu</string>
+    <string name="items_to_pick_up">Produkty do odbioru</string>
+    <string name="item_name">Nazwa produktu</string>
+    <string name="enter_item_name">Wprowadź nazwę produktu</string>
+    <string name="item_price">Cena produktu</string>
+    <string name="enter_item_price">Wprowadź cenę produktu</string>
     <string name="quantity">Ilość</string>
     <string name="enter_quantity">Wprowadź ilość</string>
-    <string name="dialog_info_cart_item">Aby zapewnić płynne doświadczenie zakupowe, podaj szczegóły dotyczące przedmiotów dodawanych do koszyka.</string>
-    <string name="total">Razem</string>
-    <string name="delete_cart_item_title">Usuń element z koszyka</string>
-    <string name="delete_cart_item_message">Czy na pewno chcesz usunąć ten element?</string>
-    <string name="delete_cart_item_warning">Masz zamiar usunąć "%s" z koszyka.</string>
+    <string name="dialog_info_cart_item">Aby zapewnić bezproblemową realizację transakcji, podaj szczegóły dotyczące przedmiotów, które dodajesz do koszyka</string>
+    <string name="total">Suma</string>
+    <string name="delete_cart_item_title">Usuń przedmiot z koszyka</string>
+    <string name="delete_cart_item_message">Czy na pewno chcesz usunąć ten przedmiot?</string>
+    <string name="delete_cart_item_warning">Za chwilę usuniesz „%s” ze swojego koszyka.</string>
 
     <string name="settings">Ustawienia</string>
 
-    <string name="display">Wyświetlanie</string>
-    <string name="summary_preference_settings_display">Personalizuj wygląd i działanie aplikacji</string>
+    <string name="display">Wyświetlacz</string>
+    <string name="summary_preference_settings_display">Spersonalizuj wygląd i styl swojej aplikacji</string>
 
     <string name="appearance">Wygląd</string>
     <string name="dark_theme">Ciemny motyw</string>
     <string name="will_turn_on_automatically_by_system">Zostanie włączony automatycznie przez system</string>
-    <string name="will_never_turn_on_automatically">Nigdy nie zostanie włączony automatycznie</string>
+    <string name="will_never_turn_on_automatically">Nigdy nie włączy się automatycznie</string>
     <string name="amoled_mode">Tryb AMOLED</string>
-    <string name="follow_system">Śledź tryb systemu</string>
-    <string name="light_mode">Jasny motyw</string>
-    <string name="dark_mode">Ciemny motyw</string>
-    <string name="summary_dark_theme">Ciemny motyw wykorzystuje ciemne tło, aby pomóc w dłuższym działaniu baterii.</string>
+    <string name="follow_system">Tryb systemowy</string>
+    <string name="light_mode">Tryb jasny</string>
+    <string name="dark_mode">Tryb ciemny</string>
+    <string name="summary_dark_theme">Ciemny motyw wykorzystuje głębokie tło, aby pomóc wydłużyć żywotność baterii</string>
 
     <string name="dynamic_colors">Dynamiczne kolory</string>
-    <string name="summary_preference_settings_dynamic_colors">Zastosuj kolory ze tapet do motywu aplikacji</string>
+    <string name="summary_preference_settings_dynamic_colors">Zastosuj kolory z tapet do motywu aplikacji</string>
 
     <string name="app_behavior">Zachowanie aplikacji</string>
-    <string name="bounce_buttons">Odbijające kliknięcie</string>
+    <string name="bounce_buttons">Odbijanie kliknięcia</string>
     <string name="summary_preference_settings_bounce_buttons">Stosuje subtelną animację odbicia do wszystkich klikalnych elementów po kliknięciu</string>
 
     <string name="language">Język</string>
     <string name="summary_preference_settings_language">Zmienia język używany w aplikacji</string>
     <string name="dialog_language_subtitle">Wybierz preferowany język</string>
-    <string name="dialog_info_language">Spersonalizuj swoje wrażenia za pomocą preferowanego języka. Wszelkie wprowadzone przez Ciebie zmiany języka wchodzą w życie natychmiast, zapewniając płynne działanie w wybranym języku.</string>
+    <string name="dialog_info_language">Spersonalizuj swoje doświadczenie za pomocą preferowanego języka. Wszelkie wprowadzone zmiany językowe zaczną obowiązywać od razu, zapewniając płynne działanie w wybranym języku</string>
 
     <string name="cart_settings">Ustawienia koszyka</string>
-    <string name="summary_preference_settings_cart">Zarządzaj sposobem działania koszyka</string>
+    <string name="summary_preference_settings_cart">Zarządzaj zachowaniem koszyka</string>
 
     <string name="currency">Waluta</string>
     <string name="summary_preference_settings_currency">Ustaw preferowaną walutę do wyświetlania cen</string>
     <string name="dialog_currency_subtitle">Wybierz preferowaną walutę</string>
-    <string name="dialog_info_currency">Ten wybór waluty zostanie wykorzystany na całej platformie do wyświetlania cen produktów, przetwarzania transakcji i zapewniania bardziej spersonalizowanego doświadczenia zakupowego.</string>
+    <string name="dialog_info_currency">Ten wybór waluty będzie używany na całej platformie do wyświetlania cen produktów, przetwarzania transakcji i zapewniania bardziej spersonalizowanych zakupów</string>
+    <string name="open_carts_after_creation">Otwieraj koszyki po utworzeniu</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Automatycznie otwieraj koszyk natychmiast po jego utworzeniu.</string>
 
     <string name="notifications">Powiadomienia</string>
     <string name="summary_preference_settings_notifications">Zarządzaj powiadomieniami aplikacji</string>
 
-    <string name="app_usage_notifications">Powiadomienia o użyciu aplikacji</string>
-    <string name="update_notifications">Powiadomienia o aktualizacji</string>
+    <string name="app_usage_notifications">Powiadomienia o użytkowaniu aplikacji</string>
+    <string name="update_notifications">Aktualizuj powiadomienia</string>
 
     <string name="advanced">Zaawansowane</string>
-    <string name="summary_preference_settings_advanced">Eksploruj bardziej zaawansowane ustawienia</string>
+    <string name="summary_preference_settings_advanced">Poznaj bardziej zaawansowane ustawienia</string>
     <string name="error_reporting">Zgłaszanie błędów</string>
-    <string name="bug_report">Zgłoszenie błędu</string>
-    <string name="summary_preference_settings_bug_report">Wyślij raporty o błędach i żądania funkcji na stronę problemów z repozytorium GitHub aplikacji</string>
+    <string name="bug_report">Zgłoś błąd</string>
+    <string name="summary_preference_settings_bug_report">Wysyłaj raporty o błędach i prośby o nowe funkcje na stronę problemów repozytorium GitHub aplikacji</string>
 
     <string name="security_and_privacy">Bezpieczeństwo i prywatność</string>
     <string name="summary_preference_settings_privacy_and_security">Zarządzaj ustawieniami prywatności</string>
     <string name="privacy">Prywatność</string>
     <string name="privacy_policy">Polityka prywatności</string>
-    <string name="summary_preference_settings_privacy_policy">Zobacz politykę, która reguluje sposób, w jaki traktujemy Twoje dane</string>
-    <string name="terms_of_service">Warunki świadczenia usług</string>
-    <string name="summary_preference_settings_terms_of_service">Przejrzyj warunki, z którymi się zgadzasz, korzystając z naszej usługi</string>
+    <string name="summary_preference_settings_privacy_policy">Zobacz politykę, która reguluje sposób, w jaki przetwarzamy Twoje dane</string>
+    <string name="terms_of_service">Warunki korzystania z usługi</string>
+    <string name="summary_preference_settings_terms_of_service">Zapoznaj się z warunkami, które akceptujesz, korzystając z naszej usługi</string>
     <string name="code_of_conduct">Kodeks postępowania</string>
-    <string name="summary_preference_settings_code_of_conduct">Zrozum zasady i wytyczne dotyczące zachowania w ramach naszej usługi</string>
+    <string name="summary_preference_settings_code_of_conduct">Poznaj zasady i wytyczne dotyczące zachowania w ramach naszej usługi</string>
 
     <string name="permissions">Uprawnienia</string>
-    <string name="summary_preference_settings_permissions">Zarządzaj uprawnieniami udzielonymi naszej usłudze</string>
-    <string name="normal">Normalny</string>
-    <string name="ad_id">ID reklamy [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Umożliwia aplikacji pobieranie i korzystanie z identyfikatora reklamowego skojarzonego z urządzeniem użytkownika, zapewniając spersonalizowane reklamy, mierząc skuteczność reklam i wyświetlając reklamy na urządzeniach z Androidem 13 lub nowszymi.</string>
+    <string name="summary_preference_settings_permissions">Zarządzaj uprawnieniami przyznanymi naszej usłudze</string>
+    <string name="normal">Normalne</string>
+    <string name="ad_id">Identyfikator reklamy [AD_ID]</string>
+    <string name="summary_preference_permissions_ad_id">Zezwala aplikacji na pobieranie i używanie identyfikatora reklamowego powiązanego z urządzeniem użytkownika, dostarczanie spersonalizowanych reklam, mierzenie skuteczności reklam i wyświetlanie reklam na urządzeniach z systemem Android 13 lub nowszym.</string>
     <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Umożliwia aplikacji nawiązanie połączenia internetowego w celu wysyłania raportów o błędach lub sprawdzania aktualizacji.</string>
+    <string name="summary_preference_permissions_internet">Umożliwia aplikacji nawiązanie połączenia internetowego w celu wysyłania raportów o błędach lub sprawdzania dostępności aktualizacji.</string>
     <string name="post_notifications">Publikuj powiadomienia [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Umożliwia aplikacji wyświetlanie powiadomień na urządzeniach z Androidem 13 lub nowszymi.</string>
-    <string name="runtime">Czas działania</string>
-    <string name="access_network_state">Dostęp do stanu sieci [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Umożliwia aplikacji sprawdzenie łączności sieciowej i pobranie informacji o Wi-Fi, w tym stanu włączonego i nazw podłączonych urządzeń Wi-Fi.</string>
-    <string name="access_notification_policy">Dostęp do zasad powiadomień [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Umożliwia aplikacji dostęp do zasad powiadomień urządzenia i ich modyfikowanie, kontrolując, jak i kiedy wyświetlane są powiadomienia użytkownikowi, a także zapewniając niestandardowe funkcje zarządzania powiadomieniami.</string>
-    <string name="billing">Rozliczenia [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Umożliwia aplikacji korzystanie z biblioteki rozliczeń Google Play w celu obsługi zakupów w aplikacji i darowizn</string>
+    <string name="summary_preference_permissions_post_notifications">Umożliwia aplikacji wyświetlanie powiadomień na urządzeniach z systemem Android 13 lub nowszym.</string>
+    <string name="runtime">Środowisko wykonawcze</string>
+    <string name="access_network_state">Uzyskaj dostęp do stanu sieci [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_access_network_state">Umożliwia aplikacji sprawdzanie łączności sieciowej i pobieranie informacji o Wi-Fi, w tym o stanie włączenia i nazwach podłączonych urządzeń Wi-Fi.</string>
+    <string name="access_notification_policy">Uzyskaj dostęp do zasad powiadomień [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Umożliwia aplikacji dostęp do zasad powiadomień urządzenia i ich modyfikowanie, kontrolowanie, w jaki sposób i kiedy powiadomienia są wyświetlane użytkownikowi oraz udostępnianie niestandardowych funkcji zarządzania powiadomieniami.</string>
+    <string name="billing">Płatności [BILLING]</string>
+    <string name="summary_preference_permissions_billing">Umożliwia aplikacji korzystanie z Biblioteki płatności Google Play do obsługi zakupów i darowizn w aplikacji</string>
     <string name="check_license">Sprawdź licencję [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Umożliwia aplikacji zweryfikowanie zgodności z umową licencyjną i egzekwowanie warunków licencyjnych w celu ochrony własności intelektualnej.</string>
-    <string name="foreground_service">Usługa w tle [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Umożliwia aplikacji tworzenie i korzystanie z usług działających w tle, nadając im priorytet nad innymi procesami w tle i poprawiając wydajność i niezawodność.</string>
+    <string name="summary_preference_permissions_check_license">Umożliwia aplikacji weryfikację zgodności z umową licencyjną i egzekwowanie warunków licencji w celu ochrony własności intelektualnej.</string>
+    <string name="foreground_service">Usługa działająca na pierwszym planie [FOREGROUND_SERVICE]</string>
+    <string name="summary_preference_permissions_foreground_service">Umożliwia aplikacji tworzenie i używanie usług działających na pierwszym planie, nadając im priorytet nad innymi procesami działającymi w tle oraz poprawiając wydajność i niezawodność.</string>
 
     <string name="ads">Reklamy</string>
-    <string name="summary_preference_settings_ads">Kontroluj, jak używamy Twoich informacji, aby pokazywać Ci odpowiednie reklamy</string>
-    <string name="display_ads">Wyświetlanie reklam</string>
+    <string name="summary_preference_settings_ads">Kontroluj, w jaki sposób wykorzystujemy Twoje dane, aby wyświetlać Ci odpowiednie reklamy</string>
+    <string name="display_ads">Wyświetlaj reklamy</string>
     <string name="personalized_ads">Spersonalizowane reklamy</string>
     <string name="summary_ads_personalized_ads">Wybierz, w jaki sposób personalizujemy reklamy dla Ciebie na podstawie Twoich zainteresowań</string>
-    <string name="summary_ads">Zobacz reklamy, które są dla Ciebie odpowiednie. Zarządzaj informacjami wykorzystywanymi do wyświetlania spersonalizowanych reklam na podstawie aktywności w aplikacji. Możesz zawsze wyłączyć personalizację tutaj.\n</string>
+    <string name="summary_ads">Zobacz reklamy, które są dla Ciebie odpowiednie. Zarządzaj informacjami wykorzystywanymi do wyświetlania spersonalizowanych reklam na podstawie Twojej aktywności w aplikacji. Zawsze możesz wyłączyć personalizację tutaj.\n</string>
 
-    <string name="usage_and_diagnostics">Użycie i diagnostyka</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Udostępnij dane, aby pomóc w ulepszeniu Kalkulatora Koszyka</string>
-    <string name="summary_usage_and_diagnostics">Pomóż nam ulepszyć Twoje wrażenia, wysyłając nam automatycznie dane diagnostyczne, urządzenia i użycia aplikacji. Pomoże to poprawić wydajność aplikacji, stabilność i inne ulepszenia. Niektóre dane zbiorcze pomogą również naszym aplikacjom.\n\nSą to ogólne informacje o Twoim urządzeniu i sposobie korzystania z naszych aplikacji (takie jak poziom naładowania baterii, aktywność systemu i aplikacji oraz błędy). Dane te zostaną wykorzystane do ulepszenia naszych aplikacji.\n\nWyłączenie tej funkcji nie wpływa na możliwość wysyłania przez urządzenie informacji potrzebnych do korzystania z usług kluczowych, takich jak aktualizacje aplikacji i bezpieczeństwo.\n</string>
+    <string name="usage_and_diagnostics">Użytkowanie i diagnostyka</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Udostępniaj dane, aby pomóc ulepszyć Kalkulator Koszyka</string>
+    <string name="summary_usage_and_diagnostics">Pomóż poprawić swoje doświadczenia, automatycznie przesyłając do nas dane diagnostyczne, dane urządzenia i dane dotyczące użytkowania aplikacji. Pomoże to poprawić wydajność aplikacji, stabilność i inne ulepszenia. Niektóre zagregowane dane pomogą również naszym aplikacjom.\n\nSą to ogólne informacje o Twoim urządzeniu i sposobie korzystania z naszych aplikacji (takie jak poziom naładowania baterii, aktywność systemu i aplikacji oraz błędy). Dane te zostaną wykorzystane do ulepszania naszych aplikacji.\n\nWyłączenie tej funkcji nie wpływa na zdolność urządzenia do wysyłania informacji potrzebnych do świadczenia podstawowych usług, takich jak aktualizacje aplikacji i bezpieczeństwo.\n</string>
 
-    <string name="legal">Prawne</string>
+    <string name="legal">Informacje prawne</string>
     <string name="legal_notices">Informacje prawne</string>
     <string name="summary_preference_settings_legal_notices">Zobacz informacje prawne dotyczące naszej usługi</string>
     <string name="license">Licencja</string>
 
-    <string name="about">O nas</string>
+    <string name="about">Informacje</string>
     <string name="summary_preference_settings_about">Dowiedz się więcej o Kalkulatorze Koszyka</string>
 
     <string name="app_info">Informacje o aplikacji</string>
     <string name="app_build_version">Wersja kompilacji aplikacji</string>
     <string name="summary_preference_settings_oss">Szczegóły licencji dla oprogramowania open source</string>
     <string name="device_info">Informacje o urządzeniu</string>
-    <string name="app_build">Kompilacja aplikacji: Wersja\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="app_build">Kompilacja aplikacji: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Debugowanie</string>
+    <string name="release">Wydanie</string>
     <string name="manufacturer">Producent:</string>
     <string name="device_model">Model urządzenia:</string>
     <string name="android_version">Wersja Androida:</string>
     <string name="api_level">Poziom API:</string>
+    <string name="snack_device_info_copied">Informacje o urządzeniu skopiowane do schowka</string>
 
     <string name="help_and_feedback">Pomoc i opinie</string>
     <string name="help">Pomoc</string>
     <string name="faq">FAQ</string>
-    <string name="view_in_google_play_store">Zobacz w Google Play Store</string>
+    <string name="view_in_google_play_store">Wyświetl w Sklepie Google Play</string>
     <string name="version_info">Informacje o wersji</string>
     <string name="version">Wersja %1$s</string>
     <string name="beta_program">Program beta</string>
     <string name="question_1">Co to jest Kalkulator Koszyka?</string>
-    <string name="summary_preference_faq_1">Kalkulator Koszyka to prosty, ogólny i darmowy menedżer koszyka zakupowego i kalkulator całkowitej kwoty, który zastępuje zwykły kalkulator urządzenia, gdy jesteś w sklepie spożywczym lub na targu.</string>
+    <string name="summary_preference_faq_1">Kalkulator Koszyka to prosty, ogólny i darmowy menedżer koszyka zakupów i kalkulator sumy należności, który zastępuje zwykły kalkulator urządzenia, gdy jesteś w sklepie spożywczym lub na targu.</string>
     <string name="question_2">Jak działa Kalkulator Koszyka?</string>
-    <string name="summary_preference_faq_2">Kalkulator Koszyka pozwala zarządzać koszykiem zakupowym, dodając produkty i zwiększając lub zmniejszając ich ilości. Kalkulator Koszyka wyświetla w dowolnym momencie całkowitą kwotę do zapłaty za produkty w koszyku, w oparciu o ich ceny i ilości.</string>
-    <string name="question_3">Dlaczego powinienem używać Kalkulatora Koszyka?</string>
-    <string name="summary_preference_faq_3">Kalkulator Koszyka pomaga być zawsze świadomym tego, ile wydajesz, nawet przed dotarciem do kasy. Jest to szczególnie przydatne, gdy musisz robić zakupy z ograniczonym budżetem.</string>
+    <string name="summary_preference_faq_2">Kalkulator Koszyka umożliwia zarządzanie koszykiem zakupów poprzez dodawanie produktów oraz zwiększanie lub zmniejszanie ich ilości. W dowolnym momencie Kalkulator Koszyka wyświetla sumę należności za produkty w koszyku na podstawie ich cen i ilości.</string>
+    <string name="question_3">Dlaczego warto korzystać z Kalkulatora Koszyka?</string>
+    <string name="summary_preference_faq_3">Kalkulator Koszyka pomaga Ci zawsze wiedzieć, ile wydajesz, jeszcze przed dotarciem do kasy. Jest to szczególnie przydatne, gdy musisz robić zakupy z ograniczonym budżetem.</string>
     <string name="question_4">Czy mogę używać Kalkulatora Koszyka poza sklepami spożywczymi lub targowiskami?</string>
-    <string name="summary_preference_faq_4">Tak! Ponieważ Kalkulator Koszyka jest zaskakująco prosty i ogólny, możesz go również używać w pubach, restauracjach, kinach itp.</string>
-    <string name="question_5">Jak dodaję przedmiot do koszyka za pomocą Kalkulatora Koszyka?</string>
-    <string name="summary_preference_faq_5">Na ekranie głównym naciśnij przycisk „Dodaj przedmiot” na pasku akcji, aby dodać nowy produkt do koszyka. Podaj jego nazwę i cenę, a następnie kliknij przycisk „Dodaj”.</string>
-    <string name="question_6">Jak zwiększam lub zmniejszam ilość przedmiotu w koszyku za pomocą Kalkulatora Koszyka?</string>
-    <string name="summary_preference_faq_6">Po prostu znajdź przedmiot na liście, a następnie naciśnij przycisk „+ (plus)”, aby zwiększyć jego ilość, lub przycisk „- (minus)”, aby zmniejszyć jego ilość.</string>
-    <string name="question_7">Jak usuwam przedmiot z koszyka za pomocą Kalkulatora Koszyka?</string>
-    <string name="summary_preference_faq_7">Aby usunąć produkt z koszyka, po prostu ustaw jego ilość na zero lub kliknij go długo na liście, a następnie wybierz przycisk „Usuń przedmiot”.</string>
+    <string name="summary_preference_faq_4">Tak! Ponieważ Kalkulator Koszyka jest szokująco prosty i ogólny, możesz go używać również w pubach, restauracjach, kinach itp.</string>
+    <string name="question_5">Jak dodać produkt do koszyka za pomocą Kalkulatora Koszyka?</string>
+    <string name="summary_preference_faq_5">Otwórz koszyk i naciśnij przycisk „Dodaj produkt” na pasku akcji, aby dodać nowy produkt do koszyka. Podaj jego nazwę, cenę i ilość, a następnie kliknij przycisk „Dodaj”.</string>
+    <string name="question_6">Jak zwiększyć lub zmniejszyć ilość produktu w koszyku za pomocą Kalkulatora Koszyka?</string>
+    <string name="summary_preference_faq_6">Po prostu znajdź produkt na liście, a następnie naciśnij przycisk „+ (plus)”, aby zwiększyć jego ilość, lub przycisk „- (minus)”, aby ją zmniejszyć.</string>
+    <string name="question_7">Jak usunąć produkt z koszyka za pomocą Kalkulatora Koszyka?</string>
+    <string name="summary_preference_faq_7">Aby usunąć produkt z koszyka, po prostu przesuń palcem w prawo lub w lewo lub zmniejsz jego ilość do zera, a następnie wybierz przycisk „Usuń produkt”.</string>
     <string name="question_8">Czy Kalkulator Koszyka jest darmowym oprogramowaniem?</string>
-    <string name="summary_preference_faq_8">Tak! Kalkulator Koszyka to z dumą darmowe oprogramowanie dystrybuowane na zasadach GNU General Public License wersja 3.</string>
-    <string name="question_9">Jak mogę wnieść wkład w Kalkulator Koszyka?</string>
-    <string name="summary_preference_faq_9">Najlepszym sposobem na wkład w Kalkulator Koszyka jest korzystanie z jego repozytorium <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Stamtąd możesz go rozgałęzić i pracować nad swoimi wkładami, a następnie wysłać je z powrotem za pomocą żądania ściągnięcia. Możesz również użyć śledzenia problemów, aby zgłaszać błędy, proponować nowe funkcje lub ulepszenia lub uzyskać pomysły na to, jak możesz pomóc.</string>
-    <string name="feedback">Opinie</string>
+    <string name="summary_preference_faq_8">Tak! Kalkulator Koszyka to z dumą darmowe oprogramowanie rozpowszechniane na licencji GNU General Public License w wersji 3.</string>
+    <string name="question_9">Jak mogę przyczynić się do rozwoju Kalkulatora Koszyka?</string>
+    <string name="summary_preference_faq_9">Najlepszym sposobem na wniesienie wkładu w rozwój Kalkulatora Koszyka jest jego repozytorium <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Stamtąd możesz go rozwidlić i pracować nad swoim wkładem, a następnie odesłać go za pośrednictwem żądania ściągnięcia. Możesz również skorzystać z narzędzia do śledzenia problemów, aby zgłaszać błędy, proponować nowe funkcje lub ulepszenia lub uzyskać pomysły, w jaki sposób możesz pomóc.</string>
+    <string name="feedback">Opinia</string>
 
     <string name="updates">Aktualizacje</string>
 
     <string name="share">Udostępnij</string>
 
     <string name="support_us">Wesprzyj nas</string>
-    <string name="paid_support">Płatny support</string>
-    <string name="summary_donations">Niezależnie od tego, ile przekażesz, pomożesz nam utrzymać naszą aplikację w działaniu i ulepszyć jej funkcje. Doceniamy Twoją hojność i życzliwość!</string>
-    <string name="non_paid_support">Darmowy support</string>
+    <string name="paid_support">Płatne wsparcie</string>
+    <string name="summary_donations">Bez względu na to, ile wpłacisz, pomożesz nam w utrzymaniu działania naszej aplikacji i ulepszaniu jej funkcji. Doceniamy Twoją hojność i życzliwość!</string>
+    <string name="non_paid_support">Bezpłatne wsparcie</string>
     <string name="web_ad">Reklama internetowa</string>
 
-    <string name="snack_app_updated">The app has been successfully updated</string>
-    <string name="snack_update_failed">The update process encountered an issue</string>
-    <string name="try_again">Try again</string>
-    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
-    <string name="learn_more">Learn more</string>
+    <string name="snack_app_updated">Aplikacja została pomyślnie zaktualizowana</string>
+    <string name="snack_update_failed">Wystąpił problem podczas procesu aktualizacji</string>
+    <string name="try_again">Spróbuj ponownie</string>
+    <string name="summary_share_message">Sprawdź tę niesamowitą aplikację, z której korzystam! Ma kilka naprawdę fajnych funkcji, które mogą Cię zainteresować. Możesz ją pobrać ze Sklepu Play pod adresem: %1$s</string>
+    <string name="learn_more">Dowiedz się więcej</string>
 </resources>

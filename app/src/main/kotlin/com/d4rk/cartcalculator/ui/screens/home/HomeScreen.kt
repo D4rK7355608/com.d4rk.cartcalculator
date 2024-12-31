@@ -40,12 +40,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
 import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
+import com.d4rk.cartcalculator.ui.components.dialogs.ErrorAlertDialog
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -57,6 +59,7 @@ fun HomeScreen(
     snackbarHostState : SnackbarHostState
 ) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
+    val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val visibilityStates : List<Boolean> by viewModel.visibilityStates.collectAsState()
     val okStringResource : String = stringResource(id = android.R.string.ok)
@@ -70,6 +73,12 @@ fun HomeScreen(
             if (result == SnackbarResult.ActionPerformed || result == SnackbarResult.Dismissed) {
                 viewModel.dismissSnackbar()
             }
+        }
+    }
+
+    if (uiErrorModel.showErrorDialog) {
+        ErrorAlertDialog(errorMessage = uiErrorModel.errorMessage) {
+            viewModel.dismissErrorDialog()
         }
     }
 

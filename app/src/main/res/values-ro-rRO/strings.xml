@@ -1,198 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">Gestionează și calculează eficient articolele din coșul tău cu Cart Calculator. 🛒</string>
-    <string name="notification_update_title">O nouă actualizare este disponibilă!</string>
-    <string name="summary_notification_update">O nouă versiune a aplicației este disponibilă. Click pentru a actualiza!</string>
+    <string name="app_short_description">Gestionează și calculează eficient articolele din coș cu Cart Calculator. 🛒</string>
+    <string name="notification_update_title">O nouă actualizare disponibilă!</string>
+    <string name="summary_notification_update">O nouă versiune a aplicației este disponibilă. Apasă pentru a actualiza!</string>
     <string name="notification_last_time_used_title">A trecut ceva timp!</string>
-    <string name="summary_notification_last_time_used"> Hai să gestionăm articolele din coșul tău eficient!</string>
+    <string name="summary_notification_last_time_used">Haide să gestionăm eficient articolele din coșul tău!</string>
 
     <string name="welcome">Bun venit</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Citiți și acceptați Termenii de Serviciu și Politica de Confidențialitate pentru a continua.</string>
-    <string name="agree">Sunt de acord</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Citește și acceptă Termenii și Condițiile și Politica de Confidențialitate pentru a continua.</string>
+    <string name="agree">De acord</string>
 
-    <string name="no_carts_available">Nu sunt disponibile coșuri</string>
-    <string name="add_new_cart">Adăugați un nou coș</string>
-    <string name="cart_name">Numele coșului</string>
+    <string name="navigation_drawer_open">Deschide sertarul de navigare</string>
+
+    <string name="no_carts_available">Niciun coș disponibil</string>
+    <string name="add_new_cart">Adaugă un coș nou</string>
+    <string name="cart_name">Nume coș</string>
     <string name="shopping_cart">Coș de cumpărături</string>
-    <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a vă facilita urmărirea selecțiilor și îmbunătățirea experienței de cumpărături, luați în considerare atribuirea unui nume coșului înainte de a adăuga articole.</string>
+    <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a-ți fi mai ușor să urmărești selecțiile tale și pentru a-ți îmbunătăți experiența de cumpărături, ia în considerare să dai un nume coșului tău înainte de a adăuga articole.</string>
     <string name="created_on">Creat pe %1$s</string>
-    <string name="decrease_quantity">Scădere cantitate</string>
-    <string name="increase_quantity">Creștere cantitate</string>
-    <string name="delete_cart_title">Ștergeți coșul</string>
-    <string name="delete_cart_message">Sunteți sigur că doriți să ștergeți acest coș?</string>
-    <string name="delete_cart_warning">Ștergerea acestui coș va elimina permanent toate articolele din \"%s\" și nu poate fi anulata.</string>
+    <string name="decrease_quantity">Micșorează cantitatea</string>
+    <string name="increase_quantity">Mărește cantitatea</string>
+    <string name="delete_cart_title">Șterge coșul</string>
+    <string name="delete_cart_message">Ești sigur că vrei să ștergi acest coș?</string>
+    <string name="delete_cart_warning">Ștergerea acestui coș va elimina definitiv toate articolele din „%s” și nu poate fi anulată.</string>
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
     <string name="close">Închide?</string>
-    <string name="summary_close">Sunteți sigur că doriți să ieșiți?</string>
+    <string name="summary_close">Ești sigur că vrei să ieși?</string>
     <string name="file_not_found">Fișierul nu a fost găsit.</string>
     <string name="activity_not_found">Activitatea nu a fost găsită.</string>
-    <string name="security_error">A apărut o eroare de securitate. Vă rugăm să încercați din nou mai târziu.</string>
-    <string name="io_error">A apărut o eroare de intrare/ieșire. Verificați conexiunea la rețea sau spațiul de stocare și încercați din nou.</string>
-    <string name="illegal_argument_error">Intrare sau argument nevalid. Verificați informațiile și încercați din nou.</string>
+    <string name="security_error">A apărut o eroare de securitate. Te rugăm să încerci din nou mai târziu.</string>
+    <string name="io_error">A apărut o eroare de intrare/ieșire. Te rugăm să verifici conexiunea la rețea sau spațiul de stocare și să încerci din nou.</string>
+    <string name="illegal_argument_error">Intrare sau argument nevalid furnizat. Te rugăm să verifici informațiile și să încerci din nou.</string>
     <string name="unknown_error">A apărut o eroare necunoscută.</string>
+    <string name="initialization_error">Inițializarea a eșuat. Te rugăm să încerci din nou mai târziu.</string>
 
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="in_cart">În coș</string>
     <string name="items_to_pick_up">Articole de ridicat</string>
-    <string name="item_name">Numele articolului</string>
-    <string name="enter_item_name">Introduceți numele articolului</string>
-    <string name="item_price">Prețul articolului</string>
-    <string name="enter_item_price">Introduceți prețul articolului</string>
+    <string name="item_name">Nume articol</string>
+    <string name="enter_item_name">Introdu numele articolului</string>
+    <string name="item_price">Preț articol</string>
+    <string name="enter_item_price">Introdu prețul articolului</string>
     <string name="quantity">Cantitate</string>
-    <string name="enter_quantity">Introduceți cantitatea</string>
-    <string name="dialog_info_cart_item">Pentru a asigura o experiență de plată fără probleme, furnizați detalii despre articolele pe care le adăugați în coșul dumneavoastră</string>
+    <string name="enter_quantity">Introdu cantitatea</string>
+    <string name="dialog_info_cart_item">Pentru a asigura o experiență de finalizare a comenzii fără probleme, te rugăm să furnizezi detalii despre articolele pe care le adaugi în coș</string>
     <string name="total">Total</string>
-    <string name="delete_cart_item_title">Ștergeți elementul din coș</string>
-    <string name="delete_cart_item_message">Sunteți sigur că doriți să ștergeți acest element?</string>
-    <string name="delete_cart_item_warning">Sunteți pe cale să ștergeți "%s" din coșul dvs.</string>
+    <string name="delete_cart_item_title">Șterge articolul din coș</string>
+    <string name="delete_cart_item_message">Ești sigur că vrei să ștergi acest articol?</string>
+    <string name="delete_cart_item_warning">Ești pe cale să ștergi „%s” din coșul tău.</string>
 
     <string name="settings">Setări</string>
 
-    <string name="display">Afișare</string>
-    <string name="summary_preference_settings_display">Personalizați aspectul și senzația aplicației</string>
+    <string name="display">Afișaj</string>
+    <string name="summary_preference_settings_display">Personalizează aspectul și comportamentul aplicației</string>
 
     <string name="appearance">Aspect</string>
     <string name="dark_theme">Temă întunecată</string>
-    <string name="will_turn_on_automatically_by_system">Se va activa automat de către sistem</string>
-    <string name="will_never_turn_on_automatically">Nu se va activa niciodată automat</string>
+    <string name="will_turn_on_automatically_by_system">Va fi activată automat de sistem</string>
+    <string name="will_never_turn_on_automatically">Nu va fi activată niciodată automat</string>
     <string name="amoled_mode">Mod AMOLED</string>
-    <string name="follow_system">Urmăriți modul sistemului</string>
+    <string name="follow_system">Urmează modul sistemului</string>
     <string name="light_mode">Mod luminos</string>
     <string name="dark_mode">Mod întunecat</string>
-    <string name="summary_dark_theme">Tema întunecată utilizează un fundal profund pentru a ajuta la menținerea bateriei în viață mai mult timp</string>
+    <string name="summary_dark_theme">Tema întunecată folosește un fundal adânc pentru a ajuta la menținerea bateriei în viață mai mult timp</string>
 
     <string name="dynamic_colors">Culori dinamice</string>
-    <string name="summary_preference_settings_dynamic_colors">Aplicați culorile din tapet la tema aplicației</string>
+    <string name="summary_preference_settings_dynamic_colors">Aplică culorile din imagini de fundal în tema aplicației</string>
 
-    <string name="app_behavior">Comportamet aplicație</string>
-    <string name="bounce_buttons">Animație la click</string>
-    <string name="summary_preference_settings_bounce_buttons">Aplică o animație subtilă de revenire tuturor elementelor pe care se poate face clic atunci când se face clic pe ele</string>
+    <string name="app_behavior">Comportamentul aplicației</string>
+    <string name="bounce_buttons">Salt la clic</string>
+    <string name="summary_preference_settings_bounce_buttons">Aplică o animație subtilă de săltare tuturor elementelor pe care se poate face clic atunci când sunt apăsate</string>
 
     <string name="language">Limbă</string>
-    <string name="summary_preference_settings_language">Modifică limba utilizată în aplicație</string>
-    <string name="dialog_language_subtitle">Selectați limba preferată</string>
-    <string name="dialog_info_language">Personalizați experiența cu limba preferată. Orice modificări de limbă pe care le faceți intră în vigoare imediat, asigurând o experiență fără probleme în limba aleasă</string>
+    <string name="summary_preference_settings_language">Schimbă limba utilizată în aplicație</string>
+    <string name="dialog_language_subtitle">Selectează limba preferată</string>
+    <string name="dialog_info_language">Personalizează-ți experiența cu limba preferată. Orice modificări de limbă pe care le faci intră în vigoare imediat, asigurând o experiență perfectă în limba aleasă</string>
 
     <string name="cart_settings">Setări coș</string>
-    <string name="summary_preference_settings_cart">Gestionați modul în care se comportă coșul</string>
+    <string name="summary_preference_settings_cart">Gestionează modul în care se comportă coșul tău</string>
 
-    <string name="currency">Valută</string>
-    <string name="summary_preference_settings_currency">Setați valuta preferată pentru afișarea prețurilor</string>
-    <string name="dialog_currency_subtitle">Selectați valuta preferată</string>
-    <string name="dialog_info_currency">Această selecție de valută va fi utilizată pe întreaga platformă pentru afișarea prețurilor produselor, procesarea tranzacțiilor și oferirea unei experiențe de cumpărături mai personalizate</string>
+    <string name="currency">Monedă</string>
+    <string name="summary_preference_settings_currency">Setează moneda preferată pentru afișarea prețurilor</string>
+    <string name="dialog_currency_subtitle">Selectează moneda preferată</string>
+    <string name="dialog_info_currency">Această selecție de monedă va fi utilizată pe platformă pentru afișarea prețurilor produselor, procesarea tranzacțiilor și oferirea unei experiențe de cumpărături mai personalizate</string>
+    <string name="open_carts_after_creation">Deschide coșurile după creare</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Deschide automat un coș imediat după ce este creat.</string>
 
     <string name="notifications">Notificări</string>
-    <string name="summary_preference_settings_notifications">Gestionați notificările aplicației</string>
+    <string name="summary_preference_settings_notifications">Gestionează notificările aplicației</string>
 
-    <string name="app_usage_notifications">Notificări de utilizare a aplicației</string>
-    <string name="update_notifications">Notificări de actualizare</string>
+    <string name="app_usage_notifications">Notificări privind utilizarea aplicației</string>
+    <string name="update_notifications">Actualizează notificările</string>
 
     <string name="advanced">Avansat</string>
-    <string name="summary_preference_settings_advanced">Explorați mai multe setări avansate</string>
-    <string name="error_reporting">Raportarea erorilor</string>
-    <string name="bug_report">Raport de bug</string>
-    <string name="summary_preference_settings_bug_report">Trimiteți rapoarte de bug și cereri de caracteristici la pagina de probleme din depozitul GitHub al aplicației</string>
+    <string name="summary_preference_settings_advanced">Explorează mai multe setări avansate</string>
+    <string name="error_reporting">Raportare erori</string>
+    <string name="bug_report">Raportează o eroare</string>
+    <string name="summary_preference_settings_bug_report">Trimite rapoarte de erori și solicitări de funcții către pagina de probleme a depozitului GitHub al aplicației</string>
 
     <string name="security_and_privacy">Securitate și confidențialitate</string>
-    <string name="summary_preference_settings_privacy_and_security">Gestionați setările de confidențialitate</string>
+    <string name="summary_preference_settings_privacy_and_security">Gestionează-ți setările de confidențialitate</string>
     <string name="privacy">Confidențialitate</string>
     <string name="privacy_policy">Politica de confidențialitate</string>
-    <string name="summary_preference_settings_privacy_policy">Vizualizați politica care guvernează modul în care gestionăm datele dumneavoastră</string>
-    <string name="terms_of_service">Termeni de Serviciu</string>
-    <string name="summary_preference_settings_terms_of_service">Revizuiți termenii cu care sunteți de acord atunci când utilizați serviciul nostru</string>
-    <string name="code_of_conduct">Codul de conduită</string>
-    <string name="summary_preference_settings_code_of_conduct">Înțelegeți regulile și liniile directoare pentru comportamentul în cadrul serviciului nostru</string>
+    <string name="summary_preference_settings_privacy_policy">Vizualizează politica care guvernează modul în care gestionăm datele tale</string>
+    <string name="terms_of_service">Termeni și condiții</string>
+    <string name="summary_preference_settings_terms_of_service">Examinează termenii pe care îi accepți atunci când utilizezi serviciul nostru</string>
+    <string name="code_of_conduct">Cod de conduită</string>
+    <string name="summary_preference_settings_code_of_conduct">Înțelege regulile și liniile directoare pentru comportamentul în cadrul serviciului nostru</string>
 
     <string name="permissions">Permisiuni</string>
-    <string name="summary_preference_settings_permissions">Gestionați permisiunile acordate serviciului nostru</string>
-    <string name="normal">Normal</string>
+    <string name="summary_preference_settings_permissions">Gestionează permisiunile acordate serviciului nostru</string>
+    <string name="normal">Normale</string>
     <string name="ad_id">ID anunț [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Permite aplicației să preia și să utilizeze identificatorul de publicitate asociat cu dispozitivul utilizatorului, oferind anunțuri personalizate, măsurând eficacitatea anunțurilor și afișând anunțuri pe dispozitivele Android 13 sau versiunile ulterioare.</string>
+    <string name="summary_preference_permissions_ad_id">Permite aplicației să preia și să utilizeze identificatorul de publicitate asociat dispozitivului utilizatorului, oferind anunțuri personalizate, măsurând eficacitatea anunțurilor și afișând anunțuri pe dispozitivele cu Android 13 sau o versiune ulterioară.</string>
     <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Permite aplicației să stabilească o conexiune la internet pentru a trimite rapoarte de erori sau a verifica actualizările.</string>
-    <string name="post_notifications">Publicați notificări [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Permite aplicației să afișeze notificări pe dispozitivele cu Android 13 sau versiunile ulterioare.</string>
-    <string name="runtime">Timp de execuție</string>
-    <string name="access_network_state">Acces la starea rețelei [ACCESS_NETWORK_STATE]</string>
+    <string name="summary_preference_permissions_internet">Permite aplicației să stabilească o conexiune la internet pentru a trimite rapoarte de erori sau pentru a verifica actualizările.</string>
+    <string name="post_notifications">Postează notificări [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_post_notifications">Permite aplicației să afișeze notificări pe dispozitivele cu Android 13 sau o versiune ulterioară.</string>
+    <string name="runtime">Timp de rulare</string>
+    <string name="access_network_state">Accesează starea rețelei [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Permite aplicației să verifice conectivitatea la rețea și să preia informații despre Wi-Fi, inclusiv starea activată și numele dispozitivelor Wi-Fi conectate.</string>
-    <string name="access_notification_policy">Acces la politica de notificare [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Permite aplicației să acceseze și să modifice politica de notificare a dispozitivului, controlând modul și momentul în care notificările sunt afișate utilizatorului și oferind caracteristici personalizate de gestionare a notificărilor.</string>
+    <string name="access_notification_policy">Accesează politica de notificare [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Permite aplicației să acceseze și să modifice politica de notificare a dispozitivului, controlând modul și momentul în care notificările sunt afișate utilizatorului și oferind funcții personalizate de gestionare a notificărilor.</string>
     <string name="billing">Facturare [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Permite aplicației să utilizeze biblioteca de facturare Google Play pentru a gestiona achizițiile în aplicație și donațiile</string>
-    <string name="check_license">Verificați licența [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Permite aplicației să verifice conformitatea sa cu acordul de licență și să impună termenii de licență pentru a proteja proprietatea intelectuală.</string>
+    <string name="summary_preference_permissions_billing">Permite aplicației să utilizeze Biblioteca de facturare Google Play pentru a gestiona achizițiile și donațiile în aplicație</string>
+    <string name="check_license">Verifică licența [CHECK_LICENSE]</string>
+    <string name="summary_preference_permissions_check_license">Permite aplicației să își verifice conformitatea cu acordul de licență și să aplice termenii de licențiere pentru a proteja proprietatea intelectuală.</string>
     <string name="foreground_service">Serviciu în prim-plan [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Permite aplicației să creeze și să utilizeze servicii care rulează în prim-plan, acordându-le prioritate față de alte procese de fundal și îmbunătățind performanța și fiabilitatea.</string>
 
     <string name="ads">Anunțuri</string>
-    <string name="summary_preference_settings_ads">Controlați modul în care folosim informațiile dumneavoastră pentru a vă afișa anunțuri relevante</string>
-    <string name="display_ads">Afișați anunțuri</string>
+    <string name="summary_preference_settings_ads">Controlează modul în care folosim informațiile tale pentru a-ți afișa anunțuri relevante</string>
+    <string name="display_ads">Afișează anunțuri</string>
     <string name="personalized_ads">Anunțuri personalizate</string>
-    <string name="summary_ads_personalized_ads">Alegeți modul în care personalizăm anunțurile pentru dumneavoastră pe baza intereselor dumneavoastră</string>
-    <string name="summary_ads">Vizualizați anunțurile care sunt relevante pentru dumneavoastră. Gestionați informațiile utilizate pentru a afișa anunțuri personalizate pe baza activității din aplicație. Puteți întotdeauna să dezactivați personalizarea aici.\n</string>
+    <string name="summary_ads_personalized_ads">Alege modul în care personalizăm anunțurile pentru tine pe baza intereselor tale</string>
+    <string name="summary_ads">Vezi anunțuri care sunt relevante pentru tine. Gestionează informațiile utilizate pentru a afișa anunțuri personalizate pe baza activității tale în aplicație. Poți dezactiva oricând personalizarea aici.\n</string>
 
     <string name="usage_and_diagnostics">Utilizare și diagnosticare</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Partajați date pentru a ajuta la îmbunătățirea Cart Calculator</string>
-    <string name="summary_usage_and_diagnostics">Ajutați la îmbunătățirea experienței dumneavoastră trimițând automat date de diagnosticare, dispozitiv și de utilizare a aplicației către noi. Aceasta va contribui la îmbunătățirea performanței aplicației, stabilității și a altor îmbunătățiri. Unele date agregate vor ajuta, de asemenea, aplicațiile noastre.\n\nAcestea sunt informații generale despre dispozitivul dumneavoastră și despre modul în care utilizați aplicațiile noastre (cum ar fi nivelul bateriei, activitatea sistemului și a aplicației și erorile). Datele vor fi utilizate pentru a îmbunătăți aplicațiile noastre.\n\nDezactivarea acestei funcții nu afectează capacitatea dispozitivului dumneavoastră de a trimite informațiile necesare pentru serviciile esențiale, cum ar fi actualizările aplicațiilor și securitatea.\n</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Partajează date pentru a contribui la îmbunătățirea Cart Calculator</string>
+    <string name="summary_usage_and_diagnostics">Contribuie la îmbunătățirea experienței tale trimițându-ne automat date de diagnosticare, despre dispozitiv și despre utilizarea aplicației. Acest lucru va contribui la îmbunătățirea performanței aplicației, a stabilității și a altor îmbunătățiri. Unele date agregate vor ajuta, de asemenea, aplicațiile noastre.\n\nAcestea sunt informații generale despre dispozitivul tău și despre modul în care utilizezi aplicațiile noastre (cum ar fi nivelul bateriei, activitatea sistemului și a aplicației și erorile). Datele vor fi utilizate pentru a ne îmbunătăți aplicațiile.\n\nDezactivarea acestei funcții nu afectează capacitatea dispozitivului tău de a trimite informațiile necesare pentru servicii esențiale, cum ar fi actualizările aplicațiilor și securitatea.\n</string>
 
-    <string name="legal">Legal</string>
+    <string name="legal">Informații juridice</string>
     <string name="legal_notices">Notificări legale</string>
-    <string name="summary_preference_settings_legal_notices">Vizualizați informații legale despre serviciul nostru</string>
+    <string name="summary_preference_settings_legal_notices">Vizualizează informațiile legale despre serviciul nostru</string>
     <string name="license">Licență</string>
 
     <string name="about">Despre</string>
-    <string name="summary_preference_settings_about">Aflați mai multe despre Cart Calculator</string>
+    <string name="summary_preference_settings_about">Află mai multe despre Cart Calculator</string>
 
     <string name="app_info">Informații despre aplicație</string>
     <string name="app_build_version">Versiunea de compilare a aplicației</string>
-    <string name="summary_preference_settings_oss">Detalii despre licența pentru software-ul open source</string>
+    <string name="summary_preference_settings_oss">Detalii despre licență pentru software-ul open source</string>
     <string name="device_info">Informații despre dispozitiv</string>
-    <string name="app_build">Compilare aplicație: Versiune\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="app_build">Versiune aplicație: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Depanare</string>
+    <string name="release">Lansare</string>
     <string name="manufacturer">Producător:</string>
     <string name="device_model">Model dispozitiv:</string>
-    <string name="android_version">Versiunea Android:</string>
+    <string name="android_version">Versiune Android:</string>
     <string name="api_level">Nivel API:</string>
+    <string name="snack_device_info_copied">Informațiile despre dispozitiv au fost copiate în clipboard</string>
 
     <string name="help_and_feedback">Ajutor și feedback</string>
     <string name="help">Ajutor</string>
     <string name="faq">Întrebări frecvente</string>
-    <string name="view_in_google_play_store">Vizualizați în Magazinul Play</string>
+    <string name="view_in_google_play_store">Vezi în Magazinul Google Play</string>
     <string name="version_info">Informații despre versiune</string>
     <string name="version">Versiunea %1$s</string>
     <string name="beta_program">Program beta</string>
     <string name="question_1">Ce este Cart Calculator?</string>
-    <string name="summary_preference_faq_1">Cart Calculator este un manager simplu, generic și gratuit pentru coșul de cumpărături și un calculator de totaluri de plată care înlocuiește calculatorul obișnuit al dispozitivului când sunteți la magazinul alimentar sau la piață.</string>
+    <string name="summary_preference_faq_1">Cart Calculator este un manager de coș de cumpărături simplu, generic și gratuit și un calculator al totalului datorat care înlocuiește calculatorul obișnuit al dispozitivului pentru atunci când ești la magazinul alimentar sau la piață.</string>
     <string name="question_2">Cum funcționează Cart Calculator?</string>
-    <string name="summary_preference_faq_2">Cart Calculator vă permite să gestionați coșul de cumpărături prin adăugarea de produse și creșterea sau scăderea cantității acestora. În orice moment, Cart Calculator afișează totalul de plată pentru produsele din coșul dumneavoastră, pe baza prețurilor și cantităților acestora.</string>
-    <string name="question_3">De ce ar trebui să utilizez Cart Calculator?</string>
-    <string name="summary_preference_faq_3">Cart Calculator vă ajută să fiți întotdeauna conștienți de cât cheltuiți, chiar înainte de a ajunge la casă. Aceasta este utilă în special când trebuie să faceți cumpărături cu un buget.</string>
-    <string name="question_4">Pot să utilizez Cart Calculator în afara magazinelor alimentare sau a piețelor?</string>
-    <string name="summary_preference_faq_4">Da! Deoarece Cart Calculator este surprinzător de simplu și generic, îl puteți utiliza și în puburi, restaurante, cinematografe etc.</string>
-    <string name="question_5">Cum adaug un articol în coșul meu folosind Cart Calculator?</string>
-    <string name="summary_preference_faq_5">Din ecranul de pornire, apăsați butonul „Adăugați articol” din bara de acțiuni pentru a adăuga un nou produs în coșul dumneavoastră. Informați numele și prețul, apoi faceți clic pe butonul „Adăugați”.</string>
-    <string name="question_6">Cum cresc sau scad cantitatea unui articol din coșul meu folosind Cart Calculator?</string>
-    <string name="summary_preference_faq_6">Găsiți pur și simplu articolul din listă, apoi apăsați butonul „+ (plus)” pentru a-i crește cantitatea sau butonul „- (minus)” pentru a-i reduce cantitatea.</string>
-    <string name="question_7">Cum elimin un articol din coșul meu folosind Cart Calculator?</string>
-    <string name="summary_preference_faq_7">Pentru a elimina un produs din coșul dumneavoastră, pur și simplu setați cantitatea acestuia la zero sau faceți clic lung pe el din listă, apoi selectați butonul „Ștergeți articolul”.</string>
+    <string name="summary_preference_faq_2">Cart Calculator îți permite să îți gestionezi coșul de cumpărături adăugând produse și mărindu-le sau micșorându-le cantitățile. În orice moment, Cart Calculator afișează totalul datorat al produselor din coșul tău pe baza prețurilor și cantităților acestora.</string>
+    <string name="question_3">De ce ar trebui să folosesc Cart Calculator?</string>
+    <string name="summary_preference_faq_3">Cart Calculator te ajută să fii mereu conștient de cât cheltuiești chiar înainte de a ajunge la casa de marcat. Acest lucru este util mai ales atunci când trebuie să mergi la cumpărături cu un buget limitat.</string>
+    <string name="question_4">Pot folosi Cart Calculator în afara magazinelor alimentare sau a piețelor?</string>
+    <string name="summary_preference_faq_4">Da! Deoarece Cart Calculator este șocant de simplu și generic, îl poți folosi și în pub-uri, restaurante, cinematografe etc.</string>
+    <string name="question_5">Cum adaug un articol în coș folosind Cart Calculator?</string>
+    <string name="summary_preference_faq_5">Deschide-ți coșul și apasă butonul „Adaugă articol” din bara de acțiuni pentru a adăuga un nou produs în coș. Introduci numele, prețul și cantitatea acestuia, apoi dai clic pe butonul „Adaugă”.</string>
+    <string name="question_6">Cum măresc sau micșorez cantitatea unui articol din coș folosind Cart Calculator?</string>
+    <string name="summary_preference_faq_6">Găsește pur și simplu articolul în listă, apoi apasă butonul „+ (plus)” pentru a-i mări cantitatea sau butonul „- (minus)” pentru a-i micșora cantitatea.</string>
+    <string name="question_7">Cum elimin un articol din coș folosind Cart Calculator?</string>
+    <string name="summary_preference_faq_7">Pentru a elimina un produs din coș, glisează pur și simplu spre dreapta sau spre stânga sau redu-i cantitatea la zero, apoi selectează butonul „Șterge articol”.</string>
     <string name="question_8">Cart Calculator este un software gratuit?</string>
-    <string name="summary_preference_faq_8">Da! Cart Calculator este un software gratuit distribuit cu mândrie sub licența GNU General Public License versiunea 3.</string>
+    <string name="summary_preference_faq_8">Da! Cart Calculator este cu mândrie un software gratuit distribuit sub licența GNU General Public License versiunea 3.</string>
     <string name="question_9">Cum pot contribui la Cart Calculator?</string>
-    <string name="summary_preference_faq_9">Cea mai bună modalitate de a contribui la Cart Calculator este prin intermediul depozitului său <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. De acolo, îl puteți bifurca și lucra la contribuțiile dumneavoastră, iar mai târziu să le trimiteți înapoi printr-o solicitare de tragere. De asemenea, puteți utiliza tracker-ul de probleme pentru a raporta erori, a propune noi caracteristici sau îmbunătățiri sau pentru a obține idei despre cum ați putea ajuta.</string>
+    <string name="summary_preference_faq_9">Cea mai bună modalitate de a contribui la Cart Calculator este prin intermediul depozitului său <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. De acolo, îl poți bifurca (fork) și poți lucra la contribuțiile tale, iar mai târziu le poți trimite înapoi printr-o solicitare de extragere (pull request). De asemenea, poți utiliza instrumentul de urmărire a problemelor pentru a raporta erori, a propune noi funcții sau îmbunătățiri sau pentru a obține idei despre cum ai putea ajuta.</string>
     <string name="feedback">Feedback</string>
 
     <string name="updates">Actualizări</string>
 
-    <string name="share">Partajați</string>
+    <string name="share">Distribuie</string>
 
-    <string name="support_us">Susțineți-ne</string>
+    <string name="support_us">Sprijină-ne</string>
     <string name="paid_support">Suport plătit</string>
-    <string name="summary_donations">Indiferent cât donați, ne veți ajuta să menținem aplicația în funcțiune și să îmbunătățim funcțiile acesteia. Vă mulțumim pentru generozitatea și bunătate dumneavoastră!</string>
+    <string name="summary_donations">Indiferent de suma pe care o donezi, ne vei ajuta să menținem aplicația noastră în funcțiune și să ne îmbunătățim funcțiile. Apreciem generozitatea și amabilitatea ta!</string>
     <string name="non_paid_support">Suport neplătit</string>
     <string name="web_ad">Anunț web</string>
 
-    <string name="snack_app_updated">The app has been successfully updated</string>
-    <string name="snack_update_failed">The update process encountered an issue</string>
-    <string name="try_again">Try again</string>
-    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
-    <string name="learn_more">Learn more</string>
+    <string name="snack_app_updated">Aplicația a fost actualizată cu succes</string>
+    <string name="snack_update_failed">Procesul de actualizare a întâmpinat o problemă</string>
+    <string name="try_again">Încearcă din nou</string>
+    <string name="summary_share_message">Verifică această aplicație uimitoare pe care o folosesc! Are niște funcții foarte interesante pe care s-ar putea să le găsești interesante. O poți descărca din Magazinul Play la: %1$s</string>
+    <string name="learn_more">Află mai multe</string>
 </resources>

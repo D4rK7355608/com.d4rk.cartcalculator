@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">Verwalten und berechnen Sie effizient Ihre Einkaufswagenartikel mit Cart Calculator. 🛒</string>
+    <string name="app_short_description">Verwalten und berechnen Sie Ihre Warenkorbartikel effizient mit dem Warenkorb-Rechner. 🛒</string>
     <string name="notification_update_title">Ein neues Update ist verfügbar!</string>
-    <string name="summary_notification_update">Eine neue Version der App ist verfügbar. Klicken Sie, um zu aktualisieren!</string>
+    <string name="summary_notification_update">Eine neue Version der App ist verfügbar. Klicken Sie zum Aktualisieren!</string>
     <string name="notification_last_time_used_title">Es ist schon eine Weile her!</string>
-    <string name="summary_notification_last_time_used"> Lassen Sie uns Ihre Einkaufswagenartikel effizient verwalten!</string>
+    <string name="summary_notification_last_time_used">Lassen Sie uns Ihre Warenkorbartikel effizient verwalten!</string>
 
     <string name="welcome">Willkommen</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Lesen und stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu, um fortzufahren.</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">Lesen und akzeptieren Sie unsere Nutzungsbedingungen und Datenschutzbestimmungen, um fortzufahren.</string>
     <string name="agree">Zustimmen</string>
 
-    <string name="no_carts_available">Keine Einkaufswagen verfügbar</string>
-    <string name="add_new_cart">Neuen Einkaufswagen hinzufügen</string>
-    <string name="cart_name">Name des Einkaufswagens</string>
+    <string name="navigation_drawer_open">Navigationsleiste öffnen</string>
+
+    <string name="no_carts_available">Keine Warenkörbe verfügbar</string>
+    <string name="add_new_cart">Neuen Warenkorb hinzufügen</string>
+    <string name="cart_name">Warenkorbname</string>
     <string name="shopping_cart">Einkaufswagen</string>
-    <string name="summary_cart_dialog">Wir sind bestrebt, ein personalisiertes Einkaufserlebnis für alle zu schaffen. Um es Ihnen zu erleichtern, Ihre Auswahl zu verfolgen und Ihr Einkaufserlebnis zu verbessern, benennen Sie bitte Ihren Einkaufswagen, bevor Sie Artikel hinzufügen.</string>
+    <string name="summary_cart_dialog">Wir möchten ein personalisiertes Einkaufserlebnis für alle schaffen. Um Ihnen das Verfolgen Ihrer Auswahl zu erleichtern und Ihre Einkaufsreise zu verbessern, sollten Sie Ihrem Warenkorb einen Namen geben, bevor Sie Artikel hinzufügen.</string>
     <string name="created_on">Erstellt am %1$s</string>
     <string name="decrease_quantity">Menge verringern</string>
     <string name="increase_quantity">Menge erhöhen</string>
@@ -23,75 +25,78 @@
     <string name="delete_cart_warning">Das Löschen dieses Warenkorbs entfernt dauerhaft alle Artikel aus \"%s\" und kann nicht rückgängig gemacht werden.</string>
     <string name="snackbar_cart_deleted_success">Warenkorb erfolgreich gelöscht!</string>
     <string name="close">Schließen?</string>
-    <string name="summary_close">Sind Sie sicher, dass Sie beenden möchten?</string>
+    <string name="summary_close">Möchten Sie wirklich beenden?</string>
     <string name="file_not_found">Datei nicht gefunden.</string>
     <string name="activity_not_found">Aktivität nicht gefunden.</string>
-    <string name="security_error">Es ist ein Sicherheitsfehler aufgetreten. Bitte versuchen Sie es später erneut.</string>
-    <string name="io_error">Ein Ein-/Ausgabefehler ist aufgetreten. Bitte überprüfen Sie Ihre Netzwerkverbindung oder den Speicher und versuchen Sie es erneut.</string>
-    <string name="illegal_argument_error">Ungültige Eingabe oder Argument angegeben. Bitte überprüfen Sie die Informationen und versuchen Sie es erneut.</string>
+    <string name="security_error">Ein Sicherheitsfehler ist aufgetreten. Bitte versuchen Sie es später erneut.</string>
+    <string name="io_error">Ein Ein-/Ausgabefehler ist aufgetreten. Bitte überprüfen Sie Ihre Netzwerkverbindung oder Ihren Speicher und versuchen Sie es erneut.</string>
+    <string name="illegal_argument_error">Ungültige Eingabe oder ungültiges Argument. Bitte überprüfen Sie die Informationen und versuchen Sie es erneut.</string>
     <string name="unknown_error">Ein unbekannter Fehler ist aufgetreten.</string>
+    <string name="initialization_error">Initialisierung fehlgeschlagen. Bitte versuchen Sie es später erneut.</string>
 
-    <string name="your_shopping_cart_is_empty">Ihr Einkaufswagen ist leer</string>
+    <string name="your_shopping_cart_is_empty">Ihr Warenkorb ist leer</string>
     <string name="in_cart">Im Warenkorb</string>
-    <string name="items_to_pick_up">Zu holende Artikel</string>
+    <string name="items_to_pick_up">Abzuholende Artikel</string>
     <string name="item_name">Artikelname</string>
     <string name="enter_item_name">Artikelname eingeben</string>
     <string name="item_price">Artikelpreis</string>
     <string name="enter_item_price">Artikelpreis eingeben</string>
     <string name="quantity">Menge</string>
     <string name="enter_quantity">Menge eingeben</string>
-    <string name="dialog_info_cart_item">Um einen reibungslosen Checkout zu gewährleisten, geben Sie bitte Details zu den Artikeln an, die Sie Ihrem Einkaufswagen hinzufügen</string>
+    <string name="dialog_info_cart_item">Um einen reibungslosen Bezahlvorgang zu gewährleisten, geben Sie bitte Details zu den Artikeln an, die Sie Ihrem Warenkorb hinzufügen.</string>
     <string name="total">Gesamt</string>
-    <string name="delete_cart_item_title">Warenkorb-Artikel löschen</string>
-    <string name="delete_cart_item_message">Sind Sie sicher, dass Sie diesen Artikel löschen möchten?</string>
-    <string name="delete_cart_item_warning">Sie sind im Begriff, "%s" aus Ihrem Warenkorb zu entfernen.</string>
+    <string name="delete_cart_item_title">Warenkorbartikel löschen</string>
+    <string name="delete_cart_item_message">Möchten Sie diesen Artikel wirklich löschen?</string>
+    <string name="delete_cart_item_warning">Sie sind dabei, \"%s\" aus Ihrem Warenkorb zu löschen.</string>
 
     <string name="settings">Einstellungen</string>
 
     <string name="display">Anzeige</string>
-    <string name="summary_preference_settings_display">Passen Sie das Aussehen und Gefühl Ihrer App an</string>
+    <string name="summary_preference_settings_display">Personalisieren Sie das Erscheinungsbild Ihrer App</string>
 
     <string name="appearance">Erscheinungsbild</string>
-    <string name="dark_theme">Dunkles Thema</string>
-    <string name="will_turn_on_automatically_by_system">Wird automatisch vom System aktiviert</string>
-    <string name="will_never_turn_on_automatically">Wird niemals automatisch aktiviert</string>
+    <string name="dark_theme">Dunkles Design</string>
+    <string name="will_turn_on_automatically_by_system">Wird automatisch vom System eingeschaltet</string>
+    <string name="will_never_turn_on_automatically">Wird niemals automatisch eingeschaltet</string>
     <string name="amoled_mode">AMOLED-Modus</string>
     <string name="follow_system">Systemmodus folgen</string>
     <string name="light_mode">Heller Modus</string>
     <string name="dark_mode">Dunkler Modus</string>
-    <string name="summary_dark_theme">Das dunkle Thema verwendet einen dunklen Hintergrund, um die Akkulaufzeit zu verlängern</string>
+    <string name="summary_dark_theme">Das dunkle Design verwendet einen tiefen Hintergrund, um die Akkulaufzeit zu verlängern</string>
 
     <string name="dynamic_colors">Dynamische Farben</string>
-    <string name="summary_preference_settings_dynamic_colors">Wenden Sie Farben aus Hintergrundbildern auf das App-Thema an</string>
+    <string name="summary_preference_settings_dynamic_colors">Farben von Hintergrundbildern auf das App-Design anwenden</string>
 
     <string name="app_behavior">App-Verhalten</string>
-    <string name="bounce_buttons">Sprung-Klick</string>
-    <string name="summary_preference_settings_bounce_buttons">Wendet eine subtile Sprunganimation auf alle anklickbaren Elemente an, wenn sie angeklickt werden</string>
+    <string name="bounce_buttons">Klick abfedern</string>
+    <string name="summary_preference_settings_bounce_buttons">Wendet beim Klicken eine subtile Abfederungsanimation auf alle klickbaren Elemente an</string>
 
     <string name="language">Sprache</string>
     <string name="summary_preference_settings_language">Ändert die in der App verwendete Sprache</string>
-    <string name="dialog_language_subtitle">Wählen Sie Ihre bevorzugte Sprache</string>
-    <string name="dialog_info_language">Passen Sie Ihr Erlebnis mit Ihrer bevorzugten Sprache an. Alle von Ihnen vorgenommenen Sprachänderungen werden sofort wirksam, um ein nahtloses Erlebnis in Ihrer gewählten Sprache zu gewährleisten</string>
+    <string name="dialog_language_subtitle">Wählen Sie Ihre bevorzugte Sprache aus</string>
+    <string name="dialog_info_language">Personalisieren Sie Ihre Erfahrung mit Ihrer bevorzugten Sprache. Alle von Ihnen vorgenommenen Sprachänderungen werden sofort wirksam und sorgen für ein nahtloses Erlebnis in Ihrer gewählten Sprache</string>
 
-    <string name="cart_settings">Wageneinstellungen</string>
-    <string name="summary_preference_settings_cart">Verwalten Sie, wie Ihr Einkaufswagen funktioniert</string>
+    <string name="cart_settings">Warenkorb-Einstellungen</string>
+    <string name="summary_preference_settings_cart">Verwalten Sie das Verhalten Ihres Warenkorbs</string>
 
     <string name="currency">Währung</string>
-    <string name="summary_preference_settings_currency">Stellen Sie Ihre bevorzugte Währung für die Preisanzeige ein</string>
-    <string name="dialog_currency_subtitle">Wählen Sie Ihre bevorzugte Währung</string>
-    <string name="dialog_info_currency">Diese Währungsauswahl wird auf der gesamten Plattform zur Anzeige von Produktpreisen, zur Abwicklung von Transaktionen und zur Bereitstellung eines personalisierteren Einkaufserlebnisses verwendet</string>
+    <string name="summary_preference_settings_currency">Legen Sie Ihre bevorzugte Währung für die Anzeige von Preisen fest</string>
+    <string name="dialog_currency_subtitle">Wählen Sie Ihre bevorzugte Währung aus</string>
+    <string name="dialog_info_currency">Diese Währungsauswahl wird plattformübergreifend verwendet, um Produktpreise anzuzeigen, Transaktionen zu verarbeiten und ein personalisierteres Einkaufserlebnis zu bieten</string>
+    <string name="open_carts_after_creation">Warenkörbe nach Erstellung öffnen</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Warenkorb nach der Erstellung automatisch öffnen.</string>
 
     <string name="notifications">Benachrichtigungen</string>
-    <string name="summary_preference_settings_notifications">Verwalten Sie App-Benachrichtigungen</string>
+    <string name="summary_preference_settings_notifications">App-Benachrichtigungen verwalten</string>
 
     <string name="app_usage_notifications">App-Nutzungsbenachrichtigungen</string>
     <string name="update_notifications">Update-Benachrichtigungen</string>
 
     <string name="advanced">Erweitert</string>
-    <string name="summary_preference_settings_advanced">Erkunden Sie erweiterte Einstellungen</string>
-    <string name="error_reporting">Fehlermeldung</string>
+    <string name="summary_preference_settings_advanced">Weitere erweiterte Einstellungen erkunden</string>
+    <string name="error_reporting">Fehlerberichterstattung</string>
     <string name="bug_report">Fehlerbericht</string>
-    <string name="summary_preference_settings_bug_report">Senden Sie Fehlerberichte und Funktionsanforderungen an die GitHub-Repositories-Seite der App</string>
+    <string name="summary_preference_settings_bug_report">Senden Sie Fehlerberichte und Funktionsanfragen an die GitHub-Repository-Issue-Seite der App</string>
 
     <string name="security_and_privacy">Sicherheit &amp; Datenschutz</string>
     <string name="summary_preference_settings_privacy_and_security">Verwalten Sie Ihre Datenschutzeinstellungen</string>
@@ -104,80 +109,83 @@
     <string name="summary_preference_settings_code_of_conduct">Verstehen Sie die Regeln und Richtlinien für das Verhalten innerhalb unseres Dienstes</string>
 
     <string name="permissions">Berechtigungen</string>
-    <string name="summary_preference_settings_permissions">Verwalten Sie die Berechtigungen, die unserem Dienst gewährt wurden</string>
+    <string name="summary_preference_settings_permissions">Verwalten Sie die unserem Dienst erteilten Berechtigungen</string>
     <string name="normal">Normal</string>
     <string name="ad_id">Werbe-ID [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Ermöglicht der App, die Werbe-ID des Geräts abzurufen und zu verwenden, um personalisierte Anzeigen anzuzeigen, die Wirksamkeit von Anzeigen zu messen und Anzeigen auf Geräten mit Android 13 oder höher anzuzeigen.</string>
+    <string name="summary_preference_permissions_ad_id">Ermöglicht der App, die mit dem Gerät des Nutzers verknüpfte Werbe-ID abzurufen und zu verwenden, um personalisierte Werbung bereitzustellen, die Werbewirksamkeit zu messen und Werbung auf Geräten mit Android 13 oder höher anzuzeigen.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Ermöglicht der App, eine Internetverbindung herzustellen, um Fehlerberichte zu senden oder nach Updates zu suchen.</string>
-    <string name="post_notifications">Benachrichtigungen senden [POST_NOTIFICATIONS]</string>
+    <string name="post_notifications">Benachrichtigungen posten [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Ermöglicht der App, Benachrichtigungen auf Geräten mit Android 13 oder höher anzuzeigen.</string>
     <string name="runtime">Laufzeit</string>
     <string name="access_network_state">Netzwerkstatus abrufen [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Ermöglicht der App, die Netzwerkverbindung zu überprüfen und Informationen über WLAN abzurufen, einschließlich des aktivierten Status und der Namen verbundener WLAN-Geräte.</string>
-    <string name="access_notification_policy">Zugriff auf Benachrichtigungsrichtlinie [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Ermöglicht der App den Zugriff auf die Benachrichtigungsrichtlinie des Geräts und deren Änderung, wodurch gesteuert wird, wie und wann Benachrichtigungen dem Benutzer angezeigt werden und benutzerdefinierte Benachrichtigungsverwaltungsfunktionen bereitgestellt werden.</string>
+    <string name="summary_preference_permissions_access_network_state">Ermöglicht der App, die Netzwerkverbindung zu überprüfen und Informationen über WLAN abzurufen, einschließlich des aktivierten Status und der Namen der verbundenen WLAN-Geräte.</string>
+    <string name="access_notification_policy">Auf Benachrichtigungsrichtlinie zugreifen [ACCESS_NOTIFICATION_POLICY]</string>
+    <string name="summary_preference_permissions_access_notification_policy">Ermöglicht der App, auf die Benachrichtigungsrichtlinie des Geräts zuzugreifen und diese zu ändern, um zu steuern, wie und wann Benachrichtigungen dem Benutzer angezeigt werden, und um benutzerdefinierte Benachrichtigungsverwaltungsfunktionen bereitzustellen.</string>
     <string name="billing">Abrechnung [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Ermöglicht der App die Verwendung der Google Play-Abrechnungsbibliothek zur Abwicklung von In-App-Käufen und Spenden</string>
+    <string name="summary_preference_permissions_billing">Ermöglicht der App, die Google Play Billing Library zu verwenden, um In-App-Käufe und Spenden abzuwickeln</string>
     <string name="check_license">Lizenz überprüfen [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Ermöglicht der App die Überprüfung der Einhaltung der Lizenzvereinbarung und die Durchsetzung der Lizenzbedingungen zum Schutz des geistigen Eigentums.</string>
+    <string name="summary_preference_permissions_check_license">Ermöglicht der App, die Einhaltung der Lizenzvereinbarung zu überprüfen und Lizenzbedingungen durchzusetzen, um geistiges Eigentum zu schützen.</string>
     <string name="foreground_service">Vordergrunddienst [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Ermöglicht der App das Erstellen und Verwenden von Diensten, die im Vordergrund ausgeführt werden, wodurch sie gegenüber anderen Hintergrundprozessen priorisiert und die Leistung und Zuverlässigkeit verbessert werden.</string>
+    <string name="summary_preference_permissions_foreground_service">Ermöglicht der App, Dienste zu erstellen und zu verwenden, die im Vordergrund ausgeführt werden, wodurch sie gegenüber anderen Hintergrundprozessen priorisiert werden und die Leistung und Zuverlässigkeit verbessert werden.</string>
 
     <string name="ads">Werbung</string>
-    <string name="summary_preference_settings_ads">Steuern Sie, wie wir Ihre Informationen verwenden, um Ihnen relevante Anzeigen zu zeigen</string>
-    <string name="display_ads">Anzeigen anzeigen</string>
-    <string name="personalized_ads">Personalisierte Anzeigen</string>
-    <string name="summary_ads_personalized_ads">Wählen Sie, wie wir Anzeigen basierend auf Ihren Interessen für Sie personalisieren</string>
-    <string name="summary_ads">Sehen Sie Anzeigen, die für Sie relevant sind. Verwalten Sie die Informationen, die verwendet werden, um personalisierte Anzeigen basierend auf Ihrer App-Aktivität anzuzeigen. Sie können die Personalisierung jederzeit hier deaktivieren.\n</string>
+    <string name="summary_preference_settings_ads">Steuern Sie, wie wir Ihre Informationen verwenden, um Ihnen relevante Werbung anzuzeigen</string>
+    <string name="display_ads">Werbung anzeigen</string>
+    <string name="personalized_ads">Personalisierte Werbung</string>
+    <string name="summary_ads_personalized_ads">Wählen Sie aus, wie wir Werbung basierend auf Ihren Interessen für Sie personalisieren</string>
+    <string name="summary_ads">Sehen Sie Werbung, die für Sie relevant ist. Verwalten Sie die Informationen, die verwendet werden, um personalisierte Werbung basierend auf Ihrer App-Aktivität anzuzeigen. Sie können die Personalisierung hier jederzeit deaktivieren.\n</string>
 
-    <string name="usage_and_diagnostics">Nutzung und Diagnostik</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Teilen Sie Daten, um Cart Calculator zu verbessern</string>
-    <string name="summary_usage_and_diagnostics">Verbessern Sie Ihr Erlebnis, indem Sie automatisch Diagnose-, Geräte- und App-Nutzungsdaten an uns senden. Dies wird dazu beitragen, die Leistung, Stabilität und andere Verbesserungen der App zu verbessern. Einige aggregierte Daten werden auch unseren Apps helfen.\n\nDies sind allgemeine Informationen über Ihr Gerät und wie Sie unsere Apps verwenden (z. B. Akkustand, System- und App-Aktivität und Fehler). Die Daten werden verwendet, um unsere Apps zu verbessern\n\nDas Deaktivieren dieser Funktion beeinträchtigt nicht die Fähigkeit Ihres Geräts, die für wesentliche Dienste wie App-Updates und Sicherheit erforderlichen Informationen zu senden.\n</string>
+    <string name="usage_and_diagnostics">Nutzung und Diagnose</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">Teilen Sie Daten, um den Warenkorb-Rechner zu verbessern</string>
+    <string name="summary_usage_and_diagnostics">Helfen Sie mit, Ihre Erfahrung zu verbessern, indem Sie uns automatisch Diagnose-, Geräte- und App-Nutzungsdaten senden. Dies wird dazu beitragen, die App-Leistung, Stabilität und andere Verbesserungen zu verbessern. Einige aggregierte Daten helfen auch unseren Apps.\n\nDies sind allgemeine Informationen über Ihr Gerät und wie Sie unsere Apps verwenden (z. B. Akkustand, System- und App-Aktivität und Fehler). Die Daten werden verwendet, um unsere Apps zu verbessern.\n\nDas Deaktivieren dieser Funktion hat keinen Einfluss auf die Fähigkeit Ihres Geräts, die für wesentliche Dienste wie App-Updates und Sicherheit erforderlichen Informationen zu senden.\n</string>
 
-    <string name="legal">Rechtlich</string>
+    <string name="legal">Rechtliches</string>
     <string name="legal_notices">Rechtliche Hinweise</string>
-    <string name="summary_preference_settings_legal_notices">Sehen Sie sich rechtliche Informationen zu unserem Dienst an</string>
+    <string name="summary_preference_settings_legal_notices">Rechtliche Informationen zu unserem Service anzeigen</string>
     <string name="license">Lizenz</string>
 
     <string name="about">Über</string>
-    <string name="summary_preference_settings_about">Erfahren Sie mehr über Cart Calculator</string>
+    <string name="summary_preference_settings_about">Erfahren Sie mehr über den Warenkorb-Rechner</string>
 
     <string name="app_info">App-Info</string>
-    <string name="app_build_version">Anwendungsbuild-Version</string>
+    <string name="app_build_version">App-Build-Version</string>
     <string name="summary_preference_settings_oss">Lizenzdetails für Open-Source-Software</string>
-    <string name="device_info">Geräteinformationen</string>
-    <string name="app_build">App Build: Release\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="device_info">Geräteinfo</string>
+    <string name="app_build">App Build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">Debug</string>
+    <string name="release">Release</string>
     <string name="manufacturer">Hersteller:</string>
     <string name="device_model">Gerätemodell:</string>
     <string name="android_version">Android-Version:</string>
     <string name="api_level">API-Level:</string>
+    <string name="snack_device_info_copied">Geräteinfo in die Zwischenablage kopiert</string>
 
     <string name="help_and_feedback">Hilfe &amp; Feedback</string>
     <string name="help">Hilfe</string>
     <string name="faq">FAQ</string>
-    <string name="view_in_google_play_store">Im Google Play Store ansehen</string>
-    <string name="version_info">Versionsinformationen</string>
+    <string name="view_in_google_play_store">Im Google Play Store anzeigen</string>
+    <string name="version_info">Versionsinfo</string>
     <string name="version">Version %1$s</string>
     <string name="beta_program">Beta-Programm</string>
-    <string name="question_1">Was ist Cart Calculator?</string>
-    <string name="summary_preference_faq_1">Cart Calculator ist ein einfacher, allgemeiner und kostenloser Einkaufswagen-Manager und Gesamtkostenrechner, der den gewöhnlichen Taschenrechner des Geräts ersetzt, wenn Sie im Lebensmittelgeschäft oder auf dem Markt sind.</string>
-    <string name="question_2">Wie funktioniert Cart Calculator?</string>
-    <string name="summary_preference_faq_2">Mit Cart Calculator können Sie Ihren Einkaufswagen verwalten, indem Sie Produkte hinzufügen und deren Mengen erhöhen oder verringern. Zu jeder Zeit zeigt Cart Calculator den Gesamtbetrag der Produkte in Ihrem Einkaufswagen basierend auf deren Preisen und Mengen an.</string>
-    <string name="question_3">Warum sollte ich Cart Calculator verwenden?</string>
-    <string name="summary_preference_faq_3">Cart Calculator hilft Ihnen, stets zu wissen, wie viel Sie ausgeben, noch bevor Sie zur Kasse kommen. Dies ist besonders nützlich, wenn Sie mit einem begrenzten Budget einkaufen müssen.</string>
-    <string name="question_4">Kann ich Cart Calculator außerhalb von Lebensmittelgeschäften oder Märkten verwenden?</string>
-    <string name="summary_preference_faq_4">Ja! Da Cart Calculator schockierend einfach und allgemein ist, können Sie es auch in Pubs, Restaurants, im Kino usw. verwenden.</string>
-    <string name="question_5">Wie füge ich mit Cart Calculator einen Artikel zu meinem Einkaufswagen hinzu?</string>
-    <string name="summary_preference_faq_5">Drücken Sie auf dem Startbildschirm die Schaltfläche "Artikel hinzufügen" in der Aktionsleiste, um ein neues Produkt zu Ihrem Einkaufswagen hinzuzufügen. Geben Sie seinen Namen und Preis an und klicken Sie dann auf die Schaltfläche "Hinzufügen".</string>
-    <string name="question_6">Wie erhöhe oder verringere ich die Menge eines Artikels in meinem Einkaufswagen mit Cart Calculator?</string>
-    <string name="summary_preference_faq_6">Suchen Sie einfach den Artikel in der Liste und drücken Sie dann die \"+ (Plus)\"-Schaltfläche, um die Menge zu erhöhen, oder die \"- (Minus)\"-Schaltfläche, um die Menge zu verringern.</string>
-    <string name="question_7">Wie entferne ich einen Artikel aus meinem Einkaufswagen mit Cart Calculator?</string>
-    <string name="summary_preference_faq_7">Um ein Produkt aus Ihrem Einkaufswagen zu entfernen, senken Sie einfach die Menge auf null oder halten Sie es in der Liste gedrückt und wählen Sie dann die Schaltfläche "Artikel löschen".</string>
-    <string name="question_8">Ist Cart Calculator kostenlose Software?</string>
-    <string name="summary_preference_faq_8">Ja! Cart Calculator ist stolz darauf, freie Software zu sein, die unter der GNU General Public License Version 3 vertrieben wird.</string>
-    <string name="question_9">Wie kann ich zu Cart Calculator beitragen?</string>
-    <string name="summary_preference_faq_9">Der beste Weg, zu Cart Calculator beizutragen, ist über sein <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-Repository. Von dort aus können Sie es forken und an Ihren Beiträgen arbeiten und diese später per Pull Request zurücksenden. Sie können auch den Issue-Tracker verwenden, um Fehler zu melden, neue Funktionen oder Verbesserungen vorzuschlagen oder Ideen zu erhalten, wie Sie helfen können.</string>
+    <string name="question_1">Was ist der Warenkorb-Rechner?</string>
+    <string name="summary_preference_faq_1">Der Warenkorb-Rechner ist ein einfacher, generischer und kostenloser Warenkorbmanager und Gesamtrechner, der den gewöhnlichen Taschenrechner des Geräts ersetzt, wenn Sie im Supermarkt oder auf dem Markt sind.</string>
+    <string name="question_2">Wie funktioniert der Warenkorb-Rechner?</string>
+    <string name="summary_preference_faq_2">Mit dem Warenkorb-Rechner können Sie Ihren Warenkorb verwalten, indem Sie Produkte hinzufügen und deren Mengen erhöhen oder verringern. Der Warenkorb-Rechner zeigt jederzeit den fälligen Gesamtbetrag der Produkte in Ihrem Warenkorb basierend auf ihren Preisen und Mengen an.</string>
+    <string name="question_3">Warum sollte ich den Warenkorb-Rechner verwenden?</string>
+    <string name="summary_preference_faq_3">Der Warenkorb-Rechner hilft Ihnen, immer zu wissen, wie viel Sie ausgeben, noch bevor Sie zur Kasse gehen. Dies ist besonders nützlich, wenn Sie mit einem begrenzten Budget einkaufen müssen.</string>
+    <string name="question_4">Kann ich den Warenkorb-Rechner auch außerhalb von Supermärkten oder Märkten verwenden?</string>
+    <string name="summary_preference_faq_4">Ja! Da der Warenkorb-Rechner schockierend einfach und generisch ist, können Sie ihn auch in Kneipen, Restaurants, Kinos usw. verwenden.</string>
+    <string name="question_5">Wie füge ich mit dem Warenkorb-Rechner einen Artikel zu meinem Warenkorb hinzu?</string>
+    <string name="summary_preference_faq_5">Öffnen Sie Ihren Warenkorb und klicken Sie in der Aktionsleiste auf die Schaltfläche „Artikel hinzufügen“, um ein neues Produkt zu Ihrem Warenkorb hinzuzufügen. Geben Sie seinen Namen, Preis und Menge ein und klicken Sie dann auf die Schaltfläche „Hinzufügen“.</string>
+    <string name="question_6">Wie erhöhe oder verringere ich die Menge eines Artikels in meinem Warenkorb mit dem Warenkorb-Rechner?</string>
+    <string name="summary_preference_faq_6">Suchen Sie einfach den Artikel in der Liste und klicken Sie dann auf die Schaltfläche „+ (Plus)“, um seine Menge zu erhöhen, oder auf die Schaltfläche „- (Minus)“, um seine Menge zu verringern.</string>
+    <string name="question_7">Wie entferne ich mit dem Warenkorb-Rechner einen Artikel aus meinem Warenkorb?</string>
+    <string name="summary_preference_faq_7">Um ein Produkt aus Ihrem Warenkorb zu entfernen, wischen Sie einfach nach rechts oder links oder setzen Sie seine Menge auf Null und wählen Sie dann die Schaltfläche „Artikel löschen“.</string>
+    <string name="question_8">Ist der Warenkorb-Rechner kostenlose Software?</string>
+    <string name="summary_preference_faq_8">Ja! Der Warenkorb-Rechner ist stolz freie Software, die unter der GNU General Public License Version 3 vertrieben wird.</string>
+    <string name="question_9">Wie kann ich zum Warenkorb-Rechner beitragen?</string>
+    <string name="summary_preference_faq_9">Der beste Weg, zum Warenkorb-Rechner beizutragen, ist über sein <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-Repository. Von dort aus können Sie es forken und an Ihren Beiträgen arbeiten und diese später per Pull-Request zurücksenden. Sie können auch den Issue-Tracker verwenden, um Fehler zu melden, neue Funktionen oder Verbesserungen vorzuschlagen oder Ideen zu bekommen, wie Sie helfen könnten.</string>
     <string name="feedback">Feedback</string>
 
     <string name="updates">Updates</string>
@@ -185,14 +193,14 @@
     <string name="share">Teilen</string>
 
     <string name="support_us">Unterstützen Sie uns</string>
-    <string name="paid_support">Kostenpflichtige Unterstützung</string>
+    <string name="paid_support">Bezahlte Unterstützung</string>
     <string name="summary_donations">Egal wie viel Sie spenden, Sie helfen uns, unsere App am Laufen zu halten und unsere Funktionen zu verbessern. Wir schätzen Ihre Großzügigkeit und Freundlichkeit!</string>
-    <string name="non_paid_support">Unbezahlte Unterstützung</string>
+    <string name="non_paid_support">Kostenlose Unterstützung</string>
     <string name="web_ad">Web-Anzeige</string>
 
-    <string name="snack_app_updated">The app has been successfully updated</string>
-    <string name="snack_update_failed">The update process encountered an issue</string>
-    <string name="try_again">Try again</string>
-    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
-    <string name="learn_more">Learn more</string>
+    <string name="snack_app_updated">Die App wurde erfolgreich aktualisiert</string>
+    <string name="snack_update_failed">Beim Aktualisierungsprozess ist ein Problem aufgetreten</string>
+    <string name="try_again">Erneut versuchen</string>
+    <string name="summary_share_message">Schau dir diese tolle App an, die ich benutze! Sie hat einige wirklich coole Funktionen, die du vielleicht interessant findest. Du kannst sie im Play Store herunterladen unter: %1$s</string>
+    <string name="learn_more">Mehr erfahren</string>
 </resources>

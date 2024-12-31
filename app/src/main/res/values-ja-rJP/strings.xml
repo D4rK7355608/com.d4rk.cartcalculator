@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_short_description">カート計算機を使ってカート内の商品を効率的に管理・計算しましょう。 🛒</string>
+    <string name="app_short_description">カート計算機でカートアイテムを効率的に管理および計算します。🛒</string>
     <string name="notification_update_title">新しいアップデートが利用可能です！</string>
-    <string name="summary_notification_update">アプリの新しいバージョンが利用可能です。クリックしてアップデートしましょう！</string>
-    <string name="notification_last_time_used_title">しばらく経ちましたね！</string>
-    <string name="summary_notification_last_time_used"> カート内の商品を効率的に管理しましょう！</string>
+    <string name="summary_notification_update">アプリの新しいバージョンが利用可能です。クリックして更新してください！</string>
+    <string name="notification_last_time_used_title">久しぶりですね！</string>
+    <string name="summary_notification_last_time_used">カートアイテムを効率的に管理しましょう！</string>
 
     <string name="welcome">ようこそ</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">利用規約とプライバシーポリシーを読み、同意して続行してください。</string>
+    <string name="summary_browse_terms_of_service_and_privacy_policy">続行するには、利用規約とプライバシーポリシーを読んで同意してください。</string>
     <string name="agree">同意する</string>
 
-    <string name="no_carts_available">カートがありません</string>
+    <string name="navigation_drawer_open">ナビゲーションドロワーを開く</string>
+
+    <string name="no_carts_available">カートはありません</string>
     <string name="add_new_cart">新しいカートを追加</string>
     <string name="cart_name">カート名</string>
-    <string name="shopping_cart">買い物カート</string>
-    <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに尽力しています。選択内容を追跡しやすく、ショッピングの旅を向上させるために、商品を追加する前にカートに名前を付けることを検討してください。</string>
-    <string name="created_on">%1$s に作成</string>
+    <string name="shopping_cart">ショッピングカート</string>
+    <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに取り組んでいます。選択内容を簡単に追跡し、ショッピング体験を向上させるために、アイテムを追加する前にカートに名前を付けることを検討してください。</string>
+    <string name="created_on">%1$sに作成</string>
     <string name="decrease_quantity">数量を減らす</string>
     <string name="increase_quantity">数量を増やす</string>
     <string name="delete_cart_title">カートを削除</string>
     <string name="delete_cart_message">このカートを削除してもよろしいですか？</string>
-    <string name="delete_cart_warning">このカートを削除すると、「%s」からすべての商品が永久に削除され、元に戻すことはできません。</string>
+    <string name="delete_cart_warning">このカートを削除すると、\"%s\"からすべてのアイテムが完全に削除され、元に戻すことはできません。</string>
     <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
     <string name="close">閉じる？</string>
     <string name="summary_close">本当に終了しますか？</string>
     <string name="file_not_found">ファイルが見つかりません。</string>
     <string name="activity_not_found">アクティビティが見つかりません。</string>
     <string name="security_error">セキュリティエラーが発生しました。後でもう一度お試しください。</string>
-    <string name="io_error">入出力エラーが発生しました。ネットワーク接続やストレージを確認してから、もう一度お試しください。</string>
-    <string name="illegal_argument_error">無効な入力または引数が指定されました。情報を確認して、もう一度やり直してください。</string>
+    <string name="io_error">入出力エラーが発生しました。ネットワーク接続またはストレージを確認して、もう一度お試しください。</string>
+    <string name="illegal_argument_error">無効な入力または引数が指定されました。情報を確認して、もう一度お試しください。</string>
     <string name="unknown_error">不明なエラーが発生しました。</string>
+    <string name="initialization_error">初期化に失敗しました。後でもう一度お試しください。</string>
 
-    <string name="your_shopping_cart_is_empty">買い物カートは空です</string>
-    <string name="in_cart">カートに入っています</string>
-    <string name="items_to_pick_up">受け取るアイテム</string>
+    <string name="your_shopping_cart_is_empty">ショッピングカートは空です</string>
+    <string name="in_cart">カート内</string>
+    <string name="items_to_pick_up">集荷するアイテム</string>
     <string name="item_name">商品名</string>
-    <string name="enter_item_name">商品名を入力してください</string>
+    <string name="enter_item_name">商品名を入力</string>
     <string name="item_price">商品価格</string>
-    <string name="enter_item_price">商品価格を入力してください</string>
+    <string name="enter_item_price">商品価格を入力</string>
     <string name="quantity">数量</string>
-    <string name="enter_quantity">数量を入力してください</string>
-    <string name="dialog_info_cart_item">スムーズなチェックアウト体験を確保するために、カートに追加する商品に関する詳細を提供してください。</string>
+    <string name="enter_quantity">数量を入力</string>
+    <string name="dialog_info_cart_item">シームレスなチェックアウト体験を保証するために、カートに追加するアイテムの詳細を入力してください</string>
     <string name="total">合計</string>
-    <string name="delete_cart_item_title">カートアイテム削除</string>
-    <string name="delete_cart_item_message">このアイテムを削除してもよろしいですか?</string>
-    <string name="delete_cart_item_warning">カートから"%s"を削除します。</string>
+    <string name="delete_cart_item_title">カートアイテムを削除</string>
+    <string name="delete_cart_item_message">このアイテムを削除してもよろしいですか？</string>
+    <string name="delete_cart_item_warning">カートから「%s」を削除しようとしています。</string>
 
     <string name="settings">設定</string>
 
     <string name="display">表示</string>
-    <string name="summary_preference_settings_display">アプリの外観と操作感をパーソナライズ</string>
+    <string name="summary_preference_settings_display">アプリのルックアンドフィールをカスタマイズする</string>
 
     <string name="appearance">外観</string>
     <string name="dark_theme">ダークテーマ</string>
@@ -59,140 +62,145 @@
     <string name="follow_system">システムモードに従う</string>
     <string name="light_mode">ライトモード</string>
     <string name="dark_mode">ダークモード</string>
-    <string name="summary_dark_theme">ダークテーマは、深い背景を使用することで、バッテリーの寿命を長く保つのに役立ちます。</string>
+    <string name="summary_dark_theme">ダークテーマは、バッテリーの寿命を延ばすために深い背景を使用しています</string>
 
     <string name="dynamic_colors">ダイナミックカラー</string>
-    <string name="summary_preference_settings_dynamic_colors">壁紙からアプリのテーマに色を適用します</string>
+    <string name="summary_preference_settings_dynamic_colors">壁紙の色をアプリのテーマに適用する</string>
 
     <string name="app_behavior">アプリの動作</string>
-    <string name="bounce_buttons">バウンスクリック</string>
-    <string name="summary_preference_settings_bounce_buttons">クリック可能なすべての要素をクリックしたときに、微妙なバウンスアニメーションを適用します</string>
+    <string name="bounce_buttons">クリックをバウンス</string>
+    <string name="summary_preference_settings_bounce_buttons">クリック時にすべてのクリック可能な要素に微妙なバウンスアニメーションを適用します</string>
 
     <string name="language">言語</string>
     <string name="summary_preference_settings_language">アプリで使用される言語を変更します</string>
-    <string name="dialog_language_subtitle">好みの言語を選択してください</string>
-    <string name="dialog_info_language">好みの言語で体験をパーソナライズしましょう。行った言語の変更はすぐに有効になり、選択した言語でシームレスな体験が保証されます。</string>
+    <string name="dialog_language_subtitle">希望の言語を選択してください</string>
+    <string name="dialog_info_language">希望の言語でエクスペリエンスをパーソナライズします。行った言語変更はすぐに有効になり、選択した言語でのシームレスなエクスペリエンスが保証されます</string>
 
-    <string name="cart_settings">カート設定</string>
-    <string name="summary_preference_settings_cart">カートの動作を管理します</string>
+    <string name="cart_settings">カートの設定</string>
+    <string name="summary_preference_settings_cart">カートの動作を管理する</string>
 
     <string name="currency">通貨</string>
-    <string name="summary_preference_settings_currency">価格の表示に使用する好みの通貨を設定します</string>
-    <string name="dialog_currency_subtitle">好みの通貨を選択してください</string>
-    <string name="dialog_info_currency">この通貨選択は、製品価格の表示、トランザクションの処理、よりパーソナライズされたショッピング体験の提供のために、プラットフォーム全体で使用されます。</string>
+    <string name="summary_preference_settings_currency">価格を表示するための希望の通貨を設定します</string>
+    <string name="dialog_currency_subtitle">希望の通貨を選択してください</string>
+    <string name="dialog_info_currency">この通貨の選択は、プラットフォーム全体で製品価格の表示、取引の処理、およびよりパーソナライズされたショッピング体験の提供に利用されます</string>
+    <string name="open_carts_after_creation">作成後にカートを開く</string>
+    <string name="summary_preference_settings_open_carts_after_creation">作成後すぐにカートを自動的に開きます。</string>
 
     <string name="notifications">通知</string>
-    <string name="summary_preference_settings_notifications">アプリの通知を管理します</string>
+    <string name="summary_preference_settings_notifications">アプリの通知を管理する</string>
 
-    <string name="app_usage_notifications">アプリ使用状況通知</string>
-    <string name="update_notifications">アップデート通知</string>
+    <string name="app_usage_notifications">アプリの使用状況の通知</string>
+    <string name="update_notifications">通知を更新する</string>
 
-    <string name="advanced">高度な設定</string>
-    <string name="summary_preference_settings_advanced">より高度な設定を探ります</string>
+    <string name="advanced">詳細設定</string>
+    <string name="summary_preference_settings_advanced">より高度な設定を探る</string>
     <string name="error_reporting">エラー報告</string>
     <string name="bug_report">バグレポート</string>
-    <string name="summary_preference_settings_bug_report">バグレポートと機能リクエストをアプリのGitHubリポジトリの課題ページに送信します</string>
+    <string name="summary_preference_settings_bug_report">アプリのGitHubリポジトリの問題ページにバグレポートと機能リクエストを送信する</string>
 
     <string name="security_and_privacy">セキュリティとプライバシー</string>
-    <string name="summary_preference_settings_privacy_and_security">プライバシー設定を管理します</string>
+    <string name="summary_preference_settings_privacy_and_security">プライバシー設定を管理する</string>
     <string name="privacy">プライバシー</string>
     <string name="privacy_policy">プライバシーポリシー</string>
-    <string name="summary_preference_settings_privacy_policy">データの取り扱いに関するポリシーを表示します</string>
+    <string name="summary_preference_settings_privacy_policy">データの取り扱い方法を管理するポリシーを表示する</string>
     <string name="terms_of_service">利用規約</string>
-    <string name="summary_preference_settings_terms_of_service">サービスの使用に同意する条件を確認します</string>
+    <string name="summary_preference_settings_terms_of_service">当社のサービスを利用する際に同意する条件を確認する</string>
     <string name="code_of_conduct">行動規範</string>
-    <string name="summary_preference_settings_code_of_conduct">サービス内における行動に関するルールとガイドラインを理解します</string>
+    <string name="summary_preference_settings_code_of_conduct">当社のサービス内の行動に関するルールとガイドラインを理解する</string>
 
     <string name="permissions">権限</string>
-    <string name="summary_preference_settings_permissions">サービスに付与された権限を管理します</string>
+    <string name="summary_preference_settings_permissions">当社のサービスに付与された権限を管理する</string>
     <string name="normal">通常</string>
     <string name="ad_id">広告ID [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">アプリがユーザーのデバイスに関連付けられている広告識別子を取得して使用することを許可し、パーソナライズされた広告を提供し、広告の効果を測定し、Android 13以降のデバイスに広告を表示します。</string>
-    <string name="internet">インターネット [インターネット]</string>
-    <string name="summary_preference_permissions_internet">アプリがインターネット接続を確立してエラーレポートを送信したり、アップデートを確認したりすることを許可します。</string>
-    <string name="post_notifications">通知の投稿 [POST_NOTIFICATIONS]</string>
+    <string name="summary_preference_permissions_ad_id">アプリがユーザーのデバイスに関連付けられた広告識別子を取得して使用し、パーソナライズされた広告の提供、広告の効果の測定、Android 13以降のデバイスでの広告の表示を許可します。</string>
+    <string name="internet">インターネット [INTERNET]</string>
+    <string name="summary_preference_permissions_internet">アプリがエラーレポートを送信したり、更新を確認したりするためにインターネット接続を確立することを許可します。</string>
+    <string name="post_notifications">通知を投稿する [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">アプリがAndroid 13以降のデバイスに通知を表示することを許可します。</string>
-    <string name="runtime">実行時</string>
+    <string name="runtime">ランタイム</string>
     <string name="access_network_state">ネットワーク状態へのアクセス [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">アプリがネットワーク接続を確認し、有効な状態や接続されているWi-Fiデバイス名を含むWi-Fiに関する情報を取得することを許可します。</string>
+    <string name="summary_preference_permissions_access_network_state">アプリがネットワーク接続を確認し、有効なステータスや接続されているWi-Fiデバイス名などのWi-Fiに関する情報を取得することを許可します。</string>
     <string name="access_notification_policy">通知ポリシーへのアクセス [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">アプリがデバイスの通知ポリシーにアクセスして変更することを許可し、通知がユーザーにどのように、いつ表示されるかを制御し、カスタム通知管理機能を提供します。</string>
-    <string name="billing">課金 [BILLING]</string>
-    <string name="summary_preference_permissions_billing">アプリがGoogle Play課金ライブラリを使用してアプリ内購入と寄付を処理することを許可します</string>
+    <string name="summary_preference_permissions_access_notification_policy">アプリがデバイスの通知ポリシーにアクセスして変更し、通知をユーザーに表示する方法とタイミングを制御し、カスタム通知管理機能を提供することを許可します。</string>
+    <string name="billing">請求 [BILLING]</string>
+    <string name="summary_preference_permissions_billing">アプリがGoogle Play請求ライブラリを使用してアプリ内購入と寄付を処理することを許可します</string>
     <string name="check_license">ライセンスの確認 [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">アプリがライセンス契約への準拠を確認し、知的財産の保護のためにライセンス条件を適用することを許可します。</string>
+    <string name="summary_preference_permissions_check_license">アプリがライセンス契約への準拠を確認し、知的財産を保護するためにライセンス条項を施行することを許可します。</string>
     <string name="foreground_service">フォアグラウンドサービス [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">アプリがフォアグラウンドで実行されるサービスを作成して使用することを許可し、他のバックグラウンドプロセスよりも優先順位を与え、パフォーマンスと信頼性を向上させます。</string>
+    <string name="summary_preference_permissions_foreground_service">アプリがフォアグラウンドで実行されるサービスを作成して使用し、他のバックグラウンドプロセスよりも優先順位を付けて、パフォーマンスと信頼性を向上させることを許可します。</string>
 
     <string name="ads">広告</string>
-    <string name="summary_preference_settings_ads">関連する広告を表示するために、どのように情報を使用するかを制御します</string>
+    <string name="summary_preference_settings_ads">関連する広告を表示するために情報をどのように使用するかを制御する</string>
     <string name="display_ads">広告を表示する</string>
     <string name="personalized_ads">パーソナライズされた広告</string>
-    <string name="summary_ads_personalized_ads">興味に基づいて、広告をどのようにパーソナライズするかを選択します</string>
-    <string name="summary_ads">あなたに関連する広告が表示されます。アプリの活動に基づいて、パーソナライズされた広告を表示するために使用される情報を管理します。ここでは、いつでもパーソナライズをオフにすることができます。\n</string>
+    <string name="summary_ads_personalized_ads">興味に基づいて広告をどのようにパーソナライズするかを選択します</string>
+    <string name="summary_ads">あなたに関連する広告をご覧ください。アプリのアクティビティに基づいてパーソナライズされた広告を表示するために使用される情報を管理します。ここではいつでもパーソナライズをオフにできます。\n</string>
 
     <string name="usage_and_diagnostics">使用状況と診断</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">カート計算機を改善するためにデータを共有します</string>
-    <string name="summary_usage_and_diagnostics">診断、デバイス、アプリの使用状況データを自動的に送信することで、体験を向上させましょう。これにより、アプリのパフォーマンス、安定性、その他の機能強化が向上します。一部の集計データは、アプリの改善にも役立ちます。\n\nこれは、デバイスとアプリの使用状況に関する一般的な情報です（バッテリー残量、システムとアプリの活動、エラーなど）。このデータはアプリの改善に使用されます。\n\nこの機能をオフにしても、アプリのアップデートやセキュリティなどの重要なサービスに必要な情報をデバイスが送信できなくなることはありません。\n</string>
+    <string name="summary_preference_settings_usage_and_diagnostics">カート計算機の改善に役立つデータを共有する</string>
+    <string name="summary_usage_and_diagnostics">診断、デバイス、アプリの使用状況データを自動的に送信して、エクスペリエンスの向上にご協力ください。これは、アプリのパフォーマンス、安定性、その他の機能強化に役立ちます。一部の集計データは、アプリにも役立ちます。\n\nこれは、デバイスに関する一般的な情報と、アプリの使用方法（バッテリーレベル、システムとアプリのアクティビティ、エラーなど）です。データはアプリの改善に使用されます。\n\nこの機能をオフにしても、アプリの更新やセキュリティなどの重要なサービスに必要な情報をデバイスが送信する機能には影響しません。\n</string>
 
-    <string name="legal">法的</string>
+    <string name="legal">法務</string>
     <string name="legal_notices">法的通知</string>
-    <string name="summary_preference_settings_legal_notices">サービスに関する法的情報を表示します</string>
+    <string name="summary_preference_settings_legal_notices">当社のサービスに関する法的情報を表示する</string>
     <string name="license">ライセンス</string>
 
-    <string name="about">概要</string>
-    <string name="summary_preference_settings_about">カート計算機について詳しく知る</string>
+    <string name="about">約</string>
+    <string name="summary_preference_settings_about">カート計算機の詳細</string>
 
     <string name="app_info">アプリ情報</string>
-    <string name="app_build_version">アプリケーションビルドバージョン</string>
+    <string name="app_build_version">アプリケーションのビルドバージョン</string>
     <string name="summary_preference_settings_oss">オープンソースソフトウェアのライセンスの詳細</string>
     <string name="device_info">デバイス情報</string>
-    <string name="app_build">アプリビルド: リリース\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="manufacturer">メーカー:</string>
-    <string name="device_model">デバイスモデル:</string>
-    <string name="android_version">Androidバージョン:</string>
-    <string name="api_level">APIレベル:</string>
+    <string name="app_build">アプリのビルド：%6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
+    <string name="debug">デバッグ</string>
+    <string name="release">リリース</string>
+    <string name="manufacturer">メーカー：</string>
+    <string name="device_model">デバイスモデル：</string>
+    <string name="android_version">Androidバージョン：</string>
+    <string name="api_level">APIレベル：</string>
+    <string name="snack_device_info_copied">デバイス情報がクリップボードにコピーされました</string>
 
     <string name="help_and_feedback">ヘルプとフィードバック</string>
     <string name="help">ヘルプ</string>
     <string name="faq">よくある質問</string>
     <string name="view_in_google_play_store">Google Playストアで表示</string>
     <string name="version_info">バージョン情報</string>
-    <string name="version">バージョン %1$s</string>
+    <string name="version">バージョン%1$s</string>
     <string name="beta_program">ベータプログラム</string>
     <string name="question_1">カート計算機とは何ですか？</string>
-    <string name="summary_preference_faq_1">カート計算機は、食料品店や市場にいるときに、通常のデバイスの電卓に代わる、シンプルで汎用的な無料の買い物カートマネージャーと合計金額計算機です。</string>
+    <string name="summary_preference_faq_1">カート計算機は、食料品店や市場にいるときに通常のデバイスの計算機に取って代わる、シンプルで一般的で無料のショッピングカートマネージャーおよび合計期日計算機です。</string>
     <string name="question_2">カート計算機はどのように機能しますか？</string>
-    <string name="summary_preference_faq_2">カート計算機を使用すると、商品を追加したり、数量を増減したりすることで、買い物カートを管理できます。カート計算機は、いつでも、カート内の商品の価格と数量に基づいて、商品の合計金額を表示します。</string>
+    <string name="summary_preference_faq_2">カート計算機を使用すると、製品を追加したり、数量を増やしたり減らしたりして、ショッピングカートを管理できます。カート計算機は、いつでも、カート内の製品の価格と数量に基づいて、合計期日を表示します。</string>
     <string name="question_3">なぜカート計算機を使用する必要があるのですか？</string>
-    <string name="summary_preference_faq_3">カート計算機は、レジにたどり着く前に、常にいくら使っているかを把握するのに役立ちます。これは、予算内で買い物をする必要がある場合に特に便利です。</string>
+    <string name="summary_preference_faq_3">カート計算機は、チェックアウトに到達する前でも、常に自分がいくら使っているかを認識するのに役立ちます。これは、予算内で買い物をする必要がある場合に特に役立ちます。</string>
     <string name="question_4">食料品店や市場以外でカート計算機を使用できますか？</string>
-    <string name="summary_preference_faq_4">はい！カート計算機は驚くほどシンプルで汎用性が高いので、パブ、レストラン、映画館などで使用することもできます。</string>
-    <string name="question_5">カート計算機を使用して、カートに商品を追加するにはどうすればよいですか？</string>
-    <string name="summary_preference_faq_5">ホーム画面で、アクションバーの「商品を追加」ボタンを押して、カートに新しい商品を追加します。商品名と価格を記入してから、「追加」ボタンをクリックします。</string>
-    <string name="question_6">カート計算機を使用して、カート内の商品の数量を増減するにはどうすればよいですか？</string>
-    <string name="summary_preference_faq_6">リストから商品を見つけて、「+（プラス）」ボタンを押すと数量が増加し、「-（マイナス）」ボタンを押すと数量が減少します。</string>
-    <string name="question_7">カート計算機を使用して、カートから商品を削除するにはどうすればよいですか？</string>
-    <string name="summary_preference_faq_7">カートから商品を削除するには、商品の数量をゼロに設定するか、リストで長押ししてから、「商品を削除」ボタンを選択します。</string>
+    <string name="summary_preference_faq_4">はい！カート計算機は驚くほどシンプルで一般的であるため、パブ、レストラン、映画館などでも使用できます。</string>
+    <string name="question_5">カート計算機を使用してカートにアイテムを追加するにはどうすればよいですか？</string>
+    <string name="summary_preference_faq_5">カートを開き、アクションバーの[アイテムを追加]ボタンを押して、カートに新しい製品を追加します。名前、価格、数量を入力してから、[追加]ボタンをクリックします。</string>
+    <string name="question_6">カート計算機を使用してカート内のアイテムの数量を増減するにはどうすればよいですか？</string>
+    <string name="summary_preference_faq_6">リスト内のアイテムを見つけて、[+（プラス）]ボタンを押して数量を増やすか、[-（マイナス）]ボタンを押して数量を減らします。</string>
+    <string name="question_7">カート計算機を使用してカートからアイテムを削除するにはどうすればよいですか？</string>
+    <string name="summary_preference_faq_7">カートから製品を削除するには、右または左にスワイプするか、数量をゼロにしてから、[アイテムを削除]ボタンを選択します。</string>
     <string name="question_8">カート計算機は無料のソフトウェアですか？</string>
-    <string name="summary_preference_faq_8">はい！カート計算機は、GNU General Public Licenseバージョン3の下で配布されている、誇りを持って無料のソフトウェアです。</string>
-    <string name="question_9">どのようにカート計算機に貢献できますか？</string>
-    <string name="summary_preference_faq_9">カート計算機に貢献する最良の方法は、<a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>リポジトリを使用することです。そこから、フォークして貢献作業を行い、プルリクエストで後で送り返すことができます。また、課題トラッカーを使用して、バグを報告したり、新しい機能や改善を提案したり、どのように貢献できるかについてアイデアを得たりすることもできます。</string>
+    <string name="summary_preference_faq_8">はい！カート計算機は、GNU General Public Licenseバージョン3の下で配布されている誇り高いフリーソフトウェアです。</string>
+    <string name="question_9">カート計算機に貢献するにはどうすればよいですか？</string>
+    <string name="summary_preference_faq_9">カート計算機に貢献する最善の方法は、<a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>リポジトリを使用することです。そこから、フォークして貢献に取り組み、後でプルリクエストを介して送り返すことができます。課題トラッカーを使用して、バグを報告したり、新機能や機能強化を提案したり、どのように役立つかについてのアイデアを得たりすることもできます。</string>
     <string name="feedback">フィードバック</string>
 
-    <string name="updates">アップデート</string>
+    <string name="updates">更新</string>
 
     <string name="share">共有</string>
 
-    <string name="support_us">サポート</string>
+    <string name="support_us">私たちを応援してください</string>
     <string name="paid_support">有料サポート</string>
-    <string name="summary_donations">いくら寄付しても、アプリの稼働を維持し、機能を改善するのに役立ちます。ご支援ありがとうございます！</string>
-    <string name="non_paid_support">無料サポート</string>
+    <string name="summary_donations">寄付額に関係なく、アプリの実行を維持し、機能を改善するのに役立ちます。皆様のご支援とご協力に感謝いたします。</string>
+    <string name="non_paid_support">無償サポート</string>
     <string name="web_ad">ウェブ広告</string>
 
-    <string name="snack_app_updated">The app has been successfully updated</string>
-    <string name="snack_update_failed">The update process encountered an issue</string>
-    <string name="try_again">Try again</string>
-    <string name="summary_share_message">Check out this amazing app that I\'m using! It has some really cool features that you might find interesting. You can download it from the Play Store at: %1$s</string>
-    <string name="learn_more">Learn more</string>
+    <string name="snack_app_updated">アプリは正常に更新されました</string>
+    <string name="snack_update_failed">更新プロセスで問題が発生しました</string>
+    <string name="try_again">再試行</string>
+    <string name="summary_share_message">私が使っているこの素晴らしいアプリをチェックしてください！あなたが面白いと思うかもしれないいくつかの本当にクールな機能があります。Playストアからダウンロードできます： %1$s</string>
+    <string name="learn_more">もっと詳しく</string>
 </resources>

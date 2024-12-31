@@ -65,10 +65,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartItemAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartItemAlertDialog
+import com.d4rk.cartcalculator.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
@@ -79,6 +81,7 @@ import java.util.Locale
 fun CartScreen(activity : CartActivity , cartId : Int) {
 
     val viewModel : CartViewModel = viewModel()
+    val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
 
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val primaryColor = MaterialTheme.colorScheme.primary
@@ -87,8 +90,14 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val visibilityStates by viewModel.visibilityStates.collectAsState()
 
+    if (uiErrorModel.showErrorDialog) {
+        ErrorAlertDialog(errorMessage = uiErrorModel.errorMessage) {
+            viewModel.dismissErrorDialog()
+        }
+    }
+
     Box(modifier = Modifier.fillMaxSize()) {
-        Scaffold(modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection) ,
+        Scaffold(modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) ,
                  topBar = {
                      LargeTopAppBar(title = {
                          Text(
@@ -99,21 +108,21 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                          IconButton(onClick = {
                              activity.finish()
                          }) {
-                             Icon(Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
+                             Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
                          }
                      } , actions = {
                          IconButton(onClick = {
                              viewModel.toggleOpenDialog()
                          }) {
                              Icon(
-                                 Icons.Outlined.AddShoppingCart , contentDescription = null ,
+                                 imageVector = Icons.Outlined.AddShoppingCart , contentDescription = null ,
                              )
                          }
                      } , scrollBehavior = scrollBehavior)
                  }) { paddingValues ->
             Box(
                 modifier = Modifier
-                        .padding(paddingValues)
+                        .padding(paddingValues = paddingValues)
                         .fillMaxSize()
             ) {
                 if (isLoading) {
@@ -122,15 +131,15 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                 else if (uiState.cartItems.isEmpty()) {
                     Text(
                         text = stringResource(id = R.string.your_shopping_cart_is_empty) ,
-                        modifier = Modifier.align(Alignment.Center)
+                        modifier = Modifier.align(alignment = Alignment.Center)
                     )
                     AdBanner(
-                        modifier = Modifier.align(Alignment.BottomCenter)
+                        modifier = Modifier.align(alignment = Alignment.BottomCenter)
                     )
                 }
                 else {
 
-                    val (checkedItems , uncheckedItems) = uiState.cartItems.partition { it.isChecked }
+                    val (checkedItems : List<ShoppingCartItemsTable> , uncheckedItems : List<ShoppingCartItemsTable>) = uiState.cartItems.partition { it.isChecked }
                     Box {
                         Column(
                             modifier = Modifier.fillMaxSize()
