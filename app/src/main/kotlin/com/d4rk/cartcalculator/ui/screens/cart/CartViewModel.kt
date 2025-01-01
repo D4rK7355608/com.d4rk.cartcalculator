@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
+import com.d4rk.cartcalculator.data.model.ui.screens.UiCartScreen
 import com.d4rk.cartcalculator.ui.screens.cart.repository.CartRepository
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
 import kotlinx.coroutines.delay
@@ -19,8 +19,8 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
 
     private val repository : CartRepository = CartRepository()
 
-    private val _uiState : MutableStateFlow<UiCartModel> = MutableStateFlow(UiCartModel())
-    val uiState : StateFlow<UiCartModel> = _uiState
+    private val _uiState : MutableStateFlow<UiCartScreen> = MutableStateFlow(UiCartScreen())
+    val uiState : StateFlow<UiCartScreen> = _uiState
 
     fun loadCart(cartId : Int) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
@@ -118,6 +118,20 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
+    fun editCartItem(cartItem: ShoppingCartItemsTable) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.updateCartItemRepository(cartItem = cartItem) {
+                _uiState.update { currentState ->
+                    val updatedCartItems = currentState.cartItems.map { item ->
+                        if (item.itemId == cartItem.itemId) cartItem else item
+                    }
+                    currentState.copy(cartItems = updatedCartItems)
+                }
+                calculateTotalPrice()
+            }
+        }
+    }
+
     fun deleteCartItem(cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch(coroutineExceptionHandler) {
             repository.deleteCartItemRepository(cartItem = cartItem) {
@@ -172,6 +186,17 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
             _uiState.update { currentState ->
                 currentState.copy(
                     openDeleteDialog = cartItem != null , currentCartItemForDeletion = cartItem
+                )
+            }
+        }
+    }
+
+    fun toggleEditDialog(cartItem: ShoppingCartItemsTable?) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            _uiState.update { currentState ->
+                currentState.copy(
+                    openEditDialog = cartItem != null,
+                    currentCartItemForEdit = cartItem
                 )
             }
         }

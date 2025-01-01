@@ -66,7 +66,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
-import com.d4rk.cartcalculator.data.model.ui.screens.UiCartModel
+import com.d4rk.cartcalculator.data.model.ui.screens.UiCartScreen
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartItemAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartItemAlertDialog
@@ -86,7 +86,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
     val primaryColor = MaterialTheme.colorScheme.primary
 
-    val uiState : UiCartModel by viewModel.uiState.collectAsState()
+    val uiState : UiCartScreen by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val visibilityStates by viewModel.visibilityStates.collectAsState()
 
@@ -294,6 +294,21 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                         })
                     }
                 }
+
+                if (uiState.openEditDialog) {
+                    val currentItem = uiState.currentCartItemForEdit
+                    if (currentItem != null) {
+                        AddNewCartItemAlertDialog(
+                            cartId = cartId,
+                            existingCartItem = currentItem,
+                            onDismiss = { viewModel.toggleEditDialog(cartItem = null) },
+                            onCartCreated = { updatedCartItem ->
+                                viewModel.editCartItem(cartItem = updatedCartItem)
+                                viewModel.toggleEditDialog(cartItem = null)
+                            }
+                        )
+                    }
+                }
             }
         }
 
@@ -326,14 +341,14 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CartItemComposable(
-    viewModel : CartViewModel ,
-    cartItem : ShoppingCartItemsTable ,
-    onMinusClick : (ShoppingCartItemsTable) -> Unit ,
-    onPlusClick : (ShoppingCartItemsTable) -> Unit ,
-    uiState : UiCartModel ,
-    modifier : Modifier ,
+    viewModel: CartViewModel ,
+    cartItem: ShoppingCartItemsTable ,
+    onMinusClick: (ShoppingCartItemsTable) -> Unit ,
+    onPlusClick: (ShoppingCartItemsTable) -> Unit ,
+    uiState: UiCartScreen ,
+    modifier: Modifier ,
 ) {
-    val view : View = LocalView.current
+    val view: View = LocalView.current
 
     var checkedState by remember { mutableStateOf(cartItem.isChecked) }
 
@@ -341,29 +356,37 @@ fun CartItemComposable(
     val interactionSource = remember { MutableInteractionSource() }
 
     val dismissState = rememberSwipeToDismissBoxState(confirmValueChange = {
-        if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
-            ! uiState.openDeleteDialog
-        }
-        else {
-            true
+        when (it) {
+            SwipeToDismissBoxValue.StartToEnd -> {
+                viewModel.toggleEditDialog(cartItem = cartItem)
+                false
+            }
+            SwipeToDismissBoxValue.EndToStart -> {
+                viewModel.toggleDeleteDialog(cartItem = cartItem)
+                false
+            }
+            else -> true
         }
     })
 
-    LaunchedEffect(key1 = dismissState.targetValue , key2 = dismissState.currentValue) {
+    LaunchedEffect(key1 = dismissState.targetValue, key2 = dismissState.currentValue) {
         when {
             dismissState.currentValue == dismissState.targetValue -> {
                 dismissState.reset()
             }
-
             dismissState.targetValue != SwipeToDismissBoxValue.Settled -> {
-                viewModel.toggleDeleteDialog(cartItem = cartItem)
+                if (dismissState.targetValue == SwipeToDismissBoxValue.StartToEnd) {
+                    viewModel.toggleEditDialog(cartItem = cartItem)
+                } else if (dismissState.targetValue == SwipeToDismissBoxValue.EndToStart) {
+                    viewModel.toggleDeleteDialog(cartItem = cartItem)
+                }
             }
         }
     }
 
-    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(dismissState) ,
-                      state = dismissState ,
-                      backgroundContent = {} ,
+    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(dismissState),
+                      state = dismissState,
+                      backgroundContent = {},
                       content = {
                           Box(
                               modifier = modifier
@@ -371,36 +394,36 @@ fun CartItemComposable(
                                       .padding(all = 24.dp)
                           ) {
                               Row(
-                                  modifier = Modifier.fillMaxSize() ,
-                                  horizontalArrangement = Arrangement.SpaceBetween ,
+                                  modifier = Modifier.fillMaxSize(),
+                                  horizontalArrangement = Arrangement.SpaceBetween,
                               ) {
 
                                   Row {
                                       Checkbox(modifier = Modifier
                                               .bounceClick()
-                                              .padding(end = 16.dp) ,
-                                               checked = checkedState ,
+                                              .padding(end = 16.dp),
+                                               checked = checkedState,
                                                onCheckedChange = { isChecked ->
                                                    view.playSoundEffect(SoundEffectConstants.CLICK)
                                                    checkedState = isChecked
                                                    viewModel.onItemCheckedChange(
-                                                       cartItem , isChecked
+                                                       cartItem, isChecked
                                                    )
                                                })
                                       Column {
                                           Text(
-                                              text = cartItem.name ,
+                                              text = cartItem.name,
                                               style = MaterialTheme.typography.bodyLarge
                                           )
                                           Row {
                                               Text(
                                                   text = String.format(
-                                                      Locale.US , "%.1f" , cartItem.price.toFloat()
-                                                  ).removeSuffix(".0") ,
+                                                      Locale.US, "%.1f", cartItem.price.toFloat()
+                                                  ).removeSuffix(".0"),
                                               )
                                               Spacer(modifier = Modifier.width(4.dp))
                                               Text(
-                                                  text = uiState.selectedCurrency ,
+                                                  text = uiState.selectedCurrency,
                                                   style = MaterialTheme.typography.bodyLarge
                                               )
                                           }
@@ -413,37 +436,37 @@ fun CartItemComposable(
                                               .size(40.dp)
                                               .clip(CircleShape)
                                               .combinedClickable(
-                                                  interactionSource = interactionSource ,
-                                                  indication = remember { ripple() } ,
+                                                  interactionSource = interactionSource,
+                                                  indication = remember { ripple() },
                                                   onClick = {
                                                       view.playSoundEffect(SoundEffectConstants.CLICK)
                                                       onMinusClick(cartItem)
-                                                  } ,
+                                                  },
                                                   onLongClick = {
                                                       viewModel.toggleDeleteDialog(cartItem = cartItem)
-                                                  } ,
+                                                  },
                                               )) {
                                           Icon(
-                                              imageVector = Icons.Outlined.RemoveCircleOutline ,
-                                              contentDescription = stringResource(id = R.string.decrease_quantity) ,
+                                              imageVector = Icons.Outlined.RemoveCircleOutline,
+                                              contentDescription = stringResource(id = R.string.decrease_quantity),
                                               modifier = Modifier.align(Alignment.Center)
                                           )
                                       }
 
                                       Text(
-                                          text = quantityState.toString() ,
-                                          style = MaterialTheme.typography.bodyMedium ,
+                                          text = quantityState.toString(),
+                                          style = MaterialTheme.typography.bodyMedium,
                                           modifier = Modifier
                                                   .padding(horizontal = 16.dp)
                                                   .animateContentSize()
                                       )
 
-                                      IconButton(modifier = Modifier.bounceClick() , onClick = {
+                                      IconButton(modifier = Modifier.bounceClick(), onClick = {
                                           view.playSoundEffect(SoundEffectConstants.CLICK)
                                           onPlusClick(cartItem)
                                       }) {
                                           Icon(
-                                              imageVector = Icons.Outlined.AddCircleOutline ,
+                                              imageVector = Icons.Outlined.AddCircleOutline,
                                               contentDescription = stringResource(id = R.string.increase_quantity)
                                           )
                                       }
@@ -451,6 +474,4 @@ fun CartItemComposable(
                               }
                           }
                       })
-
-
 }

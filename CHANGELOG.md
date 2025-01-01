@@ -1,5 +1,6 @@
 # Version 1.2.0:
 
+- **New**: Added a new option to edit an entire cart item via swiping it, providing users with more flexibility.
 - **New**: Added an "Open Cart After Creation" feature in settings, allowing you to automatically
   view newly created carts.
 - **Minor**: Improved UI handling when the keyboard appears, ensuring smoother interactions during

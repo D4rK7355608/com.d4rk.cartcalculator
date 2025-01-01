@@ -25,6 +25,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.ui.components.spacers.MediumVerticalSpacer
 import java.util.Date
 
 @Composable
@@ -86,7 +87,7 @@ fun AddNewCartAlertDialogContent(
                           placeholder = { Text(text = stringResource(id = R.string.shopping_cart)) })
         Spacer(modifier = Modifier.height(24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(12.dp))
+        MediumVerticalSpacer()
         Text(text = stringResource(id = R.string.summary_cart_dialog))
     }
     newCart.value =

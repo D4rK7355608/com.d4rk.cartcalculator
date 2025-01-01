@@ -29,15 +29,31 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.ui.components.spacers.MediumVerticalSpacer
 
 @Composable
 fun AddNewCartItemAlertDialog(
-    cartId : Int , onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit
+    cartId : Int ,
+    onDismiss : () -> Unit ,
+    onCartCreated : (ShoppingCartItemsTable) -> Unit ,
+    existingCartItem : ShoppingCartItemsTable? = null
 ) {
+
     val newCartItem : MutableState<ShoppingCartItemsTable?> =
             remember { mutableStateOf(value = null) }
+    val initialName : String = existingCartItem?.name ?: ""
+    val initialPrice : String = existingCartItem?.price ?: ""
+    val initialQuantity : String = existingCartItem?.quantity?.toString() ?: ""
+
     AlertDialog(onDismissRequest = onDismiss , text = {
-        AddNewCartItemAlertDialogContent(cartId = cartId , newCartItem = newCartItem)
+        AddNewCartItemAlertDialogContent(
+            cartId = cartId ,
+            newCartItem = newCartItem ,
+            initialName = initialName ,
+            initialPrice = initialPrice ,
+            initialQuantity = initialQuantity ,
+            existingCartItem = existingCartItem
+        )
     } , icon = {
         Icon(
             Icons.Outlined.ShoppingBag , contentDescription = null
@@ -61,11 +77,16 @@ fun AddNewCartItemAlertDialog(
 
 @Composable
 fun AddNewCartItemAlertDialogContent(
-    cartId : Int , newCartItem : MutableState<ShoppingCartItemsTable?>
+    cartId : Int ,
+    newCartItem : MutableState<ShoppingCartItemsTable?> ,
+    initialName : String ,
+    initialPrice : String ,
+    initialQuantity : String ,
+    existingCartItem : ShoppingCartItemsTable?
 ) {
-    val nameText : MutableState<String> = remember { mutableStateOf(value = "") }
-    val priceText : MutableState<String> = remember { mutableStateOf(value = "") }
-    val quantityText : MutableState<String> = remember { mutableStateOf(value = "") }
+    val nameText : MutableState<String> = remember { mutableStateOf(value = initialName) }
+    val priceText : MutableState<String> = remember { mutableStateOf(value = initialPrice) }
+    val quantityText : MutableState<String> = remember { mutableStateOf(value = initialQuantity) }
 
     val nameFocusRequester : FocusRequester = remember { FocusRequester() }
     val priceFocusRequester : FocusRequester = remember { FocusRequester() }
@@ -113,21 +134,29 @@ fun AddNewCartItemAlertDialogContent(
 
         Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(height = 12.dp))
+        MediumVerticalSpacer()
         Text(text = stringResource(id = R.string.dialog_info_cart_item))
     }
 
     if (nameText.value.isNotBlank() && priceText.value.isNotBlank() && quantityText.value.isNotBlank()) {
-        val price : Double? =
-                priceText.value.replace(oldChar = ',' , newChar = '.').toDoubleOrNull()
+        val price : Double? = priceText.value.replace(oldChar = ',' , newChar = '.').toDoubleOrNull()
         val quantity : Int? = quantityText.value.toIntOrNull()
         if (price != null && quantity != null) {
-            newCartItem.value = ShoppingCartItemsTable(
-                cartId = cartId ,
-                name = nameText.value ,
-                price = price.toString() ,
-                quantity = quantity
-            )
+            newCartItem.value = if (existingCartItem != null) {
+                val updatedItem = existingCartItem.copy(
+                    name = nameText.value , price = price.toString() , quantity = quantity
+                )
+                updatedItem
+            }
+            else {
+                val newItem = ShoppingCartItemsTable(
+                    cartId = cartId ,
+                    name = nameText.value ,
+                    price = price.toString() ,
+                    quantity = quantity
+                )
+                newItem
+            }
         }
         else {
             newCartItem.value = null

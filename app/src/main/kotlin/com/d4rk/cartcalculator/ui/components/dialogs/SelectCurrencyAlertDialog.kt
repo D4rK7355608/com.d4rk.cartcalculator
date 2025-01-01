@@ -30,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
+import com.d4rk.cartcalculator.ui.components.spacers.MediumVerticalSpacer
 import kotlinx.coroutines.flow.firstOrNull
 
 @Composable
@@ -96,7 +97,7 @@ fun SelectCurrencyAlertDialogContent(
         }
         Spacer(modifier = Modifier.height(height = 24.dp))
         Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        Spacer(modifier = Modifier.height(height = 12.dp))
+        MediumVerticalSpacer()
         Text(text = stringResource(id = R.string.dialog_info_currency))
     }
 
