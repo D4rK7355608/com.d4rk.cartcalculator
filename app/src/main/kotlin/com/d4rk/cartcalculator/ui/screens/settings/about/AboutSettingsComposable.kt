@@ -14,15 +14,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.snackbar.Snackbar
+import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
+import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
 import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceItem
-import com.d4rk.cartcalculator.ui.components.snackbars.Snackbar
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
-import com.d4rk.cartcalculator.utils.helpers.ClipboardHelper
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
-import com.d4rk.cartcalculator.utils.rememberHtmlData
 
 @Composable
 fun AboutSettingsComposable(activity : AboutSettingsActivity) {
@@ -30,7 +30,11 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
 
     var showSnackbar : Boolean by remember { mutableStateOf(value = false) }
 
-    val htmlData = rememberHtmlData()
+    val htmlData = rememberHtmlData(
+        context = context ,
+        currentVersionName = BuildConfig.VERSION_NAME ,
+        packageName = BuildConfig.APPLICATION_ID
+    )
     val changelogHtmlString = htmlData.value.first
     val eulaHtmlString = htmlData.value.second
 
@@ -62,7 +66,11 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                                        IntentsHelper.openLicensesScreen(
                                            context = context ,
                                            eulaHtmlString = eulaHtmlString ,
-                                           changelogHtmlString = changelogHtmlString
+                                           changelogHtmlString = changelogHtmlString ,
+                                           appName = R.string.app_name ,
+                                           appVersion = BuildConfig.VERSION_NAME ,
+                                           appVersionCode = BuildConfig.VERSION_CODE ,
+                                           appShortDescription = R.string.app_short_description
                                        )
                                    })
                 }

@@ -1,26 +1,11 @@
 [versions]
-agp = "8.7.3"
-appcompat = "1.7.0"
+agp = "8.8.0"
 appUpdateKtx = "2.1.0"
-composeBom = "2024.12.01"
-aboutlibraries = "11.2.3"
-core = "4.6.2"
-coreKtx = "1.15.0"
+aboutlibraries = "11.3.0"
 billing = "7.1.1"
-datastoreCore = "1.1.1"
-graphicsShapes = "1.0.1"
-lifecycle = "2.8.7"
-material = "1.12.0"
-kotlinxCoroutinesAndroid = "1.9.0"
-multidex = "2.0.1"
 volley = "1.2.1"
-workRuntimeKtx = "2.10.0"
-coreSplashscreen = "1.0.1"
-coilCompose = "2.7.0"
 firebaseBom = "33.7.0"
 kotlin = "2.0.21"
-activityCompose = "1.9.3"
-navigationCompose = "2.8.5"
 google-services = "4.4.2"
 google-firebase-crashlytics = "3.0.2"
 google-devtools-ksp = "2.0.21-1.0.28"
@@ -29,48 +14,18 @@ playServicesAds = "23.6.0"
 reviewKtx = "2.0.2"
 
 [libraries]
-aboutlibraries = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutlibraries" }
-androidx-animation-core = { module = "androidx.compose.animation:animation-core" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
-core = { module = "io.noties.markwon:core", version.ref = "core" }
-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastoreCore" }
-androidx-datastore-preferences = { module = "androidx.datastore:datastore-core", version.ref = "datastoreCore" }
-androidx-foundation = { module = "androidx.compose.foundation:foundation" }
-androidx-graphics-shapes = { module = "androidx.graphics:graphics-shapes", version.ref = "graphicsShapes" }
-androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
-androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
-androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
-androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
-androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
-androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
-androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
-androidx-material3 = { module = "androidx.compose.material3:material3" }
-androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
-androidx-runtime = { module = "androidx.compose.runtime:runtime" }
-androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
-androidx-ui = { module = "androidx.compose.ui:ui" }
-androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
-androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
 app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdateKtx" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 firebase-perf = { module = "com.google.firebase:firebase-perf" }
-material = { module = "com.google.android.material:material", version.ref = "material" }
 play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
 review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "reviewKtx" }
-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 volley = { module = "com.android.volley:volley", version.ref = "volley" }
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

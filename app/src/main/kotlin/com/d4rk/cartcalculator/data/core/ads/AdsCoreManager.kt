@@ -2,10 +2,10 @@ package com.d4rk.cartcalculator.data.core.ads
 
 import android.app.Activity
 import android.content.Context
+import com.d4rk.android.libs.apptoolkit.utils.interfaces.OnShowAdCompleteListener
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.utils.constants.ads.AdsConstants
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.utils.interfaces.OnShowAdCompleteListener
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback

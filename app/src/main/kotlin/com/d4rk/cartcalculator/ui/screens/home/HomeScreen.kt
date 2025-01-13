@@ -38,16 +38,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
+import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
-import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
 import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
-import com.d4rk.cartcalculator.ui.components.dialogs.ErrorAlertDialog
 import java.text.SimpleDateFormat
 import java.util.Locale
 

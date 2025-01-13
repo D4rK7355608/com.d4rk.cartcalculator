@@ -63,14 +63,14 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
+import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
-import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartScreen
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartItemAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartItemAlertDialog
-import com.d4rk.cartcalculator.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox

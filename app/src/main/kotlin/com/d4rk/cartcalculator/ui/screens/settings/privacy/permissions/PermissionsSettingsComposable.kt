@@ -6,9 +6,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceCategoryItem
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceItem
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 
 @Composable

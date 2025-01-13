@@ -47,13 +47,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
+import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHelpQuestion
-import com.d4rk.cartcalculator.ui.components.buttons.AnimatedExtendedFloatingActionButton
-import com.d4rk.cartcalculator.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
-import com.d4rk.cartcalculator.ui.components.spacers.SmallVerticalSpacer
-import com.d4rk.cartcalculator.utils.rememberHtmlData
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -67,7 +68,11 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
 
     val uiState by viewModel.uiState.collectAsState()
 
-    val htmlData = rememberHtmlData()
+    val htmlData = rememberHtmlData(
+        context = context ,
+        currentVersionName = BuildConfig.VERSION_NAME ,
+        packageName = BuildConfig.APPLICATION_ID
+    )
     val changelogHtmlString = htmlData.value.first
     val eulaHtmlString = htmlData.value.second
 
@@ -101,7 +106,7 @@ fun HelpScreen(activity : HelpActivity , viewModel : HelpViewModel) {
                 Icon(
                     Icons.Default.MailOutline , contentDescription = null
                 )
-            } , expanded = isFabExtended.value)
+            } , expanded = isFabExtended.value, modifier =Modifier)
         } ,
     ) { paddingValues ->
         LazyColumn(

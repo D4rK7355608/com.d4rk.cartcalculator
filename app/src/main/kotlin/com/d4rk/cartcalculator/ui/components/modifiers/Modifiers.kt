@@ -25,9 +25,9 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.data.model.ui.animations.button.ButtonState
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.data.model.ui.button.ButtonState
 
 @Composable
 fun Modifier.bounceClick(

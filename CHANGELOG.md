@@ -8,7 +8,7 @@
 - **Minor**: Updated Gradle dependencies to the latest versions for enhanced stability and speed.
 - **Patch**: Fixed an issue where newly created carts wouldn’t open correctly.
 - **Patch**: Updated string resources for better clarity and consistency across the app.
-- **Patch**:  Cleaned up unused code and optimized existing features for better performance.
+- **Patch**: Cleaned up unused code and optimized existing features for better performance.
 - **Patch**: Refactored some parts of the code to improve maintainability and efficiency.
 
 # Version 1.1.3:

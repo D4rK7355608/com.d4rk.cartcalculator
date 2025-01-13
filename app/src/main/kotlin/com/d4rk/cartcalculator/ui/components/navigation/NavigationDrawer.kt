@@ -16,17 +16,17 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.cartcalculator.data.model.ui.screens.UiMainScreen
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticDrawerSwipe
-import com.d4rk.cartcalculator.ui.components.spacers.LargeVerticalSpacer
 import com.d4rk.cartcalculator.ui.screens.help.HelpActivity
 import com.d4rk.cartcalculator.ui.screens.main.MainScreenContent
 import com.d4rk.cartcalculator.ui.screens.main.MainViewModel
 import com.d4rk.cartcalculator.ui.screens.settings.SettingsActivity
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -75,7 +75,8 @@ fun NavigationDrawer(
 
                                                                    R.string.share -> {
                                                                        IntentsHelper.shareApp(
-                                                                           context = context
+                                                                           context = context,
+                                                                           shareMessageFormat = R.string.summary_share_message
                                                                        )
                                                                    }
                                                                }

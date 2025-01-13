@@ -28,9 +28,9 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
-import com.d4rk.cartcalculator.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.cartcalculator.ui.components.navigation.NavigationDrawer
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarMain
 import com.d4rk.cartcalculator.ui.screens.home.HomeScreen
@@ -74,7 +74,7 @@ fun MainScreenContent(
             Icon(
                 Icons.Outlined.AddShoppingCart , contentDescription = null
             )
-        })
+        }, modifier = Modifier)
     } , snackbarHost = {
         SnackbarHost(hostState = snackbarHostState)
     } , bottomBar = {

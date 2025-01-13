@@ -32,12 +32,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.VersionInfoAlertDialog
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
+import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.dialogs.VersionInfoAlertDialog
 import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.screens.help.HelpActivity
 import com.d4rk.cartcalculator.ui.screens.support.SupportActivity
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -194,12 +195,16 @@ fun TopAppBarScaffoldWithBackButtonAndActions(
                                      IntentsHelper.openLicensesScreen(
                                          context = context ,
                                          eulaHtmlString = eulaHtmlString ,
-                                         changelogHtmlString = changelogHtmlString
+                                         changelogHtmlString = changelogHtmlString ,
+                                         appName = R.string.app_name ,
+                                         appVersion = BuildConfig.VERSION_NAME ,
+                                         appVersionCode = BuildConfig.VERSION_CODE ,
+                                         appShortDescription = R.string.app_short_description
                                      )
                                  })
             }
             if (showDialog.value) {
-                VersionInfoAlertDialog(onDismiss = { showDialog.value = false })
+                VersionInfoAlertDialog(onDismiss = { showDialog.value = false }, copyrightString = R.string.copyright, appName = R.string.app_name, versionName = BuildConfig.VERSION_NAME, versionString = R.string.version)
             }
         } ,
         scrollBehavior = scrollBehavior ,

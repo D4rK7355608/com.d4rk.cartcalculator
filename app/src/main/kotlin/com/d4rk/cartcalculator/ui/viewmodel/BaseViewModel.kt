@@ -5,9 +5,9 @@ import android.content.ActivityNotFoundException
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
+import com.d4rk.android.libs.apptoolkit.utils.constants.error.ErrorType
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.utils.constants.error.ErrorType
-import com.d4rk.cartcalculator.data.model.ui.error.UiErrorModel
 import com.d4rk.cartcalculator.utils.error.ErrorHandler
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -66,7 +66,10 @@ open class BaseViewModel(application : Application) : AndroidViewModel(applicati
                 ErrorType.FILE_NOT_FOUND -> R.string.file_not_found
                 ErrorType.ACTIVITY_NOT_FOUND -> R.string.activity_not_found
                 ErrorType.ILLEGAL_ARGUMENT -> R.string.illegal_argument_error
-                ErrorType.UNKNOWN_ERROR -> R.string.unknown_error
+
+                else -> {
+                    R.string.unknown_error
+                }
             }
         )
     }

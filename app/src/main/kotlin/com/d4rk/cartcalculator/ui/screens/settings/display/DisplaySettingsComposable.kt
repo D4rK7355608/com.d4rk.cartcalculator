@@ -22,15 +22,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.core.os.LocaleListCompat
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCategoryItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchPreferenceItem
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SwitchPreferenceItemWithDivider
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceCategoryItem
 import com.d4rk.cartcalculator.ui.components.dialogs.SelectLanguageAlertDialog
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
-import com.d4rk.cartcalculator.ui.components.preferences.PreferenceItem
-import com.d4rk.cartcalculator.ui.components.preferences.SwitchPreferenceItem
-import com.d4rk.cartcalculator.ui.components.preferences.SwitchPreferenceItemWithDivider
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.cartcalculator.ui.screens.settings.display.theme.ThemeSettingsActivity
 import kotlinx.coroutines.CoroutineScope
@@ -88,7 +88,7 @@ fun DisplaySettingsComposable(activity : DisplaySettingsActivity) {
                                                 } ,
                                                 onClick = {
                                                     IntentsHelper.openActivity(
-                                                        context , ThemeSettingsActivity::class.java
+                                                        context = context , activityClass = ThemeSettingsActivity::class.java
                                                     )
                                                 })
 

@@ -10,15 +10,15 @@ import androidx.compose.material.icons.automirrored.outlined.HelpOutline
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
-import com.d4rk.cartcalculator.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.cartcalculator.data.model.ui.screens.UiMainScreen
 import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.ui.screens.main.repository.MainRepository
 import com.d4rk.cartcalculator.ui.screens.startup.StartupActivity
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 import com.google.android.play.core.appupdate.AppUpdateManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

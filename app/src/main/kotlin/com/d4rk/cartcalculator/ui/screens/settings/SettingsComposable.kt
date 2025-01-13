@@ -21,15 +21,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SettingsPreferenceItem
+import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.preferences.SettingsPreferenceItem
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.cartcalculator.ui.screens.settings.about.AboutSettingsActivity
 import com.d4rk.cartcalculator.ui.screens.settings.advanced.AdvancedSettingsActivity
 import com.d4rk.cartcalculator.ui.screens.settings.cart.CartSettingsActivity
 import com.d4rk.cartcalculator.ui.screens.settings.display.DisplaySettingsActivity
 import com.d4rk.cartcalculator.ui.screens.settings.privacy.PrivacySettingsActivity
-import com.d4rk.cartcalculator.utils.helpers.IntentsHelper
 
 @Composable
 fun SettingsComposable(activity: SettingsActivity) {
