@@ -34,11 +34,12 @@ import androidx.compose.ui.unit.dp
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.ads.LargeBannerAdsComposable
-import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
+import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
+
 
 @Composable
 fun SupportComposable(viewModel: SupportViewModel , activity: SupportActivity) {
@@ -223,7 +224,7 @@ fun SupportComposable(viewModel: SupportViewModel , activity: SupportActivity) {
                     }
                 }
                 item {
-                    LargeBannerAdsComposable(
+                    AdBanner(
                         modifier = Modifier.padding(bottom = 12.dp)
                     )
                 }

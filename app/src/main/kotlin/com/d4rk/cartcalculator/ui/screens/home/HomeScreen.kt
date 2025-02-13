@@ -40,23 +40,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
 import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
-import com.d4rk.cartcalculator.ui.components.modifiers.animateVisibility
-import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
-import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
+import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
 fun HomeScreen(
-    context : Context ,
-    view : View ,
-    viewModel : HomeViewModel ,
-    snackbarHostState : SnackbarHostState
+    context : Context , view : View , viewModel : HomeViewModel , snackbarHostState : SnackbarHostState
 ) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
@@ -75,7 +72,6 @@ fun HomeScreen(
             }
         }
     }
-
     if (uiErrorModel.showErrorDialog) {
         ErrorAlertDialog(errorMessage = uiErrorModel.errorMessage) {
             viewModel.dismissErrorDialog()
@@ -93,8 +89,7 @@ fun HomeScreen(
                     .wrapContentSize(align = Alignment.Center)
         ) {
             Column(
-                verticalArrangement = Arrangement.Center ,
-                horizontalAlignment = Alignment.CenterHorizontally
+                verticalArrangement = Arrangement.Center , horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
                 if (isLoading) {
@@ -111,22 +106,16 @@ fun HomeScreen(
                                 .weight(weight = 1f)
                                 .padding(bottom = uiState.fabAdHeight)
                     ) {
-                        itemsIndexed(items = uiState.carts ,
-                                     key = { _ , cart -> cart.cartId }) { index , cart ->
+                        itemsIndexed(items = uiState.carts , key = { _ , cart -> cart.cartId }) { index , cart ->
                             val isVisible : Boolean = visibilityStates.getOrElse(index) { false }
-                            CartItemComposable(cart = cart ,
-                                               onDelete = { viewModel.openDeleteCartDialog(cart) } ,
-                                               onCardClick = {
-                                                   view.playSoundEffect(SoundEffectConstants.CLICK)
-                                                   viewModel.openCart(cart = cart)
-                                               } ,
-                                               uiState = uiState ,
-                                               modifier = Modifier
-                                                       .animateItem()
-                                                       .animateVisibility(
-                                                           visible = isVisible , index = index
-                                                       )
-                            )
+                            CartItemComposable(cart = cart , onDelete = { viewModel.openDeleteCartDialog(cart) } , onCardClick = {
+                                view.playSoundEffect(SoundEffectConstants.CLICK)
+                                viewModel.openCart(cart = cart)
+                            } , uiState = uiState , modifier = Modifier
+                                    .animateItem()
+                                    .animateVisibility(
+                                        visible = isVisible , index = index
+                                    ))
                         }
                     }
                 }
@@ -135,10 +124,9 @@ fun HomeScreen(
     }
 
     if (uiState.showCreateCartDialog) {
-        AddNewCartAlertDialog(onDismiss = { viewModel.dismissNewCartDialog() } ,
-                              onCartCreated = { cart ->
-                                  viewModel.addCart(cart = cart)
-                              })
+        AddNewCartAlertDialog(onDismiss = { viewModel.dismissNewCartDialog() } , onCartCreated = { cart ->
+            viewModel.addCart(cart = cart)
+        })
     }
 
     if (uiState.showDeleteCartDialog) {
@@ -168,15 +156,14 @@ fun CartItemComposable(
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString : String = dateFormat.format(cart.date)
 
-    val dismissState : SwipeToDismissBoxState =
-            rememberSwipeToDismissBoxState(confirmValueChange = {
-                if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
-                    ! uiState.showDeleteCartDialog
-                }
-                else {
-                    true
-                }
-            })
+    val dismissState : SwipeToDismissBoxState = rememberSwipeToDismissBoxState(confirmValueChange = {
+        if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
+            ! uiState.showDeleteCartDialog
+        }
+        else {
+            true
+        }
+    })
 
     LaunchedEffect(key1 = dismissState.targetValue , key2 = dismissState.currentValue) {
         when {
@@ -190,50 +177,37 @@ fun CartItemComposable(
         }
     }
 
-    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState) ,
-                      state = dismissState ,
-                      backgroundContent = {} ,
-                      content = {
-                          OutlinedCard(shape = RoundedCornerShape(size = 12.dp) ,
-                                       modifier = Modifier
-                                               .fillMaxWidth()
-                                               .padding(top = 8.dp) ,
-                                       onClick = {
-                                           onCardClick()
-                                       }) {
-                              Box(modifier = Modifier.clip(shape = MaterialTheme.shapes.medium)) {
-                                  Column(
-                                      modifier = Modifier
-                                              .fillMaxWidth()
-                                              .padding(all = 8.dp)
-                                  ) {
-                                      Row(
-                                          horizontalArrangement = Arrangement.SpaceBetween ,
-                                          modifier = Modifier.fillMaxWidth()
-                                      ) {
-                                          Text(
-                                              text = cart.name ,
-                                              style = MaterialTheme.typography.titleMedium ,
-                                              modifier = Modifier.weight(weight = 1f)
-                                          )
-                                          IconButton(modifier = Modifier.bounceClick() ,
-                                                     onClick = { onDelete(cart) }) {
-                                              Icon(
-                                                  imageVector = Icons.Outlined.DeleteForever ,
-                                                  contentDescription = "Delete cart" ,
-                                                  tint = MaterialTheme.colorScheme.error
-                                              )
-                                          }
-                                      }
-                                      Text(
-                                          text = stringResource(
-                                              R.string.created_on , dateString
-                                          ) ,
-                                          style = MaterialTheme.typography.bodyMedium ,
-                                          textAlign = TextAlign.End
-                                      )
-                                  }
-                              }
-                          }
-                      })
+    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState) , state = dismissState , backgroundContent = {} , content = {
+        OutlinedCard(shape = RoundedCornerShape(size = 12.dp) , modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp) , onClick = {
+            onCardClick()
+        }) {
+            Box(modifier = Modifier.clip(shape = MaterialTheme.shapes.medium)) {
+                Column(
+                    modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(all = 8.dp)
+                ) {
+                    Row(
+                        horizontalArrangement = Arrangement.SpaceBetween , modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(
+                            text = cart.name , style = MaterialTheme.typography.titleMedium , modifier = Modifier.weight(weight = 1f)
+                        )
+                        IconButton(modifier = Modifier.bounceClick() , onClick = { onDelete(cart) }) {
+                            Icon(
+                                imageVector = Icons.Outlined.DeleteForever , contentDescription = "Delete cart" , tint = MaterialTheme.colorScheme.error
+                            )
+                        }
+                    }
+                    Text(
+                        text = stringResource(
+                            R.string.created_on , dateString
+                        ) , style = MaterialTheme.typography.bodyMedium , textAlign = TextAlign.End
+                    )
+                }
+            }
+        }
+    })
 }

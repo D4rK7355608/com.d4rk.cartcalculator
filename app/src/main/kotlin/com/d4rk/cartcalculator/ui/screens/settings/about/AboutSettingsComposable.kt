@@ -18,7 +18,6 @@ import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceCate
 import com.d4rk.android.libs.apptoolkit.ui.components.preferences.PreferenceItem
 import com.d4rk.android.libs.apptoolkit.ui.components.snackbar.Snackbar
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ClipboardHelper
-import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.rememberHtmlData
 import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
@@ -63,7 +62,7 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                     PreferenceItem(title = stringResource(R.string.oss_license_title) ,
                                    summary = stringResource(id = R.string.summary_preference_settings_oss) ,
                                    onClick = {
-                                       IntentsHelper.openLicensesScreen(
+                                     /*  IntentsHelper.openLicensesScreen(
                                            context = context ,
                                            eulaHtmlString = eulaHtmlString ,
                                            changelogHtmlString = changelogHtmlString ,
@@ -71,7 +70,7 @@ fun AboutSettingsComposable(activity : AboutSettingsActivity) {
                                            appVersion = BuildConfig.VERSION_NAME ,
                                            appVersionCode = BuildConfig.VERSION_CODE ,
                                            appShortDescription = R.string.app_short_description
-                                       )
+                                       )*/
                                    })
                 }
                 item {

@@ -20,5 +20,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "Cart Calculator"
+rootProject.name = "Shopping Cart Calculator"
 include(":app")

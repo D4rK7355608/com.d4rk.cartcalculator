@@ -15,10 +15,11 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 79
+        versionCode = 80
         versionName = "1.2.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        resourceConfigurations += listOf(
+        @Suppress("UnstableApiUsage")
+        androidResources.localeFilters += listOf(
             "en" ,
             "bg-rBG" ,
             "de-rDE" ,
@@ -94,23 +95,11 @@ android {
 }
 
 dependencies {
+
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.15") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.54") {
         isTransitive = true
     }
-
-    // Firebase
-    implementation(dependencyNotation = platform(libs.firebase.bom))
-    implementation(dependencyNotation = libs.firebase.crashlytics.ktx)
-    implementation(dependencyNotation = libs.firebase.analytics.ktx)
-    implementation(dependencyNotation = libs.firebase.perf)
-
-    // Google
-    implementation(dependencyNotation = libs.play.services.ads)
-    implementation(dependencyNotation = libs.billing)
-    implementation(dependencyNotation = libs.review.ktx)
-    implementation(dependencyNotation = libs.app.update.ktx)
-    implementation(dependencyNotation = libs.volley)
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)

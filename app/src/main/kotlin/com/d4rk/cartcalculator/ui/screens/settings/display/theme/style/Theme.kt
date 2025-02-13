@@ -3,6 +3,7 @@ package com.d4rk.cartcalculator.ui.screens.settings.display.theme.style
 import android.app.Activity
 import android.content.Context
 import android.os.Build
+import android.os.PowerManager
 import android.view.View
 import android.view.Window
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -118,26 +119,32 @@ private val darkScheme = darkColorScheme(
  * @return The most suitable color scheme based on the provided parameters.
  */
 private fun getColorScheme(
-    isDarkTheme: Boolean, isAmoledMode: Boolean, isDynamicColors: Boolean, context: Context
+    isDarkTheme: Boolean,
+    isAmoledMode: Boolean,
+    isDynamicColors: Boolean,
+    context: Context
 ): ColorScheme {
+    val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
+    val isBatterySaverOn = powerManager.isPowerSaveMode
+
     val dynamicDark: ColorScheme =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) dynamicDarkColorScheme(context) else darkScheme
     val dynamicLight: ColorScheme =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) dynamicLightColorScheme(context) else lightScheme
 
+    val shouldUseDarkTheme = isDarkTheme || isBatterySaverOn
+
     return when {
-        isAmoledMode && isDarkTheme && isDynamicColors -> dynamicDark.copy(
+        isAmoledMode && shouldUseDarkTheme && isDynamicColors -> dynamicDark.copy(
             surface = Color.Black,
             background = Color.Black,
         )
-
-        isAmoledMode && isDarkTheme -> darkScheme.copy(
+        isAmoledMode && shouldUseDarkTheme -> darkScheme.copy(
             surface = Color.Black,
             background = Color.Black,
         )
-
-        isDynamicColors -> if (isDarkTheme) dynamicDark else dynamicLight
-        else -> if (isDarkTheme) darkScheme else lightScheme
+        isDynamicColors -> if (shouldUseDarkTheme) dynamicDark else dynamicLight
+        else -> if (shouldUseDarkTheme) darkScheme else lightScheme
     }
 }
 
@@ -165,6 +172,7 @@ fun AppTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window: Window = (view.context as Activity).window
+            @Suppress("DEPRECATION")
             window.statusBarColor = Color.Transparent.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars =
                     !isDarkTheme

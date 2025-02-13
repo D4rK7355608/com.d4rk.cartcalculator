@@ -37,7 +37,7 @@ import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.helpers.PermissionsHelper
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.ui.screens.main.MainActivity
-import com.d4rk.cartcalculator.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffold
 
 @Composable
