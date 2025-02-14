@@ -19,7 +19,7 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
     private val dataStore : DataStore = AppCoreManager.dataStore
     private val repository : HomeRepository = HomeRepository(application = application)
 
-    private val _uiState : MutableStateFlow<UiHomeModel> = MutableStateFlow(UiHomeModel())
+    private val _uiState : MutableStateFlow<UiHomeModel> = MutableStateFlow(value = UiHomeModel())
     val uiState : StateFlow<UiHomeModel> = _uiState
 
     init {

@@ -1,8 +1,10 @@
 package com.d4rk.cartcalculator.ui.screens.main
 
-import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Build
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.IntentSenderRequest
 import androidx.annotation.RequiresApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.EventNote
@@ -12,10 +14,8 @@ import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.viewModelScope
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
-import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.model.ui.screens.UiMainScreen
-import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.d4rk.cartcalculator.ui.screens.main.repository.MainRepository
 import com.d4rk.cartcalculator.ui.screens.startup.StartupActivity
 import com.d4rk.cartcalculator.ui.viewmodel.BaseViewModel
@@ -26,16 +26,15 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application : Application) : BaseViewModel(application) {
     private val repository = MainRepository(
-        dataStore = AppCoreManager.dataStore ,
-        application = application
+        dataStore = AppCoreManager.dataStore , application = application
     )
     private val _uiState : MutableStateFlow<UiMainScreen> = MutableStateFlow(initializeUiState())
     val uiState : StateFlow<UiMainScreen> = _uiState
 
-    fun checkForUpdates(activity : Activity , appUpdateManager : AppUpdateManager) {
+    fun checkForUpdates(updateResultLauncher : ActivityResultLauncher<IntentSenderRequest> , appUpdateManager : AppUpdateManager) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.checkForUpdates(
-                appUpdateManager = appUpdateManager , activity = activity
+                appUpdateManager = appUpdateManager , updateResultLauncher = updateResultLauncher
             )
         }
     }
@@ -44,16 +43,16 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
         return UiMainScreen(
             navigationDrawerItems = listOf(
                 NavigationDrawerItem(
-                    title = R.string.settings ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.settings ,
                     selectedIcon = Icons.Outlined.Settings ,
                 ) , NavigationDrawerItem(
-                    title = R.string.help_and_feedback ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.help_and_feedback ,
                     selectedIcon = Icons.AutoMirrored.Outlined.HelpOutline ,
                 ) , NavigationDrawerItem(
-                    title = R.string.updates ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.updates ,
                     selectedIcon = Icons.AutoMirrored.Outlined.EventNote ,
                 ) , NavigationDrawerItem(
-                    title = R.string.share ,
+                    title = com.d4rk.android.libs.apptoolkit.R.string.share ,
                     selectedIcon = Icons.Outlined.Share ,
                 )
             )
@@ -61,15 +60,15 @@ class MainViewModel(application : Application) : BaseViewModel(application) {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun checkAndScheduleUpdateNotifications(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
+    fun checkAndScheduleUpdateNotifications(appUpdateNotificationsManager : com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.checkAndScheduleUpdateNotificationsRepository(appUpdateNotificationsManager = appUpdateNotificationsManager)
         }
     }
 
-    fun checkAppUsageNotifications() {
+    fun checkAppUsageNotifications(context : Context) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
-            repository.checkAppUsageNotificationsRepository()
+            repository.checkAppUsageNotificationsRepository(context = context)
         }
     }
 

@@ -1,11 +1,9 @@
-/*
 package com.d4rk.cartcalculator.utils.providers
 
 import android.content.Context
 import android.content.Intent
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.interfaces.providers.PrivacySettingsProvider
-import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.ui.screens.settings.general.GeneralSettingsActivity
 import com.d4rk.cartcalculator.ui.screens.settings.general.SettingsContent
@@ -33,4 +31,4 @@ class AppPrivacySettingsProvider : PrivacySettingsProvider {
         }
         context.startActivity(intent)
     }
-}*/
+}

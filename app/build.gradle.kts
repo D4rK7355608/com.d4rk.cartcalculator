@@ -47,8 +47,6 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
             isDebuggable = false
         }
         debug {
@@ -58,21 +56,20 @@ android {
 
     buildTypes.forEach { buildType ->
         with(buildType) {
+            isMinifyEnabled = false
+            isShrinkResources = false
             multiDexEnabled = true
-            proguardFiles(
-                getDefaultProguardFile(name = "proguard-android-optimize.txt") ,
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile(name = "proguard-android-optimize.txt") , "proguard-rules.pro")
         }
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "21"
     }
 
     buildFeatures {
@@ -97,7 +94,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.54") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.55") {
         isTransitive = true
     }
 

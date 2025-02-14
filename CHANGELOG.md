@@ -1,3 +1,13 @@
+# Version 1.2.1:
+
+- **New**: Added a splash screen animation to improve the initial app launch experience.
+- **New**: Introduced an enhanced user interface specifically designed for tablet devices.
+- **New**: Improved support for larger screen sizes, ensuring optimal layout and usability.
+- **Major**: Implemented numerous performance optimizations across the application, resulting in a smoother and more responsive user experience.
+- **Major**: Performed extensive under-the-hood updates to enhance stability and maintainability.
+- **Minor**: Updated the application's icon and logo for a refreshed visual identity.
+- **Minor**: Implemented a subtle redesign of the help screen for improved clarity and navigation.
+
 # Version 1.2.0:
 
 - **New**: Added a new option to edit an entire cart item via swiping it, providing users with more flexibility.

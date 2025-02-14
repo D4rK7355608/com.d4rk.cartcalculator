@@ -1,11 +1,12 @@
 package com.d4rk.cartcalculator.ui.screens.main.repository
 
-import android.app.Activity
 import android.app.Application
+import android.content.Context
 import android.os.Build
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.IntentSenderRequest
 import androidx.annotation.RequiresApi
 import com.d4rk.cartcalculator.data.datastore.DataStore
-import com.d4rk.cartcalculator.notifications.managers.AppUpdateNotificationsManager
 import com.google.android.play.core.appupdate.AppUpdateManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -17,15 +18,14 @@ import kotlinx.coroutines.withContext
  * @property dataStore The data store used to persist settings and startup information.
  * @property application The application context.
  */
-class MainRepository(dataStore : DataStore , application : Application) :
-    MainRepositoryImplementation(application = application , dataStore = dataStore) {
+class MainRepository(dataStore : DataStore , application : Application) : MainRepositoryImplementation(application = application , dataStore = dataStore) {
 
     suspend fun checkForUpdates(
-        activity : Activity ,
+        updateResultLauncher : ActivityResultLauncher<IntentSenderRequest> ,
         appUpdateManager : AppUpdateManager ,
     ) {
         withContext(Dispatchers.IO) {
-            checkForUpdatesImplementation(activity = activity , appUpdateManager = appUpdateManager)
+            checkForUpdatesImplementation(updateResultLauncher = updateResultLauncher , appUpdateManager = appUpdateManager)
         }
     }
 
@@ -47,15 +47,15 @@ class MainRepository(dataStore : DataStore , application : Application) :
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    suspend fun checkAndScheduleUpdateNotificationsRepository(appUpdateNotificationsManager : AppUpdateNotificationsManager) {
+    suspend fun checkAndScheduleUpdateNotificationsRepository(appUpdateNotificationsManager : com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager) {
         withContext(Dispatchers.IO) {
             checkAndScheduleUpdateNotificationsImplementation(appUpdateNotificationsManager = appUpdateNotificationsManager)
         }
     }
 
-    suspend fun checkAppUsageNotificationsRepository() {
+    suspend fun checkAppUsageNotificationsRepository(context : Context) {
         withContext(Dispatchers.IO) {
-            checkAppUsageNotificationsManagerImplementation()
+            checkAppUsageNotificationsManagerImplementation(context = context)
         }
     }
 
