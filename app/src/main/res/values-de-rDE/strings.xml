@@ -32,7 +32,6 @@
     <string name="io_error">Ein Ein-/Ausgabefehler ist aufgetreten. Bitte überprüfen Sie Ihre Netzwerkverbindung oder Ihren Speicher und versuchen Sie es erneut.</string>
     <string name="illegal_argument_error">Ungültige Eingabe oder ungültiges Argument. Bitte überprüfen Sie die Informationen und versuchen Sie es erneut.</string>
     <string name="unknown_error">Ein unbekannter Fehler ist aufgetreten.</string>
-    <string name="initialization_error">Initialisierung fehlgeschlagen. Bitte versuchen Sie es später erneut.</string>
 
     <string name="your_shopping_cart_is_empty">Ihr Warenkorb ist leer</string>
     <string name="in_cart">Im Warenkorb</string>
@@ -54,25 +53,10 @@
     <string name="display">Anzeige</string>
     <string name="summary_preference_settings_display">Personalisieren Sie das Erscheinungsbild Ihrer App</string>
 
-    <string name="appearance">Erscheinungsbild</string>
     <string name="dark_theme">Dunkles Design</string>
-    <string name="will_turn_on_automatically_by_system">Wird automatisch vom System eingeschaltet</string>
-    <string name="will_never_turn_on_automatically">Wird niemals automatisch eingeschaltet</string>
-    <string name="amoled_mode">AMOLED-Modus</string>
-    <string name="follow_system">Systemmodus folgen</string>
     <string name="light_mode">Heller Modus</string>
     <string name="dark_mode">Dunkler Modus</string>
-    <string name="summary_dark_theme">Das dunkle Design verwendet einen tiefen Hintergrund, um die Akkulaufzeit zu verlängern</string>
 
-    <string name="dynamic_colors">Dynamische Farben</string>
-    <string name="summary_preference_settings_dynamic_colors">Farben von Hintergrundbildern auf das App-Design anwenden</string>
-
-    <string name="app_behavior">App-Verhalten</string>
-    <string name="bounce_buttons">Klick abfedern</string>
-    <string name="summary_preference_settings_bounce_buttons">Wendet beim Klicken eine subtile Abfederungsanimation auf alle klickbaren Elemente an</string>
-
-    <string name="language">Sprache</string>
-    <string name="summary_preference_settings_language">Ändert die in der App verwendete Sprache</string>
     <string name="dialog_language_subtitle">Wählen Sie Ihre bevorzugte Sprache aus</string>
     <string name="dialog_info_language">Personalisieren Sie Ihre Erfahrung mit Ihrer bevorzugten Sprache. Alle von Ihnen vorgenommenen Sprachänderungen werden sofort wirksam und sorgen für ein nahtloses Erlebnis in Ihrer gewählten Sprache</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Erweitert</string>
     <string name="summary_preference_settings_advanced">Weitere erweiterte Einstellungen erkunden</string>
-    <string name="error_reporting">Fehlerberichterstattung</string>
-    <string name="bug_report">Fehlerbericht</string>
-    <string name="summary_preference_settings_bug_report">Senden Sie Fehlerberichte und Funktionsanfragen an die GitHub-Repository-Issue-Seite der App</string>
 
     <string name="security_and_privacy">Sicherheit &amp; Datenschutz</string>
     <string name="summary_preference_settings_privacy_and_security">Verwalten Sie Ihre Datenschutzeinstellungen</string>
-    <string name="privacy">Datenschutz</string>
     <string name="privacy_policy">Datenschutzrichtlinie</string>
-    <string name="summary_preference_settings_privacy_policy">Sehen Sie sich die Richtlinie an, die regelt, wie wir mit Ihren Daten umgehen</string>
     <string name="terms_of_service">Nutzungsbedingungen</string>
-    <string name="summary_preference_settings_terms_of_service">Überprüfen Sie die Bedingungen, denen Sie bei der Nutzung unseres Dienstes zustimmen</string>
-    <string name="code_of_conduct">Verhaltenskodex</string>
-    <string name="summary_preference_settings_code_of_conduct">Verstehen Sie die Regeln und Richtlinien für das Verhalten innerhalb unseres Dienstes</string>
 
     <string name="permissions">Berechtigungen</string>
-    <string name="summary_preference_settings_permissions">Verwalten Sie die unserem Dienst erteilten Berechtigungen</string>
     <string name="normal">Normal</string>
     <string name="ad_id">Werbe-ID [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Ermöglicht der App, die mit dem Gerät des Nutzers verknüpfte Werbe-ID abzurufen und zu verwenden, um personalisierte Werbung bereitzustellen, die Werbewirksamkeit zu messen und Werbung auf Geräten mit Android 13 oder höher anzuzeigen.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Ermöglicht der App, Dienste zu erstellen und zu verwenden, die im Vordergrund ausgeführt werden, wodurch sie gegenüber anderen Hintergrundprozessen priorisiert werden und die Leistung und Zuverlässigkeit verbessert werden.</string>
 
     <string name="ads">Werbung</string>
-    <string name="summary_preference_settings_ads">Steuern Sie, wie wir Ihre Informationen verwenden, um Ihnen relevante Werbung anzuzeigen</string>
     <string name="display_ads">Werbung anzeigen</string>
     <string name="personalized_ads">Personalisierte Werbung</string>
     <string name="summary_ads_personalized_ads">Wählen Sie aus, wie wir Werbung basierend auf Ihren Interessen für Sie personalisieren</string>
     <string name="summary_ads">Sehen Sie Werbung, die für Sie relevant ist. Verwalten Sie die Informationen, die verwendet werden, um personalisierte Werbung basierend auf Ihrer App-Aktivität anzuzeigen. Sie können die Personalisierung hier jederzeit deaktivieren.\n</string>
 
     <string name="usage_and_diagnostics">Nutzung und Diagnose</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Teilen Sie Daten, um den Warenkorb-Rechner zu verbessern</string>
-    <string name="summary_usage_and_diagnostics">Helfen Sie mit, Ihre Erfahrung zu verbessern, indem Sie uns automatisch Diagnose-, Geräte- und App-Nutzungsdaten senden. Dies wird dazu beitragen, die App-Leistung, Stabilität und andere Verbesserungen zu verbessern. Einige aggregierte Daten helfen auch unseren Apps.\n\nDies sind allgemeine Informationen über Ihr Gerät und wie Sie unsere Apps verwenden (z. B. Akkustand, System- und App-Aktivität und Fehler). Die Daten werden verwendet, um unsere Apps zu verbessern.\n\nDas Deaktivieren dieser Funktion hat keinen Einfluss auf die Fähigkeit Ihres Geräts, die für wesentliche Dienste wie App-Updates und Sicherheit erforderlichen Informationen zu senden.\n</string>
-
-    <string name="legal">Rechtliches</string>
-    <string name="legal_notices">Rechtliche Hinweise</string>
-    <string name="summary_preference_settings_legal_notices">Rechtliche Informationen zu unserem Service anzeigen</string>
-    <string name="license">Lizenz</string>
 
     <string name="about">Über</string>
     <string name="summary_preference_settings_about">Erfahren Sie mehr über den Warenkorb-Rechner</string>
 
-    <string name="app_info">App-Info</string>
-    <string name="app_build_version">App-Build-Version</string>
-    <string name="summary_preference_settings_oss">Lizenzdetails für Open-Source-Software</string>
-    <string name="device_info">Geräteinfo</string>
     <string name="app_build">App Build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Debug</string>
     <string name="release">Release</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Gerätemodell:</string>
     <string name="android_version">Android-Version:</string>
     <string name="api_level">API-Level:</string>
-    <string name="snack_device_info_copied">Geräteinfo in die Zwischenablage kopiert</string>
 
     <string name="help_and_feedback">Hilfe &amp; Feedback</string>
     <string name="help">Hilfe</string>
-    <string name="faq">FAQ</string>
     <string name="view_in_google_play_store">Im Google Play Store anzeigen</string>
     <string name="version_info">Versionsinfo</string>
     <string name="version">Version %1$s</string>

@@ -32,7 +32,6 @@
     <string name="io_error">Terjadi kesalahan input/output. Silakan periksa koneksi jaringan atau penyimpanan Anda dan coba lagi.</string>
     <string name="illegal_argument_error">Input atau argumen yang diberikan tidak valid. Silakan periksa informasi dan coba lagi.</string>
     <string name="unknown_error">Terjadi kesalahan yang tidak diketahui.</string>
-    <string name="initialization_error">Inisialisasi gagal. Silakan coba lagi nanti.</string>
 
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
     <string name="in_cart">Di Keranjang</string>
@@ -54,25 +53,10 @@
     <string name="display">Tampilan</string>
     <string name="summary_preference_settings_display">Personalisasikan tampilan dan nuansa aplikasi Anda</string>
 
-    <string name="appearance">Penampilan</string>
     <string name="dark_theme">Tema gelap</string>
-    <string name="will_turn_on_automatically_by_system">Akan menyala secara otomatis oleh sistem</string>
-    <string name="will_never_turn_on_automatically">Tidak akan pernah menyala secara otomatis</string>
-    <string name="amoled_mode">Mode AMOLED</string>
-    <string name="follow_system">Ikuti Mode Sistem</string>
     <string name="light_mode">Mode Terang</string>
     <string name="dark_mode">Mode Gelap</string>
-    <string name="summary_dark_theme">Tema gelap menggunakan latar belakang yang dalam untuk membantu menjaga baterai Anda tetap hidup lebih lama</string>
 
-    <string name="dynamic_colors">Warna dinamis</string>
-    <string name="summary_preference_settings_dynamic_colors">Terapkan warna dari wallpaper ke tema aplikasi</string>
-
-    <string name="app_behavior">Perilaku aplikasi</string>
-    <string name="bounce_buttons">Klik memantul</string>
-    <string name="summary_preference_settings_bounce_buttons">Menerapkan animasi pantulan halus ke semua elemen yang dapat diklik saat diklik</string>
-
-    <string name="language">Bahasa</string>
-    <string name="summary_preference_settings_language">Mengubah bahasa yang digunakan dalam aplikasi</string>
     <string name="dialog_language_subtitle">Pilih bahasa pilihan Anda</string>
     <string name="dialog_info_language">Personalisasikan pengalaman Anda dengan bahasa pilihan Anda. Setiap perubahan bahasa yang Anda buat akan langsung berlaku, memastikan pengalaman yang mulus dalam bahasa pilihan Anda</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Lanjutan</string>
     <string name="summary_preference_settings_advanced">Jelajahi pengaturan lanjutan lainnya</string>
-    <string name="error_reporting">Pelaporan kesalahan</string>
-    <string name="bug_report">Laporan bug</string>
-    <string name="summary_preference_settings_bug_report">Kirim laporan bug dan permintaan fitur ke halaman masalah repositori GitHub aplikasi</string>
 
     <string name="security_and_privacy">Keamanan &amp; privasi</string>
     <string name="summary_preference_settings_privacy_and_security">Kelola pengaturan privasi Anda</string>
-    <string name="privacy">Privasi</string>
     <string name="privacy_policy">Kebijakan Privasi</string>
-    <string name="summary_preference_settings_privacy_policy">Lihat kebijakan yang mengatur cara kami menangani data Anda</string>
     <string name="terms_of_service">Ketentuan Layanan</string>
-    <string name="summary_preference_settings_terms_of_service">Tinjau ketentuan yang Anda setujui saat menggunakan layanan kami</string>
-    <string name="code_of_conduct">Kode Etik</string>
-    <string name="summary_preference_settings_code_of_conduct">Pahami aturan dan pedoman perilaku dalam layanan kami</string>
 
     <string name="permissions">Izin</string>
-    <string name="summary_preference_settings_permissions">Kelola izin yang diberikan ke layanan kami</string>
     <string name="normal">Normal</string>
     <string name="ad_id">ID Iklan [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Mengizinkan aplikasi untuk mengambil dan menggunakan pengenal iklan yang terkait dengan perangkat pengguna, menyediakan iklan yang dipersonalisasi, mengukur efektivitas iklan, dan menampilkan iklan di perangkat Android 13 atau yang lebih baru.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Mengizinkan aplikasi untuk membuat dan menggunakan layanan yang berjalan di latar depan, memberi mereka prioritas di atas proses latar belakang lainnya dan meningkatkan kinerja dan keandalan.</string>
 
     <string name="ads">Iklan</string>
-    <string name="summary_preference_settings_ads">Kontrol cara kami menggunakan informasi Anda untuk menampilkan iklan yang relevan kepada Anda</string>
     <string name="display_ads">Tampilkan iklan</string>
     <string name="personalized_ads">Iklan yang dipersonalisasi</string>
     <string name="summary_ads_personalized_ads">Pilih cara kami mempersonalisasi iklan untuk Anda berdasarkan minat Anda</string>
     <string name="summary_ads">Lihat iklan yang relevan bagi Anda. Kelola informasi yang digunakan untuk menampilkan iklan yang dipersonalisasi berdasarkan aktivitas aplikasi Anda. Anda selalu dapat menonaktifkan personalisasi di sini.\n</string>
 
     <string name="usage_and_diagnostics">Penggunaan dan diagnostik</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Bagikan data untuk membantu meningkatkan Kalkulator Keranjang</string>
-    <string name="summary_usage_and_diagnostics">Bantu tingkatkan pengalaman Anda dengan secara otomatis mengirimkan data diagnostik, perangkat, dan penggunaan aplikasi kepada kami. Ini akan membantu meningkatkan kinerja aplikasi, stabilitas, dan peningkatan lainnya. Beberapa data agregat juga akan membantu aplikasi kami.\n\nIni adalah informasi umum tentang perangkat Anda dan bagaimana Anda menggunakan aplikasi kami (seperti level baterai, aktivitas sistem dan aplikasi, dan kesalahan). Data tersebut akan digunakan untuk meningkatkan aplikasi kami.\n\nMematikan fitur ini tidak memengaruhi kemampuan perangkat Anda untuk mengirim informasi yang diperlukan untuk layanan penting seperti pembaruan aplikasi dan keamanan.\n</string>
-
-    <string name="legal">Hukum</string>
-    <string name="legal_notices">Pemberitahuan hukum</string>
-    <string name="summary_preference_settings_legal_notices">Lihat informasi hukum tentang layanan kami</string>
-    <string name="license">Lisensi</string>
 
     <string name="about">Tentang</string>
     <string name="summary_preference_settings_about">Pelajari lebih lanjut tentang Kalkulator Keranjang</string>
 
-    <string name="app_info">Info aplikasi</string>
-    <string name="app_build_version">Versi build aplikasi</string>
-    <string name="summary_preference_settings_oss">Detail lisensi untuk perangkat lunak sumber terbuka</string>
-    <string name="device_info">Info Perangkat</string>
     <string name="app_build">Build Aplikasi: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Debug</string>
     <string name="release">Rilis</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Model Perangkat:</string>
     <string name="android_version">Versi Android:</string>
     <string name="api_level">Level API:</string>
-    <string name="snack_device_info_copied">Info perangkat disalin ke clipboard</string>
 
     <string name="help_and_feedback">Bantuan &amp; umpan balik</string>
     <string name="help">Bantuan</string>
-    <string name="faq">FAQ</string>
     <string name="view_in_google_play_store">Lihat di Google Play Store</string>
     <string name="version_info">Info versi</string>
     <string name="version">Versi %1$s</string>

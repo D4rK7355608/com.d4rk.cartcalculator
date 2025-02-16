@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name" translatable="false">Cart Calculator</string>
     <string name="app_full_name" translatable="false">Shopping Cart Calculator for Android</string>
-    <string name="oss_license_title">Open source licenses</string>
     <string name="arch" translatable="false">Arch:</string>
     <string name="bulgarian" translatable="false">Български</string>
     <string name="english" translatable="false">English</string>
@@ -22,16 +21,5 @@
     <string name="ukrainian" translatable="false">Українська</string>
     <string name="brazilian_portuguese" translatable="false">Português (Brasil)</string>
     <string name="traditional_chinese" translatable="false">中文</string>
-    <string name="summary_preference_settings_license" translatable="false">General Public License-3.0</string>
-    <string name="feedback_for" translatable="false">Feedback for </string>
-    <string name="dear_developer" translatable="false">Dear developer, </string>
-    <string name="send_email_using" translatable="false">Send mail using:</string>
     <string name="copyright" translatable="false">Copyright ©2023-2025, D4rK</string>
-
-    <string name="eula_title" translatable="false">EULA</string>
-    <string name="changelog">CHANGELOG</string>
-    <string name="loading_eula">Loading EULA</string>
-    <string name="error_loading_eula">Error loading EULA</string>
-    <string name="loading_changelog">Loading changelog</string>
-    <string name="error_loading_changelog">Error loading changelog</string>
 </resources>

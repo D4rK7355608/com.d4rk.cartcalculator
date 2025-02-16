@@ -32,7 +32,6 @@
     <string name="io_error">Произошла ошибка ввода-вывода. Пожалуйста, проверьте сетевое подключение или хранилище и попробуйте еще раз.</string>
     <string name="illegal_argument_error">Предоставлен недопустимый ввод или аргумент. Пожалуйста, проверьте информацию и попробуйте еще раз.</string>
     <string name="unknown_error">Произошла неизвестная ошибка.</string>
-    <string name="initialization_error">Сбой инициализации. Пожалуйста, попробуйте позже.</string>
 
     <string name="your_shopping_cart_is_empty">Ваша корзина пуста</string>
     <string name="in_cart">В корзине</string>
@@ -54,25 +53,10 @@
     <string name="display">Отображение</string>
     <string name="summary_preference_settings_display">Персонализируйте внешний вид и интерфейс вашего приложения</string>
 
-    <string name="appearance">Внешний вид</string>
     <string name="dark_theme">Тёмная тема</string>
-    <string name="will_turn_on_automatically_by_system">Включится автоматически системой</string>
-    <string name="will_never_turn_on_automatically">Никогда не включится автоматически</string>
-    <string name="amoled_mode">Режим AMOLED</string>
-    <string name="follow_system">Следовать системному режиму</string>
     <string name="light_mode">Светлый режим</string>
     <string name="dark_mode">Тёмный режим</string>
-    <string name="summary_dark_theme">Темная тема использует глубокий фон, чтобы продлить срок службы батареи</string>
 
-    <string name="dynamic_colors">Динамические цвета</string>
-    <string name="summary_preference_settings_dynamic_colors">Применить цвета из обоев к теме приложения</string>
-
-    <string name="app_behavior">Поведение приложения</string>
-    <string name="bounce_buttons">Отскок при нажатии</string>
-    <string name="summary_preference_settings_bounce_buttons">Применяет к кликабельным элементам анимацию легкого отскока при нажатии</string>
-
-    <string name="language">Язык</string>
-    <string name="summary_preference_settings_language">Изменяет язык, используемый в приложении</string>
     <string name="dialog_language_subtitle">Выберите предпочитаемый язык</string>
     <string name="dialog_info_language">Персонализируйте свой опыт, используя предпочитаемый язык. Любые изменения языка вступают в силу немедленно, обеспечивая удобство работы на выбранном вами языке</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Расширенные</string>
     <string name="summary_preference_settings_advanced">Изучите дополнительные настройки</string>
-    <string name="error_reporting">Отчёты об ошибках</string>
-    <string name="bug_report">Сообщить об ошибке</string>
-    <string name="summary_preference_settings_bug_report">Отправляйте отчеты об ошибках и запросы функций на страницу проблем репозитория приложения GitHub</string>
 
     <string name="security_and_privacy">Безопасность и конфиденциальность</string>
     <string name="summary_preference_settings_privacy_and_security">Управляйте настройками конфиденциальности</string>
-    <string name="privacy">Конфиденциальность</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
-    <string name="summary_preference_settings_privacy_policy">Просмотрите политику, которая регулирует то, как мы обрабатываем ваши данные</string>
     <string name="terms_of_service">Условия использования</string>
-    <string name="summary_preference_settings_terms_of_service">Ознакомьтесь с условиями, с которыми вы соглашаетесь при использовании нашего сервиса</string>
-    <string name="code_of_conduct">Кодекс поведения</string>
-    <string name="summary_preference_settings_code_of_conduct">Ознакомьтесь с правилами и рекомендациями по поведению в нашем сервисе</string>
 
     <string name="permissions">Разрешения</string>
-    <string name="summary_preference_settings_permissions">Управление разрешениями, предоставленными нашему сервису</string>
     <string name="normal">Обычные</string>
     <string name="ad_id">Рекламный идентификатор [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Позволяет приложению получать и использовать рекламный идентификатор, связанный с устройством пользователя, предоставляя персонализированную рекламу, измеряя эффективность рекламы и показывая рекламу на устройствах Android 13 и выше.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Позволяет приложению создавать и использовать службы, работающие на переднем плане, предоставляя им приоритет над другими фоновыми процессами и повышая производительность и надежность.</string>
 
     <string name="ads">Реклама</string>
-    <string name="summary_preference_settings_ads">Управляйте тем, как мы используем вашу информацию, чтобы показывать вам релевантную рекламу</string>
     <string name="display_ads">Показывать рекламу</string>
     <string name="personalized_ads">Персонализированная реклама</string>
     <string name="summary_ads_personalized_ads">Выберите, как мы персонализируем рекламу для вас на основе ваших интересов</string>
     <string name="summary_ads">Смотрите рекламу, которая актуальна для вас. Управляйте информацией, используемой для показа персонализированной рекламы на основе вашей активности в приложении. Вы всегда можете отключить персонализацию здесь.\n</string>
 
     <string name="usage_and_diagnostics">Использование и диагностика</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Делитесь данными, чтобы помочь улучшить Калькулятор корзины</string>
-    <string name="summary_usage_and_diagnostics">Помогите улучшить ваш опыт, автоматически отправляя нам данные диагностики, устройства и использования приложения. Это поможет улучшить производительность приложения, стабильность и другие улучшения. Некоторые совокупные данные также помогут нашим приложениям.\n\nЭто общая информация о вашем устройстве и о том, как вы используете наши приложения (например, уровень заряда батареи, активность системы и приложений, а также ошибки). Эти данные будут использоваться для улучшения наших приложений.\n\nОтключение этой функции не повлияет на возможность вашего устройства отправлять информацию, необходимую для основных служб, таких как обновления приложений и безопасность.\n</string>
-
-    <string name="legal">Юридическая информация</string>
-    <string name="legal_notices">Правовые оговорки</string>
-    <string name="summary_preference_settings_legal_notices">Просмотр юридической информации о нашем сервисе</string>
-    <string name="license">Лицензия</string>
 
     <string name="about">О приложении</string>
     <string name="summary_preference_settings_about">Подробнее о Калькуляторе корзины</string>
 
-    <string name="app_info">Информация о приложении</string>
-    <string name="app_build_version">Версия сборки приложения</string>
-    <string name="summary_preference_settings_oss">Детали лицензии для программного обеспечения с открытым исходным кодом</string>
-    <string name="device_info">Информация об устройстве</string>
     <string name="app_build">Сборка приложения: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Отладка</string>
     <string name="release">Релиз</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Модель устройства:</string>
     <string name="android_version">Версия Android:</string>
     <string name="api_level">Уровень API:</string>
-    <string name="snack_device_info_copied">Информация об устройстве скопирована в буфер обмена</string>
 
     <string name="help_and_feedback">Помощь и обратная связь</string>
     <string name="help">Помощь</string>
-    <string name="faq">Часто задаваемые вопросы</string>
     <string name="view_in_google_play_store">Посмотреть в Google Play Store</string>
     <string name="version_info">Информация о версии</string>
     <string name="version">Версия %1$s</string>

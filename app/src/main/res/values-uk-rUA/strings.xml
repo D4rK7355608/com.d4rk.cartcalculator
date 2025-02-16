@@ -32,7 +32,6 @@
     <string name="io_error">Сталася помилка вводу/виводу. Будь ласка, перевірте підключення до мережі або пам\'ять і спробуйте ще раз.</string>
     <string name="illegal_argument_error">Надано недійсний ввід або аргумент. Будь ласка, перевірте інформацію та спробуйте ще раз.</string>
     <string name="unknown_error">Сталася невідома помилка.</string>
-    <string name="initialization_error">Помилка ініціалізації. Будь ласка, спробуйте пізніше.</string>
 
     <string name="your_shopping_cart_is_empty">Ваш кошик порожній</string>
     <string name="in_cart">У кошику</string>
@@ -54,25 +53,10 @@
     <string name="display">Дисплей</string>
     <string name="summary_preference_settings_display">Персоналізуйте зовнішній вигляд програми</string>
 
-    <string name="appearance">Зовнішній вигляд</string>
     <string name="dark_theme">Темна тема</string>
-    <string name="will_turn_on_automatically_by_system">Вмикатиметься автоматично системою</string>
-    <string name="will_never_turn_on_automatically">Ніколи не вмикатиметься автоматично</string>
-    <string name="amoled_mode">AMOLED-режим</string>
-    <string name="follow_system">Слідувати системі</string>
     <string name="light_mode">Світлий режим</string>
     <string name="dark_mode">Темний режим</string>
-    <string name="summary_dark_theme">Темна тема використовує глибокий фон, щоб продовжити термін служби акумулятора</string>
 
-    <string name="dynamic_colors">Динамічні кольори</string>
-    <string name="summary_preference_settings_dynamic_colors">Застосовувати кольори шпалер до теми програми</string>
-
-    <string name="app_behavior">Поведінка програми</string>
-    <string name="bounce_buttons">Ефект відскоку</string>
-    <string name="summary_preference_settings_bounce_buttons">Застосовує тонкий ефект відскоку до всіх клікабельних елементів при натисканні</string>
-
-    <string name="language">Мова</string>
-    <string name="summary_preference_settings_language">Змінює мову, яка використовується в програмі</string>
     <string name="dialog_language_subtitle">Виберіть бажану мову</string>
     <string name="dialog_info_language">Персоналізуйте свій досвід за допомогою бажаної мови. Будь-які зміни мови, які ви вносите, набувають чинності одразу, забезпечуючи безперебійну роботу вибраною мовою</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Додатково</string>
     <string name="summary_preference_settings_advanced">Дослідіть розширені налаштування</string>
-    <string name="error_reporting">Звітування про помилки</string>
-    <string name="bug_report">Звіт про помилку</string>
-    <string name="summary_preference_settings_bug_report">Надсилайте звіти про помилки та запити на нові функції на сторінку проблем репозиторію GitHub програми</string>
 
     <string name="security_and_privacy">Безпека та конфіденційність</string>
     <string name="summary_preference_settings_privacy_and_security">Керуйте налаштуваннями конфіденційності</string>
-    <string name="privacy">Конфіденційність</string>
     <string name="privacy_policy">Політика конфіденційності</string>
-    <string name="summary_preference_settings_privacy_policy">Перегляньте політику, яка регулює те, як ми обробляємо ваші дані</string>
     <string name="terms_of_service">Умови використання</string>
-    <string name="summary_preference_settings_terms_of_service">Перегляньте умови, які ви приймаєте, користуючись нашим сервісом</string>
-    <string name="code_of_conduct">Кодекс поведінки</string>
-    <string name="summary_preference_settings_code_of_conduct">Зрозумійте правила та рекомендації щодо поведінки в нашому сервісі</string>
 
     <string name="permissions">Дозволи</string>
-    <string name="summary_preference_settings_permissions">Керуйте дозволами, наданими нашому сервісу</string>
     <string name="normal">Звичайні</string>
     <string name="ad_id">Ідентифікатор оголошення [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Дозволяє програмі отримувати та використовувати рекламний ідентифікатор, пов’язаний із пристроєм користувача, надаючи персоналізовану рекламу, вимірюючи ефективність реклами та показуючи рекламу на пристроях Android 13 або новішої версії.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Дозволяє програмі створювати та використовувати служби, які працюють у фоновому режимі, надаючи їм пріоритет над іншими фоновими процесами та покращуючи продуктивність і надійність.</string>
 
     <string name="ads">Реклама</string>
-    <string name="summary_preference_settings_ads">Контролюйте, як ми використовуємо вашу інформацію, щоб показувати вам релевантну рекламу</string>
     <string name="display_ads">Показувати рекламу</string>
     <string name="personalized_ads">Персоналізована реклама</string>
     <string name="summary_ads_personalized_ads">Виберіть, як ми персоналізуємо рекламу для вас на основі ваших інтересів</string>
     <string name="summary_ads">Переглядайте релевантну для вас рекламу. Керуйте інформацією, яка використовується для показу персоналізованої реклами на основі вашої активності в програмі. Ви завжди можете вимкнути персоналізацію тут.\n</string>
 
     <string name="usage_and_diagnostics">Використання та діагностика</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Поділіться даними, щоб допомогти покращити Cart Calculator</string>
-    <string name="summary_usage_and_diagnostics">Допоможіть покращити ваш досвід, автоматично надсилаючи нам дані про діагностику, пристрій і використання програми. Це допоможе покращити продуктивність програми, стабільність та інші вдосконалення. Деякі сукупні дані також допоможуть нашим програмам.\n\nЦе загальна інформація про ваш пристрій і те, як ви використовуєте наші програми (наприклад, рівень заряду акумулятора, активність системи та програм, а також помилки). Дані будуть використані для покращення наших програм\n\nВимкнення цієї функції не впливає на здатність вашого пристрою надсилати інформацію, необхідну для основних служб, таких як оновлення програм і безпека.\n</string>
-
-    <string name="legal">Юридична інформація</string>
-    <string name="legal_notices">Юридичні повідомлення</string>
-    <string name="summary_preference_settings_legal_notices">Перегляньте юридичну інформацію про наш сервіс</string>
-    <string name="license">Ліцензія</string>
 
     <string name="about">Про програму</string>
     <string name="summary_preference_settings_about">Дізнайтеся більше про Cart Calculator</string>
 
-    <string name="app_info">Інформація про програму</string>
-    <string name="app_build_version">Версія збірки програми</string>
-    <string name="summary_preference_settings_oss">Деталі ліцензії для програмного забезпечення з відкритим вихідним кодом</string>
-    <string name="device_info">Інформація про пристрій</string>
     <string name="app_build">Збірка програми: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Налагодження</string>
     <string name="release">Реліз</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Модель пристрою:</string>
     <string name="android_version">Версія Android:</string>
     <string name="api_level">Рівень API:</string>
-    <string name="snack_device_info_copied">Інформацію про пристрій скопійовано в буфер обміну</string>
 
     <string name="help_and_feedback">Довідка та відгук</string>
     <string name="help">Довідка</string>
-    <string name="faq">FAQ</string>
     <string name="view_in_google_play_store">Переглянути в Google Play Store</string>
     <string name="version_info">Інформація про версію</string>
     <string name="version">Версія %1$s</string>

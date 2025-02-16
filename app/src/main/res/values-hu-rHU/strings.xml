@@ -32,7 +32,6 @@
     <string name="io_error">Bemeneti/kimeneti hiba történt. Kérjük, ellenőrizze a hálózati kapcsolatot vagy a tárhelyet, és próbálja újra.</string>
     <string name="illegal_argument_error">Érvénytelen bemenet vagy argumentum. Kérjük, ellenőrizze az adatokat, és próbálja újra.</string>
     <string name="unknown_error">Ismeretlen hiba történt.</string>
-    <string name="initialization_error">Inicializálás sikertelen. Kérjük, próbálja újra később.</string>
 
     <string name="your_shopping_cart_is_empty">Az Ön bevásárlókosara üres</string>
     <string name="in_cart">A kosárban</string>
@@ -54,25 +53,10 @@
     <string name="display">Megjelenítés</string>
     <string name="summary_preference_settings_display">Személyre szabhatja az alkalmazás megjelenését és hangulatát</string>
 
-    <string name="appearance">Megjelenés</string>
     <string name="dark_theme">Sötét téma</string>
-    <string name="will_turn_on_automatically_by_system">A rendszer automatikusan bekapcsolja</string>
-    <string name="will_never_turn_on_automatically">Soha nem kapcsol be automatikusan</string>
-    <string name="amoled_mode">AMOLED mód</string>
-    <string name="follow_system">Rendszer mód követése</string>
     <string name="light_mode">Világos mód</string>
     <string name="dark_mode">Sötét mód</string>
-    <string name="summary_dark_theme">A sötét téma mély hátteret használ, hogy segítsen az akkumulátor hosszabb élettartamában</string>
 
-    <string name="dynamic_colors">Dinamikus színek</string>
-    <string name="summary_preference_settings_dynamic_colors">Színek alkalmazása a háttérképekből az alkalmazás témájához</string>
-
-    <string name="app_behavior">Alkalmazás viselkedése</string>
-    <string name="bounce_buttons">Pattanó kattintás</string>
-    <string name="summary_preference_settings_bounce_buttons">Finom pattogó animációt alkalmaz minden kattintható elemre kattintáskor</string>
-
-    <string name="language">Nyelv</string>
-    <string name="summary_preference_settings_language">Az alkalmazásban használt nyelv módosítása</string>
     <string name="dialog_language_subtitle">Válassza ki a kívánt nyelvet</string>
     <string name="dialog_info_language">Tegye egyedivé a felhasználói élményt a kívánt nyelven. A nyelvi módosítások azonnal életbe lépnek, így zökkenőmentes élményt nyújtanak a választott nyelven</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Speciális</string>
     <string name="summary_preference_settings_advanced">További speciális beállítások felfedezése</string>
-    <string name="error_reporting">Hibajelentés</string>
-    <string name="bug_report">Hibabejelentés</string>
-    <string name="summary_preference_settings_bug_report">Küldjön hibajelentéseket és funkciókéréseket az alkalmazás GitHub-tárhelyének hibabejelentő oldalára</string>
 
     <string name="security_and_privacy">Biztonság és adatvédelem</string>
     <string name="summary_preference_settings_privacy_and_security">Adatvédelmi beállítások kezelése</string>
-    <string name="privacy">Adatvédelem</string>
     <string name="privacy_policy">Adatvédelmi irányelvek</string>
-    <string name="summary_preference_settings_privacy_policy">Tekintse meg az adatkezelési szabályzatunkat</string>
     <string name="terms_of_service">Szolgáltatási feltételek</string>
-    <string name="summary_preference_settings_terms_of_service">Tekintse át a szolgáltatásunk használata során elfogadott feltételeket</string>
-    <string name="code_of_conduct">Magatartási kódex</string>
-    <string name="summary_preference_settings_code_of_conduct">Ismerje meg a szolgáltatásunkon belüli viselkedési szabályokat és irányelveket</string>
 
     <string name="permissions">Engedélyek</string>
-    <string name="summary_preference_settings_permissions">A szolgáltatásunk számára biztosított engedélyek kezelése</string>
     <string name="normal">Normál</string>
     <string name="ad_id">Hirdetésazonosító [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Lehetővé teszi az alkalmazás számára a felhasználó eszközéhez társított hirdetési azonosító lekérését és felhasználását, személyre szabott hirdetések biztosítását, a hirdetések hatékonyságának mérését, valamint hirdetések megjelenítését Android 13 vagy újabb rendszereken.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Lehetővé teszi az alkalmazás számára az előtérben futó szolgáltatások létrehozását és használatát, prioritást biztosítva számukra a többi háttérfolyamattal szemben, valamint javítva a teljesítményt és a megbízhatóságot.</string>
 
     <string name="ads">Hirdetések</string>
-    <string name="summary_preference_settings_ads">Szabályozhatja, hogyan használjuk fel az Ön adatait a releváns hirdetések megjelenítéséhez</string>
     <string name="display_ads">Hirdetések megjelenítése</string>
     <string name="personalized_ads">Személyre szabott hirdetések</string>
     <string name="summary_ads_personalized_ads">Válassza ki, hogyan szabjuk személyre a hirdetéseket az Ön érdeklődési köre alapján</string>
     <string name="summary_ads">Tekintse meg az Ön számára releváns hirdetéseket. Kezelje az alkalmazásbeli tevékenysége alapján a személyre szabott hirdetések megjelenítéséhez használt információkat. A személyre szabást itt bármikor kikapcsolhatja.\n</string>
 
     <string name="usage_and_diagnostics">Használat és diagnosztika</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Ossza meg adatait a Kosár Kalkulátor fejlesztéséhez</string>
-    <string name="summary_usage_and_diagnostics">Segítsen javítani a felhasználói élményen azáltal, hogy automatikusan diagnosztikai, eszköz- és alkalmazáshasználati adatokat küld nekünk. Ez segít javítani az alkalmazás teljesítményét, stabilitását és egyéb fejlesztéseket. Néhány összesített adat szintén segíteni fogja az alkalmazásainkat.\n\nEzek általános információk az eszközéről és arról, hogy hogyan használja az alkalmazásainkat (például az akkumulátor töltöttségi szintje, a rendszer és az alkalmazások tevékenysége, valamint a hibák). Az adatokat az alkalmazásaink fejlesztésére fogjuk felhasználni.\n\nA funkció kikapcsolása nem befolyásolja az eszköz azon képességét, hogy elküldje az alapvető szolgáltatásokhoz, például az alkalmazásfrissítésekhez és a biztonsághoz szükséges információkat.\n</string>
-
-    <string name="legal">Jogi</string>
-    <string name="legal_notices">Jogi nyilatkozatok</string>
-    <string name="summary_preference_settings_legal_notices">Tekintse meg a szolgáltatásunkkal kapcsolatos jogi információkat</string>
-    <string name="license">Licenc</string>
 
     <string name="about">Névjegy</string>
     <string name="summary_preference_settings_about">Tudjon meg többet a Kosár Kalkulátorról</string>
 
-    <string name="app_info">Alkalmazás információ</string>
-    <string name="app_build_version">Alkalmazás build verziója</string>
-    <string name="summary_preference_settings_oss">Nyílt forráskódú szoftverek licencinformációi</string>
-    <string name="device_info">Eszközinformáció</string>
     <string name="app_build">Alkalmazás build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Hibakeresés</string>
     <string name="release">Kiadás</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Eszközmodell:</string>
     <string name="android_version">Android verzió:</string>
     <string name="api_level">API szint:</string>
-    <string name="snack_device_info_copied">Eszközinformáció a vágólapra másolva</string>
 
     <string name="help_and_feedback">Súgó és visszajelzés</string>
     <string name="help">Súgó</string>
-    <string name="faq">GYIK</string>
     <string name="view_in_google_play_store">Megtekintés a Google Play Áruházban</string>
     <string name="version_info">Verzióinformáció</string>
     <string name="version">Verzió: %1$s</string>

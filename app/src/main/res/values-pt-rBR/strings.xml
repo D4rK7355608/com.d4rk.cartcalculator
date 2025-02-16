@@ -32,7 +32,6 @@
     <string name="io_error">Ocorreu um erro de entrada/saída. Verifique sua conexão de rede ou armazenamento e tente novamente.</string>
     <string name="illegal_argument_error">Entrada ou argumento inválido fornecido. Verifique as informações e tente novamente.</string>
     <string name="unknown_error">Ocorreu um erro desconhecido.</string>
-    <string name="initialization_error">Falha na inicialização. Tente novamente mais tarde.</string>
 
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
     <string name="in_cart">No carrinho</string>
@@ -54,25 +53,10 @@
     <string name="display">Exibição</string>
     <string name="summary_preference_settings_display">Personalize a aparência do seu aplicativo</string>
 
-    <string name="appearance">Aparência</string>
     <string name="dark_theme">Tema escuro</string>
-    <string name="will_turn_on_automatically_by_system">Será ativado automaticamente pelo sistema</string>
-    <string name="will_never_turn_on_automatically">Nunca será ativado automaticamente</string>
-    <string name="amoled_mode">Modo AMOLED</string>
-    <string name="follow_system">Seguir modo do sistema</string>
     <string name="light_mode">Modo claro</string>
     <string name="dark_mode">Modo escuro</string>
-    <string name="summary_dark_theme">O tema escuro usa um fundo profundo para ajudar a manter sua bateria viva por mais tempo</string>
 
-    <string name="dynamic_colors">Cores dinâmicas</string>
-    <string name="summary_preference_settings_dynamic_colors">Aplicar cores dos papéis de parede ao tema do aplicativo</string>
-
-    <string name="app_behavior">Comportamento do aplicativo</string>
-    <string name="bounce_buttons">Clique saltitante</string>
-    <string name="summary_preference_settings_bounce_buttons">Aplica uma animação de salto sutil a todos os elementos clicáveis quando clicados</string>
-
-    <string name="language">Idioma</string>
-    <string name="summary_preference_settings_language">Altera o idioma usado no aplicativo</string>
     <string name="dialog_language_subtitle">Selecione seu idioma preferido</string>
     <string name="dialog_info_language">Personalize sua experiência com seu idioma preferido. Quaisquer alterações de idioma feitas entrarão em vigor imediatamente, garantindo uma experiência perfeita no idioma escolhido</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Avançado</string>
     <string name="summary_preference_settings_advanced">Explorar configurações mais avançadas</string>
-    <string name="error_reporting">Relatório de erros</string>
-    <string name="bug_report">Relatório de bug</string>
-    <string name="summary_preference_settings_bug_report">Enviar relatórios de bug e solicitações de recursos para a página de problemas do repositório GitHub do aplicativo</string>
 
     <string name="security_and_privacy">Segurança e privacidade</string>
     <string name="summary_preference_settings_privacy_and_security">Gerenciar suas configurações de privacidade</string>
-    <string name="privacy">Privacidade</string>
     <string name="privacy_policy">Política de Privacidade</string>
-    <string name="summary_preference_settings_privacy_policy">Visualizar a política que rege como lidamos com seus dados</string>
     <string name="terms_of_service">Termos de Serviço</string>
-    <string name="summary_preference_settings_terms_of_service">Revisar os termos que você concorda ao usar nosso serviço</string>
-    <string name="code_of_conduct">Código de Conduta</string>
-    <string name="summary_preference_settings_code_of_conduct">Compreender as regras e diretrizes de comportamento em nosso serviço</string>
 
     <string name="permissions">Permissões</string>
-    <string name="summary_preference_settings_permissions">Gerenciar as permissões concedidas ao nosso serviço</string>
     <string name="normal">Normal</string>
     <string name="ad_id">ID de anúncio [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Permite que o aplicativo recupere e use o identificador de publicidade associado ao dispositivo do usuário, fornecendo anúncios personalizados, medindo a eficácia do anúncio e exibindo anúncios em dispositivos Android 13 ou posteriores.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Permite que o aplicativo crie e use serviços executados em primeiro plano, priorizando-os em relação a outros processos em segundo plano e melhorando o desempenho e a confiabilidade.</string>
 
     <string name="ads">Anúncios</string>
-    <string name="summary_preference_settings_ads">Controlar como usamos suas informações para exibir anúncios relevantes</string>
     <string name="display_ads">Exibir anúncios</string>
     <string name="personalized_ads">Anúncios personalizados</string>
     <string name="summary_ads_personalized_ads">Escolher como personalizamos os anúncios para você com base em seus interesses</string>
     <string name="summary_ads">Veja anúncios que são relevantes para você. Gerenciar as informações usadas para exibir anúncios personalizados com base na atividade do seu aplicativo. Você sempre pode desativar a personalização aqui.\n</string>
 
     <string name="usage_and_diagnostics">Uso e diagnóstico</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Compartilhar dados para ajudar a melhorar o Cart Calculator</string>
-    <string name="summary_usage_and_diagnostics">Ajudar a melhorar sua experiência enviando automaticamente dados de diagnóstico, dispositivo e uso do aplicativo para nós. Isso ajudará a melhorar o desempenho do aplicativo, a estabilidade e outros aprimoramentos. Alguns dados agregados também ajudarão nossos aplicativos.\n\nEstas são informações gerais sobre seu dispositivo e como você usa nossos aplicativos (como nível de bateria, atividade do sistema e do aplicativo e erros). Os dados serão usados para melhorar nossos aplicativos.\n\nDesativar esse recurso não afeta a capacidade do seu dispositivo de enviar as informações necessárias para serviços essenciais, como atualizações de aplicativos e segurança.\n</string>
-
-    <string name="legal">Jurídico</string>
-    <string name="legal_notices">Avisos legais</string>
-    <string name="summary_preference_settings_legal_notices">Visualizar informações legais sobre nosso serviço</string>
-    <string name="license">Licença</string>
 
     <string name="about">Sobre</string>
     <string name="summary_preference_settings_about">Saiba mais sobre o Cart Calculator</string>
 
-    <string name="app_info">Informações do aplicativo</string>
-    <string name="app_build_version">Versão de compilação do aplicativo</string>
-    <string name="summary_preference_settings_oss">Detalhes da licença para software de código aberto</string>
-    <string name="device_info">Informações do dispositivo</string>
     <string name="app_build">Compilação do aplicativo: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Depuração</string>
     <string name="release">Lançamento</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Modelo do dispositivo:</string>
     <string name="android_version">Versão do Android:</string>
     <string name="api_level">Nível da API:</string>
-    <string name="snack_device_info_copied">Informações do dispositivo copiadas para a área de transferência</string>
 
     <string name="help_and_feedback">Ajuda e feedback</string>
     <string name="help">Ajuda</string>
-    <string name="faq">Perguntas frequentes</string>
     <string name="view_in_google_play_store">Ver na Google Play Store</string>
     <string name="version_info">Informações da versão</string>
     <string name="version">Versão %1$s</string>

@@ -32,7 +32,6 @@
     <string name="io_error">เกิดข้อผิดพลาดในการป้อนข้อมูล/เอาต์พุต โปรดตรวจสอบการเชื่อมต่อเครือข่ายหรือที่เก็บข้อมูลของคุณ แล้วลองอีกครั้ง</string>
     <string name="illegal_argument_error">ระบุข้อมูลหรืออาร์กิวเมนต์ที่ไม่ถูกต้อง โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง</string>
     <string name="unknown_error">เกิดข้อผิดพลาดที่ไม่รู้จัก</string>
-    <string name="initialization_error">การเริ่มต้นล้มเหลว โปรดลองอีกครั้งในภายหลัง</string>
 
     <string name="your_shopping_cart_is_empty">ตะกร้าสินค้าของคุณว่างเปล่า</string>
     <string name="in_cart">ในรถเข็น</string>
@@ -54,25 +53,10 @@
     <string name="display">จอแสดงผล</string>
     <string name="summary_preference_settings_display">ปรับแต่งรูปลักษณ์และความรู้สึกของแอปของคุณ</string>
 
-    <string name="appearance">ลักษณะที่ปรากฏ</string>
     <string name="dark_theme">ธีมมืด</string>
-    <string name="will_turn_on_automatically_by_system">จะเปิดโดยอัตโนมัติโดยระบบ</string>
-    <string name="will_never_turn_on_automatically">จะไม่เปิดโดยอัตโนมัติ</string>
-    <string name="amoled_mode">โหมด AMOLED</string>
-    <string name="follow_system">ตามโหมดของระบบ</string>
     <string name="light_mode">โหมดสว่าง</string>
     <string name="dark_mode">โหมดมืด</string>
-    <string name="summary_dark_theme">ธีมสีเข้มใช้พื้นหลังสีเข้มเพื่อช่วยให้แบตเตอรี่ของคุณใช้งานได้นานขึ้น</string>
 
-    <string name="dynamic_colors">สีไดนามิก</string>
-    <string name="summary_preference_settings_dynamic_colors">ใช้สีจากภาพพื้นหลังกับธีมของแอป</string>
-
-    <string name="app_behavior">ลักษณะการทำงานของแอพ</string>
-    <string name="bounce_buttons">เด้งเมื่อคลิก</string>
-    <string name="summary_preference_settings_bounce_buttons">ใช้ภาพเคลื่อนไหวการเด้งเล็กน้อยกับองค์ประกอบที่คลิกได้ทั้งหมดเมื่อคลิก</string>
-
-    <string name="language">ภาษา</string>
-    <string name="summary_preference_settings_language">เปลี่ยนภาษาที่ใช้ในแอป</string>
     <string name="dialog_language_subtitle">เลือกภาษาที่คุณต้องการ</string>
     <string name="dialog_info_language">ปรับแต่งประสบการณ์ของคุณด้วยภาษาที่คุณต้องการ การเปลี่ยนแปลงภาษาใดๆ ที่คุณทำจะมีผลทันที ทำให้มั่นใจได้ถึงประสบการณ์ที่ราบรื่นในภาษาที่คุณเลือก</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">ขั้นสูง</string>
     <string name="summary_preference_settings_advanced">สำรวจการตั้งค่าขั้นสูงเพิ่มเติม</string>
-    <string name="error_reporting">การรายงานข้อผิดพลาด</string>
-    <string name="bug_report">รายงานข้อผิดพลาด</string>
-    <string name="summary_preference_settings_bug_report">ส่งรายงานข้อผิดพลาดและคำขอคุณสมบัติไปยังหน้าประเด็นของที่เก็บ GitHub ของแอป</string>
 
     <string name="security_and_privacy">ความปลอดภัยและความเป็นส่วนตัว</string>
     <string name="summary_preference_settings_privacy_and_security">จัดการการตั้งค่าความเป็นส่วนตัวของคุณ</string>
-    <string name="privacy">ความเป็นส่วนตัว</string>
     <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
-    <string name="summary_preference_settings_privacy_policy">ดูนโยบายที่ควบคุมวิธีที่เราจัดการข้อมูลของคุณ</string>
     <string name="terms_of_service">ข้อกำหนดในการให้บริการ</string>
-    <string name="summary_preference_settings_terms_of_service">ตรวจสอบข้อกำหนดที่คุณตกลงเมื่อใช้บริการของเรา</string>
-    <string name="code_of_conduct">จรรยาบรรณ</string>
-    <string name="summary_preference_settings_code_of_conduct">ทำความเข้าใจกฎและแนวทางปฏิบัติสำหรับพฤติกรรมภายในบริการของเรา</string>
 
     <string name="permissions">การอนุญาต</string>
-    <string name="summary_preference_settings_permissions">จัดการสิทธิ์ที่มอบให้กับบริการของเรา</string>
     <string name="normal">ปกติ</string>
     <string name="ad_id">รหัสโฆษณา [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">อนุญาตให้แอปดึงและใช้ตัวระบุโฆษณาที่เชื่อมโยงกับอุปกรณ์ของผู้ใช้ โดยแสดงโฆษณาที่ปรับให้เหมาะกับแต่ละบุคคล วัดประสิทธิผลของโฆษณา และแสดงโฆษณาบนอุปกรณ์ Android 13 ขึ้นไป</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">อนุญาตให้แอปสร้างและใช้บริการที่ทำงานในเบื้องหน้า โดยจัดลำดับความสำคัญเหนือกว่ากระบวนการเบื้องหลังอื่นๆ และปรับปรุงประสิทธิภาพและความน่าเชื่อถือ</string>
 
     <string name="ads">โฆษณา</string>
-    <string name="summary_preference_settings_ads">ควบคุมวิธีที่เราใช้ข้อมูลของคุณเพื่อแสดงโฆษณาที่เกี่ยวข้อง</string>
     <string name="display_ads">แสดงโฆษณา</string>
     <string name="personalized_ads">โฆษณาที่ปรับให้เหมาะกับแต่ละบุคคล</string>
     <string name="summary_ads_personalized_ads">เลือกวิธีที่เราปรับแต่งโฆษณาสำหรับคุณตามความสนใจของคุณ</string>
     <string name="summary_ads">ดูโฆษณาที่เกี่ยวข้องกับคุณ จัดการข้อมูลที่ใช้เพื่อแสดงโฆษณาที่ปรับให้เหมาะกับแต่ละบุคคลตามกิจกรรมในแอปของคุณ คุณสามารถปิดการปรับเปลี่ยนในแบบของคุณได้ตลอดเวลาที่นี่\n</string>
 
     <string name="usage_and_diagnostics">การใช้งานและการวินิจฉัย</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">แบ่งปันข้อมูลเพื่อช่วยปรับปรุงเครื่องคิดเลขในรถเข็น</string>
-    <string name="summary_usage_and_diagnostics">ช่วยปรับปรุงประสบการณ์ของคุณโดยการส่งข้อมูลการวินิจฉัย อุปกรณ์ และการใช้งานแอปให้เราโดยอัตโนมัติ ซึ่งจะช่วยปรับปรุงประสิทธิภาพ ความเสถียร และการปรับปรุงอื่นๆ ของแอป ข้อมูลรวมบางอย่างจะช่วยแอปของเราด้วย\n\nนี่เป็นข้อมูลทั่วไปเกี่ยวกับอุปกรณ์ของคุณและวิธีที่คุณใช้แอปของเรา (เช่น ระดับแบตเตอรี่ กิจกรรมของระบบและแอป และข้อผิดพลาด) ข้อมูลจะถูกนำไปใช้เพื่อปรับปรุงแอปของเรา\n\nการปิดคุณสมบัตินี้ไม่ส่งผลต่อความสามารถของอุปกรณ์ของคุณในการส่งข้อมูลที่จำเป็นสำหรับบริการที่จำเป็น เช่น การอัปเดตแอปและความปลอดภัย\n</string>
-
-    <string name="legal">กฎหมาย</string>
-    <string name="legal_notices">ประกาศทางกฎหมาย</string>
-    <string name="summary_preference_settings_legal_notices">ดูข้อมูลทางกฎหมายเกี่ยวกับบริการของเรา</string>
-    <string name="license">ใบอนุญาต</string>
 
     <string name="about">เกี่ยวกับ</string>
     <string name="summary_preference_settings_about">เรียนรู้เพิ่มเติมเกี่ยวกับเครื่องคิดเลขในรถเข็น</string>
 
-    <string name="app_info">ข้อมูลแอป</string>
-    <string name="app_build_version">เวอร์ชันบิลด์ของแอปพลิเคชัน</string>
-    <string name="summary_preference_settings_oss">รายละเอียดใบอนุญาตสำหรับซอฟต์แวร์โอเพ่นซอร์ส</string>
-    <string name="device_info">ข้อมูลอุปกรณ์</string>
     <string name="app_build">การสร้างแอป: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">ดีบัก</string>
     <string name="release">วางจำหน่าย</string>
@@ -159,11 +122,9 @@
     <string name="device_model">รุ่นอุปกรณ์:</string>
     <string name="android_version">เวอร์ชัน Android:</string>
     <string name="api_level">ระดับ API:</string>
-    <string name="snack_device_info_copied">คัดลอกข้อมูลอุปกรณ์ไปยังคลิปบอร์ดแล้ว</string>
 
     <string name="help_and_feedback">ความช่วยเหลือและข้อเสนอแนะ</string>
     <string name="help">ความช่วยเหลือ</string>
-    <string name="faq">คำถามที่พบบ่อย</string>
     <string name="view_in_google_play_store">ดูใน Google Play Store</string>
     <string name="version_info">ข้อมูลเวอร์ชัน</string>
     <string name="version">เวอร์ชัน %1$s</string>

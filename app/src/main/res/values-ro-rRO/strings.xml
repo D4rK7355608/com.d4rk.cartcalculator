@@ -32,7 +32,6 @@
     <string name="io_error">A apărut o eroare de intrare/ieșire. Te rugăm să verifici conexiunea la rețea sau spațiul de stocare și să încerci din nou.</string>
     <string name="illegal_argument_error">Intrare sau argument nevalid furnizat. Te rugăm să verifici informațiile și să încerci din nou.</string>
     <string name="unknown_error">A apărut o eroare necunoscută.</string>
-    <string name="initialization_error">Inițializarea a eșuat. Te rugăm să încerci din nou mai târziu.</string>
 
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="in_cart">În coș</string>
@@ -54,25 +53,10 @@
     <string name="display">Afișaj</string>
     <string name="summary_preference_settings_display">Personalizează aspectul și comportamentul aplicației</string>
 
-    <string name="appearance">Aspect</string>
     <string name="dark_theme">Temă întunecată</string>
-    <string name="will_turn_on_automatically_by_system">Va fi activată automat de sistem</string>
-    <string name="will_never_turn_on_automatically">Nu va fi activată niciodată automat</string>
-    <string name="amoled_mode">Mod AMOLED</string>
-    <string name="follow_system">Urmează modul sistemului</string>
     <string name="light_mode">Mod luminos</string>
     <string name="dark_mode">Mod întunecat</string>
-    <string name="summary_dark_theme">Tema întunecată folosește un fundal adânc pentru a ajuta la menținerea bateriei în viață mai mult timp</string>
 
-    <string name="dynamic_colors">Culori dinamice</string>
-    <string name="summary_preference_settings_dynamic_colors">Aplică culorile din imagini de fundal în tema aplicației</string>
-
-    <string name="app_behavior">Comportamentul aplicației</string>
-    <string name="bounce_buttons">Salt la clic</string>
-    <string name="summary_preference_settings_bounce_buttons">Aplică o animație subtilă de săltare tuturor elementelor pe care se poate face clic atunci când sunt apăsate</string>
-
-    <string name="language">Limbă</string>
-    <string name="summary_preference_settings_language">Schimbă limba utilizată în aplicație</string>
     <string name="dialog_language_subtitle">Selectează limba preferată</string>
     <string name="dialog_info_language">Personalizează-ți experiența cu limba preferată. Orice modificări de limbă pe care le faci intră în vigoare imediat, asigurând o experiență perfectă în limba aleasă</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Avansat</string>
     <string name="summary_preference_settings_advanced">Explorează mai multe setări avansate</string>
-    <string name="error_reporting">Raportare erori</string>
-    <string name="bug_report">Raportează o eroare</string>
-    <string name="summary_preference_settings_bug_report">Trimite rapoarte de erori și solicitări de funcții către pagina de probleme a depozitului GitHub al aplicației</string>
 
     <string name="security_and_privacy">Securitate și confidențialitate</string>
     <string name="summary_preference_settings_privacy_and_security">Gestionează-ți setările de confidențialitate</string>
-    <string name="privacy">Confidențialitate</string>
     <string name="privacy_policy">Politica de confidențialitate</string>
-    <string name="summary_preference_settings_privacy_policy">Vizualizează politica care guvernează modul în care gestionăm datele tale</string>
     <string name="terms_of_service">Termeni și condiții</string>
-    <string name="summary_preference_settings_terms_of_service">Examinează termenii pe care îi accepți atunci când utilizezi serviciul nostru</string>
-    <string name="code_of_conduct">Cod de conduită</string>
-    <string name="summary_preference_settings_code_of_conduct">Înțelege regulile și liniile directoare pentru comportamentul în cadrul serviciului nostru</string>
 
     <string name="permissions">Permisiuni</string>
-    <string name="summary_preference_settings_permissions">Gestionează permisiunile acordate serviciului nostru</string>
     <string name="normal">Normale</string>
     <string name="ad_id">ID anunț [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Permite aplicației să preia și să utilizeze identificatorul de publicitate asociat dispozitivului utilizatorului, oferind anunțuri personalizate, măsurând eficacitatea anunțurilor și afișând anunțuri pe dispozitivele cu Android 13 sau o versiune ulterioară.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Permite aplicației să creeze și să utilizeze servicii care rulează în prim-plan, acordându-le prioritate față de alte procese de fundal și îmbunătățind performanța și fiabilitatea.</string>
 
     <string name="ads">Anunțuri</string>
-    <string name="summary_preference_settings_ads">Controlează modul în care folosim informațiile tale pentru a-ți afișa anunțuri relevante</string>
     <string name="display_ads">Afișează anunțuri</string>
     <string name="personalized_ads">Anunțuri personalizate</string>
     <string name="summary_ads_personalized_ads">Alege modul în care personalizăm anunțurile pentru tine pe baza intereselor tale</string>
     <string name="summary_ads">Vezi anunțuri care sunt relevante pentru tine. Gestionează informațiile utilizate pentru a afișa anunțuri personalizate pe baza activității tale în aplicație. Poți dezactiva oricând personalizarea aici.\n</string>
 
     <string name="usage_and_diagnostics">Utilizare și diagnosticare</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Partajează date pentru a contribui la îmbunătățirea Cart Calculator</string>
-    <string name="summary_usage_and_diagnostics">Contribuie la îmbunătățirea experienței tale trimițându-ne automat date de diagnosticare, despre dispozitiv și despre utilizarea aplicației. Acest lucru va contribui la îmbunătățirea performanței aplicației, a stabilității și a altor îmbunătățiri. Unele date agregate vor ajuta, de asemenea, aplicațiile noastre.\n\nAcestea sunt informații generale despre dispozitivul tău și despre modul în care utilizezi aplicațiile noastre (cum ar fi nivelul bateriei, activitatea sistemului și a aplicației și erorile). Datele vor fi utilizate pentru a ne îmbunătăți aplicațiile.\n\nDezactivarea acestei funcții nu afectează capacitatea dispozitivului tău de a trimite informațiile necesare pentru servicii esențiale, cum ar fi actualizările aplicațiilor și securitatea.\n</string>
-
-    <string name="legal">Informații juridice</string>
-    <string name="legal_notices">Notificări legale</string>
-    <string name="summary_preference_settings_legal_notices">Vizualizează informațiile legale despre serviciul nostru</string>
-    <string name="license">Licență</string>
 
     <string name="about">Despre</string>
     <string name="summary_preference_settings_about">Află mai multe despre Cart Calculator</string>
 
-    <string name="app_info">Informații despre aplicație</string>
-    <string name="app_build_version">Versiunea de compilare a aplicației</string>
-    <string name="summary_preference_settings_oss">Detalii despre licență pentru software-ul open source</string>
-    <string name="device_info">Informații despre dispozitiv</string>
     <string name="app_build">Versiune aplicație: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Depanare</string>
     <string name="release">Lansare</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Model dispozitiv:</string>
     <string name="android_version">Versiune Android:</string>
     <string name="api_level">Nivel API:</string>
-    <string name="snack_device_info_copied">Informațiile despre dispozitiv au fost copiate în clipboard</string>
 
     <string name="help_and_feedback">Ajutor și feedback</string>
     <string name="help">Ajutor</string>
-    <string name="faq">Întrebări frecvente</string>
     <string name="view_in_google_play_store">Vezi în Magazinul Google Play</string>
     <string name="version_info">Informații despre versiune</string>
     <string name="version">Versiunea %1$s</string>

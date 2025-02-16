@@ -32,7 +32,6 @@
     <string name="io_error">Wystąpił błąd wejścia/wyjścia. Sprawdź połączenie sieciowe lub pamięć i spróbuj ponownie.</string>
     <string name="illegal_argument_error">Podano nieprawidłowe dane wejściowe lub argument. Sprawdź informacje i spróbuj ponownie.</string>
     <string name="unknown_error">Wystąpił nieznany błąd.</string>
-    <string name="initialization_error">Inicjalizacja nie powiodła się. Spróbuj ponownie później.</string>
 
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
     <string name="in_cart">W koszyku</string>
@@ -54,25 +53,10 @@
     <string name="display">Wyświetlacz</string>
     <string name="summary_preference_settings_display">Spersonalizuj wygląd i styl swojej aplikacji</string>
 
-    <string name="appearance">Wygląd</string>
     <string name="dark_theme">Ciemny motyw</string>
-    <string name="will_turn_on_automatically_by_system">Zostanie włączony automatycznie przez system</string>
-    <string name="will_never_turn_on_automatically">Nigdy nie włączy się automatycznie</string>
-    <string name="amoled_mode">Tryb AMOLED</string>
-    <string name="follow_system">Tryb systemowy</string>
     <string name="light_mode">Tryb jasny</string>
     <string name="dark_mode">Tryb ciemny</string>
-    <string name="summary_dark_theme">Ciemny motyw wykorzystuje głębokie tło, aby pomóc wydłużyć żywotność baterii</string>
 
-    <string name="dynamic_colors">Dynamiczne kolory</string>
-    <string name="summary_preference_settings_dynamic_colors">Zastosuj kolory z tapet do motywu aplikacji</string>
-
-    <string name="app_behavior">Zachowanie aplikacji</string>
-    <string name="bounce_buttons">Odbijanie kliknięcia</string>
-    <string name="summary_preference_settings_bounce_buttons">Stosuje subtelną animację odbicia do wszystkich klikalnych elementów po kliknięciu</string>
-
-    <string name="language">Język</string>
-    <string name="summary_preference_settings_language">Zmienia język używany w aplikacji</string>
     <string name="dialog_language_subtitle">Wybierz preferowany język</string>
     <string name="dialog_info_language">Spersonalizuj swoje doświadczenie za pomocą preferowanego języka. Wszelkie wprowadzone zmiany językowe zaczną obowiązywać od razu, zapewniając płynne działanie w wybranym języku</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Zaawansowane</string>
     <string name="summary_preference_settings_advanced">Poznaj bardziej zaawansowane ustawienia</string>
-    <string name="error_reporting">Zgłaszanie błędów</string>
-    <string name="bug_report">Zgłoś błąd</string>
-    <string name="summary_preference_settings_bug_report">Wysyłaj raporty o błędach i prośby o nowe funkcje na stronę problemów repozytorium GitHub aplikacji</string>
 
     <string name="security_and_privacy">Bezpieczeństwo i prywatność</string>
     <string name="summary_preference_settings_privacy_and_security">Zarządzaj ustawieniami prywatności</string>
-    <string name="privacy">Prywatność</string>
     <string name="privacy_policy">Polityka prywatności</string>
-    <string name="summary_preference_settings_privacy_policy">Zobacz politykę, która reguluje sposób, w jaki przetwarzamy Twoje dane</string>
     <string name="terms_of_service">Warunki korzystania z usługi</string>
-    <string name="summary_preference_settings_terms_of_service">Zapoznaj się z warunkami, które akceptujesz, korzystając z naszej usługi</string>
-    <string name="code_of_conduct">Kodeks postępowania</string>
-    <string name="summary_preference_settings_code_of_conduct">Poznaj zasady i wytyczne dotyczące zachowania w ramach naszej usługi</string>
 
     <string name="permissions">Uprawnienia</string>
-    <string name="summary_preference_settings_permissions">Zarządzaj uprawnieniami przyznanymi naszej usłudze</string>
     <string name="normal">Normalne</string>
     <string name="ad_id">Identyfikator reklamy [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Zezwala aplikacji na pobieranie i używanie identyfikatora reklamowego powiązanego z urządzeniem użytkownika, dostarczanie spersonalizowanych reklam, mierzenie skuteczności reklam i wyświetlanie reklam na urządzeniach z systemem Android 13 lub nowszym.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Umożliwia aplikacji tworzenie i używanie usług działających na pierwszym planie, nadając im priorytet nad innymi procesami działającymi w tle oraz poprawiając wydajność i niezawodność.</string>
 
     <string name="ads">Reklamy</string>
-    <string name="summary_preference_settings_ads">Kontroluj, w jaki sposób wykorzystujemy Twoje dane, aby wyświetlać Ci odpowiednie reklamy</string>
     <string name="display_ads">Wyświetlaj reklamy</string>
     <string name="personalized_ads">Spersonalizowane reklamy</string>
     <string name="summary_ads_personalized_ads">Wybierz, w jaki sposób personalizujemy reklamy dla Ciebie na podstawie Twoich zainteresowań</string>
     <string name="summary_ads">Zobacz reklamy, które są dla Ciebie odpowiednie. Zarządzaj informacjami wykorzystywanymi do wyświetlania spersonalizowanych reklam na podstawie Twojej aktywności w aplikacji. Zawsze możesz wyłączyć personalizację tutaj.\n</string>
 
     <string name="usage_and_diagnostics">Użytkowanie i diagnostyka</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Udostępniaj dane, aby pomóc ulepszyć Kalkulator Koszyka</string>
-    <string name="summary_usage_and_diagnostics">Pomóż poprawić swoje doświadczenia, automatycznie przesyłając do nas dane diagnostyczne, dane urządzenia i dane dotyczące użytkowania aplikacji. Pomoże to poprawić wydajność aplikacji, stabilność i inne ulepszenia. Niektóre zagregowane dane pomogą również naszym aplikacjom.\n\nSą to ogólne informacje o Twoim urządzeniu i sposobie korzystania z naszych aplikacji (takie jak poziom naładowania baterii, aktywność systemu i aplikacji oraz błędy). Dane te zostaną wykorzystane do ulepszania naszych aplikacji.\n\nWyłączenie tej funkcji nie wpływa na zdolność urządzenia do wysyłania informacji potrzebnych do świadczenia podstawowych usług, takich jak aktualizacje aplikacji i bezpieczeństwo.\n</string>
-
-    <string name="legal">Informacje prawne</string>
-    <string name="legal_notices">Informacje prawne</string>
-    <string name="summary_preference_settings_legal_notices">Zobacz informacje prawne dotyczące naszej usługi</string>
-    <string name="license">Licencja</string>
 
     <string name="about">Informacje</string>
     <string name="summary_preference_settings_about">Dowiedz się więcej o Kalkulatorze Koszyka</string>
 
-    <string name="app_info">Informacje o aplikacji</string>
-    <string name="app_build_version">Wersja kompilacji aplikacji</string>
-    <string name="summary_preference_settings_oss">Szczegóły licencji dla oprogramowania open source</string>
-    <string name="device_info">Informacje o urządzeniu</string>
     <string name="app_build">Kompilacja aplikacji: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Debugowanie</string>
     <string name="release">Wydanie</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Model urządzenia:</string>
     <string name="android_version">Wersja Androida:</string>
     <string name="api_level">Poziom API:</string>
-    <string name="snack_device_info_copied">Informacje o urządzeniu skopiowane do schowka</string>
 
     <string name="help_and_feedback">Pomoc i opinie</string>
     <string name="help">Pomoc</string>
-    <string name="faq">FAQ</string>
     <string name="view_in_google_play_store">Wyświetl w Sklepie Google Play</string>
     <string name="version_info">Informacje o wersji</string>
     <string name="version">Wersja %1$s</string>

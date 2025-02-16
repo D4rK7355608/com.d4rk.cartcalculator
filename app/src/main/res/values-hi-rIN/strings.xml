@@ -32,7 +32,6 @@
     <string name="io_error">एक इनपुट/आउटपुट त्रुटि हुई। कृपया अपना नेटवर्क कनेक्शन या स्टोरेज जांचें और पुनः प्रयास करें।</string>
     <string name="illegal_argument_error">अमान्य इनपुट या तर्क प्रदान किया गया। कृपया जानकारी जांचें और पुनः प्रयास करें।</string>
     <string name="unknown_error">एक अज्ञात त्रुटि हुई।</string>
-    <string name="initialization_error">आरंभीकरण विफल। कृपया बाद में पुन: प्रयास करें।</string>
 
     <string name="your_shopping_cart_is_empty">आपका शॉपिंग कार्ट खाली है</string>
     <string name="in_cart">कार्ट में</string>
@@ -54,25 +53,10 @@
     <string name="display">प्रदर्शन</string>
     <string name="summary_preference_settings_display">अपने ऐप के रंगरूप को वैयक्तिकृत करें</string>
 
-    <string name="appearance">दिखावट</string>
     <string name="dark_theme">डार्क थीम</string>
-    <string name="will_turn_on_automatically_by_system">सिस्टम द्वारा स्वचालित रूप से चालू हो जाएगा</string>
-    <string name="will_never_turn_on_automatically">कभी भी स्वचालित रूप से चालू नहीं होगा</string>
-    <string name="amoled_mode">AMOLED मोड</string>
-    <string name="follow_system">सिस्टम मोड का पालन करें</string>
     <string name="light_mode">लाइट मोड</string>
     <string name="dark_mode">डार्क मोड</string>
-    <string name="summary_dark_theme">डार्क थीम एक गहरे रंग की पृष्ठभूमि का उपयोग करती है ताकि आपकी बैटरी को अधिक समय तक जीवित रखने में मदद मिल सके</string>
 
-    <string name="dynamic_colors">गतिशील रंग</string>
-    <string name="summary_preference_settings_dynamic_colors">वॉलपेपर से ऐप थीम पर रंग लागू करें</string>
-
-    <string name="app_behavior">ऐप व्यवहार</string>
-    <string name="bounce_buttons">क्लिक बाउंस करें</string>
-    <string name="summary_preference_settings_bounce_buttons">क्लिक किए जाने पर सभी क्लिक करने योग्य तत्वों पर एक सूक्ष्म बाउंस एनीमेशन लागू करता है</string>
-
-    <string name="language">भाषा</string>
-    <string name="summary_preference_settings_language">ऐप में उपयोग की जाने वाली भाषा बदलता है</string>
     <string name="dialog_language_subtitle">अपनी पसंदीदा भाषा चुनें</string>
     <string name="dialog_info_language">अपने पसंदीदा भाषा के साथ अपने अनुभव को निजीकृत करें। आपके द्वारा किए गए कोई भी भाषा परिवर्तन तुरंत प्रभावी होते हैं, आपके चुने हुए भाषा में एक सहज अनुभव सुनिश्चित करते हैं</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">उन्नत</string>
     <string name="summary_preference_settings_advanced">अधिक उन्नत सेटिंग्स का अन्वेषण करें</string>
-    <string name="error_reporting">त्रुटि विवरण भेजना</string>
-    <string name="bug_report">बग रिपोर्ट</string>
-    <string name="summary_preference_settings_bug_report">ऐप के GitHub रिपॉजिटरी समस्या पृष्ठ पर बग रिपोर्ट और सुविधा अनुरोध भेजें</string>
 
     <string name="security_and_privacy">सुरक्षा और गोपनीयता</string>
     <string name="summary_preference_settings_privacy_and_security">अपनी गोपनीयता सेटिंग्स प्रबंधित करें</string>
-    <string name="privacy">गोपनीयता</string>
     <string name="privacy_policy">गोपनीयता नीति</string>
-    <string name="summary_preference_settings_privacy_policy">उस नीति को देखें जो नियंत्रित करती है कि हम आपके डेटा को कैसे संभालते हैं</string>
     <string name="terms_of_service">सेवा की शर्तें</string>
-    <string name="summary_preference_settings_terms_of_service">हमारी सेवा का उपयोग करते समय आप जिन शर्तों से सहमत होते हैं उनकी समीक्षा करें</string>
-    <string name="code_of_conduct">आचार संहिता</string>
-    <string name="summary_preference_settings_code_of_conduct">हमारी सेवा के भीतर व्यवहार के नियमों और दिशानिर्देशों को समझें</string>
 
     <string name="permissions">अनुमतियां</string>
-    <string name="summary_preference_settings_permissions">हमारी सेवा को दी गई अनुमतियां प्रबंधित करें</string>
     <string name="normal">सामान्य</string>
     <string name="ad_id">विज्ञापन आईडी [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">ऐप को उपयोगकर्ता के डिवाइस से जुड़े विज्ञापन पहचानकर्ता को पुनः प्राप्त करने और उसका उपयोग करने, वैयक्तिकृत विज्ञापन प्रदान करने, विज्ञापन प्रभावशीलता को मापने और एंड्रॉइड 13 या बाद के संस्करण वाले डिवाइस पर विज्ञापन दिखाने की अनुमति देता है।</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">ऐप को अग्रभूमि में चलने वाली सेवाओं को बनाने और उपयोग करने की अनुमति देता है, उन्हें अन्य पृष्ठभूमि प्रक्रियाओं पर प्राथमिकता देता है और प्रदर्शन और विश्वसनीयता में सुधार करता है।</string>
 
     <string name="ads">विज्ञापन</string>
-    <string name="summary_preference_settings_ads">नियंत्रित करें कि हम आपको प्रासंगिक विज्ञापन दिखाने के लिए आपकी जानकारी का उपयोग कैसे करते हैं</string>
     <string name="display_ads">विज्ञापन प्रदर्शित करें</string>
     <string name="personalized_ads">व्यक्तिगत विज्ञापन</string>
     <string name="summary_ads_personalized_ads">चुनें कि हम आपके लिए आपकी रुचियों के आधार पर विज्ञापनों को कैसे वैयक्तिकृत करते हैं</string>
     <string name="summary_ads">ऐसे विज्ञापन देखें जो आपके लिए प्रासंगिक हों. अपनी ऐप गतिविधि के आधार पर वैयक्तिकृत विज्ञापन दिखाने के लिए उपयोग की जाने वाली जानकारी प्रबंधित करें. आप यहां कभी भी वैयक्तिकरण बंद कर सकते हैं.\n</string>
 
     <string name="usage_and_diagnostics">उपयोग और निदान</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">कार्ट कैलकुलेटर को बेहतर बनाने में सहायता के लिए डेटा साझा करें</string>
-    <string name="summary_usage_and_diagnostics">नैदानिक, उपकरण और ऐप उपयोग डेटा स्वचालित रूप से हमें भेजकर अपने अनुभव को बेहतर बनाने में सहायता करें। इससे ऐप के प्रदर्शन, स्थिरता और अन्य सुधारों को बेहतर बनाने में मदद मिलेगी। कुछ समग्र डेटा हमारे ऐप्स की भी सहायता करेंगे।\n\nयह आपके डिवाइस और आप हमारे ऐप्स का उपयोग कैसे करते हैं (जैसे बैटरी स्तर, सिस्टम और ऐप गतिविधि और त्रुटियां) के बारे में सामान्य जानकारी है। डेटा का उपयोग हमारे ऐप्स को बेहतर बनाने के लिए किया जाएगा।\n\nइस सुविधा को बंद करने से आवश्यक सेवाओं जैसे ऐप अपडेट और सुरक्षा के लिए आवश्यक जानकारी भेजने की आपके डिवाइस की क्षमता प्रभावित नहीं होती है।\n</string>
-
-    <string name="legal">कानूनी</string>
-    <string name="legal_notices">कानूनी सूचनाएं</string>
-    <string name="summary_preference_settings_legal_notices">हमारी सेवा के बारे में कानूनी जानकारी देखें</string>
-    <string name="license">लाइसेंस</string>
 
     <string name="about">बारे में</string>
     <string name="summary_preference_settings_about">कार्ट कैलकुलेटर के बारे में अधिक जानें</string>
 
-    <string name="app_info">ऐप की जानकारी</string>
-    <string name="app_build_version">एप्लिकेशन बिल्ड संस्करण</string>
-    <string name="summary_preference_settings_oss">ओपन सोर्स सॉफ़्टवेयर के लिए लाइसेंस विवरण</string>
-    <string name="device_info">डिवाइस की जानकारी</string>
     <string name="app_build">ऐप बिल्ड: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">डीबग</string>
     <string name="release">रिलीज़</string>
@@ -159,11 +122,9 @@
     <string name="device_model">डिवाइस मॉडल:</string>
     <string name="android_version">एंड्रॉइड संस्करण:</string>
     <string name="api_level">एपीआई स्तर:</string>
-    <string name="snack_device_info_copied">डिवाइस की जानकारी क्लिपबोर्ड पर कॉपी की गई</string>
 
     <string name="help_and_feedback">सहायता और प्रतिक्रिया</string>
     <string name="help">सहायता</string>
-    <string name="faq">अक्सर पूछे जाने वाले प्रश्न</string>
     <string name="view_in_google_play_store">Google Play Store में देखें</string>
     <string name="version_info">संस्करण जानकारी</string>
     <string name="version">संस्करण %1$s</string>

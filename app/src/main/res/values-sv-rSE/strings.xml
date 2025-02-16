@@ -32,7 +32,6 @@
     <string name="io_error">Ett in-/utdatafel inträffade. Kontrollera din nätverksanslutning eller lagring och försök igen.</string>
     <string name="illegal_argument_error">Ogiltig indata eller argument angivet. Kontrollera informationen och försök igen.</string>
     <string name="unknown_error">Ett okänt fel inträffade.</string>
-    <string name="initialization_error">Initieringen misslyckades. Försök igen senare.</string>
 
     <string name="your_shopping_cart_is_empty">Din varukorg är tom</string>
     <string name="in_cart">I varukorgen</string>
@@ -54,25 +53,10 @@
     <string name="display">Visa</string>
     <string name="summary_preference_settings_display">Anpassa appens utseende och känsla</string>
 
-    <string name="appearance">Utseende</string>
     <string name="dark_theme">Mörkt tema</string>
-    <string name="will_turn_on_automatically_by_system">Slås på automatiskt av systemet</string>
-    <string name="will_never_turn_on_automatically">Slås aldrig på automatiskt</string>
-    <string name="amoled_mode">AMOLED-läge</string>
-    <string name="follow_system">Följ systemläge</string>
     <string name="light_mode">Ljust läge</string>
     <string name="dark_mode">Mörkt läge</string>
-    <string name="summary_dark_theme">Mörkt tema använder en djup bakgrund för att hålla batteriet vid liv längre</string>
 
-    <string name="dynamic_colors">Dynamiska färger</string>
-    <string name="summary_preference_settings_dynamic_colors">Använd färger från bakgrundsbilder till apptemat</string>
-
-    <string name="app_behavior">Appbeteende</string>
-    <string name="bounce_buttons">Hoppklick</string>
-    <string name="summary_preference_settings_bounce_buttons">Tillämpar en subtil hoppanimation på alla klickbara element när de klickas</string>
-
-    <string name="language">Språk</string>
-    <string name="summary_preference_settings_language">Ändrar språket som används i appen</string>
     <string name="dialog_language_subtitle">Välj önskat språk</string>
     <string name="dialog_info_language">Anpassa din upplevelse med önskat språk. Alla språkändringar du gör träder i kraft direkt, vilket säkerställer en sömlös upplevelse på ditt valda språk</string>
 
@@ -94,22 +78,13 @@
 
     <string name="advanced">Avancerat</string>
     <string name="summary_preference_settings_advanced">Utforska mer avancerade inställningar</string>
-    <string name="error_reporting">Felrapportering</string>
-    <string name="bug_report">Felrapport</string>
-    <string name="summary_preference_settings_bug_report">Skicka felrapporter och funktionsförfrågningar till appens GitHub-lagringsplatsens problemsida</string>
 
     <string name="security_and_privacy">Säkerhet och sekretess</string>
     <string name="summary_preference_settings_privacy_and_security">Hantera dina sekretessinställningar</string>
-    <string name="privacy">Sekretess</string>
     <string name="privacy_policy">Sekretesspolicy</string>
-    <string name="summary_preference_settings_privacy_policy">Se policyn som styr hur vi hanterar dina uppgifter</string>
     <string name="terms_of_service">Användarvillkor</string>
-    <string name="summary_preference_settings_terms_of_service">Granska villkoren du godkänner när du använder vår tjänst</string>
-    <string name="code_of_conduct">Uppförandekod</string>
-    <string name="summary_preference_settings_code_of_conduct">Förstå reglerna och riktlinjerna för beteende inom vår tjänst</string>
 
     <string name="permissions">Behörigheter</string>
-    <string name="summary_preference_settings_permissions">Hantera behörigheterna som beviljats vår tjänst</string>
     <string name="normal">Normal</string>
     <string name="ad_id">Annons-id [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Tillåter appen att hämta och använda annonseringsidentifieraren som är kopplad till användarens enhet, tillhandahålla anpassade annonser, mäta annonseffektivitet och visa annonser på Android 13 eller senare enheter.</string>
@@ -130,28 +105,16 @@
     <string name="summary_preference_permissions_foreground_service">Tillåter appen att skapa och använda tjänster som körs i förgrunden, prioritera dem framför andra bakgrundsprocesser och förbättra prestanda och tillförlitlighet.</string>
 
     <string name="ads">Annonser</string>
-    <string name="summary_preference_settings_ads">Styr hur vi använder din information för att visa relevanta annonser för dig</string>
     <string name="display_ads">Visa annonser</string>
     <string name="personalized_ads">Anpassade annonser</string>
     <string name="summary_ads_personalized_ads">Välj hur vi anpassar annonser för dig baserat på dina intressen</string>
     <string name="summary_ads">Se annonser som är relevanta för dig. Hantera informationen som används för att visa anpassade annonser baserat på din appaktivitet. Du kan alltid stänga av anpassning här.\n</string>
 
     <string name="usage_and_diagnostics">Användning och diagnostik</string>
-    <string name="summary_preference_settings_usage_and_diagnostics">Dela data för att hjälpa till att förbättra Varukorgsberäknaren</string>
-    <string name="summary_usage_and_diagnostics">Hjälp till att förbättra din upplevelse genom att automatiskt skicka diagnostik-, enhets- och appanvändningsdata till oss. Detta kommer att bidra till att förbättra appens prestanda, stabilitet och andra förbättringar. Vissa aggregerade data kommer också att hjälpa våra appar.\n\nDetta är allmän information om din enhet och hur du använder våra appar (t.ex. batterinivå, system- och appaktivitet och fel). Uppgifterna kommer att användas för att förbättra våra appar.\n\nAtt stänga av den här funktionen påverkar inte enhetens möjlighet att skicka information som behövs för viktiga tjänster som appuppdateringar och säkerhet.\n</string>
-
-    <string name="legal">Juridisk information</string>
-    <string name="legal_notices">Juridiska meddelanden</string>
-    <string name="summary_preference_settings_legal_notices">Visa juridisk information om vår tjänst</string>
-    <string name="license">Licens</string>
 
     <string name="about">Om</string>
     <string name="summary_preference_settings_about">Läs mer om Varukorgsberäknaren</string>
 
-    <string name="app_info">Appinfo</string>
-    <string name="app_build_version">Appens byggversion</string>
-    <string name="summary_preference_settings_oss">Licensinformation för programvara med öppen källkod</string>
-    <string name="device_info">Enhetsinfo</string>
     <string name="app_build">Appbygge: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
     <string name="debug">Felsök</string>
     <string name="release">Släpp</string>
@@ -159,11 +122,9 @@
     <string name="device_model">Enhetsmodell:</string>
     <string name="android_version">Androidversion:</string>
     <string name="api_level">API-nivå:</string>
-    <string name="snack_device_info_copied">Enhetsinfo kopierad till urklipp</string>
 
     <string name="help_and_feedback">Hjälp och feedback</string>
     <string name="help">Hjälp</string>
-    <string name="faq">Vanliga frågor</string>
     <string name="view_in_google_play_store">Visa i Google Play Butik</string>
     <string name="version_info">Versionsinformation</string>
     <string name="version">Version %1$s</string>
