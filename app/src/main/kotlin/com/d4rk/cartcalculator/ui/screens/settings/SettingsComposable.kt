@@ -159,50 +159,49 @@ fun TabletSettingsScreen(paddingValues : PaddingValues , context : Context) {
 fun SettingsDetailPlaceholder(paddingValues : PaddingValues) {
     val context : Context = LocalContext.current
 
-    Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
-        LazyColumn(
-            modifier = Modifier.fillMaxHeight()
-        ) {
-            item {
-                Card(
-                    modifier = Modifier
-                            .padding(top = 16.dp , end = 16.dp)
-                            .fillMaxSize()
-                            .wrapContentHeight() ,
-                    shape = RoundedCornerShape(size = 28.dp) ,
+    LazyColumn(
+        contentPadding = paddingValues ,
+        modifier = Modifier.fillMaxHeight()
+    ) {
+        item {
+            Card(
+                modifier = Modifier
+                        .padding(top = 16.dp , end = 16.dp)
+                        .fillMaxSize()
+                        .wrapContentHeight() ,
+                shape = RoundedCornerShape(size = 28.dp) ,
+            ) {
+                Column(
+                    modifier = Modifier.padding(all = 24.dp) , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.Center
                 ) {
-                    Column(
-                        modifier = Modifier.padding(all = 24.dp) , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.Center
-                    ) {
-                        AsyncImage(
-                            model = R.drawable.il_settings , contentDescription = null , modifier = Modifier
-                                    .size(size = 258.dp)
-                                    .fillMaxWidth()
-                        )
-                        Spacer(modifier = Modifier.height(height = 16.dp))
-                        Text(
-                            modifier = Modifier.fillMaxWidth() , text = stringResource(id = R.string.app_name) , style = MaterialTheme.typography.titleMedium , color = MaterialTheme.colorScheme.onSurface , textAlign = TextAlign.Center
-                        )
-                        Spacer(modifier = Modifier.height(height = 8.dp))
-                        Text(
-                            modifier = Modifier.fillMaxWidth() , text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.settings_placeholder_description) , style = MaterialTheme.typography.bodyMedium , color = MaterialTheme.colorScheme.onSurfaceVariant , textAlign = TextAlign.Center
-                        )
-                    }
+                    AsyncImage(
+                        model = R.drawable.il_settings , contentDescription = null , modifier = Modifier
+                                .size(size = 258.dp)
+                                .fillMaxWidth()
+                    )
+                    Spacer(modifier = Modifier.height(height = 16.dp))
+                    Text(
+                        modifier = Modifier.fillMaxWidth() , text = stringResource(id = R.string.app_name) , style = MaterialTheme.typography.titleMedium , color = MaterialTheme.colorScheme.onSurface , textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(height = 8.dp))
+                    Text(
+                        modifier = Modifier.fillMaxWidth() , text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.settings_placeholder_description) , style = MaterialTheme.typography.bodyMedium , color = MaterialTheme.colorScheme.onSurfaceVariant , textAlign = TextAlign.Center
+                    )
+                }
 
-                    OutlinedButton(modifier = Modifier
-                            .padding(all = 24.dp)
-                            .align(Alignment.Start)
-                            .bounceClick() , onClick = {
-                        IntentsHelper.openActivity(
-                            context = context , activityClass = HelpActivity::class.java
-                        )
-                    }) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Outlined.ContactSupport , contentDescription = null
-                        )
-                        ButtonIconSpacer()
-                        Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.get_help))
-                    }
+                OutlinedButton(modifier = Modifier
+                        .padding(all = 24.dp)
+                        .align(Alignment.Start)
+                        .bounceClick() , onClick = {
+                    IntentsHelper.openActivity(
+                        context = context , activityClass = HelpActivity::class.java
+                    )
+                }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Outlined.ContactSupport , contentDescription = null
+                    )
+                    ButtonIconSpacer()
+                    Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.get_help))
                 }
             }
         }
@@ -242,9 +241,9 @@ fun SettingsList(
     paddingValues : PaddingValues , onPreferenceClick : (String) -> Unit
 ) {
     LazyColumn(
+        contentPadding = paddingValues ,
         modifier = Modifier
                 .fillMaxHeight()
-                .padding(paddingValues) ,
     ) {
         item {
             Spacer(modifier = Modifier.height(height = 24.dp))

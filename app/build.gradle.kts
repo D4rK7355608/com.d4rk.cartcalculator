@@ -1,11 +1,11 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.googlePlayServices)
-    alias(libs.plugins.googleFirebase)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.devToolsKsp)
-    alias(libs.plugins.about.libraries)
+    alias(notation = libs.plugins.androidApplication)
+    alias(notation = libs.plugins.jetbrainsKotlinAndroid)
+    alias(notation = libs.plugins.googlePlayServices)
+    alias(notation = libs.plugins.googleFirebase)
+    alias(notation = libs.plugins.compose.compiler)
+    alias(notation = libs.plugins.devToolsKsp)
+    alias(notation = libs.plugins.about.libraries)
 }
 
 android {
@@ -15,7 +15,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 80
+        versionCode = 81
         versionName = "1.2.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")

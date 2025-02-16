@@ -11,11 +11,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -91,6 +93,7 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
     }
 
     Scaffold(
+        contentWindowInsets = WindowInsets.safeContent ,
         modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) ,
         topBar = {
             TopAppBarScaffoldWithBackButtonAndActions(
@@ -114,8 +117,7 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
         } ,
     ) { paddingValues ->
         LazyColumn(
-            modifier = Modifier
-                    .padding(paddingValues = paddingValues)
+            contentPadding = paddingValues , modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp) , state = rememberLazyListState()
         ) {
@@ -135,7 +137,7 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.sendEmailToDeveloper(context = activity , applicationNameRes = R.string.app_name)
                 })
-                Spacer(modifier = Modifier.height(height = 64.dp))
+                Spacer(modifier = Modifier.height(height = 72.dp))
             }
         }
     }

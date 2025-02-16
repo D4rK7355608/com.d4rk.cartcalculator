@@ -42,31 +42,46 @@ import com.d4rk.cartcalculator.ui.screens.support.SupportActivity
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarMain(
-    view : View ,
-    context : Context ,
-    navigationIcon : ImageVector ,
-    onNavigationIconClick : () -> Unit ,
+    view: View,
+    context: Context,
+    navigationIcon: ImageVector,
+    onNavigationIconClick: () -> Unit,
+    scrollBehavior: TopAppBarScrollBehavior  // New parameter
 ) {
-    TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) } , navigationIcon = {
-        IconButton(modifier = Modifier.bounceClick() , onClick = {
-            view.playSoundEffect(SoundEffectConstants.CLICK)
-            onNavigationIconClick()
-        }) {
-            Icon(
-                imageVector = navigationIcon , contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.navigation_drawer_open)
-            )
-        }
-    } , actions = {
-        IconButton(modifier = Modifier.bounceClick() , onClick = {
-            view.playSoundEffect(SoundEffectConstants.CLICK)
-            IntentsHelper.openActivity(context , SupportActivity::class.java)
-        }) {
-            Icon(
-                Icons.Outlined.VolunteerActivism , contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.support_us)
-            )
-        }
-    })
+    TopAppBar(
+        title = { Text(text = stringResource(id = R.string.app_name)) },
+        navigationIcon = {
+            IconButton(
+                modifier = Modifier.bounceClick(),
+                onClick = {
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                    onNavigationIconClick()
+                }
+            ) {
+                Icon(
+                    imageVector = navigationIcon,
+                    contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.navigation_drawer_open)
+                )
+            }
+        },
+        actions = {
+            IconButton(
+                modifier = Modifier.bounceClick(),
+                onClick = {
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                    IntentsHelper.openActivity(context, SupportActivity::class.java)
+                }
+            ) {
+                Icon(
+                    Icons.Outlined.VolunteerActivism,
+                    contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.support_us)
+                )
+            }
+        },
+        scrollBehavior = scrollBehavior // Pass the scrollBehavior here
+    )
 }
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -3,6 +3,7 @@ package com.d4rk.cartcalculator.ui.components.navigation
 import android.content.Context
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
@@ -10,6 +11,7 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.NavigationDrawerItemDefaults
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -25,9 +27,10 @@ import com.d4rk.cartcalculator.ui.screens.home.HomeViewModel
 import com.d4rk.cartcalculator.ui.screens.main.MainScaffoldContent
 import kotlinx.coroutines.CoroutineScope
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawer(
-    mainScreenState : MainScreenState , isFabVisible : Boolean , homeViewModel : HomeViewModel , snackbarHostState : SnackbarHostState
+    mainScreenState : MainScreenState , isFabVisible : Boolean , homeViewModel : HomeViewModel , snackbarHostState : SnackbarHostState, isFabExtended : Boolean, scrollBehavior : TopAppBarScrollBehavior
 ) {
     val uiState by mainScreenState.viewModel.uiState.collectAsState()
     val drawerItems = uiState.navigationDrawerItems
@@ -44,7 +47,7 @@ fun NavigationDrawer(
         }
     }) {
         MainScaffoldContent(
-            mainScreenState = mainScreenState , coroutineScope = coroutineScope , isFabVisible = isFabVisible , viewModel = homeViewModel , snackbarHostState = snackbarHostState
+            mainScreenState = mainScreenState , coroutineScope = coroutineScope , isFabVisible = isFabVisible , viewModel = homeViewModel , snackbarHostState = snackbarHostState, isFabExtended = isFabExtended, scrollBehavior = scrollBehavior
         )
     }
 }

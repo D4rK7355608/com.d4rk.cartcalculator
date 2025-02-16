@@ -1,10 +1,12 @@
 package com.d4rk.cartcalculator.ui.screens.cart
 
+import android.content.Context
 import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -21,6 +23,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsBottomHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
@@ -29,6 +32,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.outlined.AddShoppingCart
+import androidx.compose.material.icons.outlined.CreditCard
 import androidx.compose.material.icons.outlined.RemoveCircleOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -59,6 +63,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -74,6 +79,7 @@ import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartItemAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartItemAlertDialog
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
+import com.d4rk.cartcalculator.utils.external.AppUtils
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -89,6 +95,9 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
     val uiState : UiCartScreen by viewModel.uiState.collectAsState()
     val isLoading : Boolean by viewModel.isLoading.collectAsState()
     val visibilityStates by viewModel.visibilityStates.collectAsState()
+
+    val context : Context = LocalContext.current
+    val isGooglePayInstalled = remember { AppUtils.isGooglePayInstalled(context = context) }
 
     if (uiErrorModel.showErrorDialog) {
         ErrorAlertDialog(errorMessage = uiErrorModel.errorMessage) {
@@ -114,9 +123,12 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                          IconButton(onClick = {
                              viewModel.toggleOpenDialog()
                          }) {
-                             Icon(
-                                 imageVector = Icons.Outlined.AddShoppingCart , contentDescription = null ,
-                             )
+                             Icon(imageVector = Icons.Outlined.AddShoppingCart , contentDescription = null)
+                         }
+                         if (isGooglePayInstalled) {
+                             IconButton(onClick = { AppUtils.openGooglePayOrWallet(context = context) }) {
+                                 Icon(imageVector = Icons.Outlined.CreditCard, contentDescription = "Open Google Pay")
+                             }
                          }
                      } , scrollBehavior = scrollBehavior)
                  }) { paddingValues ->
@@ -398,10 +410,12 @@ fun CartItemComposable(
                                   horizontalArrangement = Arrangement.SpaceBetween,
                               ) {
 
-                                  Row {
-                                      Checkbox(modifier = Modifier
+                                  Row(modifier = Modifier.weight(1f)) {
+                                      Checkbox(
+                                          modifier = Modifier
                                               .bounceClick()
-                                              .padding(end = 16.dp),
+                                              .padding(end = 16.dp)
+                                              .wrapContentSize(),
                                                checked = checkedState,
                                                onCheckedChange = { isChecked ->
                                                    view.playSoundEffect(SoundEffectConstants.CLICK)
@@ -410,16 +424,14 @@ fun CartItemComposable(
                                                        cartItem, isChecked
                                                    )
                                                })
-                                      Column {
-                                          Text(
+                                      Column(modifier = Modifier.weight(1f)) {
+                                          Text(modifier = Modifier.basicMarquee(),
                                               text = cartItem.name,
                                               style = MaterialTheme.typography.bodyLarge
                                           )
                                           Row {
                                               Text(
-                                                  text = String.format(
-                                                      Locale.US, "%.1f", cartItem.price.toFloat()
-                                                  ).removeSuffix(".0"),
+                                                  text = String.format(Locale.US, "%.1f", cartItem.price.toFloat()).removeSuffix(suffix = ".0") ,
                                               )
                                               Spacer(modifier = Modifier.width(4.dp))
                                               Text(
@@ -430,7 +442,10 @@ fun CartItemComposable(
                                       }
                                   }
 
-                                  Row(verticalAlignment = Alignment.CenterVertically) {
+                                  Row(
+                                      modifier = Modifier.wrapContentSize(),
+                                      verticalAlignment = Alignment.CenterVertically
+                                  ) {
                                       Box(modifier = Modifier
                                               .bounceClick()
                                               .size(40.dp)

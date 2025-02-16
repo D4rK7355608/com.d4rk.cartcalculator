@@ -6,9 +6,12 @@ import android.view.View
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -45,15 +48,17 @@ import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
+import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
+import com.google.android.gms.ads.AdSize
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
 fun HomeScreen(
-    context : Context , view : View , viewModel : HomeViewModel , snackbarHostState : SnackbarHostState
+    context : Context , view : View , viewModel : HomeViewModel , snackbarHostState : SnackbarHostState, paddingValues : PaddingValues = PaddingValues()
 ) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
@@ -101,21 +106,45 @@ fun HomeScreen(
                     )
                 }
                 else {
+                    val carts: List<ShoppingCartTable> = uiState.carts
+                    val totalItems = carts.size
+
                     LazyColumn(
-                        modifier = Modifier
-                                .weight(weight = 1f)
-                                .padding(bottom = uiState.fabAdHeight)
+                        contentPadding = paddingValues,
+                        modifier = Modifier.fillMaxSize()
                     ) {
-                        itemsIndexed(items = uiState.carts , key = { _ , cart -> cart.cartId }) { index , cart ->
-                            val isVisible : Boolean = visibilityStates.getOrElse(index) { false }
-                            CartItemComposable(cart = cart , onDelete = { viewModel.openDeleteCartDialog(cart) } , onCardClick = {
-                                view.playSoundEffect(SoundEffectConstants.CLICK)
-                                viewModel.openCart(cart = cart)
-                            } , uiState = uiState , modifier = Modifier
-                                    .animateItem()
-                                    .animateVisibility(
-                                        visible = isVisible , index = index
-                                    ))
+                        itemsIndexed(items = carts) { index, cart ->
+                            CartItem(
+                                cart = cart,
+                                onDelete = { viewModel.openDeleteCartDialog(cart) },
+                                onCardClick = {
+                                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                                    viewModel.openCart(cart)
+                                },
+                                uiState = uiState,
+                                modifier = Modifier
+                                        .animateItem()
+                                        .animateVisibility(visible = visibilityStates.getOrElse(index) { false }, index = index)
+                            )
+
+                            if ((index + 1) % 3 == 0) {
+                                AdBanner(
+                                    modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(AdSize.MEDIUM_RECTANGLE.height.dp),
+                                    adSize = AdSize.MEDIUM_RECTANGLE
+                                )
+                            }
+                        }
+
+                        if (totalItems % 3 != 0) {
+                            item {
+                                AdBanner(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    adSize = AdSize.MEDIUM_RECTANGLE
+                                )
+                                Spacer(modifier = Modifier.height(72.dp))
+                            }
                         }
                     }
                 }
@@ -146,7 +175,7 @@ fun HomeScreen(
 }
 
 @Composable
-fun CartItemComposable(
+fun CartItem(
     cart : ShoppingCartTable ,
     onDelete : (ShoppingCartTable) -> Unit ,
     onCardClick : () -> Unit ,
@@ -179,8 +208,7 @@ fun CartItemComposable(
 
     SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState) , state = dismissState , backgroundContent = {} , content = {
         OutlinedCard(shape = RoundedCornerShape(size = 12.dp) , modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 8.dp) , onClick = {
+                .fillMaxWidth() , onClick = {
             onCardClick()
         }) {
             Box(modifier = Modifier.clip(shape = MaterialTheme.shapes.medium)) {
