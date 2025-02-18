@@ -34,6 +34,7 @@ import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.outlined.AddShoppingCart
 import androidx.compose.material.icons.outlined.CreditCard
 import androidx.compose.material.icons.outlined.RemoveCircleOutline
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
@@ -129,6 +130,10 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                              IconButton(onClick = { AppUtils.openGooglePayOrWallet(context = context) }) {
                                  Icon(imageVector = Icons.Outlined.CreditCard, contentDescription = "Open Google Pay")
                              }
+                         }
+
+                         IconButton(onClick = { viewModel.shareCart(context, cartId) }) {
+                             Icon(imageVector = Icons.Outlined.Share, contentDescription = "Share Cart")
                          }
                      } , scrollBehavior = scrollBehavior)
                  }) { paddingValues ->

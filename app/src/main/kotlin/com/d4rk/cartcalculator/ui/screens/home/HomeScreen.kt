@@ -51,6 +51,7 @@ import com.d4rk.cartcalculator.data.model.ui.screens.UiHomeModel
 import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
+import com.d4rk.cartcalculator.ui.components.dialogs.ImportCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.google.android.gms.ads.AdSize
 import java.text.SimpleDateFormat
@@ -58,7 +59,7 @@ import java.util.Locale
 
 @Composable
 fun HomeScreen(
-    context : Context , view : View , viewModel : HomeViewModel , snackbarHostState : SnackbarHostState, paddingValues : PaddingValues = PaddingValues()
+    context : Context , view : View , viewModel : HomeViewModel , snackbarHostState : SnackbarHostState , paddingValues : PaddingValues = PaddingValues()
 ) {
     val uiState : UiHomeModel by viewModel.uiState.collectAsState()
     val uiErrorModel : UiErrorModel by viewModel.uiErrorModel.collectAsState()
@@ -106,33 +107,26 @@ fun HomeScreen(
                     )
                 }
                 else {
-                    val carts: List<ShoppingCartTable> = uiState.carts
+                    val carts : List<ShoppingCartTable> = uiState.carts
                     val totalItems = carts.size
 
                     LazyColumn(
-                        contentPadding = paddingValues,
-                        modifier = Modifier.fillMaxSize()
+                        contentPadding = paddingValues , modifier = Modifier.fillMaxSize()
                     ) {
-                        itemsIndexed(items = carts) { index, cart ->
-                            CartItem(
-                                cart = cart,
-                                onDelete = { viewModel.openDeleteCartDialog(cart) },
-                                onCardClick = {
-                                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                                    viewModel.openCart(cart)
-                                },
-                                uiState = uiState,
-                                modifier = Modifier
-                                        .animateItem()
-                                        .animateVisibility(visible = visibilityStates.getOrElse(index) { false }, index = index)
+                        itemsIndexed(items = carts) { index , cart ->
+                            CartItem(cart = cart , onDelete = { viewModel.openDeleteCartDialog(cart) } , onCardClick = {
+                                view.playSoundEffect(SoundEffectConstants.CLICK)
+                                viewModel.openCart(cart)
+                            } , uiState = uiState , modifier = Modifier
+                                    .animateItem()
+                                    .animateVisibility(visible = visibilityStates.getOrElse(index) { false } , index = index)
                             )
 
                             if ((index + 1) % 3 == 0) {
                                 AdBanner(
                                     modifier = Modifier
                                             .fillMaxWidth()
-                                            .height(AdSize.MEDIUM_RECTANGLE.height.dp),
-                                    adSize = AdSize.MEDIUM_RECTANGLE
+                                            .height(AdSize.MEDIUM_RECTANGLE.height.dp) , adSize = AdSize.MEDIUM_RECTANGLE
                                 )
                             }
                         }
@@ -140,8 +134,7 @@ fun HomeScreen(
                         if (totalItems % 3 != 0) {
                             item {
                                 AdBanner(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    adSize = AdSize.MEDIUM_RECTANGLE
+                                    modifier = Modifier.fillMaxWidth() , adSize = AdSize.MEDIUM_RECTANGLE
                                 )
                                 Spacer(modifier = Modifier.height(72.dp))
                             }
@@ -150,6 +143,12 @@ fun HomeScreen(
                 }
             }
         }
+    }
+
+    if (uiState.showImportDialog) {
+        ImportCartAlertDialog(onDismiss = {
+            viewModel.toggleImportDialog(isOpen = false)
+        } , onImport = { encodedData -> viewModel.importSharedCart(encodedData = encodedData) })
     }
 
     if (uiState.showCreateCartDialog) {
@@ -207,8 +206,7 @@ fun CartItem(
     }
 
     SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState) , state = dismissState , backgroundContent = {} , content = {
-        OutlinedCard(shape = RoundedCornerShape(size = 12.dp) , modifier = Modifier
-                .fillMaxWidth() , onClick = {
+        OutlinedCard(shape = RoundedCornerShape(size = 12.dp) , modifier = Modifier.fillMaxWidth() , onClick = {
             onCardClick()
         }) {
             Box(modifier = Modifier.clip(shape = MaterialTheme.shapes.medium)) {

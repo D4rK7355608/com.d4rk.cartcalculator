@@ -8,6 +8,12 @@ import kotlinx.coroutines.withContext
 class HomeRepository(application : Application) :
     HomeRepositoryImplementation(application = application) {
 
+    suspend fun importSharedCartRepository(encodedData : String) {
+        withContext(Dispatchers.IO) {
+            importSharedCartImplementation(encodedData = encodedData)
+        }
+    }
+
     suspend fun loadCartsRepository(onSuccess : (List<ShoppingCartTable>) -> Unit) {
         withContext(Dispatchers.IO) {
             val carts : List<ShoppingCartTable> = loadCartsImplementation()

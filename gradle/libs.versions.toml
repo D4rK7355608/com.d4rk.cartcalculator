@@ -15,6 +15,8 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrainsKotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 googlePlayServices = { id = "com.google.gms.google-services", version.ref = "google-services" }
 googleFirebase = { id = "com.google.firebase.crashlytics", version.ref = "google-firebase-crashlytics" }
 devToolsKsp = { id = "com.google.devtools.ksp", version.ref = "google-devtools-ksp" }

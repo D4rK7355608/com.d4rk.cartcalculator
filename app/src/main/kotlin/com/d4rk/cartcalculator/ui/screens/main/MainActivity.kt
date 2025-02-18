@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.ui.screens.main
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -17,6 +18,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.d4rk.cartcalculator.data.core.AppCoreManager
+import com.d4rk.cartcalculator.ui.screens.home.HomeViewModel
 import com.d4rk.cartcalculator.ui.screens.settings.display.theme.style.AppTheme
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -27,6 +29,7 @@ import com.google.android.play.core.install.model.ActivityResult
 
 class MainActivity : AppCompatActivity() {
     private val viewModel : MainViewModel by viewModels()
+    private val homeViewModel : HomeViewModel by viewModels()
     private lateinit var appUpdateManager : AppUpdateManager
     private lateinit var appUpdateNotificationsManager : com.d4rk.android.libs.apptoolkit.notifications.managers.AppUpdateNotificationsManager
     private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
@@ -40,15 +43,21 @@ class MainActivity : AppCompatActivity() {
         }
         enableEdgeToEdge()
         initializeActivityComponents()
+        intent.data?.let { handleDeepLink(it) }
         setContent {
             AppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen(viewModel = viewModel)
+                    MainScreen(viewModel = viewModel , homeViewModel = homeViewModel)
                 }
             }
         }
+    }
+
+    override fun onNewIntent(intent : Intent) {
+        super.onNewIntent(intent)
+        intent.data?.let { handleDeepLink(it) }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -146,5 +155,12 @@ class MainActivity : AppCompatActivity() {
             )
         }
         snackbar.show()
+    }
+
+    private fun handleDeepLink(data : Uri) {
+        val encodedData : String? = data.getQueryParameter("data")
+        encodedData?.let {
+            homeViewModel.importSharedCart(encodedData = it)
+        }
     }
 }

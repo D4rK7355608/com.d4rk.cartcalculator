@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.data.database.table
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.Serializable
 
 /**
  * Data class representing a shopping cart item in the database.
@@ -12,6 +13,7 @@ import androidx.room.PrimaryKey
  * @property price The price of the item.
  * @property quantity The quantity of the item in the shopping cart.
  */
+@Serializable
 @Entity
 data class ShoppingCartItemsTable(
     @PrimaryKey(autoGenerate = true)

@@ -8,6 +8,7 @@ data class UiHomeModel(
     val carts: MutableList<ShoppingCartTable> = mutableListOf() ,
     val cartToDelete: ShoppingCartTable? = null ,
     val showCreateCartDialog: Boolean = false ,
+    val showImportDialog: Boolean = false ,
     val showDeleteCartDialog: Boolean = false ,
     val showSnackbar: Boolean = false ,
     val snackbarMessage: String = "" ,

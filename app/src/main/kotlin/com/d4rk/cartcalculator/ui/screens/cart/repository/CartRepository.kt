@@ -1,8 +1,12 @@
 package com.d4rk.cartcalculator.ui.screens.cart.repository
 
+import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class CartRepository : CartRepositoryImplementation() {
 
@@ -52,6 +56,13 @@ class CartRepository : CartRepositoryImplementation() {
             withContext(Dispatchers.Main) {
                 onSuccess()
             }
+        }
+    }
+
+    suspend fun generateCartShareLinkRepository(cartId: Int, onSuccess: (String?) -> Unit) {
+        withContext(Dispatchers.IO) {
+            val shareLink: String? = generateCartShareLinkImplementation(cartId)
+            withContext(Dispatchers.Main) { onSuccess(shareLink) }
         }
     }
 }

@@ -79,9 +79,11 @@ fun AddNewCartAlertDialogContent(
                               imeAction = ImeAction.Done
                           ) ,
                           keyboardActions = KeyboardActions(onDone = {
-                              newCart.value =
-                                      ShoppingCartTable(name = nameText.value.ifEmpty { defaultName } ,
-                                                        date = currentDate)
+                              newCart.value = ShoppingCartTable(
+                                  name = nameText.value.ifEmpty { defaultName },
+                                  date = currentDate.time
+                              )
+
                               keyboardController?.hide()
                           }) ,
                           placeholder = { Text(text = stringResource(id = R.string.shopping_cart)) })
@@ -90,6 +92,5 @@ fun AddNewCartAlertDialogContent(
         MediumVerticalSpacer()
         Text(text = stringResource(id = R.string.summary_cart_dialog))
     }
-    newCart.value =
-            ShoppingCartTable(name = nameText.value.ifEmpty { defaultName } , date = currentDate)
+    newCart.value = ShoppingCartTable(name = nameText.value.ifEmpty { defaultName } , date = currentDate.time)
 }

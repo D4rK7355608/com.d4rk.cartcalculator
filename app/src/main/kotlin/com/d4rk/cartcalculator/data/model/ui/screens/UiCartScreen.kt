@@ -2,7 +2,9 @@ package com.d4rk.cartcalculator.data.model.ui.screens
 
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class UiCartScreen(
     val selectedCurrency: String = "" ,
     val totalPrice: Double = 0.0 ,

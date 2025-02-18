@@ -1,6 +1,8 @@
 plugins {
     alias(notation = libs.plugins.androidApplication)
     alias(notation = libs.plugins.jetbrainsKotlinAndroid)
+    alias(notation = libs.plugins.jetbrainsKotlinParcelize)
+    alias(notation = libs.plugins.kotlin.serialization)
     alias(notation = libs.plugins.googlePlayServices)
     alias(notation = libs.plugins.googleFirebase)
     alias(notation = libs.plugins.compose.compiler)

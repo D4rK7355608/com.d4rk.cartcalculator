@@ -1,6 +1,8 @@
 package com.d4rk.cartcalculator.ui.screens.cart
 
 import android.app.Application
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.viewModelScope
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartTable
@@ -25,15 +27,17 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
     fun loadCart(cartId : Int) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
-            val cart : ShoppingCartTable = repository.loadCartIdImplementation(cartId = cartId)
-            repository.loadCartItemsRepository(cartId = cartId) { items ->
-                _uiState.update { currentState ->
-                    currentState.copy(
-                        cartItems = items , cart = cart
-                    )
+            val cart : ShoppingCartTable? = repository.loadCartIdImplementation(cartId = cartId)
+            cart?.let { safeCart ->
+                repository.loadCartItemsRepository(cartId = cartId) { items ->
+                    _uiState.update { currentState ->
+                        currentState.copy(
+                            cartItems = items , cart = safeCart
+                        )
+                    }
+                    calculateTotalPrice()
                 }
-                calculateTotalPrice()
-            }
+            } ?: kotlin.run {}
             hideLoading()
             initializeVisibilityStates()
         }
@@ -109,7 +113,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
             cartItem.quantity = newQuantity
             repository.updateCartItemRepository(cartItem = cartItem) {
                 _uiState.update { currentState ->
-                    val updatedQuantities : MutableMap<Int, Int> = currentState.itemQuantities.toMutableMap()
+                    val updatedQuantities : MutableMap<Int , Int> = currentState.itemQuantities.toMutableMap()
                     updatedQuantities[cartItem.itemId] = newQuantity
                     return@update currentState.copy(itemQuantities = updatedQuantities)
                 }
@@ -118,7 +122,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun editCartItem(cartItem: ShoppingCartItemsTable) {
+    fun editCartItem(cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             repository.updateCartItemRepository(cartItem = cartItem) {
                 _uiState.update { currentState ->
@@ -165,8 +169,7 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
 
     private fun calculateTotalPrice() {
         viewModelScope.launch(context = coroutineExceptionHandler) {
-            val total =
-                    uiState.value.cartItems.sumOf { item -> item.price.toDouble() * item.quantity }
+            val total = uiState.value.cartItems.sumOf { item -> item.price.toDouble() * item.quantity }
             _uiState.update { currentState ->
                 currentState.copy(totalPrice = total)
             }
@@ -191,13 +194,26 @@ class CartViewModel(application : Application) : BaseViewModel(application) {
         }
     }
 
-    fun toggleEditDialog(cartItem: ShoppingCartItemsTable?) {
+    fun toggleEditDialog(cartItem : ShoppingCartItemsTable?) {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             _uiState.update { currentState ->
                 currentState.copy(
-                    openEditDialog = cartItem != null,
-                    currentCartItemForEdit = cartItem
+                    openEditDialog = cartItem != null , currentCartItemForEdit = cartItem
                 )
+            }
+        }
+    }
+
+    fun shareCart(context : Context , cartId : Int) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.generateCartShareLinkRepository(cartId = cartId) { shareLink ->
+                shareLink?.let {
+                    val intent = Intent(Intent.ACTION_SEND).apply {
+                        type = "text/plain"
+                        putExtra(Intent.EXTRA_TEXT , it)
+                    }
+                    context.startActivity(Intent.createChooser(intent , "Share Cart"))
+                }
             }
         }
     }

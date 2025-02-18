@@ -26,6 +26,21 @@ class HomeViewModel(application : Application) : BaseViewModel(application) {
         loadCarts()
     }
 
+    fun importSharedCart(encodedData : String) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            repository.importSharedCartRepository(encodedData = encodedData)
+            loadCarts()
+        }
+    }
+
+    fun toggleImportDialog(isOpen: Boolean) {
+        viewModelScope.launch(context = coroutineExceptionHandler) {
+            _uiState.update { currentState ->
+                currentState.copy(showImportDialog = isOpen)
+            }
+        }
+    }
+
     private fun loadCarts() {
         viewModelScope.launch(context = coroutineExceptionHandler) {
             showLoading()
