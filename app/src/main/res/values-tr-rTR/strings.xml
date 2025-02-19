@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Alışveriş sepeti ürünlerinizi Sepet Hesaplayıcı ile verimli bir şekilde yönetin ve hesaplayın. 🛒</string>
-    <string name="notification_update_title">Yeni bir güncelleme mevcut!</string>
-    <string name="summary_notification_update">Uygulamanın yeni bir sürümü mevcut. Güncellemek için tıklayın!</string>
-    <string name="notification_last_time_used_title">Uzun zaman oldu!</string>
     <string name="summary_notification_last_time_used">Sepetinizdeki ürünleri verimli bir şekilde yönetelim!</string>
 
-    <string name="welcome">Hoş geldiniz</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Devam etmek için Hizmet Şartlarımızı ve Gizlilik Politikamızı okuyun ve kabul edin.</string>
-    <string name="agree">Kabul Et</string>
-
-    <string name="navigation_drawer_open">Gezinme çekmecesini aç</string>
-
+    <string name="import_cart_instructions">"Paylaşılan bir sepeti içe aktarmak için, oluşturulan bağlantıyı yukarıdaki alana yapıştırın.\nPaylaşılan sepet, içe aktarıldıktan sonra otomatik olarak listenizde görünecektir.\n\nSepet nasıl paylaşılır:\n1. Sepetinizi açın.\n2. \'Paylaş\' düğmesine dokunun.\n3. Oluşturulan bağlantıyı kopyalayın ve birine gönderin.\n\nPaylaşılan sepet nasıl içe aktarılır:\n1. Aldığınız paylaşılan bağlantıyı kopyalayın.\n2. Yukarıdaki giriş alanına yapıştırın.\n3. \'İçe Aktar\'a dokunun ve yeni giriş için sepet listenizi kontrol edin."</string>
     <string name="no_carts_available">Kullanılabilir sepet yok</string>
     <string name="add_new_cart">Yeni sepet ekle</string>
     <string name="cart_name">Sepet adı</string>
@@ -24,14 +16,7 @@
     <string name="delete_cart_message">Bu sepeti silmek istediğinizden emin misiniz?</string>
     <string name="delete_cart_warning">Bu sepeti silmek, \"%s\" içindeki tüm ürünleri kalıcı olarak kaldıracak ve geri alınamaz.</string>
     <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
-    <string name="close">Kapat?</string>
-    <string name="summary_close">Çıkmak istediğinizden emin misiniz?</string>
     <string name="file_not_found">Dosya bulunamadı.</string>
-    <string name="activity_not_found">Etkinlik bulunamadı.</string>
-    <string name="security_error">Bir güvenlik hatası oluştu. Lütfen daha sonra tekrar deneyin.</string>
-    <string name="io_error">Bir giriş/çıkış hatası oluştu. Lütfen ağ bağlantınızı veya depolama alanınızı kontrol edin ve tekrar deneyin.</string>
-    <string name="illegal_argument_error">Geçersiz giriş veya argüman sağlandı. Lütfen bilgileri kontrol edin ve tekrar deneyin.</string>
-    <string name="unknown_error">Bilinmeyen bir hata oluştu.</string>
 
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
     <string name="in_cart">Sepette</string>
@@ -48,18 +33,6 @@
     <string name="delete_cart_item_message">Bu ürünü silmek istediğinizden emin misiniz?</string>
     <string name="delete_cart_item_warning">Sepetinizden "%s" ürününü silmek üzeresiniz.</string>
 
-    <string name="settings">Ayarlar</string>
-
-    <string name="display">Görüntü</string>
-    <string name="summary_preference_settings_display">Uygulamanızın görünümünü ve hissini kişiselleştirin</string>
-
-    <string name="dark_theme">Koyu tema</string>
-    <string name="light_mode">Aydınlık Mod</string>
-    <string name="dark_mode">Koyu Mod</string>
-
-    <string name="dialog_language_subtitle">Tercih ettiğiniz dili seçin</string>
-    <string name="dialog_info_language">Deneyiminizi tercih ettiğiniz dille kişiselleştirin. Yaptığınız dil değişiklikleri hemen geçerli olur ve seçtiğiniz dilde sorunsuz bir deneyim sağlar</string>
-
     <string name="cart_settings">Sepet ayarları</string>
     <string name="summary_preference_settings_cart">Sepetinizin nasıl davranacağını yönetin</string>
 
@@ -70,29 +43,12 @@
     <string name="open_carts_after_creation">Oluşturulduktan Sonra Sepetleri Aç</string>
     <string name="summary_preference_settings_open_carts_after_creation">Oluşturulduktan hemen sonra bir sepeti otomatik olarak açın.</string>
 
-    <string name="notifications">Bildirimler</string>
-    <string name="summary_preference_settings_notifications">Uygulama bildirimlerini yönet</string>
-
-    <string name="app_usage_notifications">Uygulama Kullanım Bildirimleri</string>
-    <string name="update_notifications">Bildirimleri Güncelle</string>
-
-    <string name="advanced">Gelişmiş</string>
-    <string name="summary_preference_settings_advanced">Daha gelişmiş ayarları keşfedin</string>
-
-    <string name="security_and_privacy">Güvenlik ve gizlilik</string>
-    <string name="summary_preference_settings_privacy_and_security">Gizlilik ayarlarınızı yönetin</string>
-    <string name="privacy_policy">Gizlilik Politikası</string>
-    <string name="terms_of_service">Hizmet Şartları</string>
-
-    <string name="permissions">İzinler</string>
-    <string name="normal">Normal</string>
     <string name="ad_id">Reklam kimliği [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Uygulamanın, kullanıcının cihazıyla ilişkili reklam tanımlayıcısını almasına ve kullanmasına, kişiselleştirilmiş reklamlar sağlamasına, reklam etkinliğini ölçmesine ve Android 13 veya sonraki cihazlarda reklam göstermesine olanak tanır.</string>
     <string name="internet">İnternet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Uygulamanın hata raporları göndermek veya güncellemeleri kontrol etmek için internet bağlantısı kurmasına izin verir.</string>
     <string name="post_notifications">Bildirim gönderme [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Uygulamanın Android 13 veya sonraki sürümlere sahip cihazlarda bildirim görüntülemesine izin verir.</string>
-    <string name="runtime">Çalışma zamanı</string>
     <string name="access_network_state">Ağ durumuna erişim [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Uygulamanın ağ bağlantısını kontrol etmesine ve etkin durum ve bağlı Wi-Fi cihaz adları dahil olmak üzere Wi-Fi hakkında bilgi almasına izin verir.</string>
     <string name="access_notification_policy">Bildirim politikasına erişim [ACCESS_NOTIFICATION_POLICY]</string>
@@ -104,31 +60,8 @@
     <string name="foreground_service">Ön plan hizmeti [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Uygulamanın ön planda çalışan hizmetler oluşturmasına ve kullanmasına izin vererek onlara diğer arka plan işlemlerine göre öncelik verir ve performansı ve güvenilirliği artırır.</string>
 
-    <string name="ads">Reklamlar</string>
-    <string name="display_ads">Reklamları görüntüle</string>
-    <string name="personalized_ads">Kişiselleştirilmiş reklamlar</string>
-    <string name="summary_ads_personalized_ads">İlgi alanlarınıza göre sizin için reklamları nasıl kişiselleştireceğimizi seçin</string>
-    <string name="summary_ads">Sizinle alakalı reklamları görün. Uygulama etkinliğinize göre kişiselleştirilmiş reklamlar göstermek için kullanılan bilgileri yönetin. Kişiselleştirmeyi buradan her zaman kapatabilirsiniz.\n</string>
-
-    <string name="usage_and_diagnostics">Kullanım ve teşhis</string>
-
-    <string name="about">Hakkında</string>
     <string name="summary_preference_settings_about">Sepet Hesaplayıcı hakkında daha fazla bilgi edinin</string>
 
-    <string name="app_build">Uygulama Yapısı: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Hata ayıklama</string>
-    <string name="release">Sürüm</string>
-    <string name="manufacturer">Üretici:</string>
-    <string name="device_model">Cihaz Modeli:</string>
-    <string name="android_version">Android Sürümü:</string>
-    <string name="api_level">API Seviyesi:</string>
-
-    <string name="help_and_feedback">Yardım ve geri bildirim</string>
-    <string name="help">Yardım</string>
-    <string name="view_in_google_play_store">Google Play Store\'da görüntüle</string>
-    <string name="version_info">Sürüm bilgisi</string>
-    <string name="version">Sürüm %1$s</string>
-    <string name="beta_program">Beta programı</string>
     <string name="question_1">Sepet Hesaplayıcı nedir?</string>
     <string name="summary_preference_faq_1">Sepet Hesaplayıcı, markette veya pazarda olduğunuzda sıradan cihazın hesap makinesinin yerini alan basit, genel ve ücretsiz bir alışveriş sepeti yöneticisi ve toplam borç hesaplayıcısıdır.</string>
     <string name="question_2">Sepet Hesaplayıcı nasıl çalışır?</string>
@@ -147,21 +80,4 @@
     <string name="summary_preference_faq_8">Evet! Sepet Hesaplayıcı, GNU Genel Kamu Lisansı sürüm 3 kapsamında dağıtılan gurur verici bir ücretsiz yazılımdır.</string>
     <string name="question_9">Sepet Hesaplayıcı\'ya nasıl katkıda bulunabilirim?</string>
     <string name="summary_preference_faq_9">Sepet Hesaplayıcı\'ya katkıda bulunmanın en iyi yolu <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> deposudur. Oradan, onu çatallayabilir ve katkılarınız üzerinde çalışabilir ve daha sonra bunları çekme isteği yoluyla geri gönderebilirsiniz. Ayrıca hata izleyiciyi hataları bildirmek, yeni özellikler veya geliştirmeler önermek veya nasıl yardımcı olabileceğiniz konusunda fikir edinmek için de kullanabilirsiniz.</string>
-    <string name="feedback">Geri bildirim</string>
-
-    <string name="updates">Güncellemeler</string>
-
-    <string name="share">Paylaş</string>
-
-    <string name="support_us">Bizi Destekleyin</string>
-    <string name="paid_support">Ücretli Destek</string>
-    <string name="summary_donations">Ne kadar bağış yaparsanız yapın, uygulamamızın çalışmasını sağlamamıza ve özelliklerimizi iyileştirmemize yardımcı olacaksınız. Cömertliğiniz ve nezaketiniz için teşekkür ederiz!</string>
-    <string name="non_paid_support">Ücretsiz Destek</string>
-    <string name="web_ad">Web Reklamı</string>
-
-    <string name="snack_app_updated">Uygulama başarıyla güncellendi</string>
-    <string name="snack_update_failed">Güncelleme işlemi bir sorunla karşılaştı</string>
-    <string name="try_again">Tekrar dene</string>
-    <string name="summary_share_message">Kullandığım bu harika uygulamaya göz atın! İlginç bulabileceğiniz bazı gerçekten harika özellikleri var. Play Store\'dan indirebilirsiniz: %1$s</string>
-    <string name="learn_more">Daha fazla bilgi edin</string>
 </resources>

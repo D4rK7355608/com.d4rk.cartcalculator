@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.ShoppingBag
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
@@ -27,7 +26,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 
@@ -133,9 +132,7 @@ fun AddNewCartItemAlertDialogContent(
         )
 
         Spacer(modifier = Modifier.height(height = 24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        MediumVerticalSpacer()
-        Text(text = stringResource(id = R.string.dialog_info_cart_item))
+        InfoMessageSection(message = stringResource(id = R.string.dialog_info_cart_item))
     }
 
     if (nameText.value.isNotBlank() && priceText.value.isNotBlank() && quantityText.value.isNotBlank()) {

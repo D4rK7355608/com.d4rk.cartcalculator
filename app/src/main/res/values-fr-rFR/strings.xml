@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Gérez et calculez efficacement les articles de votre panier avec Cart Calculator. 🛒</string>
-    <string name="notification_update_title">Une nouvelle mise à jour est disponible !</string>
-    <string name="summary_notification_update">Une nouvelle version de l\'application est disponible. Cliquez pour mettre à jour !</string>
-    <string name="notification_last_time_used_title">Ça fait un bail !</string>
     <string name="summary_notification_last_time_used">Gérons efficacement les articles de votre panier !</string>
 
-    <string name="welcome">Bienvenue</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Lisez et acceptez nos conditions d\'utilisation et notre politique de confidentialité pour continuer.</string>
-    <string name="agree">Accepter</string>
-
-    <string name="navigation_drawer_open">Ouvrir le menu de navigation</string>
-
+    <string name="import_cart_instructions">"Pour importer un panier partagé, collez le lien généré dans le champ ci-dessus.\nLe panier partagé apparaîtra automatiquement dans votre liste une fois importé.\n\nComment partager un panier:\n1. Ouvrez votre panier.\n2. Appuyez sur le bouton \'Partager\'.\n3. Copiez le lien généré et envoyez-le à quelqu\'un.\n\nComment importer un panier partagé:\n1. Copiez le lien partagé que vous avez reçu.\n2. Collez-le dans le champ de saisie ci-dessus.\n3. Appuyez sur \'Importer\' et vérifiez votre liste de paniers pour la nouvelle entrée."</string>
     <string name="no_carts_available">Aucun panier disponible</string>
     <string name="add_new_cart">Ajouter un nouveau panier</string>
     <string name="cart_name">Nom du panier</string>
@@ -24,14 +16,7 @@
     <string name="delete_cart_message">Êtes-vous sûr de vouloir supprimer ce panier ?</string>
     <string name="delete_cart_warning">La suppression de ce panier supprimera définitivement tous les articles de \"%s\" et ne pourra pas être annulée.</string>
     <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
-    <string name="close">Fermer ?</string>
-    <string name="summary_close">Êtes-vous sûr de vouloir quitter ?</string>
     <string name="file_not_found">Fichier introuvable.</string>
-    <string name="activity_not_found">Activité introuvable.</string>
-    <string name="security_error">Une erreur de sécurité s\'est produite. Veuillez réessayer plus tard.</string>
-    <string name="io_error">Une erreur d\'entrée/sortie s\'est produite. Veuillez vérifier votre connexion réseau ou votre stockage et réessayer.</string>
-    <string name="illegal_argument_error">Entrée ou argument invalide fourni. Veuillez vérifier les informations et réessayer.</string>
-    <string name="unknown_error">Une erreur inconnue s\'est produite.</string>
 
     <string name="your_shopping_cart_is_empty">Votre panier est vide</string>
     <string name="in_cart">Dans le panier</string>
@@ -48,18 +33,6 @@
     <string name="delete_cart_item_message">Êtes-vous sûr de vouloir supprimer cet article ?</string>
     <string name="delete_cart_item_warning">Vous êtes sur le point de supprimer \"%s\" de votre panier.</string>
 
-    <string name="settings">Paramètres</string>
-
-    <string name="display">Affichage</string>
-    <string name="summary_preference_settings_display">Personnalisez l\'apparence de votre application</string>
-
-    <string name="dark_theme">Thème sombre</string>
-    <string name="light_mode">Mode clair</string>
-    <string name="dark_mode">Mode sombre</string>
-
-    <string name="dialog_language_subtitle">Sélectionnez votre langue préférée</string>
-    <string name="dialog_info_language">Personnalisez votre expérience avec votre langue préférée. Tous les changements de langue que vous effectuez prennent effet immédiatement, garantissant une expérience transparente dans la langue de votre choix</string>
-
     <string name="cart_settings">Paramètres du panier</string>
     <string name="summary_preference_settings_cart">Gérez le comportement de votre panier</string>
 
@@ -70,29 +43,12 @@
     <string name="open_carts_after_creation">Ouvrir les paniers après la création</string>
     <string name="summary_preference_settings_open_carts_after_creation">Ouvrir automatiquement un panier immédiatement après sa création.</string>
 
-    <string name="notifications">Notifications</string>
-    <string name="summary_preference_settings_notifications">Gérer les notifications de l\'application</string>
-
-    <string name="app_usage_notifications">Notifications d\'utilisation de l\'application</string>
-    <string name="update_notifications">Notifications de mise à jour</string>
-
-    <string name="advanced">Avancé</string>
-    <string name="summary_preference_settings_advanced">Explorez des paramètres plus avancés</string>
-
-    <string name="security_and_privacy">Sécurité et confidentialité</string>
-    <string name="summary_preference_settings_privacy_and_security">Gérez vos paramètres de confidentialité</string>
-    <string name="privacy_policy">Politique de confidentialité</string>
-    <string name="terms_of_service">Conditions d\'utilisation</string>
-
-    <string name="permissions">Autorisations</string>
-    <string name="normal">Normal</string>
     <string name="ad_id">ID de publicité [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Permet à l\'application de récupérer et d\'utiliser l\'identifiant publicitaire associé à l\'appareil de l\'utilisateur, de fournir des publicités personnalisées, de mesurer l\'efficacité des publicités et d\'afficher des publicités sur les appareils Android 13 ou version ultérieure.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Permet à l\'application d\'établir une connexion Internet pour envoyer des rapports d\'erreurs ou rechercher des mises à jour.</string>
     <string name="post_notifications">Publier des notifications [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Permet à l\'application d\'afficher des notifications sur les appareils avec Android 13 ou version ultérieure.</string>
-    <string name="runtime">Exécution</string>
     <string name="access_network_state">Accéder à l\'état du réseau [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Permet à l\'application de vérifier la connectivité réseau et de récupérer des informations sur le Wi-Fi, y compris l\'état activé et les noms des appareils Wi-Fi connectés.</string>
     <string name="access_notification_policy">Accéder à la politique de notification [ACCESS_NOTIFICATION_POLICY]</string>
@@ -104,31 +60,8 @@
     <string name="foreground_service">Service de premier plan [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Permet à l\'application de créer et d\'utiliser des services qui s\'exécutent au premier plan, leur donnant la priorité sur les autres processus en arrière-plan et améliorant les performances et la fiabilité.</string>
 
-    <string name="ads">Publicités</string>
-    <string name="display_ads">Afficher des publicités</string>
-    <string name="personalized_ads">Publicités personnalisées</string>
-    <string name="summary_ads_personalized_ads">Choisissez comment nous personnalisons les publicités pour vous en fonction de vos intérêts</string>
-    <string name="summary_ads">Voir des publicités qui vous concernent. Gérez les informations utilisées pour afficher des publicités personnalisées en fonction de votre activité sur l\'application. Vous pouvez toujours désactiver la personnalisation ici.\n</string>
-
-    <string name="usage_and_diagnostics">Utilisation et diagnostics</string>
-
-    <string name="about">À propos</string>
     <string name="summary_preference_settings_about">En savoir plus sur Cart Calculator</string>
 
-    <string name="app_build">Build de l\'application : %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Débogage</string>
-    <string name="release">Version</string>
-    <string name="manufacturer">Fabricant :</string>
-    <string name="device_model">Modèle de l\'appareil :</string>
-    <string name="android_version">Version d\'Android :</string>
-    <string name="api_level">Niveau d\'API :</string>
-
-    <string name="help_and_feedback">Aide et commentaires</string>
-    <string name="help">Aide</string>
-    <string name="view_in_google_play_store">Voir dans le Google Play Store</string>
-    <string name="version_info">Informations sur la version</string>
-    <string name="version">Version %1$s</string>
-    <string name="beta_program">Programme bêta</string>
     <string name="question_1">Qu\'est-ce que Cart Calculator ?</string>
     <string name="summary_preference_faq_1">Cart Calculator est un gestionnaire de panier d\'achat simple, générique et gratuit et un calculateur de total dû qui remplace la calculatrice ordinaire de l\'appareil lorsque vous êtes à l\'épicerie ou au marché.</string>
     <string name="question_2">Comment fonctionne Cart Calculator ?</string>
@@ -147,21 +80,4 @@
     <string name="summary_preference_faq_8">Oui ! Cart Calculator est fièrement un logiciel gratuit distribué sous la licence publique générale GNU version 3.</string>
     <string name="question_9">Comment puis-je contribuer à Cart Calculator ?</string>
     <string name="summary_preference_faq_9">La meilleure façon de contribuer à Cart Calculator est de passer par son référentiel <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. De là, vous pouvez le forker et travailler sur vos contributions, puis les renvoyer via une demande d\'extraction. Vous pouvez également utiliser l\'outil de suivi des problèmes pour signaler des bogues, proposer de nouvelles fonctionnalités ou améliorations, ou obtenir des idées sur la façon dont vous pourriez aider.</string>
-    <string name="feedback">Commentaires</string>
-
-    <string name="updates">Mises à jour</string>
-
-    <string name="share">Partager</string>
-
-    <string name="support_us">Nous soutenir</string>
-    <string name="paid_support">Soutien payant</string>
-    <string name="summary_donations">Peu importe le montant de votre don, vous nous aiderez à maintenir notre application en marche et à améliorer nos fonctionnalités. Nous apprécions votre générosité et votre gentillesse !</string>
-    <string name="non_paid_support">Soutien non rémunéré</string>
-    <string name="web_ad">Publicité Web</string>
-
-    <string name="snack_app_updated">L\'application a été mise à jour avec succès</string>
-    <string name="snack_update_failed">Le processus de mise à jour a rencontré un problème</string>
-    <string name="try_again">Réessayer</string>
-    <string name="summary_share_message">Découvrez cette application incroyable que j\'utilise ! Elle possède des fonctionnalités vraiment intéressantes qui pourraient vous intéresser. Vous pouvez la télécharger sur le Play Store à l\'adresse suivante : %1$s</string>
-    <string name="learn_more">En savoir plus</string>
 </resources>

@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Efektywnie zarządzaj i obliczaj pozycje w koszyku za pomocą Kalkulatora Koszyka. 🛒</string>
-    <string name="notification_update_title">Dostępna nowa aktualizacja!</string>
-    <string name="summary_notification_update">Dostępna jest nowa wersja aplikacji. Kliknij, aby zaktualizować!</string>
-    <string name="notification_last_time_used_title">Minęło trochę czasu!</string>
     <string name="summary_notification_last_time_used">Zarządzajmy efektywnie pozycjami w Twoim koszyku!</string>
 
-    <string name="welcome">Witaj</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Przeczytaj i zaakceptuj nasze Warunki korzystania z usługi i Politykę prywatności, aby kontynuować.</string>
-    <string name="agree">Zgadzam się</string>
-
-    <string name="navigation_drawer_open">Otwórz szufladę nawigacji</string>
-
+    <string name="import_cart_instructions">"Aby zaimportować udostępniony koszyk, wklej wygenerowany link w polu powyżej.\nUdostępniony koszyk pojawi się automatycznie na Twojej liście po zaimportowaniu.\n\nJak udostępnić koszyk:\n1. Otwórz swój koszyk.\n2. Stuknij przycisk \'Udostępnij\'.\n3. Skopiuj wygenerowany link i wyślij go komuś.\n\nJak zaimportować udostępniony koszyk:\n1. Skopiuj otrzymany link udostępniony.\n2. Wklej go w polu wprowadzania powyżej.\n3. Stuknij \'Importuj\' i sprawdź listę koszyków pod kątem nowego wpisu."</string>
     <string name="no_carts_available">Brak dostępnych koszyków</string>
     <string name="add_new_cart">Dodaj nowy koszyk</string>
     <string name="cart_name">Nazwa koszyka</string>
@@ -24,14 +16,7 @@
     <string name="delete_cart_message">Czy na pewno chcesz usunąć ten koszyk?</string>
     <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich pozycji z „%s” i nie można tego cofnąć.</string>
     <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
-    <string name="close">Zamknąć?</string>
-    <string name="summary_close">Czy na pewno chcesz wyjść?</string>
     <string name="file_not_found">Nie znaleziono pliku.</string>
-    <string name="activity_not_found">Nie znaleziono aktywności.</string>
-    <string name="security_error">Wystąpił błąd zabezpieczeń. Spróbuj ponownie później.</string>
-    <string name="io_error">Wystąpił błąd wejścia/wyjścia. Sprawdź połączenie sieciowe lub pamięć i spróbuj ponownie.</string>
-    <string name="illegal_argument_error">Podano nieprawidłowe dane wejściowe lub argument. Sprawdź informacje i spróbuj ponownie.</string>
-    <string name="unknown_error">Wystąpił nieznany błąd.</string>
 
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
     <string name="in_cart">W koszyku</string>
@@ -48,18 +33,6 @@
     <string name="delete_cart_item_message">Czy na pewno chcesz usunąć ten przedmiot?</string>
     <string name="delete_cart_item_warning">Za chwilę usuniesz „%s” ze swojego koszyka.</string>
 
-    <string name="settings">Ustawienia</string>
-
-    <string name="display">Wyświetlacz</string>
-    <string name="summary_preference_settings_display">Spersonalizuj wygląd i styl swojej aplikacji</string>
-
-    <string name="dark_theme">Ciemny motyw</string>
-    <string name="light_mode">Tryb jasny</string>
-    <string name="dark_mode">Tryb ciemny</string>
-
-    <string name="dialog_language_subtitle">Wybierz preferowany język</string>
-    <string name="dialog_info_language">Spersonalizuj swoje doświadczenie za pomocą preferowanego języka. Wszelkie wprowadzone zmiany językowe zaczną obowiązywać od razu, zapewniając płynne działanie w wybranym języku</string>
-
     <string name="cart_settings">Ustawienia koszyka</string>
     <string name="summary_preference_settings_cart">Zarządzaj zachowaniem koszyka</string>
 
@@ -70,29 +43,12 @@
     <string name="open_carts_after_creation">Otwieraj koszyki po utworzeniu</string>
     <string name="summary_preference_settings_open_carts_after_creation">Automatycznie otwieraj koszyk natychmiast po jego utworzeniu.</string>
 
-    <string name="notifications">Powiadomienia</string>
-    <string name="summary_preference_settings_notifications">Zarządzaj powiadomieniami aplikacji</string>
-
-    <string name="app_usage_notifications">Powiadomienia o użytkowaniu aplikacji</string>
-    <string name="update_notifications">Aktualizuj powiadomienia</string>
-
-    <string name="advanced">Zaawansowane</string>
-    <string name="summary_preference_settings_advanced">Poznaj bardziej zaawansowane ustawienia</string>
-
-    <string name="security_and_privacy">Bezpieczeństwo i prywatność</string>
-    <string name="summary_preference_settings_privacy_and_security">Zarządzaj ustawieniami prywatności</string>
-    <string name="privacy_policy">Polityka prywatności</string>
-    <string name="terms_of_service">Warunki korzystania z usługi</string>
-
-    <string name="permissions">Uprawnienia</string>
-    <string name="normal">Normalne</string>
     <string name="ad_id">Identyfikator reklamy [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Zezwala aplikacji na pobieranie i używanie identyfikatora reklamowego powiązanego z urządzeniem użytkownika, dostarczanie spersonalizowanych reklam, mierzenie skuteczności reklam i wyświetlanie reklam na urządzeniach z systemem Android 13 lub nowszym.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Umożliwia aplikacji nawiązanie połączenia internetowego w celu wysyłania raportów o błędach lub sprawdzania dostępności aktualizacji.</string>
     <string name="post_notifications">Publikuj powiadomienia [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Umożliwia aplikacji wyświetlanie powiadomień na urządzeniach z systemem Android 13 lub nowszym.</string>
-    <string name="runtime">Środowisko wykonawcze</string>
     <string name="access_network_state">Uzyskaj dostęp do stanu sieci [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Umożliwia aplikacji sprawdzanie łączności sieciowej i pobieranie informacji o Wi-Fi, w tym o stanie włączenia i nazwach podłączonych urządzeń Wi-Fi.</string>
     <string name="access_notification_policy">Uzyskaj dostęp do zasad powiadomień [ACCESS_NOTIFICATION_POLICY]</string>
@@ -104,31 +60,8 @@
     <string name="foreground_service">Usługa działająca na pierwszym planie [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Umożliwia aplikacji tworzenie i używanie usług działających na pierwszym planie, nadając im priorytet nad innymi procesami działającymi w tle oraz poprawiając wydajność i niezawodność.</string>
 
-    <string name="ads">Reklamy</string>
-    <string name="display_ads">Wyświetlaj reklamy</string>
-    <string name="personalized_ads">Spersonalizowane reklamy</string>
-    <string name="summary_ads_personalized_ads">Wybierz, w jaki sposób personalizujemy reklamy dla Ciebie na podstawie Twoich zainteresowań</string>
-    <string name="summary_ads">Zobacz reklamy, które są dla Ciebie odpowiednie. Zarządzaj informacjami wykorzystywanymi do wyświetlania spersonalizowanych reklam na podstawie Twojej aktywności w aplikacji. Zawsze możesz wyłączyć personalizację tutaj.\n</string>
-
-    <string name="usage_and_diagnostics">Użytkowanie i diagnostyka</string>
-
-    <string name="about">Informacje</string>
     <string name="summary_preference_settings_about">Dowiedz się więcej o Kalkulatorze Koszyka</string>
 
-    <string name="app_build">Kompilacja aplikacji: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Debugowanie</string>
-    <string name="release">Wydanie</string>
-    <string name="manufacturer">Producent:</string>
-    <string name="device_model">Model urządzenia:</string>
-    <string name="android_version">Wersja Androida:</string>
-    <string name="api_level">Poziom API:</string>
-
-    <string name="help_and_feedback">Pomoc i opinie</string>
-    <string name="help">Pomoc</string>
-    <string name="view_in_google_play_store">Wyświetl w Sklepie Google Play</string>
-    <string name="version_info">Informacje o wersji</string>
-    <string name="version">Wersja %1$s</string>
-    <string name="beta_program">Program beta</string>
     <string name="question_1">Co to jest Kalkulator Koszyka?</string>
     <string name="summary_preference_faq_1">Kalkulator Koszyka to prosty, ogólny i darmowy menedżer koszyka zakupów i kalkulator sumy należności, który zastępuje zwykły kalkulator urządzenia, gdy jesteś w sklepie spożywczym lub na targu.</string>
     <string name="question_2">Jak działa Kalkulator Koszyka?</string>
@@ -147,21 +80,4 @@
     <string name="summary_preference_faq_8">Tak! Kalkulator Koszyka to z dumą darmowe oprogramowanie rozpowszechniane na licencji GNU General Public License w wersji 3.</string>
     <string name="question_9">Jak mogę przyczynić się do rozwoju Kalkulatora Koszyka?</string>
     <string name="summary_preference_faq_9">Najlepszym sposobem na wniesienie wkładu w rozwój Kalkulatora Koszyka jest jego repozytorium <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Stamtąd możesz go rozwidlić i pracować nad swoim wkładem, a następnie odesłać go za pośrednictwem żądania ściągnięcia. Możesz również skorzystać z narzędzia do śledzenia problemów, aby zgłaszać błędy, proponować nowe funkcje lub ulepszenia lub uzyskać pomysły, w jaki sposób możesz pomóc.</string>
-    <string name="feedback">Opinia</string>
-
-    <string name="updates">Aktualizacje</string>
-
-    <string name="share">Udostępnij</string>
-
-    <string name="support_us">Wesprzyj nas</string>
-    <string name="paid_support">Płatne wsparcie</string>
-    <string name="summary_donations">Bez względu na to, ile wpłacisz, pomożesz nam w utrzymaniu działania naszej aplikacji i ulepszaniu jej funkcji. Doceniamy Twoją hojność i życzliwość!</string>
-    <string name="non_paid_support">Bezpłatne wsparcie</string>
-    <string name="web_ad">Reklama internetowa</string>
-
-    <string name="snack_app_updated">Aplikacja została pomyślnie zaktualizowana</string>
-    <string name="snack_update_failed">Wystąpił problem podczas procesu aktualizacji</string>
-    <string name="try_again">Spróbuj ponownie</string>
-    <string name="summary_share_message">Sprawdź tę niesamowitą aplikację, z której korzystam! Ma kilka naprawdę fajnych funkcji, które mogą Cię zainteresować. Możesz ją pobrać ze Sklepu Play pod adresem: %1$s</string>
-    <string name="learn_more">Dowiedz się więcej</string>
 </resources>

@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Money
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
@@ -28,7 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.datastore.DataStore
 import kotlinx.coroutines.flow.firstOrNull
@@ -96,9 +95,7 @@ fun SelectCurrencyAlertDialogContent(
             }
         }
         Spacer(modifier = Modifier.height(height = 24.dp))
-        Icon(imageVector = Icons.Outlined.Info , contentDescription = null)
-        MediumVerticalSpacer()
-        Text(text = stringResource(id = R.string.dialog_info_currency))
+        InfoMessageSection(message = stringResource(id = R.string.dialog_info_currency))
     }
 
     LaunchedEffect(key1 = selectedCurrency.value) {

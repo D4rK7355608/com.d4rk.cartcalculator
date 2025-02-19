@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Hatékonyan kezelheti és számíthatja ki kosara tételeit a Kosár Kalkulátorral. 🛒</string>
-    <string name="notification_update_title">Új frissítés érhető el!</string>
-    <string name="summary_notification_update">Az alkalmazás új verziója elérhető. Kattintson a frissítéshez!</string>
-    <string name="notification_last_time_used_title">Rég volt már!</string>
     <string name="summary_notification_last_time_used">Kezeljük hatékonyan a kosara tételeit!</string>
 
-    <string name="welcome">Üdvözöljük</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Olvassa el és fogadja el a Szolgáltatási feltételeket és az Adatvédelmi irányelveket a folytatáshoz.</string>
-    <string name="agree">Elfogadom</string>
-
-    <string name="navigation_drawer_open">Navigációs menü megnyitása</string>
-
+    <string name="import_cart_instructions">"Megosztott kosár importálásához illessze be a generált hivatkozást a fenti mezőbe.\nA megosztott kosár importálás után automatikusan megjelenik a listában.\n\nKosár megosztása:\n1. Nyissa meg a kosarát.\n2. Koppintson a \'Megosztás\' gombra.\n3. Másolja ki a generált hivatkozást, és küldje el valakinek.\n\nMegosztott kosár importálása:\n1. Másolja ki a kapott megosztott hivatkozást.\n2. Illessze be a fenti beviteli mezőbe.\n3. Koppintson az \'Importálás\' gombra, és ellenőrizze a kosárlistában az új bejegyzést."</string>
     <string name="no_carts_available">Nincs elérhető kosár</string>
     <string name="add_new_cart">Új kosár hozzáadása</string>
     <string name="cart_name">Kosár neve</string>
@@ -24,14 +16,7 @@
     <string name="delete_cart_message">Biztosan törölni szeretné ezt a kosarat?</string>
     <string name="delete_cart_warning">A kosár törlése véglegesen eltávolítja az összes tételt a(z) \"%s\" kosárból, és nem vonható vissza.</string>
     <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>
-    <string name="close">Bezárás?</string>
-    <string name="summary_close">Biztosan ki akar lépni?</string>
     <string name="file_not_found">A fájl nem található.</string>
-    <string name="activity_not_found">Tevékenység nem található.</string>
-    <string name="security_error">Biztonsági hiba történt. Kérjük, próbálja újra később.</string>
-    <string name="io_error">Bemeneti/kimeneti hiba történt. Kérjük, ellenőrizze a hálózati kapcsolatot vagy a tárhelyet, és próbálja újra.</string>
-    <string name="illegal_argument_error">Érvénytelen bemenet vagy argumentum. Kérjük, ellenőrizze az adatokat, és próbálja újra.</string>
-    <string name="unknown_error">Ismeretlen hiba történt.</string>
 
     <string name="your_shopping_cart_is_empty">Az Ön bevásárlókosara üres</string>
     <string name="in_cart">A kosárban</string>
@@ -48,18 +33,6 @@
     <string name="delete_cart_item_message">Biztosan törölni szeretné ezt a tételt?</string>
     <string name="delete_cart_item_warning">A(z) \"%s\" tételt hamarosan törli a kosarából.</string>
 
-    <string name="settings">Beállítások</string>
-
-    <string name="display">Megjelenítés</string>
-    <string name="summary_preference_settings_display">Személyre szabhatja az alkalmazás megjelenését és hangulatát</string>
-
-    <string name="dark_theme">Sötét téma</string>
-    <string name="light_mode">Világos mód</string>
-    <string name="dark_mode">Sötét mód</string>
-
-    <string name="dialog_language_subtitle">Válassza ki a kívánt nyelvet</string>
-    <string name="dialog_info_language">Tegye egyedivé a felhasználói élményt a kívánt nyelven. A nyelvi módosítások azonnal életbe lépnek, így zökkenőmentes élményt nyújtanak a választott nyelven</string>
-
     <string name="cart_settings">Kosár beállításai</string>
     <string name="summary_preference_settings_cart">A kosár viselkedésének kezelése</string>
 
@@ -70,29 +43,12 @@
     <string name="open_carts_after_creation">Kosarak megnyitása a létrehozás után</string>
     <string name="summary_preference_settings_open_carts_after_creation">A kosár automatikus megnyitása közvetlenül a létrehozása után.</string>
 
-    <string name="notifications">Értesítések</string>
-    <string name="summary_preference_settings_notifications">Alkalmazás értesítések kezelése</string>
-
-    <string name="app_usage_notifications">Alkalmazás használati értesítések</string>
-    <string name="update_notifications">Frissítési értesítések</string>
-
-    <string name="advanced">Speciális</string>
-    <string name="summary_preference_settings_advanced">További speciális beállítások felfedezése</string>
-
-    <string name="security_and_privacy">Biztonság és adatvédelem</string>
-    <string name="summary_preference_settings_privacy_and_security">Adatvédelmi beállítások kezelése</string>
-    <string name="privacy_policy">Adatvédelmi irányelvek</string>
-    <string name="terms_of_service">Szolgáltatási feltételek</string>
-
-    <string name="permissions">Engedélyek</string>
-    <string name="normal">Normál</string>
     <string name="ad_id">Hirdetésazonosító [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Lehetővé teszi az alkalmazás számára a felhasználó eszközéhez társított hirdetési azonosító lekérését és felhasználását, személyre szabott hirdetések biztosítását, a hirdetések hatékonyságának mérését, valamint hirdetések megjelenítését Android 13 vagy újabb rendszereken.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Lehetővé teszi az alkalmazás számára, hogy internetkapcsolatot létesítsen hibajelentések küldéséhez vagy frissítések kereséséhez.</string>
     <string name="post_notifications">Értesítések közzététele [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Lehetővé teszi az alkalmazás számára, hogy értesítéseket jelenítsen meg Android 13 vagy újabb rendszereken.</string>
-    <string name="runtime">Futásidejű</string>
     <string name="access_network_state">Hálózati állapot elérése [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Lehetővé teszi az alkalmazás számára a hálózati kapcsolat ellenőrzését és a Wi-Fi-vel kapcsolatos információk lekérését, beleértve az engedélyezett állapotot és a csatlakoztatott Wi-Fi eszközök nevét.</string>
     <string name="access_notification_policy">Értesítési házirend elérése [ACCESS_NOTIFICATION_POLICY]</string>
@@ -104,31 +60,8 @@
     <string name="foreground_service">Előtérszolgáltatás [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Lehetővé teszi az alkalmazás számára az előtérben futó szolgáltatások létrehozását és használatát, prioritást biztosítva számukra a többi háttérfolyamattal szemben, valamint javítva a teljesítményt és a megbízhatóságot.</string>
 
-    <string name="ads">Hirdetések</string>
-    <string name="display_ads">Hirdetések megjelenítése</string>
-    <string name="personalized_ads">Személyre szabott hirdetések</string>
-    <string name="summary_ads_personalized_ads">Válassza ki, hogyan szabjuk személyre a hirdetéseket az Ön érdeklődési köre alapján</string>
-    <string name="summary_ads">Tekintse meg az Ön számára releváns hirdetéseket. Kezelje az alkalmazásbeli tevékenysége alapján a személyre szabott hirdetések megjelenítéséhez használt információkat. A személyre szabást itt bármikor kikapcsolhatja.\n</string>
-
-    <string name="usage_and_diagnostics">Használat és diagnosztika</string>
-
-    <string name="about">Névjegy</string>
     <string name="summary_preference_settings_about">Tudjon meg többet a Kosár Kalkulátorról</string>
 
-    <string name="app_build">Alkalmazás build: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Hibakeresés</string>
-    <string name="release">Kiadás</string>
-    <string name="manufacturer">Gyártó:</string>
-    <string name="device_model">Eszközmodell:</string>
-    <string name="android_version">Android verzió:</string>
-    <string name="api_level">API szint:</string>
-
-    <string name="help_and_feedback">Súgó és visszajelzés</string>
-    <string name="help">Súgó</string>
-    <string name="view_in_google_play_store">Megtekintés a Google Play Áruházban</string>
-    <string name="version_info">Verzióinformáció</string>
-    <string name="version">Verzió: %1$s</string>
-    <string name="beta_program">Béta program</string>
     <string name="question_1">Mi az a Kosár Kalkulátor?</string>
     <string name="summary_preference_faq_1">A Kosár Kalkulátor egy egyszerű, általános és ingyenes bevásárlókosár-kezelő és végösszeg-kalkulátor, amely helyettesíti a hagyományos eszköz kalkulátorát, amikor Ön a boltban vagy a piacon van.</string>
     <string name="question_2">Hogyan működik a Kosár Kalkulátor?</string>
@@ -147,21 +80,4 @@
     <string name="summary_preference_faq_8">Igen! A Kosár Kalkulátor büszkén ingyenes szoftver, amelyet a GNU General Public License 3-as verziója alatt terjesztenek.</string>
     <string name="question_9">Hogyan járulhatok hozzá a Kosár Kalkulátorhoz?</string>
     <string name="summary_preference_faq_9">A Kosár Kalkulátorhoz a <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-tárhelyén keresztül járulhat hozzá a legjobban. Innen elágaztathatja (fork), dolgozhat a hozzájárulásain, majd beküldheti őket egy pull-kérés formájában. A hibakövetőt is használhatja hibák jelentésére, új funkciók vagy fejlesztések javaslatára, vagy ötleteket szerezhet, hogyan segíthet.</string>
-    <string name="feedback">Visszajelzés</string>
-
-    <string name="updates">Frissítések</string>
-
-    <string name="share">Megosztás</string>
-
-    <string name="support_us">Támogasson minket</string>
-    <string name="paid_support">Fizetett támogatás</string>
-    <string name="summary_donations">Nem számít, mennyit adományoz, segíteni fog nekünk az alkalmazásunk működtetésében és a funkcióink fejlesztésében. Nagyra értékeljük nagylelkűségét és kedvességét!</string>
-    <string name="non_paid_support">Ingyenes támogatás</string>
-    <string name="web_ad">Webes hirdetés</string>
-
-    <string name="snack_app_updated">Az alkalmazás sikeresen frissítve</string>
-    <string name="snack_update_failed">Hiba történt a frissítési folyamat során</string>
-    <string name="try_again">Próbálja újra</string>
-    <string name="summary_share_message">Nézze meg ezt a csodálatos alkalmazást, amit használok! Van néhány igazán klassz funkciója, amit érdekesnek találhat. Letöltheti a Play Áruházból a következő címen: %1$s</string>
-    <string name="learn_more">Tudjon meg többet</string>
 </resources>

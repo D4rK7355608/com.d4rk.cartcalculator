@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 81
+        versionCode = 83
         versionName = "1.2.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -96,7 +96,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.55") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.63") {
         isTransitive = true
     }
 

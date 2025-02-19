@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Hantera och beräkna dina varukorgsobjekt effektivt med Varukorgsberäknaren. 🛒</string>
-    <string name="notification_update_title">En ny uppdatering tillgänglig!</string>
-    <string name="summary_notification_update">En ny version av appen är tillgänglig. Klicka för att uppdatera!</string>
-    <string name="notification_last_time_used_title">Det var ett tag sedan!</string>
     <string name="summary_notification_last_time_used">Låt oss hantera dina varukorgsobjekt effektivt!</string>
 
-    <string name="welcome">Välkommen</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Läs och godkänn våra användarvillkor och sekretesspolicy för att fortsätta.</string>
-    <string name="agree">Godkänn</string>
-
-    <string name="navigation_drawer_open">Öppna navigeringslådan</string>
-
+    <string name="import_cart_instructions">"För att importera en delad kundvagn, klistra in den genererade länken i fältet ovan.\nDen delade kundvagnen visas automatiskt i din lista när den har importerats.\n\nHur man delar en kundvagn:\n1. Öppna din kundvagn.\n2. Tryck på knappen \'Dela\'.\n3. Kopiera den genererade länken och skicka den till någon.\n\nHur man importerar en delad kundvagn:\n1. Kopiera den delade länken du fick.\n2. Klistra in den i inmatningsfältet ovan.\n3. Tryck på \'Importera\' och kontrollera din kundvagnslista för den nya posten."</string>
     <string name="no_carts_available">Inga varukorgar tillgängliga</string>
     <string name="add_new_cart">Lägg till ny varukorg</string>
     <string name="cart_name">Varukorgsnamn</string>
@@ -24,14 +16,7 @@
     <string name="delete_cart_message">Är du säker på att du vill ta bort den här varukorgen?</string>
     <string name="delete_cart_warning">Om du tar bort den här varukorgen tas alla objekt från \"%s\" bort permanent och kan inte ångras.</string>
     <string name="snackbar_cart_deleted_success">Varukorgen har tagits bort!</string>
-    <string name="close">Stäng?</string>
-    <string name="summary_close">Är du säker på att du vill avsluta?</string>
     <string name="file_not_found">Filen hittades inte.</string>
-    <string name="activity_not_found">Aktiviteten hittades inte.</string>
-    <string name="security_error">Ett säkerhetsfel inträffade. Försök igen senare.</string>
-    <string name="io_error">Ett in-/utdatafel inträffade. Kontrollera din nätverksanslutning eller lagring och försök igen.</string>
-    <string name="illegal_argument_error">Ogiltig indata eller argument angivet. Kontrollera informationen och försök igen.</string>
-    <string name="unknown_error">Ett okänt fel inträffade.</string>
 
     <string name="your_shopping_cart_is_empty">Din varukorg är tom</string>
     <string name="in_cart">I varukorgen</string>
@@ -48,18 +33,6 @@
     <string name="delete_cart_item_message">Är du säker på att du vill ta bort det här objektet?</string>
     <string name="delete_cart_item_warning">Du håller på att ta bort \"%s\" från din varukorg.</string>
 
-    <string name="settings">Inställningar</string>
-
-    <string name="display">Visa</string>
-    <string name="summary_preference_settings_display">Anpassa appens utseende och känsla</string>
-
-    <string name="dark_theme">Mörkt tema</string>
-    <string name="light_mode">Ljust läge</string>
-    <string name="dark_mode">Mörkt läge</string>
-
-    <string name="dialog_language_subtitle">Välj önskat språk</string>
-    <string name="dialog_info_language">Anpassa din upplevelse med önskat språk. Alla språkändringar du gör träder i kraft direkt, vilket säkerställer en sömlös upplevelse på ditt valda språk</string>
-
     <string name="cart_settings">Varukorgsinställningar</string>
     <string name="summary_preference_settings_cart">Hantera hur din varukorg beter sig</string>
 
@@ -70,29 +43,12 @@
     <string name="open_carts_after_creation">Öppna varukorgar efter skapande</string>
     <string name="summary_preference_settings_open_carts_after_creation">Öppna en varukorg automatiskt direkt efter att den skapats.</string>
 
-    <string name="notifications">Aviseringar</string>
-    <string name="summary_preference_settings_notifications">Hantera appaviseringar</string>
-
-    <string name="app_usage_notifications">Aviseringar om appanvändning</string>
-    <string name="update_notifications">Uppdateringsaviseringar</string>
-
-    <string name="advanced">Avancerat</string>
-    <string name="summary_preference_settings_advanced">Utforska mer avancerade inställningar</string>
-
-    <string name="security_and_privacy">Säkerhet och sekretess</string>
-    <string name="summary_preference_settings_privacy_and_security">Hantera dina sekretessinställningar</string>
-    <string name="privacy_policy">Sekretesspolicy</string>
-    <string name="terms_of_service">Användarvillkor</string>
-
-    <string name="permissions">Behörigheter</string>
-    <string name="normal">Normal</string>
     <string name="ad_id">Annons-id [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Tillåter appen att hämta och använda annonseringsidentifieraren som är kopplad till användarens enhet, tillhandahålla anpassade annonser, mäta annonseffektivitet och visa annonser på Android 13 eller senare enheter.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Tillåter appen att upprätta en internetanslutning för att skicka felrapporter eller söka efter uppdateringar.</string>
     <string name="post_notifications">Publicera aviseringar [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Tillåter appen att visa aviseringar på enheter med Android 13 eller senare.</string>
-    <string name="runtime">Körtid</string>
     <string name="access_network_state">Åtkomst till nätverksstatus [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Tillåter appen att kontrollera nätverksanslutning och hämta information om Wi-Fi, inklusive aktiverad status och anslutna Wi-Fi-enhetsnamn.</string>
     <string name="access_notification_policy">Åtkomst till aviseringspolicy [ACCESS_NOTIFICATION_POLICY]</string>
@@ -104,31 +60,8 @@
     <string name="foreground_service">Förgrundstjänst [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Tillåter appen att skapa och använda tjänster som körs i förgrunden, prioritera dem framför andra bakgrundsprocesser och förbättra prestanda och tillförlitlighet.</string>
 
-    <string name="ads">Annonser</string>
-    <string name="display_ads">Visa annonser</string>
-    <string name="personalized_ads">Anpassade annonser</string>
-    <string name="summary_ads_personalized_ads">Välj hur vi anpassar annonser för dig baserat på dina intressen</string>
-    <string name="summary_ads">Se annonser som är relevanta för dig. Hantera informationen som används för att visa anpassade annonser baserat på din appaktivitet. Du kan alltid stänga av anpassning här.\n</string>
-
-    <string name="usage_and_diagnostics">Användning och diagnostik</string>
-
-    <string name="about">Om</string>
     <string name="summary_preference_settings_about">Läs mer om Varukorgsberäknaren</string>
 
-    <string name="app_build">Appbygge: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Felsök</string>
-    <string name="release">Släpp</string>
-    <string name="manufacturer">Tillverkare:</string>
-    <string name="device_model">Enhetsmodell:</string>
-    <string name="android_version">Androidversion:</string>
-    <string name="api_level">API-nivå:</string>
-
-    <string name="help_and_feedback">Hjälp och feedback</string>
-    <string name="help">Hjälp</string>
-    <string name="view_in_google_play_store">Visa i Google Play Butik</string>
-    <string name="version_info">Versionsinformation</string>
-    <string name="version">Version %1$s</string>
-    <string name="beta_program">Betaprogram</string>
     <string name="question_1">Vad är Varukorgsberäknaren?</string>
     <string name="summary_preference_faq_1">Varukorgsberäknaren är en enkel, generisk och gratis varukorgshanterare och totalsummeberäknare som ersätter den vanliga enhetens kalkylator när du är i mataffären eller på marknaden.</string>
     <string name="question_2">Hur fungerar Varukorgsberäknaren?</string>
@@ -147,21 +80,4 @@
     <string name="summary_preference_faq_8">Ja! Varukorgsberäknaren är stolt gratis programvara som distribueras under GNU General Public License version 3.</string>
     <string name="question_9">Hur kan jag bidra till Varukorgsberäknaren?</string>
     <string name="summary_preference_faq_9">Det bästa sättet att bidra till Varukorgsberäknaren är genom dess <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-lagringsplats. Därifrån kan du gaffla den och arbeta med dina bidrag och senare skicka tillbaka dem via pull-begäran. Du kan också använda problemspåraren för att rapportera fel, föreslå nya funktioner eller förbättringar, eller få idéer om hur du kan hjälpa till.</string>
-    <string name="feedback">Feedback</string>
-
-    <string name="updates">Uppdateringar</string>
-
-    <string name="share">Dela</string>
-
-    <string name="support_us">Stöd oss</string>
-    <string name="paid_support">Betald support</string>
-    <string name="summary_donations">Oavsett hur mycket du donerar kommer du att hjälpa oss att hålla igång vår app och förbättra våra funktioner. Vi uppskattar din generositet och vänlighet!</string>
-    <string name="non_paid_support">Icke-betald support</string>
-    <string name="web_ad">Webbannons</string>
-
-    <string name="snack_app_updated">Appen har uppdaterats</string>
-    <string name="snack_update_failed">Uppdateringsprocessen stötte på ett problem</string>
-    <string name="try_again">Försök igen</string>
-    <string name="summary_share_message">Kolla in den här fantastiska appen som jag använder! Den har några riktigt coola funktioner som du kanske tycker är intressanta. Du kan ladda ner den från Play Store på: %1$s</string>
-    <string name="learn_more">Läs mer</string>
 </resources>

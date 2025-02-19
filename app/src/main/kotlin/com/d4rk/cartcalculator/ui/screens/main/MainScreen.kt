@@ -3,6 +3,9 @@ package com.d4rk.cartcalculator.ui.screens.main
 import android.content.Context
 import android.view.SoundEffectConstants
 import android.view.View
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -102,16 +105,19 @@ fun MainScaffoldContent(mainScreenState : MainScreenState , coroutineScope : Cor
             .imePadding()
             .nestedScroll(scrollBehavior.nestedScrollConnection) , floatingActionButton = {
         Column(horizontalAlignment = Alignment.End) {
-            SmallFloatingActionButton(onClick = {
-                viewModel.toggleImportDialog(true) // FIXME: Unresolved reference: toggleImportDialog
-            } , modifier = Modifier
-                    .padding(bottom = 12.dp)
-                    .bounceClick()
-
+            AnimatedVisibility(
+                visible = isFabVisible && isFabExtended,
+                enter = scaleIn(),
+                exit = scaleOut(),
             ) {
-                Icon(
-                    imageVector = Icons.Outlined.ImportExport , contentDescription = "Import Cart"
-                )
+                // TODO: Use the lib version (Add the padding from the constants)
+                SmallFloatingActionButton(onClick = {
+                    viewModel.toggleImportDialog(isOpen = true)
+                } , modifier = Modifier.padding(bottom = 12.dp).bounceClick()) {
+                    Icon(
+                        imageVector = Icons.Outlined.ImportExport , contentDescription = "Import Cart"
+                    )
+                }
             }
 
             AnimatedExtendedFloatingActionButton(visible = isFabVisible , onClick = {
@@ -124,7 +130,7 @@ fun MainScaffoldContent(mainScreenState : MainScreenState , coroutineScope : Cor
     } , snackbarHost = {
         SnackbarHost(hostState = snackbarHostState)
     } , topBar = {
-        TopAppBarMain(view = mainScreenState.view , context = mainScreenState.context , navigationIcon = if (mainScreenState.drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
+        TopAppBarMain(context = mainScreenState.context , navigationIcon = if (mainScreenState.drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
             coroutineScope.launch {
                 mainScreenState.drawerState.apply {
                     if (isClosed) open() else close()
@@ -134,7 +140,7 @@ fun MainScaffoldContent(mainScreenState : MainScreenState , coroutineScope : Cor
     }) { paddingValues ->
         Box(modifier = Modifier
                 .fillMaxSize()
-                .padding(bottom = if (adsEnabled) 124.dp else 0.dp)) {
+                .padding(bottom = if (adsEnabled) 144.dp else 0.dp)) {
             HomeScreen(context = mainScreenState.context , view = mainScreenState.view , viewModel = viewModel , snackbarHostState = snackbarHostState , paddingValues = paddingValues)
         }
     }
@@ -168,7 +174,7 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , isFabVisible :
     } , snackbarHost = {
         SnackbarHost(hostState = snackbarHostState)
     } , topBar = {
-        TopAppBarMain(view = mainScreenState.view , context = context , navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
+        TopAppBarMain(context = context , navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
             isRailExpanded = ! isRailExpanded
         } , scrollBehavior = scrollBehavior)
     }) { paddingValues ->

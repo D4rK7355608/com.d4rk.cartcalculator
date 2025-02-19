@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -20,7 +21,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -116,15 +116,9 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
             } , expanded = isFabExtended.value , modifier = Modifier.bounceClick())
         } ,
     ) { paddingValues ->
-        LazyColumn(
-            contentPadding = paddingValues , modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 16.dp) , state = rememberLazyListState()
-        ) {
+        LazyColumn(modifier = Modifier.fillMaxSize() , contentPadding = PaddingValues(top = paddingValues.calculateTopPadding() , bottom = paddingValues.calculateBottomPadding() , start = 16.dp , end = 16.dp)) {
             item {
-                Text(
-                    text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.popular_help_resources)
-                )
+                Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.popular_help_resources))
 
                 MediumVerticalSpacer()
 
@@ -137,7 +131,7 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                     IntentsHelper.sendEmailToDeveloper(context = activity , applicationNameRes = R.string.app_name)
                 })
-                Spacer(modifier = Modifier.height(height = 72.dp))
+                Spacer(modifier = Modifier.height(height = 96.dp))
             }
         }
     }

@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Gerencie e calcule com eficiência os itens do seu carrinho com o Cart Calculator. 🛒</string>
-    <string name="notification_update_title">Uma nova atualização disponível!</string>
-    <string name="summary_notification_update">Uma nova versão do aplicativo está disponível. Clique para atualizar!</string>
-    <string name="notification_last_time_used_title">Já faz um tempo!</string>
     <string name="summary_notification_last_time_used">Vamos gerenciar os itens do seu carrinho com eficiência!</string>
 
-    <string name="welcome">Bem-vindo</string>
-    <string name="summary_browse_terms_of_service_and_privacy_policy">Leia e concorde com nossos Termos de Serviço e Política de Privacidade para continuar.</string>
-    <string name="agree">Concordo</string>
-
-    <string name="navigation_drawer_open">Abrir gaveta de navegação</string>
-
+    <string name="import_cart_instructions">"Para importar um carrinho compartilhado, cole o link gerado no campo acima.\nO carrinho compartilhado aparecerá automaticamente na sua lista após a importação.\n\nComo compartilhar um carrinho:\n1. Abra seu carrinho.\n2. Toque no botão \'Compartilhar\'.\n3. Copie o link gerado e envie para alguém.\n\nComo importar um carrinho compartilhado:\n1. Copie o link compartilhado que você recebeu.\n2. Cole-o no campo de entrada acima.\n3. Toque em \'Importar\' e verifique sua lista de carrinhos para a nova entrada."</string>
     <string name="no_carts_available">Nenhum carrinho disponível</string>
     <string name="add_new_cart">Adicionar novo carrinho</string>
     <string name="cart_name">Nome do carrinho</string>
@@ -24,14 +16,7 @@
     <string name="delete_cart_message">Tem certeza de que deseja excluir este carrinho?</string>
     <string name="delete_cart_warning">Excluir este carrinho removerá permanentemente todos os itens de \"%s\" e não poderá ser desfeito.</string>
     <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
-    <string name="close">Fechar?</string>
-    <string name="summary_close">Tem certeza de que deseja sair?</string>
     <string name="file_not_found">Arquivo não encontrado.</string>
-    <string name="activity_not_found">Atividade não encontrada.</string>
-    <string name="security_error">Ocorreu um erro de segurança. Tente novamente mais tarde.</string>
-    <string name="io_error">Ocorreu um erro de entrada/saída. Verifique sua conexão de rede ou armazenamento e tente novamente.</string>
-    <string name="illegal_argument_error">Entrada ou argumento inválido fornecido. Verifique as informações e tente novamente.</string>
-    <string name="unknown_error">Ocorreu um erro desconhecido.</string>
 
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
     <string name="in_cart">No carrinho</string>
@@ -48,18 +33,6 @@
     <string name="delete_cart_item_message">Tem certeza de que deseja excluir este item?</string>
     <string name="delete_cart_item_warning">Você está prestes a excluir \"%s\" do seu carrinho.</string>
 
-    <string name="settings">Configurações</string>
-
-    <string name="display">Exibição</string>
-    <string name="summary_preference_settings_display">Personalize a aparência do seu aplicativo</string>
-
-    <string name="dark_theme">Tema escuro</string>
-    <string name="light_mode">Modo claro</string>
-    <string name="dark_mode">Modo escuro</string>
-
-    <string name="dialog_language_subtitle">Selecione seu idioma preferido</string>
-    <string name="dialog_info_language">Personalize sua experiência com seu idioma preferido. Quaisquer alterações de idioma feitas entrarão em vigor imediatamente, garantindo uma experiência perfeita no idioma escolhido</string>
-
     <string name="cart_settings">Configurações do carrinho</string>
     <string name="summary_preference_settings_cart">Gerenciar como seu carrinho se comporta</string>
 
@@ -70,29 +43,12 @@
     <string name="open_carts_after_creation">Abrir carrinhos após a criação</string>
     <string name="summary_preference_settings_open_carts_after_creation">Abrir automaticamente um carrinho imediatamente após sua criação.</string>
 
-    <string name="notifications">Notificações</string>
-    <string name="summary_preference_settings_notifications">Gerenciar notificações do aplicativo</string>
-
-    <string name="app_usage_notifications">Notificações de uso do aplicativo</string>
-    <string name="update_notifications">Atualizar notificações</string>
-
-    <string name="advanced">Avançado</string>
-    <string name="summary_preference_settings_advanced">Explorar configurações mais avançadas</string>
-
-    <string name="security_and_privacy">Segurança e privacidade</string>
-    <string name="summary_preference_settings_privacy_and_security">Gerenciar suas configurações de privacidade</string>
-    <string name="privacy_policy">Política de Privacidade</string>
-    <string name="terms_of_service">Termos de Serviço</string>
-
-    <string name="permissions">Permissões</string>
-    <string name="normal">Normal</string>
     <string name="ad_id">ID de anúncio [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Permite que o aplicativo recupere e use o identificador de publicidade associado ao dispositivo do usuário, fornecendo anúncios personalizados, medindo a eficácia do anúncio e exibindo anúncios em dispositivos Android 13 ou posteriores.</string>
     <string name="internet">Internet [INTERNET]</string>
     <string name="summary_preference_permissions_internet">Permite que o aplicativo estabeleça uma conexão com a Internet para enviar relatórios de erros ou verificar atualizações.</string>
     <string name="post_notifications">Publicar notificações [POST_NOTIFICATIONS]</string>
     <string name="summary_preference_permissions_post_notifications">Permite que o aplicativo exiba notificações em dispositivos com Android 13 ou posterior.</string>
-    <string name="runtime">Tempo de execução</string>
     <string name="access_network_state">Acessar estado da rede [ACCESS_NETWORK_STATE]</string>
     <string name="summary_preference_permissions_access_network_state">Permite que o aplicativo verifique a conectividade da rede e recupere informações sobre Wi-Fi, incluindo status ativado e nomes de dispositivos Wi-Fi conectados.</string>
     <string name="access_notification_policy">Acessar política de notificação [ACCESS_NOTIFICATION_POLICY]</string>
@@ -104,31 +60,8 @@
     <string name="foreground_service">Serviço em primeiro plano [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Permite que o aplicativo crie e use serviços executados em primeiro plano, priorizando-os em relação a outros processos em segundo plano e melhorando o desempenho e a confiabilidade.</string>
 
-    <string name="ads">Anúncios</string>
-    <string name="display_ads">Exibir anúncios</string>
-    <string name="personalized_ads">Anúncios personalizados</string>
-    <string name="summary_ads_personalized_ads">Escolher como personalizamos os anúncios para você com base em seus interesses</string>
-    <string name="summary_ads">Veja anúncios que são relevantes para você. Gerenciar as informações usadas para exibir anúncios personalizados com base na atividade do seu aplicativo. Você sempre pode desativar a personalização aqui.\n</string>
-
-    <string name="usage_and_diagnostics">Uso e diagnóstico</string>
-
-    <string name="about">Sobre</string>
     <string name="summary_preference_settings_about">Saiba mais sobre o Cart Calculator</string>
 
-    <string name="app_build">Compilação do aplicativo: %6$s\n%1$s\n%2$s\n%3$s\n%4$s\n%5$s</string>
-    <string name="debug">Depuração</string>
-    <string name="release">Lançamento</string>
-    <string name="manufacturer">Fabricante:</string>
-    <string name="device_model">Modelo do dispositivo:</string>
-    <string name="android_version">Versão do Android:</string>
-    <string name="api_level">Nível da API:</string>
-
-    <string name="help_and_feedback">Ajuda e feedback</string>
-    <string name="help">Ajuda</string>
-    <string name="view_in_google_play_store">Ver na Google Play Store</string>
-    <string name="version_info">Informações da versão</string>
-    <string name="version">Versão %1$s</string>
-    <string name="beta_program">Programa beta</string>
     <string name="question_1">O que é o Cart Calculator?</string>
     <string name="summary_preference_faq_1">O Cart Calculator é um gerenciador de carrinho de compras simples, genérico e gratuito e uma calculadora de total devido que substitui a calculadora comum do dispositivo para quando você está no supermercado ou na feira.</string>
     <string name="question_2">Como funciona o Cart Calculator?</string>
@@ -147,21 +80,4 @@
     <string name="summary_preference_faq_8">Sim! O Cart Calculator é orgulhosamente um software livre distribuído sob a Licença Pública Geral GNU versão 3.</string>
     <string name="question_9">Como posso contribuir para o Cart Calculator?</string>
     <string name="summary_preference_faq_9">A melhor maneira de contribuir para o Cart Calculator é através do repositório <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> dele. De lá, você pode bifurcá-lo e trabalhar em suas contribuições e, posteriormente, enviá-las de volta por meio de um pull request. Você também pode usar o rastreador de problemas para relatar bugs, propor novos recursos ou melhorias ou obter ideias de como você pode ajudar.</string>
-    <string name="feedback">Comentários</string>
-
-    <string name="updates">Atualizações</string>
-
-    <string name="share">Compartilhar</string>
-
-    <string name="support_us">Apoie-nos</string>
-    <string name="paid_support">Apoio Pago</string>
-    <string name="summary_donations">Não importa o quanto você doe, você nos ajudará a manter nosso aplicativo funcionando e melhorar nossos recursos. Agradecemos sua generosidade e gentileza!</string>
-    <string name="non_paid_support">Apoio não remunerado</string>
-    <string name="web_ad">Anúncio da Web</string>
-
-    <string name="snack_app_updated">O aplicativo foi atualizado com sucesso</string>
-    <string name="snack_update_failed">O processo de atualização encontrou um problema</string>
-    <string name="try_again">Tente novamente</string>
-    <string name="summary_share_message">Confira este aplicativo incrível que estou usando! Ele tem alguns recursos muito legais que você pode achar interessantes. Você pode baixá-lo na Play Store em: %1$s</string>
-    <string name="learn_more">Saiba mais</string>
 </resources>

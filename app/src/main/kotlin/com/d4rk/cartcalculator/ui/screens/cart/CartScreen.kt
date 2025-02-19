@@ -55,6 +55,7 @@ import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -70,6 +71,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
+import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedButtonDirection
 import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
@@ -98,7 +100,8 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
     val visibilityStates by viewModel.visibilityStates.collectAsState()
 
     val context : Context = LocalContext.current
-    val isGooglePayInstalled = remember { AppUtils.isGooglePayInstalled(context = context) }
+    val isGooglePayInstalled : Boolean = remember { AppUtils.isGooglePayInstalled(context = context) }
+    val cartButtonsVisible : Boolean by remember { derivedStateOf { uiState.cartItems.isNotEmpty() } }
 
     if (uiErrorModel.showErrorDialog) {
         ErrorAlertDialog(errorMessage = uiErrorModel.errorMessage) {
@@ -107,36 +110,45 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        Scaffold(modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) ,
-                 topBar = {
-                     LargeTopAppBar(title = {
-                         Text(
-                             text = uiState.cart?.name
-                                 ?: stringResource(id = R.string.shopping_cart)
-                         )
-                     } , navigationIcon = {
-                         IconButton(onClick = {
-                             activity.finish()
-                         }) {
-                             Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack , contentDescription = null)
-                         }
-                     } , actions = {
-                         IconButton(onClick = {
-                             viewModel.toggleOpenDialog()
-                         }) {
-                             Icon(imageVector = Icons.Outlined.AddShoppingCart , contentDescription = null)
-                         }
-                         if (isGooglePayInstalled) {
-                             IconButton(onClick = { AppUtils.openGooglePayOrWallet(context = context) }) {
-                                 Icon(imageVector = Icons.Outlined.CreditCard, contentDescription = "Open Google Pay")
-                             }
-                         }
+        Scaffold(modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
+            LargeTopAppBar(title = {
+                Text(
+                    text = uiState.cart?.name ?: stringResource(id = R.string.shopping_cart)
+                )
+            } , navigationIcon = {
+                AnimatedButtonDirection(
+                    icon = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.go_back),
+                    onClick = { activity.finish() },
+                )
+            } , actions = {
 
-                         IconButton(onClick = { viewModel.shareCart(context, cartId) }) {
-                             Icon(imageVector = Icons.Outlined.Share, contentDescription = "Share Cart")
-                         }
-                     } , scrollBehavior = scrollBehavior)
-                 }) { paddingValues ->
+                AnimatedButtonDirection(
+                    icon = Icons.Outlined.AddShoppingCart,
+                    contentDescription = "Add Item",
+                    onClick = { viewModel.toggleOpenDialog() },
+                    fromRight = true
+                )
+
+                AnimatedButtonDirection(
+                    visible = isGooglePayInstalled && cartButtonsVisible,
+                    icon = Icons.Outlined.CreditCard,
+                    contentDescription = "Open Google Pay",
+                    onClick = { AppUtils.openGooglePayOrWallet(context) },
+                    durationMillis = 400,
+                    fromRight = true
+                )
+
+                AnimatedButtonDirection(
+                    visible = cartButtonsVisible,
+                    icon = Icons.Outlined.Share,
+                    durationMillis = 500,
+                    contentDescription = "Share Cart",
+                    onClick = { viewModel.shareCart(context, cartId) },
+                    fromRight = true
+                )
+            } , scrollBehavior = scrollBehavior)
+        }) { paddingValues ->
             Box(
                 modifier = Modifier
                         .padding(paddingValues = paddingValues)
@@ -147,8 +159,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                 }
                 else if (uiState.cartItems.isEmpty()) {
                     Text(
-                        text = stringResource(id = R.string.your_shopping_cart_is_empty) ,
-                        modifier = Modifier.align(alignment = Alignment.Center)
+                        text = stringResource(id = R.string.your_shopping_cart_is_empty) , modifier = Modifier.align(alignment = Alignment.Center)
                     )
                     AdBanner(
                         modifier = Modifier.align(alignment = Alignment.BottomCenter)
@@ -167,64 +178,44 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                                 if (checkedItems.isNotEmpty()) {
                                     item {
                                         Text(
-                                            text = stringResource(id = R.string.in_cart) ,
-                                            style = MaterialTheme.typography.titleMedium ,
-                                            modifier = Modifier
+                                            text = stringResource(id = R.string.in_cart) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                                                     .padding(start = 16.dp , top = 8.dp)
                                                     .animateItem()
                                         )
                                     }
-                                    itemsIndexed(
-                                        items = checkedItems ,
-                                        key = { _ , item -> item.itemId }) { index , cartItem ->
+                                    itemsIndexed(items = checkedItems , key = { _ , item -> item.itemId }) { index , cartItem ->
                                         val isVisible = visibilityStates.getOrElse(index) { false }
-                                        CartItemComposable(viewModel = viewModel ,
-                                                           cartItem = cartItem ,
-                                                           onMinusClick = {
-                                                               viewModel.decreaseQuantity(cartItem)
-                                                           } ,
-                                                           onPlusClick = {
-                                                               viewModel.increaseQuantity(cartItem)
-                                                           } ,
-                                                           uiState = uiState ,
-                                                           modifier = Modifier
-                                                                   .animateItem()
-                                                                   .animateVisibility(
-                                                                       visible = isVisible ,
-                                                                       index = index
-                                                                   ))
+                                        CartItemComposable(viewModel = viewModel , cartItem = cartItem , onMinusClick = {
+                                            viewModel.decreaseQuantity(cartItem)
+                                        } , onPlusClick = {
+                                            viewModel.increaseQuantity(cartItem)
+                                        } , uiState = uiState , modifier = Modifier
+                                                .animateItem()
+                                                .animateVisibility(
+                                                    visible = isVisible , index = index
+                                                ))
                                     }
                                 }
 
                                 if (uncheckedItems.isNotEmpty()) {
                                     item {
                                         Text(
-                                            text = stringResource(id = R.string.items_to_pick_up) ,
-                                            style = MaterialTheme.typography.titleMedium ,
-                                            modifier = Modifier
+                                            text = stringResource(id = R.string.items_to_pick_up) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                                                     .padding(start = 16.dp , top = 8.dp)
                                                     .animateItem()
                                         )
                                     }
-                                    itemsIndexed(
-                                        items = uncheckedItems ,
-                                        key = { _ , item -> item.itemId }) { index , cartItem ->
+                                    itemsIndexed(items = uncheckedItems , key = { _ , item -> item.itemId }) { index , cartItem ->
                                         val isVisible = visibilityStates.getOrElse(index) { false }
-                                        CartItemComposable(viewModel = viewModel ,
-                                                           cartItem = cartItem ,
-                                                           onMinusClick = {
-                                                               viewModel.decreaseQuantity(cartItem)
-                                                           } ,
-                                                           onPlusClick = {
-                                                               viewModel.increaseQuantity(cartItem)
-                                                           } ,
-                                                           uiState = uiState ,
-                                                           modifier = Modifier
-                                                                   .animateItem()
-                                                                   .animateVisibility(
-                                                                       visible = isVisible ,
-                                                                       index = index
-                                                                   ))
+                                        CartItemComposable(viewModel = viewModel , cartItem = cartItem , onMinusClick = {
+                                            viewModel.decreaseQuantity(cartItem)
+                                        } , onPlusClick = {
+                                            viewModel.increaseQuantity(cartItem)
+                                        } , uiState = uiState , modifier = Modifier
+                                                .animateItem()
+                                                .animateVisibility(
+                                                    visible = isVisible , index = index
+                                                ))
                                     }
                                 }
                             }
@@ -239,47 +230,35 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                                         .height(144.dp)
                                         .clip(
                                             RoundedCornerShape(
-                                                topStart = 16.dp ,
-                                                topEnd = 16.dp ,
-                                                bottomEnd = 0.dp ,
-                                                bottomStart = 0.dp
+                                                topStart = 16.dp , topEnd = 16.dp , bottomEnd = 0.dp , bottomStart = 0.dp
                                             )
                                         ) ,
                                 shape = RoundedCornerShape(
-                                    topStart = 16.dp ,
-                                    topEnd = 16.dp ,
-                                    bottomEnd = 0.dp ,
-                                    bottomStart = 0.dp
+                                    topStart = 16.dp , topEnd = 16.dp , bottomEnd = 0.dp , bottomStart = 0.dp
                                 ) ,
                                 colors = CardDefaults.cardColors(
                                     containerColor = MaterialTheme.colorScheme.primary ,
                                 ) ,
                             ) {
                                 Box(
-                                    modifier = Modifier.fillMaxSize() ,
-                                    contentAlignment = Alignment.Center
+                                    modifier = Modifier.fillMaxSize() , contentAlignment = Alignment.Center
                                 ) {
                                     Column(
                                         horizontalAlignment = Alignment.CenterHorizontally
                                     ) {
                                         Text(
-                                            text = stringResource(id = R.string.total) ,
-                                            style = MaterialTheme.typography.titleMedium
+                                            text = stringResource(id = R.string.total) , style = MaterialTheme.typography.titleMedium
                                         )
                                         Spacer(modifier = Modifier.height(8.dp))
                                         Row {
                                             Text(
                                                 text = String.format(
-                                                    Locale.US ,
-                                                    "%.1f" ,
-                                                    uiState.totalPrice.toFloat()
-                                                ).removeSuffix(".0") ,
-                                                style = MaterialTheme.typography.bodyLarge
+                                                    Locale.US , "%.1f" , uiState.totalPrice.toFloat()
+                                                ).removeSuffix(".0") , style = MaterialTheme.typography.bodyLarge
                                             )
                                             Spacer(modifier = Modifier.width(4.dp))
                                             Text(
-                                                text = uiState.selectedCurrency ,
-                                                style = MaterialTheme.typography.bodyLarge
+                                                text = uiState.selectedCurrency , style = MaterialTheme.typography.bodyLarge
                                             )
                                         }
                                     }
@@ -290,13 +269,11 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                 }
 
                 if (uiState.openDialog) {
-                    AddNewCartItemAlertDialog(cartId = cartId ,
-                                              onDismiss = { viewModel.toggleOpenDialog() } ,
-                                              onCartCreated = { cartItem ->
-                                                  cartItem.cartId = cartId
-                                                  viewModel.addCartItem(cartId , cartItem)
-                                                  viewModel.toggleOpenDialog()
-                                              })
+                    AddNewCartItemAlertDialog(cartId = cartId , onDismiss = { viewModel.toggleOpenDialog() } , onCartCreated = { cartItem ->
+                        cartItem.cartId = cartId
+                        viewModel.addCartItem(cartId , cartItem)
+                        viewModel.toggleOpenDialog()
+                    })
 
                 }
 
@@ -315,15 +292,10 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                 if (uiState.openEditDialog) {
                     val currentItem = uiState.currentCartItemForEdit
                     if (currentItem != null) {
-                        AddNewCartItemAlertDialog(
-                            cartId = cartId,
-                            existingCartItem = currentItem,
-                            onDismiss = { viewModel.toggleEditDialog(cartItem = null) },
-                            onCartCreated = { updatedCartItem ->
-                                viewModel.editCartItem(cartItem = updatedCartItem)
-                                viewModel.toggleEditDialog(cartItem = null)
-                            }
-                        )
+                        AddNewCartItemAlertDialog(cartId = cartId , existingCartItem = currentItem , onDismiss = { viewModel.toggleEditDialog(cartItem = null) } , onCartCreated = { updatedCartItem ->
+                            viewModel.editCartItem(cartItem = updatedCartItem)
+                            viewModel.toggleEditDialog(cartItem = null)
+                        })
                     }
                 }
             }
@@ -358,14 +330,14 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CartItemComposable(
-    viewModel: CartViewModel ,
-    cartItem: ShoppingCartItemsTable ,
-    onMinusClick: (ShoppingCartItemsTable) -> Unit ,
-    onPlusClick: (ShoppingCartItemsTable) -> Unit ,
-    uiState: UiCartScreen ,
-    modifier: Modifier ,
+    viewModel : CartViewModel ,
+    cartItem : ShoppingCartItemsTable ,
+    onMinusClick : (ShoppingCartItemsTable) -> Unit ,
+    onPlusClick : (ShoppingCartItemsTable) -> Unit ,
+    uiState : UiCartScreen ,
+    modifier : Modifier ,
 ) {
-    val view: View = LocalView.current
+    val view : View = LocalView.current
 
     var checkedState by remember { mutableStateOf(cartItem.isChecked) }
 
@@ -378,120 +350,110 @@ fun CartItemComposable(
                 viewModel.toggleEditDialog(cartItem = cartItem)
                 false
             }
+
             SwipeToDismissBoxValue.EndToStart -> {
                 viewModel.toggleDeleteDialog(cartItem = cartItem)
                 false
             }
+
             else -> true
         }
     })
 
-    LaunchedEffect(key1 = dismissState.targetValue, key2 = dismissState.currentValue) {
+    LaunchedEffect(key1 = dismissState.targetValue , key2 = dismissState.currentValue) {
         when {
             dismissState.currentValue == dismissState.targetValue -> {
                 dismissState.reset()
             }
+
             dismissState.targetValue != SwipeToDismissBoxValue.Settled -> {
                 if (dismissState.targetValue == SwipeToDismissBoxValue.StartToEnd) {
                     viewModel.toggleEditDialog(cartItem = cartItem)
-                } else if (dismissState.targetValue == SwipeToDismissBoxValue.EndToStart) {
+                }
+                else if (dismissState.targetValue == SwipeToDismissBoxValue.EndToStart) {
                     viewModel.toggleDeleteDialog(cartItem = cartItem)
                 }
             }
         }
     }
 
-    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(dismissState),
-                      state = dismissState,
-                      backgroundContent = {},
-                      content = {
-                          Box(
-                              modifier = modifier
-                                      .fillMaxWidth()
-                                      .padding(all = 24.dp)
-                          ) {
-                              Row(
-                                  modifier = Modifier.fillMaxSize(),
-                                  horizontalArrangement = Arrangement.SpaceBetween,
-                              ) {
+    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(dismissState) , state = dismissState , backgroundContent = {} , content = {
+        Box(
+            modifier = modifier
+                    .fillMaxWidth()
+                    .padding(all = 24.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxSize() ,
+                horizontalArrangement = Arrangement.SpaceBetween ,
+            ) {
 
-                                  Row(modifier = Modifier.weight(1f)) {
-                                      Checkbox(
-                                          modifier = Modifier
-                                              .bounceClick()
-                                              .padding(end = 16.dp)
-                                              .wrapContentSize(),
-                                               checked = checkedState,
-                                               onCheckedChange = { isChecked ->
-                                                   view.playSoundEffect(SoundEffectConstants.CLICK)
-                                                   checkedState = isChecked
-                                                   viewModel.onItemCheckedChange(
-                                                       cartItem, isChecked
-                                                   )
-                                               })
-                                      Column(modifier = Modifier.weight(1f)) {
-                                          Text(modifier = Modifier.basicMarquee(),
-                                              text = cartItem.name,
-                                              style = MaterialTheme.typography.bodyLarge
-                                          )
-                                          Row {
-                                              Text(
-                                                  text = String.format(Locale.US, "%.1f", cartItem.price.toFloat()).removeSuffix(suffix = ".0") ,
-                                              )
-                                              Spacer(modifier = Modifier.width(4.dp))
-                                              Text(
-                                                  text = uiState.selectedCurrency,
-                                                  style = MaterialTheme.typography.bodyLarge
-                                              )
-                                          }
-                                      }
-                                  }
+                Row(modifier = Modifier.weight(1f)) {
+                    Checkbox(modifier = Modifier
+                            .bounceClick()
+                            .padding(end = 16.dp)
+                            .wrapContentSize() , checked = checkedState , onCheckedChange = { isChecked ->
+                        view.playSoundEffect(SoundEffectConstants.CLICK)
+                        checkedState = isChecked
+                        viewModel.onItemCheckedChange(
+                            cartItem , isChecked
+                        )
+                    })
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            modifier = Modifier.basicMarquee() , text = cartItem.name , style = MaterialTheme.typography.bodyLarge
+                        )
+                        Row {
+                            Text(
+                                text = String.format(Locale.US , "%.1f" , cartItem.price.toFloat()).removeSuffix(suffix = ".0") ,
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = uiState.selectedCurrency , style = MaterialTheme.typography.bodyLarge
+                            )
+                        }
+                    }
+                }
 
-                                  Row(
-                                      modifier = Modifier.wrapContentSize(),
-                                      verticalAlignment = Alignment.CenterVertically
-                                  ) {
-                                      Box(modifier = Modifier
-                                              .bounceClick()
-                                              .size(40.dp)
-                                              .clip(CircleShape)
-                                              .combinedClickable(
-                                                  interactionSource = interactionSource,
-                                                  indication = remember { ripple() },
-                                                  onClick = {
-                                                      view.playSoundEffect(SoundEffectConstants.CLICK)
-                                                      onMinusClick(cartItem)
-                                                  },
-                                                  onLongClick = {
-                                                      viewModel.toggleDeleteDialog(cartItem = cartItem)
-                                                  },
-                                              )) {
-                                          Icon(
-                                              imageVector = Icons.Outlined.RemoveCircleOutline,
-                                              contentDescription = stringResource(id = R.string.decrease_quantity),
-                                              modifier = Modifier.align(Alignment.Center)
-                                          )
-                                      }
+                Row(
+                    modifier = Modifier.wrapContentSize() , verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(modifier = Modifier
+                            .bounceClick()
+                            .size(40.dp)
+                            .clip(CircleShape)
+                            .combinedClickable(
+                                interactionSource = interactionSource ,
+                                indication = remember { ripple() } ,
+                                onClick = {
+                                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                                    onMinusClick(cartItem)
+                                } ,
+                                onLongClick = {
+                                    viewModel.toggleDeleteDialog(cartItem = cartItem)
+                                } ,
+                            )) {
+                        Icon(
+                            imageVector = Icons.Outlined.RemoveCircleOutline , contentDescription = stringResource(id = R.string.decrease_quantity) , modifier = Modifier.align(Alignment.Center)
+                        )
+                    }
 
-                                      Text(
-                                          text = quantityState.toString(),
-                                          style = MaterialTheme.typography.bodyMedium,
-                                          modifier = Modifier
-                                                  .padding(horizontal = 16.dp)
-                                                  .animateContentSize()
-                                      )
+                    Text(
+                        text = quantityState.toString() , style = MaterialTheme.typography.bodyMedium , modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                                .animateContentSize()
+                    )
 
-                                      IconButton(modifier = Modifier.bounceClick(), onClick = {
-                                          view.playSoundEffect(SoundEffectConstants.CLICK)
-                                          onPlusClick(cartItem)
-                                      }) {
-                                          Icon(
-                                              imageVector = Icons.Outlined.AddCircleOutline,
-                                              contentDescription = stringResource(id = R.string.increase_quantity)
-                                          )
-                                      }
-                                  }
-                              }
-                          }
-                      })
+                    IconButton(modifier = Modifier.bounceClick() , onClick = {
+                        view.playSoundEffect(SoundEffectConstants.CLICK)
+                        onPlusClick(cartItem)
+                    }) {
+                        Icon(
+                            imageVector = Icons.Outlined.AddCircleOutline , contentDescription = stringResource(id = R.string.increase_quantity)
+                        )
+                    }
+                }
+            }
+        }
+    })
 }

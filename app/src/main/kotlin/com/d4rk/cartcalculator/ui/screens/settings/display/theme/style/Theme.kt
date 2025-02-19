@@ -22,7 +22,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.core.view.WindowCompat
-import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.core.AppCoreManager
 import com.d4rk.cartcalculator.data.datastore.DataStore
 
@@ -160,8 +159,8 @@ fun AppTheme(
 
     val isSystemDarkTheme: Boolean = isSystemInDarkTheme()
     val isDarkTheme: Boolean = when (themeMode) {
-        stringResource(id = R.string.dark_mode) -> true
-        stringResource(id = R.string.light_mode) -> false
+        stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.dark_mode) -> true
+        stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.light_mode) -> false
         else -> isSystemDarkTheme
     }
 
