@@ -3,6 +3,9 @@
     <string name="app_short_description">Alışveriş sepeti ürünlerinizi Sepet Hesaplayıcı ile verimli bir şekilde yönetin ve hesaplayın. 🛒</string>
     <string name="summary_notification_last_time_used">Sepetinizdeki ürünleri verimli bir şekilde yönetelim!</string>
 
+    <string name="import_cart">Sepeti İçe Aktar</string>
+    <string name="button_import">İçe Aktar</string>
+    <string name="paste_cart_link">Sepet Bağlantısını Yapıştır</string>
     <string name="import_cart_instructions">"Paylaşılan bir sepeti içe aktarmak için, oluşturulan bağlantıyı yukarıdaki alana yapıştırın.\nPaylaşılan sepet, içe aktarıldıktan sonra otomatik olarak listenizde görünecektir.\n\nSepet nasıl paylaşılır:\n1. Sepetinizi açın.\n2. \'Paylaş\' düğmesine dokunun.\n3. Oluşturulan bağlantıyı kopyalayın ve birine gönderin.\n\nPaylaşılan sepet nasıl içe aktarılır:\n1. Aldığınız paylaşılan bağlantıyı kopyalayın.\n2. Yukarıdaki giriş alanına yapıştırın.\n3. \'İçe Aktar\'a dokunun ve yeni giriş için sepet listenizi kontrol edin."</string>
     <string name="no_carts_available">Kullanılabilir sepet yok</string>
     <string name="add_new_cart">Yeni sepet ekle</string>

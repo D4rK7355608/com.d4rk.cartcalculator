@@ -3,6 +3,9 @@
     <string name="app_short_description">Gérez et calculez efficacement les articles de votre panier avec Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gérons efficacement les articles de votre panier !</string>
 
+    <string name="import_cart">Importer le panier</string>
+    <string name="button_import">Importer</string>
+    <string name="paste_cart_link">Coller le lien du panier</string>
     <string name="import_cart_instructions">"Pour importer un panier partagé, collez le lien généré dans le champ ci-dessus.\nLe panier partagé apparaîtra automatiquement dans votre liste une fois importé.\n\nComment partager un panier:\n1. Ouvrez votre panier.\n2. Appuyez sur le bouton \'Partager\'.\n3. Copiez le lien généré et envoyez-le à quelqu\'un.\n\nComment importer un panier partagé:\n1. Copiez le lien partagé que vous avez reçu.\n2. Collez-le dans le champ de saisie ci-dessus.\n3. Appuyez sur \'Importer\' et vérifiez votre liste de paniers pour la nouvelle entrée."</string>
     <string name="no_carts_available">Aucun panier disponible</string>
     <string name="add_new_cart">Ajouter un nouveau panier</string>

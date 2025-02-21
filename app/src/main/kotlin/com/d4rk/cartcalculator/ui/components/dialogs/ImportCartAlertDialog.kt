@@ -1,5 +1,7 @@
 package com.d4rk.cartcalculator.ui.components.dialogs
 
+import android.view.SoundEffectConstants
+import android.view.View
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,16 +24,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.R
 
 @Composable
 fun ImportCartAlertDialog(onDismiss : () -> Unit , onImport : (String) -> Unit) {
     var cartLink : String by remember { mutableStateOf(value = "") }
 
-    AlertDialog(onDismissRequest = onDismiss , title = { Text(text = "Import Cart") } , text = {
+    AlertDialog(onDismissRequest = onDismiss , title = { Text(text = stringResource(id = R.string.import_cart)) } , text = {
         ImportCartAlertDialogContent(cartLink = cartLink , onCartLinkChange = { cartLink = it })
     } , confirmButton = {
         TextButton(onClick = {
@@ -40,7 +44,7 @@ fun ImportCartAlertDialog(onDismiss : () -> Unit , onImport : (String) -> Unit) 
                 onDismiss()
             }
         }) {
-            Text(text = "Import")
+            Text(text = stringResource(id = R.string.button_import))
         }
     } , dismissButton = {
         TextButton(onClick = onDismiss) {
@@ -51,12 +55,13 @@ fun ImportCartAlertDialog(onDismiss : () -> Unit , onImport : (String) -> Unit) 
 
 @Composable
 fun ImportCartAlertDialogContent(cartLink : String , onCartLinkChange : (String) -> Unit) {
+    val view : View = LocalView.current
     val clipboardManager : ClipboardManager = LocalClipboardManager.current
-
     Column {
-        OutlinedTextField(value = cartLink , onValueChange = onCartLinkChange , label = { Text("Paste Cart Link") } , modifier = Modifier.fillMaxWidth() , maxLines = 1 , trailingIcon = {
-            IconButton(onClick = {
+        OutlinedTextField(value = cartLink , onValueChange = onCartLinkChange , label = { Text(text = stringResource(id = R.string.paste_cart_link)) } , modifier = Modifier.fillMaxWidth() , maxLines = 1 , trailingIcon = {
+            IconButton(modifier = Modifier.bounceClick() , onClick = {
                 clipboardManager.getText()?.text?.let { text ->
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
                     onCartLinkChange(text)
                 }
             }) {

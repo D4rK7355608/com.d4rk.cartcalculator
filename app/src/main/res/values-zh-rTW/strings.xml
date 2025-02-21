@@ -3,6 +3,9 @@
     <string name="app_short_description">使用購物車計算機，高效管理和計算您的購物車商品。 🛒</string>
     <string name="summary_notification_last_time_used">讓我們高效地管理您的購物車商品！</string>
 
+    <string name="import_cart">匯入購物車</string>
+    <string name="button_import">匯入</string>
+    <string name="paste_cart_link">貼上購物車連結</string>
     <string name="import_cart_instructions">"若要匯入分享的購物車，請將產生的連結貼到上方的欄位中。\n匯入後，分享的購物車將自動顯示在您的清單中。\n\n如何分享購物車：\n1. 開啟您的購物車。\n2. 點一下「分享」按鈕。\n3. 複製產生的連結並傳送給他人。\n\n如何匯入分享的購物車：\n1. 複製您收到的分享連結。\n2. 將其貼到上方的輸入欄位中。\n3. 點一下「匯入」，然後檢查您的購物車清單中是否有新項目。"</string>
     <string name="no_carts_available">沒有可用的購物車</string>
     <string name="add_new_cart">新增購物車</string>

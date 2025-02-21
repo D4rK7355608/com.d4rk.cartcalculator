@@ -3,6 +3,9 @@
     <string name="app_short_description">Gestionează și calculează eficient articolele din coș cu Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Haide să gestionăm eficient articolele din coșul tău!</string>
 
+    <string name="import_cart">Importă coș</string>
+    <string name="button_import">Importă</string>
+    <string name="paste_cart_link">Inserați linkul coșului</string>
     <string name="import_cart_instructions">"Pentru a importa un coș partajat, inserați linkul generat în câmpul de mai sus.\nCoșul partajat va apărea automat în lista dvs. odată importat.\n\nCum să partajați un coș:\n1. Deschideți coșul.\n2. Atingeți butonul \'Partajare\'.\n3. Copiați linkul generat și trimiteți-l cuiva.\n\nCum să importați un coș partajat:\n1. Copiați linkul partajat pe care l-ați primit.\n2. Inserați-l în câmpul de introducere de mai sus.\n3. Atingeți \'Import\' și verificați lista de coșuri pentru noua intrare."</string>
     <string name="no_carts_available">Niciun coș disponibil</string>
     <string name="add_new_cart">Adaugă un coș nou</string>

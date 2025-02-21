@@ -68,6 +68,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.d4rk.android.libs.apptoolkit.data.model.ui.error.UiErrorModel
@@ -75,6 +76,7 @@ import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedButtonDire
 import com.d4rk.android.libs.apptoolkit.ui.components.dialogs.ErrorAlertDialog
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.data.model.ui.screens.UiCartScreen
@@ -117,35 +119,22 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                 )
             } , navigationIcon = {
                 AnimatedButtonDirection(
-                    icon = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.go_back),
-                    onClick = { activity.finish() },
+                    icon = Icons.AutoMirrored.Filled.ArrowBack ,
+                    contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.go_back) ,
+                    onClick = { activity.finish() } ,
                 )
             } , actions = {
 
                 AnimatedButtonDirection(
-                    icon = Icons.Outlined.AddShoppingCart,
-                    contentDescription = "Add Item",
-                    onClick = { viewModel.toggleOpenDialog() },
-                    fromRight = true
+                    icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = { viewModel.toggleOpenDialog() } , fromRight = true
                 )
 
                 AnimatedButtonDirection(
-                    visible = isGooglePayInstalled && cartButtonsVisible,
-                    icon = Icons.Outlined.CreditCard,
-                    contentDescription = "Open Google Pay",
-                    onClick = { AppUtils.openGooglePayOrWallet(context) },
-                    durationMillis = 400,
-                    fromRight = true
+                    visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = { AppUtils.openGooglePayOrWallet(context) } , durationMillis = 400 , fromRight = true
                 )
 
                 AnimatedButtonDirection(
-                    visible = cartButtonsVisible,
-                    icon = Icons.Outlined.Share,
-                    durationMillis = 500,
-                    contentDescription = "Share Cart",
-                    onClick = { viewModel.shareCart(context, cartId) },
-                    fromRight = true
+                    visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = { viewModel.shareCart(context , cartId) } , fromRight = true
                 )
             } , scrollBehavior = scrollBehavior)
         }) { paddingValues ->
@@ -227,7 +216,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                             Card(
                                 modifier = Modifier
                                         .fillMaxWidth()
-                                        .height(144.dp)
+                                        .height(height = 144.dp)
                                         .clip(
                                             RoundedCornerShape(
                                                 topStart = 16.dp , topEnd = 16.dp , bottomEnd = 0.dp , bottomStart = 0.dp
@@ -247,18 +236,18 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                                         horizontalAlignment = Alignment.CenterHorizontally
                                     ) {
                                         Text(
-                                            text = stringResource(id = R.string.total) , style = MaterialTheme.typography.titleMedium
+                                            text = stringResource(id = R.string.total) , style = MaterialTheme.typography.titleLarge
                                         )
-                                        Spacer(modifier = Modifier.height(8.dp))
+                                        Spacer(modifier = Modifier.height(height = 8.dp))
                                         Row {
                                             Text(
                                                 text = String.format(
                                                     Locale.US , "%.1f" , uiState.totalPrice.toFloat()
-                                                ).removeSuffix(".0") , style = MaterialTheme.typography.bodyLarge
+                                                ).removeSuffix(".0") , style = MaterialTheme.typography.headlineSmall , fontWeight = FontWeight.Bold
                                             )
-                                            Spacer(modifier = Modifier.width(4.dp))
+                                            SmallHorizontalSpacer()
                                             Text(
-                                                text = uiState.selectedCurrency , style = MaterialTheme.typography.bodyLarge
+                                                text = uiState.selectedCurrency , style = MaterialTheme.typography.headlineSmall
                                             )
                                         }
                                     }

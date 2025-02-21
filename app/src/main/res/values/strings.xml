@@ -3,6 +3,9 @@
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
 
+    <string name="import_cart">Import Cart</string>
+    <string name="button_import">Import</string>
+    <string name="paste_cart_link">Paste Cart Link</string>
     <string name="import_cart_instructions">To import a shared cart, paste the generated link in the field above.\nThe shared cart will automatically appear in your list once imported.\n\nHow to share a cart:\n1. Open your cart.\n2. Tap the \'Share\' button.\n3. Copy the generated link and send it to someone.\n\nHow to import a shared cart:\n1. Copy the shared link you received.\n2. Paste it into the input field above.\n3. Tap \'Import\' and check your cart list for the new entry.</string>
     <string name="no_carts_available">No carts available</string>
     <string name="add_new_cart">Add new cart</string>

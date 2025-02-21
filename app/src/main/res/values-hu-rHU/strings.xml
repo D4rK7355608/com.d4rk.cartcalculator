@@ -3,6 +3,9 @@
     <string name="app_short_description">Hatékonyan kezelheti és számíthatja ki kosara tételeit a Kosár Kalkulátorral. 🛒</string>
     <string name="summary_notification_last_time_used">Kezeljük hatékonyan a kosara tételeit!</string>
 
+    <string name="import_cart">Kosár importálása</string>
+    <string name="button_import">Importálás</string>
+    <string name="paste_cart_link">Kosár linkjének beillesztése</string>
     <string name="import_cart_instructions">"Megosztott kosár importálásához illessze be a generált hivatkozást a fenti mezőbe.\nA megosztott kosár importálás után automatikusan megjelenik a listában.\n\nKosár megosztása:\n1. Nyissa meg a kosarát.\n2. Koppintson a \'Megosztás\' gombra.\n3. Másolja ki a generált hivatkozást, és küldje el valakinek.\n\nMegosztott kosár importálása:\n1. Másolja ki a kapott megosztott hivatkozást.\n2. Illessze be a fenti beviteli mezőbe.\n3. Koppintson az \'Importálás\' gombra, és ellenőrizze a kosárlistában az új bejegyzést."</string>
     <string name="no_carts_available">Nincs elérhető kosár</string>
     <string name="add_new_cart">Új kosár hozzáadása</string>

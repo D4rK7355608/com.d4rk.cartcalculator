@@ -3,9 +3,6 @@ package com.d4rk.cartcalculator.ui.screens.main
 import android.content.Context
 import android.view.SoundEffectConstants
 import android.view.View
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.scaleIn
-import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -22,7 +19,6 @@ import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SmallFloatingActionButton
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -47,6 +43,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
+import com.d4rk.android.libs.apptoolkit.ui.components.buttons.SmallFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ScreenHelper
 import com.d4rk.cartcalculator.R
@@ -63,7 +60,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(viewModel : MainViewModel, homeViewModel : HomeViewModel) {
+fun MainScreen(viewModel : MainViewModel , homeViewModel : HomeViewModel) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val navController = rememberNavController()
     val context = LocalContext.current
@@ -105,20 +102,9 @@ fun MainScaffoldContent(mainScreenState : MainScreenState , coroutineScope : Cor
             .imePadding()
             .nestedScroll(scrollBehavior.nestedScrollConnection) , floatingActionButton = {
         Column(horizontalAlignment = Alignment.End) {
-            AnimatedVisibility(
-                visible = isFabVisible && isFabExtended,
-                enter = scaleIn(),
-                exit = scaleOut(),
-            ) {
-                // TODO: Use the lib version (Add the padding from the constants)
-                SmallFloatingActionButton(onClick = {
-                    viewModel.toggleImportDialog(isOpen = true)
-                } , modifier = Modifier.padding(bottom = 12.dp).bounceClick()) {
-                    Icon(
-                        imageVector = Icons.Outlined.ImportExport , contentDescription = "Import Cart"
-                    )
-                }
-            }
+            SmallFloatingActionButton(modifier = Modifier.padding(bottom = 12.dp) , isVisible = isFabVisible , isExtended = isFabExtended , icon = Icons.Outlined.ImportExport , onClick = {
+                viewModel.toggleImportDialog(isOpen = true)
+            })
 
             AnimatedExtendedFloatingActionButton(visible = isFabVisible , onClick = {
                 mainScreenState.view.playSoundEffect(SoundEffectConstants.CLICK)
@@ -138,9 +124,11 @@ fun MainScaffoldContent(mainScreenState : MainScreenState , coroutineScope : Cor
             }
         } , scrollBehavior = scrollBehavior)
     }) { paddingValues ->
-        Box(modifier = Modifier
-                .fillMaxSize()
-                .padding(bottom = if (adsEnabled) 144.dp else 0.dp)) {
+        Box(
+            modifier = Modifier
+                    .fillMaxSize()
+                    .padding(bottom = if (adsEnabled) 144.dp else 0.dp)
+        ) {
             HomeScreen(context = mainScreenState.context , view = mainScreenState.view , viewModel = viewModel , snackbarHostState = snackbarHostState , paddingValues = paddingValues)
         }
     }
@@ -157,20 +145,18 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , isFabVisible :
     Scaffold(contentWindowInsets = WindowInsets.safeContent , modifier = Modifier
             .fillMaxSize()
             .nestedScroll(scrollBehavior.nestedScrollConnection) , floatingActionButton = {
-        AnimatedExtendedFloatingActionButton(
-            visible = isFabVisible ,
-            onClick = {
+        Column(horizontalAlignment = Alignment.End) {
+            SmallFloatingActionButton(modifier = Modifier.padding(bottom = 12.dp) , isVisible = isFabVisible , isExtended = isFabExtended , icon = Icons.Outlined.ImportExport , onClick = {
+                homeViewModel.toggleImportDialog(isOpen = true)
+            })
+
+            AnimatedExtendedFloatingActionButton(visible = isFabVisible , onClick = {
                 mainScreenState.view.playSoundEffect(SoundEffectConstants.CLICK)
                 homeViewModel.openNewCartDialog()
-            } ,
-            text = { Text(text = stringResource(id = R.string.add_new_cart)) } ,
-            icon = {
-                Icon(
-                    Icons.Outlined.AddShoppingCart , contentDescription = null
-                )
-            } ,
-            modifier = Modifier , expanded = isFabExtended ,
-        )
+            } , text = { Text(text = stringResource(id = R.string.add_new_cart)) } , icon = {
+                Icon(Icons.Outlined.AddShoppingCart , contentDescription = null)
+            } , modifier = Modifier.bounceClick() , expanded = isFabExtended)
+        }
     } , snackbarHost = {
         SnackbarHost(hostState = snackbarHostState)
     } , topBar = {

@@ -3,6 +3,9 @@
     <string name="app_short_description">カート計算機でカートアイテムを効率的に管理および計算します。🛒</string>
     <string name="summary_notification_last_time_used">カートアイテムを効率的に管理しましょう！</string>
 
+    <string name="import_cart">カートをインポート</string>
+    <string name="button_import">インポート</string>
+    <string name="paste_cart_link">カートのリンクを貼り付け</string>
     <string name="import_cart_instructions">"共有カートをインポートするには、生成されたリンクを上のフィールドに貼り付けます。\nインポートすると、共有カートがリストに自動的に表示されます。\n\nカートを共有する方法:\n1. カートを開きます。\n2. [共有] ボタンをタップします。\n3. 生成されたリンクをコピーして、誰かに送信します。\n\n共有カートをインポートする方法:\n1. 受け取った共有リンクをコピーします。\n2. 上の入力フィールドに貼り付けます。\n3. [インポート] をタップして、カート リストに新しいエントリがないか確認します。"</string>
     <string name="no_carts_available">カートはありません</string>
     <string name="add_new_cart">新しいカートを追加</string>

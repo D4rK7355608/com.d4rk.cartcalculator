@@ -32,6 +32,7 @@ import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.SafetyCheck
 import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -51,6 +52,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.navigation.LargeTopAppBarWithScaffold
 import com.d4rk.android.libs.apptoolkit.ui.components.preferences.SettingsPreferenceItem
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.ui.screens.settings.about.AboutSettingsList
@@ -60,7 +62,6 @@ import com.d4rk.android.libs.apptoolkit.ui.screens.settings.privacy.PrivacySetti
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.helpers.ScreenHelper
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButton
 import com.d4rk.cartcalculator.ui.screens.help.HelpActivity
 import com.d4rk.cartcalculator.ui.screens.settings.cart.CartSettingsList
 import com.d4rk.cartcalculator.ui.screens.settings.general.GeneralSettingsActivity
@@ -70,11 +71,12 @@ import com.d4rk.cartcalculator.utils.providers.AppAdvancedSettingsProvider
 import com.d4rk.cartcalculator.utils.providers.AppDisplaySettingsProvider
 import com.d4rk.cartcalculator.utils.providers.AppPrivacySettingsProvider
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsComposable(activity : SettingsActivity) {
     val context : Context = LocalContext.current
 
-    TopAppBarScaffoldWithBackButton(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.settings) , onBackClicked = { activity.finish() }) { paddingValues ->
+    LargeTopAppBarWithScaffold(title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.settings) , onBackClicked = { activity.finish() }) { paddingValues ->
         val isTabletOrLandscape : Boolean = ScreenHelper.isLandscapeOrTablet(context = context)
         if (isTabletOrLandscape) {
             TabletSettingsScreen(paddingValues = paddingValues , context = context)

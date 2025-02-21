@@ -34,10 +34,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.navigation.TopAppBarScaffold
 import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.utils.helpers.PermissionsHelper
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffold
 import com.d4rk.cartcalculator.ui.screens.main.MainActivity
 
 @Composable

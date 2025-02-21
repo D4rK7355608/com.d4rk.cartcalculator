@@ -11,19 +11,19 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.outlined.QuestionAnswer
@@ -32,6 +32,7 @@ import androidx.compose.material.icons.outlined.Support
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -56,8 +57,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedButtonDirection
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.navigation.LargeTopAppBarWithScaffold
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
@@ -67,7 +70,7 @@ import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHelpQuestion
 import com.d4rk.cartcalculator.data.model.ui.screens.UiHelpScreen
-import com.d4rk.cartcalculator.ui.components.navigation.TopAppBarScaffoldWithBackButtonAndActions
+import com.d4rk.cartcalculator.ui.components.navigation.actions.HelpScreenMenuActions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -80,9 +83,7 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
 
     val uiState : UiHelpScreen by viewModel.uiState.collectAsState()
 
-    val htmlData : State<Pair<String? , String?>> = rememberHtmlData(
-        context = context , currentVersionName = BuildConfig.VERSION_NAME , packageName = BuildConfig.APPLICATION_ID
-    )
+    val htmlData : State<Pair<String? , String?>> = rememberHtmlData(context = context , currentVersionName = BuildConfig.VERSION_NAME , packageName = BuildConfig.APPLICATION_ID)
 
     val changelogHtmlString : String? = htmlData.value.first
     val eulaHtmlString : String? = htmlData.value.second
@@ -92,14 +93,20 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
         isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
     }
 
-    Scaffold(
-        contentWindowInsets = WindowInsets.safeContent ,
-        modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) ,
-        topBar = {
-            TopAppBarScaffoldWithBackButtonAndActions(
-                context = context , activity = activity , showDialog = showDialog , eulaHtmlString = eulaHtmlString , changelogHtmlString = changelogHtmlString , scrollBehavior = scrollBehavior , view = view
+    LargeTopAppBarWithScaffold(
+        title = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.help),
+        onBackClicked = { activity.finish() },
+        actions = {
+            HelpScreenMenuActions(
+                context = context,
+                activity = activity,
+                showDialog = showDialog,
+                eulaHtmlString = eulaHtmlString,
+                changelogHtmlString = changelogHtmlString,
+                view = view
             )
-        } ,
+        },
+        scrollBehavior = scrollBehavior,
         floatingActionButton = {
             AnimatedExtendedFloatingActionButton(visible = isFabVisible , onClick = {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
@@ -114,7 +121,8 @@ fun HelpScreen(activity : Activity , viewModel : HelpViewModel) {
                     Icons.Outlined.RateReview , contentDescription = null
                 )
             } , expanded = isFabExtended.value , modifier = Modifier.bounceClick())
-        } ,
+        }
+
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.fillMaxSize() , contentPadding = PaddingValues(top = paddingValues.calculateTopPadding() , bottom = paddingValues.calculateBottomPadding() , start = 16.dp , end = 16.dp)) {
             item {

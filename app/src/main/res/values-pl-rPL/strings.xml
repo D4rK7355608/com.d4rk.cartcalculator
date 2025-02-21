@@ -3,6 +3,9 @@
     <string name="app_short_description">Efektywnie zarządzaj i obliczaj pozycje w koszyku za pomocą Kalkulatora Koszyka. 🛒</string>
     <string name="summary_notification_last_time_used">Zarządzajmy efektywnie pozycjami w Twoim koszyku!</string>
 
+    <string name="import_cart">Importuj koszyk</string>
+    <string name="button_import">Importuj</string>
+    <string name="paste_cart_link">Wklej link do koszyka</string>
     <string name="import_cart_instructions">"Aby zaimportować udostępniony koszyk, wklej wygenerowany link w polu powyżej.\nUdostępniony koszyk pojawi się automatycznie na Twojej liście po zaimportowaniu.\n\nJak udostępnić koszyk:\n1. Otwórz swój koszyk.\n2. Stuknij przycisk \'Udostępnij\'.\n3. Skopiuj wygenerowany link i wyślij go komuś.\n\nJak zaimportować udostępniony koszyk:\n1. Skopiuj otrzymany link udostępniony.\n2. Wklej go w polu wprowadzania powyżej.\n3. Stuknij \'Importuj\' i sprawdź listę koszyków pod kątem nowego wpisu."</string>
     <string name="no_carts_available">Brak dostępnych koszyków</string>
     <string name="add_new_cart">Dodaj nowy koszyk</string>

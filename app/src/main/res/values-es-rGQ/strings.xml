@@ -3,6 +3,9 @@
     <string name="app_short_description">Administre y calcule eficientemente los artículos de su carrito con la Calculadora de Carrito. 🛒</string>
     <string name="summary_notification_last_time_used">¡Administremos los artículos de su carrito de manera eficiente!</string>
 
+    <string name="import_cart">Importar carrito</string>
+    <string name="button_import">Importar</string>
+    <string name="paste_cart_link">Pegar enlace del carrito</string>
     <string name="import_cart_instructions">"Para importar un carrito compartido, pegue el enlace generado en el campo de arriba.\nEl carrito compartido aparecerá automáticamente en su lista una vez importado.\n\nCómo compartir un carrito:\n1. Abra su carrito.\n2. Toque el botón \'Compartir\'.\n3. Copie el enlace generado y envíelo a alguien.\n\nCómo importar un carrito compartido:\n1. Copie el enlace compartido que recibió.\n2. Péguelo en el campo de entrada de arriba.\n3. Toque \'Importar\' y verifique su lista de carritos para ver la nueva entrada."</string>
     <string name="no_carts_available">No hay carritos disponibles</string>
     <string name="add_new_cart">Añadir nuevo carrito</string>

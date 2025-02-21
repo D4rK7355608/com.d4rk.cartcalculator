@@ -3,6 +3,9 @@
     <string name="app_short_description">Gestisci e calcola in modo efficiente gli articoli del tuo carrello con Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gestiamo gli articoli del tuo carrello in modo efficiente!</string>
 
+    <string name="import_cart">Importa carrello</string>
+    <string name="button_import">Importa</string>
+    <string name="paste_cart_link">Incolla link carrello</string>
     <string name="import_cart_instructions">"Per importare un carrello condiviso, incolla il link generato nel campo sopra.\nIl carrello condiviso apparirà automaticamente nella tua lista una volta importato.\n\nCome condividere un carrello:\n1. Apri il tuo carrello.\n2. Tocca il pulsante \'Condividi\'.\n3. Copia il link generato e invialo a qualcuno.\n\nCome importare un carrello condiviso:\n1. Copia il link condiviso che hai ricevuto.\n2. Incollalo nel campo di input sopra.\n3. Tocca \'Importa\' e controlla la tua lista carrello per la nuova voce."</string>
     <string name="no_carts_available">Nessun carrello disponibile</string>
     <string name="add_new_cart">Aggiungi nuovo carrello</string>
