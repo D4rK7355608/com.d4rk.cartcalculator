@@ -52,6 +52,7 @@ import com.d4rk.cartcalculator.ui.components.ads.AdBanner
 import com.d4rk.cartcalculator.ui.components.dialogs.AddNewCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.DeleteCartAlertDialog
 import com.d4rk.cartcalculator.ui.components.dialogs.ImportCartAlertDialog
+import com.d4rk.cartcalculator.ui.components.layouts.NoCartsScreen
 import com.d4rk.cartcalculator.ui.components.modifiers.hapticSwipeToDismissBox
 import com.google.android.gms.ads.AdSize
 import java.text.SimpleDateFormat
@@ -102,9 +103,7 @@ fun HomeScreen(
                     CircularProgressIndicator()
                 }
                 else if (uiState.carts.isEmpty()) {
-                    Text(
-                        text = stringResource(id = R.string.no_carts_available)
-                    )
+                    NoCartsScreen()
                 }
                 else {
                     val carts : List<ShoppingCartTable> = uiState.carts

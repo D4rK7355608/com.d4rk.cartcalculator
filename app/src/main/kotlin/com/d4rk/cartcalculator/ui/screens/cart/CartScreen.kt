@@ -242,7 +242,7 @@ fun CartScreen(activity : CartActivity , cartId : Int) {
                                         Row {
                                             Text(
                                                 text = String.format(
-                                                    Locale.US , "%.1f" , uiState.totalPrice.toFloat()
+                                                    Locale.getDefault() , "%.1f" , uiState.totalPrice.toFloat()
                                                 ).removeSuffix(".0") , style = MaterialTheme.typography.headlineSmall , fontWeight = FontWeight.Bold
                                             )
                                             SmallHorizontalSpacer()
@@ -394,7 +394,7 @@ fun CartItemComposable(
                         )
                         Row {
                             Text(
-                                text = String.format(Locale.US , "%.1f" , cartItem.price.toFloat()).removeSuffix(suffix = ".0") ,
+                                text = String.format(Locale.getDefault() , "%.1f" , cartItem.price.toFloat()).removeSuffix(suffix = ".0") ,
                             )
                             Spacer(modifier = Modifier.width(4.dp))
                             Text(

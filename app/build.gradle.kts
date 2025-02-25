@@ -17,7 +17,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 85
+        versionCode = 86
         versionName = "1.2.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -79,7 +79,6 @@ android {
         compose = true
     }
 
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -96,9 +95,13 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.67") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.68") {
         isTransitive = true
     }
+
+    // Compression
+    implementation(dependencyNotation = libs.msgpack.core)
+    implementation(dependencyNotation = libs.lz4.java)
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)
