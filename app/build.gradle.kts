@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(notation = libs.plugins.androidApplication)
     alias(notation = libs.plugins.jetbrainsKotlinAndroid)
@@ -48,8 +50,29 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release")
+
+        val signingProps = Properties()
+        val signingFile = rootProject.file("signing.properties")
+
+        if (signingFile.exists()) {
+            signingProps.load(signingFile.inputStream())
+
+            signingConfigs.getByName("release").apply {
+                storeFile = file(signingProps["STORE_FILE"].toString())
+                storePassword = signingProps["STORE_PASSWORD"].toString()
+                keyAlias = signingProps["KEY_ALIAS"].toString()
+                keyPassword = signingProps["KEY_PASSWORD"].toString()
+            }
+        } else {
+            android.buildTypes.getByName("release").signingConfig = null
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             isDebuggable = false
         }
         debug {
