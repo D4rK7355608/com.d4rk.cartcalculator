@@ -15,7 +15,7 @@
     <string name="created_on">Creat pe %1$s</string>
     <string name="decrease_quantity">Micșorează cantitatea</string>
     <string name="increase_quantity">Mărește cantitatea</string>
-    <string name="delete_cart_title">Șterge coșul</string>
+    <string name="delete_cart">Șterge coșul</string>
     <string name="delete_cart_message">Ești sigur că vrei să ștergi acest coș?</string>
     <string name="delete_cart_warning">Ștergerea acestui coș va elimina definitiv toate articolele din „%s” și nu poate fi anulată.</string>
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>

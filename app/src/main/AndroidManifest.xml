@@ -11,18 +11,8 @@
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="https" />
-        </intent>
-
-        <package android:name="com.google.android.apps.walletnfcrel" />
-        <package android:name="com.google.android.apps.nbu.paisa.user" />
-    </queries>
-
     <application
-        android:name=".data.core.AppCoreManager"
+        android:name=".CartCalculator"
         android:appCategory="productivity"
         android:banner="@drawable/tv_banner"
         android:description="@string/app_short_description"
@@ -38,12 +28,7 @@
         tools:targetApi="33">
 
         <activity
-            android:name=".ui.screens.startup.StartupActivity"
-            android:noHistory="true"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.main.MainActivity"
+            android:name=".app.main.ui.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/SplashScreenTheme"
@@ -73,52 +58,9 @@
         </activity>
 
         <activity
-            android:name=".ui.screens.support.SupportActivity"
-            android:parentActivityName=".ui.screens.main.MainActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.cart.CartActivity"
+            android:name=".app.main.ui.routes.cart.ui.CartActivity"
             android:launchMode="singleTask"
-            android:parentActivityName=".ui.screens.main.MainActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.settings.SettingsActivity"
-            android:exported="true"
-            android:label="@string/settings"
-            android:parentActivityName=".ui.screens.main.MainActivity"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".ui.screens.settings.general.GeneralSettingsActivity"
-            android:parentActivityName=".ui.screens.settings.SettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.settings.privacy.permissions.PermissionsSettingsActivity"
-            android:exported="true"
-            android:permission="android.permission.START_VIEW_PERMISSION_USAGE"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
-                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE_FOR_PERIOD" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".ui.screens.settings.privacy.ads.AdsSettingsActivity"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ui.screens.help.HelpActivity"
-            android:parentActivityName=".ui.screens.main.MainActivity"
+            android:parentActivityName=".app.main.ui.MainActivity"
             android:windowSoftInputMode="adjustResize" />
 
         <service
@@ -158,5 +100,6 @@
             android:name="android.adservices.AD_SERVICES_CONFIG"
             android:resource="@xml/gma_ad_services_config"
             tools:replace="android:resource" />
+
     </application>
 </manifest>

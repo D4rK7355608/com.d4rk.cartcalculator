@@ -1,0 +1,93 @@
+package com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases
+
+import android.net.Uri
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.core.domain.model.network.DataState
+import com.d4rk.cartcalculator.core.domain.model.network.Errors
+import com.d4rk.cartcalculator.core.domain.usecases.Repository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.withContext
+import net.jpountz.lz4.LZ4Factory
+import org.msgpack.core.MessagePack
+import java.io.ByteArrayInputStream
+import java.math.BigInteger
+import java.net.URLDecoder
+
+class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> , Errors>>> {
+
+    override suspend fun invoke(param: String): Flow<DataState<Pair<ShoppingCartTable, List<ShoppingCartItemsTable>>, Errors>> = flow {
+        emit(value = DataState.Loading())
+
+        runCatching {
+            val uri: Uri = Uri.parse(param)
+            val base62EncodedData: String = uri.getQueryParameter("d") ?: throw IllegalArgumentException("No 'd' parameter found in URL")
+
+            val urlDecodedData = withContext(Dispatchers.IO) { URLDecoder.decode(base62EncodedData, "UTF-8") }
+            val compressedBytes = decodeBase62(urlDecodedData)
+            val binaryData = decompressLZ4(compressedBytes)
+
+            deserializeMessagePack(binaryData)
+        }.onSuccess { result ->
+            emit(value = DataState.Success(data = result))
+        }.onFailure {
+            emit(value = DataState.Error(error = Errors.UseCase.FAILED_TO_DECRYPT_CART))
+        }
+    }
+
+    private fun decodeBase62(encoded : String) : ByteArray {
+        val base62Chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        var decodedValue = BigInteger.ZERO
+        val base = BigInteger.valueOf(62)
+
+        for (char in encoded) {
+            val index = base62Chars.indexOf(char)
+            if (index == - 1) throw IllegalArgumentException("Invalid Base62 character: $char")
+            decodedValue = decodedValue.multiply(base).add(BigInteger.valueOf(index.toLong()))
+        }
+
+        return decodedValue.toByteArray()
+    }
+
+    private fun decompressLZ4(compressedData : ByteArray) : ByteArray {
+        if (compressedData.size < 4) throw IllegalArgumentException("Invalid input for LZ4 decompression.")
+
+        val originalSize : Int = ((compressedData[0].toInt() and 0xFF) shl 24) or ((compressedData[1].toInt() and 0xFF) shl 16) or ((compressedData[2].toInt() and 0xFF) shl 8) or (compressedData[3].toInt() and 0xFF)
+
+        val compressedContent : ByteArray = compressedData.copyOfRange(4 , compressedData.size)
+
+        val factory = LZ4Factory.fastestInstance()
+        val decompressor = factory.fastDecompressor()
+        val decompressed = ByteArray(originalSize)
+
+        decompressor.decompress(compressedContent , 0 , decompressed , 0 , originalSize)
+        return decompressed
+    }
+
+    private fun deserializeMessagePack(serializedData : ByteArray) : Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> {
+        val unpacker = MessagePack.newDefaultUnpacker(ByteArrayInputStream(serializedData))
+
+        val cartId = unpacker.unpackInt()
+        val cartName = unpacker.unpackString()
+        val cartDate = unpacker.unpackLong()
+
+        val cart = ShoppingCartTable(cartId = cartId , name = cartName , date = cartDate)
+
+        val items = mutableListOf<ShoppingCartItemsTable>()
+        val itemsCount = unpacker.unpackArrayHeader()
+
+        repeat(itemsCount) {
+            val itemId = unpacker.unpackInt()
+            val itemName = unpacker.unpackString()
+            val itemQuantity = unpacker.unpackInt()
+            val itemPrice = unpacker.unpackFloat().toString()
+
+            items.add(ShoppingCartItemsTable(itemId , cartId , itemName , itemPrice , itemQuantity))
+        }
+
+        unpacker.close()
+        return Pair(cart , items)
+    }
+}

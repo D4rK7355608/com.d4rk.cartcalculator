@@ -15,7 +15,7 @@
     <string name="created_on">Créé le %1$s</string>
     <string name="decrease_quantity">Diminuer la quantité</string>
     <string name="increase_quantity">Augmenter la quantité</string>
-    <string name="delete_cart_title">Supprimer le panier</string>
+    <string name="delete_cart">Supprimer le panier</string>
     <string name="delete_cart_message">Êtes-vous sûr de vouloir supprimer ce panier ?</string>
     <string name="delete_cart_warning">La suppression de ce panier supprimera définitivement tous les articles de \"%s\" et ne pourra pas être annulée.</string>
     <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>

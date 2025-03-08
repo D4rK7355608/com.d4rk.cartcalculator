@@ -15,7 +15,7 @@
     <string name="created_on">Створено %1$s</string>
     <string name="decrease_quantity">Зменшити кількість</string>
     <string name="increase_quantity">Збільшити кількість</string>
-    <string name="delete_cart_title">Видалити кошик</string>
+    <string name="delete_cart">Видалити кошик</string>
     <string name="delete_cart_message">Ви впевнені, що хочете видалити цей кошик?</string>
     <string name="delete_cart_warning">Видалення цього кошика назавжди видалить усі товари з \"%s\", і цю дію неможливо буде скасувати.</string>
     <string name="snackbar_cart_deleted_success">Кошик успішно видалено!</string>

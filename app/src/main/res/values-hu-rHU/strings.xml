@@ -15,7 +15,7 @@
     <string name="created_on">Létrehozva: %1$s</string>
     <string name="decrease_quantity">Mennyiség csökkentése</string>
     <string name="increase_quantity">Mennyiség növelése</string>
-    <string name="delete_cart_title">Kosár törlése</string>
+    <string name="delete_cart">Kosár törlése</string>
     <string name="delete_cart_message">Biztosan törölni szeretné ezt a kosarat?</string>
     <string name="delete_cart_warning">A kosár törlése véglegesen eltávolítja az összes tételt a(z) \"%s\" kosárból, és nem vonható vissza.</string>
     <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>

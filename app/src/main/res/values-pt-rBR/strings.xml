@@ -15,7 +15,7 @@
     <string name="created_on">Criado em %1$s</string>
     <string name="decrease_quantity">Diminuir quantidade</string>
     <string name="increase_quantity">Aumentar quantidade</string>
-    <string name="delete_cart_title">Excluir carrinho</string>
+    <string name="delete_cart">Excluir carrinho</string>
     <string name="delete_cart_message">Tem certeza de que deseja excluir este carrinho?</string>
     <string name="delete_cart_warning">Excluir este carrinho removerá permanentemente todos os itens de \"%s\" e não poderá ser desfeito.</string>
     <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>

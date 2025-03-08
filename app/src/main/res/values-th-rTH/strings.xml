@@ -15,7 +15,7 @@
     <string name="created_on">สร้างเมื่อ %1$s</string>
     <string name="decrease_quantity">ลดจำนวน</string>
     <string name="increase_quantity">เพิ่มจำนวน</string>
-    <string name="delete_cart_title">ลบรถเข็น</string>
+    <string name="delete_cart">ลบรถเข็น</string>
     <string name="delete_cart_message">คุณแน่ใจหรือไม่ว่าต้องการลบรถเข็นนี้</string>
     <string name="delete_cart_warning">การลบรถเข็นนี้จะลบสินค้าทั้งหมดออกจาก \"%s\" อย่างถาวรและไม่สามารถยกเลิกได้</string>
     <string name="snackbar_cart_deleted_success">ลบรถเข็นเรียบร้อยแล้ว!</string>

@@ -15,7 +15,7 @@
     <string name="created_on">建立於 %1$s</string>
     <string name="decrease_quantity">減少數量</string>
     <string name="increase_quantity">增加數量</string>
-    <string name="delete_cart_title">刪除購物車</string>
+    <string name="delete_cart">刪除購物車</string>
     <string name="delete_cart_message">您確定要刪除此購物車嗎？</string>
     <string name="delete_cart_warning">刪除此購物車將永久移除「%s」中的所有商品，且此操作無法復原。</string>
     <string name="snackbar_cart_deleted_success">購物車已成功刪除！</string>

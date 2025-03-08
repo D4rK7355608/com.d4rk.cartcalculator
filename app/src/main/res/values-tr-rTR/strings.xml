@@ -15,7 +15,7 @@
     <string name="created_on">%1$s tarihinde oluşturuldu</string>
     <string name="decrease_quantity">Miktarı azalt</string>
     <string name="increase_quantity">Miktarı artır</string>
-    <string name="delete_cart_title">Sepeti Sil</string>
+    <string name="delete_cart">Sepeti Sil</string>
     <string name="delete_cart_message">Bu sepeti silmek istediğinizden emin misiniz?</string>
     <string name="delete_cart_warning">Bu sepeti silmek, \"%s\" içindeki tüm ürünleri kalıcı olarak kaldıracak ve geri alınamaz.</string>
     <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>

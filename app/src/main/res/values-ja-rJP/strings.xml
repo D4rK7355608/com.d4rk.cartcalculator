@@ -15,7 +15,7 @@
     <string name="created_on">%1$sに作成</string>
     <string name="decrease_quantity">数量を減らす</string>
     <string name="increase_quantity">数量を増やす</string>
-    <string name="delete_cart_title">カートを削除</string>
+    <string name="delete_cart">カートを削除</string>
     <string name="delete_cart_message">このカートを削除してもよろしいですか？</string>
     <string name="delete_cart_warning">このカートを削除すると、\"%s\"からすべてのアイテムが完全に削除され、元に戻すことはできません。</string>
     <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>

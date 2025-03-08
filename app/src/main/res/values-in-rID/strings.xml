@@ -15,7 +15,7 @@
     <string name="created_on">Dibuat pada %1$s</string>
     <string name="decrease_quantity">Kurangi kuantitas</string>
     <string name="increase_quantity">Tambah kuantitas</string>
-    <string name="delete_cart_title">Hapus Keranjang</string>
+    <string name="delete_cart">Hapus Keranjang</string>
     <string name="delete_cart_message">Apakah Anda yakin ingin menghapus keranjang ini?</string>
     <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>
     <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>

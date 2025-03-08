@@ -3,24 +3,30 @@
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
 
+    <!-- Home screen -->
     <string name="import_cart">Import Cart</string>
+    <string name="import_shared_cart">Import Shared Cart</string>
     <string name="button_import">Import</string>
     <string name="paste_cart_link">Paste Cart Link</string>
     <string name="import_cart_instructions">To import a shared cart, paste the generated link in the field above.\nThe shared cart will automatically appear in your list once imported.\n\nHow to share a cart:\n1. Open your cart.\n2. Tap the \'Share\' button.\n3. Copy the generated link and send it to someone.\n\nHow to import a shared cart:\n1. Copy the shared link you received.\n2. Paste it into the input field above.\n3. Tap \'Import\' and check your cart list for the new entry.</string>
     <string name="no_carts_available">No carts available</string>
     <string name="add_new_cart">Add new cart</string>
     <string name="cart_name">Cart name</string>
+    <string name="create_a_new_cart">Create a New Cart</string>
+    <string name="enter_cart_name">Enter cart name</string>
     <string name="shopping_cart">Shopping cart</string>
     <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
+    <string name="create">Create</string>
     <string name="created_on">Created on %1$s</string>
     <string name="decrease_quantity">Decrease quantity</string>
     <string name="increase_quantity">Increase quantity</string>
-    <string name="delete_cart_title">Delete Cart</string>
+    <string name="delete_cart_question">Delete cart?</string>
+    <string name="delete_cart">Delete Cart</string>
     <string name="delete_cart_message">Are you sure you want to delete this cart?</string>
     <string name="delete_cart_warning">Deleting this cart will permanently remove all items from \"%s\" and cannot be undone.</string>
-    <string name="snackbar_cart_deleted_success">Cart deleted successfully!</string>
-    <string name="file_not_found">File not found.</string>
+    <string name="delete">Delete</string>
 
+    <!-- Cart screen -->
     <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
     <string name="in_cart">In Cart</string>
     <string name="items_to_pick_up">Items to Pick Up</string>
@@ -36,9 +42,11 @@
     <string name="delete_cart_item_message">Are you sure you want to delete this item?</string>
     <string name="delete_cart_item_warning">You are about to delete "%s" from your cart.</string>
 
+    <!-- Cart settings screen -->
     <string name="cart_settings">Cart settings</string>
     <string name="summary_preference_settings_cart">Manage how your cart behaves</string>
 
+    <!-- Currency settings screen -->
     <string name="currency">Currency</string>
     <string name="summary_preference_settings_currency">Set your preferred currency for displaying prices</string>
     <string name="dialog_currency_subtitle">Select your preferred currency</string>
@@ -46,6 +54,7 @@
     <string name="open_carts_after_creation">Open Carts After Creation</string>
     <string name="summary_preference_settings_open_carts_after_creation">Automatically open a cart immediately after it is created.</string>
 
+    <!-- Ad settings screen -->
     <string name="ad_id">Ad id [AD_ID]</string>
     <string name="summary_preference_permissions_ad_id">Allows the app to retrieve and use the advertising identifier associated with the user\'s device, providing personalized ads, measuring ad effectiveness, and showing ads on Android 13 or later devices.</string>
     <string name="internet">Internet [INTERNET]</string>
@@ -63,8 +72,10 @@
     <string name="foreground_service">Foreground service [FOREGROUND_SERVICE]</string>
     <string name="summary_preference_permissions_foreground_service">Allows the app to create and use services that run in the foreground, giving them priority over other background processes and improving performance and reliability.</string>
 
+    <!-- About screen -->
     <string name="summary_preference_settings_about">Learn more about Cart Calculator</string>
 
+    <!-- Help screen -->
     <string name="question_1">What is Cart Calculator?</string>
     <string name="summary_preference_faq_1">Cart Calculator is a simple, generic and free shopping cart manager and total due calculator that replaces the ordinary device\’s calculator for when you are at the grocery store or at the market.</string>
     <string name="question_2">How does Cart Calculator work?</string>
@@ -83,4 +94,26 @@
     <string name="summary_preference_faq_8">Yes! Cart Calculator is proudly free software distributed under the GNU General Public License version 3.</string>
     <string name="question_9">How can I contribute to Cart Calculator?</string>
     <string name="summary_preference_faq_9">The best way to contribute to Cart Calculator is through its <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository. From there, you can fork it and work on your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.</string>
+
+
+
+    <!-- Confirmations -->
+    <string name="snackbar_cart_deleted_success">Cart deleted successfully!</string>
+
+    <!-- Error messages -->
+    <string name="empty_cart">Your cart is currently empty.</string>
+    <string name="compression_failed">Cart data could not be prepared. Please try again.</string>
+    <string name="failed_to_import_cart">Could not import cart. Please check the file and try again.</string>
+    <string name="failed_to_encrypt_cart">Cart could not be secured. Please try again.</string>
+    <string name="database_cart_not_found">Cart not found.</string>
+    <string name="file_not_found">File not found. Please check the file location.</string>
+    <string name="request_login_missing_user">Incorrect username or password. Please try again.</string>
+    <string name="request_no_internet">No internet connection. Please check your connection and try again.</string>
+    <string name="request_timeout">Request timed out. Please try again.</string>
+    <string name="request_server_not_found">Server error. Please try again later.</string>
+    <string name="request_payload_error">Data error. Please try again.</string>
+    <string name="failed_to_delete_cart">Could not delete cart. Please try again.</string>
+    <string name="failed_to_decrypt_cart">Could not load cart data. The cart may be corrupted.</string>
+    <string name="database_operation_failed">Something went wrong with the local data. Please try again.</string>
+    <string name="cart_not_found">Cart not found.</string>
 </resources>

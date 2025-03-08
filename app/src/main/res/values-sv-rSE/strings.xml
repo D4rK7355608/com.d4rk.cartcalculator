@@ -15,7 +15,7 @@
     <string name="created_on">Skapad den %1$s</string>
     <string name="decrease_quantity">Minska kvantitet</string>
     <string name="increase_quantity">Öka kvantitet</string>
-    <string name="delete_cart_title">Ta bort varukorg</string>
+    <string name="delete_cart">Ta bort varukorg</string>
     <string name="delete_cart_message">Är du säker på att du vill ta bort den här varukorgen?</string>
     <string name="delete_cart_warning">Om du tar bort den här varukorgen tas alla objekt från \"%s\" bort permanent och kan inte ångras.</string>
     <string name="snackbar_cart_deleted_success">Varukorgen har tagits bort!</string>

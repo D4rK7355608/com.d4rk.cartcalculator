@@ -15,7 +15,7 @@
     <string name="created_on">Создано %1$s</string>
     <string name="decrease_quantity">Уменьшить количество</string>
     <string name="increase_quantity">Увеличить количество</string>
-    <string name="delete_cart_title">Удалить корзину</string>
+    <string name="delete_cart">Удалить корзину</string>
     <string name="delete_cart_message">Вы уверены, что хотите удалить эту корзину?</string>
     <string name="delete_cart_warning">Удаление этой корзины навсегда удалит все товары из \"%s\", и это действие нельзя будет отменить.</string>
     <string name="snackbar_cart_deleted_success">Корзина успешно удалена!</string>

@@ -15,7 +15,7 @@
     <string name="created_on">Utworzono %1$s</string>
     <string name="decrease_quantity">Zmniejsz ilość</string>
     <string name="increase_quantity">Zwiększ ilość</string>
-    <string name="delete_cart_title">Usuń koszyk</string>
+    <string name="delete_cart">Usuń koszyk</string>
     <string name="delete_cart_message">Czy na pewno chcesz usunąć ten koszyk?</string>
     <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich pozycji z „%s” i nie można tego cofnąć.</string>
     <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>

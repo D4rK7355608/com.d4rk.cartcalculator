@@ -15,7 +15,7 @@
     <string name="created_on">Създадена на %1$s</string>
     <string name="decrease_quantity">Намалете количеството</string>
     <string name="increase_quantity">Увеличете количеството</string>
-    <string name="delete_cart_title">Изтриване на количката</string>
+    <string name="delete_cart">Изтриване на количката</string>
     <string name="delete_cart_message">Сигурни ли сте, че искате да изтриете тази количка?</string>
     <string name="delete_cart_warning">Изтриването на тази количка ще премахне за постоянно всички артикули от „%s“ и не може да бъде отменено.</string>
     <string name="snackbar_cart_deleted_success">Количката е изтрита успешно!</string>

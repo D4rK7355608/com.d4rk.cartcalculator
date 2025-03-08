@@ -15,7 +15,7 @@
     <string name="created_on">%1$s को बनाया गया</string>
     <string name="decrease_quantity">मात्रा घटाएं</string>
     <string name="increase_quantity">मात्रा बढ़ाएँ</string>
-    <string name="delete_cart_title">कार्ट हटाएं</string>
+    <string name="delete_cart">कार्ट हटाएं</string>
     <string name="delete_cart_message">क्या आप वाकई इस कार्ट को हटाना चाहते हैं?</string>
     <string name="delete_cart_warning">इस कार्ट को हटाने से \"%s\" से सभी आइटम स्थायी रूप से हट जाएंगे और इसे पूर्ववत नहीं किया जा सकता।</string>
     <string name="snackbar_cart_deleted_success">कार्ट सफलतापूर्वक हटा दिया गया!</string>
