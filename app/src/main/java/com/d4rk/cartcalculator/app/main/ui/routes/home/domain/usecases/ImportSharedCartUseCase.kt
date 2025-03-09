@@ -8,9 +8,7 @@ import com.d4rk.cartcalculator.core.utils.extensions.toError
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class ImportSharedCartUseCase(
-    private val database : DatabaseInterface , private val decryptSharedCartUseCase : DecryptSharedCartUseCase
-) : Repository<String , Flow<DataState<Unit , Errors>>> {
+class ImportSharedCartUseCase(private val database : DatabaseInterface , private val decryptSharedCartUseCase : DecryptSharedCartUseCase) : Repository<String , Flow<DataState<Unit , Errors>>> {
 
     override suspend fun invoke(param : String) : Flow<DataState<Unit , Errors>> = flow {
         emit(DataState.Loading())
@@ -33,7 +31,6 @@ class ImportSharedCartUseCase(
                             val newItem = item.copy(itemId = 0 , cartId = newCartId.toInt())
                             database.insertItem(newItem)
                         }
-                        emit(DataState.Success(Unit))
                     }
 
                     is DataState.Error -> emit(DataState.Error(error = result.error))
@@ -41,6 +38,8 @@ class ImportSharedCartUseCase(
                     else -> {}
                 }
             }
+        }.onSuccess {
+            emit(DataState.Success(Unit))
         }.onFailure { exception ->
             emit(DataState.Error(error = exception.toError(Errors.UseCase.FAILED_TO_IMPORT_CART)))
         }
