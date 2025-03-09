@@ -1,5 +1,7 @@
 package com.d4rk.cartcalculator.app.main.ui
 
+import android.view.SoundEffectConstants
+import android.view.View
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
@@ -34,6 +36,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -71,6 +74,7 @@ fun MainScaffoldContent(
     val isFabVisible : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val coroutineScope : CoroutineScope = rememberCoroutineScope()
     val navController : NavHostController = rememberNavController()
+    val view : View = LocalView.current
 
     LaunchedEffect(scrollBehavior.state.contentOffset) {
         isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
@@ -86,11 +90,14 @@ fun MainScaffoldContent(
             val snackbarContentColor : Color = if (isError) MaterialTheme.colorScheme.error else SnackbarDefaults.contentColor
 
             Snackbar(modifier = Modifier.padding(all = SizeConstants.LargeSize) , containerColor = if (isError) MaterialTheme.colorScheme.errorContainer else MaterialTheme.colorScheme.inverseSurface , contentColor = snackbarContentColor , action = {
-                IconButton(onClick = { snackBarData.dismiss() }) {
-                    Icon(Icons.Outlined.Close , "Close Snackbar" , tint = snackbarContentColor)
+                IconButton(modifier = Modifier.bounceClick() , onClick = {
+                    view.playSoundEffect(SoundEffectConstants.CLICK)
+                    snackBarData.dismiss()
+                }) {
+                    Icon(imageVector = Icons.Outlined.Close , contentDescription = "Close Snackbar" , tint = snackbarContentColor)
                 }
             }) {
-                Text(snackBarData.visuals.message)
+                Text(text = snackBarData.visuals.message)
             }
         }
     } , floatingActionButton = {

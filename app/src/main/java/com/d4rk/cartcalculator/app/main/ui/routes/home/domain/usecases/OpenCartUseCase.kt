@@ -12,10 +12,9 @@ class OpenCartUseCase(private val context: Context) : Repository<ShoppingCartTab
         runCatching {
             val intent = Intent(context, CartActivity::class.java).apply {
                 putExtra("cartId", param.cartId)
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // Ensures the activity starts properly
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             context.startActivity(intent)
-        }.onFailure { exception ->
         }
     }
 }

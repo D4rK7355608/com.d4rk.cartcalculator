@@ -21,7 +21,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.hapticfeedback.HapticFeedback
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -35,7 +39,7 @@ import java.util.Locale
 
 @Composable
 fun CartItem(
-    cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit , uiState : UiHomeData , modifier : Modifier , onShare: (ShoppingCartTable) -> Unit,
+    cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit , uiState : UiHomeData , modifier : Modifier , onShare : (ShoppingCartTable) -> Unit ,
 ) {
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString : String = dateFormat.format(cart.date)
@@ -58,7 +62,9 @@ fun CartItem(
         }
     }
 
-    SwipeToDismissBox(modifier = modifier.padding(horizontal = SizeConstants.MediumSize) , state = dismissState , backgroundContent = {} , content = {
+    SwipeToDismissBox(modifier = modifier
+            .hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState)
+            .padding(horizontal = SizeConstants.MediumSize) , state = dismissState , backgroundContent = {} , content = {
         OutlinedCard(shape = RoundedCornerShape(size = SizeConstants.MediumSize) , modifier = Modifier.fillMaxWidth() , onClick = { onCardClick() }) {
             Row(
                 modifier = Modifier
@@ -67,8 +73,8 @@ fun CartItem(
             ) {
                 Column(
                     modifier = Modifier
-                            .weight(1f)
-                            .clip(MaterialTheme.shapes.medium)
+                            .weight(weight = 1f)
+                            .clip(shape = MaterialTheme.shapes.medium)
                             .padding(end = SizeConstants.SmallSize)
                 ) {
                     Text(
@@ -95,4 +101,22 @@ fun CartItem(
             }
         }
     })
+}
+
+// TODO: Add to AppToolkit
+fun Modifier.hapticSwipeToDismissBox(swipeToDismissBoxState : SwipeToDismissBoxState) : Modifier = composed {
+    val haptic : HapticFeedback = LocalHapticFeedback.current
+    var hasVibrated by remember { mutableStateOf(value = false) }
+
+    LaunchedEffect(swipeToDismissBoxState.currentValue) {
+        if (swipeToDismissBoxState.currentValue != SwipeToDismissBoxValue.Settled && ! hasVibrated) {
+            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            hasVibrated = true
+        }
+        else if (swipeToDismissBoxState.currentValue == SwipeToDismissBoxValue.Settled) {
+            hasVibrated = false
+        }
+    }
+
+    return@composed this
 }

@@ -6,6 +6,7 @@ import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.core.domain.model.network.DataState
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.domain.usecases.Repository
+import com.d4rk.cartcalculator.core.utils.extensions.toError
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import net.jpountz.lz4.LZ4Compressor
@@ -18,11 +19,10 @@ import java.net.URLEncoder
 
 class GenerateCartShareLinkUseCase(
     private val database: DatabaseInterface
-) : Repository<Int , Flow<DataState<String , Errors>>> {
+) : Repository<Int, Flow<DataState<String, Errors>>> {
 
     override suspend fun invoke(param: Int): Flow<DataState<String, Errors>> = flow {
         emit(DataState.Loading())
-
         runCatching {
             database.getCartById(cartId = param)?.let { cart ->
                 val cartItems = database.getItemsByCartId(cartId = param)
@@ -46,13 +46,7 @@ class GenerateCartShareLinkUseCase(
         }.onSuccess { url ->
             emit(DataState.Success(url))
         }.onFailure { throwable ->
-            val error = when (throwable.message) {
-                Errors.UseCase.CART_NOT_FOUND.toString() -> Errors.UseCase.CART_NOT_FOUND
-                Errors.UseCase.EMPTY_CART.toString() -> Errors.UseCase.EMPTY_CART
-                Errors.UseCase.COMPRESSION_FAILED.toString() -> Errors.UseCase.COMPRESSION_FAILED
-                else -> Errors.UseCase.FAILED_TO_ENCRYPT_CART
-            }
-            emit(DataState.Error(error = error))
+            emit(DataState.Error(error = throwable.toError()))
         }
     }
 

@@ -1,11 +1,13 @@
 package com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases
 
 import android.net.Uri
+import androidx.core.net.toUri
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.core.domain.model.network.DataState
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.domain.usecases.Repository
+import com.d4rk.cartcalculator.core.utils.extensions.toError
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -18,22 +20,21 @@ import java.net.URLDecoder
 
 class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> , Errors>>> {
 
-    override suspend fun invoke(param: String): Flow<DataState<Pair<ShoppingCartTable, List<ShoppingCartItemsTable>>, Errors>> = flow {
-        emit(value = DataState.Loading())
-
+    override suspend fun invoke(param : String) : Flow<DataState<Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> , Errors>> = flow {
+        emit(DataState.Loading())
         runCatching {
-            val uri: Uri = Uri.parse(param)
-            val base62EncodedData: String = uri.getQueryParameter("d") ?: throw IllegalArgumentException("No 'd' parameter found in URL")
+            val uri : Uri = param.toUri()
+            val base62EncodedData : String = uri.getQueryParameter("d") ?: throw IllegalArgumentException("No 'd' parameter found in URL")
 
-            val urlDecodedData = withContext(Dispatchers.IO) { URLDecoder.decode(base62EncodedData, "UTF-8") }
+            val urlDecodedData = withContext(Dispatchers.IO) { URLDecoder.decode(base62EncodedData , "UTF-8") }
             val compressedBytes = decodeBase62(urlDecodedData)
             val binaryData = decompressLZ4(compressedBytes)
 
             deserializeMessagePack(binaryData)
         }.onSuccess { result ->
-            emit(value = DataState.Success(data = result))
-        }.onFailure {
-            emit(value = DataState.Error(error = Errors.UseCase.FAILED_TO_DECRYPT_CART))
+            emit(DataState.Success(data = result))
+        }.onFailure { throwable ->
+            emit(DataState.Error(error = throwable.toError(Errors.UseCase.FAILED_TO_DECRYPT_CART)))
         }
     }
 

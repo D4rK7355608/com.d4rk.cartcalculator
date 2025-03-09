@@ -1,5 +1,7 @@
 package com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.dialogs
 
+import android.view.SoundEffectConstants
+import android.view.View
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -18,12 +20,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import java.util.Date
@@ -32,6 +36,7 @@ import java.util.Date
 fun AddNewCartAlertDialog(onDismiss : () -> Unit , onCartCreated : (ShoppingCartTable) -> Unit) {
     val newCart : MutableState<ShoppingCartTable?> = remember { mutableStateOf(value = null) }
     val nameText : MutableState<String> = remember { mutableStateOf(value = "") }
+    val view : View = LocalView.current
 
     AlertDialog(onDismissRequest = onDismiss , title = {
         Text(text = stringResource(id = R.string.create_a_new_cart))
@@ -40,7 +45,8 @@ fun AddNewCartAlertDialog(onDismiss : () -> Unit , onCartCreated : (ShoppingCart
     } , icon = {
         Icon(Icons.Outlined.ShoppingCartCheckout , contentDescription = null)
     } , confirmButton = {
-        TextButton(onClick = {
+        TextButton(modifier = Modifier.bounceClick() , onClick = {
+            view.playSoundEffect(SoundEffectConstants.CLICK)
             newCart.value?.let { cart ->
                 onCartCreated(cart)
                 onDismiss()
@@ -49,7 +55,8 @@ fun AddNewCartAlertDialog(onDismiss : () -> Unit , onCartCreated : (ShoppingCart
             Text(text = stringResource(R.string.create))
         }
     } , dismissButton = {
-        TextButton(onClick = {
+        TextButton(modifier = Modifier.bounceClick() , onClick = {
+            view.playSoundEffect(SoundEffectConstants.CLICK)
             onDismiss()
         }) {
             Text(text = stringResource(android.R.string.cancel))
@@ -68,7 +75,8 @@ fun AddNewCartAlertDialogContent(
     val keyboardController : SoftwareKeyboardController? = LocalSoftwareKeyboardController.current
 
     Column {
-        OutlinedTextField(value = nameText.value ,
+        OutlinedTextField(
+            value = nameText.value ,
                           singleLine = true ,
                           onValueChange = { nameText.value = it } ,
                           label = { Text(text = stringResource(id = R.string.enter_cart_name)) } ,
