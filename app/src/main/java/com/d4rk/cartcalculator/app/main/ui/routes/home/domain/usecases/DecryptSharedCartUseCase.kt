@@ -39,17 +39,34 @@ class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<Shoppin
     }
 
     private fun decodeBase62(encoded : String) : ByteArray {
+        if (encoded.length < 4) throw IllegalArgumentException("Encoded string is too short!")
+
+        val encodedLength = encoded.substring(0 , 4)
+        val decodedLength = encodedLength.toIntOrNull() ?: throw IllegalArgumentException("Invalid length header in encoded string")
+        val encodedPayload = encoded.substring(4)
+
         val base62Chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         var decodedValue = BigInteger.ZERO
         val base = BigInteger.valueOf(62)
-
-        for (char in encoded) {
+        for (char in encodedPayload) {
             val index = base62Chars.indexOf(char)
             if (index == - 1) throw IllegalArgumentException("Invalid Base62 character: $char")
             decodedValue = decodedValue.multiply(base).add(BigInteger.valueOf(index.toLong()))
         }
 
-        return decodedValue.toByteArray()
+        val decodedBytes = decodedValue.toByteArray()
+        val significantBytes = if (decodedBytes.isNotEmpty() && decodedBytes[0] == 0.toByte()) {
+            decodedBytes.drop(1).toByteArray()
+        }
+        else {
+            decodedBytes
+        }
+        return if (significantBytes.size < decodedLength) {
+            ByteArray(decodedLength - significantBytes.size).plus(significantBytes)
+        }
+        else {
+            significantBytes
+        }
     }
 
     private fun decompressLZ4(compressedData : ByteArray) : ByteArray {
@@ -67,28 +84,35 @@ class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<Shoppin
         return decompressed
     }
 
-    private fun deserializeMessagePack(serializedData : ByteArray) : Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> {
+    private fun deserializeMessagePack(serializedData: ByteArray): Pair<ShoppingCartTable, List<ShoppingCartItemsTable>> {
         val unpacker = MessagePack.newDefaultUnpacker(ByteArrayInputStream(serializedData))
+
+        val cartDataCount = unpacker.unpackArrayHeader()
+        if (cartDataCount != 3) {
+            throw IllegalArgumentException("Invalid cart data format: expected 3 elements, got $cartDataCount")
+        }
 
         val cartId = unpacker.unpackInt()
         val cartName = unpacker.unpackString()
         val cartDate = unpacker.unpackLong()
+        val cart = ShoppingCartTable(cartId = cartId, name = cartName, date = cartDate)
 
-        val cart = ShoppingCartTable(cartId = cartId , name = cartName , date = cartDate)
-
-        val items = mutableListOf<ShoppingCartItemsTable>()
         val itemsCount = unpacker.unpackArrayHeader()
-
+        val items = mutableListOf<ShoppingCartItemsTable>()
         repeat(itemsCount) {
+            val itemDataCount = unpacker.unpackArrayHeader()
+            if (itemDataCount != 4) {
+                throw IllegalArgumentException("Invalid item data format: expected 4 elements, got $itemDataCount")
+            }
+
             val itemId = unpacker.unpackInt()
             val itemName = unpacker.unpackString()
             val itemQuantity = unpacker.unpackInt()
             val itemPrice = unpacker.unpackFloat().toString()
-
-            items.add(ShoppingCartItemsTable(itemId , cartId , itemName , itemPrice , itemQuantity))
+            items.add(ShoppingCartItemsTable(itemId, cartId, itemName, itemPrice, itemQuantity))
         }
 
         unpacker.close()
-        return Pair(cart , items)
+        return Pair(cart, items)
     }
 }

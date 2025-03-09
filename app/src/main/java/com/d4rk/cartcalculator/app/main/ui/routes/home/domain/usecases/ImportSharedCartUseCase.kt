@@ -14,13 +14,11 @@ class ImportSharedCartUseCase(
 
     override suspend fun invoke(param : String) : Flow<DataState<Unit , Errors>> = flow {
         emit(DataState.Loading())
-
         runCatching {
             decryptSharedCartUseCase(param).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         val (cart , items) = result.data
-
                         var newCartName = cart.name
                         val allCarts = database.getAllCarts()
                         var suffix = 1
@@ -29,15 +27,12 @@ class ImportSharedCartUseCase(
                             newCartName = "${cart.name} ($suffix)"
                             suffix ++
                         }
-
                         val newCart = cart.copy(cartId = 0 , name = newCartName)
                         val newCartId = database.insertCart(newCart)
-
                         items.forEach { item ->
                             val newItem = item.copy(itemId = 0 , cartId = newCartId.toInt())
                             database.insertItem(newItem)
                         }
-
                         emit(DataState.Success(Unit))
                     }
 
