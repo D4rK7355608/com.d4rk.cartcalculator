@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.app.main.ui
 
-import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.imePadding
@@ -9,17 +8,11 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuOpen
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.outlined.AddShoppingCart
-import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.ImportExport
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Snackbar
-import androidx.compose.material3.SnackbarDefaults
-import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -34,7 +27,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
@@ -44,13 +36,13 @@ import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.SmallFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.MainTopAppBar
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.NavigationDrawer
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.NavigationHost
 import com.d4rk.cartcalculator.core.domain.model.ui.UiStateScreen
+import com.d4rk.cartcalculator.core.ui.snackbar.StatusSnackbarHost
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
@@ -85,21 +77,7 @@ fun MainScaffoldContent(
             .nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
         MainTopAppBar(navigationIcon = if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = { coroutineScope.launch { drawerState.open() } } , scrollBehavior = scrollBehavior)
     } , snackbarHost = {
-        SnackbarHost(snackBarHostState) { snackBarData ->
-            val isError : Boolean = navController.currentBackStackEntry?.savedStateHandle?.get<Boolean>("currentSnackbarIsError") ?: false
-            val snackbarContentColor : Color = if (isError) MaterialTheme.colorScheme.error else SnackbarDefaults.contentColor
-
-            Snackbar(modifier = Modifier.padding(all = SizeConstants.LargeSize) , containerColor = if (isError) MaterialTheme.colorScheme.errorContainer else MaterialTheme.colorScheme.inverseSurface , contentColor = snackbarContentColor , action = {
-                IconButton(modifier = Modifier.bounceClick() , onClick = {
-                    view.playSoundEffect(SoundEffectConstants.CLICK)
-                    snackBarData.dismiss()
-                }) {
-                    Icon(imageVector = Icons.Outlined.Close , contentDescription = "Close Snackbar" , tint = snackbarContentColor)
-                }
-            }) {
-                Text(text = snackBarData.visuals.message)
-            }
-        }
+        StatusSnackbarHost(snackBarHostState = snackBarHostState , view = view , navController = navController)
     } , floatingActionButton = {
         Column(horizontalAlignment = Alignment.End) {
             SmallFloatingActionButton(modifier = Modifier.padding(bottom = 12.dp) , isVisible = isFabVisible.value , isExtended = isFabExtended.value , icon = Icons.Outlined.ImportExport , onClick = {

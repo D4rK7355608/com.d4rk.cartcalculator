@@ -18,6 +18,10 @@ sealed interface Errors: Error {
         FAILED_TO_DELETE_CART,
         FAILED_TO_DECRYPT_CART,
         FAILED_TO_ENCRYPT_CART,
+        FAILED_TO_LOAD_CART,
+        FAILED_TO_UPDATE_CART_ITEM,
+        FAILED_TO_DELETE_CART_ITEM,
+        FAILED_TO_ADD_CART_ITEM,
     }
 
     enum class Database : Errors {

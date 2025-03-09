@@ -2,6 +2,11 @@ package com.d4rk.cartcalculator.core.di
 
 import android.content.Context
 import com.d4rk.cartcalculator.app.main.ui.MainViewModel
+import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.AddCartItemUseCase
+import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.DeleteCartItemUseCase
+import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.LoadCartUseCase
+import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.UpdateCartItemUseCase
+import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.AddCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DecryptSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DeleteCartUseCase
@@ -56,7 +61,18 @@ val appModule : Module = module {
 
     viewModel {
         HomeViewModel(
-            getCartsUseCase = get() , addCartUseCase = get() , deleteCartUseCase = get() , importSharedCartUseCase = get() , openCartUseCase = get() , dispatcherProvider = get(), generateCartShareLinkUseCase = get()
+            getCartsUseCase = get() , addCartUseCase = get() , deleteCartUseCase = get() , importSharedCartUseCase = get() , openCartUseCase = get() , dispatcherProvider = get() , generateCartShareLinkUseCase = get()
+        )
+    }
+
+    single<LoadCartUseCase> { LoadCartUseCase(database = get()) }
+    single<AddCartItemUseCase> { AddCartItemUseCase(database = get()) }
+    single<UpdateCartItemUseCase> { UpdateCartItemUseCase(database = get()) }
+    single<DeleteCartItemUseCase> { DeleteCartItemUseCase(database = get()) }
+
+    viewModel {
+        CartViewModel(
+            loadCartUseCase = get() , addCartItemUseCase = get() , updateCartItemUseCase = get() , deleteCartItemUseCase = get() , generateCartShareLinkUseCase = get() , dispatcherProvider = get()
         )
     }
 }

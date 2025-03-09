@@ -31,6 +31,10 @@ fun Errors.asUiText() : UiTextHelper {
         // Database errors
         Errors.Database.DATABASE_OPERATION_FAILED -> UiTextHelper.StringResource(R.string.database_operation_failed)
         Errors.Database.CART_NOT_FOUND -> UiTextHelper.StringResource(R.string.database_cart_not_found)
+        Errors.UseCase.FAILED_TO_LOAD_CART -> UiTextHelper.StringResource(R.string.failed_to_load_cart)
+        Errors.UseCase.FAILED_TO_UPDATE_CART_ITEM -> UiTextHelper.StringResource(R.string.failed_to_update_cart_item)
+        Errors.UseCase.FAILED_TO_DELETE_CART_ITEM -> UiTextHelper.StringResource(R.string.failed_to_delete_cart_item)
+        Errors.UseCase.FAILED_TO_ADD_CART_ITEM -> UiTextHelper.StringResource(R.string.failed_to_add_cart_item)
     }
 }
 
