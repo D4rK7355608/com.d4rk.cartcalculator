@@ -1,5 +1,7 @@
 package com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components
 
+import android.view.SoundEffectConstants
+import android.view.View
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -43,6 +46,7 @@ fun CartItem(
 ) {
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString : String = dateFormat.format(cart.date)
+    val view : View = LocalView.current
 
     val dismissState : SwipeToDismissBoxState = rememberSwipeToDismissBoxState(confirmValueChange = {
         if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
@@ -65,7 +69,10 @@ fun CartItem(
     SwipeToDismissBox(modifier = modifier
             .hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState)
             .padding(horizontal = SizeConstants.MediumSize) , state = dismissState , backgroundContent = {} , content = {
-        OutlinedCard(shape = RoundedCornerShape(size = SizeConstants.MediumSize) , modifier = Modifier.fillMaxWidth() , onClick = { onCardClick() }) {
+        OutlinedCard(shape = RoundedCornerShape(size = SizeConstants.MediumSize) , modifier = Modifier.fillMaxWidth() , onClick = {
+            view.playSoundEffect(SoundEffectConstants.CLICK)
+            onCardClick()
+        }) {
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
