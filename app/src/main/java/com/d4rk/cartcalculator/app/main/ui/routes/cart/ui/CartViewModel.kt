@@ -47,23 +47,10 @@ class CartViewModel(
             is CartAction.GenerateCartShareLink -> generateCartShareLink(cartId = event.cartId)
             is CartAction.DecreaseQuantity -> decreaseQuantity(item = event.item)
             is CartAction.IncreaseQuantity -> increaseQuantity(item = event.item)
-            is CartAction.OpenNewCartItemDialog -> {
-                // Open the dialog to add a new cart item
-            }
-
-            is CartAction.OpenEditDialog -> {
-                // Open dialog to edit this item
-            }
-
-            is CartAction.OpenDeleteDialog -> {
-                // Open dialog to confirm deletion of this item
-            }
-
-            is CartAction.ItemCheckedChange -> {
-                // Update the checked status of the item
-                val updatedItem : ShoppingCartItemsTable = event.item.copy(isChecked = event.isChecked)
-                sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
-            }
+            is CartAction.OpenNewCartItemDialog -> openNewCartItemDialog(isOpen = event.isOpen)
+            is CartAction.OpenEditDialog -> openEditDialog(item = event.item)
+            is CartAction.OpenDeleteDialog -> openDeleteDialog(item = event.item)
+            is CartAction.ItemCheckedChange -> updateItemChecked(item = event.item , isChecked = event.isChecked)
         }
     }
 
@@ -184,6 +171,24 @@ class CartViewModel(
         }
     }
 
+    private fun openNewCartItemDialog(isOpen : Boolean) {
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { it.copy(openDialog = isOpen) }
+        }
+    }
+
+    private fun openEditDialog(item : ShoppingCartItemsTable?) {
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { it.copy(openEditDialog = item != null , currentCartItemForEdit = item) }
+        }
+    }
+
+    private fun openDeleteDialog(item : ShoppingCartItemsTable?) {
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { it.copy(openDeleteDialog = item != null , currentCartItemForDeletion = item) }
+        }
+    }
+
     private fun calculateTotalPrice() {
         viewModelScope.launch {
             val total : Double = _screenState.value.data?.cartItems?.sumOf { it.price.toDouble() * it.quantity } ?: 0.0
@@ -194,12 +199,23 @@ class CartViewModel(
     }
 
     private fun decreaseQuantity(item : ShoppingCartItemsTable) {
-        val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity - 1)
-        sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+        viewModelScope.launch {
+            val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity - 1)
+            sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+        }
     }
 
     private fun increaseQuantity(item : ShoppingCartItemsTable) {
-        val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity + 1)
-        sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+        viewModelScope.launch {
+            val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity + 1)
+            sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+        }
+    }
+
+    private fun updateItemChecked(item: ShoppingCartItemsTable, isChecked: Boolean) {
+        viewModelScope.launch {
+            val updatedItem: ShoppingCartItemsTable = item.copy(isChecked = isChecked)
+            sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+        }
     }
 }

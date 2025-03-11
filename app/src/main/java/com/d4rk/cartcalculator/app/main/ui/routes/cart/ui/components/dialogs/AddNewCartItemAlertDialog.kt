@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.core.ui.dialogs
+package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.dialogs
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -32,26 +32,17 @@ import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 @Composable
 fun AddNewCartItemAlertDialog(
-    cartId : Int ,
-    onDismiss : () -> Unit ,
-    onCartCreated : (ShoppingCartItemsTable) -> Unit ,
-    existingCartItem : ShoppingCartItemsTable? = null
+    cartId : Int , onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit , existingCartItem : ShoppingCartItemsTable? = null
 ) {
 
-    val newCartItem : MutableState<ShoppingCartItemsTable?> =
-            remember { mutableStateOf(value = null) }
+    val newCartItem : MutableState<ShoppingCartItemsTable?> = remember { mutableStateOf(value = null) }
     val initialName : String = existingCartItem?.name ?: ""
     val initialPrice : String = existingCartItem?.price ?: ""
     val initialQuantity : String = existingCartItem?.quantity?.toString() ?: ""
 
     AlertDialog(onDismissRequest = onDismiss , text = {
         AddNewCartItemAlertDialogContent(
-            cartId = cartId ,
-            newCartItem = newCartItem ,
-            initialName = initialName ,
-            initialPrice = initialPrice ,
-            initialQuantity = initialQuantity ,
-            existingCartItem = existingCartItem
+            cartId = cartId , newCartItem = newCartItem , initialName = initialName , initialPrice = initialPrice , initialQuantity = initialQuantity , existingCartItem = existingCartItem
         )
     } , icon = {
         Icon(
@@ -61,6 +52,7 @@ fun AddNewCartItemAlertDialog(
         TextButton(onClick = {
             newCartItem.value?.let { cartItem ->
                 onCartCreated(cartItem)
+                onDismiss()
             }
         } , enabled = newCartItem.value != null) {
             Text(text = stringResource(id = android.R.string.ok))
@@ -76,12 +68,7 @@ fun AddNewCartItemAlertDialog(
 
 @Composable
 fun AddNewCartItemAlertDialogContent(
-    cartId : Int ,
-    newCartItem : MutableState<ShoppingCartItemsTable?> ,
-    initialName : String ,
-    initialPrice : String ,
-    initialQuantity : String ,
-    existingCartItem : ShoppingCartItemsTable?
+    cartId : Int , newCartItem : MutableState<ShoppingCartItemsTable?> , initialName : String , initialPrice : String , initialQuantity : String , existingCartItem : ShoppingCartItemsTable?
 ) {
     val nameText : MutableState<String> = remember { mutableStateOf(value = initialName) }
     val priceText : MutableState<String> = remember { mutableStateOf(value = initialPrice) }
@@ -93,42 +80,22 @@ fun AddNewCartItemAlertDialogContent(
     val keyboardController : SoftwareKeyboardController? = LocalSoftwareKeyboardController.current
 
     Column {
-        OutlinedTextField(value = nameText.value ,
-                          singleLine = true ,
-                          onValueChange = { nameText.value = it } ,
-                          label = { Text(text = stringResource(id = R.string.item_name)) } ,
-                          keyboardOptions = KeyboardOptions(
-                              capitalization = KeyboardCapitalization.Sentences ,
-                              imeAction = ImeAction.Next
-                          ) ,
-                          keyboardActions = KeyboardActions(onNext = { priceFocusRequester.requestFocus() }) ,
-                          placeholder = { Text(text = stringResource(id = R.string.enter_item_name)) } ,
-                          modifier = Modifier.focusRequester(focusRequester = nameFocusRequester))
+        OutlinedTextField(value = nameText.value , singleLine = true , onValueChange = { nameText.value = it } , label = { Text(text = stringResource(id = R.string.item_name)) } , keyboardOptions = KeyboardOptions(
+            capitalization = KeyboardCapitalization.Sentences , imeAction = ImeAction.Next
+        ) , keyboardActions = KeyboardActions(onNext = { priceFocusRequester.requestFocus() }) , placeholder = { Text(text = stringResource(id = R.string.enter_item_name)) } , modifier = Modifier.focusRequester(focusRequester = nameFocusRequester))
 
-        OutlinedTextField(value = priceText.value ,
-                          singleLine = true ,
-                          onValueChange = { priceText.value = it } ,
-                          label = { Text(text = stringResource(id = R.string.item_price)) } ,
-                          placeholder = { Text(text = stringResource(id = R.string.enter_item_price)) } ,
-                          keyboardOptions = KeyboardOptions(
-                              keyboardType = KeyboardType.Number , imeAction = ImeAction.Next
-                          ) ,
-                          keyboardActions = KeyboardActions(onNext = { quantityFocusRequester.requestFocus() }) ,
-                          modifier = Modifier.focusRequester(focusRequester = priceFocusRequester)
+        OutlinedTextField(
+            value = priceText.value , singleLine = true , onValueChange = { priceText.value = it } , label = { Text(text = stringResource(id = R.string.item_price)) } , placeholder = { Text(text = stringResource(id = R.string.enter_item_price)) } , keyboardOptions = KeyboardOptions(
+            keyboardType = KeyboardType.Number , imeAction = ImeAction.Next
+        ) , keyboardActions = KeyboardActions(onNext = { quantityFocusRequester.requestFocus() }) , modifier = Modifier.focusRequester(focusRequester = priceFocusRequester)
         )
 
-        OutlinedTextField(value = quantityText.value ,
-                          singleLine = true ,
-                          onValueChange = { quantityText.value = it } ,
-                          label = { Text(text = stringResource(id = R.string.quantity)) } ,
-                          placeholder = { Text(text = stringResource(id = R.string.enter_quantity)) } ,
-                          keyboardOptions = KeyboardOptions(
-                              keyboardType = KeyboardType.Number , imeAction = ImeAction.Done
-                          ) ,
-                          keyboardActions = KeyboardActions(onDone = {
-                              keyboardController?.hide()
-                          }) ,
-                          modifier = Modifier.focusRequester(focusRequester = quantityFocusRequester)
+        OutlinedTextField(
+            value = quantityText.value , singleLine = true , onValueChange = { quantityText.value = it } , label = { Text(text = stringResource(id = R.string.quantity)) } , placeholder = { Text(text = stringResource(id = R.string.enter_quantity)) } , keyboardOptions = KeyboardOptions(
+            keyboardType = KeyboardType.Number , imeAction = ImeAction.Done
+        ) , keyboardActions = KeyboardActions(onDone = {
+            keyboardController?.hide()
+        }) , modifier = Modifier.focusRequester(focusRequester = quantityFocusRequester)
         )
 
         Spacer(modifier = Modifier.height(height = 24.dp))
@@ -147,10 +114,7 @@ fun AddNewCartItemAlertDialogContent(
             }
             else {
                 val newItem = ShoppingCartItemsTable(
-                    cartId = cartId ,
-                    name = nameText.value ,
-                    price = price.toString() ,
-                    quantity = quantity
+                    cartId = cartId , name = nameText.value , price = price.toString() , quantity = quantity
                 )
                 newItem
             }

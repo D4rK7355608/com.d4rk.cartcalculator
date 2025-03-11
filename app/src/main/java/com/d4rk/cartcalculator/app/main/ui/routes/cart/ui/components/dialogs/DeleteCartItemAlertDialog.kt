@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.core.ui.dialogs
+package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.dialogs
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

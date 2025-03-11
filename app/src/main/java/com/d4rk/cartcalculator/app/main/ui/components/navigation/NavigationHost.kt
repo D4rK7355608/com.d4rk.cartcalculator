@@ -23,25 +23,16 @@ import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun NavigationHost(
-    navController: NavHostController,
-    snackbarHostState: SnackbarHostState,
-    onFabVisibilityChanged: (Boolean) -> Unit,
-    paddingValues: PaddingValues
-) {
-    NavHost(navController = navController, startDestination = "home") {
+fun NavigationHost(navController : NavHostController , snackbarHostState : SnackbarHostState , onFabVisibilityChanged : (Boolean) -> Unit , paddingValues : PaddingValues) {
+    NavHost(navController = navController , startDestination = "home") {
         composable(route = "home") { backStackEntry ->
-            val homeViewModel: HomeViewModel = koinViewModel()
+            val homeViewModel : HomeViewModel = koinViewModel()
             val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.screenState.collectAsState()
 
-            HomeEventHandler(homeViewModel = homeViewModel , snackbarHostState = snackbarHostState , backStackEntry = backStackEntry , homeScreenState =homeScreenState)
+            HomeEventHandler(homeViewModel = homeViewModel , snackbarHostState = snackbarHostState , backStackEntry = backStackEntry , homeScreenState = homeScreenState)
 
             HomeScreen(
-                paddingValues = paddingValues,
-                viewModel = homeViewModel,
-                onFabVisibilityChanged = onFabVisibilityChanged,
-                snackbarHostState = snackbarHostState,
-                screenState = homeScreenState
+                paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState
             )
         }
     }
@@ -51,14 +42,12 @@ fun handleNavigationItemClick(
     context : Context , item : NavigationDrawerItem , drawerState : DrawerState , coroutineScope : CoroutineScope
 ) {
     when (item.title) {
-        R.string.settings -> {
-          /*  IntentsHelper.openActivity(
+        R.string.settings -> {/*  IntentsHelper.openActivity(
                 context = context , activityClass = SettingsActivity::class.java
             )*/
         }
 
-        R.string.help_and_feedback -> {
-           /* IntentsHelper.openActivity(
+        R.string.help_and_feedback -> {/* IntentsHelper.openActivity(
                 context = context , activityClass = HelpActivity::class.java
             )*/
         }

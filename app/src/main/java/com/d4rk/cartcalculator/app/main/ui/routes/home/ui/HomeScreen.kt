@@ -29,7 +29,7 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.actions.HomeAction
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.CartItem
-import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.dialogs.HomeDialogs
+import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.dialogs.HomeScreenDialogs
 import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.effects.HomeSnackbarHandler
 
 @Composable
@@ -46,7 +46,7 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 
     HomeSnackbarHandler(screenState = screenState , viewModel = viewModel , snackbarHostState = snackbarHostState)
 
-    HomeDialogs(screenState = screenState , viewModel = viewModel)
+    HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 
 @Composable

@@ -41,6 +41,7 @@ import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.CartItemsList
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.CartTotalCard
+import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.dialogs.CartScreenDialogs
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -65,7 +66,9 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
             )
         } , actions = {
             AnimatedButtonDirection(
-                icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = { viewModel.sendEvent(CartAction.OpenNewCartItemDialog) } , fromRight = true
+                icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = {
+                    viewModel.sendEvent(event = CartAction.OpenNewCartItemDialog(isOpen = true))
+                                                                                                    } , fromRight = true
             )
                 /*        AnimatedButtonDirection(
                       visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = { AppUtils.openGooglePayOrWallet(context) } , durationMillis = 400 , fromRight = true
@@ -95,7 +98,7 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
 
     //HomeScreenSnackbar(screenState = screenState , viewModel = viewModel , snackbarHostState = snackbarHostState)
 
-    //HomeDialogs(screenState = screenState , viewModel = viewModel)
+    CartScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 
 @Composable

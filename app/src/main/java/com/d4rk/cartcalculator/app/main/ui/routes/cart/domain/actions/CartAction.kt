@@ -8,10 +8,10 @@ sealed class CartAction {
     data class UpdateCartItem(val item: ShoppingCartItemsTable) : CartAction()
     data class DeleteCartItem(val item: ShoppingCartItemsTable) : CartAction()
     data class GenerateCartShareLink(val cartId: Int) : CartAction()
-    data object OpenNewCartItemDialog : CartAction()
+    data class OpenNewCartItemDialog(val isOpen: Boolean) : CartAction()
     data class DecreaseQuantity(val item: ShoppingCartItemsTable) : CartAction()
     data class IncreaseQuantity(val item: ShoppingCartItemsTable) : CartAction()
-    data class OpenEditDialog(val item: ShoppingCartItemsTable) : CartAction()
-    data class OpenDeleteDialog(val item: ShoppingCartItemsTable) : CartAction()
+    data class OpenEditDialog(val item: ShoppingCartItemsTable?) : CartAction()
+    data class OpenDeleteDialog(val item: ShoppingCartItemsTable?) : CartAction()
     data class ItemCheckedChange(val item: ShoppingCartItemsTable, val isChecked: Boolean) : CartAction()
 }

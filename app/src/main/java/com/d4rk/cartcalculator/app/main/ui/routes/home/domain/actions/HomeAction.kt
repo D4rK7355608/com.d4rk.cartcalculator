@@ -16,5 +16,4 @@ sealed class HomeAction {
     data class ShowSnackbar(val message: String) : HomeAction()
     data object DismissSnackbar : HomeAction()
     data class GenerateCartShareLink(val cart: ShoppingCartTable) : HomeAction()
-    data class ShareCartLink(val link: String) : HomeAction()
 }
