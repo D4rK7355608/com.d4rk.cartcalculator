@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.AddShoppingCart
@@ -70,8 +68,10 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
                     viewModel.sendEvent(event = CartAction.OpenNewCartItemDialog(isOpen = true))
                                                                                                     } , fromRight = true
             )
-                /*        AnimatedButtonDirection(
-                      visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = { AppUtils.openGooglePayOrWallet(context) } , durationMillis = 400 , fromRight = true
+  /*                      AnimatedButtonDirection(
+                      visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = {
+                          AppUtils.openGooglePayOrWallet(context)
+                                                                                                                                                                   } , durationMillis = 400 , fromRight = true
                   )
 
                   AnimatedButtonDirection(
@@ -103,11 +103,11 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
 
 @Composable
 fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddingValues : PaddingValues) {
-    val listState : LazyListState = rememberLazyListState()
+
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(uiState = uiState , modifier = Modifier
                 .padding(paddingValues = paddingValues)
-                .weight(weight = 1f) , viewModel = viewModel , listState = listState)
+                .weight(weight = 1f) , viewModel = viewModel)
         CartTotalCard(uiState = uiState)
     }
 }

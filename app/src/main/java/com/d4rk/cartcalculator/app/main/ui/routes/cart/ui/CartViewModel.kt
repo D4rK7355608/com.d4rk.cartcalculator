@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
@@ -14,7 +15,6 @@ import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.LoadCartU
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.UpdateCartItemUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
-import com.d4rk.cartcalculator.core.di.DispatcherProvider
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -199,23 +199,35 @@ class CartViewModel(
     }
 
     private fun decreaseQuantity(item : ShoppingCartItemsTable) {
-        viewModelScope.launch {
-            val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity - 1)
-            sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
-        }
+        changeQuantity(item = item , change = - 1)
     }
 
     private fun increaseQuantity(item : ShoppingCartItemsTable) {
+        changeQuantity(item = item , change = 1)
+    }
+
+    private fun changeQuantity(item : ShoppingCartItemsTable , change : Int) {
         viewModelScope.launch {
-            val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity + 1)
-            sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+            val updatedItem : ShoppingCartItemsTable = item.copy(quantity = item.quantity + change)
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
+                val updatedItems : List<ShoppingCartItemsTable> = currentData.cartItems.map { existingItem : ShoppingCartItemsTable ->
+                    if (existingItem.itemId == item.itemId) existingItem.copy(quantity = existingItem.quantity + change) else existingItem
+                }
+                currentData.copy(cartItems = updatedItems)
+            }
+            updateCartItem(cartItem = updatedItem)
         }
     }
 
-    private fun updateItemChecked(item: ShoppingCartItemsTable, isChecked: Boolean) {
+    private fun updateItemChecked(item : ShoppingCartItemsTable , isChecked : Boolean) {
         viewModelScope.launch {
-            val updatedItem: ShoppingCartItemsTable = item.copy(isChecked = isChecked)
-            sendEvent(event = CartAction.UpdateCartItem(item = updatedItem))
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentState : UiCartScreen ->
+                val checkedCartItems : List<ShoppingCartItemsTable> = currentState.cartItems.map { existingItem : ShoppingCartItemsTable ->
+                    if (existingItem.itemId == item.itemId) existingItem.copy(isChecked = isChecked) else existingItem
+                }
+                currentState.copy(cartItems = checkedCartItems)
+            }
+            updateCartItem(cartItem = item.copy(isChecked = isChecked))
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.d4rk.cartcalculator.core.di
 
 import android.content.Context
+import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
+import com.d4rk.android.libs.apptoolkit.core.di.StandardDispatchers
 import com.d4rk.cartcalculator.app.main.ui.MainViewModel
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.AddCartItemUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.DeleteCartItemUseCase
@@ -10,7 +12,6 @@ import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.AddCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DecryptSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DeleteCartUseCase
-import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GetCartsUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.OpenCartUseCase
@@ -18,6 +19,7 @@ import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.HomeViewModel
 import com.d4rk.cartcalculator.core.data.database.AppDatabase
 import com.d4rk.cartcalculator.core.data.database.DataBaseImplementation
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
+import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module

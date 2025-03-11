@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.app.main.ui.routes.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiSnackbar
@@ -21,7 +22,6 @@ import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GetCartsU
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.OpenCartUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
-import com.d4rk.cartcalculator.core.di.DispatcherProvider
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.core.utils.extensions.asUiText
@@ -66,7 +66,6 @@ class HomeViewModel(
             is HomeAction.DismissDeleteCartDialog -> dismissDeleteCartDialog()
             is HomeAction.ShowSnackbar -> showSnackbar(message = event.message , isError = isError)
             is HomeAction.DismissSnackbar -> dismissSnackbar()
-            else -> {}
         }
     }
 

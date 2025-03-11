@@ -31,9 +31,7 @@ fun NavigationHost(navController : NavHostController , snackbarHostState : Snack
 
             HomeEventHandler(homeViewModel = homeViewModel , snackbarHostState = snackbarHostState , backStackEntry = backStackEntry , homeScreenState = homeScreenState)
 
-            HomeScreen(
-                paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState
-            )
+            HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState)
         }
     }
 }

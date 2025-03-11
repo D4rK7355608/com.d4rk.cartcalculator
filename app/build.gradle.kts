@@ -119,7 +119,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.74") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.75") {
         isTransitive = true
     }
 
@@ -131,9 +131,6 @@ dependencies {
     ksp(dependencyNotation = libs.androidx.room.compiler)
     implementation(dependencyNotation = libs.androidx.room.ktx)
     implementation(dependencyNotation = libs.androidx.room.runtime)
-
-    // Koin
-    implementation(dependencyNotation = libs.bundles.koin)
 
     // Test
     testImplementation(dependencyNotation = libs.bundles.testing)

@@ -26,9 +26,6 @@ truth = "1.6.0"
 uiTestJunit4Android = "1.7.8"
 
 [libraries]
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
@@ -73,11 +70,6 @@ about-libraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "ab
 mannodermaus = { id = "de.mannodermaus.android-junit5", version.ref = "mannodermaus" }
 
 [bundles]
-koin = [
-    "koin-core",
-    "koin-compose-viewmodel",
-    "koin-android"
-]
 
 androidTesting = [
     "androidx-espresso-core",
@@ -88,7 +80,6 @@ androidTesting = [
     "androidx-test-orchestrator",
     "mockk-api",
     "test-kotlin-coroutines",
-    "koin-android",
     "instrumentation-koin-compose",
     "test-koin",
     "willow-assert",

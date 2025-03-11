@@ -1,10 +1,10 @@
 package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,62 +18,58 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.CartViewModel
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 @Composable
-fun CartItemsList(uiState: UiCartScreen, modifier: Modifier, viewModel: CartViewModel, listState: LazyListState) {
-    val (checkedItems, uncheckedItems) = uiState.cartItems.partition { it.isChecked }
-    val (visibilityStates: SnapshotStateList<Boolean>) = rememberAnimatedVisibilityState(listState = listState, itemCount = uiState.cartItems.size)
+fun CartItemsList(uiState : UiCartScreen , modifier : Modifier , viewModel : CartViewModel) {
+    val (checkedItems : List<ShoppingCartItemsTable> , uncheckedItems : List<ShoppingCartItemsTable>) = uiState.cartItems.partition { it.isChecked }
+    val listState : LazyListState = rememberLazyListState()
+    val (visibilityStates : SnapshotStateList<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.cartItems.size)
 
     LazyColumn(
-        state = listState,
-        modifier = modifier,
-        verticalArrangement = Arrangement.spacedBy(SizeConstants.MediumSize)
+        state = listState , modifier = Modifier.then(modifier)
     ) {
         if (checkedItems.isNotEmpty()) {
             item {
                 Text(
-                    text = stringResource(id = R.string.in_cart),
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier
-                            .padding(start = SizeConstants.LargeSize, top = SizeConstants.SmallSize)
+                    text = stringResource(id = R.string.in_cart) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                             .animateItem()
+                            .padding(start = SizeConstants.LargeSize , top = SizeConstants.SmallSize)
                 )
             }
-            itemsIndexed(checkedItems, key = { _, item -> item.itemId }) { index, cartItem ->
+            itemsIndexed(items = checkedItems , key = { _ , item -> item.itemId }) { index , cartItem ->
+                val isVisible : Boolean = visibilityStates.getOrElse(index = index) { false }
                 CartItem(
-                    viewModel = viewModel,
-                    cartItem = cartItem,
-                    onMinusClick = { item -> viewModel.sendEvent(CartAction.DecreaseQuantity(item)) },
-                    onPlusClick = { item -> viewModel.sendEvent(CartAction.IncreaseQuantity(item)) },
-                    uiState = uiState,
-                    modifier = Modifier
-                            .animateItem()
-                            .animateVisibility(visible = visibilityStates.getOrElse(index) { false }, index = index)
-                )
+                    viewModel = viewModel ,
+                         cartItem = cartItem ,
+                         onMinusClick = { item -> viewModel.sendEvent(CartAction.DecreaseQuantity(item)) } ,
+                         onPlusClick = { item -> viewModel.sendEvent(CartAction.IncreaseQuantity(item)) } ,
+                         uiState = uiState ,
+                         modifier = Modifier
+                                 .animateItem()
+                                 .animateVisibility(visible = isVisible , index = index))
             }
         }
 
         if (uncheckedItems.isNotEmpty()) {
             item {
                 Text(
-                    text = stringResource(id = R.string.items_to_pick_up),
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier
-                            .padding(start = SizeConstants.LargeSize, top = SizeConstants.SmallSize)
+                    text = stringResource(id = R.string.items_to_pick_up) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                             .animateItem()
+                            .padding(start = SizeConstants.LargeSize , top = SizeConstants.SmallSize)
                 )
             }
-            itemsIndexed(uncheckedItems, key = { _, item -> item.itemId }) { index, cartItem ->
+            itemsIndexed(items = uncheckedItems , key = { _ , item -> item.itemId }) { index , cartItem ->
+                val isVisible : Boolean = visibilityStates.getOrElse(index = index) { false }
                 CartItem(
-                    viewModel = viewModel,
-                    cartItem = cartItem,
-                    onMinusClick = { item -> viewModel.sendEvent(CartAction.DecreaseQuantity(item)) },
-                    onPlusClick = { item -> viewModel.sendEvent(CartAction.IncreaseQuantity(item)) },
-                    uiState = uiState,
-                    modifier = Modifier
-                            .animateItem()
-                            .animateVisibility(visible = visibilityStates.getOrElse(index) { false }, index = index)
-                )
+                    viewModel = viewModel ,
+                         cartItem = cartItem ,
+                         onMinusClick = { item -> viewModel.sendEvent(CartAction.DecreaseQuantity(item)) } ,
+                         onPlusClick = { item -> viewModel.sendEvent(CartAction.IncreaseQuantity(item)) } ,
+                         uiState = uiState ,
+                         modifier = Modifier
+                                 .animateItem()
+                                 .animateVisibility(visible = isVisible , index = index))
             }
         }
     }
