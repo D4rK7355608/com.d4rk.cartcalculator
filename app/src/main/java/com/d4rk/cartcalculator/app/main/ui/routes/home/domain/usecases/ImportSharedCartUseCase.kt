@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.flow
 class ImportSharedCartUseCase(private val database : DatabaseInterface , private val decryptSharedCartUseCase : DecryptSharedCartUseCase) : Repository<String , Flow<DataState<Unit , Errors>>> {
 
     override suspend fun invoke(param : String) : Flow<DataState<Unit , Errors>> = flow {
-        emit(DataState.Loading())
         runCatching {
             decryptSharedCartUseCase(param).collect { result ->
                 when (result) {

@@ -1,9 +1,9 @@
 package com.d4rk.cartcalculator.core.utils.extensions
 
 import android.database.sqlite.SQLiteException
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
-import com.d4rk.cartcalculator.core.utils.helpers.UiTextHelper
 import kotlinx.serialization.SerializationException
 import java.net.ConnectException
 import java.net.SocketTimeoutException

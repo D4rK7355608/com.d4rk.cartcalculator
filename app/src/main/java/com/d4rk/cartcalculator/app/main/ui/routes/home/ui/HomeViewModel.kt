@@ -2,11 +2,20 @@ package com.d4rk.cartcalculator.app.main.ui.routes.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiSnackbar
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.setErrors
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.setLoading
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.showSnackbar
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateState
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.ScreenMessageType
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.actions.HomeAction
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.AddCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DeleteCartUseCase
-import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GetCartsUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.OpenCartUseCase
@@ -14,21 +23,14 @@ import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.core.di.DispatcherProvider
 import com.d4rk.cartcalculator.core.domain.model.network.DataState
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
-import com.d4rk.cartcalculator.core.domain.model.ui.ScreenState
-import com.d4rk.cartcalculator.core.domain.model.ui.UiSnackbar
-import com.d4rk.cartcalculator.core.domain.model.ui.UiStateScreen
-import com.d4rk.cartcalculator.core.domain.model.ui.setErrors
-import com.d4rk.cartcalculator.core.domain.model.ui.setLoading
-import com.d4rk.cartcalculator.core.domain.model.ui.showSnackbar
-import com.d4rk.cartcalculator.core.domain.model.ui.updateData
-import com.d4rk.cartcalculator.core.domain.model.ui.updateState
-import com.d4rk.cartcalculator.core.utils.constants.ScreenMessageType
+import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.core.utils.extensions.asUiText
-import com.d4rk.cartcalculator.core.utils.helpers.UiTextHelper
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -69,9 +71,8 @@ class HomeViewModel(
     }
 
     private fun loadCarts() {
-        _screenState.setLoading()
         viewModelScope.launch {
-            getCartsUseCase(param = Unit).flowOn(dispatcherProvider.io).collect { result ->
+            getCartsUseCase(param = Unit).flowOn(dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         if (result.data.isEmpty()) {
@@ -106,9 +107,8 @@ class HomeViewModel(
     }
 
     private fun addCart(cart : ShoppingCartTable) {
-        _screenState.setLoading()
         viewModelScope.launch {
-            addCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).collect { result ->
+            addCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
@@ -135,7 +135,7 @@ class HomeViewModel(
 
     private fun deleteCart(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            deleteCartUseCase(param = cart).flowOn(dispatcherProvider.io).collect { result ->
+            deleteCartUseCase(param = cart).flowOn(dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(ScreenState.Success()) { currentData ->
@@ -162,7 +162,7 @@ class HomeViewModel(
 
     private fun importSharedCart(encodedData : String) {
         viewModelScope.launch {
-            importSharedCartUseCase(param = encodedData).flowOn(dispatcherProvider.io).collect { result ->
+            importSharedCartUseCase(param = encodedData).flowOn(dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         loadCarts()
@@ -181,7 +181,7 @@ class HomeViewModel(
 
     private fun generateCartShareLink(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            generateCartShareLinkUseCase(param = cart.cartId).collect { result ->
+            generateCartShareLinkUseCase(param = cart.cartId).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(ScreenState.Success()) { currentData ->

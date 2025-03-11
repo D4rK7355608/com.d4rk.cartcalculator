@@ -21,7 +21,6 @@ import java.net.URLDecoder
 class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> , Errors>>> {
 
     override suspend fun invoke(param : String) : Flow<DataState<Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> , Errors>> = flow {
-        emit(DataState.Loading())
         runCatching {
             val uri : Uri = param.toUri()
             val base62EncodedData : String = uri.getQueryParameter("d") ?: throw IllegalArgumentException("No 'd' parameter found in URL")

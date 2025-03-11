@@ -10,7 +10,7 @@ import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.AddCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DecryptSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.DeleteCartUseCase
-import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GenerateCartShareLinkUseCase
+import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GetCartsUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.OpenCartUseCase

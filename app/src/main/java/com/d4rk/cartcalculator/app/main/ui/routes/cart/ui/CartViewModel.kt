@@ -2,19 +2,19 @@ package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.AddCartItemUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.DeleteCartItemUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.LoadCartUseCase
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.UpdateCartItemUseCase
-import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.core.di.DispatcherProvider
 import com.d4rk.cartcalculator.core.domain.model.network.DataState
-import com.d4rk.cartcalculator.core.domain.model.ui.ScreenState
-import com.d4rk.cartcalculator.core.domain.model.ui.UiStateScreen
-import com.d4rk.cartcalculator.core.domain.model.ui.updateData
+import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

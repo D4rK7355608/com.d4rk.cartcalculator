@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.flow
 class AddCartUseCase(private val database: DatabaseInterface) : Repository<ShoppingCartTable, Flow<DataState<ShoppingCartTable, Errors>>> {
 
     override suspend fun invoke(param: ShoppingCartTable): Flow<DataState<ShoppingCartTable, Errors>> = flow {
-        emit(DataState.Loading())
         runCatching {
             val newCartId: Long = database.insertCart(cart = param)
             param.copy(cartId = newCartId.toInt())

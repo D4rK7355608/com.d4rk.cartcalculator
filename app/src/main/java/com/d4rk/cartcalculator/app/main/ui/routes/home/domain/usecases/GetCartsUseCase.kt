@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.flow
 
 class GetCartsUseCase(private val database: DatabaseInterface) : Repository<Unit, Flow<DataState<List<ShoppingCartTable>, Errors>>> {
     override suspend fun invoke(param: Unit): Flow<DataState<List<ShoppingCartTable>, Errors>> = flow {
-        emit(DataState.Loading())
         runCatching {
             database.getAllCarts()
         }.onSuccess { carts ->

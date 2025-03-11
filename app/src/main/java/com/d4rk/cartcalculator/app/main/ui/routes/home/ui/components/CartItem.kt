@@ -23,17 +23,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.hapticfeedback.HapticFeedback
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
-import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
-import com.d4rk.android.libs.apptoolkit.utils.constants.ui.SizeConstants
+import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
@@ -41,9 +38,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
-fun CartItem(
-    cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit , uiState : UiHomeData , modifier : Modifier , onShare : (ShoppingCartTable) -> Unit ,
-) {
+fun CartItem(cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit , uiState : UiHomeData , modifier : Modifier , onShare : (ShoppingCartTable) -> Unit) {
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString : String = dateFormat.format(cart.date)
     val view : View = LocalView.current
@@ -57,7 +52,7 @@ fun CartItem(
         }
     })
 
-    var menuExpanded by remember { mutableStateOf(false) }
+    var menuExpanded : Boolean by remember { mutableStateOf(value = false) }
 
     LaunchedEffect(key1 = dismissState.targetValue , key2 = dismissState.currentValue) {
         when {
@@ -76,7 +71,7 @@ fun CartItem(
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(SizeConstants.SmallSize) , verticalAlignment = Alignment.CenterVertically , horizontalArrangement = Arrangement.SpaceBetween
+                        .padding(all = SizeConstants.SmallSize) , verticalAlignment = Alignment.CenterVertically , horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(
                     modifier = Modifier
@@ -84,13 +79,9 @@ fun CartItem(
                             .clip(shape = MaterialTheme.shapes.medium)
                             .padding(end = SizeConstants.SmallSize)
                 ) {
-                    Text(
-                        text = cart.name , style = MaterialTheme.typography.titleMedium , maxLines = 1 , overflow = TextOverflow.Ellipsis
-                    )
+                    Text(text = cart.name , style = MaterialTheme.typography.titleMedium , maxLines = 1 , overflow = TextOverflow.Ellipsis)
                     SmallVerticalSpacer()
-                    Text(
-                        text = stringResource(R.string.created_on , dateString) , style = MaterialTheme.typography.labelMedium , textAlign = TextAlign.Start
-                    )
+                    Text(text = stringResource(R.string.created_on , dateString) , style = MaterialTheme.typography.labelMedium , textAlign = TextAlign.Start)
                     SmallVerticalSpacer()
                     CartCategoriesRow()
                 }
@@ -108,22 +99,4 @@ fun CartItem(
             }
         }
     })
-}
-
-// TODO: Add to AppToolkit
-fun Modifier.hapticSwipeToDismissBox(swipeToDismissBoxState : SwipeToDismissBoxState) : Modifier = composed {
-    val haptic : HapticFeedback = LocalHapticFeedback.current
-    var hasVibrated by remember { mutableStateOf(value = false) }
-
-    LaunchedEffect(swipeToDismissBoxState.currentValue) {
-        if (swipeToDismissBoxState.currentValue != SwipeToDismissBoxValue.Settled && ! hasVibrated) {
-            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-            hasVibrated = true
-        }
-        else if (swipeToDismissBoxState.currentValue == SwipeToDismissBoxValue.Settled) {
-            hasVibrated = false
-        }
-    }
-
-    return@composed this
 }

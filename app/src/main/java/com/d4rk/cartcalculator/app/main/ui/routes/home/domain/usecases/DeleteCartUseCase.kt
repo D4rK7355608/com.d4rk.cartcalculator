@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.flow
 
 class DeleteCartUseCase(private val database: DatabaseInterface) : Repository<ShoppingCartTable, Flow<DataState<Unit, Errors>>> {
     override suspend fun invoke(param: ShoppingCartTable): Flow<DataState<Unit, Errors>> = flow {
-        emit(DataState.Loading())
         runCatching {
             database.deleteCart(cart = param)
             database.deleteItemsFromCart(cartId = param.cartId)

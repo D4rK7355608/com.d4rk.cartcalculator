@@ -1,38 +1,40 @@
 package com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.effects
 
+import android.content.Context
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavBackStackEntry
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.actions.HomeAction
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.HomeViewModel
-import com.d4rk.cartcalculator.core.domain.model.ui.UiStateScreen
 
 @Composable
-fun HandleHomeEvents(backStackEntry : NavBackStackEntry , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData> , snackbarHostState : SnackbarHostState) {
-    val context = LocalContext.current
-    val toggleImportDialog = backStackEntry.savedStateHandle.getStateFlow("toggleImportDialog" , false).collectAsState()
-    val openNewCartDialog = backStackEntry.savedStateHandle.getStateFlow("openNewCartDialog" , false).collectAsState()
+fun HomeEventHandler(backStackEntry : NavBackStackEntry , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData> , snackbarHostState : SnackbarHostState) {
+    val context : Context = LocalContext.current
+    val toggleImportDialog : State<Boolean> = backStackEntry.savedStateHandle.getStateFlow(key = "toggleImportDialog" , initialValue = false).collectAsState()
+    val openNewCartDialog : State<Boolean> = backStackEntry.savedStateHandle.getStateFlow(key = "openNewCartDialog" , initialValue = false).collectAsState()
 
-    LaunchedEffect(toggleImportDialog.value) {
+    LaunchedEffect(key1 = toggleImportDialog.value) {
         if (toggleImportDialog.value) {
-            homeViewModel.sendEvent(HomeAction.ToggleImportDialog(true))
+            homeViewModel.sendEvent(event = HomeAction.ToggleImportDialog(true))
             backStackEntry.savedStateHandle["toggleImportDialog"] = false
         }
     }
 
-    LaunchedEffect(openNewCartDialog.value) {
+    LaunchedEffect(key1 = openNewCartDialog.value) {
         if (openNewCartDialog.value) {
-            homeViewModel.sendEvent(HomeAction.OpenNewCartDialog)
+            homeViewModel.sendEvent(event = HomeAction.OpenNewCartDialog)
             backStackEntry.savedStateHandle["openNewCartDialog"] = false
         }
     }
 
-    LaunchedEffect(homeScreenState.snackbar) {
+    LaunchedEffect(key1 = homeScreenState.snackbar) {
         homeScreenState.snackbar?.let { snackbar ->
             backStackEntry.savedStateHandle["currentSnackbarIsError"] = snackbar.isError
 
@@ -40,7 +42,7 @@ fun HandleHomeEvents(backStackEntry : NavBackStackEntry , homeViewModel : HomeVi
                 message = snackbar.message.asString(context) , duration = if (snackbar.isError) SnackbarDuration.Long else SnackbarDuration.Short
             )
 
-            homeViewModel.sendEvent(HomeAction.DismissSnackbar)
+            homeViewModel.sendEvent(event = HomeAction.DismissSnackbar)
             backStackEntry.savedStateHandle.remove<Boolean>("currentSnackbarIsError")
         }
     }

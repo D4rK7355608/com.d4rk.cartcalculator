@@ -11,13 +11,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.d4rk.android.libs.apptoolkit.R
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.android.libs.apptoolkit.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.HomeScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.HomeViewModel
-import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.effects.HandleHomeEvents
-import com.d4rk.cartcalculator.core.domain.model.ui.UiStateScreen
+import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.effects.HomeEventHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
@@ -34,7 +34,7 @@ fun NavigationHost(
             val homeViewModel: HomeViewModel = koinViewModel()
             val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.screenState.collectAsState()
 
-            HandleHomeEvents(homeViewModel = homeViewModel , snackbarHostState = snackbarHostState , backStackEntry = backStackEntry , homeScreenState =homeScreenState)
+            HomeEventHandler(homeViewModel = homeViewModel , snackbarHostState = snackbarHostState , backStackEntry = backStackEntry , homeScreenState =homeScreenState)
 
             HomeScreen(
                 paddingValues = paddingValues,

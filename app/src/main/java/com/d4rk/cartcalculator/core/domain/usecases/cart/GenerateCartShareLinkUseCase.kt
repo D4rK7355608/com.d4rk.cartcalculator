@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases
+package com.d4rk.cartcalculator.core.domain.usecases.cart
 
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable

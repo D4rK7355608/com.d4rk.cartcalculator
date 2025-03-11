@@ -66,18 +66,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedButtonDirection
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.LoadingScreen
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.NoDataScreen
+import com.d4rk.android.libs.apptoolkit.ui.components.layouts.ScreenStateHandler
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.utils.constants.ui.SizeConstants
+import com.d4rk.android.libs.apptoolkit.ui.components.snackbar.StatusSnackbarHost
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ExtraSmallHorizontalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
-import com.d4rk.cartcalculator.core.domain.model.ui.UiStateScreen
-import com.d4rk.cartcalculator.core.ui.layouts.LoadingScreen
-import com.d4rk.cartcalculator.core.ui.layouts.NoDataScreen
-import com.d4rk.cartcalculator.core.ui.layouts.ScreenStateHandler
-import com.d4rk.cartcalculator.core.ui.snackbar.StatusSnackbarHost
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -213,17 +214,17 @@ fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddi
 fun CartItemComposable(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onMinusClick : (ShoppingCartItemsTable) -> Unit , onPlusClick : (ShoppingCartItemsTable) -> Unit , uiState : UiCartScreen , modifier : Modifier) {
     val view : View = LocalView.current
     var checkedState by remember { mutableStateOf(cartItem.isChecked) }
-    val quantityState = viewModel.getQuantityStateForItem(cartItem) // FIXME: Unresolved reference: getQuantityStateForItem
+    val quantityState = viewModel.getQuantityStateForItem(cartItem)
     val interactionSource = remember { MutableInteractionSource() }
     val dismissState = rememberSwipeToDismissBoxState(confirmValueChange = { target ->
         when (target) {
             SwipeToDismissBoxValue.StartToEnd -> {
-                viewModel.sendEvent(CartAction.OpenEditDialog(cartItem)) // FIXME: Unresolved reference: OpenEditDialog
+                viewModel.sendEvent(CartAction.OpenEditDialog(cartItem))
                 false
             }
 
             SwipeToDismissBoxValue.EndToStart -> {
-                viewModel.sendEvent(CartAction.OpenDeleteDialog(cartItem)) // FIXME: Unresolved reference: OpenDeleteDialog
+                viewModel.sendEvent(CartAction.OpenDeleteDialog(cartItem))
                 false
             }
 
@@ -237,10 +238,10 @@ fun CartItemComposable(viewModel : CartViewModel , cartItem : ShoppingCartItemsT
         }
         else if (dismissState.targetValue != SwipeToDismissBoxValue.Settled) {
             if (dismissState.targetValue == SwipeToDismissBoxValue.StartToEnd) {
-                viewModel.sendEvent(CartAction.OpenEditDialog(cartItem)) // FIXME: Unresolved reference: OpenEditDialog
+                viewModel.sendEvent(CartAction.OpenEditDialog(cartItem))
             }
             else if (dismissState.targetValue == SwipeToDismissBoxValue.EndToStart) {
-                viewModel.sendEvent(CartAction.OpenDeleteDialog(cartItem)) // FIXME: Unresolved reference: OpenDeleteDialog
+                viewModel.sendEvent(CartAction.OpenDeleteDialog(cartItem))
             }
         }
     }
@@ -263,7 +264,7 @@ fun CartItemComposable(viewModel : CartViewModel , cartItem : ShoppingCartItemsT
                         Text(text = cartItem.name , style = MaterialTheme.typography.bodyLarge , modifier = Modifier.basicMarquee())
                         Row {
                             Text(text = String.format(Locale.getDefault() , "%.1f" , cartItem.price.toFloat()).removeSuffix(".0"))
-                            Spacer(modifier = Modifier.width(4.dp)) // TODO: library spacer
+                            ExtraSmallHorizontalSpacer()
                             Text(text = uiState.selectedCurrency , style = MaterialTheme.typography.bodyLarge)
                         }
                     }
