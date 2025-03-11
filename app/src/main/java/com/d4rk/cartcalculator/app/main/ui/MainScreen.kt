@@ -30,10 +30,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedExtendedFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.SmallFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
@@ -57,9 +57,7 @@ fun MainScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScaffoldContent(
-    drawerState : DrawerState
-) {
+fun MainScaffoldContent(drawerState : DrawerState) {
     val scrollBehavior : TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val snackBarHostState : SnackbarHostState = remember { SnackbarHostState() }
     val isFabExtended : MutableState<Boolean> = remember { mutableStateOf(value = true) }
@@ -80,7 +78,7 @@ fun MainScaffoldContent(
         StatusSnackbarHost(snackBarHostState = snackBarHostState , view = view , navController = navController)
     } , floatingActionButton = {
         Column(horizontalAlignment = Alignment.End) {
-            SmallFloatingActionButton(modifier = Modifier.padding(bottom = 12.dp) , isVisible = isFabVisible.value , isExtended = isFabExtended.value , icon = Icons.Outlined.ImportExport , onClick = {
+            SmallFloatingActionButton(modifier = Modifier.padding(bottom = SizeConstants.MediumSize) , isVisible = isFabVisible.value , isExtended = isFabExtended.value , icon = Icons.Outlined.ImportExport , onClick = {
                 navController.currentBackStackEntry?.savedStateHandle?.set("toggleImportDialog" , true)
             })
 

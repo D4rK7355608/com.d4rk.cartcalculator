@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.app.main.ui.routes.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiSnackbar
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
@@ -21,7 +22,6 @@ import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.ImportSha
 import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.usecases.OpenCartUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.core.di.DispatcherProvider
-import com.d4rk.cartcalculator.core.domain.model.network.DataState
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.core.utils.extensions.asUiText
@@ -72,11 +72,11 @@ class HomeViewModel(
 
     private fun loadCarts() {
         viewModelScope.launch {
-            getCartsUseCase(param = Unit).flowOn(dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
+            getCartsUseCase(param = Unit).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         if (result.data.isEmpty()) {
-                            _screenState.updateState(ScreenState.NoData())
+                            _screenState.updateState(newValues = ScreenState.NoData())
                         }
                         else {
                             _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
@@ -89,13 +89,12 @@ class HomeViewModel(
 
                     is DataState.Error -> {
                         if (result.error == Errors.UseCase.NO_DATA) {
-                            println(message = "HomeViewModel::loadCarts => No Data => result = $result")
-                            _screenState.updateState(ScreenState.NoData())
+                            _screenState.updateState(newValues = ScreenState.NoData())
                         }
                         else {
 
                             val uiError = UiSnackbar(type = ScreenMessageType.SNACKBAR , message = result.error.asUiText())
-                            _screenState.setErrors(listOf(uiError))
+                            _screenState.setErrors(errors = listOf(element = uiError))
                         }
                     }
 
@@ -108,18 +107,18 @@ class HomeViewModel(
 
     private fun addCart(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            addCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
+            addCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
                             currentData.copy(carts = (currentData.carts + result.data).toMutableList())
                         }
-                        postSnackbar(message = UiTextHelper.DynamicString("Cart added successfully!") , isError = false)
+                        postSnackbar(message = UiTextHelper.DynamicString(content = "Cart added successfully!") , isError = false)
                     }
 
                     is DataState.Error -> {
                         if (result.error == Errors.UseCase.NO_DATA) {
-                            _screenState.updateState(ScreenState.NoData())
+                            _screenState.updateState(newValues = ScreenState.NoData())
                         }
                         else {
                             postSnackbar(message = result.error.asUiText() , isError = true)
@@ -135,18 +134,18 @@ class HomeViewModel(
 
     private fun deleteCart(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            deleteCartUseCase(param = cart).flowOn(dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
+            deleteCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        _screenState.updateData(ScreenState.Success()) { currentData ->
-                            val newList = currentData.carts.toMutableList().apply { remove(cart) }
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                            val newList : MutableList<ShoppingCartTable> = currentData.carts.toMutableList().apply { remove(cart) }
                             currentData.copy(carts = newList)
                         }
                         if (_screenState.value.data?.carts?.isEmpty() == true) {
-                            _screenState.updateState(ScreenState.NoData())
+                            _screenState.updateState(newValues = ScreenState.NoData())
                         }
 
-                        postSnackbar(message = UiTextHelper.DynamicString("Cart deleted successfully!") , isError = false)
+                        postSnackbar(message = UiTextHelper.DynamicString(content = "Cart deleted successfully!") , isError = false)
                     }
 
                     is DataState.Error -> {
@@ -162,7 +161,7 @@ class HomeViewModel(
 
     private fun importSharedCart(encodedData : String) {
         viewModelScope.launch {
-            importSharedCartUseCase(param = encodedData).flowOn(dispatcherProvider.io).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
+            importSharedCartUseCase(param = encodedData).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
                         loadCarts()
@@ -181,10 +180,10 @@ class HomeViewModel(
 
     private fun generateCartShareLink(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            generateCartShareLinkUseCase(param = cart.cartId).stateIn(viewModelScope , SharingStarted.Lazily , DataState.Loading()).collect { result ->
+            generateCartShareLinkUseCase(param = cart.cartId).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        _screenState.updateData(ScreenState.Success()) { currentData ->
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
                             currentData.copy(shareCartLink = result.data)
                         }
                     }
@@ -238,17 +237,13 @@ class HomeViewModel(
 
     private fun showSnackbar(message : String , isError : Boolean) {
         _screenState.showSnackbar(
-            UiSnackbar(
-                type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis()
-            )
+            UiSnackbar(type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis())
         )
     }
 
     private fun postSnackbar(message : UiTextHelper , isError : Boolean) {
         _screenState.showSnackbar(
-            UiSnackbar(
-                type = ScreenMessageType.SNACKBAR , message = message , isError = isError , timeStamp = System.currentTimeMillis()
-            )
+            UiSnackbar(type = ScreenMessageType.SNACKBAR , message = message , isError = isError , timeStamp = System.currentTimeMillis())
         )
         checkForEmptyCarts()
     }
@@ -261,10 +256,10 @@ class HomeViewModel(
 
     private fun checkForEmptyCarts() {
         if (_screenState.value.data?.carts.isNullOrEmpty()) {
-            _screenState.updateState(ScreenState.NoData())
+            _screenState.updateState(newValues = ScreenState.NoData())
         }
         else {
-            _screenState.updateState(ScreenState.Success())
+            _screenState.updateState(newValues = ScreenState.Success())
         }
     }
 }

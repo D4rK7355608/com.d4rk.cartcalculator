@@ -11,7 +11,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.ImportExport
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
@@ -29,6 +28,7 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.R
@@ -80,7 +80,7 @@ fun ImportCartAlertDialogContent(cartLink : String , onCartLinkChange : (String)
                 }
             }) {
                 Icon(
-                    modifier = Modifier.size(size = ButtonDefaults.IconSize) , imageVector = Icons.Outlined.ContentPaste , contentDescription = stringResource(id = android.R.string.paste)
+                    modifier = Modifier.size(size = SizeConstants.ButtonIcon) , imageVector = Icons.Outlined.ContentPaste , contentDescription = stringResource(id = android.R.string.paste)
                 )
             }
         })

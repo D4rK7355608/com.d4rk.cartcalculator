@@ -1,5 +1,7 @@
 package com.d4rk.cartcalculator.core.domain.model.network
 
+import com.d4rk.android.libs.apptoolkit.core.domain.model.network.Error
+
 sealed interface Errors: Error {
 
     enum class Network: Errors {
