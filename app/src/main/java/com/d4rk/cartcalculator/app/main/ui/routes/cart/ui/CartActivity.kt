@@ -23,7 +23,7 @@ class CartActivity : AppCompatActivity() {
         enableEdgeToEdge()
         MobileAds.initialize(this@CartActivity)
         cartId = intent.getIntExtra("cartId" , 0)
-        viewModel.sendEvent(event = CartAction.LoadCart(cartId))
+        viewModel.sendEvent(event = CartAction.LoadCart(cartId = cartId))
 
         setContent {
             AppTheme {

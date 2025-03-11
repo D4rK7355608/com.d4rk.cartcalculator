@@ -22,6 +22,7 @@ class DataBaseImplementation(private val database: AppDatabase) : DatabaseInterf
     }
 
     override suspend fun insertItem(item: ShoppingCartItemsTable): Long {
+        println("Inserting item: $item")
         return database.shoppingCartItemsDao().insert(item)
     }
 

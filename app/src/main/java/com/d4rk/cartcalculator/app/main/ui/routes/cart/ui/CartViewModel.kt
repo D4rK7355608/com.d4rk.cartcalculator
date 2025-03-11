@@ -5,9 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiSnackbar
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.showSnackbar
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateState
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.AddCartItemUseCase
@@ -25,14 +28,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class CartViewModel(
-    private val loadCartUseCase : LoadCartUseCase ,
-    private val addCartItemUseCase : AddCartItemUseCase ,
-    private val updateCartItemUseCase : UpdateCartItemUseCase ,
-    private val deleteCartItemUseCase : DeleteCartItemUseCase ,
-    private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase ,
-    private val dispatcherProvider : DispatcherProvider
-) : ViewModel() {
+class CartViewModel(private val loadCartUseCase : LoadCartUseCase , private val addCartItemUseCase : AddCartItemUseCase , private val updateCartItemUseCase : UpdateCartItemUseCase , private val deleteCartItemUseCase : DeleteCartItemUseCase , private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase , private val dispatcherProvider : DispatcherProvider) : ViewModel() {
 
     private val _screenState : MutableStateFlow<UiStateScreen<UiCartScreen>> = MutableStateFlow(value = UiStateScreen(data = UiCartScreen()))
     val screenState : StateFlow<UiStateScreen<UiCartScreen>> = _screenState.asStateFlow()
@@ -60,15 +56,17 @@ class CartViewModel(
             loadCartUseCase.invoke(param = cartId).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        val (cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) = result.data
+                        val (cart: ShoppingCartTable, items: List<ShoppingCartItemsTable>) = result.data
+                        println("Cart loaded: ${cart.cartId}, Items: ${items.size}") // Debugging log
+
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                            currentData.copy(cart = cart, cartItems = items)
+                        }
+
                         if (items.isEmpty()) {
                             _screenState.updateState(newValues = ScreenState.NoData())
                         }
-                        else {
-                            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                                currentData.copy(cart = cart , cartItems = items)
-                            }
-                        }
+
                         calculateTotalPrice()
                     }
 
@@ -92,14 +90,15 @@ class CartViewModel(
             addCartItemUseCase.invoke(param = itemWithCart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
+                        val newItem = result.data.copy(cartId = cartId) // Ensure correct cart ID
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                            currentData.copy(cartItems = currentData.cartItems + result.data)
+                            currentData.copy(cartItems = currentData.cartItems + newItem)
                         }
                         calculateTotalPrice()
                     }
 
                     is DataState.Error -> {
-                        // Handle error (e.g., show snackbar)
+                        _screenState.showSnackbar(UiSnackbar(message = UiTextHelper.DynamicString(content = "Failed to add item") , isError = true))
                     }
 
                     is DataState.Loading -> {}
@@ -179,19 +178,19 @@ class CartViewModel(
 
     private fun openNewCartItemDialog(isOpen : Boolean) {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { it.copy(openDialog = isOpen) }
+            _screenState.updateData(newDataState = _screenState.value.screenState) { it.copy(openDialog = isOpen) }
         }
     }
 
     private fun openEditDialog(item : ShoppingCartItemsTable?) {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { it.copy(openEditDialog = item != null , currentCartItemForEdit = item) }
+            _screenState.updateData(newDataState = _screenState.value.screenState) { it.copy(openEditDialog = item != null , currentCartItemForEdit = item) }
         }
     }
 
     private fun openDeleteDialog(item : ShoppingCartItemsTable?) {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { it.copy(openDeleteDialog = item != null , currentCartItemForDeletion = item) }
+            _screenState.updateData(newDataState = _screenState.value.screenState) { it.copy(openDeleteDialog = item != null , currentCartItemForDeletion = item) }
         }
     }
 
