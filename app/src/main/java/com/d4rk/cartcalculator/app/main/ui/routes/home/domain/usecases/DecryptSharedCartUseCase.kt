@@ -95,10 +95,10 @@ class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<Shoppin
         val cartId : Int = unpacker.unpackInt()
         val cartName : String = unpacker.unpackString()
         val cartDate : Long = unpacker.unpackLong()
-        val cart : ShoppingCartTable = ShoppingCartTable(cartId = cartId , name = cartName , date = cartDate)
+        val cart = ShoppingCartTable(cartId = cartId , name = cartName , date = cartDate)
 
         val itemsCount : Int = unpacker.unpackArrayHeader()
-        val items : MutableList<ShoppingCartItemsTable> = mutableListOf<ShoppingCartItemsTable>()
+        val items : MutableList<ShoppingCartItemsTable> = mutableListOf()
         repeat(itemsCount) {
             val itemDataCount : Int = unpacker.unpackArrayHeader()
             if (itemDataCount != 4) {

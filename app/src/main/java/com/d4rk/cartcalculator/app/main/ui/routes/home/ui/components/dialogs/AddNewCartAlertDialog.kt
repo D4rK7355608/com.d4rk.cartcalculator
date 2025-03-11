@@ -3,8 +3,6 @@ package com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.dialogs
 import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -25,9 +23,9 @@ import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
-import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import java.util.Date
@@ -87,7 +85,7 @@ fun AddNewCartAlertDialogContent(
                               keyboardController?.hide()
                           }) ,
                           placeholder = { Text(text = stringResource(id = R.string.shopping_cart)) })
-        Spacer(modifier = Modifier.height(24.dp))
+        MediumVerticalSpacer()
         InfoMessageSection(message = stringResource(id = R.string.summary_cart_dialog))
     }
     newCart.value = ShoppingCartTable(name = nameText.value.ifEmpty { defaultName } , date = currentDate.time)

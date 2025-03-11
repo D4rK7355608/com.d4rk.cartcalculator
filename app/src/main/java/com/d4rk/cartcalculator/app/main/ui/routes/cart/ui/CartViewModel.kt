@@ -198,8 +198,12 @@ class CartViewModel(
         }
     }
 
-    private fun decreaseQuantity(item : ShoppingCartItemsTable) {
-        changeQuantity(item = item , change = - 1)
+    private fun decreaseQuantity(item: ShoppingCartItemsTable) {
+        if (item.quantity <= 1) {
+            openDeleteDialog(item = item)
+        } else {
+            changeQuantity(item = item, change = -1)
+        }
     }
 
     private fun increaseQuantity(item : ShoppingCartItemsTable) {
@@ -221,7 +225,7 @@ class CartViewModel(
 
     private fun updateItemChecked(item : ShoppingCartItemsTable , isChecked : Boolean) {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { currentState : UiCartScreen ->
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentState : UiCartScreen ->
                 val checkedCartItems : List<ShoppingCartItemsTable> = currentState.cartItems.map { existingItem : ShoppingCartItemsTable ->
                     if (existingItem.itemId == item.itemId) existingItem.copy(isChecked = isChecked) else existingItem
                 }

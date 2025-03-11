@@ -3,9 +3,7 @@ package com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.dialogs
 import android.view.SoundEffectConstants
 import android.view.View
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ContentPaste
@@ -27,10 +25,10 @@ import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.utils.extensions.isValidCartLink
 
@@ -80,11 +78,11 @@ fun ImportCartAlertDialogContent(cartLink : String , onCartLinkChange : (String)
                 }
             }) {
                 Icon(
-                    modifier = Modifier.size(size = SizeConstants.ButtonIcon) , imageVector = Icons.Outlined.ContentPaste , contentDescription = stringResource(id = android.R.string.paste)
+                    modifier = Modifier.size(size = SizeConstants.IconSize) , imageVector = Icons.Outlined.ContentPaste , contentDescription = stringResource(id = android.R.string.paste)
                 )
             }
         })
-        Spacer(modifier = Modifier.height(height = 24.dp))
+        MediumVerticalSpacer()
         InfoMessageSection(message = stringResource(id = R.string.import_cart_instructions))
     }
 }

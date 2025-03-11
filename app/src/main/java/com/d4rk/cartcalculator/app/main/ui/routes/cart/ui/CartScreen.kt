@@ -103,7 +103,6 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
 
 @Composable
 fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddingValues : PaddingValues) {
-
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(uiState = uiState , modifier = Modifier
                 .padding(paddingValues = paddingValues)
