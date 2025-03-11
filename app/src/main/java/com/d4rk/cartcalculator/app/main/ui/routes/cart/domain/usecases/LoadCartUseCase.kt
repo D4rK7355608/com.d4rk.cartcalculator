@@ -15,12 +15,7 @@ class LoadCartUseCase(private val database: DatabaseInterface) : Repository<Int 
         runCatching {
             val cart : ShoppingCartTable = database.getCartById(cartId = param) ?: throw IllegalArgumentException("Cart not found")
             val items : List<ShoppingCartItemsTable> = database.getItemsByCartId(cartId = param)
-
-            if (items.isEmpty()) {
-                emit(value = DataState.Error(error = Errors.UseCase.EMPTY_CART))
-            } else {
-                emit(value = DataState.Success(data = Pair(first = cart , second = items)))
-            }
+            emit(value = DataState.Success(data = Pair(first = cart , second = items)))
         }.onFailure { throwable ->
             emit(value = DataState.Error(error = throwable.toError(default = Errors.UseCase.FAILED_TO_LOAD_CART)))
         }

@@ -7,6 +7,7 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateState
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.domain.usecases.AddCartItemUseCase
@@ -60,18 +61,23 @@ class CartViewModel(
                 when (result) {
                     is DataState.Success -> {
                         val (cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) = result.data
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                            currentData.copy(cart = cart , cartItems = items)
+                        if (items.isEmpty()) {
+                            _screenState.updateState(newValues = ScreenState.NoData())
+                        }
+                        else {
+                            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                                currentData.copy(cart = cart , cartItems = items)
+                            }
                         }
                         calculateTotalPrice()
                     }
 
                     is DataState.Error -> {
-                        // emit no data if cart items empty
+                        _screenState.updateState(newValues = ScreenState.NoData())
                     }
 
                     is DataState.Loading -> {
-                        // Optionally update UI state to loading
+                        _screenState.updateState(newValues = ScreenState.IsLoading())
                     }
 
                     else -> {}
@@ -198,11 +204,12 @@ class CartViewModel(
         }
     }
 
-    private fun decreaseQuantity(item: ShoppingCartItemsTable) {
+    private fun decreaseQuantity(item : ShoppingCartItemsTable) {
         if (item.quantity <= 1) {
             openDeleteDialog(item = item)
-        } else {
-            changeQuantity(item = item, change = -1)
+        }
+        else {
+            changeQuantity(item = item , change = - 1)
         }
     }
 
