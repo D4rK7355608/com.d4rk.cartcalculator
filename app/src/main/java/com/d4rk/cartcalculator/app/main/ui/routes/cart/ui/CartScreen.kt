@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui
 
 import android.app.Activity
 import android.view.View
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,7 +51,7 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
 
     Scaffold(modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
         LargeTopAppBar(title = {
-            Text(text = viewModel.screenState.value.data?.cart?.name ?: stringResource(id = R.string.shopping_cart))
+            Text(text = screenState.data?.cart?.name ?: stringResource(id = R.string.shopping_cart) , modifier = Modifier.animateContentSize())
         } , navigationIcon = {
             AnimatedButtonDirection(
                 icon = Icons.AutoMirrored.Filled.ArrowBack ,
@@ -97,9 +98,11 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
 @Composable
 fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddingValues : PaddingValues) {
     Column(modifier = Modifier.fillMaxSize()) {
-        CartItemsList(modifier = Modifier
-                .padding(paddingValues = paddingValues)
-                .weight(weight = 1f) , viewModel = viewModel)
+        CartItemsList(
+            modifier = Modifier
+                    .padding(paddingValues = paddingValues)
+                    .weight(weight = 1f) , viewModel = viewModel
+        )
         CartTotalCard(uiState = uiState)
     }
 }
