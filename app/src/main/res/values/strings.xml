@@ -113,7 +113,6 @@
     <string name="failed_to_delete_cart_item">Failed to delete the cart item.</string>
     <string name="failed_to_add_cart_item">Failed to add the item to the cart.</string>
     <string name="file_not_found">File not found. Please check the file location.</string>
-    <string name="request_login_missing_user">Incorrect username or password. Please try again.</string>
     <string name="request_no_internet">No internet connection. Please check your connection and try again.</string>
     <string name="request_timeout">Request timed out. Please try again.</string>
     <string name="request_server_not_found">Server error. Please try again later.</string>

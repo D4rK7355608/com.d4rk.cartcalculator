@@ -14,10 +14,10 @@ import com.d4rk.android.libs.apptoolkit.R
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.cartcalculator.app.main.ui.routes.home.domain.model.UiHomeData
-import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.HomeScreen
-import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.HomeViewModel
-import com.d4rk.cartcalculator.app.main.ui.routes.home.ui.components.effects.HomeEventHandler
+import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
+import com.d4rk.cartcalculator.app.home.ui.HomeScreen
+import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
+import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeEventHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
