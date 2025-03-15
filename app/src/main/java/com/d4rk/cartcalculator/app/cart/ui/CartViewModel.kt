@@ -28,7 +28,14 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class CartViewModel(private val loadCartUseCase : LoadCartUseCase , private val addCartItemUseCase : AddCartItemUseCase , private val updateCartItemUseCase : UpdateCartItemUseCase , private val deleteCartItemUseCase : DeleteCartItemUseCase , private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase , private val dispatcherProvider : DispatcherProvider) : ViewModel() {
+class CartViewModel(
+    private val loadCartUseCase : LoadCartUseCase ,
+    private val addCartItemUseCase : AddCartItemUseCase ,
+    private val updateCartItemUseCase : UpdateCartItemUseCase ,
+    private val deleteCartItemUseCase : DeleteCartItemUseCase ,
+    private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase ,
+    private val dispatcherProvider : DispatcherProvider
+) : ViewModel() {
 
     private val _screenState : MutableStateFlow<UiStateScreen<UiCartScreen>> = MutableStateFlow(value = UiStateScreen(data = UiCartScreen()))
     val screenState : StateFlow<UiStateScreen<UiCartScreen>> = _screenState.asStateFlow()
@@ -56,11 +63,11 @@ class CartViewModel(private val loadCartUseCase : LoadCartUseCase , private val 
             loadCartUseCase.invoke(param = cartId).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        val (cart: ShoppingCartTable, items: List<ShoppingCartItemsTable>) = result.data
+                        val (cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) = result.data
                         println("Cart loaded: ${cart.cartId}, Items: ${items.size}") // Debugging log
 
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                            currentData.copy(cart = cart, cartItems = items)
+                            currentData.copy(cart = cart , cartItems = items)
                         }
 
                         if (items.isEmpty()) {

@@ -27,6 +27,10 @@
     <string name="delete_cart_message">Are you sure you want to delete this cart?</string>
     <string name="delete_cart_warning">Deleting this cart will permanently remove all items from \"%s\" and cannot be undone.</string>
     <string name="delete">Delete</string>
+    <string name="cart_options_menu">Cart Options Menu</string>
+    <string name="more_options">More options</string>
+    <string name="share_cart">Share Cart</string>
+    <string name="category_icon_description">Icon for %1$s</string>
 
     <!-- Cart screen -->
     <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
@@ -97,8 +101,6 @@
     <string name="question_9">How can I contribute to Cart Calculator?</string>
     <string name="summary_preference_faq_9">The best way to contribute to Cart Calculator is through its <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository. From there, you can fork it and work on your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.</string>
 
-
-
     <!-- Confirmations -->
     <string name="snackbar_cart_deleted_success">Cart deleted successfully!</string>
 
@@ -109,6 +111,7 @@
     <string name="failed_to_encrypt_cart">Cart could not be secured. Please try again.</string>
     <string name="database_cart_not_found">Cart not found.</string>
     <string name="failed_to_load_cart">Failed to load the cart.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet is not installed</string>
     <string name="failed_to_update_cart_item">Failed to update the cart item.</string>
     <string name="failed_to_delete_cart_item">Failed to delete the cart item.</string>
     <string name="failed_to_add_cart_item">Failed to add the item to the cart.</string>

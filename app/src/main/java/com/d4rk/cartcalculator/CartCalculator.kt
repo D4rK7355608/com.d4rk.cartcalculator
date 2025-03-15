@@ -14,16 +14,16 @@ import com.d4rk.cartcalculator.core.utils.constants.ads.AdsConstants
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.supervisorScope
-import org.koin.android.ext.android.inject
+import org.koin.android.ext.android.getKoin
 
 class CartCalculator : BaseCoreManager() {
     private var currentActivity : Activity? = null
 
-    private val adsCoreManager : AdsCoreManager by inject()
+    private val adsCoreManager : AdsCoreManager by lazy { getKoin().get<AdsCoreManager>() }
 
     override fun onCreate() {
+        initializeKoin(context = this)
         super.onCreate()
-        initializeKoin(context = this@CartCalculator)
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(observer = this)
     }

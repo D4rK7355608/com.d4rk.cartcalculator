@@ -10,13 +10,13 @@ import com.d4rk.cartcalculator.core.utils.constants.datastore.AppDataStoreConsta
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class DataStore(context: Context) : CommonDataStore(context) {
+class DataStore(context : Context) : CommonDataStore(context) {
 
     companion object {
         @Volatile
-        private var instance: DataStore? = null
+        private var instance : DataStore? = null
 
-        fun getInstance(context: Context): DataStore {
+        fun getInstance(context : Context) : DataStore {
             return instance ?: synchronized(lock = this) {
                 instance ?: DataStore(context.applicationContext).also { instance = it }
             }
@@ -25,13 +25,13 @@ class DataStore(context: Context) : CommonDataStore(context) {
 
     private val currencyKey : Preferences.Key<String> = stringPreferencesKey(name = AppDataStoreConstants.DATA_STORE_PREFERRED_CURRENCY)
 
-    fun getCurrency(): Flow<String> {
+    fun getCurrency() : Flow<String> {
         return dataStore.data.map { preferences ->
             preferences[currencyKey] ?: ""
         }
     }
 
-    suspend fun saveCurrency(currency: String) {
+    suspend fun saveCurrency(currency : String) {
         dataStore.edit { preferences ->
             preferences[currencyKey] = currency
         }
@@ -39,11 +39,11 @@ class DataStore(context: Context) : CommonDataStore(context) {
 
     private val openCartsAfterCreationKey : Preferences.Key<Boolean> = booleanPreferencesKey(name = AppDataStoreConstants.DATA_STORE_OPEN_CARTS_AFTER_CREATION)
 
-    val openCartsAfterCreation: Flow<Boolean> = dataStore.data.map { preferences ->
+    val openCartsAfterCreation : Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[openCartsAfterCreationKey] ?: true
     }
 
-    suspend fun saveOpenCartsAfterCreation(isEnabled: Boolean) {
+    suspend fun saveOpenCartsAfterCreation(isEnabled : Boolean) {
         dataStore.edit { preferences ->
             preferences[openCartsAfterCreationKey] = isEnabled
         }

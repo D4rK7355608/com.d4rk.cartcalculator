@@ -5,6 +5,8 @@ import android.content.Context
 import android.view.View
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,7 +21,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
@@ -71,10 +75,11 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
 
 @Composable
 fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddingValues : PaddingValues) {
+    val layoutDirection = LocalLayoutDirection.current
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(
             modifier = Modifier
-                    .padding(paddingValues = paddingValues)
+                    .padding(start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp)
                     .weight(weight = 1f) , viewModel = viewModel
         )
         CartTotalCard(uiState = uiState)

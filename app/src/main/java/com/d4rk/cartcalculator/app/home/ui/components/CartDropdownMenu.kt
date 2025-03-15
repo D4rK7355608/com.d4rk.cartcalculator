@@ -28,17 +28,17 @@ fun CartDropdownMenu(expanded : Boolean , onDismissRequest : () -> Unit , onDele
             view.playSoundEffect(SoundEffectConstants.CLICK)
             onOpen()
         }) {
-            Icon(imageVector = Icons.Outlined.MoreVert , contentDescription = null)
+            Icon(imageVector = Icons.Outlined.MoreVert , contentDescription = stringResource(id = R.string.more_options))
         }
         DropdownMenu(expanded = expanded , onDismissRequest = { onDismissRequest() }) {
             DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.delete_cart)) } , onClick = {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
                 onDelete()
-            } , leadingIcon = { Icon(Icons.Outlined.Delete , contentDescription = null) })
+            } , leadingIcon = { Icon(Icons.Outlined.Delete , contentDescription = stringResource(id = R.string.delete_cart)) })
             DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.share)) } , onClick = {
                 view.playSoundEffect(SoundEffectConstants.CLICK)
                 onShare()
-            } , leadingIcon = { Icon(Icons.Outlined.Share , contentDescription = null) })
+            } , leadingIcon = { Icon(Icons.Outlined.Share , contentDescription = stringResource(id = R.string.share_cart)) })
         }
     }
 }

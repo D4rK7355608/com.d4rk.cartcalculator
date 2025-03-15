@@ -2,7 +2,8 @@ package com.d4rk.cartcalculator.core.utils.helpers
 
 import android.content.Context
 import android.widget.Toast
-import com.d4rk.android.libs.apptoolkit.R
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.AppInfoHelper
+import com.d4rk.cartcalculator.R
 
 object WalletAppsHelper : AppInfoHelper() {
 
@@ -31,29 +32,6 @@ object WalletAppsHelper : AppInfoHelper() {
 
         packageName?.let {
             openApp(context = context , packageName = it)
-        } ?: Toast.makeText(context , "Google Pay/Wallet is not installed" , Toast.LENGTH_SHORT).show()
-    }
-}
-
-open class AppInfoHelper {
-
-    /**
-     * Checks if a specific app is installed on the device.
-     * @return True if the app is installed, false otherwise.
-     */
-    fun isAppInstalled(context : Context , packageName : String) : Boolean = runCatching { context.packageManager.getApplicationInfo(packageName , 0) }.isSuccess
-
-    /**
-     * Opens a specific app if installed.
-     * @return True if the app was opened, false otherwise.
-     */
-    fun openApp(context : Context , packageName : String) : Boolean = runCatching {
-        context.packageManager.getLaunchIntentForPackage(packageName)?.let {
-            context.startActivity(it)
-            true
-        } ?: false
-    }.getOrElse {
-        Toast.makeText(context , context.getString(R.string.app_not_installed) , Toast.LENGTH_SHORT).show()
-        false
+        } ?: Toast.makeText(context , context.getString(R.string.google_pay_wallet_not_installed) , Toast.LENGTH_SHORT).show()
     }
 }

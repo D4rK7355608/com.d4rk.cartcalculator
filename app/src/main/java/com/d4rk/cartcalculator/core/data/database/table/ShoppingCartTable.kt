@@ -8,9 +8,7 @@ import java.util.Date
 @Serializable
 @Entity
 data class ShoppingCartTable(
-    @PrimaryKey(autoGenerate = true) val cartId: Int = 0,
-    val name: String,
-    val date: Long
+    @PrimaryKey(autoGenerate = true) val cartId : Int = 0 , val name : String , val date : Long
 ) {
-    fun toDate(): Date = Date(date)
+    fun toDate() : Date = Date(date)
 }

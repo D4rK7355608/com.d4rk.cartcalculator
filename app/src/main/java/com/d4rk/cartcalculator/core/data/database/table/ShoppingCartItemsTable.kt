@@ -16,11 +16,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 @Entity
 data class ShoppingCartItemsTable(
-    @PrimaryKey(autoGenerate = true)
-    var itemId: Int = 0,
-    var cartId: Int,
-    val name: String,
-    val price: String,
-    var quantity: Int,
-    var isChecked: Boolean = false
+    @PrimaryKey(autoGenerate = true) var itemId : Int = 0 , var cartId : Int , val name : String , val price : String , var quantity : Int , var isChecked : Boolean = false
 )

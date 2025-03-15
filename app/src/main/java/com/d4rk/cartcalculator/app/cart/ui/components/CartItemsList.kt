@@ -30,7 +30,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
     val (checkedItems : List<ShoppingCartItemsTable> , uncheckedItems : List<ShoppingCartItemsTable>) = uiState.data?.cartItems?.partition { it.isChecked } ?: Pair(emptyList() , emptyList())
     val (visibilityStates : SnapshotStateList<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.data?.cartItems?.size ?: 0)
 
-    LazyColumn(modifier = modifier , state = listState ,) {
+    LazyColumn(modifier = modifier , state = listState) {
         if (checkedItems.isNotEmpty()) {
             item(key = "checked_items") {
                 Text(

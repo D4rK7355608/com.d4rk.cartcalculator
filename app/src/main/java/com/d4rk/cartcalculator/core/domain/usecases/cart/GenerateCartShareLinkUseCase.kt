@@ -18,10 +18,10 @@ import java.math.BigInteger
 import java.net.URLEncoder
 
 class GenerateCartShareLinkUseCase(
-    private val database: DatabaseInterface
-) : Repository<Int, Flow<DataState<String, Errors>>> {
+    private val database : DatabaseInterface
+) : Repository<Int , Flow<DataState<String , Errors>>> {
 
-    override suspend fun invoke(param: Int): Flow<DataState<String, Errors>> = flow {
+    override suspend fun invoke(param : Int) : Flow<DataState<String , Errors>> = flow {
         emit(DataState.Loading())
         runCatching {
             database.getCartById(cartId = param)?.let { cart ->
@@ -31,15 +31,15 @@ class GenerateCartShareLinkUseCase(
                     throw IllegalStateException(Errors.UseCase.EMPTY_CART.toString())
                 }
 
-                val serializedCart: ByteArray = serializeToMessagePack(cart, cartItems)
-                val compressedCartData: ByteArray = compressLZ4(serializedCart)
+                val serializedCart : ByteArray = serializeToMessagePack(cart , cartItems)
+                val compressedCartData : ByteArray = compressLZ4(serializedCart)
 
                 if (compressedCartData.isEmpty()) {
                     throw IllegalStateException(Errors.UseCase.COMPRESSION_FAILED.toString())
                 }
 
-                val encodedData: String = encodeBase62(compressedCartData)
-                val urlEncodedCartData: String = URLEncoder.encode(encodedData, "UTF-8")
+                val encodedData : String = encodeBase62(compressedCartData)
+                val urlEncodedCartData : String = URLEncoder.encode(encodedData , "UTF-8")
 
                 "https://cartcalculator.com/import?d=$urlEncodedCartData"
             } ?: throw IllegalStateException(Errors.UseCase.CART_NOT_FOUND.toString())
@@ -50,7 +50,7 @@ class GenerateCartShareLinkUseCase(
         }
     }
 
-    private fun serializeToMessagePack(cart: ShoppingCartTable , cartItems: List<ShoppingCartItemsTable>): ByteArray {
+    private fun serializeToMessagePack(cart : ShoppingCartTable , cartItems : List<ShoppingCartItemsTable>) : ByteArray {
         val outputStream = ByteArrayOutputStream()
         val packer : MessagePacker = MessagePack.newDefaultPacker(outputStream)
 
@@ -70,7 +70,7 @@ class GenerateCartShareLinkUseCase(
         return outputStream.toByteArray()
     }
 
-    private fun compressLZ4(data: ByteArray): ByteArray {
+    private fun compressLZ4(data : ByteArray) : ByteArray {
         val factory : LZ4Factory = LZ4Factory.fastestInstance()
         val compressor : LZ4Compressor = factory.fastCompressor()
         val maxCompressedLength : Int = compressor.maxCompressedLength(data.size)
@@ -83,11 +83,11 @@ class GenerateCartShareLinkUseCase(
             this[1] = (data.size shr 16).toByte()
             this[2] = (data.size shr 8).toByte()
             this[3] = data.size.toByte()
-            System.arraycopy(compressedData, 0, this, 4, compressedSize)
+            System.arraycopy(compressedData , 0 , this , 4 , compressedSize)
         }
     }
 
-    private fun encodeBase62(input: ByteArray): String {
+    private fun encodeBase62(input : ByteArray) : String {
         if (input.isEmpty()) return ""
 
         val characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -96,7 +96,7 @@ class GenerateCartShareLinkUseCase(
 
         while (numericValue > BigInteger.ZERO) {
             val index : BigInteger = numericValue.mod(BigInteger.valueOf(62))
-            encoded.insert(0, characters[index.toInt()])
+            encoded.insert(0 , characters[index.toInt()])
             numericValue = numericValue.divide(BigInteger.valueOf(62))
         }
 

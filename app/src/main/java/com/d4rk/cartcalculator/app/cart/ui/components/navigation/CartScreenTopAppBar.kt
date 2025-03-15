@@ -32,6 +32,8 @@ fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : 
     val isGooglePayInstalled : Boolean = remember { WalletAppsHelper.isGooglePayInstalled(context = context) }
     val cartButtonsVisible : Boolean by remember { derivedStateOf { screenState.data?.cartItems?.isNotEmpty() ?: false } }
 
+    println(message = "gooogle pay installed: $isGooglePayInstalled, cart items visible: $cartButtonsVisible")
+
     LargeTopAppBar(title = {
         Text(text = screenState.data?.cart?.name ?: stringResource(id = R.string.shopping_cart) , modifier = Modifier.animateContentSize())
     } , navigationIcon = {
