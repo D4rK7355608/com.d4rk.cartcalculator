@@ -89,7 +89,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
         }
     }
 
-    SwipeToDismissBox(state = dismissState , backgroundContent = { /* Optional background */ } , content = {
+    SwipeToDismissBox(modifier = modifier , state = dismissState , backgroundContent = { /* Optional background */ } , content = {
         Box(
             modifier = modifier
                     .fillMaxWidth()

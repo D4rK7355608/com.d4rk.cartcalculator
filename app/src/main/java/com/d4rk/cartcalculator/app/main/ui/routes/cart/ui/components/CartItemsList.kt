@@ -32,7 +32,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
 
     LazyColumn(modifier = modifier , state = listState ,) {
         if (checkedItems.isNotEmpty()) {
-            item {
+            item(key = "checked_items") {
                 Text(
                     text = stringResource(id = R.string.in_cart) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                             .animateItem()
@@ -54,7 +54,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
         }
 
         if (uncheckedItems.isNotEmpty()) {
-            item {
+            item(key = "unchecked_items") {
                 Text(
                     text = stringResource(id = R.string.items_to_pick_up) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                             .animateItem()
