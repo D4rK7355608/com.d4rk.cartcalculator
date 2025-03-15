@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.app.main.ui.routes.cart.ui
 
 import android.app.Activity
+import android.content.Context
 import android.view.View
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Column
@@ -10,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.AddShoppingCart
+import androidx.compose.material.icons.outlined.CreditCard
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.Scaffold
@@ -19,10 +22,12 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
@@ -39,6 +44,7 @@ import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.CartItemsLi
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.CartTotalCard
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.EmptyCartScreen
 import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.components.dialogs.CartScreenDialogs
+import com.d4rk.cartcalculator.core.utils.helpers.WalletAppsHelper
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +53,12 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
     val snackBarHostState : SnackbarHostState = remember { SnackbarHostState() }
     val navController : NavHostController = rememberNavController()
     val view : View = LocalView.current
+    val context : Context = LocalContext.current
     val screenState : UiStateScreen<UiCartScreen> by viewModel.screenState.collectAsState()
+    val isGooglePayInstalled : Boolean = remember { WalletAppsHelper.isGooglePayInstalled(context = context) }
+
+    println(message = "is google play installed: $isGooglePayInstalled")
+    val cartButtonsVisible : Boolean by remember { derivedStateOf { screenState.data?.cartItems?.isNotEmpty() ?: false } }
 
     Scaffold(modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
         LargeTopAppBar(title = {
@@ -61,15 +72,15 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
         } , actions = {
             AnimatedButtonDirection(icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = {
                 viewModel.sendEvent(event = CartAction.OpenNewCartItemDialog(isOpen = true))
-            } , fromRight = true)/*                      AnimatedButtonDirection(
-                      visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = {
-                          AppUtils.openGooglePayOrWallet(context)
-                                                                                                                                                                   } , durationMillis = 400 , fromRight = true
-                  )
+            } , fromRight = true)
 
-                  AnimatedButtonDirection(
-                      visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = { viewModel.shareCart(context , cartId) } , fromRight = true
-                  )*/
+            AnimatedButtonDirection(visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = {
+                WalletAppsHelper.openGooglePayOrWallet(context = context)
+            } , durationMillis = 400 , fromRight = true)
+
+            AnimatedButtonDirection(visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = {
+                //viewModel.shareCart(context , cartId)
+            } , fromRight = true)
         } , scrollBehavior = scrollBehavior)
     } , snackbarHost = {
         StatusSnackbarHost(snackBarHostState = snackBarHostState , view = view , navController = navController)
