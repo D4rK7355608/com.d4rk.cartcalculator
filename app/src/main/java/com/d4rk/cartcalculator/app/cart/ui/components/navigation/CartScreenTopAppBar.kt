@@ -13,11 +13,10 @@ import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedButtonDirection
 import com.d4rk.cartcalculator.R
@@ -30,12 +29,10 @@ import com.d4rk.cartcalculator.core.utils.helpers.WalletAppsHelper
 @Composable
 fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : CartViewModel , activity : Activity , context : Context , scrollBehavior : TopAppBarScrollBehavior) {
     val isGooglePayInstalled : Boolean = remember { WalletAppsHelper.isGooglePayInstalled(context = context) }
-    val cartButtonsVisible : Boolean by remember { derivedStateOf { screenState.data?.cartItems?.isNotEmpty() ?: false } }
-
-    println(message = "gooogle pay installed: $isGooglePayInstalled, cart items visible: $cartButtonsVisible")
+    val cartButtonsVisible : Boolean = screenState.data?.cartItems?.isNotEmpty() ?: false
 
     LargeTopAppBar(title = {
-        Text(text = screenState.data?.cart?.name ?: stringResource(id = R.string.shopping_cart) , modifier = Modifier.animateContentSize())
+        Text(text = screenState.data?.cart?.name ?: stringResource(id = R.string.shopping_cart) , modifier = Modifier.animateContentSize() , maxLines = 1 , softWrap = false , overflow = TextOverflow.Ellipsis)
     } , navigationIcon = {
         AnimatedButtonDirection(
             icon = Icons.AutoMirrored.Filled.ArrowBack ,

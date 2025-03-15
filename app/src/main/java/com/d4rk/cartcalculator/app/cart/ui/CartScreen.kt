@@ -3,6 +3,11 @@ package com.d4rk.cartcalculator.app.cart.ui
 import android.app.Activity
 import android.content.Context
 import android.view.View
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
@@ -23,6 +28,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -75,13 +81,19 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
 
 @Composable
 fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddingValues : PaddingValues) {
-    val layoutDirection = LocalLayoutDirection.current
+    val layoutDirection : LayoutDirection = LocalLayoutDirection.current
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(
             modifier = Modifier
-                    .padding(start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp)
-                    .weight(weight = 1f) , viewModel = viewModel
+                    .padding(
+                        start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp
+                    )
+                    .weight(1f) , viewModel = viewModel
         )
-        CartTotalCard(uiState = uiState)
+        AnimatedVisibility(
+            visible = uiState.totalPrice > 0 , enter = fadeIn() + expandVertically() , exit = fadeOut() + shrinkVertically()
+        ) {
+            CartTotalCard(uiState = uiState)
+        }
     }
 }

@@ -16,9 +16,7 @@ import com.d4rk.cartcalculator.R
 
 @Composable
 fun EmptyCartScreen(modifier : Modifier = Modifier) {
-    Column(
-        modifier = modifier , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.SpaceBetween
-    ) {
+    Column(modifier = modifier , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.SpaceBetween) {
         LazyColumn(modifier = Modifier.weight(1f) , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.Center) {
             item {
                 NoDataScreen(text = R.string.your_shopping_cart_is_empty , icon = Icons.Outlined.ShoppingCart)
