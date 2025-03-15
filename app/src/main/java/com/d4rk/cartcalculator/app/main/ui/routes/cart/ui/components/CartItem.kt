@@ -41,6 +41,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ExtraSmallHorizontalSpacer
@@ -53,7 +54,7 @@ import java.util.Locale
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onMinusClick : (ShoppingCartItemsTable) -> Unit , onPlusClick : (ShoppingCartItemsTable) -> Unit , uiState : UiCartScreen , modifier : Modifier) {
+fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onMinusClick : (ShoppingCartItemsTable) -> Unit , onPlusClick : (ShoppingCartItemsTable) -> Unit , uiState : UiStateScreen<UiCartScreen> , modifier : Modifier) {
     val view : View = LocalView.current
     var checkedState by remember { mutableStateOf(cartItem.isChecked) }
     val quantityState = viewModel.getQuantityStateForItem(item = cartItem)
@@ -109,7 +110,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
                         Row {
                             Text(text = String.format(Locale.getDefault() , "%.1f" , cartItem.price.toFloat()).removeSuffix(suffix = ".0"))
                             ExtraSmallHorizontalSpacer()
-                            Text(text = uiState.selectedCurrency , style = MaterialTheme.typography.bodyLarge)
+                            uiState.data?.selectedCurrency?.let { Text(text = it , style = MaterialTheme.typography.bodyLarge) }
                         }
                     }
                 }

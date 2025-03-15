@@ -8,9 +8,12 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.ui.components.animations.rememberAnimatedVisibilityState
 import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
@@ -21,14 +24,13 @@ import com.d4rk.cartcalculator.app.main.ui.routes.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 @Composable
-fun CartItemsList(uiState : UiCartScreen , modifier : Modifier , viewModel : CartViewModel) {
-    val (checkedItems : List<ShoppingCartItemsTable> , uncheckedItems : List<ShoppingCartItemsTable>) = uiState.cartItems.partition { it.isChecked }
+fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
+    val uiState : UiStateScreen<UiCartScreen> by viewModel.screenState.collectAsState()
     val listState : LazyListState = rememberLazyListState()
-    val (visibilityStates : SnapshotStateList<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.cartItems.size)
+    val (checkedItems : List<ShoppingCartItemsTable> , uncheckedItems : List<ShoppingCartItemsTable>) = uiState.data?.cartItems?.partition { it.isChecked } ?: Pair(emptyList() , emptyList())
+    val (visibilityStates : SnapshotStateList<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.data?.cartItems?.size ?: 0)
 
-    LazyColumn(
-        state = listState , modifier = Modifier.then(modifier)
-    ) {
+    LazyColumn(modifier = modifier , state = listState ,) {
         if (checkedItems.isNotEmpty()) {
             item {
                 Text(
