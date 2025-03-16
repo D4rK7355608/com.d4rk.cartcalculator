@@ -28,7 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
             return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext , AppDatabase::class.java , "shopping_cart_db"
-                ).addMigrations(migrations = arrayOf(MIGRATION_2_3)).fallbackToDestructiveMigration().build().also { INSTANCE = it }
+                ).addMigrations(migrations = arrayOf(MIGRATION_2_3)).fallbackToDestructiveMigration().fallbackToDestructiveMigrationOnDowngrade().build().also { INSTANCE = it }
             }
         }
     }

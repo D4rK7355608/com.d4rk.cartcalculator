@@ -4,6 +4,13 @@ import android.content.Context
 import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
 import com.d4rk.android.libs.apptoolkit.core.di.StandardDispatchers
 import com.d4rk.android.libs.apptoolkit.data.core.ads.AdsCoreManager
+import com.d4rk.android.libs.apptoolkit.ui.screens.help.domain.model.ui.HelpScreenConfig
+import com.d4rk.android.libs.apptoolkit.ui.screens.help.domain.usecases.GetFAQsUseCase
+import com.d4rk.android.libs.apptoolkit.ui.screens.help.domain.usecases.LaunchReviewFlowUseCase
+import com.d4rk.android.libs.apptoolkit.ui.screens.help.domain.usecases.RequestReviewFlowUseCase
+import com.d4rk.android.libs.apptoolkit.ui.screens.help.ui.HelpViewModel
+import com.d4rk.cartcalculator.BuildConfig
+import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.domain.usecases.AddCartItemUseCase
 import com.d4rk.cartcalculator.app.cart.domain.usecases.DeleteCartItemUseCase
 import com.d4rk.cartcalculator.app.cart.domain.usecases.LoadCartUseCase
@@ -29,7 +36,6 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule : Module = module {
-
     single<DispatcherProvider> { StandardDispatchers() }
     single<AppDatabase> { AppDatabase.getInstance(context = get()) }
     single<DatabaseInterface> { DataBaseImplementation(database = get()) }
@@ -60,6 +66,32 @@ val appModule : Module = module {
     viewModel {
         CartViewModel(loadCartUseCase = get() , addCartItemUseCase = get() , updateCartItemUseCase = get() , deleteCartItemUseCase = get() , generateCartShareLinkUseCase = get() , dispatcherProvider = get())
     }
+
+    single<HelpScreenConfig> {
+        HelpScreenConfig(
+            appName = R.string.app_name ,
+            appFullName = R.string.app_full_name ,
+            copyRightString = R.string.copyright ,
+            versionName = BuildConfig.VERSION_NAME ,
+            versionCode = BuildConfig.VERSION_CODE ,
+            appShortDescription = "Your app's short description" ,
+            faqList = listOf(
+                R.string.question_1 to R.string.summary_preference_faq_1,
+                R.string.question_2 to R.string.summary_preference_faq_2,
+                R.string.question_3 to R.string.summary_preference_faq_3,
+                R.string.question_4 to R.string.summary_preference_faq_4,
+                R.string.question_5 to R.string.summary_preference_faq_5,
+                R.string.question_6 to R.string.summary_preference_faq_6,
+                R.string.question_7 to R.string.summary_preference_faq_7,
+                R.string.question_8 to R.string.summary_preference_faq_8,
+                R.string.question_9 to R.string.summary_preference_faq_9
+            )
+        )
+    }
+    single<GetFAQsUseCase> { GetFAQsUseCase(application = get()) }
+    single<RequestReviewFlowUseCase> { RequestReviewFlowUseCase(application = get()) }
+    single<LaunchReviewFlowUseCase> { LaunchReviewFlowUseCase() }
+    viewModel { HelpViewModel(getFAQsUseCase = get() , requestReviewFlowUseCase = get() , launchReviewFlowUseCase = get() , dispatcherProvider = get()) }
 }
 
 fun initializeKoin(context : Context) {

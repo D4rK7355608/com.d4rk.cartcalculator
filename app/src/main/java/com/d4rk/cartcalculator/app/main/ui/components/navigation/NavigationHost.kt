@@ -14,6 +14,7 @@ import com.d4rk.android.libs.apptoolkit.R
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
+import com.d4rk.android.libs.apptoolkit.ui.screens.help.ui.HelpActivity
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.HomeScreen
 import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
@@ -45,9 +46,10 @@ fun handleNavigationItemClick(
             )*/
         }
 
-        R.string.help_and_feedback -> {/* IntentsHelper.openActivity(
+        R.string.help_and_feedback -> {
+            IntentsHelper.openActivity(
                 context = context , activityClass = HelpActivity::class.java
-            )*/
+            )
         }
 
         R.string.updates -> {

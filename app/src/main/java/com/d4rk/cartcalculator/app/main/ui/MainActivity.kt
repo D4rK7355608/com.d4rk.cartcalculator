@@ -9,7 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.d4rk.cartcalculator.core.ui.style.AppTheme
+import com.d4rk.android.libs.apptoolkit.ui.screens.settings.display.theme.style.AppTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
@@ -18,9 +18,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background
-                ) {
+                Surface(modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background) {
                     MainScreen()
                 }
             }
