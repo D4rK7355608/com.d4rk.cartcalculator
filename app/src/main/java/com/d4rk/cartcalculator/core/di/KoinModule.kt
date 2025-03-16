@@ -65,7 +65,9 @@ val appModule : Module = module {
     viewModel {
         CartViewModel(loadCartUseCase = get() , addCartItemUseCase = get() , updateCartItemUseCase = get() , deleteCartItemUseCase = get() , generateCartShareLinkUseCase = get() , dispatcherProvider = get())
     }
+}
 
+val appToolkitModule : Module = module {
     single<HelpScreenConfig> { HelpScreenConfig(versionName = BuildConfig.VERSION_NAME , versionCode = BuildConfig.VERSION_CODE) }
     single<GetFAQsUseCase> { GetFAQsUseCase(application = get()) }
     single<RequestReviewFlowUseCase> { RequestReviewFlowUseCase(application = get()) }
@@ -79,6 +81,6 @@ val appModule : Module = module {
 fun initializeKoin(context : Context) {
     startKoin {
         androidContext(androidContext = context)
-        modules(modules = appModule)
+        modules(modules = listOf(appModule, appToolkitModule))
     }
 }
