@@ -10,7 +10,6 @@ import com.d4rk.android.libs.apptoolkit.ui.screens.help.domain.usecases.LaunchRe
 import com.d4rk.android.libs.apptoolkit.ui.screens.help.domain.usecases.RequestReviewFlowUseCase
 import com.d4rk.android.libs.apptoolkit.ui.screens.help.ui.HelpViewModel
 import com.d4rk.cartcalculator.BuildConfig
-import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.domain.usecases.AddCartItemUseCase
 import com.d4rk.cartcalculator.app.cart.domain.usecases.DeleteCartItemUseCase
 import com.d4rk.cartcalculator.app.cart.domain.usecases.LoadCartUseCase
@@ -67,21 +66,14 @@ val appModule : Module = module {
         CartViewModel(loadCartUseCase = get() , addCartItemUseCase = get() , updateCartItemUseCase = get() , deleteCartItemUseCase = get() , generateCartShareLinkUseCase = get() , dispatcherProvider = get())
     }
 
-    single<HelpScreenConfig> {
-        HelpScreenConfig(
-            appName = R.string.app_name ,
-            appFullName = R.string.app_full_name ,
-            copyRightString = R.string.copyright ,
-            versionName = BuildConfig.VERSION_NAME ,
-            versionCode = BuildConfig.VERSION_CODE ,
-            appShortDescription = "Your app's short description" ,
-
-        )
-    }
+    single<HelpScreenConfig> { HelpScreenConfig(versionName = BuildConfig.VERSION_NAME , versionCode = BuildConfig.VERSION_CODE) }
     single<GetFAQsUseCase> { GetFAQsUseCase(application = get()) }
     single<RequestReviewFlowUseCase> { RequestReviewFlowUseCase(application = get()) }
     single<LaunchReviewFlowUseCase> { LaunchReviewFlowUseCase() }
-    viewModel { HelpViewModel(getFAQsUseCase = get() , requestReviewFlowUseCase = get() , launchReviewFlowUseCase = get() , dispatcherProvider = get()) }
+
+    viewModel {
+        HelpViewModel(getFAQsUseCase = get() , requestReviewFlowUseCase = get() , launchReviewFlowUseCase = get() , dispatcherProvider = get())
+    }
 }
 
 fun initializeKoin(context : Context) {
