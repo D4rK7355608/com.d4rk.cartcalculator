@@ -14,9 +14,9 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
+import com.d4rk.android.libs.apptoolkit.core.ui.components.animations.rememberAnimatedVisibilityState
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.animateVisibility
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
-import com.d4rk.android.libs.apptoolkit.ui.components.animations.rememberAnimatedVisibilityState
-import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.animateVisibility
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen

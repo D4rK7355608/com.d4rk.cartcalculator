@@ -1,4 +1,11 @@
-# Version 1.2.1:
+# Version 2.0.0:
+
+- **New**: Added a new way to share carts directly from the home screen.
+- **New**: Added default values for new carts.
+- **New**: Improved the UI and UX for a better user experience.
+- **Major**: Improved the app's code structure for better maintainability and future updates.
+
+# Version 1.2.1: 
 
 - **New**: Added a splash screen animation to improve the initial app launch experience.
 - **New**: Introduced an enhanced user interface specifically designed for tablet devices.

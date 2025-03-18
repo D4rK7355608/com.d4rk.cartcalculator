@@ -7,7 +7,7 @@ import androidx.compose.material.icons.outlined.Smartphone
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.stringResource
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallHorizontalSpacer
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallHorizontalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.home.domain.model.CartCategory
 

@@ -33,9 +33,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.ui.components.layouts.LoadingScreen
-import com.d4rk.android.libs.apptoolkit.ui.components.layouts.ScreenStateHandler
-import com.d4rk.android.libs.apptoolkit.ui.components.snackbar.StatusSnackbarHost
+import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.LoadingScreen
+import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.ScreenStateHandler
+import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.StatusSnackbarHost
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.components.CartItemsList
 import com.d4rk.cartcalculator.app.cart.ui.components.CartTotalCard
@@ -85,9 +85,7 @@ fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddi
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(
             modifier = Modifier
-                    .padding(
-                        start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp
-                    )
+                    .padding(start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp)
                     .weight(1f) , viewModel = viewModel
         )
         AnimatedVisibility(

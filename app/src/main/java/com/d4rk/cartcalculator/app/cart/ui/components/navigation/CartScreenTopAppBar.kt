@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.ui.components.buttons.AnimatedButtonDirection
+import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedButtonDirection
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen

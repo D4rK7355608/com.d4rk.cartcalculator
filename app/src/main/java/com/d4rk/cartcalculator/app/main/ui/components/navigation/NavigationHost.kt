@@ -10,11 +10,10 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.d4rk.android.libs.apptoolkit.R
+import com.d4rk.android.libs.apptoolkit.app.help.ui.HelpActivity
+import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
-import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.android.libs.apptoolkit.ui.screens.help.ui.HelpActivity
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.HomeScreen
 import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
@@ -41,26 +40,26 @@ fun handleNavigationItemClick(
     context : Context , item : NavigationDrawerItem , drawerState : DrawerState , coroutineScope : CoroutineScope
 ) {
     when (item.title) {
-        R.string.settings -> {/*  IntentsHelper.openActivity(
+        com.d4rk.android.libs.apptoolkit.R.string.settings -> {/*  IntentsHelper.openActivity(
                 context = context , activityClass = SettingsActivity::class.java
             )*/
         }
 
-        R.string.help_and_feedback -> {
+        com.d4rk.android.libs.apptoolkit.R.string.help_and_feedback -> {
             IntentsHelper.openActivity(
                 context = context , activityClass = HelpActivity::class.java
             )
         }
 
-        R.string.updates -> {
+        com.d4rk.android.libs.apptoolkit.R.string.updates -> {
             IntentsHelper.openUrl(
                 context = context , url = "https://github.com/D4rK7355608/${context.packageName}/blob/master/CHANGELOG.md"
             )
         }
 
-        R.string.share -> {
+        com.d4rk.android.libs.apptoolkit.R.string.share -> {
             IntentsHelper.shareApp(
-                context = context , shareMessageFormat = R.string.summary_share_message
+                context = context , shareMessageFormat = com.d4rk.android.libs.apptoolkit.R.string.summary_share_message
             )
         }
     }

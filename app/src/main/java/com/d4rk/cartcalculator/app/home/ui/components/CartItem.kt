@@ -28,9 +28,9 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.hapticSwipeToDismissBox
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
-import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.hapticSwipeToDismissBox
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable

@@ -23,9 +23,9 @@ import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
-import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
-import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.sections.InfoMessageSection
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import java.util.Date

@@ -24,12 +24,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.ButtonIconSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import java.util.Locale
-
 
 @Composable
 fun CartTotalCard(uiState : UiCartScreen) {

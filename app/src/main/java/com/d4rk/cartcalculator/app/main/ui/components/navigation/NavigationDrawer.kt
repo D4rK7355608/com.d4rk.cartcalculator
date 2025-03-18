@@ -16,10 +16,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.data.model.ui.navigation.NavigationDrawerItem
-import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.LargeVerticalSpacer
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.LargeVerticalSpacer
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
 import com.d4rk.cartcalculator.app.main.ui.MainScaffoldContent
 import kotlinx.coroutines.CoroutineScope

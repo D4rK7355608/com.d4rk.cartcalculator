@@ -25,10 +25,10 @@ import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.sections.InfoMessageSection
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
-import com.d4rk.android.libs.apptoolkit.ui.components.layouts.sections.InfoMessageSection
-import com.d4rk.android.libs.apptoolkit.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.utils.extensions.isValidCartLink
 
