@@ -74,6 +74,8 @@ android {
         release {
             signingConfig = signingConfigs.getByName("release")
             isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
         }
         debug {
             isDebuggable = true
@@ -82,8 +84,6 @@ android {
 
     buildTypes.forEach { buildType ->
         with(buildType) {
-            isMinifyEnabled = false
-            isShrinkResources = false
             multiDexEnabled = true
             proguardFiles(getDefaultProguardFile(name = "proguard-android-optimize.txt") , "proguard-rules.pro")
         }
@@ -119,7 +119,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.86") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.90") {
         isTransitive = true
     }
 

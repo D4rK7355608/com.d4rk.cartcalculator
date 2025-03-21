@@ -34,7 +34,7 @@ fun MainTopAppBar(navigationIcon : ImageVector , onNavigationIconClick : () -> U
             icon = Icons.Outlined.VolunteerActivism ,
             contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.go_back) ,
             onClick = {
-                IntentsHelper.openActivity(context , SupportActivity::class.java)
+                IntentsHelper.openActivity(context = context , activityClass = SupportActivity::class.java)
             } ,
         )
     } , scrollBehavior = scrollBehavior)
