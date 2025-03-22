@@ -36,7 +36,6 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "testRunner" }
-androidx-test-orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "testRunner" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "junittest" }
 jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jupiter" }
@@ -77,7 +76,6 @@ androidTesting = [
     "androidx-junit-ktx",
     "androidx-truth",
     "androidx-test-runner",
-    "androidx-test-orchestrator",
     "mockk-api",
     "test-kotlin-coroutines",
     "instrumentation-koin-compose",

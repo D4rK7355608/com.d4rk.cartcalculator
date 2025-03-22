@@ -1,12 +1,5 @@
 package com.d4rk.cartcalculator.core.di.modules
 
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppAboutSettingsProvider
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppAdvancedSettingsProvider
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppBuildInfoProvider
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppDisplaySettingsProvider
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppPrivacySettingsProvider
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppSettingsProvider
-import com.d4rk.cartcalculator.app.settings.settings.utils.providers.PermissionsSettingsProvider
 import com.d4rk.android.libs.apptoolkit.app.privacy.routes.ads.domain.usecases.LoadConsentInfoUseCase
 import com.d4rk.android.libs.apptoolkit.app.privacy.routes.ads.ui.AdsSettingsViewModel
 import com.d4rk.android.libs.apptoolkit.app.privacy.routes.permissions.ui.PermissionsViewModel
@@ -20,6 +13,14 @@ import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.BuildInfoPr
 import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.DisplaySettingsProvider
 import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.GeneralSettingsContentProvider
 import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.PrivacySettingsProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppAboutSettingsProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppAdvancedSettingsProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppBuildInfoProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppDisplaySettingsProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppPrivacySettingsProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppSettingsProvider
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppSettingsScreens
+import com.d4rk.cartcalculator.app.settings.settings.utils.providers.PermissionsSettingsProvider
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -35,7 +36,9 @@ val settingsModule = module {
     single<DisplaySettingsProvider> { AppDisplaySettingsProvider(context = get()) }
     single<PrivacySettingsProvider> { AppPrivacySettingsProvider(context = get()) }
     single<BuildInfoProvider> { AppBuildInfoProvider(context = get()) }
-    single<GeneralSettingsContentProvider> { GeneralSettingsContentProvider(deviceProvider = get() , advancedProvider = get() , displayProvider = get() , privacyProvider = get() , configProvider = get()) }
+    single { AppSettingsScreens() }
+
+    single<GeneralSettingsContentProvider> { GeneralSettingsContentProvider(deviceProvider = get() , advancedProvider = get() , displayProvider = get() , privacyProvider = get() , configProvider = get() , customScreens = get<AppSettingsScreens>().customScreens) }
     viewModel {
         GeneralSettingsViewModel()
     }
