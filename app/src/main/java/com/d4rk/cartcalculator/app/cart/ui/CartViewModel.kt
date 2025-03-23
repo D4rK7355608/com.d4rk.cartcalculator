@@ -67,10 +67,8 @@ class CartViewModel(
                 when (result) {
                     is DataState.Success -> {
                         val (cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) = result.data
-                        println("Cart loaded: ${cart.cartId}, Items: ${items.size}") // Debugging log
-
                         val currency = dataStore.getCurrency().firstOrNull().orEmpty()
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
                             currentData.copy(
                                 cart = cart , cartItems = items , selectedCurrency = currency
                             )
@@ -103,8 +101,8 @@ class CartViewModel(
             addCartItemUseCase.invoke(param = itemWithCart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        val newItem = result.data.copy(cartId = cartId) // Ensure correct cart ID
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                        val newItem = result.data.copy(cartId = cartId)
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
                             currentData.copy(cartItems = currentData.cartItems + newItem)
                         }
                         calculateTotalPrice()
@@ -126,8 +124,8 @@ class CartViewModel(
             updateCartItemUseCase.invoke(param = cartItem).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                            val updatedItems : List<ShoppingCartItemsTable> = currentData.cartItems.map { item ->
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
+                            val updatedItems : List<ShoppingCartItemsTable> = currentData.cartItems.map { item : ShoppingCartItemsTable ->
                                 if (item.itemId == cartItem.itemId) result.data else item
                             }
                             currentData.copy(cartItems = updatedItems)
@@ -149,22 +147,31 @@ class CartViewModel(
     private fun deleteCartItem(cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch {
             deleteCartItemUseCase.invoke(param = cartItem).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
-                when (result) {
-                    is DataState.Success -> {
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                            currentData.copy(cartItems = currentData.cartItems.filter { it.itemId != cartItem.itemId })
+                        when (result) {
+                            is DataState.Success -> {
+                                val updatedItems : List<ShoppingCartItemsTable> = _screenState.value.data?.cartItems?.filter { it.itemId != cartItem.itemId }.orEmpty()
+                                if (updatedItems.isEmpty()) {
+                                    _screenState.updateData(newDataState = ScreenState.NoData()) { currentData : UiCartScreen ->
+                                        currentData.copy(cartItems = emptyList())
+                                    }
+                                }
+                                else {
+                                    _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
+                                        currentData.copy(cartItems = updatedItems)
+                                    }
+                                }
+
+                                calculateTotalPrice()
+                            }
+
+                            is DataState.Error -> {
+
+                            }
+
+                            is DataState.Loading -> {}
+                            else -> {}
                         }
-                        calculateTotalPrice()
                     }
-
-                    is DataState.Error -> {
-                        // Handle error
-                    }
-
-                    is DataState.Loading -> {}
-                    else -> {}
-                }
-            }
         }
     }
 
