@@ -1,7 +1,7 @@
 package com.d4rk.cartcalculator.app.settings.settings.utils.providers
 
 import android.content.Context
-import com.d4rk.android.libs.apptoolkit.app.privacy.routes.permissions.utils.interfaces.PermissionsProvider
+import com.d4rk.android.libs.apptoolkit.app.permissions.utils.interfaces.PermissionsProvider
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsCategory
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsConfig
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsPreference

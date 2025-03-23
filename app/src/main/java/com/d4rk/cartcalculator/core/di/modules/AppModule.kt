@@ -51,6 +51,6 @@ val appModule : Module = module {
     single<DeleteCartItemUseCase> { DeleteCartItemUseCase(database = get()) }
 
     viewModel {
-        CartViewModel(loadCartUseCase = get() , addCartItemUseCase = get() , updateCartItemUseCase = get() , deleteCartItemUseCase = get() , generateCartShareLinkUseCase = get() , dispatcherProvider = get())
+        CartViewModel(loadCartUseCase = get() , addCartItemUseCase = get() , updateCartItemUseCase = get() , deleteCartItemUseCase = get() , generateCartShareLinkUseCase = get() , dataStore = get(), dispatcherProvider = get())
     }
 }

@@ -1,9 +1,9 @@
 package com.d4rk.cartcalculator.core.di.modules
 
-import com.d4rk.android.libs.apptoolkit.app.privacy.routes.ads.domain.usecases.LoadConsentInfoUseCase
-import com.d4rk.android.libs.apptoolkit.app.privacy.routes.ads.ui.AdsSettingsViewModel
-import com.d4rk.android.libs.apptoolkit.app.privacy.routes.permissions.ui.PermissionsViewModel
-import com.d4rk.android.libs.apptoolkit.app.privacy.routes.permissions.utils.interfaces.PermissionsProvider
+import com.d4rk.android.libs.apptoolkit.app.ads.domain.usecases.LoadConsentInfoUseCase
+import com.d4rk.android.libs.apptoolkit.app.ads.ui.AdsSettingsViewModel
+import com.d4rk.android.libs.apptoolkit.app.permissions.ui.PermissionsViewModel
+import com.d4rk.android.libs.apptoolkit.app.permissions.utils.interfaces.PermissionsProvider
 import com.d4rk.android.libs.apptoolkit.app.settings.general.ui.GeneralSettingsViewModel
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.ui.SettingsViewModel
 import com.d4rk.android.libs.apptoolkit.app.settings.utils.interfaces.SettingsProvider

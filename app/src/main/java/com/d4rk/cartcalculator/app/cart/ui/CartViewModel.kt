@@ -19,11 +19,13 @@ import com.d4rk.cartcalculator.app.cart.domain.usecases.LoadCartUseCase
 import com.d4rk.cartcalculator.app.cart.domain.usecases.UpdateCartItemUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -34,6 +36,7 @@ class CartViewModel(
     private val updateCartItemUseCase : UpdateCartItemUseCase ,
     private val deleteCartItemUseCase : DeleteCartItemUseCase ,
     private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase ,
+    private val dataStore : DataStore ,
     private val dispatcherProvider : DispatcherProvider
 ) : ViewModel() {
 
@@ -66,8 +69,11 @@ class CartViewModel(
                         val (cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) = result.data
                         println("Cart loaded: ${cart.cartId}, Items: ${items.size}") // Debugging log
 
+                        val currency = dataStore.getCurrency().firstOrNull().orEmpty()
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                            currentData.copy(cart = cart , cartItems = items)
+                            currentData.copy(
+                                cart = cart , cartItems = items , selectedCurrency = currency
+                            )
                         }
 
                         if (items.isEmpty()) {

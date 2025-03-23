@@ -23,7 +23,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -71,12 +70,11 @@ fun CartItem(cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit ,
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
-                        .padding(all = SizeConstants.SmallSize) , verticalAlignment = Alignment.CenterVertically , horizontalArrangement = Arrangement.SpaceBetween
+                        .padding(all = SizeConstants.MediumSize) , verticalAlignment = Alignment.CenterVertically , horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(
                     modifier = Modifier
                             .weight(weight = 1f)
-                            .clip(shape = MaterialTheme.shapes.medium)
                             .padding(end = SizeConstants.SmallSize)
                 ) {
                     Text(text = cart.name , style = MaterialTheme.typography.titleMedium , maxLines = 1 , overflow = TextOverflow.Ellipsis)

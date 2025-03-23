@@ -5,14 +5,23 @@ import com.d4rk.android.libs.apptoolkit.app.help.domain.usecases.GetFAQsUseCase
 import com.d4rk.android.libs.apptoolkit.app.help.domain.usecases.LaunchReviewFlowUseCase
 import com.d4rk.android.libs.apptoolkit.app.help.domain.usecases.RequestReviewFlowUseCase
 import com.d4rk.android.libs.apptoolkit.app.help.ui.HelpViewModel
+import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupViewModel
+import com.d4rk.android.libs.apptoolkit.app.startup.utils.interfaces.providers.StartupProvider
 import com.d4rk.android.libs.apptoolkit.app.support.domain.usecases.QuerySkuDetailsUseCase
 import com.d4rk.android.libs.apptoolkit.app.support.ui.SupportViewModel
 import com.d4rk.cartcalculator.BuildConfig
+import com.d4rk.cartcalculator.app.startup.utils.interfaces.providers.AppStartupProvider
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appToolkitModule : Module = module {
+    single<StartupProvider> { AppStartupProvider() }
+
+    viewModel {
+        StartupViewModel(loadConsentInfoUseCase = get() , dispatcherProvider = get())
+    }
+
     single<QuerySkuDetailsUseCase> { QuerySkuDetailsUseCase() }
     viewModel {
         SupportViewModel(querySkuDetailsUseCase = get() , dispatcherProvider = get())
