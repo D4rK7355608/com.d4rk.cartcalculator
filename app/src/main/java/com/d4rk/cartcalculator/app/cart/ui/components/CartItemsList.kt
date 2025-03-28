@@ -34,7 +34,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
         if (checkedItems.isNotEmpty()) {
             item(key = "checked_items") {
                 Text(
-                    text = stringResource(id = R.string.in_cart) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
+                    text = "${stringResource(id = R.string.in_cart)} (${checkedItems.size})" , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                             .animateItem()
                             .padding(start = SizeConstants.LargeSize , top = SizeConstants.SmallSize)
                 )
@@ -56,7 +56,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
         if (uncheckedItems.isNotEmpty()) {
             item(key = "unchecked_items") {
                 Text(
-                    text = stringResource(id = R.string.items_to_pick_up) , style = MaterialTheme.typography.titleMedium , modifier = Modifier
+                    text = "${stringResource(id = R.string.items_to_pick_up)} (${uncheckedItems.size})" , style = MaterialTheme.typography.titleMedium , modifier = Modifier
                             .animateItem()
                             .padding(start = SizeConstants.LargeSize , top = SizeConstants.SmallSize)
                 )
