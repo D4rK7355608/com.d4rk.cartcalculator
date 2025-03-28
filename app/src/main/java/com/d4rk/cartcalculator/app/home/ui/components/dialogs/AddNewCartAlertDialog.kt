@@ -35,7 +35,7 @@ fun AddNewCartAlertDialog(onDismiss : () -> Unit , onCartCreated : (ShoppingCart
         }
     } , onCancel = onDismiss , icon = Icons.Outlined.ShoppingCartCheckout , title = stringResource(id = R.string.create_a_new_cart) , content = {
         AddNewCartAlertDialogContent(newCart , nameText)
-    } , confirmButtonText = stringResource(id = R.string.create) , dismissButtonText = stringResource(id = android.R.string.cancel))
+    } , confirmButtonText = stringResource(id = R.string.create))
 }
 
 @Composable

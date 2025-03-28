@@ -12,14 +12,14 @@ import kotlinx.coroutines.flow.flow
 class UpdateCartNameUseCase(private val database : DatabaseInterface) : Repository<Pair<ShoppingCartTable , String> , Flow<DataState<ShoppingCartTable , Errors>>> {
     override suspend fun invoke(param : Pair<ShoppingCartTable , String>) : Flow<DataState<ShoppingCartTable , Errors>> = flow {
         runCatching {
-            val (cart , newName) = param
-            val updatedCart = cart.copy(name = newName)
-            database.updateCart(updatedCart)
+            val (cart : ShoppingCartTable , newName : String) = param
+            val updatedCart : ShoppingCartTable = cart.copy(name = newName)
+            database.updateCart(cart = updatedCart)
             updatedCart
-        }.onSuccess { cart ->
-            emit(DataState.Success(data = cart))
+        }.onSuccess { cart : ShoppingCartTable ->
+            emit(value = DataState.Success(data = cart))
         }.onFailure { throwable ->
-            emit(DataState.Error(error = throwable.toError(default = Errors.Database.DATABASE_OPERATION_FAILED)))
+            emit(value = DataState.Error(error = throwable.toError(default = Errors.Database.DATABASE_OPERATION_FAILED)))
         }
     }
 }

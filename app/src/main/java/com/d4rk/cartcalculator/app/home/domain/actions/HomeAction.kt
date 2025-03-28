@@ -1,5 +1,6 @@
 package com.d4rk.cartcalculator.app.home.domain.actions
 
+import com.d4rk.cartcalculator.app.home.domain.model.SortOption
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 
 sealed class HomeAction {
@@ -19,4 +20,5 @@ sealed class HomeAction {
     data class RenameCart(val cart : ShoppingCartTable , val newName : String) : HomeAction()
     data object DismissRenameCartDialog : HomeAction()
     data class OpenRenameCartDialog(val cart : ShoppingCartTable) : HomeAction()
+    data class SortCarts(val sortOption : SortOption) : HomeAction() // New action
 }

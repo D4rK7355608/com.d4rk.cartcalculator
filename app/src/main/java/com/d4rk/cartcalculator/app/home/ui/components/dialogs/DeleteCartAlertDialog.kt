@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.app.home.ui.components.dialogs
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.RemoveShoppingCart
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
@@ -14,7 +15,7 @@ fun DeleteCartAlertDialog(cart : ShoppingCartTable? , onDismiss : () -> Unit , o
     BasicAlertDialog(onDismiss = onDismiss , onConfirm = {
         cart?.let { onDeleteConfirmed(it) }
         onDismiss()
-    } , onCancel = onDismiss , icon = Icons.Outlined.RemoveShoppingCart , title = stringResource(id = R.string.delete_cart_question) , content = {
+    } , iconTint = MaterialTheme.colorScheme.error , onCancel = onDismiss , icon = Icons.Outlined.RemoveShoppingCart , title = stringResource(id = R.string.delete_cart_question) , content = {
         Text(text = stringResource(id = R.string.delete_cart_warning , cart?.name ?: ""))
-    } , confirmButtonText = stringResource(id = R.string.delete) , dismissButtonText = stringResource(id = android.R.string.cancel))
+    } , confirmButtonText = stringResource(id = R.string.delete))
 }

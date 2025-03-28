@@ -15,6 +15,7 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateState
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.ScreenMessageType
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
 import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
+import com.d4rk.cartcalculator.app.home.domain.model.SortOption
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.domain.usecases.AddCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.DeleteCartUseCase
@@ -71,6 +72,7 @@ class HomeViewModel(
             is HomeAction.RenameCart -> renameCart(cart = event.cart , newName = event.newName)
             is HomeAction.DismissRenameCartDialog -> dismissRenameCartDialog()
             is HomeAction.OpenRenameCartDialog -> openRenameCartDialog(cart = event.cart)
+            is HomeAction.SortCarts -> sortCarts(event.sortOption)
         }
     }
 
@@ -137,14 +139,18 @@ class HomeViewModel(
     }
 
     private fun openRenameCartDialog(cart : ShoppingCartTable) {
-        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-            currentData.copy(showRenameCartDialog = true , cartToRename = cart)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                currentData.copy(showRenameCartDialog = true , cartToRename = cart)
+            }
         }
     }
 
     private fun dismissRenameCartDialog() {
-        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-            currentData.copy(showRenameCartDialog = false)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                currentData.copy(showRenameCartDialog = false)
+            }
         }
     }
 
@@ -169,6 +175,20 @@ class HomeViewModel(
                     is DataState.Loading -> _screenState.setLoading()
                     else -> {}
                 }
+            }
+        }
+    }
+
+    private fun sortCarts(sortOption : SortOption) {
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+                val sortedCarts = when (sortOption) {
+                    SortOption.NAME -> currentData.carts.sortedBy { it.name }
+                    SortOption.OLDEST -> currentData.carts.sortedBy { it.date }
+                    SortOption.NEWEST -> currentData.carts.sortedByDescending { it.date }
+                    else -> currentData.carts
+                }
+                currentData.copy(carts = sortedCarts.toMutableList() , currentSort = sortOption)
             }
         }
     }
@@ -247,60 +267,78 @@ class HomeViewModel(
     }
 
     private fun toggleImportDialog(isOpen : Boolean) {
-        _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
-            currentData.copy(showImportDialog = isOpen)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+                currentData.copy(showImportDialog = isOpen)
+            }
         }
     }
 
     private fun openNewCartDialog() {
-        _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
-            currentData.copy(showCreateCartDialog = true)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+                currentData.copy(showCreateCartDialog = true)
+            }
         }
     }
 
     private fun dismissNewCartDialog() {
-        _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
-            currentData.copy(showCreateCartDialog = false)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+                currentData.copy(showCreateCartDialog = false)
+            }
         }
     }
 
     private fun openDeleteCartDialog(cart : ShoppingCartTable) {
-        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-            currentData.copy(showDeleteCartDialog = true , cartToDelete = cart)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                currentData.copy(showDeleteCartDialog = true , cartToDelete = cart)
+            }
         }
     }
 
     private fun dismissDeleteCartDialog() {
-        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-            currentData.copy(showDeleteCartDialog = false)
+        viewModelScope.launch {
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                currentData.copy(showDeleteCartDialog = false)
+            }
         }
     }
 
     private fun showSnackbar(message : String , isError : Boolean) {
-        _screenState.showSnackbar(
-            UiSnackbar(type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis())
-        )
+        viewModelScope.launch {
+            _screenState.showSnackbar(
+                UiSnackbar(type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis())
+            )
+        }
     }
 
     private fun postSnackbar(message : UiTextHelper , isError : Boolean) {
-        _screenState.showSnackbar(
-            UiSnackbar(type = ScreenMessageType.SNACKBAR , message = message , isError = isError , timeStamp = System.currentTimeMillis())
-        )
-        checkForEmptyCarts()
+        viewModelScope.launch {
+            _screenState.showSnackbar(
+                UiSnackbar(type = ScreenMessageType.SNACKBAR , message = message , isError = isError , timeStamp = System.currentTimeMillis())
+            )
+            checkForEmptyCarts()
+        }
     }
 
     private fun dismissSnackbar() {
-        _screenState.update { current ->
-            current.copy(snackbar = null)
+        viewModelScope.launch {
+            _screenState.update { current ->
+                current.copy(snackbar = null)
+            }
         }
     }
 
     private fun checkForEmptyCarts() {
-        if (_screenState.value.data?.carts.isNullOrEmpty()) {
-            _screenState.updateState(newValues = ScreenState.NoData())
-        }
-        else {
-            _screenState.updateState(newValues = ScreenState.Success())
+        viewModelScope.launch {
+            if (_screenState.value.data?.carts.isNullOrEmpty()) {
+                _screenState.updateState(newValues = ScreenState.NoData())
+            }
+            else {
+                _screenState.updateState(newValues = ScreenState.Success())
+            }
         }
     }
 }

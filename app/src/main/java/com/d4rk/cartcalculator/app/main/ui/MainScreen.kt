@@ -33,8 +33,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedExtendedFloatingActionButton
-import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.SmallFloatingActionButton
+import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.AnimatedExtendedFloatingActionButton
+import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.SmallFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.StatusSnackbarHost
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants

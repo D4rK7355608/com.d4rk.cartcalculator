@@ -11,5 +11,6 @@ data class UiHomeData(
     val showSnackbar : Boolean = false ,
     val shareCartLink : String? = null ,
     val cartToRename : ShoppingCartTable? = null ,
-    val showRenameCartDialog : Boolean = false
+    val showRenameCartDialog : Boolean = false ,
+    val currentSort : SortOption = SortOption.DEFAULT
 )

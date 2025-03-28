@@ -1,6 +1,8 @@
 package com.d4rk.cartcalculator.app.home.ui
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,8 +31,10 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.components.CartItem
+import com.d4rk.cartcalculator.app.home.ui.components.HomeScreenSortFilterRow
 import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeScreenDialogs
 import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeSnackbarHandler
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 
 @Composable
 fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , snackbarHostState : SnackbarHostState , screenState : UiStateScreen<UiHomeData>) {
@@ -45,37 +49,41 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
     })
 
     HomeSnackbarHandler(screenState = screenState , viewModel = viewModel , snackbarHostState = snackbarHostState)
-
     HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState : UiHomeData , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit) {
     val listState : LazyListState = rememberLazyListState()
-
-    val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.carts.size)
-
+    val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(
+        listState = listState , itemCount = uiState.carts.size
+    )
     LaunchedEffect(key1 = isFabVisible.value) {
         onFabVisibilityChanged(isFabVisible.value)
     }
-
-    LazyColumn(
-        state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)
-    ) {
-        itemsIndexed(items = uiState.carts , key = { _ , item -> item.cartId }) { index , cart ->
-            CartItem(
-                cart = cart ,
-                     onDelete = { viewModel.sendEvent(HomeAction.OpenDeleteCartDialog(cart)) } ,
-                     onCardClick = { viewModel.sendEvent(HomeAction.OpenCart(cart)) } ,
-                     onShare = { sharedCart -> viewModel.sendEvent(HomeAction.GenerateCartShareLink(sharedCart)) } ,
-                     onRename = { renameCart -> viewModel.sendEvent(HomeAction.OpenRenameCartDialog(renameCart)) } ,
-                     uiState = uiState ,
-                     modifier = Modifier
-                             .animateItem()
-                             .animateVisibility(visible = visibilityStates.getOrElse(index) { false } , index = index))
-        }
-        item {
-            Spacer(modifier = Modifier.height(height = 72.dp))
+    Column(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)) {
+            stickyHeader {
+                if (uiState.carts.size > 10) {
+                    HomeScreenSortFilterRow(viewModel = viewModel)
+                }
+            }
+            itemsIndexed(items = uiState.carts , key = { _ , item -> item.cartId }) { index : Int , cart : ShoppingCartTable ->
+                CartItem(
+                    cart = cart ,
+                         onDelete = { viewModel.sendEvent(event = HomeAction.OpenDeleteCartDialog(cart = cart)) } ,
+                         onCardClick = { viewModel.sendEvent(event = HomeAction.OpenCart(cart = cart)) } ,
+                         onShare = { sharedCart -> viewModel.sendEvent(event = HomeAction.GenerateCartShareLink(cart = sharedCart)) } ,
+                         onRename = { renameCart -> viewModel.sendEvent(event = HomeAction.OpenRenameCartDialog(cart = renameCart)) } ,
+                         uiState = uiState ,
+                         modifier = Modifier
+                                 .animateItem()
+                                 .animateVisibility(visible = visibilityStates.getOrElse(index) { false } , index = index))
+            }
+            item {
+                Spacer(modifier = Modifier.height(height = 72.dp))
+            }
         }
     }
 }

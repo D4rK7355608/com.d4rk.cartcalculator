@@ -17,11 +17,9 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.dialogs.BasicAlertDia
 import com.d4rk.cartcalculator.R
 
 @Composable
-fun RenameCartAlertDialog(
-    initialName : String , onDismiss : () -> Unit , onCartRenamed : (String) -> Unit
-) {
+fun RenameCartAlertDialog(initialName : String , onDismiss : () -> Unit , onCartRenamed : (String) -> Unit) {
     val nameText : MutableState<String> = remember { mutableStateOf(value = initialName) }
-    val cartNameDefault = stringResource(id = R.string.shopping_cart)
+    val cartNameDefault : String = stringResource(id = R.string.shopping_cart)
     BasicAlertDialog(onDismiss = onDismiss , onConfirm = {
         onCartRenamed(nameText.value.ifEmpty { cartNameDefault })
         onDismiss()
@@ -37,5 +35,5 @@ fun RenameCartAlertDialog(
                               onDismiss()
                           }) ,
                           placeholder = { Text(text = stringResource(id = R.string.shopping_cart)) })
-    } , confirmButtonText = stringResource(id = R.string.rename_cart) , dismissButtonText = stringResource(id = android.R.string.cancel))
+    } , confirmButtonText = stringResource(id = R.string.rename_cart))
 }

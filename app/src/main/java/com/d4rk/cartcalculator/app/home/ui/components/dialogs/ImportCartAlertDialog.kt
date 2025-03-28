@@ -41,7 +41,7 @@ fun ImportCartAlertDialog(onDismiss : () -> Unit , onImport : (String) -> Unit) 
         onDismiss()
     } , onCancel = onDismiss , icon = Icons.Outlined.ImportExport , title = stringResource(id = R.string.import_shared_cart) , content = {
         ImportCartAlertDialogContent(cartLink = cartLink , onCartLinkChange = { cartLink = it })
-    } , confirmButtonText = stringResource(id = R.string.button_import) , dismissButtonText = stringResource(id = android.R.string.cancel) , confirmEnabled = isValidLink)
+    } , confirmButtonText = stringResource(id = R.string.button_import) , confirmEnabled = isValidLink)
 }
 
 @Composable
