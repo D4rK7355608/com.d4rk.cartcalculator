@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 
 @Dao
@@ -19,4 +20,7 @@ interface NewCartDao {
 
     @Query("SELECT * FROM ShoppingCartTable WHERE cartId = :cartId")
     suspend fun getCartById(cartId : Int) : ShoppingCartTable?
+
+    @Update
+    suspend fun updateCart(cart : ShoppingCartTable)
 }

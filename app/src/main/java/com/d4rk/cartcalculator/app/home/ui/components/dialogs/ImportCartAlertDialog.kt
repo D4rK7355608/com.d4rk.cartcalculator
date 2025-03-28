@@ -8,12 +8,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ContentPaste
 import androidx.compose.material.icons.outlined.ImportExport
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -25,6 +23,7 @@ import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.core.ui.components.dialogs.BasicAlertDialog
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.MediumVerticalSpacer
@@ -36,32 +35,13 @@ import com.d4rk.cartcalculator.core.utils.extensions.isValidCartLink
 fun ImportCartAlertDialog(onDismiss : () -> Unit , onImport : (String) -> Unit) {
     var cartLink : String by remember { mutableStateOf(value = "") }
     val isValidLink : Boolean by remember(key1 = cartLink) { derivedStateOf { cartLink.isValidCartLink() } }
-    val view : View = LocalView.current
 
-    AlertDialog(onDismissRequest = onDismiss , title = { Text(text = stringResource(id = R.string.import_shared_cart)) } , text = {
+    BasicAlertDialog(onDismiss = onDismiss , onConfirm = {
+        onImport(cartLink)
+        onDismiss()
+    } , onCancel = onDismiss , icon = Icons.Outlined.ImportExport , title = stringResource(id = R.string.import_shared_cart) , content = {
         ImportCartAlertDialogContent(cartLink = cartLink , onCartLinkChange = { cartLink = it })
-    } , confirmButton = {
-        TextButton(modifier = Modifier.bounceClick() , onClick = {
-            view.playSoundEffect(SoundEffectConstants.CLICK)
-            if (isValidLink) {
-                onImport(cartLink)
-                onDismiss()
-            }
-        } , enabled = isValidLink) {
-            Text(text = stringResource(id = R.string.button_import))
-        }
-    } , icon = {
-        Icon(
-            Icons.Outlined.ImportExport , contentDescription = null
-        )
-    } , dismissButton = {
-        TextButton(modifier = Modifier.bounceClick() , onClick = {
-            view.playSoundEffect(SoundEffectConstants.CLICK)
-            onDismiss()
-        }) {
-            Text(text = stringResource(id = android.R.string.cancel))
-        }
-    })
+    } , confirmButtonText = stringResource(id = R.string.button_import) , dismissButtonText = stringResource(id = android.R.string.cancel) , confirmEnabled = isValidLink)
 }
 
 @Composable

@@ -40,7 +40,8 @@ import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.components.CartItemsList
 import com.d4rk.cartcalculator.app.cart.ui.components.CartTotalCard
 import com.d4rk.cartcalculator.app.cart.ui.components.EmptyCartScreen
-import com.d4rk.cartcalculator.app.cart.ui.components.dialogs.CartScreenDialogs
+import com.d4rk.cartcalculator.app.cart.ui.components.effects.CartScreenDialogs
+import com.d4rk.cartcalculator.app.cart.ui.components.effects.CartSnackbarHandler
 import com.d4rk.cartcalculator.app.cart.ui.components.navigation.CartScreenTopAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,17 +54,23 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
     val context : Context = LocalContext.current
     val screenState : UiStateScreen<UiCartScreen> by viewModel.screenState.collectAsState()
 
+    val uiState : UiCartScreen = screenState.data ?: UiCartScreen()
+
     Scaffold(modifier = Modifier.nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
         CartScreenTopAppBar(screenState = screenState , viewModel = viewModel , activity = activity , context = context , scrollBehavior = scrollBehavior)
+    } , bottomBar = {
+        AnimatedVisibility(visible = uiState.totalPrice > 0 , enter = fadeIn() + expandVertically() , exit = fadeOut() + shrinkVertically()) {
+            CartTotalCard(uiState = uiState)
+        }
     } , snackbarHost = {
         StatusSnackbarHost(snackBarHostState = snackBarHostState , view = view , navController = navController)
     }) { paddingValues ->
-        CartScreenStates(paddingValues = paddingValues , screenState = screenState , viewModel = viewModel)
+        CartScreenStates(paddingValues = paddingValues , screenState = screenState , viewModel = viewModel , snackbarHostState = snackBarHostState)
     }
 }
 
 @Composable
-fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen<UiCartScreen> , viewModel : CartViewModel) {
+fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen<UiCartScreen> , viewModel : CartViewModel , snackbarHostState : SnackbarHostState) {
     ScreenStateHandler(screenState = screenState , onLoading = {
         LoadingScreen()
     } , onEmpty = {
@@ -72,26 +79,22 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
                     .fillMaxSize()
                     .padding(paddingValues = paddingValues)
         )
-    } , onSuccess = { uiState ->
-        CartScreenContent(uiState = uiState , viewModel = viewModel , paddingValues = paddingValues)
+    } , onSuccess = {
+        CartScreenContent(viewModel = viewModel , paddingValues = paddingValues)
     })
 
+    CartSnackbarHandler(screenState = screenState , viewModel = viewModel , snackbarHostState = snackbarHostState)
     CartScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 
 @Composable
-fun CartScreenContent(uiState : UiCartScreen , viewModel : CartViewModel , paddingValues : PaddingValues) {
+fun CartScreenContent(viewModel : CartViewModel , paddingValues : PaddingValues) {
     val layoutDirection : LayoutDirection = LocalLayoutDirection.current
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(
             modifier = Modifier
                     .padding(start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp)
-                    .weight(1f) , viewModel = viewModel
+                    .weight(weight = 1f) , viewModel = viewModel
         )
-        AnimatedVisibility(
-            visible = uiState.totalPrice > 0 , enter = fadeIn() + expandVertically() , exit = fadeOut() + shrinkVertically()
-        ) {
-            CartTotalCard(uiState = uiState)
-        }
     }
 }

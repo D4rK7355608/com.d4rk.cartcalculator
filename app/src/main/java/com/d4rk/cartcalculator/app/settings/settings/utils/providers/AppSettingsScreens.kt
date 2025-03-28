@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import com.d4rk.cartcalculator.app.settings.cart.ui.CartSettingsList
 
 class AppSettingsScreens {
-    val customScreens: Map<String, @Composable (PaddingValues) -> Unit> = mapOf(
-        "cart" to { paddingValues -> CartSettingsList(paddingValues) }
-    )
+    val customScreens : Map<String , @Composable (PaddingValues) -> Unit> = mapOf(
+        "cart" to { paddingValues -> CartSettingsList(paddingValues) })
 }

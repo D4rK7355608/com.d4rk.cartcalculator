@@ -37,11 +37,12 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Composable
-fun CartItem(cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit , uiState : UiHomeData , modifier : Modifier , onShare : (ShoppingCartTable) -> Unit) {
+fun CartItem(
+    cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit , onCardClick : () -> Unit , onRename : (ShoppingCartTable) -> Unit , onShare : (ShoppingCartTable) -> Unit , uiState : UiHomeData , modifier : Modifier
+) {
     val dateFormat = SimpleDateFormat("dd-MM-yyyy" , Locale.getDefault())
     val dateString : String = dateFormat.format(cart.date)
     val view : View = LocalView.current
-
     val dismissState : SwipeToDismissBoxState = rememberSwipeToDismissBoxState(confirmValueChange = {
         if (it == SwipeToDismissBoxValue.StartToEnd || it == SwipeToDismissBoxValue.EndToStart) {
             ! uiState.showDeleteCartDialog
@@ -50,23 +51,22 @@ fun CartItem(cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit ,
             true
         }
     })
-
     var menuExpanded : Boolean by remember { mutableStateOf(value = false) }
-
     LaunchedEffect(key1 = dismissState.targetValue , key2 = dismissState.currentValue) {
         when {
             dismissState.currentValue == dismissState.targetValue -> dismissState.reset()
             dismissState.targetValue != SwipeToDismissBoxValue.Settled -> onDelete(cart)
         }
     }
-
-    SwipeToDismissBox(modifier = modifier
-            .hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState)
-            .padding(horizontal = SizeConstants.MediumSize) , state = dismissState , backgroundContent = {} , content = {
-        OutlinedCard(shape = RoundedCornerShape(size = SizeConstants.MediumSize) , modifier = Modifier.fillMaxWidth() , onClick = {
-            view.playSoundEffect(SoundEffectConstants.CLICK)
-            onCardClick()
-        }) {
+    SwipeToDismissBox(
+        modifier = modifier
+                .hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState)
+                .padding(horizontal = SizeConstants.MediumSize) , state = dismissState , backgroundContent = {}) {
+        OutlinedCard(
+            shape = RoundedCornerShape(size = SizeConstants.MediumSize) , modifier = Modifier.fillMaxWidth() , onClick = {
+                view.playSoundEffect(SoundEffectConstants.CLICK)
+                onCardClick()
+            }) {
             Row(
                 modifier = Modifier
                         .fillMaxWidth()
@@ -77,24 +77,27 @@ fun CartItem(cart : ShoppingCartTable , onDelete : (ShoppingCartTable) -> Unit ,
                             .weight(weight = 1f)
                             .padding(end = SizeConstants.SmallSize)
                 ) {
-                    Text(text = cart.name , style = MaterialTheme.typography.titleMedium , maxLines = 1 , overflow = TextOverflow.Ellipsis)
+                    Text(
+                        text = cart.name , style = MaterialTheme.typography.titleMedium , maxLines = 1 , overflow = TextOverflow.Ellipsis
+                    )
                     SmallVerticalSpacer()
-                    Text(text = stringResource(R.string.created_on , dateString) , style = MaterialTheme.typography.labelMedium , textAlign = TextAlign.Start)
+                    Text(
+                        text = stringResource(R.string.created_on , dateString) , style = MaterialTheme.typography.labelMedium , textAlign = TextAlign.Start
+                    )
                     SmallVerticalSpacer()
                     CartCategoriesRow()
                 }
-
                 CartDropdownMenu(expanded = menuExpanded , onDismissRequest = { menuExpanded = false } , onDelete = {
                     menuExpanded = false
                     onDelete(cart)
                 } , onShare = {
                     menuExpanded = false
                     onShare(cart)
-                }) {
-                    menuExpanded = true
-                }
-
+                } , onOpen = { menuExpanded = true } , onRename = {
+                    menuExpanded = false
+                    onRename(cart)
+                })
             }
         }
-    })
+    }
 }

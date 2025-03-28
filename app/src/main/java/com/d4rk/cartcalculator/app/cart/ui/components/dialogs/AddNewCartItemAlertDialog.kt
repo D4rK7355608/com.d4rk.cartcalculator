@@ -5,11 +5,8 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ShoppingBag
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -23,40 +20,27 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
+import com.d4rk.android.libs.apptoolkit.core.ui.components.dialogs.BasicAlertDialog
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.sections.InfoMessageSection
-import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.MediumVerticalSpacer
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 @Composable
 fun AddNewCartItemAlertDialog(cartId : Int , onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit , existingCartItem : ShoppingCartItemsTable? = null) {
-
     val newCartItem : MutableState<ShoppingCartItemsTable?> = remember { mutableStateOf(value = null) }
     val initialName : String = existingCartItem?.name ?: ""
     val initialPrice : String = existingCartItem?.price ?: ""
     val initialQuantity : String = existingCartItem?.quantity?.toString() ?: ""
 
-    AlertDialog(onDismissRequest = onDismiss , text = {
-        AddNewCartItemAlertDialogContent(cartId = cartId , newCartItem = newCartItem , initialName = initialName , initialPrice = initialPrice , initialQuantity = initialQuantity , existingCartItem = existingCartItem)
-    } , icon = {
-        Icon(Icons.Outlined.ShoppingBag , contentDescription = null)
-    } , confirmButton = {
-        TextButton(modifier = Modifier.bounceClick() , onClick = {
-            newCartItem.value?.let { cartItem ->
-                onCartCreated(cartItem)
-                onDismiss()
-            }
-        } , enabled = newCartItem.value != null) {
-            Text(text = stringResource(id = android.R.string.ok))
-        }
-    } , dismissButton = {
-        TextButton(modifier = Modifier.bounceClick() , onClick = {
+    BasicAlertDialog(onDismiss = onDismiss , onConfirm = {
+        newCartItem.value?.let { cartItem ->
+            onCartCreated(cartItem)
             onDismiss()
-        }) {
-            Text(text = stringResource(id = android.R.string.cancel))
         }
-    })
+    } , icon = Icons.Outlined.ShoppingBag , title = stringResource(id = R.string.add_cart_item) , content = {
+        AddNewCartItemAlertDialogContent(cartId = cartId , newCartItem = newCartItem , initialName = initialName , initialPrice = initialPrice , initialQuantity = initialQuantity , existingCartItem = existingCartItem)
+    } , confirmEnabled = newCartItem.value != null)
 }
 
 @Composable

@@ -1,10 +1,14 @@
-package com.d4rk.cartcalculator.app.home.ui.components.dialogs
+package com.d4rk.cartcalculator.app.home.ui.components.effects
 
 import androidx.compose.runtime.Composable
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
+import com.d4rk.cartcalculator.app.home.ui.components.dialogs.AddNewCartAlertDialog
+import com.d4rk.cartcalculator.app.home.ui.components.dialogs.DeleteCartAlertDialog
+import com.d4rk.cartcalculator.app.home.ui.components.dialogs.ImportCartAlertDialog
+import com.d4rk.cartcalculator.app.home.ui.components.dialogs.RenameCartAlertDialog
 
 @Composable
 fun HomeScreenDialogs(screenState : UiStateScreen<UiHomeData> , viewModel : HomeViewModel) {
@@ -21,5 +25,10 @@ fun HomeScreenDialogs(screenState : UiStateScreen<UiHomeData> , viewModel : Home
     // Delete Cart Dialog
     if (screenState.data?.showDeleteCartDialog == true) {
         DeleteCartAlertDialog(cart = screenState.data?.cartToDelete , onDismiss = { viewModel.sendEvent(event = HomeAction.DismissDeleteCartDialog) } , onDeleteConfirmed = { cart -> viewModel.sendEvent(event = HomeAction.DeleteCart(cart = cart)) })
+    }
+
+    // Rename Cart Dialog
+    if (screenState.data?.showRenameCartDialog == true && screenState.data?.cartToRename != null) {
+        RenameCartAlertDialog(initialName = screenState.data?.cartToRename?.name ?: "" , onDismiss = { viewModel.sendEvent(HomeAction.DismissRenameCartDialog) } , onCartRenamed = { newName -> viewModel.sendEvent(HomeAction.RenameCart(screenState.data?.cartToRename !! , newName)) })
     }
 }

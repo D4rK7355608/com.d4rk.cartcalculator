@@ -10,6 +10,7 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.showSnackbar
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateState
+import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.ScreenMessageType
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
 import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
@@ -28,6 +29,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class CartViewModel(
@@ -58,6 +60,8 @@ class CartViewModel(
             is CartAction.OpenEditDialog -> openEditDialog(item = event.item)
             is CartAction.OpenDeleteDialog -> openDeleteDialog(item = event.item)
             is CartAction.ItemCheckedChange -> updateItemChecked(item = event.item , isChecked = event.isChecked)
+            is CartAction.ShowSnackbar -> showSnackbar(message = event.message , isError = event.isError)
+            is CartAction.DismissSnackbar -> dismissSnackbar()
         }
     }
 
@@ -106,6 +110,7 @@ class CartViewModel(
                             currentData.copy(cartItems = currentData.cartItems + newItem)
                         }
                         calculateTotalPrice()
+                        sendEvent(CartAction.ShowSnackbar("Item added successfully!" , false))
                     }
 
                     is DataState.Error -> {
@@ -147,31 +152,32 @@ class CartViewModel(
     private fun deleteCartItem(cartItem : ShoppingCartItemsTable) {
         viewModelScope.launch {
             deleteCartItemUseCase.invoke(param = cartItem).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
-                        when (result) {
-                            is DataState.Success -> {
-                                val updatedItems : List<ShoppingCartItemsTable> = _screenState.value.data?.cartItems?.filter { it.itemId != cartItem.itemId }.orEmpty()
-                                if (updatedItems.isEmpty()) {
-                                    _screenState.updateData(newDataState = ScreenState.NoData()) { currentData : UiCartScreen ->
-                                        currentData.copy(cartItems = emptyList())
-                                    }
-                                }
-                                else {
-                                    _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
-                                        currentData.copy(cartItems = updatedItems)
-                                    }
-                                }
-
-                                calculateTotalPrice()
+                when (result) {
+                    is DataState.Success -> {
+                        val updatedItems : List<ShoppingCartItemsTable> = _screenState.value.data?.cartItems?.filter { it.itemId != cartItem.itemId }.orEmpty()
+                        if (updatedItems.isEmpty()) {
+                            _screenState.updateData(newDataState = ScreenState.NoData()) { currentData : UiCartScreen ->
+                                currentData.copy(cartItems = emptyList())
                             }
-
-                            is DataState.Error -> {
-
-                            }
-
-                            is DataState.Loading -> {}
-                            else -> {}
                         }
+                        else {
+                            _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
+                                currentData.copy(cartItems = updatedItems)
+                            }
+                        }
+
+                        calculateTotalPrice()
+                        sendEvent(CartAction.ShowSnackbar("Item removed successfully!" , false))
                     }
+
+                    is DataState.Error -> {
+
+                    }
+
+                    is DataState.Loading -> {}
+                    else -> {}
+                }
+            }
         }
     }
 
@@ -258,6 +264,20 @@ class CartViewModel(
                 currentState.copy(cartItems = checkedCartItems)
             }
             updateCartItem(cartItem = item.copy(isChecked = isChecked))
+        }
+    }
+
+    private fun showSnackbar(message : String , isError : Boolean) {
+        _screenState.showSnackbar(
+            UiSnackbar(
+                type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis()
+            )
+        )
+    }
+
+    private fun dismissSnackbar() {
+        _screenState.update { current ->
+            current.copy(snackbar = null)
         }
     }
 }

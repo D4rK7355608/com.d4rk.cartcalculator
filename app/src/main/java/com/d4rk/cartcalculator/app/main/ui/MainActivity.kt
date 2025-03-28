@@ -3,6 +3,9 @@ package com.d4rk.cartcalculator.app.main.ui
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.IntentSenderRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -13,27 +16,61 @@ import androidx.lifecycle.lifecycleScope
 import com.d4rk.android.libs.apptoolkit.app.display.theme.style.AppTheme
 import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupActivity
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
+import com.d4rk.cartcalculator.app.main.domain.actions.MainAction
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
+import com.google.android.gms.ads.MobileAds
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.core.parameter.parametersOf
 
 class MainActivity : AppCompatActivity() {
+
+    private val dataStore by lazy { DataStore.getInstance(context = application) }
+    private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
+    private lateinit var viewModel : MainViewModel
+
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
+        MobileAds.initialize(this)
+        updateResultLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+            // Handle update result if necessary
+        }
+
+        viewModel = getViewModel { parametersOf(updateResultLauncher) }
+
         lifecycleScope.launch {
-            if (DataStore.getInstance(context = this@MainActivity).startup.first()) {
-                IntentsHelper.openActivity(context = this@MainActivity , activityClass = StartupActivity::class.java)
-                finish()
-            }
-            else {
-                setContent {
-                    AppTheme {
-                        Surface(modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background) {
-                            MainScreen()
-                        }
-                    }
+            handleStartup()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.sendAction(action = MainAction.CheckForUpdates)
+    }
+
+    private suspend fun handleStartup() {
+        val isFirstLaunch = dataStore.startup.first()
+        if (isFirstLaunch) {
+            startStartupActivity()
+        }
+        else {
+            setMainActivityContent()
+        }
+    }
+
+    private fun startStartupActivity() {
+        IntentsHelper.openActivity(context = this , activityClass = StartupActivity::class.java)
+        finish()
+    }
+
+    private fun setMainActivityContent() {
+        setContent {
+            AppTheme {
+                Surface(modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background) {
+                    MainScreen()
                 }
             }
         }

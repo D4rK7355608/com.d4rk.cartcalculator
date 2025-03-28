@@ -13,6 +13,10 @@ class DataBaseImplementation(private val database : AppDatabase) : DatabaseInter
         database.newCartDao().delete(cart)
     }
 
+    override suspend fun updateCart(cart : ShoppingCartTable) {
+        database.newCartDao().updateCart(cart)
+    }
+
     override suspend fun getAllCarts() : List<ShoppingCartTable> {
         return database.newCartDao().getAll()
     }

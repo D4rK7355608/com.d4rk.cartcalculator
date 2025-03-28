@@ -10,6 +10,7 @@ interface DatabaseInterface {
     suspend fun deleteCart(cart : ShoppingCartTable)
     suspend fun getAllCarts() : List<ShoppingCartTable>
     suspend fun getCartById(cartId : Int) : ShoppingCartTable?
+    suspend fun updateCart(cart : ShoppingCartTable)
 
     // ShoppingCartItemsTable Methods
     suspend fun insertItem(item : ShoppingCartItemsTable) : Long

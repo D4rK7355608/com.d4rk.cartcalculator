@@ -43,7 +43,7 @@ fun handleNavigationItemClick(
 ) {
     when (item.title) {
         com.d4rk.android.libs.apptoolkit.R.string.settings -> {
-              IntentsHelper.openActivity(
+            IntentsHelper.openActivity(
                 context = context , activityClass = SettingsActivity::class.java
             )
         }

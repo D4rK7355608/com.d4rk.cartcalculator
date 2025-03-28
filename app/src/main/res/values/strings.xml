@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="long_settings_label">Application Settings</string>
+    <string name="settings_disabled_message">Settings are currently unavailable.</string>
+
+
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
 
@@ -14,6 +19,7 @@
     <string name="cart_name">Cart name</string>
     <string name="create_a_new_cart">Create a New Cart</string>
     <string name="enter_cart_name">Enter cart name</string>
+    <string name="rename_cart">Rename Cart</string>
     <string name="shopping_cart">Shopping cart</string>
     <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
     <string name="create">Create</string>
@@ -34,6 +40,7 @@
 
     <!-- Cart screen -->
     <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
+    <string name="add_cart_item">Add Cart Item</string>
     <string name="in_cart">In Cart</string>
     <string name="items_to_pick_up">Items to Pick Up</string>
     <string name="item_name">Item name</string>

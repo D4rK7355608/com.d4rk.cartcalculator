@@ -35,6 +35,9 @@ fun Errors.asUiText() : UiTextHelper {
         Errors.UseCase.FAILED_TO_UPDATE_CART_ITEM -> UiTextHelper.StringResource(R.string.failed_to_update_cart_item)
         Errors.UseCase.FAILED_TO_DELETE_CART_ITEM -> UiTextHelper.StringResource(R.string.failed_to_delete_cart_item)
         Errors.UseCase.FAILED_TO_ADD_CART_ITEM -> UiTextHelper.StringResource(R.string.failed_to_add_cart_item)
+        else -> {
+            UiTextHelper.StringResource(com.d4rk.android.libs.apptoolkit.R.string.unknown_error)
+        }
     }
 }
 

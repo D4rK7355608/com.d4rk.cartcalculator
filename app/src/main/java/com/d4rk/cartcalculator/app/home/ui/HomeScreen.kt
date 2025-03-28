@@ -29,7 +29,7 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.components.CartItem
-import com.d4rk.cartcalculator.app.home.ui.components.dialogs.HomeScreenDialogs
+import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeScreenDialogs
 import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeSnackbarHandler
 
 @Composable
@@ -59,21 +59,21 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
         onFabVisibilityChanged(isFabVisible.value)
     }
 
-    LazyColumn(state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)) {
+    LazyColumn(
+        state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)
+    ) {
         itemsIndexed(items = uiState.carts , key = { _ , item -> item.cartId }) { index , cart ->
             CartItem(
                 cart = cart ,
                      onDelete = { viewModel.sendEvent(HomeAction.OpenDeleteCartDialog(cart)) } ,
                      onCardClick = { viewModel.sendEvent(HomeAction.OpenCart(cart)) } ,
+                     onShare = { sharedCart -> viewModel.sendEvent(HomeAction.GenerateCartShareLink(sharedCart)) } ,
+                     onRename = { renameCart -> viewModel.sendEvent(HomeAction.OpenRenameCartDialog(renameCart)) } ,
                      uiState = uiState ,
                      modifier = Modifier
                              .animateItem()
-                             .animateVisibility(visible = visibilityStates.getOrElse(index) { false } , index = index) ,
-                     onShare = { sharedCart ->
-                         viewModel.sendEvent(HomeAction.GenerateCartShareLink(sharedCart))
-                     })
+                             .animateVisibility(visible = visibilityStates.getOrElse(index) { false } , index = index))
         }
-
         item {
             Spacer(modifier = Modifier.height(height = 72.dp))
         }

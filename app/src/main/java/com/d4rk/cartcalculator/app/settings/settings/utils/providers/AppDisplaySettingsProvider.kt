@@ -9,6 +9,7 @@ import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.DisplaySett
 class AppDisplaySettingsProvider(val context : Context) : DisplaySettingsProvider {
     override fun openThemeSettings() {
         GeneralSettingsActivity.start(
-            context = context , title = context.getString(R.string.dark_theme) , contentKey = SettingsContent.THEME)
+            context = context , title = context.getString(R.string.dark_theme) , contentKey = SettingsContent.THEME
+        )
     }
 }

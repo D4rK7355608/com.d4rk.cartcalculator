@@ -14,4 +14,6 @@ sealed class CartAction {
     data class OpenEditDialog(val item : ShoppingCartItemsTable?) : CartAction()
     data class OpenDeleteDialog(val item : ShoppingCartItemsTable?) : CartAction()
     data class ItemCheckedChange(val item : ShoppingCartItemsTable , val isChecked : Boolean) : CartAction()
+    data class ShowSnackbar(val message : String , val isError : Boolean) : CartAction()
+    data object DismissSnackbar : CartAction()
 }

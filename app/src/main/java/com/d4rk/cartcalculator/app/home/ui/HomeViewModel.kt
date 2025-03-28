@@ -21,6 +21,7 @@ import com.d4rk.cartcalculator.app.home.domain.usecases.DeleteCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.GetCartsUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.OpenCartUseCase
+import com.d4rk.cartcalculator.app.home.domain.usecases.UpdateCartNameUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
@@ -40,6 +41,7 @@ class HomeViewModel(
     private val deleteCartUseCase : DeleteCartUseCase ,
     private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase ,
     private val importSharedCartUseCase : ImportSharedCartUseCase ,
+    private val updateCartNameUseCase : UpdateCartNameUseCase ,
     private val openCartUseCase : OpenCartUseCase ,
     private val dispatcherProvider : DispatcherProvider
 ) : ViewModel() {
@@ -66,6 +68,9 @@ class HomeViewModel(
             is HomeAction.DismissDeleteCartDialog -> dismissDeleteCartDialog()
             is HomeAction.ShowSnackbar -> showSnackbar(message = event.message , isError = isError)
             is HomeAction.DismissSnackbar -> dismissSnackbar()
+            is HomeAction.RenameCart -> renameCart(cart = event.cart , newName = event.newName)
+            is HomeAction.DismissRenameCartDialog -> dismissRenameCartDialog()
+            is HomeAction.OpenRenameCartDialog -> openRenameCartDialog(cart = event.cart)
         }
     }
 
@@ -122,6 +127,43 @@ class HomeViewModel(
                         else {
                             postSnackbar(message = result.error.asUiText() , isError = true)
                         }
+                    }
+
+                    is DataState.Loading -> _screenState.setLoading()
+                    else -> {}
+                }
+            }
+        }
+    }
+
+    private fun openRenameCartDialog(cart : ShoppingCartTable) {
+        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+            currentData.copy(showRenameCartDialog = true , cartToRename = cart)
+        }
+    }
+
+    private fun dismissRenameCartDialog() {
+        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+            currentData.copy(showRenameCartDialog = false)
+        }
+    }
+
+    private fun renameCart(cart : ShoppingCartTable , newName : String) {
+        viewModelScope.launch {
+            updateCartNameUseCase(param = Pair(cart , newName)).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+                when (result) {
+                    is DataState.Success -> {
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                            val updatedList = currentData.carts.map {
+                                if (it.cartId == cart.cartId) it.copy(name = newName) else it
+                            }.toMutableList()
+                            currentData.copy(carts = updatedList)
+                        }
+                        postSnackbar(message = UiTextHelper.DynamicString(content = "Cart renamed successfully!") , isError = false)
+                    }
+
+                    is DataState.Error -> {
+                        postSnackbar(message = result.error.asUiText() , isError = true)
                     }
 
                     is DataState.Loading -> _screenState.setLoading()

@@ -9,5 +9,7 @@ data class UiHomeData(
     val showImportDialog : Boolean = false ,
     val showDeleteCartDialog : Boolean = false ,
     val showSnackbar : Boolean = false ,
-    val shareCartLink : String? = null
+    val shareCartLink : String? = null ,
+    val cartToRename : ShoppingCartTable? = null ,
+    val showRenameCartDialog : Boolean = false
 )

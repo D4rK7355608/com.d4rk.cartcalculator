@@ -76,19 +76,14 @@ fun SelectCurrencyAlertDialogContent(
             LazyColumn {
                 items(count = currencies.size) { index ->
                     Row(
-                        Modifier.fillMaxWidth() ,
-                        verticalAlignment = Alignment.CenterVertically ,
-                        horizontalArrangement = Arrangement.Start
+                        Modifier.fillMaxWidth() , verticalAlignment = Alignment.CenterVertically , horizontalArrangement = Arrangement.Start
                     ) {
                         RadioButton(
-                            selected = selectedCurrency.value == currencies[index] ,
-                            onClick = {
+                            selected = selectedCurrency.value == currencies[index] , onClick = {
                                 selectedCurrency.value = currencies[index]
                             })
                         Text(
-                            modifier = Modifier.padding(start = 8.dp) ,
-                            text = currencies[index] ,
-                            style = MaterialTheme.typography.bodyMedium.merge()
+                            modifier = Modifier.padding(start = 8.dp) , text = currencies[index] , style = MaterialTheme.typography.bodyMedium.merge()
                         )
                     }
                 }

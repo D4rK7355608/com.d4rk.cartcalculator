@@ -1,10 +1,12 @@
-package com.d4rk.cartcalculator.app.cart.ui.components.dialogs
+package com.d4rk.cartcalculator.app.cart.ui.components.effects
 
 import androidx.compose.runtime.Composable
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
+import com.d4rk.cartcalculator.app.cart.ui.components.dialogs.AddNewCartItemAlertDialog
+import com.d4rk.cartcalculator.app.cart.ui.components.dialogs.DeleteCartItemAlertDialog
 
 @Composable
 fun CartScreenDialogs(screenState : UiStateScreen<UiCartScreen> , viewModel : CartViewModel) {
