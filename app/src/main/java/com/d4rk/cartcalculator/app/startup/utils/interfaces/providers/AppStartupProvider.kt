@@ -10,6 +10,6 @@ import javax.inject.Inject
 
 class AppStartupProvider @Inject constructor() : StartupProvider {
     override val requiredPermissions = arrayOf(Manifest.permission.POST_NOTIFICATIONS)
-    override val consentRequestParameters = ConsentRequestParameters.Builder().setTagForUnderAgeOfConsent(false).build()
+    override val consentRequestParameters : ConsentRequestParameters = ConsentRequestParameters.Builder().setTagForUnderAgeOfConsent(false).build()
     override fun getNextIntent(context : Context) = Intent(context , MainActivity::class.java)
 }

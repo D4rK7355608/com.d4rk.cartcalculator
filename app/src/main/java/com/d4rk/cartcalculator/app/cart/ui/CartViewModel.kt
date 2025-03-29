@@ -110,11 +110,11 @@ class CartViewModel(
                             currentData.copy(cartItems = currentData.cartItems + newItem)
                         }
                         calculateTotalPrice()
-                        sendEvent(CartAction.ShowSnackbar("Item added successfully!" , false))
+                        sendEvent(event = CartAction.ShowSnackbar("Item added successfully!" , false))
                     }
 
                     is DataState.Error -> {
-                        _screenState.showSnackbar(UiSnackbar(message = UiTextHelper.DynamicString(content = "Failed to add item") , isError = true))
+                        _screenState.showSnackbar(snackbar = UiSnackbar(message = UiTextHelper.DynamicString(content = "Failed to add item") , isError = true))
                     }
 
                     is DataState.Loading -> {}
@@ -138,11 +138,6 @@ class CartViewModel(
                         calculateTotalPrice()
                     }
 
-                    is DataState.Error -> {
-                        // Handle error
-                    }
-
-                    is DataState.Loading -> {}
                     else -> {}
                 }
             }
@@ -167,14 +162,9 @@ class CartViewModel(
                         }
 
                         calculateTotalPrice()
-                        sendEvent(CartAction.ShowSnackbar("Item removed successfully!" , false))
+                        sendEvent(event = CartAction.ShowSnackbar(message = "Item removed successfully!" , isError = false))
                     }
 
-                    is DataState.Error -> {
-
-                    }
-
-                    is DataState.Loading -> {}
                     else -> {}
                 }
             }
@@ -186,16 +176,11 @@ class CartViewModel(
             generateCartShareLinkUseCase.invoke(param = cartId).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 when (result) {
                     is DataState.Success -> {
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiCartScreen ->
                             currentData.copy(shareCartLink = result.data)
                         }
                     }
 
-                    is DataState.Error -> {
-                        // Handle error
-                    }
-
-                    is DataState.Loading -> {}
                     else -> {}
                 }
             }
@@ -223,18 +208,20 @@ class CartViewModel(
     private fun calculateTotalPrice() {
         viewModelScope.launch {
             val total : Double = _screenState.value.data?.cartItems?.sumOf { it.price.toDouble() * it.quantity } ?: 0.0
-            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData : UiCartScreen ->
                 currentData.copy(totalPrice = total)
             }
         }
     }
 
     private fun decreaseQuantity(item : ShoppingCartItemsTable) {
-        if (item.quantity <= 1) {
-            openDeleteDialog(item = item)
-        }
-        else {
-            changeQuantity(item = item , change = - 1)
+        viewModelScope.launch {
+            if (item.quantity <= 1) {
+                openDeleteDialog(item = item)
+            }
+            else {
+                changeQuantity(item = item , change = - 1)
+            }
         }
     }
 
@@ -268,16 +255,16 @@ class CartViewModel(
     }
 
     private fun showSnackbar(message : String , isError : Boolean) {
-        _screenState.showSnackbar(
-            UiSnackbar(
-                type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis()
-            )
-        )
+        viewModelScope.launch {
+            _screenState.showSnackbar(snackbar = UiSnackbar(type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(content = message) , isError = isError , timeStamp = System.currentTimeMillis()))
+        }
     }
 
     private fun dismissSnackbar() {
-        _screenState.update { current ->
-            current.copy(snackbar = null)
+        viewModelScope.launch {
+            _screenState.update { current : UiStateScreen<UiCartScreen> ->
+                current.copy(snackbar = null)
+            }
         }
     }
 }

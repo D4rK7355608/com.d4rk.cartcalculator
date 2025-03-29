@@ -17,9 +17,7 @@ import java.io.ByteArrayOutputStream
 import java.math.BigInteger
 import java.net.URLEncoder
 
-class GenerateCartShareLinkUseCase(
-    private val database : DatabaseInterface
-) : Repository<Int , Flow<DataState<String , Errors>>> {
+class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : Repository<Int , Flow<DataState<String , Errors>>> {
 
     override suspend fun invoke(param : Int) : Flow<DataState<String , Errors>> = flow {
         emit(DataState.Loading())

@@ -20,5 +20,5 @@ sealed class HomeAction {
     data class RenameCart(val cart : ShoppingCartTable , val newName : String) : HomeAction()
     data object DismissRenameCartDialog : HomeAction()
     data class OpenRenameCartDialog(val cart : ShoppingCartTable) : HomeAction()
-    data class SortCarts(val sortOption : SortOption) : HomeAction() // New action
+    data class SortCarts(val sortOption : SortOption) : HomeAction()
 }

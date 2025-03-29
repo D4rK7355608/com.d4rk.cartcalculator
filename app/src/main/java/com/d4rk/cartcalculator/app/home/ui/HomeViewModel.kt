@@ -78,17 +78,15 @@ class HomeViewModel(
 
     private fun loadCarts() {
         viewModelScope.launch {
-            getCartsUseCase(param = Unit).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+            getCartsUseCase(param = Unit).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<List<ShoppingCartTable> , Errors> ->
                 when (result) {
                     is DataState.Success -> {
                         if (result.data.isEmpty()) {
                             _screenState.updateState(newValues = ScreenState.NoData())
                         }
                         else {
-                            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
-                                currentData.copy(
-                                    carts = result.data.toMutableList() , showImportDialog = currentData.showImportDialog
-                                )
+                            _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiHomeData ->
+                                currentData.copy(carts = result.data.toMutableList() , showImportDialog = currentData.showImportDialog)
                             }
                         }
                     }
@@ -113,7 +111,7 @@ class HomeViewModel(
 
     private fun addCart(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            addCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+            addCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<ShoppingCartTable , Errors> ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
@@ -156,7 +154,7 @@ class HomeViewModel(
 
     private fun renameCart(cart : ShoppingCartTable , newName : String) {
         viewModelScope.launch {
-            updateCartNameUseCase(param = Pair(cart , newName)).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+            updateCartNameUseCase(param = Pair(cart , newName)).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<ShoppingCartTable , Errors> ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
@@ -183,10 +181,10 @@ class HomeViewModel(
         viewModelScope.launch {
             _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
                 val sortedCarts = when (sortOption) {
-                    SortOption.NAME -> currentData.carts.sortedBy { it.name }
+                    SortOption.ALPHABETICAL -> currentData.carts.sortedBy { it.name.lowercase() }
                     SortOption.OLDEST -> currentData.carts.sortedBy { it.date }
                     SortOption.NEWEST -> currentData.carts.sortedByDescending { it.date }
-                    else -> currentData.carts
+                    SortOption.DEFAULT -> currentData.carts.sortedBy { it.cartId }
                 }
                 currentData.copy(carts = sortedCarts.toMutableList() , currentSort = sortOption)
             }
@@ -195,7 +193,7 @@ class HomeViewModel(
 
     private fun deleteCart(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            deleteCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+            deleteCartUseCase(param = cart).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<Unit , Errors> ->
                 when (result) {
                     is DataState.Success -> {
                         _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
@@ -222,7 +220,7 @@ class HomeViewModel(
 
     private fun importSharedCart(encodedData : String) {
         viewModelScope.launch {
-            importSharedCartUseCase(param = encodedData).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+            importSharedCartUseCase(param = encodedData).flowOn(context = dispatcherProvider.io).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<Unit , Errors> ->
                 when (result) {
                     is DataState.Success -> {
                         loadCarts()
@@ -241,10 +239,10 @@ class HomeViewModel(
 
     private fun generateCartShareLink(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            generateCartShareLinkUseCase(param = cart.cartId).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
+            generateCartShareLinkUseCase(param = cart.cartId).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<String , Errors> ->
                 when (result) {
                     is DataState.Success -> {
-                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+                        _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiHomeData ->
                             currentData.copy(shareCartLink = result.data)
                         }
                     }
@@ -268,7 +266,7 @@ class HomeViewModel(
 
     private fun toggleImportDialog(isOpen : Boolean) {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData : UiHomeData ->
                 currentData.copy(showImportDialog = isOpen)
             }
         }
@@ -276,7 +274,7 @@ class HomeViewModel(
 
     private fun openNewCartDialog() {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData : UiHomeData ->
                 currentData.copy(showCreateCartDialog = true)
             }
         }
@@ -284,7 +282,7 @@ class HomeViewModel(
 
     private fun dismissNewCartDialog() {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData ->
+            _screenState.updateData(newDataState = _screenState.value.screenState) { currentData : UiHomeData ->
                 currentData.copy(showCreateCartDialog = false)
             }
         }
@@ -292,7 +290,7 @@ class HomeViewModel(
 
     private fun openDeleteCartDialog(cart : ShoppingCartTable) {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiHomeData ->
                 currentData.copy(showDeleteCartDialog = true , cartToDelete = cart)
             }
         }
@@ -300,7 +298,7 @@ class HomeViewModel(
 
     private fun dismissDeleteCartDialog() {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+            _screenState.updateData(newDataState = ScreenState.Success()) { currentData : UiHomeData ->
                 currentData.copy(showDeleteCartDialog = false)
             }
         }
@@ -309,23 +307,21 @@ class HomeViewModel(
     private fun showSnackbar(message : String , isError : Boolean) {
         viewModelScope.launch {
             _screenState.showSnackbar(
-                UiSnackbar(type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(message) , isError = isError , timeStamp = System.currentTimeMillis())
+                UiSnackbar(type = ScreenMessageType.SNACKBAR , message = UiTextHelper.DynamicString(content = message) , isError = isError , timeStamp = System.currentTimeMillis())
             )
         }
     }
 
     private fun postSnackbar(message : UiTextHelper , isError : Boolean) {
         viewModelScope.launch {
-            _screenState.showSnackbar(
-                UiSnackbar(type = ScreenMessageType.SNACKBAR , message = message , isError = isError , timeStamp = System.currentTimeMillis())
-            )
+            _screenState.showSnackbar(snackbar = UiSnackbar(type = ScreenMessageType.SNACKBAR , message = message , isError = isError , timeStamp = System.currentTimeMillis()))
             checkForEmptyCarts()
         }
     }
 
     private fun dismissSnackbar() {
         viewModelScope.launch {
-            _screenState.update { current ->
+            _screenState.update { current : UiStateScreen<UiHomeData> ->
                 current.copy(snackbar = null)
             }
         }

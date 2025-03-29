@@ -93,7 +93,7 @@ fun CartScreenContent(viewModel : CartViewModel , paddingValues : PaddingValues)
     Column(modifier = Modifier.fillMaxSize()) {
         CartItemsList(
             modifier = Modifier
-                    .padding(start = paddingValues.calculateStartPadding(layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection) , bottom = 0.dp)
+                    .padding(start = paddingValues.calculateStartPadding(layoutDirection = layoutDirection) , top = paddingValues.calculateTopPadding() , end = paddingValues.calculateEndPadding(layoutDirection = layoutDirection) , bottom = 0.dp)
                     .weight(weight = 1f) , viewModel = viewModel
         )
     }
