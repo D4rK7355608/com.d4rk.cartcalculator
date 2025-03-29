@@ -2,6 +2,7 @@ package com.d4rk.cartcalculator.core.di.modules
 
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
+import com.d4rk.android.libs.apptoolkit.app.main.domain.usecases.PerformInAppUpdateUseCase
 import com.d4rk.android.libs.apptoolkit.data.core.ads.AdsCoreManager
 import com.d4rk.cartcalculator.app.cart.domain.usecases.AddCartItemUseCase
 import com.d4rk.cartcalculator.app.cart.domain.usecases.DeleteCartItemUseCase
@@ -16,7 +17,6 @@ import com.d4rk.cartcalculator.app.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.OpenCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.UpdateCartNameUseCase
 import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
-import com.d4rk.cartcalculator.app.main.domain.usecases.PerformInAppUpdateUseCase
 import com.d4rk.cartcalculator.app.main.ui.MainViewModel
 import com.d4rk.cartcalculator.core.data.database.AppDatabase
 import com.d4rk.cartcalculator.core.data.database.DataBaseImplementation

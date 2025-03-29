@@ -8,14 +8,15 @@ import androidx.compose.material.icons.outlined.Share
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.d4rk.android.libs.apptoolkit.R
+import com.d4rk.android.libs.apptoolkit.app.main.domain.usecases.PerformInAppUpdateUseCase
 import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
+import com.d4rk.android.libs.apptoolkit.core.domain.model.network.Errors
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.ScreenState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
 import com.d4rk.cartcalculator.app.main.domain.actions.MainAction
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
-import com.d4rk.cartcalculator.app.main.domain.usecases.PerformInAppUpdateUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -34,17 +35,7 @@ class MainViewModel(private val performInAppUpdateUseCase : PerformInAppUpdateUs
         viewModelScope.launch {
             when (action) {
                 MainAction.CheckForUpdates -> {
-                    performInAppUpdateUseCase(Unit).collect { dataState ->
-                        when (dataState) {
-                            is DataState.Success -> {
-                            }
-
-                            is DataState.Error -> {
-                            }
-
-                            else -> {}
-                        }
-                    }
+                    performInAppUpdateUseCase(param = Unit).collect { _ : DataState<Int, Errors> -> }
                 }
             }
         }

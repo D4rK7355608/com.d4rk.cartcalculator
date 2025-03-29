@@ -64,6 +64,7 @@
 
     <!-- Currency settings screen -->
     <string name="currency">Currency</string>
+    <string name="select_currency">Select Currency</string>
     <string name="summary_preference_settings_currency">Set your preferred currency for displaying prices</string>
     <string name="dialog_currency_subtitle">Select your preferred currency</string>
     <string name="dialog_info_currency">This currency selection will be utilized across the platform for displaying product prices, processing transactions, and providing a more personalized shopping experience</string>

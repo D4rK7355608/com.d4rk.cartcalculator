@@ -13,8 +13,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
-import com.d4rk.android.libs.apptoolkit.app.display.theme.style.AppTheme
 import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupActivity
+import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.main.domain.actions.MainAction
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
@@ -35,9 +35,7 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         enableEdgeToEdge()
         MobileAds.initialize(this)
-        updateResultLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
-            // Handle update result if necessary
-        }
+        updateResultLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) {}
 
         viewModel = getViewModel { parametersOf(updateResultLauncher) }
 
