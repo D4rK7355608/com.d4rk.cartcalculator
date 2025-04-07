@@ -32,7 +32,7 @@ fun AppNavigationHost(navController : NavHostController , snackbarHostState : Sn
             val homeViewModel : HomeViewModel = koinViewModel()
             val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.screenState.collectAsState()
 
-            HomeEventHandler(homeViewModel = homeViewModel , snackbarHostState = snackbarHostState , backStackEntry = backStackEntry , homeScreenState = homeScreenState)
+            HomeEventHandler(homeViewModel = homeViewModel ,backStackEntry = backStackEntry ,)
 
             HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState)
         }

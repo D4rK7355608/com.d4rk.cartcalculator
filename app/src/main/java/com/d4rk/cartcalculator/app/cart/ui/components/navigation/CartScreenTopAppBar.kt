@@ -49,7 +49,7 @@ fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : 
         } , durationMillis = 400 , fromRight = true)
 
         AnimatedButtonDirection(visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = {
-            //viewModel.shareCart(context , cartId)
+            viewModel.sendEvent(event = CartAction.GenerateCartShareLink(cartId = screenState.data?.cart?.cartId ?: 0))
         } , fromRight = true)
     } , scrollBehavior = scrollBehavior)
 }

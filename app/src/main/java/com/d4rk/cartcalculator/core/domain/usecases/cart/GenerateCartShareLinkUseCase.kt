@@ -16,35 +16,36 @@ import org.msgpack.core.MessagePacker
 import java.io.ByteArrayOutputStream
 import java.math.BigInteger
 import java.net.URLEncoder
+import java.util.Locale
 
 class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : Repository<Int , Flow<DataState<String , Errors>>> {
 
     override suspend fun invoke(param : Int) : Flow<DataState<String , Errors>> = flow {
         emit(DataState.Loading())
         runCatching {
-            database.getCartById(cartId = param)?.let { cart ->
-                val cartItems = database.getItemsByCartId(cartId = param)
+            database.getCartById(cartId = param)?.let { cart : ShoppingCartTable ->
+                val cartItems : List<ShoppingCartItemsTable> = database.getItemsByCartId(cartId = param)
 
                 if (cartItems.isEmpty()) {
                     throw IllegalStateException(Errors.UseCase.EMPTY_CART.toString())
                 }
 
-                val serializedCart : ByteArray = serializeToMessagePack(cart , cartItems)
-                val compressedCartData : ByteArray = compressLZ4(serializedCart)
+                val serializedCart : ByteArray = serializeToMessagePack(cart = cart , cartItems = cartItems)
+                val compressedCartData : ByteArray = compressLZ4(data = serializedCart)
 
                 if (compressedCartData.isEmpty()) {
                     throw IllegalStateException(Errors.UseCase.COMPRESSION_FAILED.toString())
                 }
 
-                val encodedData : String = encodeBase62(compressedCartData)
+                val encodedData : String = encodeBase62(input = compressedCartData)
                 val urlEncodedCartData : String = URLEncoder.encode(encodedData , "UTF-8")
 
                 "https://cartcalculator.com/import?d=$urlEncodedCartData"
             } ?: throw IllegalStateException(Errors.UseCase.CART_NOT_FOUND.toString())
-        }.onSuccess { url ->
-            emit(DataState.Success(url))
-        }.onFailure { throwable ->
-            emit(DataState.Error(error = throwable.toError()))
+        }.onSuccess { url : String ->
+            emit(value = DataState.Success(data = url))
+        }.onFailure { throwable : Throwable ->
+            emit(value = DataState.Error(error = throwable.toError()))
         }
     }
 
@@ -52,12 +53,16 @@ class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : R
         val outputStream = ByteArrayOutputStream()
         val packer : MessagePacker = MessagePack.newDefaultPacker(outputStream)
 
+        packer.packArrayHeader(2)
+
+        packer.packArrayHeader(3)
         packer.packInt(cart.cartId)
         packer.packString(cart.name)
         packer.packLong(cart.date)
 
         packer.packArrayHeader(cartItems.size)
         for (item in cartItems) {
+            packer.packArrayHeader(4)
             packer.packInt(item.itemId)
             packer.packString(item.name)
             packer.packInt(item.quantity)
@@ -87,7 +92,6 @@ class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : R
 
     private fun encodeBase62(input : ByteArray) : String {
         if (input.isEmpty()) return ""
-
         val characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         var numericValue = BigInteger(1 , input)
         val encoded : StringBuilder = StringBuilder()
@@ -97,7 +101,7 @@ class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : R
             encoded.insert(0 , characters[index.toInt()])
             numericValue = numericValue.divide(BigInteger.valueOf(62))
         }
-
-        return encoded.toString()
+        val dataSizePrefix : String = String.format(Locale.getDefault() , "%04d" , input.size)
+        return dataSizePrefix + encoded.toString()
     }
 }

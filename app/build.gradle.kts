@@ -20,7 +20,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 92
+        versionCode = 93
         versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -74,8 +74,6 @@ android {
         release {
             signingConfig = signingConfigs.getByName("release")
             isDebuggable = false
-            isMinifyEnabled = true
-            isShrinkResources = true
         }
         debug {
             isDebuggable = true
@@ -85,6 +83,8 @@ android {
     buildTypes.forEach { buildType ->
         with(receiver = buildType) {
             multiDexEnabled = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(getDefaultProguardFile(name = "proguard-android-optimize.txt") , "proguard-rules.pro")
         }
     }
@@ -119,7 +119,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:0.0.99") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.0") {
         isTransitive = true
     }
 

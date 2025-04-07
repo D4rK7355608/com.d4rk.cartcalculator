@@ -44,11 +44,11 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
     } , onEmpty = {
         onFabVisibilityChanged(true)
         NoDataScreen(text = R.string.no_carts_available , icon = Icons.Outlined.RemoveShoppingCart)
-    } , onSuccess = { uiState ->
+    } , onSuccess = { uiState : UiHomeData ->
         HomeScreenContent(paddingValues = paddingValues , uiState = uiState , viewModel = viewModel , onFabVisibilityChanged = onFabVisibilityChanged)
     })
 
-    HomeSnackbarHandler(screenState = screenState , viewModel = viewModel , snackbarHostState = snackbarHostState)
+    HomeSnackbarHandler(viewModel = viewModel , snackbarHostState = snackbarHostState)
     HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 
@@ -56,9 +56,7 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 @Composable
 fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState : UiHomeData , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit) {
     val listState : LazyListState = rememberLazyListState()
-    val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(
-        listState = listState , itemCount = uiState.carts.size
-    )
+    val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.carts.size)
     LaunchedEffect(key1 = isFabVisible.value) {
         onFabVisibilityChanged(isFabVisible.value)
     }
