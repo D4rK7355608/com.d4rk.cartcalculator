@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
+import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
 
@@ -21,7 +21,7 @@ fun CartSnackbarHandler(screenState : UiStateScreen<UiCartScreen> , viewModel : 
                 message = snackbar.message.asString(context) , duration = if (snackbar.isError) SnackbarDuration.Long else SnackbarDuration.Short
             )
             if (result == SnackbarResult.Dismissed || result == SnackbarResult.ActionPerformed) {
-                viewModel.sendEvent(CartAction.DismissSnackbar)
+                viewModel.onEvent(CartEvent.DismissSnackbar)
             }
         }
     }

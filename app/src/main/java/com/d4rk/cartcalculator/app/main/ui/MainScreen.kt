@@ -156,7 +156,7 @@ fun MainScaffoldTabletContent() {
             handleNavigationItemClick(context = context , item = item)
         } , content = {
             val homeViewModel : HomeViewModel = koinViewModel()
-            val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.screenState.collectAsState()
+            val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.uiState.collectAsState()
 
             HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = {
                 isFabVisible.value = it

@@ -1,22 +1,9 @@
 package com.d4rk.cartcalculator.app.home.domain.actions
 
-import com.d4rk.cartcalculator.app.home.domain.model.SortOption
-import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
+import com.d4rk.android.libs.apptoolkit.core.ui.base.handling.ActionEvent
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
 
-sealed class HomeAction {
-    data object LoadCarts : HomeAction()
-    data class AddCart(val cart : ShoppingCartTable) : HomeAction()
-    data class DeleteCart(val cart : ShoppingCartTable) : HomeAction()
-    data class ImportSharedCart(val encodedData : String) : HomeAction()
-    data class OpenCart(val cart : ShoppingCartTable) : HomeAction()
-    data class ToggleImportDialog(val isOpen : Boolean) : HomeAction()
-    data object OpenNewCartDialog : HomeAction()
-    data object DismissNewCartDialog : HomeAction()
-    data class OpenDeleteCartDialog(val cart : ShoppingCartTable) : HomeAction()
-    data object DismissDeleteCartDialog : HomeAction()
-    data class GenerateCartShareLink(val cart : ShoppingCartTable) : HomeAction()
-    data class RenameCart(val cart : ShoppingCartTable , val newName : String) : HomeAction()
-    data object DismissRenameCartDialog : HomeAction()
-    data class OpenRenameCartDialog(val cart : ShoppingCartTable) : HomeAction()
-    data class SortCarts(val sortOption : SortOption) : HomeAction()
+sealed class HomeAction : ActionEvent {
+    data class ShowSnackbar(val message : UiTextHelper , val isError : Boolean) : HomeAction()
+    data class ShareCart(val link : String) : HomeAction()
 }

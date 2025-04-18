@@ -43,7 +43,7 @@ class MainViewModel(private val performInAppUpdateUseCase : PerformInAppUpdateUs
 
     private fun loadNavigationItems() {
         viewModelScope.launch {
-            _screenState.updateData(newDataState = ScreenState.Success()) { currentData ->
+            _screenState.updateData(newState = ScreenState.Success()) { currentData ->
                 currentData.copy(
                     navigationDrawerItems = listOf(
                         NavigationDrawerItem(

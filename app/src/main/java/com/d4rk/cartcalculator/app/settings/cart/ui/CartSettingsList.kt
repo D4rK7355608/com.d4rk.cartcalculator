@@ -55,7 +55,7 @@ fun CartSettingsList(paddingValues : PaddingValues) {
             Column(
                 modifier = Modifier
                         .padding(horizontal = SizeConstants.LargeSize)
-                        .clip(shape = RoundedCornerShape(size = SizeConstants.ExtraLargeSize))
+                        .clip(shape = RoundedCornerShape(size = SizeConstants.LargeSize))
             ) {
                 SettingsPreferenceItem(title = stringResource(id = R.string.currency) , summary = stringResource(id = R.string.summary_preference_settings_currency) , onClick = { showDialog.value = true })
                 ExtraTinyVerticalSpacer()

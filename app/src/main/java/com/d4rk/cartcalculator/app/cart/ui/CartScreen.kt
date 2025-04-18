@@ -52,7 +52,7 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
     val navController : NavHostController = rememberNavController()
     val view : View = LocalView.current
     val context : Context = LocalContext.current
-    val screenState : UiStateScreen<UiCartScreen> by viewModel.screenState.collectAsState()
+    val screenState : UiStateScreen<UiCartScreen> by viewModel.uiState.collectAsState()
 
     val uiState : UiCartScreen = screenState.data ?: UiCartScreen()
 

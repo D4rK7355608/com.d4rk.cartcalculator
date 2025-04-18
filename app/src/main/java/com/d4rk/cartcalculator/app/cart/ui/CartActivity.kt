@@ -9,7 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
-import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
+import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.google.android.gms.ads.MobileAds
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -23,7 +23,7 @@ class CartActivity : AppCompatActivity() {
         enableEdgeToEdge()
         MobileAds.initialize(this@CartActivity)
         cartId = intent.getIntExtra("cartId" , 0)
-        viewModel.sendEvent(event = CartAction.LoadCart(cartId = cartId))
+        viewModel.onEvent(event = CartEvent.LoadCart(cartId = cartId))
 
         setContent {
             AppTheme {

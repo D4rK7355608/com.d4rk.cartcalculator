@@ -8,7 +8,7 @@ google-devtools-ksp = "2.1.0-1.0.29"
 lz4Java = "1.8.0"
 msgpackCore = "0.9.0"
 koin = "4.0.1"
-roomKtx = "2.6.1"
+roomKtx = "2.7.0"
 
 junit = "4.13.2"
 testRunner = "1.6.2"

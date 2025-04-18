@@ -34,7 +34,7 @@ val appModule : Module = module {
     single<DataStore> { DataStore.getInstance(context = get()) }
     single<AppDatabase> { AppDatabase.getInstance(context = get()) }
     single<DatabaseInterface> { DataBaseImplementation(database = get()) }
-    single<AdsCoreManager> { AdsCoreManager(context = get()) }
+    single<AdsCoreManager> { AdsCoreManager(context = get() , buildInfoProvider = get()) }
 
     single<AppUpdateManager> { AppUpdateManagerFactory.create(get()) }
 

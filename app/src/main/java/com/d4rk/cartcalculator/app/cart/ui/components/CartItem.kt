@@ -46,7 +46,7 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ExtraSmallHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
+import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
@@ -62,12 +62,12 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
     val dismissState = rememberSwipeToDismissBoxState(confirmValueChange = { target ->
         when (target) {
             SwipeToDismissBoxValue.StartToEnd -> {
-                viewModel.sendEvent(event = CartAction.OpenEditDialog(item = cartItem))
+                viewModel.onEvent(event = CartEvent.OpenEditDialog(item = cartItem))
                 false
             }
 
             SwipeToDismissBoxValue.EndToStart -> {
-                viewModel.sendEvent(event = CartAction.OpenDeleteDialog(item = cartItem))
+                viewModel.onEvent(event = CartEvent.OpenDeleteDialog(item = cartItem))
                 false
             }
 
@@ -81,10 +81,10 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
         }
         else if (dismissState.targetValue != SwipeToDismissBoxValue.Settled) {
             if (dismissState.targetValue == SwipeToDismissBoxValue.StartToEnd) {
-                viewModel.sendEvent(event = CartAction.OpenEditDialog(item = cartItem))
+                viewModel.onEvent(event = CartEvent.OpenEditDialog(item = cartItem))
             }
             else if (dismissState.targetValue == SwipeToDismissBoxValue.EndToStart) {
-                viewModel.sendEvent(event = CartAction.OpenDeleteDialog(item = cartItem))
+                viewModel.onEvent(event = CartEvent.OpenDeleteDialog(item = cartItem))
             }
         }
     }
@@ -103,7 +103,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
                             .wrapContentSize() , checked = checkedState , onCheckedChange = { isChecked ->
                         view.playSoundEffect(SoundEffectConstants.CLICK)
                         checkedState = isChecked
-                        viewModel.sendEvent(event = CartAction.ItemCheckedChange(item = cartItem , isChecked = isChecked))
+                        viewModel.onEvent(event = CartEvent.ItemCheckedChange(item = cartItem , isChecked = isChecked))
                     })
                     Column(modifier = Modifier.weight(weight = 1f)) {
                         Text(text = cartItem.name , style = MaterialTheme.typography.bodyLarge , modifier = Modifier.basicMarquee())
@@ -124,7 +124,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
                                     view.playSoundEffect(SoundEffectConstants.CLICK)
                                     onMinusClick(cartItem)
                                 } , onLongClick = {
-                                    viewModel.sendEvent(event = CartAction.OpenDeleteDialog(item = cartItem))
+                                    viewModel.onEvent(event = CartEvent.OpenDeleteDialog(item = cartItem))
                                 })) {
                         Icon(imageVector = Icons.Outlined.RemoveCircleOutline , contentDescription = stringResource(id = R.string.decrease_quantity) , modifier = Modifier.align(Alignment.Center))
                     }

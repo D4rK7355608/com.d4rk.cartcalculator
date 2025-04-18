@@ -5,7 +5,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.navigation.NavBackStackEntry
-import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
+import com.d4rk.cartcalculator.app.home.domain.actions.HomeEvent
 import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
 
 @Composable
@@ -17,14 +17,14 @@ fun HomeEventHandler(
 
     LaunchedEffect(key1 = toggleImportDialog.value) {
         if (toggleImportDialog.value) {
-            homeViewModel.sendEvent(event = HomeAction.ToggleImportDialog(true))
+            homeViewModel.onEvent(event = HomeEvent.ToggleImportDialog(true))
             backStackEntry.savedStateHandle["toggleImportDialog"] = false
         }
     }
 
     LaunchedEffect(key1 = openNewCartDialog.value) {
         if (openNewCartDialog.value) {
-            homeViewModel.sendEvent(event = HomeAction.OpenNewCartDialog)
+            homeViewModel.onEvent(event = HomeEvent.OpenNewCartDialog)
             backStackEntry.savedStateHandle["openNewCartDialog"] = false
         }
     }

@@ -58,7 +58,7 @@ fun ImportCartAlertDialogContent(cartLink : String , onCartLinkChange : (String)
                 }
             }) {
                 Icon(
-                    modifier = Modifier.size(size = SizeConstants.IconSize) , imageVector = Icons.Outlined.ContentPaste , contentDescription = stringResource(id = android.R.string.paste)
+                    modifier = Modifier.size(size = SizeConstants.ButtonIconSize) , imageVector = Icons.Outlined.ContentPaste , contentDescription = stringResource(id = android.R.string.paste)
                 )
             }
         })

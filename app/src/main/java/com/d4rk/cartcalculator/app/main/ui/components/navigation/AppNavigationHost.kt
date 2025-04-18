@@ -30,9 +30,9 @@ fun AppNavigationHost(navController : NavHostController , snackbarHostState : Sn
     NavigationHost(navController = navController , startDestination = NavigationRoutes.ROUTE_HOME) {
         composable(route = NavigationRoutes.ROUTE_HOME) { backStackEntry ->
             val homeViewModel : HomeViewModel = koinViewModel()
-            val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.screenState.collectAsState()
+            val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.uiState.collectAsState()
 
-            HomeEventHandler(homeViewModel = homeViewModel ,backStackEntry = backStackEntry ,)
+            HomeEventHandler(homeViewModel = homeViewModel , backStackEntry = backStackEntry)
 
             HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState)
         }

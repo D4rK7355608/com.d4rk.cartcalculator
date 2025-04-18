@@ -18,7 +18,7 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.animations.rememberAn
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.animateVisibility
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
+import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
@@ -43,11 +43,11 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
                 val isVisible : Boolean = visibilityStates.getOrElse(index = index) { false }
                 CartItem(
                     viewModel = viewModel ,
-                         cartItem = cartItem ,
-                         onMinusClick = { item -> viewModel.sendEvent(CartAction.DecreaseQuantity(item)) } ,
-                         onPlusClick = { item -> viewModel.sendEvent(CartAction.IncreaseQuantity(item)) } ,
-                         uiState = uiState ,
-                         modifier = Modifier
+                    cartItem = cartItem ,
+                    onMinusClick = { item -> viewModel.onEvent(CartEvent.DecreaseQuantity(item)) } ,
+                    onPlusClick = { item -> viewModel.onEvent(CartEvent.IncreaseQuantity(item)) } ,
+                    uiState = uiState ,
+                    modifier = Modifier
                                  .animateItem()
                                  .animateVisibility(visible = isVisible , index = index))
             }
@@ -66,8 +66,8 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
                 CartItem(
                     viewModel = viewModel ,
                          cartItem = cartItem ,
-                         onMinusClick = { item -> viewModel.sendEvent(CartAction.DecreaseQuantity(item)) } ,
-                         onPlusClick = { item -> viewModel.sendEvent(CartAction.IncreaseQuantity(item)) } ,
+                         onMinusClick = { item -> viewModel.onEvent(CartEvent.DecreaseQuantity(item)) } ,
+                         onPlusClick = { item -> viewModel.onEvent(CartEvent.IncreaseQuantity(item)) } ,
                          uiState = uiState ,
                          modifier = Modifier
                                  .animateItem()

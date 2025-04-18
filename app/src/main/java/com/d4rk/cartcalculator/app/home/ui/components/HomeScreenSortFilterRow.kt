@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.sections.TopListFilters
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
+import com.d4rk.cartcalculator.app.home.domain.actions.HomeEvent
 import com.d4rk.cartcalculator.app.home.domain.model.SortOption
 import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
 
@@ -32,7 +32,7 @@ fun HomeScreenSortFilterRow(viewModel : HomeViewModel) {
                 dateSortString -> SortOption.OLDEST
                 else -> SortOption.DEFAULT
             }
-            viewModel.sendEvent(event = HomeAction.SortCarts(sortOption = sortOption))
+            viewModel.onEvent(event = HomeEvent.SortCarts(sortOption = sortOption))
         },
         modifier = Modifier.background(color = MaterialTheme.colorScheme.surface))
 }

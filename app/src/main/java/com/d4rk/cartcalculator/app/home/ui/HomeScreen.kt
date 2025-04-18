@@ -28,7 +28,7 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.ScreenStateHa
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.animateVisibility
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.home.domain.actions.HomeAction
+import com.d4rk.cartcalculator.app.home.domain.actions.HomeEvent
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.components.CartItem
 import com.d4rk.cartcalculator.app.home.ui.components.HomeScreenSortFilterRow
@@ -70,12 +70,12 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
             itemsIndexed(items = uiState.carts , key = { _ , item -> item.cartId }) { index : Int , cart : ShoppingCartTable ->
                 CartItem(
                     cart = cart ,
-                         onDelete = { viewModel.sendEvent(event = HomeAction.OpenDeleteCartDialog(cart = cart)) } ,
-                         onCardClick = { viewModel.sendEvent(event = HomeAction.OpenCart(cart = cart)) } ,
-                         onShare = { sharedCart -> viewModel.sendEvent(event = HomeAction.GenerateCartShareLink(cart = sharedCart)) } ,
-                         onRename = { renameCart -> viewModel.sendEvent(event = HomeAction.OpenRenameCartDialog(cart = renameCart)) } ,
-                         uiState = uiState ,
-                         modifier = Modifier
+                    onDelete = { viewModel.onEvent(event = HomeEvent.OpenDeleteCartDialog(cart = cart)) } ,
+                    onCardClick = { viewModel.onEvent(event = HomeEvent.OpenCart(cart = cart)) } ,
+                    onShare = { sharedCart -> viewModel.onEvent(event = HomeEvent.GenerateCartShareLink(cart = sharedCart)) } ,
+                    onRename = { renameCart -> viewModel.onEvent(event = HomeEvent.OpenRenameCartDialog(cart = renameCart)) } ,
+                    uiState = uiState ,
+                    modifier = Modifier
                                  .animateItem()
                                  .animateVisibility(visible = visibilityStates.getOrElse(index) { false } , index = index))
             }

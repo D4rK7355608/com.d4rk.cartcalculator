@@ -20,7 +20,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedButtonDirection
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.cart.domain.actions.CartAction
+import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.core.utils.helpers.WalletAppsHelper
@@ -41,7 +41,7 @@ fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : 
         )
     } , actions = {
         AnimatedButtonDirection(icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = {
-            viewModel.sendEvent(event = CartAction.OpenNewCartItemDialog(isOpen = true))
+            viewModel.onEvent(event = CartEvent.OpenNewCartItemDialog(isOpen = true))
         } , fromRight = true)
 
         AnimatedButtonDirection(visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = {
@@ -49,7 +49,7 @@ fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : 
         } , durationMillis = 400 , fromRight = true)
 
         AnimatedButtonDirection(visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = {
-            viewModel.sendEvent(event = CartAction.GenerateCartShareLink(cartId = screenState.data?.cart?.cartId ?: 0))
+            viewModel.onEvent(event = CartEvent.GenerateCartShareLink(cartId = screenState.data?.cart?.cartId ?: 0))
         } , fromRight = true)
     } , scrollBehavior = scrollBehavior)
 }

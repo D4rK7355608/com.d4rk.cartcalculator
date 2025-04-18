@@ -7,7 +7,7 @@ import com.d4rk.android.libs.apptoolkit.app.help.domain.usecases.RequestReviewFl
 import com.d4rk.android.libs.apptoolkit.app.help.ui.HelpViewModel
 import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupViewModel
 import com.d4rk.android.libs.apptoolkit.app.startup.utils.interfaces.providers.StartupProvider
-import com.d4rk.android.libs.apptoolkit.app.support.domain.usecases.QuerySkuDetailsUseCase
+import com.d4rk.android.libs.apptoolkit.app.support.domain.usecases.QueryProductDetailsUseCase
 import com.d4rk.android.libs.apptoolkit.app.support.ui.SupportViewModel
 import com.d4rk.cartcalculator.BuildConfig
 import com.d4rk.cartcalculator.app.startup.utils.interfaces.providers.AppStartupProvider
@@ -22,9 +22,9 @@ val appToolkitModule : Module = module {
         StartupViewModel(loadConsentInfoUseCase = get() , dispatcherProvider = get())
     }
 
-    single<QuerySkuDetailsUseCase> { QuerySkuDetailsUseCase() }
+    single<QueryProductDetailsUseCase> { QueryProductDetailsUseCase() }
     viewModel {
-        SupportViewModel(querySkuDetailsUseCase = get() , dispatcherProvider = get())
+        SupportViewModel(queryProductDetailsUseCase = get() , dispatcherProvider = get())
     }
 
     single<HelpScreenConfig> { HelpScreenConfig(versionName = BuildConfig.VERSION_NAME , versionCode = BuildConfig.VERSION_CODE) }
