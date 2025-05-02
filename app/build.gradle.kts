@@ -10,7 +10,6 @@ plugins {
     alias(notation = libs.plugins.compose.compiler)
     alias(notation = libs.plugins.devToolsKsp)
     alias(notation = libs.plugins.about.libraries)
-    alias(notation = libs.plugins.mannodermaus)
 }
 
 android {
@@ -20,7 +19,7 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 95
+        versionCode = 96
         versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
@@ -119,7 +118,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.2") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.5") {
         isTransitive = true
     }
 
@@ -131,9 +130,4 @@ dependencies {
     ksp(dependencyNotation = libs.androidx.room.compiler)
     implementation(dependencyNotation = libs.androidx.room.ktx)
     implementation(dependencyNotation = libs.androidx.room.runtime)
-
-    // Test
-    testImplementation(dependencyNotation = libs.bundles.testing)
-    debugImplementation(dependencyNotation = libs.androidx.ui.test.manifest)
-    androidTestImplementation(dependencyNotation = libs.bundles.androidTesting)
 }

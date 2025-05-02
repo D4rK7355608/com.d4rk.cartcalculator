@@ -1,7 +1,6 @@
 package com.d4rk.cartcalculator.app.main.ui
 
 import android.content.Context
-import android.view.View
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,7 +32,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
@@ -46,7 +44,7 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.AnimatedExtendedFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.SmallFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
-import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.StatusSnackbarHost
+import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ScreenHelper
 import com.d4rk.cartcalculator.R
@@ -60,7 +58,6 @@ import com.d4rk.cartcalculator.app.main.ui.components.navigation.handleNavigatio
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
-
 
 @Composable
 fun MainScreen() {
@@ -86,7 +83,6 @@ fun MainScaffoldContent(drawerState : DrawerState) {
     val isFabVisible : MutableState<Boolean> = remember { mutableStateOf(value = false) }
     val coroutineScope : CoroutineScope = rememberCoroutineScope()
     val navController : NavHostController = rememberNavController()
-    val view : View = LocalView.current
 
     LaunchedEffect(key1 = scrollBehavior.state.contentOffset) {
         isFabExtended.value = scrollBehavior.state.contentOffset >= 0f
@@ -95,12 +91,9 @@ fun MainScaffoldContent(drawerState : DrawerState) {
     Scaffold(modifier = Modifier
             .imePadding()
             .nestedScroll(connection = scrollBehavior.nestedScrollConnection) , topBar = {
-        MainTopAppBar(
-            navigationIcon = if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu ,
-            onNavigationIconClick = { coroutineScope.launch { drawerState.open() } } ,
-            scrollBehavior = scrollBehavior)
+        MainTopAppBar(navigationIcon = if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = { coroutineScope.launch { drawerState.open() } } , scrollBehavior = scrollBehavior)
     } , snackbarHost = {
-        StatusSnackbarHost(snackBarHostState = snackBarHostState , view = view , navController = navController)
+        DefaultSnackbarHost(snackbarState = snackBarHostState)
     } , floatingActionButton = {
         Column(horizontalAlignment = Alignment.End) {
             SmallFloatingActionButton(modifier = Modifier.padding(bottom = SizeConstants.MediumSize) , isVisible = isFabVisible.value , isExtended = isFabExtended.value , icon = Icons.Outlined.ImportExport , onClick = {

@@ -6,12 +6,15 @@ import android.content.Intent
 object ShareHelper {
 
     fun shareText(context : Context , link : String , chooserTitleResId : Int = com.d4rk.android.libs.apptoolkit.R.string.share) {
-        val sendIntent = Intent().apply {
+        val sendIntent : Intent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT , link)
             type = "content/plain"
         }
-        val shareIntent = Intent.createChooser(sendIntent , context.getString(chooserTitleResId))
-        context.startActivity(shareIntent)
+        val shareIntent : Intent? = Intent.createChooser(sendIntent , context.getString(chooserTitleResId))
+
+        shareIntent?.let {
+            context.startActivity(it)
+        }
     }
 }

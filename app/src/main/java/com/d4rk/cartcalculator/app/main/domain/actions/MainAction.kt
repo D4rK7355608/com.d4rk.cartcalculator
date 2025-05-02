@@ -1,5 +1,5 @@
 package com.d4rk.cartcalculator.app.main.domain.actions
 
-sealed class MainAction {
-    data object CheckForUpdates : MainAction()
-}
+import com.d4rk.android.libs.apptoolkit.core.ui.base.handling.ActionEvent
+
+sealed interface MainAction : ActionEvent

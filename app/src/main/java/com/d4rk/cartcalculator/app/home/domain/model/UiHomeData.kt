@@ -1,5 +1,6 @@
 package com.d4rk.cartcalculator.app.home.domain.model
 
+import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiSnackbar
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 
 data class UiHomeData(
@@ -12,5 +13,7 @@ data class UiHomeData(
     val shareCartLink : String? = null ,
     val cartToRename : ShoppingCartTable? = null ,
     val showRenameCartDialog : Boolean = false ,
-    val currentSort : SortOption = SortOption.DEFAULT
+    val currentSort : SortOption = SortOption.DEFAULT,
+    val shareLink: String? = null,               // ← new
+    val snackbarMessage: UiSnackbar? = null      // ← new
 )

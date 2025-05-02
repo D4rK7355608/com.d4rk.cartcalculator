@@ -20,4 +20,5 @@ sealed class HomeEvent : UiEvent{
     data object DismissRenameCartDialog : HomeEvent()
     data class OpenRenameCartDialog(val cart : ShoppingCartTable) : HomeEvent()
     data class SortCarts(val sortOption : SortOption) : HomeEvent()
+    data object DismissSnackbar : HomeEvent()
 }

@@ -2,7 +2,6 @@ package com.d4rk.cartcalculator.app.cart.ui
 
 import android.app.Activity
 import android.content.Context
-import android.view.View
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
@@ -27,15 +26,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.LoadingScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.ScreenStateHandler
-import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.StatusSnackbarHost
+import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.components.CartItemsList
 import com.d4rk.cartcalculator.app.cart.ui.components.CartTotalCard
@@ -49,8 +45,6 @@ import com.d4rk.cartcalculator.app.cart.ui.components.navigation.CartScreenTopAp
 fun CartScreen(activity : Activity , viewModel : CartViewModel) {
     val scrollBehavior : TopAppBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     val snackBarHostState : SnackbarHostState = remember { SnackbarHostState() }
-    val navController : NavHostController = rememberNavController()
-    val view : View = LocalView.current
     val context : Context = LocalContext.current
     val screenState : UiStateScreen<UiCartScreen> by viewModel.uiState.collectAsState()
 
@@ -63,7 +57,7 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
             CartTotalCard(uiState = uiState)
         }
     } , snackbarHost = {
-        StatusSnackbarHost(snackBarHostState = snackBarHostState , view = view , navController = navController)
+        DefaultSnackbarHost(snackbarState = snackBarHostState)
     }) { paddingValues ->
         CartScreenStates(paddingValues = paddingValues , screenState = screenState , viewModel = viewModel , snackbarHostState = snackBarHostState)
     }
