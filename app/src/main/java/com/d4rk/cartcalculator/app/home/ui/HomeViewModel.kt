@@ -131,7 +131,7 @@ class HomeViewModel(
 
                     if (updatedList.isEmpty()) {
                         screenState.update { current : UiStateScreen<UiHomeData> ->
-                            current.copy(screenState = ScreenState.NoData() , data = null)
+                            current.copy(screenState = ScreenState.NoData() , data = current.data?.copy(carts = mutableListOf()))
                         }
                     }
                     else {
