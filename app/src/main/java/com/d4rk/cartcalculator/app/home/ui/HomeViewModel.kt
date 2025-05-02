@@ -31,6 +31,7 @@ import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUs
 import com.d4rk.cartcalculator.core.utils.extensions.asUiText
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 
 class HomeViewModel(
     private val getCartsUseCase : GetCartsUseCase ,
@@ -44,7 +45,7 @@ class HomeViewModel(
 ) : ScreenViewModel<UiHomeData , HomeEvent , HomeAction>(initialState = UiStateScreen(data = UiHomeData())) {
 
     init {
-        onEvent(HomeEvent.LoadCarts)
+        onEvent(event = HomeEvent.LoadCarts)
     }
 
     override fun onEvent(event : HomeEvent) {
@@ -125,17 +126,23 @@ class HomeViewModel(
     private fun deleteCart(cart : ShoppingCartTable) {
         launch(context = dispatcherProvider.io) {
             deleteCartUseCase(param = cart).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<Unit , Errors> ->
-                        if (result is DataState.Success) {
-                            updateUi {
-                                val updatedList : MutableList<ShoppingCartTable> = carts.toMutableList().apply { remove(cart) }
-                                if (updatedList.isEmpty()) {
-                                    screenState.updateState(newValues = ScreenState.NoData())
-                                }
-                                copy(carts = updatedList)
-                            }
-                            postSnackbar(message = UiTextHelper.StringResource(resourceId = R.string.cart_deleted_successfully) , isError = false)
+                if (result is DataState.Success) {
+                    val updatedList = screenData?.carts?.toMutableList()?.apply { remove(element = cart) } ?: mutableListOf()
+
+                    if (updatedList.isEmpty()) {
+                        screenState.update { current : UiStateScreen<UiHomeData> ->
+                            current.copy(screenState = ScreenState.NoData() , data = null)
                         }
                     }
+                    else {
+                        updateUi {
+                            copy(carts = updatedList)
+                        }
+                    }
+
+                    postSnackbar(message = UiTextHelper.StringResource(resourceId = R.string.cart_deleted_successfully) , isError = false)
+                }
+            }
         }
     }
 

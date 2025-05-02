@@ -96,7 +96,7 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
 
     Column(modifier = Modifier.fillMaxSize()) {
         LazyColumn(state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)) {
-            if (uiState.carts.size > 10) {
+            if (uiState.carts.size >= UiConstants.STICKY_HEADER_THRESHOLD) {
                 stickyHeader {
                     HomeScreenSortFilterRow(viewModel = viewModel)
                 }
