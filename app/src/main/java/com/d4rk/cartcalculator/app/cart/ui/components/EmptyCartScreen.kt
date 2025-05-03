@@ -9,6 +9,7 @@ import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.NoDataScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.sections.InfoMessageSection
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
@@ -22,9 +23,6 @@ fun EmptyCartScreen(modifier : Modifier = Modifier) {
                 NoDataScreen(text = R.string.your_shopping_cart_is_empty , icon = Icons.Outlined.ShoppingCart)
             }
         }
-        InfoMessageSection(
-            message = "It appears your shopping cart is currently empty. To begin adding items, you can easily navigate to your desired product categories and select them. Once you've found something you'd like, simply tap on the shopping cart icon, conveniently located in the upper left corner, to add it to your cart." ,
-            modifier = Modifier.padding(all = SizeConstants.LargeSize)
-        )
+        InfoMessageSection(message = stringResource(id = R.string.empty_cart_info_message) , modifier = Modifier.padding(all = SizeConstants.LargeSize))
     }
 }

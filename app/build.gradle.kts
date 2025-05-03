@@ -22,8 +22,7 @@ android {
         versionCode = 97
         versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        @Suppress("UnstableApiUsage")
-        androidResources.localeFilters += listOf(
+        @Suppress("UnstableApiUsage") androidResources.localeFilters += listOf(
             "en" ,
             "bg-rBG" ,
             "de-rDE" ,
@@ -64,7 +63,8 @@ android {
                 keyAlias = signingProps["KEY_ALIAS"].toString()
                 keyPassword = signingProps["KEY_PASSWORD"].toString()
             }
-        } else {
+        }
+        else {
             android.buildTypes.getByName("release").signingConfig = null
         }
     }

@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.app.home.ui.components.effects
 
-import android.content.Context
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,18 +7,17 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import nl.dionsegijn.konfetti.compose.KonfettiView
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.emitter.Emitter
+import org.koin.compose.koinInject
 import java.util.concurrent.TimeUnit
 
 @Composable
 fun ConfettiEffectHandler(firstCartId : Int? , cartSize : Int) {
-    val context : Context = LocalContext.current
-    val dataStore : DataStore = remember { DataStore.getInstance(context = context) }
+    val dataStore: DataStore = koinInject()
     val hasSeenConfetti : Boolean by dataStore.hasSeenConfetti().collectAsState(initial = false)
     val shouldShowConfetti : Boolean = remember {
         cartSize > 0 && firstCartId == 1 && ! hasSeenConfetti

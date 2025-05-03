@@ -25,14 +25,13 @@ fun HomeScreenSortFilterRow(viewModel : HomeViewModel) {
 
     TopListFilters(
         filters = filters , selectedFilter = selectedFilter.value , onFilterSelected = { filter : String ->
-            selectedFilter.value = filter
-            val sortOption : SortOption = when (filter) {
-                alphabeticalString -> SortOption.ALPHABETICAL
-                lastAddedSortString -> SortOption.NEWEST
-                dateSortString -> SortOption.OLDEST
-                else -> SortOption.DEFAULT
-            }
-            viewModel.onEvent(event = HomeEvent.SortCarts(sortOption = sortOption))
-        },
-        modifier = Modifier.background(color = MaterialTheme.colorScheme.surface))
+        selectedFilter.value = filter
+        val sortOption : SortOption = when (filter) {
+            alphabeticalString -> SortOption.ALPHABETICAL
+            lastAddedSortString -> SortOption.NEWEST
+            dateSortString -> SortOption.OLDEST
+            else -> SortOption.DEFAULT
+        }
+        viewModel.onEvent(event = HomeEvent.SortCarts(sortOption = sortOption))
+    } , modifier = Modifier.background(color = MaterialTheme.colorScheme.surface))
 }

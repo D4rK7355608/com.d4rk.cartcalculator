@@ -32,7 +32,15 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.stateIn
 
-class CartViewModel(private val loadCartUseCase : LoadCartUseCase , private val addCartItemUseCase : AddCartItemUseCase , private val updateCartItemUseCase : UpdateCartItemUseCase , private val deleteCartItemUseCase : DeleteCartItemUseCase , private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase , private val dataStore : DataStore , private val dispatcherProvider : DispatcherProvider) : ScreenViewModel<UiCartScreen , CartEvent , CartAction>(initialState = UiStateScreen(data = UiCartScreen())) {
+class CartViewModel(
+    private val loadCartUseCase : LoadCartUseCase ,
+    private val addCartItemUseCase : AddCartItemUseCase ,
+    private val updateCartItemUseCase : UpdateCartItemUseCase ,
+    private val deleteCartItemUseCase : DeleteCartItemUseCase ,
+    private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase ,
+    private val dataStore : DataStore ,
+    private val dispatcherProvider : DispatcherProvider
+) : ScreenViewModel<UiCartScreen , CartEvent , CartAction>(initialState = UiStateScreen(data = UiCartScreen())) {
 
     fun getQuantityStateForItem(item : ShoppingCartItemsTable) : Int = item.quantity
 
@@ -177,7 +185,7 @@ class CartViewModel(private val loadCartUseCase : LoadCartUseCase , private val 
 
     private fun checkForEmptyItems() {
         launch {
-            val isEmpty : Boolean = screenData?.cartItems?.isEmpty() ?: true
+            val isEmpty : Boolean = screenData?.cartItems?.isEmpty() != false
             screenState.updateState(newValues = if (isEmpty) ScreenState.NoData() else ScreenState.Success())
         }
     }

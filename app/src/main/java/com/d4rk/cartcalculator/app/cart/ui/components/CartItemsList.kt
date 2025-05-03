@@ -43,11 +43,11 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel) {
                 val isVisible : Boolean = visibilityStates.getOrElse(index = index) { false }
                 CartItem(
                     viewModel = viewModel ,
-                    cartItem = cartItem ,
-                    onMinusClick = { item -> viewModel.onEvent(CartEvent.DecreaseQuantity(item)) } ,
-                    onPlusClick = { item -> viewModel.onEvent(CartEvent.IncreaseQuantity(item)) } ,
-                    uiState = uiState ,
-                    modifier = Modifier
+                         cartItem = cartItem ,
+                         onMinusClick = { item -> viewModel.onEvent(CartEvent.DecreaseQuantity(item)) } ,
+                         onPlusClick = { item -> viewModel.onEvent(CartEvent.IncreaseQuantity(item)) } ,
+                         uiState = uiState ,
+                         modifier = Modifier
                                  .animateItem()
                                  .animateVisibility(visible = isVisible , index = index))
             }

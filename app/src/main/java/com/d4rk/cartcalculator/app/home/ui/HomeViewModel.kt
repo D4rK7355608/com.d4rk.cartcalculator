@@ -36,7 +36,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 
 class HomeViewModel(
-    private val dataStore: DataStore,
+    private val dataStore : DataStore ,
     private val getCartsUseCase : GetCartsUseCase ,
     private val addCartUseCase : AddCartUseCase ,
     private val deleteCartUseCase : DeleteCartUseCase ,

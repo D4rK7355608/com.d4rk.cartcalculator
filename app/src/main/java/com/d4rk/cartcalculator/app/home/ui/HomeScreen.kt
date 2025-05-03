@@ -75,7 +75,7 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState : UiHomeData , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , adsConfig : AdsConfig = koinInject(qualifier = named(name = "banner_medium_rectangle"))) {
 
     val context : Context = LocalContext.current
-    val dataStore : DataStore = remember { DataStore.getInstance(context = context) }
+    val dataStore: DataStore = koinInject()
     val adsEnabled : Boolean by remember { dataStore.ads(default = true) }.collectAsState(initial = true)
 
     val currentCount : Int = uiState.carts.size
@@ -100,15 +100,15 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
     val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = combinedList.size)
 
     HomeScreenSideEffects(
-        currentCount = currentCount,
-        previousCartCount = previousCartCount,
-        shareLink = uiState.shareLink,
-        listState = listState,
-        combinedListSize = combinedList.size,
-        context = context,
-        onFabVisibilityChanged = onFabVisibilityChanged,
-        isFabVisible = isFabVisible.value,
-        viewModel = viewModel,
+        currentCount = currentCount ,
+        previousCartCount = previousCartCount ,
+        shareLink = uiState.shareLink ,
+        listState = listState ,
+        combinedListSize = combinedList.size ,
+        context = context ,
+        onFabVisibilityChanged = onFabVisibilityChanged ,
+        isFabVisible = isFabVisible.value ,
+        viewModel = viewModel ,
     )
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -155,5 +155,5 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
         }
     }
 
-    ConfettiEffectHandler(cartSize = currentCount, firstCartId = uiState.carts.firstOrNull()?.cartId)
+    ConfettiEffectHandler(cartSize = currentCount , firstCartId = uiState.carts.firstOrNull()?.cartId)
 }

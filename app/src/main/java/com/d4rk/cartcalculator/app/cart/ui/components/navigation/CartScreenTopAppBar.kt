@@ -29,7 +29,7 @@ import com.d4rk.cartcalculator.core.utils.helpers.WalletAppsHelper
 @Composable
 fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : CartViewModel , activity : Activity , context : Context , scrollBehavior : TopAppBarScrollBehavior) {
     val isGooglePayInstalled : Boolean = remember { WalletAppsHelper.isGooglePayInstalled(context = context) }
-    val cartButtonsVisible : Boolean = screenState.data?.cartItems?.isNotEmpty() ?: false
+    val cartButtonsVisible : Boolean = screenState.data?.cartItems?.isNotEmpty() == true
 
     LargeTopAppBar(title = {
         Text(text = screenState.data?.cart?.name ?: stringResource(id = R.string.shopping_cart) , modifier = Modifier.animateContentSize() , maxLines = 1 , softWrap = false , overflow = TextOverflow.Ellipsis)

@@ -23,12 +23,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.parameter.parametersOf
 
 class MainActivity : AppCompatActivity() {
 
-    private val dataStore : DataStore by lazy { DataStore.getInstance(context = application) }
+    private val dataStore: DataStore by inject()
     private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
     private lateinit var viewModel : MainViewModel
 

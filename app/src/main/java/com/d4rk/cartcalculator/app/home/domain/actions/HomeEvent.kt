@@ -4,7 +4,7 @@ import com.d4rk.android.libs.apptoolkit.core.ui.base.handling.UiEvent
 import com.d4rk.cartcalculator.app.home.domain.model.SortOption
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 
-sealed class HomeEvent : UiEvent{
+sealed class HomeEvent : UiEvent {
     data object LoadCarts : HomeEvent()
     data class AddCart(val cart : ShoppingCartTable) : HomeEvent()
     data class DeleteCart(val cart : ShoppingCartTable) : HomeEvent()

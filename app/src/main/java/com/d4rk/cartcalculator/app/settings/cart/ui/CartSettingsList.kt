@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.app.settings.cart.ui
 
-import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,7 +15,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.PreferenceCategoryItem
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.SettingsPreferenceItem
@@ -28,11 +26,11 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.settings.cart.ui.components.dialogs.SelectCurrencyAlertDialog
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import kotlinx.coroutines.launch
+import org.koin.compose.koinInject
 
 @Composable
 fun CartSettingsList(paddingValues : PaddingValues) {
-    val context : Context = LocalContext.current
-    val dataStore : DataStore = DataStore.getInstance(context = context)
+    val dataStore: DataStore = koinInject()
     val showDialog = remember { mutableStateOf(value = false) }
     val openCartsAfterCreation by dataStore.openCartsAfterCreation.collectAsState(initial = true)
     val coroutineScope = rememberCoroutineScope()
