@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.core.data.datastore
 
 import android.content.Context
+import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
@@ -10,7 +11,7 @@ import com.d4rk.cartcalculator.core.utils.constants.datastore.AppDataStoreConsta
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class DataStore(context : Context) : CommonDataStore(context) {
+class DataStore(context : Context) : CommonDataStore(context = context) {
 
     companion object {
         @Volatile
@@ -18,33 +19,47 @@ class DataStore(context : Context) : CommonDataStore(context) {
 
         fun getInstance(context : Context) : DataStore {
             return instance ?: synchronized(lock = this) {
-                instance ?: DataStore(context.applicationContext).also { instance = it }
+                instance ?: DataStore(context = context.applicationContext).also { instance = it }
             }
+        }
+    }
+
+    private val hasSeenConfettiKey : Preferences.Key<Boolean> = booleanPreferencesKey(name = AppDataStoreConstants.DATA_STORE_HAS_SEEN_CONFETTI)
+
+    fun hasSeenConfetti() : Flow<Boolean> {
+        return dataStore.data.map { preferences : Preferences ->
+            preferences[hasSeenConfettiKey] == true
+        }
+    }
+
+    suspend fun saveHasSeenConfetti(seen : Boolean) {
+        dataStore.edit { preferences : MutablePreferences ->
+            preferences[hasSeenConfettiKey] = seen
         }
     }
 
     private val currencyKey : Preferences.Key<String> = stringPreferencesKey(name = AppDataStoreConstants.DATA_STORE_PREFERRED_CURRENCY)
 
     fun getCurrency() : Flow<String> {
-        return dataStore.data.map { preferences ->
+        return dataStore.data.map { preferences : Preferences ->
             preferences[currencyKey] ?: ""
         }
     }
 
     suspend fun saveCurrency(currency : String) {
-        dataStore.edit { preferences ->
+        dataStore.edit { preferences : MutablePreferences ->
             preferences[currencyKey] = currency
         }
     }
 
     private val openCartsAfterCreationKey : Preferences.Key<Boolean> = booleanPreferencesKey(name = AppDataStoreConstants.DATA_STORE_OPEN_CARTS_AFTER_CREATION)
 
-    val openCartsAfterCreation : Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[openCartsAfterCreationKey] ?: true
+    val openCartsAfterCreation : Flow<Boolean> = dataStore.data.map { preferences : Preferences ->
+        preferences[openCartsAfterCreationKey] != false
     }
 
     suspend fun saveOpenCartsAfterCreation(isEnabled : Boolean) {
-        dataStore.edit { preferences ->
+        dataStore.edit { preferences : MutablePreferences ->
             preferences[openCartsAfterCreationKey] = isEnabled
         }
     }

@@ -18,7 +18,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.RemoveShoppingCart
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
@@ -48,16 +47,15 @@ import com.d4rk.cartcalculator.app.home.ui.components.CartItem
 import com.d4rk.cartcalculator.app.home.ui.components.HomeScreenSortFilterRow
 import com.d4rk.cartcalculator.app.home.ui.components.effects.ConfettiEffectHandler
 import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeScreenDialogs
+import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeScreenSideEffects
 import com.d4rk.cartcalculator.app.home.ui.utils.constants.UiConstants
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
-import com.d4rk.cartcalculator.core.utils.helpers.ShareHelper
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
 
 @Composable
 fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , snackbarHostState : SnackbarHostState , screenState : UiStateScreen<UiHomeData>) {
-
     ScreenStateHandler(screenState = screenState , onLoading = {
         onFabVisibilityChanged(false)
         LoadingScreen()
@@ -70,7 +68,6 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 
     DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackbarHostState , getDismissEvent = { HomeEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(it) })
     HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
-
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -78,7 +75,8 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState : UiHomeData , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , adsConfig : AdsConfig = koinInject(qualifier = named(name = "banner_medium_rectangle"))) {
 
     val context : Context = LocalContext.current
-    val adsEnabled : Boolean by remember { DataStore.getInstance(context = context).ads(default = true) }.collectAsState(initial = true)
+    val dataStore : DataStore = remember { DataStore.getInstance(context = context) }
+    val adsEnabled : Boolean by remember { dataStore.ads(default = true) }.collectAsState(initial = true)
 
     val currentCount : Int = uiState.carts.size
     val previousCartCount : MutableIntState = remember { mutableIntStateOf(value = currentCount) }
@@ -101,35 +99,19 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
     val listState : LazyListState = rememberLazyListState()
     val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = combinedList.size)
 
-    LaunchedEffect(key1 = currentCount) {
-        val added : Boolean = currentCount > previousCartCount.intValue
+    HomeScreenSideEffects(
+        currentCount = currentCount,
+        previousCartCount = previousCartCount,
+        shareLink = uiState.shareLink,
+        listState = listState,
+        combinedListSize = combinedList.size,
+        context = context,
+        onFabVisibilityChanged = onFabVisibilityChanged,
+        isFabVisible = isFabVisible.value,
+        viewModel = viewModel,
+    )
 
-        if (added) {
-            val targetIndex : Int = if (currentCount == UiConstants.STICKY_HEADER_THRESHOLD) {
-                0
-            }
-            else {
-                combinedList.lastIndex
-            }
-
-            listState.animateScrollToItem(index = targetIndex)
-        }
-
-        previousCartCount.intValue = currentCount
-    }
-
-    LaunchedEffect(key1 = uiState.shareLink) {
-        uiState.shareLink?.let { link : String ->
-            ShareHelper.shareText(context = context , link = link)
-            viewModel.updateUi { copy(shareLink = null) }
-        }
-    }
-
-    LaunchedEffect(key1 = isFabVisible.value) {
-        onFabVisibilityChanged(isFabVisible.value)
-    }
-
-    ConfettiEffectHandler(cartSize = currentCount)
+    ConfettiEffectHandler(cartSize = currentCount, firstCartId = uiState.carts.firstOrNull()?.cartId)
 
     Column(modifier = Modifier.fillMaxSize()) {
         LazyColumn(state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)) {
