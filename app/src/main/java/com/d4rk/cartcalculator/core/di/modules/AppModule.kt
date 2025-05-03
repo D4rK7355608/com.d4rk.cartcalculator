@@ -56,7 +56,7 @@ val appModule : Module = module {
     single<UpdateCartNameUseCase> { UpdateCartNameUseCase(database = get()) }
 
     viewModel {
-        HomeViewModel(getCartsUseCase = get() , addCartUseCase = get() , deleteCartUseCase = get() , importSharedCartUseCase = get() , openCartUseCase = get() , dispatcherProvider = get() , generateCartShareLinkUseCase = get() , updateCartNameUseCase = get())
+        HomeViewModel(getCartsUseCase = get() , addCartUseCase = get() , deleteCartUseCase = get() , importSharedCartUseCase = get() , openCartUseCase = get() , dispatcherProvider = get() , generateCartShareLinkUseCase = get() , updateCartNameUseCase = get(), dataStore = get())
     }
 
     single<LoadCartUseCase> { LoadCartUseCase(database = get()) }

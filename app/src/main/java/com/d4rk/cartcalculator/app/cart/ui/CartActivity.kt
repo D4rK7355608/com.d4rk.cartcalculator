@@ -10,21 +10,33 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
 import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
-import com.google.android.gms.ads.MobileAds
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class CartActivity : AppCompatActivity() {
 
-    private var cartId : Int = 0
-    private val viewModel : CartViewModel by viewModel()
+    private lateinit var viewModel : CartViewModel
+    private var cartId : Int? = null
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        MobileAds.initialize(this@CartActivity)
-        cartId = intent.getIntExtra("cartId" , 0)
-        viewModel.onEvent(event = CartEvent.LoadCart(cartId = cartId))
+        initializeDependencies()
+        handleStartup()
+    }
 
+    private fun initializeDependencies() {
+        viewModel = getViewModel()
+    }
+
+    private fun handleStartup() {
+        cartId = intent?.getIntExtra("cartId" , - 1)?.takeIf { it > 0 }
+        cartId?.let { loadedCartId ->
+            viewModel.onEvent(event = CartEvent.LoadCart(cartId = loadedCartId))
+        }
+        setCartActivityContent()
+    }
+
+    private fun setCartActivityContent() {
         setContent {
             AppTheme {
                 Surface(modifier = Modifier.fillMaxSize() , color = MaterialTheme.colorScheme.background) {

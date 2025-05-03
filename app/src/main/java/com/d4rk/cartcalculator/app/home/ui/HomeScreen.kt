@@ -111,8 +111,6 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
         viewModel = viewModel,
     )
 
-    ConfettiEffectHandler(cartSize = currentCount, firstCartId = uiState.carts.firstOrNull()?.cartId)
-
     Column(modifier = Modifier.fillMaxSize()) {
         LazyColumn(state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)) {
             if (currentCount >= UiConstants.STICKY_HEADER_THRESHOLD) {
@@ -156,4 +154,6 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
             }
         }
     }
+
+    ConfettiEffectHandler(cartSize = currentCount, firstCartId = uiState.carts.firstOrNull()?.cartId)
 }

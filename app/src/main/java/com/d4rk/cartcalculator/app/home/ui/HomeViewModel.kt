@@ -26,14 +26,17 @@ import com.d4rk.cartcalculator.app.home.domain.usecases.ImportSharedCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.OpenCartUseCase
 import com.d4rk.cartcalculator.app.home.domain.usecases.UpdateCartNameUseCase
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.core.utils.extensions.asUiText
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 
 class HomeViewModel(
+    private val dataStore: DataStore,
     private val getCartsUseCase : GetCartsUseCase ,
     private val addCartUseCase : AddCartUseCase ,
     private val deleteCartUseCase : DeleteCartUseCase ,
@@ -91,6 +94,11 @@ class HomeViewModel(
                 }
                 if (result is DataState.Success) {
                     postSnackbar(message = UiTextHelper.StringResource(R.string.cart_added_successfully) , isError = false)
+
+                    val shouldOpen : Boolean = dataStore.openCartsAfterCreation.first()
+                    if (shouldOpen) {
+                        onEvent(event = HomeEvent.OpenCart(cart = result.data))
+                    }
                 }
             }
         }
