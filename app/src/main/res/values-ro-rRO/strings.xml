@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">Setări aplicație</string>
-    <string name="settings_disabled_message">Setările nu sunt disponibile în prezent.</string>
-
     <string name="app_short_description">Gestionează și calculează eficient articolele din coș cu Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Haide să gestionăm eficient articolele din coșul tău!</string>
 
-    <string name="import_cart">Importă coș</string>
     <string name="button_import">Importă</string>
     <string name="paste_cart_link">Inserați linkul coșului</string>
     <string name="import_cart_instructions">"Pentru a importa un coș partajat, inserați linkul generat în câmpul de mai sus.\nCoșul partajat va apărea automat în lista dvs. odată importat.\n\nCum să partajați un coș:\n1. Deschideți coșul.\n2. Atingeți butonul \'Partajare\'.\n3. Copiați linkul generat și trimiteți-l cuiva.\n\nCum să importați un coș partajat:\n1. Copiați linkul partajat pe care l-ați primit.\n2. Inserați-l în câmpul de introducere de mai sus.\n3. Atingeți \'Import\' și verificați lista de coșuri pentru noua intrare."</string>
     <string name="no_carts_available">Niciun coș disponibil</string>
     <string name="add_new_cart">Adaugă un coș nou</string>
-    <string name="cart_name">Nume coș</string>
     <string name="shopping_cart">Coș de cumpărături</string>
     <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a-ți fi mai ușor să urmărești selecțiile tale și pentru a-ți îmbunătăți experiența de cumpărături, ia în considerare să dai un nume coșului tău înainte de a adăuga articole.</string>
     <string name="created_on">Creat pe %1$s</string>
     <string name="decrease_quantity">Micșorează cantitatea</string>
     <string name="increase_quantity">Mărește cantitatea</string>
     <string name="delete_cart">Șterge coșul</string>
-    <string name="delete_cart_message">Ești sigur că vrei să ștergi acest coș?</string>
     <string name="delete_cart_warning">Ștergerea acestui coș va elimina definitiv toate articolele din „%s” și nu poate fi anulată.</string>
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
-    <string name="file_not_found">Fișierul nu a fost găsit.</string>
-
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="in_cart">În coș</string>
     <string name="items_to_pick_up">Articole de ridicat</string>

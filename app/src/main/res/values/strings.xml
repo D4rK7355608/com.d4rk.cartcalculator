@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">Application Settings</string>
-    <string name="settings_disabled_message">Settings are currently unavailable.</string>
-
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
 
     <!-- Home screen -->
-    <string name="import_cart">Import Cart</string>
     <string name="import_shared_cart">Import Shared Cart</string>
     <string name="default_sort">Default Order</string>
     <string name="date">Oldest First</string>
@@ -18,7 +14,6 @@
     <string name="import_cart_instructions">To import a shared cart, paste the generated link in the field above.\nThe shared cart will automatically appear in your list once imported.\n\nHow to share a cart:\n1. Open your cart.\n2. Tap the \'Share\' button.\n3. Copy the generated link and send it to someone.\n\nHow to import a shared cart:\n1. Copy the shared link you received.\n2. Paste it into the input field above.\n3. Tap \'Import\' and check your cart list for the new entry.</string>
     <string name="no_carts_available">No carts available</string>
     <string name="add_new_cart">Add new cart</string>
-    <string name="cart_name">Cart name</string>
     <string name="create_a_new_cart">Create a New Cart</string>
     <string name="enter_cart_name">Enter cart name</string>
     <string name="rename_cart">Rename Cart</string>
@@ -32,10 +27,8 @@
     <string name="increase_quantity">Increase quantity</string>
     <string name="delete_cart_question">Delete cart?</string>
     <string name="delete_cart">Delete Cart</string>
-    <string name="delete_cart_message">Are you sure you want to delete this cart?</string>
     <string name="delete_cart_warning">Deleting this cart will permanently remove all items from \"%s\" and cannot be undone.</string>
     <string name="delete">Delete</string>
-    <string name="cart_options_menu">Cart Options Menu</string>
     <string name="more_options">More options</string>
     <string name="share_cart">Share Cart</string>
     <string name="category_icon_description">Icon for %1$s</string>
@@ -45,6 +38,7 @@
 
     <!-- Cart screen -->
     <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
+    <string name="empty_cart_info_message">It appears your shopping cart is currently empty. To begin adding items, you can easily navigate to your desired product categories and select them. Once you\'ve found something you\'d like, simply tap on the shopping cart icon, conveniently located in the upper left corner, to add it to your cart.</string>
     <string name="add_cart_item">Add Cart Item</string>
     <string name="in_cart">In Cart</string>
     <string name="items_to_pick_up">Items to Pick Up</string>
@@ -131,7 +125,6 @@
     <string name="failed_to_update_cart_item">Failed to update the cart item.</string>
     <string name="failed_to_delete_cart_item">Failed to delete the cart item.</string>
     <string name="failed_to_add_cart_item">Failed to add the item to the cart.</string>
-    <string name="file_not_found">File not found. Please check the file location.</string>
     <string name="request_no_internet">No internet connection. Please check your connection and try again.</string>
     <string name="request_timeout">Request timed out. Please try again.</string>
     <string name="request_server_not_found">Server error. Please try again later.</string>

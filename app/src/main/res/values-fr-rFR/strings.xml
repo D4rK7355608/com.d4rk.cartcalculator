@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">Paramètres de l'application</string>
-    <string name="settings_disabled_message">Les paramètres ne sont pas disponibles actuellement.</string>
-
     <string name="app_short_description">Gérez et calculez efficacement les articles de votre panier avec Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gérons efficacement les articles de votre panier !</string>
 
-    <string name="import_cart">Importer le panier</string>
     <string name="button_import">Importer</string>
     <string name="paste_cart_link">Coller le lien du panier</string>
     <string name="import_cart_instructions">"Pour importer un panier partagé, collez le lien généré dans le champ ci-dessus.\nLe panier partagé apparaîtra automatiquement dans votre liste une fois importé.\n\nComment partager un panier:\n1. Ouvrez votre panier.\n2. Appuyez sur le bouton \'Partager\'.\n3. Copiez le lien généré et envoyez-le à quelqu\'un.\n\nComment importer un panier partagé:\n1. Copiez le lien partagé que vous avez reçu.\n2. Collez-le dans le champ de saisie ci-dessus.\n3. Appuyez sur \'Importer\' et vérifiez votre liste de paniers pour la nouvelle entrée."</string>
     <string name="no_carts_available">Aucun panier disponible</string>
     <string name="add_new_cart">Ajouter un nouveau panier</string>
-    <string name="cart_name">Nom du panier</string>
     <string name="shopping_cart">Panier</string>
     <string name="summary_cart_dialog">Nous nous engageons à créer une expérience d\'achat personnalisée pour tous. Pour vous faciliter le suivi de vos sélections et améliorer votre parcours d\'achat, pensez à donner un nom à votre panier avant d\'ajouter des articles.</string>
     <string name="created_on">Créé le %1$s</string>
     <string name="decrease_quantity">Diminuer la quantité</string>
     <string name="increase_quantity">Augmenter la quantité</string>
     <string name="delete_cart">Supprimer le panier</string>
-    <string name="delete_cart_message">Êtes-vous sûr de vouloir supprimer ce panier ?</string>
     <string name="delete_cart_warning">La suppression de ce panier supprimera définitivement tous les articles de \"%s\" et ne pourra pas être annulée.</string>
     <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
-    <string name="file_not_found">Fichier introuvable.</string>
-
     <string name="your_shopping_cart_is_empty">Votre panier est vide</string>
     <string name="in_cart">Dans le panier</string>
     <string name="items_to_pick_up">Articles à récupérer</string>

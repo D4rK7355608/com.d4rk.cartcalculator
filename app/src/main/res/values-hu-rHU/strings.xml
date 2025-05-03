@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">Alkalmazás beállításai</string>
-    <string name="settings_disabled_message">A beállítások jelenleg nem érhetők el.</string>
-
     <string name="app_short_description">Hatékonyan kezelheti és számíthatja ki kosara tételeit a Kosár Kalkulátorral. 🛒</string>
     <string name="summary_notification_last_time_used">Kezeljük hatékonyan a kosara tételeit!</string>
 
-    <string name="import_cart">Kosár importálása</string>
     <string name="button_import">Importálás</string>
     <string name="paste_cart_link">Kosár linkjének beillesztése</string>
     <string name="import_cart_instructions">"Megosztott kosár importálásához illessze be a generált hivatkozást a fenti mezőbe.\nA megosztott kosár importálás után automatikusan megjelenik a listában.\n\nKosár megosztása:\n1. Nyissa meg a kosarát.\n2. Koppintson a \'Megosztás\' gombra.\n3. Másolja ki a generált hivatkozást, és küldje el valakinek.\n\nMegosztott kosár importálása:\n1. Másolja ki a kapott megosztott hivatkozást.\n2. Illessze be a fenti beviteli mezőbe.\n3. Koppintson az \'Importálás\' gombra, és ellenőrizze a kosárlistában az új bejegyzést."</string>
     <string name="no_carts_available">Nincs elérhető kosár</string>
     <string name="add_new_cart">Új kosár hozzáadása</string>
-    <string name="cart_name">Kosár neve</string>
     <string name="shopping_cart">Bevásárlókosár</string>
     <string name="summary_cart_dialog">Elkötelezettek vagyunk a személyre szabott vásárlási élmény megteremtése mellett mindenki számára. Annak érdekében, hogy könnyebben nyomon követhesse a kiválasztott termékeket és javítsa a vásárlási élményt, fontolja meg, hogy nevet adjon a kosarának, mielőtt hozzáadná a tételeket.</string>
     <string name="created_on">Létrehozva: %1$s</string>
     <string name="decrease_quantity">Mennyiség csökkentése</string>
     <string name="increase_quantity">Mennyiség növelése</string>
     <string name="delete_cart">Kosár törlése</string>
-    <string name="delete_cart_message">Biztosan törölni szeretné ezt a kosarat?</string>
     <string name="delete_cart_warning">A kosár törlése véglegesen eltávolítja az összes tételt a(z) \"%s\" kosárból, és nem vonható vissza.</string>
     <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>
-    <string name="file_not_found">A fájl nem található.</string>
-
     <string name="your_shopping_cart_is_empty">Az Ön bevásárlókosara üres</string>
     <string name="in_cart">A kosárban</string>
     <string name="items_to_pick_up">Átveendő tételek</string>

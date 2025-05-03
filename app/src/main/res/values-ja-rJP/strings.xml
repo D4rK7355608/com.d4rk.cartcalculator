@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">アプリケーション設定</string>
-    <string name="settings_disabled_message">設定は現在利用できません。</string>
-
     <string name="app_short_description">カート計算機でカートアイテムを効率的に管理および計算します。🛒</string>
     <string name="summary_notification_last_time_used">カートアイテムを効率的に管理しましょう！</string>
 
-    <string name="import_cart">カートをインポート</string>
     <string name="button_import">インポート</string>
     <string name="paste_cart_link">カートのリンクを貼り付け</string>
     <string name="import_cart_instructions">"共有カートをインポートするには、生成されたリンクを上のフィールドに貼り付けます。\nインポートすると、共有カートがリストに自動的に表示されます。\n\nカートを共有する方法:\n1. カートを開きます。\n2. [共有] ボタンをタップします。\n3. 生成されたリンクをコピーして、誰かに送信します。\n\n共有カートをインポートする方法:\n1. 受け取った共有リンクをコピーします。\n2. 上の入力フィールドに貼り付けます。\n3. [インポート] をタップして、カート リストに新しいエントリがないか確認します。"</string>
     <string name="no_carts_available">カートはありません</string>
     <string name="add_new_cart">新しいカートを追加</string>
-    <string name="cart_name">カート名</string>
     <string name="shopping_cart">ショッピングカート</string>
     <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに取り組んでいます。選択内容を簡単に追跡し、ショッピング体験を向上させるために、アイテムを追加する前にカートに名前を付けることを検討してください。</string>
     <string name="created_on">%1$sに作成</string>
     <string name="decrease_quantity">数量を減らす</string>
     <string name="increase_quantity">数量を増やす</string>
     <string name="delete_cart">カートを削除</string>
-    <string name="delete_cart_message">このカートを削除してもよろしいですか？</string>
     <string name="delete_cart_warning">このカートを削除すると、\"%s\"からすべてのアイテムが完全に削除され、元に戻すことはできません。</string>
     <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
-    <string name="file_not_found">ファイルが見つかりません。</string>
-
     <string name="your_shopping_cart_is_empty">ショッピングカートは空です</string>
     <string name="in_cart">カート内</string>
     <string name="items_to_pick_up">集荷するアイテム</string>

@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">Configurações do aplicativo</string>
-    <string name="settings_disabled_message">As configurações estão indisponíveis no momento.</string>
-
     <string name="app_short_description">Gerencie e calcule com eficiência os itens do seu carrinho com o Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Vamos gerenciar os itens do seu carrinho com eficiência!</string>
 
-    <string name="import_cart">Importar carrinho</string>
     <string name="button_import">Importar</string>
     <string name="paste_cart_link">Colar link do carrinho</string>
     <string name="import_cart_instructions">"Para importar um carrinho compartilhado, cole o link gerado no campo acima.\nO carrinho compartilhado aparecerá automaticamente na sua lista após a importação.\n\nComo compartilhar um carrinho:\n1. Abra seu carrinho.\n2. Toque no botão \'Compartilhar\'.\n3. Copie o link gerado e envie para alguém.\n\nComo importar um carrinho compartilhado:\n1. Copie o link compartilhado que você recebeu.\n2. Cole-o no campo de entrada acima.\n3. Toque em \'Importar\' e verifique sua lista de carrinhos para a nova entrada."</string>
     <string name="no_carts_available">Nenhum carrinho disponível</string>
     <string name="add_new_cart">Adicionar novo carrinho</string>
-    <string name="cart_name">Nome do carrinho</string>
     <string name="shopping_cart">Carrinho de compras</string>
     <string name="summary_cart_dialog">Estamos comprometidos em criar uma experiência de compra personalizada para todos. Para tornar mais fácil para você acompanhar suas seleções e melhorar sua jornada de compras, considere dar um nome ao seu carrinho antes de adicionar itens.</string>
     <string name="created_on">Criado em %1$s</string>
     <string name="decrease_quantity">Diminuir quantidade</string>
     <string name="increase_quantity">Aumentar quantidade</string>
     <string name="delete_cart">Excluir carrinho</string>
-    <string name="delete_cart_message">Tem certeza de que deseja excluir este carrinho?</string>
     <string name="delete_cart_warning">Excluir este carrinho removerá permanentemente todos os itens de \"%s\" e não poderá ser desfeito.</string>
     <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
-    <string name="file_not_found">Arquivo não encontrado.</string>
-
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
     <string name="in_cart">No carrinho</string>
     <string name="items_to_pick_up">Itens para retirar</string>

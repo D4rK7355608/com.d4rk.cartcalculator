@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="long_settings_label">Pengaturan Aplikasi</string>
-    <string name="settings_disabled_message">Pengaturan saat ini tidak tersedia.</string>
-
     <string name="app_short_description">Kelola dan hitung item keranjang Anda secara efisien dengan Kalkulator Keranjang. 🛒</string>
     <string name="summary_notification_last_time_used">Ayo kelola item keranjang Anda secara efisien!</string>
 
-    <string name="import_cart">Impor Keranjang</string>
     <string name="button_import">Impor</string>
     <string name="paste_cart_link">Tempel Tautan Keranjang</string>
     <string name="import_cart_instructions">"Untuk mengimpor keranjang bersama, tempelkan tautan yang dihasilkan di bidang di atas.\nKeranjang bersama akan otomatis muncul di daftar Anda setelah diimpor.\n\nCara membagikan keranjang:\n1. Buka keranjang Anda.\n2. Ketuk tombol \'Bagikan\'.\n3. Salin tautan yang dihasilkan dan kirimkan ke seseorang.\n\nCara mengimpor keranjang bersama:\n1. Salin tautan bersama yang Anda terima.\n2. Tempelkan ke kolom input di atas.\n3. Ketuk \'Impor\' dan periksa daftar keranjang Anda untuk entri baru."</string>
     <string name="no_carts_available">Tidak ada keranjang yang tersedia</string>
     <string name="add_new_cart">Tambahkan keranjang baru</string>
-    <string name="cart_name">Nama keranjang</string>
     <string name="shopping_cart">Keranjang belanja</string>
     <string name="summary_cart_dialog">Kami berkomitmen untuk menciptakan pengalaman berbelanja yang dipersonalisasi untuk semua orang. Untuk memudahkan Anda melacak pilihan Anda dan meningkatkan perjalanan belanja Anda, pertimbangkan untuk memberi nama keranjang Anda sebelum menambahkan item.</string>
     <string name="created_on">Dibuat pada %1$s</string>
     <string name="decrease_quantity">Kurangi kuantitas</string>
     <string name="increase_quantity">Tambah kuantitas</string>
     <string name="delete_cart">Hapus Keranjang</string>
-    <string name="delete_cart_message">Apakah Anda yakin ingin menghapus keranjang ini?</string>
     <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>
     <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
-    <string name="file_not_found">File tidak ditemukan.</string>
-
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
     <string name="in_cart">Di Keranjang</string>
     <string name="items_to_pick_up">Item untuk Diambil</string>
