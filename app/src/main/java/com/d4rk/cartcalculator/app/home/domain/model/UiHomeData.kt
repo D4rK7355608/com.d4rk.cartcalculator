@@ -13,7 +13,7 @@ data class UiHomeData(
     val shareCartLink : String? = null ,
     val cartToRename : ShoppingCartTable? = null ,
     val showRenameCartDialog : Boolean = false ,
-    val currentSort : SortOption = SortOption.DEFAULT,
-    val shareLink: String? = null,               // ← new
-    val snackbarMessage: UiSnackbar? = null      // ← new
+    val currentSort : SortOption = SortOption.DEFAULT ,
+    val shareLink : String? = null ,
+    val snackbarMessage : UiSnackbar? = null
 )

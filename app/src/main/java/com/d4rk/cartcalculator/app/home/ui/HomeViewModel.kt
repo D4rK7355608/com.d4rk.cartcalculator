@@ -71,6 +71,7 @@ class HomeViewModel(
 
     private fun loadCarts() {
         launch(context = dispatcherProvider.io) {
+
             getCartsUseCase(param = Unit).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result ->
                 screenState.applyResult(result) { carts : List<ShoppingCartTable> , current : UiHomeData ->
                     current.copy(carts = carts.toMutableList())
@@ -128,7 +129,6 @@ class HomeViewModel(
             deleteCartUseCase(param = cart).stateIn(scope = viewModelScope , started = SharingStarted.Lazily , initialValue = DataState.Loading()).collect { result : DataState<Unit , Errors> ->
                 if (result is DataState.Success) {
                     val updatedList = screenData?.carts?.toMutableList()?.apply { remove(element = cart) } ?: mutableListOf()
-
                     if (updatedList.isEmpty()) {
                         screenState.update { current : UiStateScreen<UiHomeData> ->
                             current.copy(screenState = ScreenState.NoData() , data = current.data?.copy(carts = mutableListOf()))

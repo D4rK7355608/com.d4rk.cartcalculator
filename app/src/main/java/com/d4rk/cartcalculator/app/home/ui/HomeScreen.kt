@@ -19,7 +19,13 @@ import androidx.compose.material.icons.outlined.RemoveShoppingCart
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -40,15 +46,18 @@ import com.d4rk.cartcalculator.app.home.domain.model.HomeListItem
 import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
 import com.d4rk.cartcalculator.app.home.ui.components.CartItem
 import com.d4rk.cartcalculator.app.home.ui.components.HomeScreenSortFilterRow
+import com.d4rk.cartcalculator.app.home.ui.components.effects.ConfettiEffectHandler
 import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeScreenDialogs
 import com.d4rk.cartcalculator.app.home.ui.utils.constants.UiConstants
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
+import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.utils.helpers.ShareHelper
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
 
 @Composable
 fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , snackbarHostState : SnackbarHostState , screenState : UiStateScreen<UiHomeData>) {
+
     ScreenStateHandler(screenState = screenState , onLoading = {
         onFabVisibilityChanged(false)
         LoadingScreen()
@@ -61,27 +70,53 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 
     DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackbarHostState , getDismissEvent = { HomeEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(it) })
     HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
+
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState : UiHomeData , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , adsConfig : AdsConfig = koinInject(qualifier = named(name = "banner_medium_rectangle"))) {
 
-    val combinedList : List<HomeListItem> = buildList {
-        uiState.carts.forEachIndexed { index : Int , cart : ShoppingCartTable ->
-            add(element = HomeListItem.CartItem(cart = cart))
-            if ((index + 1) % UiConstants.AD_INTERVAL == 0) add(element = HomeListItem.AdItem)
-        }
+    val context : Context = LocalContext.current
+    val adsEnabled : Boolean by remember { DataStore.getInstance(context = context).ads(default = true) }.collectAsState(initial = true)
 
-        if (uiState.carts.isNotEmpty() && uiState.carts.size % UiConstants.AD_INTERVAL != 0) {
-            add(element = HomeListItem.AdItem)
-        }
+    val currentCount : Int = uiState.carts.size
+    val previousCartCount : MutableIntState = remember { mutableIntStateOf(value = currentCount) }
+
+    val combinedList : List<HomeListItem> by remember(key1 = uiState.carts , key2 = adsEnabled) {
+        mutableStateOf(
+            buildList {
+                uiState.carts.forEachIndexed { index : Int , cart : ShoppingCartTable ->
+                    add(element = HomeListItem.CartItem(cart = cart))
+                    if (adsEnabled && (index + 1) % UiConstants.AD_INTERVAL == 0) {
+                        add(element = HomeListItem.AdItem)
+                    }
+                }
+                if (adsEnabled && uiState.carts.isNotEmpty() && currentCount % UiConstants.AD_INTERVAL != 0) {
+                    add(element = HomeListItem.AdItem)
+                }
+            })
     }
 
     val listState : LazyListState = rememberLazyListState()
-    val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = uiState.carts.size)
+    val (visibilityStates : SnapshotStateList<Boolean> , isFabVisible : MutableState<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = combinedList.size)
 
-    val context : Context = LocalContext.current
+    LaunchedEffect(key1 = currentCount) {
+        val added : Boolean = currentCount > previousCartCount.intValue
+
+        if (added) {
+            val targetIndex : Int = if (currentCount == UiConstants.STICKY_HEADER_THRESHOLD) {
+                0
+            }
+            else {
+                combinedList.lastIndex
+            }
+
+            listState.animateScrollToItem(index = targetIndex)
+        }
+
+        previousCartCount.intValue = currentCount
+    }
 
     LaunchedEffect(key1 = uiState.shareLink) {
         uiState.shareLink?.let { link : String ->
@@ -94,9 +129,11 @@ fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState 
         onFabVisibilityChanged(isFabVisible.value)
     }
 
+    ConfettiEffectHandler(cartSize = currentCount)
+
     Column(modifier = Modifier.fillMaxSize()) {
         LazyColumn(state = listState , contentPadding = paddingValues , modifier = Modifier.fillMaxSize() , verticalArrangement = Arrangement.spacedBy(space = SizeConstants.MediumSize)) {
-            if (uiState.carts.size >= UiConstants.STICKY_HEADER_THRESHOLD) {
+            if (currentCount >= UiConstants.STICKY_HEADER_THRESHOLD) {
                 stickyHeader {
                     HomeScreenSortFilterRow(viewModel = viewModel)
                 }

@@ -118,9 +118,12 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.5") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.6") {
         isTransitive = true
     }
+
+    // Konfetti
+    implementation(dependencyNotation = libs.konfetti.compose)
 
     // Compression
     implementation(dependencyNotation = libs.msgpack.core)
