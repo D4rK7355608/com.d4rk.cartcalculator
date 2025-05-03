@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Configuración de la aplicación</string>
+    <string name="settings_disabled_message">La configuración no está disponible actualmente.</string>
+
     <string name="app_short_description">Administre y calcule eficientemente los artículos de su carrito con la Calculadora de Carrito. 🛒</string>
     <string name="summary_notification_last_time_used">¡Administremos los artículos de su carrito de manera eficiente!</string>
 

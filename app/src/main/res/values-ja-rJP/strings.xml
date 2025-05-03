@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">アプリケーション設定</string>
+    <string name="settings_disabled_message">設定は現在利用できません。</string>
+
     <string name="app_short_description">カート計算機でカートアイテムを効率的に管理および計算します。🛒</string>
     <string name="summary_notification_last_time_used">カートアイテムを効率的に管理しましょう！</string>
 

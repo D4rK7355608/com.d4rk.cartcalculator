@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Configurações do aplicativo</string>
+    <string name="settings_disabled_message">As configurações estão indisponíveis no momento.</string>
+
     <string name="app_short_description">Gerencie e calcule com eficiência os itens do seu carrinho com o Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Vamos gerenciar os itens do seu carrinho com eficiência!</string>
 

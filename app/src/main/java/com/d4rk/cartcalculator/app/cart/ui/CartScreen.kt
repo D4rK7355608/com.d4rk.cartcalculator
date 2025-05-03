@@ -58,7 +58,7 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
         }
     } , snackbarHost = {
         DefaultSnackbarHost(snackbarState = snackBarHostState)
-    }) { paddingValues ->
+    }) { paddingValues : PaddingValues ->
         CartScreenStates(paddingValues = paddingValues , screenState = screenState , viewModel = viewModel , snackbarHostState = snackBarHostState)
     }
 }

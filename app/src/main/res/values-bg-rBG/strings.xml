@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Настройки на приложението</string>
+    <string name="settings_disabled_message">Настройките в момента не са налични.</string>
+
     <string name="app_short_description">Ефективно управлявайте и изчислявайте артикулите в количката си с Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Нека ефективно да управляваме артикулите в количката ви!</string>
 

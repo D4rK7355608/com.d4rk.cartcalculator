@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Anwendungseinstellungen</string>
+    <string name="settings_disabled_message">Einstellungen sind derzeit nicht verfügbar.</string>
+
     <string name="app_short_description">Verwalten und berechnen Sie Ihre Warenkorbartikel effizient mit dem Warenkorb-Rechner. 🛒</string>
     <string name="summary_notification_last_time_used">Lassen Sie uns Ihre Warenkorbartikel effizient verwalten!</string>
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Налаштування додатку</string>
+    <string name="settings_disabled_message">Наразі налаштування недоступні.</string>
+
     <string name="app_short_description">Ефективно керуйте та розраховуйте товари у кошику за допомогою Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Давайте ефективно керуватимемо товарами у вашому кошику!</string>
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Impostazioni dell'applicazione</string>
+    <string name="settings_disabled_message">Le impostazioni non sono attualmente disponibili.</string>
+
     <string name="app_short_description">Gestisci e calcola in modo efficiente gli articoli del tuo carrello con Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gestiamo gli articoli del tuo carrello in modo efficiente!</string>
 

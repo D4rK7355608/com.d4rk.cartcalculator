@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Setări aplicație</string>
+    <string name="settings_disabled_message">Setările nu sunt disponibile în prezent.</string>
+
     <string name="app_short_description">Gestionează și calculează eficient articolele din coș cu Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Haide să gestionăm eficient articolele din coșul tău!</string>
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Uygulama Ayarları</string>
+    <string name="settings_disabled_message">Ayarlar şu anda kullanılamıyor.</string>
+
     <string name="app_short_description">Alışveriş sepeti ürünlerinizi Sepet Hesaplayıcı ile verimli bir şekilde yönetin ve hesaplayın. 🛒</string>
     <string name="summary_notification_last_time_used">Sepetinizdeki ürünleri verimli bir şekilde yönetelim!</string>
 

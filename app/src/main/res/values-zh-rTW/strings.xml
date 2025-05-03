@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">應用程式設定</string>
+    <string name="settings_disabled_message">目前無法使用設定。</string>
+
     <string name="app_short_description">使用購物車計算機，高效管理和計算您的購物車商品。 🛒</string>
     <string name="summary_notification_last_time_used">讓我們高效地管理您的購物車商品！</string>
 

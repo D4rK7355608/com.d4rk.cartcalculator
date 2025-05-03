@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="long_settings_label">Alkalmazás beállításai</string>
+    <string name="settings_disabled_message">A beállítások jelenleg nem érhetők el.</string>
+
     <string name="app_short_description">Hatékonyan kezelheti és számíthatja ki kosara tételeit a Kosár Kalkulátorral. 🛒</string>
     <string name="summary_notification_last_time_used">Kezeljük hatékonyan a kosara tételeit!</string>
 
