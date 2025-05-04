@@ -3,6 +3,11 @@
     <string name="app_short_description">Kelola dan hitung item keranjang Anda secara efisien dengan Kalkulator Keranjang. 🛒</string>
     <string name="summary_notification_last_time_used">Ayo kelola item keranjang Anda secara efisien!</string>
 
+    <string name="import_shared_cart">Impor Keranjang Bersama</string>
+    <string name="default_sort">Urutan Default</string>
+    <string name="date">Terlama dulu</string>
+    <string name="last_added">Terbaru dulu</string>
+    <string name="alphabetical">Alfabetis</string>
     <string name="button_import">Impor</string>
     <string name="paste_cart_link">Tempel Tautan Keranjang</string>
     <string name="import_cart_instructions">"Untuk mengimpor keranjang bersama, tempelkan tautan yang dihasilkan di bidang di atas.\nKeranjang bersama akan otomatis muncul di daftar Anda setelah diimpor.\n\nCara membagikan keranjang:\n1. Buka keranjang Anda.\n2. Ketuk tombol \'Bagikan\'.\n3. Salin tautan yang dihasilkan dan kirimkan ke seseorang.\n\nCara mengimpor keranjang bersama:\n1. Salin tautan bersama yang Anda terima.\n2. Tempelkan ke kolom input di atas.\n3. Ketuk \'Impor\' dan periksa daftar keranjang Anda untuk entri baru."</string>

@@ -3,6 +3,11 @@
     <string name="app_short_description">Hantera och beräkna dina varukorgsobjekt effektivt med Varukorgsberäknaren. 🛒</string>
     <string name="summary_notification_last_time_used">Låt oss hantera dina varukorgsobjekt effektivt!</string>
 
+    <string name="import_shared_cart">Importera delad kundvagn</string>
+    <string name="default_sort">Standardordning</string>
+    <string name="date">Äldst först</string>
+    <string name="last_added">Nyast först</string>
+    <string name="alphabetical">Alfabetisk</string>
     <string name="button_import">Importera</string>
     <string name="paste_cart_link">Klistra in kundvagnslänk</string>
     <string name="import_cart_instructions">"För att importera en delad kundvagn, klistra in den genererade länken i fältet ovan.\nDen delade kundvagnen visas automatiskt i din lista när den har importerats.\n\nHur man delar en kundvagn:\n1. Öppna din kundvagn.\n2. Tryck på knappen \'Dela\'.\n3. Kopiera den genererade länken och skicka den till någon.\n\nHur man importerar en delad kundvagn:\n1. Kopiera den delade länken du fick.\n2. Klistra in den i inmatningsfältet ovan.\n3. Tryck på \'Importera\' och kontrollera din kundvagnslista för den nya posten."</string>

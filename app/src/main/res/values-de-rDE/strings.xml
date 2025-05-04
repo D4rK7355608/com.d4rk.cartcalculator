@@ -3,6 +3,11 @@
     <string name="app_short_description">Verwalten und berechnen Sie Ihre Warenkorbartikel effizient mit dem Warenkorb-Rechner. 🛒</string>
     <string name="summary_notification_last_time_used">Lassen Sie uns Ihre Warenkorbartikel effizient verwalten!</string>
 
+    <string name="import_shared_cart">Geteilten Warenkorb importieren</string>
+    <string name="default_sort">Standardreihenfolge</string>
+    <string name="date">Älteste zuerst</string>
+    <string name="last_added">Neueste zuerst</string>
+    <string name="alphabetical">Alphabetisch</string>
     <string name="button_import">Importieren</string>
     <string name="paste_cart_link">Warenkorb-Link einfügen</string>
     <string name="import_cart_instructions">"Um einen freigegebenen Warenkorb zu importieren, fügen Sie den generierten Link in das Feld oben ein.\nDer freigegebene Warenkorb wird nach dem Import automatisch in Ihrer Liste angezeigt.\n\nSo geben Sie einen Warenkorb frei:\n1. Öffnen Sie Ihren Warenkorb.\n2. Tippen Sie auf die Schaltfläche \'Teilen\'.\n3. Kopieren Sie den generierten Link und senden Sie ihn an jemanden.\n\nSo importieren Sie einen freigegebenen Warenkorb:\n1. Kopieren Sie den freigegebenen Link, den Sie erhalten haben.\n2. Fügen Sie ihn in das Eingabefeld oben ein.\n3. Tippen Sie auf \'Importieren\' und überprüfen Sie Ihre Warenkorbliste auf den neuen Eintrag."</string>
