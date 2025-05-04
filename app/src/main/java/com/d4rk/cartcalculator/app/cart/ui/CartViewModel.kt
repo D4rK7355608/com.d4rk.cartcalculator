@@ -38,7 +38,7 @@ class CartViewModel(
     private val updateCartItemUseCase : UpdateCartItemUseCase ,
     private val deleteCartItemUseCase : DeleteCartItemUseCase ,
     private val generateCartShareLinkUseCase : GenerateCartShareLinkUseCase ,
-    private val dataStore : DataStore ,
+    internal val dataStore : DataStore ,
     private val dispatcherProvider : DispatcherProvider
 ) : ScreenViewModel<UiCartScreen , CartEvent , CartAction>(initialState = UiStateScreen(data = UiCartScreen())) {
 
