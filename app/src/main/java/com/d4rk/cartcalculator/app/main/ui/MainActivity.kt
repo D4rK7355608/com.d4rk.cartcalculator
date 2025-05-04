@@ -18,6 +18,7 @@ import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.main.domain.actions.MainEvent
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
+import com.d4rk.cartcalculator.core.utils.helpers.LanguageCurrencyHelper
 import com.google.android.gms.ads.MobileAds
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,7 +30,7 @@ import org.koin.core.parameter.parametersOf
 
 class MainActivity : AppCompatActivity() {
 
-    private val dataStore: DataStore by inject()
+    private val dataStore : DataStore by inject()
     private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
     private lateinit var viewModel : MainViewModel
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeDependencies() {
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(context = Dispatchers.IO).launch {
             MobileAds.initialize(this@MainActivity) {}
         }
 
@@ -59,6 +60,15 @@ class MainActivity : AppCompatActivity() {
     private fun handleStartup() {
         lifecycleScope.launch {
             val isFirstLaunch : Boolean = dataStore.startup.first()
+
+            val currentCurrency : String = dataStore.getCurrency().first()
+            if (currentCurrency.isBlank()) {
+                val defaultCurrency : String? = LanguageCurrencyHelper.getDefaultCurrencyForLocale(applicationContext = this@MainActivity)
+                defaultCurrency?.let { selectedCurrency : String ->
+                    dataStore.saveCurrency(currency = selectedCurrency)
+                }
+            }
+
             if (isFirstLaunch) {
                 startStartupActivity()
             }
