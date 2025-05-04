@@ -66,7 +66,7 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
         HomeScreenContent(paddingValues = paddingValues , uiState = uiState , viewModel = viewModel , onFabVisibilityChanged = onFabVisibilityChanged)
     })
 
-    DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackbarHostState , getDismissEvent = { HomeEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(it) })
+    DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackbarHostState , getDismissEvent = { HomeEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(event = it) })
     HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 

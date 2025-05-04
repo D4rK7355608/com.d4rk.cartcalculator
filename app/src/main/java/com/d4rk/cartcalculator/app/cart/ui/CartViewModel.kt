@@ -196,7 +196,7 @@ class CartViewModel(
         }
     }
 
-    private inline fun updateUi(crossinline transform : UiCartScreen.() -> UiCartScreen) {
+    internal inline fun updateUi(crossinline transform : UiCartScreen.() -> UiCartScreen) {
         launch {
             screenState.updateData(newState = screenState.value.screenState) { current : UiCartScreen ->
                 transform(current)
