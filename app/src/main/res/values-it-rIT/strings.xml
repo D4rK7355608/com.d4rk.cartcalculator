@@ -3,25 +3,43 @@
     <string name="app_short_description">Gestisci e calcola in modo efficiente gli articoli del tuo carrello con Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gestiamo gli articoli del tuo carrello in modo efficiente!</string>
 
-    <string name="import_cart">Importa carrello</string>
+    <string name="import_shared_cart">Importa carrello condiviso</string>
+    <string name="default_sort">Ordine predefinito</string>
+    <string name="date">Più vecchi prima</string>
+    <string name="last_added">Più recenti prima</string>
+    <string name="alphabetical">Alfabetico</string>
     <string name="button_import">Importa</string>
     <string name="paste_cart_link">Incolla link carrello</string>
     <string name="import_cart_instructions">"Per importare un carrello condiviso, incolla il link generato nel campo sopra.\nIl carrello condiviso apparirà automaticamente nella tua lista una volta importato.\n\nCome condividere un carrello:\n1. Apri il tuo carrello.\n2. Tocca il pulsante \'Condividi\'.\n3. Copia il link generato e invialo a qualcuno.\n\nCome importare un carrello condiviso:\n1. Copia il link condiviso che hai ricevuto.\n2. Incollalo nel campo di input sopra.\n3. Tocca \'Importa\' e controlla la tua lista carrello per la nuova voce."</string>
     <string name="no_carts_available">Nessun carrello disponibile</string>
     <string name="add_new_cart">Aggiungi nuovo carrello</string>
-    <string name="cart_name">Nome carrello</string>
+    <string name="create_a_new_cart">Crea un nuovo carrello</string>
+    <string name="enter_cart_name">Inserisci il nome del carrello</string>
+    <string name="rename_cart">Rinomina carrello</string>
     <string name="shopping_cart">Carrello</string>
     <string name="summary_cart_dialog">Ci impegniamo a creare un\'esperienza di acquisto personalizzata per tutti. Per semplificare il monitoraggio delle tue selezioni e migliorare il tuo percorso di acquisto, valuta la possibilità di assegnare un nome al tuo carrello prima di aggiungere articoli.</string>
+    <string name="create">Crea</string>
+    <string name="cart_category_device">Su questo dispositivo</string>
+    <string name="cart_category_owner">Proprietario</string>
     <string name="created_on">Creato il %1$s</string>
     <string name="decrease_quantity">Diminuisci quantità</string>
     <string name="increase_quantity">Aumenta quantità</string>
-    <string name="delete_cart_title">Elimina carrello</string>
-    <string name="delete_cart_message">Sei sicuro di voler eliminare questo carrello?</string>
+    <string name="delete_cart_question">Eliminare il carrello?</string>
+    <string name="delete_cart">Elimina carrello</string>
     <string name="delete_cart_warning">L\'eliminazione di questo carrello rimuoverà definitivamente tutti gli articoli da \"%s\" e non potrà essere annullata.</string>
-    <string name="snackbar_cart_deleted_success">Carrello eliminato con successo!</string>
-    <string name="file_not_found">File non trovato.</string>
+    <string name="delete">Elimina</string>
+    <string name="more_options">Altre opzioni</string>
+    <string name="share_cart">Condividi carrello</string>
+    <string name="category_icon_description">Icona per %1$s</string>
+    <string name="cart_added_successfully">Carrello aggiunto con successo!</string>
+    <string name="cart_renamed_successfully">Carrello rinominato con successo!</string>
+    <string name="cart_deleted_successfully">Carrello eliminato con successo!</string>
 
+    <string name="snackbar_cart_deleted_success">Carrello eliminato con successo!</string>
     <string name="your_shopping_cart_is_empty">Il tuo carrello è vuoto</string>
+    <string name="empty_cart_info_message">Il tuo carrello è attualmente vuoto. Per iniziare ad aggiungere articoli, naviga facilmente alle categorie di prodotti desiderate e selezionale. Una volta trovato qualcosa che ti piace, tocca semplicemente l\'icona del carrello in alto a sinistra per aggiungerlo al carrello.</string>
+    <string name="add_cart_item">Aggiungi elemento al carrello</string>
+    <string name="edit_cart_item">Modifica elemento del carrello</string>
     <string name="in_cart">Nel carrello</string>
     <string name="items_to_pick_up">Articoli da ritirare</string>
     <string name="item_name">Nome articolo</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Inserisci la quantità</string>
     <string name="dialog_info_cart_item">Per garantire un\'esperienza di pagamento senza interruzioni, fornisci i dettagli sugli articoli che stai aggiungendo al carrello</string>
     <string name="total">Totale</string>
+    <string name="clear_cart_title">Svuota carrello</string>
+    <string name="clear_cart_message">Sei sicuro di voler eliminare tutti gli articoli dal carrello?</string>
+    <string name="cart_cleared">Tutti gli articoli sono stati rimossi con successo</string>
     <string name="delete_cart_item_title">Elimina articolo dal carrello</string>
     <string name="delete_cart_item_message">Sei sicuro di voler eliminare questo articolo?</string>
     <string name="delete_cart_item_warning">Stai per eliminare \"%s\" dal tuo carrello.</string>
+    <string name="item_removed_successfully">Elemento rimosso con successo!</string>
+    <string name="item_added_successfully">Elemento aggiunto con successo!</string>
+    <string name="failed_to_add_item">Impossibile aggiungere l\'elemento</string>
 
     <string name="cart_settings">Impostazioni carrello</string>
     <string name="summary_preference_settings_cart">Gestisci il comportamento del tuo carrello</string>
 
     <string name="currency">Valuta</string>
+    <string name="select_currency">Pilih mata uang</string>
     <string name="summary_preference_settings_currency">Imposta la tua valuta preferita per la visualizzazione dei prezzi</string>
     <string name="dialog_currency_subtitle">Seleziona la tua valuta preferita</string>
     <string name="dialog_info_currency">Questa selezione di valuta verrà utilizzata su tutta la piattaforma per visualizzare i prezzi dei prodotti, elaborare le transazioni e fornire un\'esperienza di acquisto più personalizzata</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Sì! Cart Calculator è orgogliosamente un software gratuito distribuito con licenza GNU General Public License versione 3.</string>
     <string name="question_9">Come posso contribuire a Cart Calculator?</string>
     <string name="summary_preference_faq_9">Il modo migliore per contribuire a Cart Calculator è tramite il suo repository <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Da lì, puoi eseguirne il fork e lavorare sui tuoi contributi, per poi inviarli tramite pull request. Puoi anche utilizzare il tracker dei problemi per segnalare bug, proporre nuove funzionalità o miglioramenti oppure ottenere idee su come potresti aiutare.</string>
+
+    <string name="empty_cart">Il tuo carrello è vuoto.</string>
+    <string name="compression_failed">Impossibile preparare i dati del carrello. Riprova.</string>
+    <string name="failed_to_import_cart">Impossibile importare il carrello. Controlla il file e riprova.</string>
+    <string name="failed_to_encrypt_cart">Impossibile proteggere il carrello. Riprova.</string>
+    <string name="database_cart_not_found">Carrello non trovato.</string>
+    <string name="failed_to_load_cart">Impossibile caricare il carrello.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet non è installato</string>
+    <string name="failed_to_update_cart_item">Impossibile aggiornare l\'articolo del carrello.</string>
+    <string name="failed_to_delete_cart_item">Impossibile eliminare l\'articolo del carrello.</string>
+    <string name="failed_to_add_cart_item">Impossibile aggiungere l\'articolo al carrello.</string>
+    <string name="request_no_internet">Nessuna connessione a Internet. Controlla la connessione e riprova.</string>
+    <string name="request_timeout">Richiesta scaduta. Riprova.</string>
+    <string name="request_server_not_found">Errore del server. Riprova più tardi.</string>
+    <string name="request_payload_error">Errore nei dati. Riprova.</string>
+    <string name="failed_to_delete_cart">Impossibile eliminare il carrello. Riprova.</string>
+    <string name="failed_to_decrypt_cart">Impossibile caricare i dati del carrello. Potrebbe essere corrotto.</string>
+    <string name="database_operation_failed">Qualcosa è andato storto con i dati locali. Riprova.</string>
+    <string name="cart_not_found">Carrello non trovato.</string>
 </resources>

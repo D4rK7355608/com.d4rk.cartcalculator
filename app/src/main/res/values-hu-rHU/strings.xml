@@ -3,25 +3,43 @@
     <string name="app_short_description">Hatékonyan kezelheti és számíthatja ki kosara tételeit a Kosár Kalkulátorral. 🛒</string>
     <string name="summary_notification_last_time_used">Kezeljük hatékonyan a kosara tételeit!</string>
 
-    <string name="import_cart">Kosár importálása</string>
+    <string name="import_shared_cart">Megosztott kosár importálása</string>
+    <string name="default_sort">Alapértelmezett sorrend</string>
+    <string name="date">Legrégebbi elöl</string>
+    <string name="last_added">Legújabb elöl</string>
+    <string name="alphabetical">Betűrend</string>
     <string name="button_import">Importálás</string>
     <string name="paste_cart_link">Kosár linkjének beillesztése</string>
     <string name="import_cart_instructions">"Megosztott kosár importálásához illessze be a generált hivatkozást a fenti mezőbe.\nA megosztott kosár importálás után automatikusan megjelenik a listában.\n\nKosár megosztása:\n1. Nyissa meg a kosarát.\n2. Koppintson a \'Megosztás\' gombra.\n3. Másolja ki a generált hivatkozást, és küldje el valakinek.\n\nMegosztott kosár importálása:\n1. Másolja ki a kapott megosztott hivatkozást.\n2. Illessze be a fenti beviteli mezőbe.\n3. Koppintson az \'Importálás\' gombra, és ellenőrizze a kosárlistában az új bejegyzést."</string>
     <string name="no_carts_available">Nincs elérhető kosár</string>
     <string name="add_new_cart">Új kosár hozzáadása</string>
-    <string name="cart_name">Kosár neve</string>
+    <string name="create_a_new_cart">Új kosár létrehozása</string>
+    <string name="enter_cart_name">Adja meg a kosár nevét</string>
+    <string name="rename_cart">Kosár átnevezése</string>
     <string name="shopping_cart">Bevásárlókosár</string>
     <string name="summary_cart_dialog">Elkötelezettek vagyunk a személyre szabott vásárlási élmény megteremtése mellett mindenki számára. Annak érdekében, hogy könnyebben nyomon követhesse a kiválasztott termékeket és javítsa a vásárlási élményt, fontolja meg, hogy nevet adjon a kosarának, mielőtt hozzáadná a tételeket.</string>
+    <string name="create">Létrehozás</string>
+    <string name="cart_category_device">Ezen az eszközön</string>
+    <string name="cart_category_owner">Tulajdonos</string>
     <string name="created_on">Létrehozva: %1$s</string>
     <string name="decrease_quantity">Mennyiség csökkentése</string>
     <string name="increase_quantity">Mennyiség növelése</string>
-    <string name="delete_cart_title">Kosár törlése</string>
-    <string name="delete_cart_message">Biztosan törölni szeretné ezt a kosarat?</string>
+    <string name="delete_cart_question">Kosár törlése?</string>
+    <string name="delete_cart">Kosár törlése</string>
     <string name="delete_cart_warning">A kosár törlése véglegesen eltávolítja az összes tételt a(z) \"%s\" kosárból, és nem vonható vissza.</string>
-    <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>
-    <string name="file_not_found">A fájl nem található.</string>
+    <string name="delete">Törlés</string>
+    <string name="more_options">További lehetőségek</string>
+    <string name="share_cart">Kosár megosztása</string>
+    <string name="category_icon_description">%1$s ikonja</string>
+    <string name="cart_added_successfully">A kosár sikeresen hozzáadva!</string>
+    <string name="cart_renamed_successfully">A kosár sikeresen átnevezve!</string>
+    <string name="cart_deleted_successfully">A kosár sikeresen törölve!</string>
 
+    <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>
     <string name="your_shopping_cart_is_empty">Az Ön bevásárlókosara üres</string>
+    <string name="empty_cart_info_message">Úgy tűnik, hogy a bevásárlókosarad jelenleg üres. A tételek hozzáadásához egyszerűen navigálj a kívánt termékkategóriákhoz és válaszd ki őket. Ha találtál valamit, ami tetszik, koppints a bal felső sarokban található bevásárlókosár ikonra, hogy hozzáadd.</string>
+    <string name="add_cart_item">Tétel hozzáadása a kosárhoz</string>
+    <string name="edit_cart_item">Kosár tétel szerkesztése</string>
     <string name="in_cart">A kosárban</string>
     <string name="items_to_pick_up">Átveendő tételek</string>
     <string name="item_name">Tétel neve</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Adja meg a mennyiséget</string>
     <string name="dialog_info_cart_item">A zökkenőmentes fizetési élmény érdekében kérjük, adja meg a kosárba helyezett tételek adatait</string>
     <string name="total">Összesen</string>
+    <string name="clear_cart_title">Kosár ürítése</string>
+    <string name="clear_cart_message">Biztosan törölni szeretnél minden elemet a kosárból?</string>
+    <string name="cart_cleared">Minden elem sikeresen eltávolítva</string>
     <string name="delete_cart_item_title">Kosártétel törlése</string>
     <string name="delete_cart_item_message">Biztosan törölni szeretné ezt a tételt?</string>
     <string name="delete_cart_item_warning">A(z) \"%s\" tételt hamarosan törli a kosarából.</string>
+    <string name="item_removed_successfully">Elem sikeresen eltávolítva!</string>
+    <string name="item_added_successfully">Elem sikeresen hozzáadva!</string>
+    <string name="failed_to_add_item">Az elem hozzáadása sikertelen</string>
 
     <string name="cart_settings">Kosár beállításai</string>
     <string name="summary_preference_settings_cart">A kosár viselkedésének kezelése</string>
 
     <string name="currency">Pénznem</string>
+    <string name="select_currency">Valuta kiválasztása</string>
     <string name="summary_preference_settings_currency">Állítsa be a preferált pénznemet az árak megjelenítéséhez</string>
     <string name="dialog_currency_subtitle">Válassza ki a kívánt pénznemet</string>
     <string name="dialog_info_currency">Ez a pénznemválasztás a platformon mindenhol használható lesz a termékárak megjelenítéséhez, a tranzakciók feldolgozásához és a személyre szabottabb vásárlási élmény biztosításához</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Igen! A Kosár Kalkulátor büszkén ingyenes szoftver, amelyet a GNU General Public License 3-as verziója alatt terjesztenek.</string>
     <string name="question_9">Hogyan járulhatok hozzá a Kosár Kalkulátorhoz?</string>
     <string name="summary_preference_faq_9">A Kosár Kalkulátorhoz a <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-tárhelyén keresztül járulhat hozzá a legjobban. Innen elágaztathatja (fork), dolgozhat a hozzájárulásain, majd beküldheti őket egy pull-kérés formájában. A hibakövetőt is használhatja hibák jelentésére, új funkciók vagy fejlesztések javaslatára, vagy ötleteket szerezhet, hogyan segíthet.</string>
+
+    <string name="empty_cart">A kosár jelenleg üres.</string>
+    <string name="compression_failed">A kosár adatait nem sikerült előkészíteni. Kérlek, próbáld újra.</string>
+    <string name="failed_to_import_cart">Nem sikerült importálni a kosarat. Kérlek, ellenőrizd a fájlt, majd próbáld újra.</string>
+    <string name="failed_to_encrypt_cart">A kosarat nem sikerült titkosítani. Kérlek, próbáld újra.</string>
+    <string name="database_cart_not_found">A kosár nem található.</string>
+    <string name="failed_to_load_cart">Nem sikerült betölteni a kosarat.</string>
+    <string name="google_pay_wallet_not_installed">A Google Pay/Wallet nincs telepítve</string>
+    <string name="failed_to_update_cart_item">Nem sikerült frissíteni a kosár tételt.</string>
+    <string name="failed_to_delete_cart_item">Nem sikerült törölni a kosár tételt.</string>
+    <string name="failed_to_add_cart_item">Nem sikerült hozzáadni a tételt a kosárhoz.</string>
+    <string name="request_no_internet">Nincs internetkapcsolat. Kérlek, ellenőrizd a kapcsolatot és próbáld újra.</string>
+    <string name="request_timeout">A kérés időtúllépés miatt megszakadt. Próbáld újra.</string>
+    <string name="request_server_not_found">Szerverhiba. Próbáld újra később.</string>
+    <string name="request_payload_error">Adathiba történt. Kérlek, próbáld újra.</string>
+    <string name="failed_to_delete_cart">Nem sikerült törölni a kosarat. Kérlek, próbáld újra.</string>
+    <string name="failed_to_decrypt_cart">Nem sikerült betölteni a kosár adatait. Lehet, hogy a kosár sérült.</string>
+    <string name="database_operation_failed">Hiba történt a helyi adatokkal. Kérlek, próbáld újra.</string>
+    <string name="cart_not_found">A kosár nem található.</string>
 </resources>

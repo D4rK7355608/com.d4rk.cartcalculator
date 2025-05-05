@@ -3,25 +3,43 @@
     <string name="app_short_description">Alışveriş sepeti ürünlerinizi Sepet Hesaplayıcı ile verimli bir şekilde yönetin ve hesaplayın. 🛒</string>
     <string name="summary_notification_last_time_used">Sepetinizdeki ürünleri verimli bir şekilde yönetelim!</string>
 
-    <string name="import_cart">Sepeti İçe Aktar</string>
+    <string name="import_shared_cart">Paylaşılan Sepeti İçe Aktar</string>
+    <string name="default_sort">Varsayılan Sıralama</string>
+    <string name="date">En eskiden yeniye</string>
+    <string name="last_added">En yeniden eskiye</string>
+    <string name="alphabetical">Alfabetik</string>
     <string name="button_import">İçe Aktar</string>
     <string name="paste_cart_link">Sepet Bağlantısını Yapıştır</string>
     <string name="import_cart_instructions">"Paylaşılan bir sepeti içe aktarmak için, oluşturulan bağlantıyı yukarıdaki alana yapıştırın.\nPaylaşılan sepet, içe aktarıldıktan sonra otomatik olarak listenizde görünecektir.\n\nSepet nasıl paylaşılır:\n1. Sepetinizi açın.\n2. \'Paylaş\' düğmesine dokunun.\n3. Oluşturulan bağlantıyı kopyalayın ve birine gönderin.\n\nPaylaşılan sepet nasıl içe aktarılır:\n1. Aldığınız paylaşılan bağlantıyı kopyalayın.\n2. Yukarıdaki giriş alanına yapıştırın.\n3. \'İçe Aktar\'a dokunun ve yeni giriş için sepet listenizi kontrol edin."</string>
     <string name="no_carts_available">Kullanılabilir sepet yok</string>
     <string name="add_new_cart">Yeni sepet ekle</string>
-    <string name="cart_name">Sepet adı</string>
+    <string name="create_a_new_cart">Yeni Sepet Oluştur</string>
+    <string name="enter_cart_name">Sepet adını girin</string>
+    <string name="rename_cart">Sepeti Yeniden Adlandır</string>
     <string name="shopping_cart">Alışveriş sepeti</string>
     <string name="summary_cart_dialog">Herkese kişiselleştirilmiş bir alışveriş deneyimi sunmaya kararlıyız. Seçimlerinizi takip etmenizi kolaylaştırmak ve alışveriş yolculuğunuzu geliştirmek için ürün eklemeden önce sepetinize bir ad vermeyi düşünün.</string>
+    <string name="create">Oluştur</string>
+    <string name="cart_category_device">Bu cihazda</string>
+    <string name="cart_category_owner">Sahip</string>
     <string name="created_on">%1$s tarihinde oluşturuldu</string>
     <string name="decrease_quantity">Miktarı azalt</string>
     <string name="increase_quantity">Miktarı artır</string>
-    <string name="delete_cart_title">Sepeti Sil</string>
-    <string name="delete_cart_message">Bu sepeti silmek istediğinizden emin misiniz?</string>
+    <string name="delete_cart_question">Sepeti sil?</string>
+    <string name="delete_cart">Sepeti Sil</string>
     <string name="delete_cart_warning">Bu sepeti silmek, \"%s\" içindeki tüm ürünleri kalıcı olarak kaldıracak ve geri alınamaz.</string>
-    <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
-    <string name="file_not_found">Dosya bulunamadı.</string>
+    <string name="delete">Sil</string>
+    <string name="more_options">Daha fazla seçenek</string>
+    <string name="share_cart">Sepeti Paylaş</string>
+    <string name="category_icon_description">%1$s için simge</string>
+    <string name="cart_added_successfully">Sepet başarıyla eklendi!</string>
+    <string name="cart_renamed_successfully">Sepet başarıyla yeniden adlandırıldı!</string>
+    <string name="cart_deleted_successfully">Sepet başarıyla silindi!</string>
 
+    <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
+    <string name="empty_cart_info_message">Alışveriş sepetiniz şu anda boş görünüyor. Ürün eklemeye başlamak için istediğiniz ürün kategorilerine göz atın ve seçim yapın. Beğendiğiniz bir ürün bulduğunuzda, sol üst köşede bulunan alışveriş sepeti simgesine dokunarak sepete ekleyin.</string>
+    <string name="add_cart_item">Sepete Ürün Ekle</string>
+    <string name="edit_cart_item">Sepet Ürünü Düzenle</string>
     <string name="in_cart">Sepette</string>
     <string name="items_to_pick_up">Alınacak Ürünler</string>
     <string name="item_name">Ürün adı</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Miktarı girin</string>
     <string name="dialog_info_cart_item">Sorunsuz bir ödeme deneyimi sağlamak için lütfen sepetinize eklediğiniz ürünlerle ilgili ayrıntıları girin</string>
     <string name="total">Toplam</string>
+    <string name="clear_cart_title">Sepeti Temizle</string>
+    <string name="clear_cart_message">Sepetinizdeki tüm ürünleri silmek istediğinizden emin misiniz?</string>
+    <string name="cart_cleared">Tüm ürünler başarıyla silindi</string>
     <string name="delete_cart_item_title">Sepet Ürününü Sil</string>
     <string name="delete_cart_item_message">Bu ürünü silmek istediğinizden emin misiniz?</string>
     <string name="delete_cart_item_warning">Sepetinizden "%s" ürününü silmek üzeresiniz.</string>
+    <string name="item_removed_successfully">Öğe başarıyla silindi!</string>
+    <string name="item_added_successfully">Öğe başarıyla eklendi!</string>
+    <string name="failed_to_add_item">Öğe eklenemedi</string>
 
     <string name="cart_settings">Sepet ayarları</string>
     <string name="summary_preference_settings_cart">Sepetinizin nasıl davranacağını yönetin</string>
 
     <string name="currency">Para Birimi</string>
+    <string name="select_currency">Para birimini seç</string>
     <string name="summary_preference_settings_currency">Fiyatları görüntülemek için tercih ettiğiniz para birimini ayarlayın</string>
     <string name="dialog_currency_subtitle">Tercih ettiğiniz para birimini seçin</string>
     <string name="dialog_info_currency">Bu para birimi seçimi, ürün fiyatlarını görüntülemek, işlemleri gerçekleştirmek ve daha kişiselleştirilmiş bir alışveriş deneyimi sağlamak için platform genelinde kullanılacaktır</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Evet! Sepet Hesaplayıcı, GNU Genel Kamu Lisansı sürüm 3 kapsamında dağıtılan gurur verici bir ücretsiz yazılımdır.</string>
     <string name="question_9">Sepet Hesaplayıcı\'ya nasıl katkıda bulunabilirim?</string>
     <string name="summary_preference_faq_9">Sepet Hesaplayıcı\'ya katkıda bulunmanın en iyi yolu <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> deposudur. Oradan, onu çatallayabilir ve katkılarınız üzerinde çalışabilir ve daha sonra bunları çekme isteği yoluyla geri gönderebilirsiniz. Ayrıca hata izleyiciyi hataları bildirmek, yeni özellikler veya geliştirmeler önermek veya nasıl yardımcı olabileceğiniz konusunda fikir edinmek için de kullanabilirsiniz.</string>
+
+    <string name="empty_cart">Sepetiniz şu anda boş.</string>
+    <string name="compression_failed">Sepet verileri hazırlanamadı. Lütfen tekrar deneyin.</string>
+    <string name="failed_to_import_cart">Sepet içe aktarılamadı. Lütfen dosyayı kontrol edip tekrar deneyin.</string>
+    <string name="failed_to_encrypt_cart">Sepet güvence altına alınamadı. Lütfen tekrar deneyin.</string>
+    <string name="database_cart_not_found">Sepet bulunamadı.</string>
+    <string name="failed_to_load_cart">Sepet yüklenemedi.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet yüklü değil</string>
+    <string name="failed_to_update_cart_item">Sepet öğesi güncellenemedi.</string>
+    <string name="failed_to_delete_cart_item">Sepet öğesi silinemedi.</string>
+    <string name="failed_to_add_cart_item">Öğe sepete eklenemedi.</string>
+    <string name="request_no_internet">İnternet bağlantısı yok. Lütfen bağlantınızı kontrol edip tekrar deneyin.</string>
+    <string name="request_timeout">İstek zaman aşımına uğradı. Lütfen tekrar deneyin.</string>
+    <string name="request_server_not_found">Sunucu hatası. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="request_payload_error">Veri hatası. Lütfen tekrar deneyin.</string>
+    <string name="failed_to_delete_cart">Sepet silinemedi. Lütfen tekrar deneyin.</string>
+    <string name="failed_to_decrypt_cart">Sepet verileri yüklenemedi. Sepet bozulmuş olabilir.</string>
+    <string name="database_operation_failed">Yerel verilerle ilgili bir hata oluştu. Lütfen tekrar deneyin.</string>
+    <string name="cart_not_found">Sepet bulunamadı.</string>
 </resources>

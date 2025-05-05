@@ -3,25 +3,43 @@
     <string name="app_short_description">カート計算機でカートアイテムを効率的に管理および計算します。🛒</string>
     <string name="summary_notification_last_time_used">カートアイテムを効率的に管理しましょう！</string>
 
-    <string name="import_cart">カートをインポート</string>
+    <string name="import_shared_cart">共有カートをインポート</string>
+    <string name="default_sort">デフォルトの順序</string>
+    <string name="date">古い順</string>
+    <string name="last_added">新しい順</string>
+    <string name="alphabetical">アルファベット順</string>
     <string name="button_import">インポート</string>
     <string name="paste_cart_link">カートのリンクを貼り付け</string>
     <string name="import_cart_instructions">"共有カートをインポートするには、生成されたリンクを上のフィールドに貼り付けます。\nインポートすると、共有カートがリストに自動的に表示されます。\n\nカートを共有する方法:\n1. カートを開きます。\n2. [共有] ボタンをタップします。\n3. 生成されたリンクをコピーして、誰かに送信します。\n\n共有カートをインポートする方法:\n1. 受け取った共有リンクをコピーします。\n2. 上の入力フィールドに貼り付けます。\n3. [インポート] をタップして、カート リストに新しいエントリがないか確認します。"</string>
     <string name="no_carts_available">カートはありません</string>
     <string name="add_new_cart">新しいカートを追加</string>
-    <string name="cart_name">カート名</string>
+    <string name="create_a_new_cart">新しいカートを作成</string>
+    <string name="enter_cart_name">カート名を入力してください</string>
+    <string name="rename_cart">カートの名前を変更</string>
     <string name="shopping_cart">ショッピングカート</string>
     <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに取り組んでいます。選択内容を簡単に追跡し、ショッピング体験を向上させるために、アイテムを追加する前にカートに名前を付けることを検討してください。</string>
+    <string name="create">作成</string>
+    <string name="cart_category_device">このデバイス上</string>
+    <string name="cart_category_owner">所有者</string>
     <string name="created_on">%1$sに作成</string>
     <string name="decrease_quantity">数量を減らす</string>
     <string name="increase_quantity">数量を増やす</string>
-    <string name="delete_cart_title">カートを削除</string>
-    <string name="delete_cart_message">このカートを削除してもよろしいですか？</string>
+    <string name="delete_cart_question">カートを削除しますか？</string>
+    <string name="delete_cart">カートを削除</string>
     <string name="delete_cart_warning">このカートを削除すると、\"%s\"からすべてのアイテムが完全に削除され、元に戻すことはできません。</string>
-    <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
-    <string name="file_not_found">ファイルが見つかりません。</string>
+    <string name="delete">削除</string>
+    <string name="more_options">その他のオプション</string>
+    <string name="share_cart">カートを共有</string>
+    <string name="category_icon_description">%1$s のアイコン</string>
+    <string name="cart_added_successfully">カートが正常に追加されました！</string>
+    <string name="cart_renamed_successfully">カートの名前が正常に変更されました！</string>
+    <string name="cart_deleted_successfully">カートが正常に削除されました！</string>
 
+    <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
     <string name="your_shopping_cart_is_empty">ショッピングカートは空です</string>
+    <string name="empty_cart_info_message">現在、ショッピングカートは空です。商品を追加するには、希望するカテゴリに移動し、それらを選択してください。気に入った商品が見つかったら、左上隅にあるカートアイコンをタップしてカートに追加してください。</string>
+    <string name="add_cart_item">カートに商品を追加</string>
+    <string name="edit_cart_item">カート内商品を編集</string>
     <string name="in_cart">カート内</string>
     <string name="items_to_pick_up">集荷するアイテム</string>
     <string name="item_name">商品名</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">数量を入力</string>
     <string name="dialog_info_cart_item">シームレスなチェックアウト体験を保証するために、カートに追加するアイテムの詳細を入力してください</string>
     <string name="total">合計</string>
+    <string name="clear_cart_title">カートを空にする</string>
+    <string name="clear_cart_message">カート内のすべての商品を削除してもよろしいですか？</string>
+    <string name="cart_cleared">すべての商品が正常に削除されました</string>
     <string name="delete_cart_item_title">カートアイテムを削除</string>
     <string name="delete_cart_item_message">このアイテムを削除してもよろしいですか？</string>
     <string name="delete_cart_item_warning">カートから「%s」を削除しようとしています。</string>
+    <string name="item_removed_successfully">アイテムが正常に削除されました！</string>
+    <string name="item_added_successfully">アイテムが正常に追加されました！</string>
+    <string name="failed_to_add_item">アイテムの追加に失敗しました</string>
 
     <string name="cart_settings">カートの設定</string>
     <string name="summary_preference_settings_cart">カートの動作を管理する</string>
 
     <string name="currency">通貨</string>
+    <string name="select_currency">通貨を選択</string>
     <string name="summary_preference_settings_currency">価格を表示するための希望の通貨を設定します</string>
     <string name="dialog_currency_subtitle">希望の通貨を選択してください</string>
     <string name="dialog_info_currency">この通貨の選択は、プラットフォーム全体で製品価格の表示、取引の処理、およびよりパーソナライズされたショッピング体験の提供に利用されます</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">はい！カート計算機は、GNU General Public Licenseバージョン3の下で配布されている誇り高いフリーソフトウェアです。</string>
     <string name="question_9">カート計算機に貢献するにはどうすればよいですか？</string>
     <string name="summary_preference_faq_9">カート計算機に貢献する最善の方法は、<a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>リポジトリを使用することです。そこから、フォークして貢献に取り組み、後でプルリクエストを介して送り返すことができます。課題トラッカーを使用して、バグを報告したり、新機能や機能強化を提案したり、どのように役立つかについてのアイデアを得たりすることもできます。</string>
+
+    <string name="empty_cart">カートは現在空です。</string>
+    <string name="compression_failed">カートデータを準備できませんでした。もう一度お試しください。</string>
+    <string name="failed_to_import_cart">カートをインポートできませんでした。ファイルを確認してもう一度お試しください。</string>
+    <string name="failed_to_encrypt_cart">カートを保護できませんでした。もう一度お試しください。</string>
+    <string name="database_cart_not_found">カートが見つかりません。</string>
+    <string name="failed_to_load_cart">カートの読み込みに失敗しました。</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet がインストールされていません</string>
+    <string name="failed_to_update_cart_item">カートアイテムの更新に失敗しました。</string>
+    <string name="failed_to_delete_cart_item">カートアイテムの削除に失敗しました。</string>
+    <string name="failed_to_add_cart_item">カートへのアイテム追加に失敗しました。</string>
+    <string name="request_no_internet">インターネット接続がありません。接続を確認してもう一度お試しください。</string>
+    <string name="request_timeout">リクエストがタイムアウトしました。もう一度お試しください。</string>
+    <string name="request_server_not_found">サーバーエラー。後でもう一度お試しください。</string>
+    <string name="request_payload_error">データエラー。もう一度お試しください。</string>
+    <string name="failed_to_delete_cart">カートを削除できませんでした。もう一度お試しください。</string>
+    <string name="failed_to_decrypt_cart">カートデータを読み込めませんでした。破損している可能性があります。</string>
+    <string name="database_operation_failed">ローカルデータに問題が発生しました。もう一度お試しください。</string>
+    <string name="cart_not_found">カートが見つかりません。</string>
 </resources>

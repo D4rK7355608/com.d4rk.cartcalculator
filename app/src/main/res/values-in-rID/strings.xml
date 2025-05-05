@@ -3,25 +3,43 @@
     <string name="app_short_description">Kelola dan hitung item keranjang Anda secara efisien dengan Kalkulator Keranjang. 🛒</string>
     <string name="summary_notification_last_time_used">Ayo kelola item keranjang Anda secara efisien!</string>
 
-    <string name="import_cart">Impor Keranjang</string>
+    <string name="import_shared_cart">Impor Keranjang Bersama</string>
+    <string name="default_sort">Urutan Default</string>
+    <string name="date">Terlama dulu</string>
+    <string name="last_added">Terbaru dulu</string>
+    <string name="alphabetical">Alfabetis</string>
     <string name="button_import">Impor</string>
     <string name="paste_cart_link">Tempel Tautan Keranjang</string>
     <string name="import_cart_instructions">"Untuk mengimpor keranjang bersama, tempelkan tautan yang dihasilkan di bidang di atas.\nKeranjang bersama akan otomatis muncul di daftar Anda setelah diimpor.\n\nCara membagikan keranjang:\n1. Buka keranjang Anda.\n2. Ketuk tombol \'Bagikan\'.\n3. Salin tautan yang dihasilkan dan kirimkan ke seseorang.\n\nCara mengimpor keranjang bersama:\n1. Salin tautan bersama yang Anda terima.\n2. Tempelkan ke kolom input di atas.\n3. Ketuk \'Impor\' dan periksa daftar keranjang Anda untuk entri baru."</string>
     <string name="no_carts_available">Tidak ada keranjang yang tersedia</string>
     <string name="add_new_cart">Tambahkan keranjang baru</string>
-    <string name="cart_name">Nama keranjang</string>
+    <string name="create_a_new_cart">Buat Keranjang Baru</string>
+    <string name="enter_cart_name">Masukkan nama keranjang</string>
+    <string name="rename_cart">Ganti Nama Keranjang</string>
     <string name="shopping_cart">Keranjang belanja</string>
     <string name="summary_cart_dialog">Kami berkomitmen untuk menciptakan pengalaman berbelanja yang dipersonalisasi untuk semua orang. Untuk memudahkan Anda melacak pilihan Anda dan meningkatkan perjalanan belanja Anda, pertimbangkan untuk memberi nama keranjang Anda sebelum menambahkan item.</string>
+    <string name="create">Buat</string>
+    <string name="cart_category_device">Di perangkat ini</string>
+    <string name="cart_category_owner">Pemilik</string>
     <string name="created_on">Dibuat pada %1$s</string>
     <string name="decrease_quantity">Kurangi kuantitas</string>
     <string name="increase_quantity">Tambah kuantitas</string>
-    <string name="delete_cart_title">Hapus Keranjang</string>
-    <string name="delete_cart_message">Apakah Anda yakin ingin menghapus keranjang ini?</string>
+    <string name="delete_cart_question">Hapus keranjang?</string>
+    <string name="delete_cart">Hapus Keranjang</string>
     <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>
-    <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
-    <string name="file_not_found">File tidak ditemukan.</string>
+    <string name="delete">Hapus</string>
+    <string name="more_options">Opsi lainnya</string>
+    <string name="share_cart">Bagikan Keranjang</string>
+    <string name="category_icon_description">Ikon untuk %1$s</string>
+    <string name="cart_added_successfully">Keranjang berhasil ditambahkan!</string>
+    <string name="cart_renamed_successfully">Keranjang berhasil diubah namanya!</string>
+    <string name="cart_deleted_successfully">Keranjang berhasil dihapus!</string>
 
+    <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
+    <string name="empty_cart_info_message">Keranjang belanja Anda saat ini kosong. Untuk mulai menambahkan item, navigasikan ke kategori produk yang diinginkan dan pilih. Setelah menemukan sesuatu yang Anda suka, cukup ketuk ikon keranjang belanja di pojok kiri atas untuk menambahkannya ke keranjang Anda.</string>
+    <string name="add_cart_item">Tambah Item Keranjang</string>
+    <string name="edit_cart_item">Edit Item Keranjang</string>
     <string name="in_cart">Di Keranjang</string>
     <string name="items_to_pick_up">Item untuk Diambil</string>
     <string name="item_name">Nama item</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Masukkan kuantitas</string>
     <string name="dialog_info_cart_item">Untuk memastikan pengalaman checkout yang lancar, berikan detail tentang item yang Anda tambahkan ke keranjang Anda</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Kosongkan Keranjang</string>
+    <string name="clear_cart_message">Apakah Anda yakin ingin menghapus semua item dari keranjang Anda?</string>
+    <string name="cart_cleared">Semua item berhasil dihapus</string>
     <string name="delete_cart_item_title">Hapus Item Keranjang</string>
     <string name="delete_cart_item_message">Apakah Anda yakin ingin menghapus item ini?</string>
     <string name="delete_cart_item_warning">Anda akan menghapus \"%s\" dari keranjang Anda.</string>
+    <string name="item_removed_successfully">Item berhasil dihapus!</string>
+    <string name="item_added_successfully">Item berhasil ditambahkan!</string>
+    <string name="failed_to_add_item">Gagal menambahkan item</string>
 
     <string name="cart_settings">Pengaturan keranjang</string>
     <string name="summary_preference_settings_cart">Kelola perilaku keranjang Anda</string>
 
     <string name="currency">Mata uang</string>
+    <string name="select_currency">Pilih mata uang</string>
     <string name="summary_preference_settings_currency">Tetapkan mata uang pilihan Anda untuk menampilkan harga</string>
     <string name="dialog_currency_subtitle">Pilih mata uang pilihan Anda</string>
     <string name="dialog_info_currency">Pilihan mata uang ini akan digunakan di seluruh platform untuk menampilkan harga produk, memproses transaksi, dan memberikan pengalaman berbelanja yang lebih dipersonalisasi</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Ya! Kalkulator Keranjang dengan bangga merupakan perangkat lunak gratis yang didistribusikan di bawah Lisensi Publik Umum GNU versi 3.</string>
     <string name="question_9">Bagaimana saya dapat berkontribusi pada Kalkulator Keranjang?</string>
     <string name="summary_preference_faq_9">Cara terbaik untuk berkontribusi pada Kalkulator Keranjang adalah melalui repositori <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-nya. Dari sana, Anda dapat melakukan fork dan mengerjakan kontribusi Anda, dan kemudian mengirimkannya kembali melalui pull request. Anda juga dapat menggunakan pelacak masalah untuk melaporkan bug, mengusulkan fitur atau penyempurnaan baru, atau mendapatkan ide tentang bagaimana Anda dapat membantu.</string>
+
+    <string name="empty_cart">Keranjang Anda kosong.</string>
+    <string name="compression_failed">Data keranjang tidak dapat disiapkan. Silakan coba lagi.</string>
+    <string name="failed_to_import_cart">Gagal mengimpor keranjang. Periksa file dan coba lagi.</string>
+    <string name="failed_to_encrypt_cart">Keranjang tidak dapat diamankan. Silakan coba lagi.</string>
+    <string name="database_cart_not_found">Keranjang tidak ditemukan.</string>
+    <string name="failed_to_load_cart">Gagal memuat keranjang.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet belum terpasang</string>
+    <string name="failed_to_update_cart_item">Gagal memperbarui item di keranjang.</string>
+    <string name="failed_to_delete_cart_item">Gagal menghapus item dari keranjang.</string>
+    <string name="failed_to_add_cart_item">Gagal menambahkan item ke keranjang.</string>
+    <string name="request_no_internet">Tidak ada koneksi internet. Periksa koneksi Anda dan coba lagi.</string>
+    <string name="request_timeout">Permintaan melebihi batas waktu. Silakan coba lagi.</string>
+    <string name="request_server_not_found">Kesalahan server. Silakan coba lagi nanti.</string>
+    <string name="request_payload_error">Terjadi kesalahan data. Silakan coba lagi.</string>
+    <string name="failed_to_delete_cart">Tidak dapat menghapus keranjang. Silakan coba lagi.</string>
+    <string name="failed_to_decrypt_cart">Tidak dapat memuat data keranjang. Kemungkinan keranjang rusak.</string>
+    <string name="database_operation_failed">Terjadi kesalahan pada data lokal. Silakan coba lagi.</string>
+    <string name="cart_not_found">Keranjang tidak ditemukan.</string>
 </resources>

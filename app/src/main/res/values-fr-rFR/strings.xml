@@ -3,25 +3,43 @@
     <string name="app_short_description">Gérez et calculez efficacement les articles de votre panier avec Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gérons efficacement les articles de votre panier !</string>
 
-    <string name="import_cart">Importer le panier</string>
+    <string name="import_shared_cart">Importer le panier partagé</string>
+    <string name="default_sort">Ordre par défaut</string>
+    <string name="date">Les plus anciens en premier</string>
+    <string name="last_added">Les plus récents en premier</string>
+    <string name="alphabetical">Alphabétique</string>
     <string name="button_import">Importer</string>
     <string name="paste_cart_link">Coller le lien du panier</string>
     <string name="import_cart_instructions">"Pour importer un panier partagé, collez le lien généré dans le champ ci-dessus.\nLe panier partagé apparaîtra automatiquement dans votre liste une fois importé.\n\nComment partager un panier:\n1. Ouvrez votre panier.\n2. Appuyez sur le bouton \'Partager\'.\n3. Copiez le lien généré et envoyez-le à quelqu\'un.\n\nComment importer un panier partagé:\n1. Copiez le lien partagé que vous avez reçu.\n2. Collez-le dans le champ de saisie ci-dessus.\n3. Appuyez sur \'Importer\' et vérifiez votre liste de paniers pour la nouvelle entrée."</string>
     <string name="no_carts_available">Aucun panier disponible</string>
     <string name="add_new_cart">Ajouter un nouveau panier</string>
-    <string name="cart_name">Nom du panier</string>
+    <string name="create_a_new_cart">Créer un nouveau panier</string>
+    <string name="enter_cart_name">Entrez le nom du panier</string>
+    <string name="rename_cart">Renommer le panier</string>
     <string name="shopping_cart">Panier</string>
     <string name="summary_cart_dialog">Nous nous engageons à créer une expérience d\'achat personnalisée pour tous. Pour vous faciliter le suivi de vos sélections et améliorer votre parcours d\'achat, pensez à donner un nom à votre panier avant d\'ajouter des articles.</string>
+    <string name="create">Créer</string>
+    <string name="cart_category_device">Sur cet appareil</string>
+    <string name="cart_category_owner">Propriétaire</string>
     <string name="created_on">Créé le %1$s</string>
     <string name="decrease_quantity">Diminuer la quantité</string>
     <string name="increase_quantity">Augmenter la quantité</string>
-    <string name="delete_cart_title">Supprimer le panier</string>
-    <string name="delete_cart_message">Êtes-vous sûr de vouloir supprimer ce panier ?</string>
+    <string name="delete_cart_question">Supprimer le panier?</string>
+    <string name="delete_cart">Supprimer le panier</string>
     <string name="delete_cart_warning">La suppression de ce panier supprimera définitivement tous les articles de \"%s\" et ne pourra pas être annulée.</string>
-    <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
-    <string name="file_not_found">Fichier introuvable.</string>
+    <string name="delete">Supprimer</string>
+    <string name="more_options">Plus d\'options</string>
+    <string name="share_cart">Partager le panier</string>
+    <string name="category_icon_description">Icône pour %1$s</string>
+    <string name="cart_added_successfully">Panier ajouté avec succès!</string>
+    <string name="cart_renamed_successfully">Panier renommé avec succès!</string>
+    <string name="cart_deleted_successfully">Panier supprimé avec succès!</string>
 
+    <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
     <string name="your_shopping_cart_is_empty">Votre panier est vide</string>
+    <string name="empty_cart_info_message">Il semble que votre panier soit vide. Pour commencer à ajouter des articles, naviguez simplement vers les catégories de produits souhaitées et sélectionnez-les. Une fois que vous avez trouvé quelque chose qui vous plaît, appuyez sur l\'icône du panier en haut à gauche pour l\'ajouter à votre panier.</string>
+    <string name="add_cart_item">Ajouter un article au panier</string>
+    <string name="edit_cart_item">Modifier un article du panier</string>
     <string name="in_cart">Dans le panier</string>
     <string name="items_to_pick_up">Articles à récupérer</string>
     <string name="item_name">Nom de l\'article</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Entrez la quantité</string>
     <string name="dialog_info_cart_item">Pour garantir une expérience de paiement fluide, veuillez fournir des détails sur les articles que vous ajoutez à votre panier</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Vider le panier</string>
+    <string name="clear_cart_message">Êtes-vous sûr de vouloir supprimer tous les articles de votre panier ?</string>
+    <string name="cart_cleared">Tous les articles ont été supprimés avec succès</string>
     <string name="delete_cart_item_title">Supprimer l\'article du panier</string>
     <string name="delete_cart_item_message">Êtes-vous sûr de vouloir supprimer cet article ?</string>
     <string name="delete_cart_item_warning">Vous êtes sur le point de supprimer \"%s\" de votre panier.</string>
+    <string name="item_removed_successfully">Article supprimé avec succès !</string>
+    <string name="item_added_successfully">Article ajouté avec succès !</string>
+    <string name="failed_to_add_item">Échec de l\'ajout de l\'article</string>
 
     <string name="cart_settings">Paramètres du panier</string>
     <string name="summary_preference_settings_cart">Gérez le comportement de votre panier</string>
 
     <string name="currency">Devise</string>
+    <string name="select_currency">Sélectionner une devise</string>
     <string name="summary_preference_settings_currency">Définissez votre devise préférée pour l\'affichage des prix</string>
     <string name="dialog_currency_subtitle">Sélectionnez votre devise préférée</string>
     <string name="dialog_info_currency">Cette sélection de devise sera utilisée sur toute la plateforme pour afficher les prix des produits, traiter les transactions et offrir une expérience d\'achat plus personnalisée</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Oui ! Cart Calculator est fièrement un logiciel gratuit distribué sous la licence publique générale GNU version 3.</string>
     <string name="question_9">Comment puis-je contribuer à Cart Calculator ?</string>
     <string name="summary_preference_faq_9">La meilleure façon de contribuer à Cart Calculator est de passer par son référentiel <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. De là, vous pouvez le forker et travailler sur vos contributions, puis les renvoyer via une demande d\'extraction. Vous pouvez également utiliser l\'outil de suivi des problèmes pour signaler des bogues, proposer de nouvelles fonctionnalités ou améliorations, ou obtenir des idées sur la façon dont vous pourriez aider.</string>
+
+    <string name="empty_cart">Votre panier est vide.</string>
+    <string name="compression_failed">Les données du panier n\'ont pas pu être préparées. Veuillez réessayer.</string>
+    <string name="failed_to_import_cart">Impossible d\'importer le panier. Veuillez vérifier le fichier et réessayer.</string>
+    <string name="failed_to_encrypt_cart">Le panier n\'a pas pu être sécurisé. Veuillez réessayer.</string>
+    <string name="database_cart_not_found">Panier introuvable.</string>
+    <string name="failed_to_load_cart">Échec du chargement du panier.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet n\'est pas installé</string>
+    <string name="failed_to_update_cart_item">Échec de la mise à jour de l\'article du panier.</string>
+    <string name="failed_to_delete_cart_item">Échec de la suppression de l\'article du panier.</string>
+    <string name="failed_to_add_cart_item">Échec de l\'ajout de l\'article au panier.</string>
+    <string name="request_no_internet">Pas de connexion Internet. Veuillez vérifier votre connexion et réessayer.</string>
+    <string name="request_timeout">Délai d\'attente dépassé. Veuillez réessayer.</string>
+    <string name="request_server_not_found">Erreur serveur. Veuillez réessayer plus tard.</string>
+    <string name="request_payload_error">Erreur de données. Veuillez réessayer.</string>
+    <string name="failed_to_delete_cart">Impossible de supprimer le panier. Veuillez réessayer.</string>
+    <string name="failed_to_decrypt_cart">Impossible de charger les données du panier. Le panier pourrait être corrompu.</string>
+    <string name="database_operation_failed">Un problème est survenu avec les données locales. Veuillez réessayer.</string>
+    <string name="cart_not_found">Panier introuvable.</string>
 </resources>

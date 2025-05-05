@@ -3,25 +3,43 @@
     <string name="app_short_description">Gerencie e calcule com eficiência os itens do seu carrinho com o Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Vamos gerenciar os itens do seu carrinho com eficiência!</string>
 
-    <string name="import_cart">Importar carrinho</string>
+    <string name="import_shared_cart">Importar carrinho compartilhado</string>
+    <string name="default_sort">Ordem padrão</string>
+    <string name="date">Mais antigos primeiro</string>
+    <string name="last_added">Mais recentes primeiro</string>
+    <string name="alphabetical">Alfabética</string>
     <string name="button_import">Importar</string>
     <string name="paste_cart_link">Colar link do carrinho</string>
     <string name="import_cart_instructions">"Para importar um carrinho compartilhado, cole o link gerado no campo acima.\nO carrinho compartilhado aparecerá automaticamente na sua lista após a importação.\n\nComo compartilhar um carrinho:\n1. Abra seu carrinho.\n2. Toque no botão \'Compartilhar\'.\n3. Copie o link gerado e envie para alguém.\n\nComo importar um carrinho compartilhado:\n1. Copie o link compartilhado que você recebeu.\n2. Cole-o no campo de entrada acima.\n3. Toque em \'Importar\' e verifique sua lista de carrinhos para a nova entrada."</string>
     <string name="no_carts_available">Nenhum carrinho disponível</string>
     <string name="add_new_cart">Adicionar novo carrinho</string>
-    <string name="cart_name">Nome do carrinho</string>
+    <string name="create_a_new_cart">Criar um novo carrinho</string>
+    <string name="enter_cart_name">Digite o nome do carrinho</string>
+    <string name="rename_cart">Renomear carrinho</string>
     <string name="shopping_cart">Carrinho de compras</string>
     <string name="summary_cart_dialog">Estamos comprometidos em criar uma experiência de compra personalizada para todos. Para tornar mais fácil para você acompanhar suas seleções e melhorar sua jornada de compras, considere dar um nome ao seu carrinho antes de adicionar itens.</string>
+    <string name="create">Criar</string>
+    <string name="cart_category_device">Neste dispositivo</string>
+    <string name="cart_category_owner">Proprietário</string>
     <string name="created_on">Criado em %1$s</string>
     <string name="decrease_quantity">Diminuir quantidade</string>
     <string name="increase_quantity">Aumentar quantidade</string>
-    <string name="delete_cart_title">Excluir carrinho</string>
-    <string name="delete_cart_message">Tem certeza de que deseja excluir este carrinho?</string>
+    <string name="delete_cart_question">Usunąć koszyk?</string>
+    <string name="delete_cart">Excluir carrinho</string>
     <string name="delete_cart_warning">Excluir este carrinho removerá permanentemente todos os itens de \"%s\" e não poderá ser desfeito.</string>
-    <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
-    <string name="file_not_found">Arquivo não encontrado.</string>
+    <string name="delete">Excluir</string>
+    <string name="more_options">Mais opções</string>
+    <string name="share_cart">Compartilhar carrinho</string>
+    <string name="category_icon_description">Ícone para %1$s</string>
+    <string name="cart_added_successfully">Carrinho adicionado com sucesso!</string>
+    <string name="cart_renamed_successfully">Carrinho renomeado com sucesso!</string>
+    <string name="cart_deleted_successfully">Carrinho excluído com sucesso!</string>
 
+    <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
+    <string name="empty_cart_info_message">Parece que seu carrinho de compras está vazio. Para começar a adicionar itens, navegue pelas categorias de produtos desejadas e selecione-as. Quando encontrar algo que goste, toque no ícone do carrinho no canto superior esquerdo para adicioná-lo ao seu carrinho.</string>
+    <string name="add_cart_item">Adicionar item ao carrinho</string>
+    <string name="edit_cart_item">Editar item do carrinho</string>
     <string name="in_cart">No carrinho</string>
     <string name="items_to_pick_up">Itens para retirar</string>
     <string name="item_name">Nome do item</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Digite a quantidade</string>
     <string name="dialog_info_cart_item">Para garantir uma experiência de finalização de compra perfeita, forneça detalhes sobre os itens que você está adicionando ao seu carrinho</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Esvaziar carrinho</string>
+    <string name="clear_cart_message">Tem certeza de que deseja remover todos os itens do carrinho?</string>
+    <string name="cart_cleared">Todos os itens foram removidos com sucesso</string>
     <string name="delete_cart_item_title">Excluir item do carrinho</string>
     <string name="delete_cart_item_message">Tem certeza de que deseja excluir este item?</string>
     <string name="delete_cart_item_warning">Você está prestes a excluir \"%s\" do seu carrinho.</string>
+    <string name="item_removed_successfully">Item removido com sucesso!</string>
+    <string name="item_added_successfully">Item adicionado com sucesso!</string>
+    <string name="failed_to_add_item">Falha ao adicionar o item</string>
 
     <string name="cart_settings">Configurações do carrinho</string>
     <string name="summary_preference_settings_cart">Gerenciar como seu carrinho se comporta</string>
 
     <string name="currency">Moeda</string>
+    <string name="select_currency">Selecionar moeda</string>
     <string name="summary_preference_settings_currency">Defina sua moeda preferida para exibir preços</string>
     <string name="dialog_currency_subtitle">Selecione sua moeda preferida</string>
     <string name="dialog_info_currency">Esta seleção de moeda será utilizada em toda a plataforma para exibir preços de produtos, processar transações e fornecer uma experiência de compra mais personalizada</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Sim! O Cart Calculator é orgulhosamente um software livre distribuído sob a Licença Pública Geral GNU versão 3.</string>
     <string name="question_9">Como posso contribuir para o Cart Calculator?</string>
     <string name="summary_preference_faq_9">A melhor maneira de contribuir para o Cart Calculator é através do repositório <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> dele. De lá, você pode bifurcá-lo e trabalhar em suas contribuições e, posteriormente, enviá-las de volta por meio de um pull request. Você também pode usar o rastreador de problemas para relatar bugs, propor novos recursos ou melhorias ou obter ideias de como você pode ajudar.</string>
+
+    <string name="empty_cart">Seu carrinho está vazio.</string>
+    <string name="compression_failed">Não foi possível preparar os dados do carrinho. Tente novamente.</string>
+    <string name="failed_to_import_cart">Não foi possível importar o carrinho. Verifique o arquivo e tente novamente.</string>
+    <string name="failed_to_encrypt_cart">Não foi possível proteger o carrinho. Tente novamente.</string>
+    <string name="database_cart_not_found">Carrinho não encontrado.</string>
+    <string name="failed_to_load_cart">Falha ao carregar o carrinho.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Carteira não está instalado</string>
+    <string name="failed_to_update_cart_item">Falha ao atualizar o item do carrinho.</string>
+    <string name="failed_to_delete_cart_item">Falha ao excluir o item do carrinho.</string>
+    <string name="failed_to_add_cart_item">Falha ao adicionar o item ao carrinho.</string>
+    <string name="request_no_internet">Sem conexão com a internet. Verifique sua conexão e tente novamente.</string>
+    <string name="request_timeout">Tempo de solicitação esgotado. Tente novamente.</string>
+    <string name="request_server_not_found">Erro no servidor. Tente novamente mais tarde.</string>
+    <string name="request_payload_error">Erro de dados. Tente novamente.</string>
+    <string name="failed_to_delete_cart">Não foi possível excluir o carrinho. Tente novamente.</string>
+    <string name="failed_to_decrypt_cart">Não foi possível carregar os dados do carrinho. O carrinho pode estar corrompido.</string>
+    <string name="database_operation_failed">Algo deu errado com os dados locais. Tente novamente.</string>
+    <string name="cart_not_found">Carrinho não encontrado.</string>
 </resources>

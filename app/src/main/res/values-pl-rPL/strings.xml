@@ -3,25 +3,43 @@
     <string name="app_short_description">Efektywnie zarządzaj i obliczaj pozycje w koszyku za pomocą Kalkulatora Koszyka. 🛒</string>
     <string name="summary_notification_last_time_used">Zarządzajmy efektywnie pozycjami w Twoim koszyku!</string>
 
-    <string name="import_cart">Importuj koszyk</string>
+    <string name="import_shared_cart">Importuj współdzielony koszyk</string>
+    <string name="default_sort">Domyślna kolejność</string>
+    <string name="date">Najstarsze najpierw</string>
+    <string name="last_added">Najnowsze najpierw</string>
+    <string name="alphabetical">Alfabetycznie</string>
     <string name="button_import">Importuj</string>
     <string name="paste_cart_link">Wklej link do koszyka</string>
     <string name="import_cart_instructions">"Aby zaimportować udostępniony koszyk, wklej wygenerowany link w polu powyżej.\nUdostępniony koszyk pojawi się automatycznie na Twojej liście po zaimportowaniu.\n\nJak udostępnić koszyk:\n1. Otwórz swój koszyk.\n2. Stuknij przycisk \'Udostępnij\'.\n3. Skopiuj wygenerowany link i wyślij go komuś.\n\nJak zaimportować udostępniony koszyk:\n1. Skopiuj otrzymany link udostępniony.\n2. Wklej go w polu wprowadzania powyżej.\n3. Stuknij \'Importuj\' i sprawdź listę koszyków pod kątem nowego wpisu."</string>
     <string name="no_carts_available">Brak dostępnych koszyków</string>
     <string name="add_new_cart">Dodaj nowy koszyk</string>
-    <string name="cart_name">Nazwa koszyka</string>
+    <string name="create_a_new_cart">Utwórz nowy koszyk</string>
+    <string name="enter_cart_name">Wprowadź nazwę koszyka</string>
+    <string name="rename_cart">Zmień nazwę koszyka</string>
     <string name="shopping_cart">Koszyk</string>
     <string name="summary_cart_dialog">Dążymy do tworzenia spersonalizowanych doświadczeń zakupowych dla każdego. Aby ułatwić Ci śledzenie swoich wyborów i usprawnić proces zakupów, rozważ nadanie nazwy swojemu koszykowi przed dodaniem pozycji.</string>
+    <string name="create">Utwórz</string>
+    <string name="cart_category_device">Na tym urządzeniu</string>
+    <string name="cart_category_owner">Właściciel</string>
     <string name="created_on">Utworzono %1$s</string>
     <string name="decrease_quantity">Zmniejsz ilość</string>
     <string name="increase_quantity">Zwiększ ilość</string>
-    <string name="delete_cart_title">Usuń koszyk</string>
-    <string name="delete_cart_message">Czy na pewno chcesz usunąć ten koszyk?</string>
+    <string name="delete_cart_question">Usunąć koszyk?</string>
+    <string name="delete_cart">Usuń koszyk</string>
     <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich pozycji z „%s” i nie można tego cofnąć.</string>
-    <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
-    <string name="file_not_found">Nie znaleziono pliku.</string>
+    <string name="delete">Usuń</string>
+    <string name="more_options">Więcej opcji</string>
+    <string name="share_cart">Udostępnij koszyk</string>
+    <string name="category_icon_description">Ikona dla %1$s</string>
+    <string name="cart_added_successfully">Koszyk został pomyślnie dodany!</string>
+    <string name="cart_renamed_successfully">Koszyk został pomyślnie zmieniony!</string>
+    <string name="cart_deleted_successfully">Koszyk został pomyślnie usunięty!</string>
 
+    <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
+    <string name="empty_cart_info_message">Twój koszyk zakupowy jest obecnie pusty. Aby dodać produkty, przejdź do wybranych kategorii produktów i je wybierz. Gdy znajdziesz coś, co Ci się podoba, stuknij ikonę koszyka w lewym górnym rogu, aby dodać produkt do koszyka.</string>
+    <string name="add_cart_item">Dodaj produkt do koszyka</string>
+    <string name="edit_cart_item">Edytuj produkt w koszyku</string>
     <string name="in_cart">W koszyku</string>
     <string name="items_to_pick_up">Produkty do odbioru</string>
     <string name="item_name">Nazwa produktu</string>
@@ -32,14 +50,21 @@
     <string name="enter_quantity">Wprowadź ilość</string>
     <string name="dialog_info_cart_item">Aby zapewnić bezproblemową realizację transakcji, podaj szczegóły dotyczące przedmiotów, które dodajesz do koszyka</string>
     <string name="total">Suma</string>
+    <string name="clear_cart_title">Wyczyść koszyk</string>
+    <string name="clear_cart_message">Czy na pewno chcesz usunąć wszystkie elementy z koszyka?</string>
+    <string name="cart_cleared">Wszystkie elementy zostały pomyślnie usunięte</string>
     <string name="delete_cart_item_title">Usuń przedmiot z koszyka</string>
     <string name="delete_cart_item_message">Czy na pewno chcesz usunąć ten przedmiot?</string>
     <string name="delete_cart_item_warning">Za chwilę usuniesz „%s” ze swojego koszyka.</string>
+    <string name="item_removed_successfully">Element został pomyślnie usunięty!</string>
+    <string name="item_added_successfully">Element został pomyślnie dodany!</string>
+    <string name="failed_to_add_item">Nie udało się dodać elementu</string>
 
     <string name="cart_settings">Ustawienia koszyka</string>
     <string name="summary_preference_settings_cart">Zarządzaj zachowaniem koszyka</string>
 
     <string name="currency">Waluta</string>
+    <string name="select_currency">Wybierz walutę</string>
     <string name="summary_preference_settings_currency">Ustaw preferowaną walutę do wyświetlania cen</string>
     <string name="dialog_currency_subtitle">Wybierz preferowaną walutę</string>
     <string name="dialog_info_currency">Ten wybór waluty będzie używany na całej platformie do wyświetlania cen produktów, przetwarzania transakcji i zapewniania bardziej spersonalizowanych zakupów</string>
@@ -83,4 +108,23 @@
     <string name="summary_preference_faq_8">Tak! Kalkulator Koszyka to z dumą darmowe oprogramowanie rozpowszechniane na licencji GNU General Public License w wersji 3.</string>
     <string name="question_9">Jak mogę przyczynić się do rozwoju Kalkulatora Koszyka?</string>
     <string name="summary_preference_faq_9">Najlepszym sposobem na wniesienie wkładu w rozwój Kalkulatora Koszyka jest jego repozytorium <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Stamtąd możesz go rozwidlić i pracować nad swoim wkładem, a następnie odesłać go za pośrednictwem żądania ściągnięcia. Możesz również skorzystać z narzędzia do śledzenia problemów, aby zgłaszać błędy, proponować nowe funkcje lub ulepszenia lub uzyskać pomysły, w jaki sposób możesz pomóc.</string>
+
+    <string name="empty_cart">Twój koszyk jest pusty.</string>
+    <string name="compression_failed">Nie udało się przygotować danych koszyka. Spróbuj ponownie.</string>
+    <string name="failed_to_import_cart">Nie można zaimportować koszyka. Sprawdź plik i spróbuj ponownie.</string>
+    <string name="failed_to_encrypt_cart">Nie udało się zabezpieczyć koszyka. Spróbuj ponownie.</string>
+    <string name="database_cart_not_found">Koszyk nie został znaleziony.</string>
+    <string name="failed_to_load_cart">Nie udało się załadować koszyka.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet nie jest zainstalowany</string>
+    <string name="failed_to_update_cart_item">Nie udało się zaktualizować elementu koszyka.</string>
+    <string name="failed_to_delete_cart_item">Nie udało się usunąć elementu koszyka.</string>
+    <string name="failed_to_add_cart_item">Nie udało się dodać elementu do koszyka.</string>
+    <string name="request_no_internet">Brak połączenia z internetem. Sprawdź połączenie i spróbuj ponownie.</string>
+    <string name="request_timeout">Przekroczono limit czasu żądania. Spróbuj ponownie.</string>
+    <string name="request_server_not_found">Błąd serwera. Spróbuj ponownie później.</string>
+    <string name="request_payload_error">Błąd danych. Spróbuj ponownie.</string>
+    <string name="failed_to_delete_cart">Nie można usunąć koszyka. Spróbuj ponownie.</string>
+    <string name="failed_to_decrypt_cart">Nie można załadować danych koszyka. Koszyk może być uszkodzony.</string>
+    <string name="database_operation_failed">Wystąpił błąd z danymi lokalnymi. Spróbuj ponownie.</string>
+    <string name="cart_not_found">Koszyk nie został znaleziony.</string>
 </resources>

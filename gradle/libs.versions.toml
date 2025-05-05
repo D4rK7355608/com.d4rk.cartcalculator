@@ -1,18 +1,20 @@
 [versions]
-agp = "8.8.1"
+agp = "8.9.2"
 aboutlibraries = "11.3.0"
+konfettiCompose = "2.0.5"
 kotlin = "2.1.0"
 google-services = "4.4.2"
 google-firebase-crashlytics = "3.0.3"
 google-devtools-ksp = "2.1.0-1.0.29"
 lz4Java = "1.8.0"
 msgpackCore = "0.9.0"
-roomKtx = "2.6.1"
+roomKtx = "2.7.1"
 
 [libraries]
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
+konfetti-compose = { module = "nl.dionsegijn:konfetti-compose", version.ref = "konfettiCompose" }
 lz4-java = { module = "org.lz4:lz4-java", version.ref = "lz4Java" }
 msgpack-core = { module = "org.msgpack:msgpack-core", version.ref = "msgpackCore" }
 
