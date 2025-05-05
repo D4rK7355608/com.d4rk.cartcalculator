@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">¡Carrito eliminado con éxito!</string>
     <string name="your_shopping_cart_is_empty">Su carrito de compras está vacío</string>
+    <string name="empty_cart_info_message">Ihr Einkaufswagen ist derzeit leer. Um Artikel hinzuzufügen, navigieren Sie zu den gewünschten Produktkategorien und wählen Sie diese aus. Sobald Sie etwas gefunden haben, das Ihnen gefällt, tippen Sie auf das Einkaufswagen-Symbol oben links, um es Ihrem Warenkorb hinzuzufügen.</string>
+    <string name="add_cart_item">Artikel zum Warenkorb hinzufügen</string>
+    <string name="edit_cart_item">Artikel im Warenkorb bearbeiten</string>
     <string name="in_cart">En el carrito</string>
     <string name="items_to_pick_up">Artículos para recoger</string>
     <string name="item_name">Nombre del artículo</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Introduzca la cantidad</string>
     <string name="dialog_info_cart_item">Para garantizar una experiencia de pago sin problemas, proporcione detalles sobre los artículos que está agregando a su carrito</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Vaciar carrito</string>
+    <string name="clear_cart_message">¿Estás seguro de que deseas eliminar todos los artículos del carrito?</string>
+    <string name="cart_cleared">Todos los artículos se han eliminado correctamente</string>
     <string name="delete_cart_item_title">Eliminar artículo del carrito</string>
     <string name="delete_cart_item_message">¿Está seguro de que desea eliminar este artículo?</string>
     <string name="delete_cart_item_warning">Está a punto de eliminar \"%s\" de su carrito.</string>
+    <string name="item_removed_succesfully">¡Artículo eliminado con éxito!</string>
+    <string name="item_added_successfully">¡Artículo añadido con éxito!</string>
+    <string name="failed_to_add_item">No se pudo añadir el artículo</string>
 
     <string name="cart_settings">Configuración del carrito</string>
     <string name="summary_preference_settings_cart">Administre cómo se comporta su carrito</string>

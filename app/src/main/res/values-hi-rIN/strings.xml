@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">कार्ट सफलतापूर्वक हटा दिया गया!</string>
     <string name="your_shopping_cart_is_empty">आपका शॉपिंग कार्ट खाली है</string>
+    <string name="empty_cart_info_message">ऐसा प्रतीत होता है कि आपकी शॉपिंग कार्ट वर्तमान में खाली है। आइटम जोड़ने के लिए, अपनी पसंदीदा उत्पाद श्रेणियों पर नेविगेट करें और उन्हें चुनें। जब आपको कुछ पसंद आए, तो बस ऊपर बाएं कोने में स्थित शॉपिंग कार्ट आइकन पर टैप करें ताकि वह कार्ट में जुड़ जाए।</string>
+    <string name="add_cart_item">कार्ट आइटम जोड़ें</string>
+    <string name="edit_cart_item">कार्ट आइटम संपादित करें</string>
     <string name="in_cart">कार्ट में</string>
     <string name="items_to_pick_up">उठाने के लिए आइटम</string>
     <string name="item_name">वस्तु का नाम</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">मात्रा दर्ज करें</string>
     <string name="dialog_info_cart_item">एक सहज चेकआउट अनुभव सुनिश्चित करने के लिए, कृपया उन वस्तुओं के बारे में विवरण प्रदान करें जिन्हें आप अपने कार्ट में जोड़ रहे हैं</string>
     <string name="total">कुल</string>
+    <string name="clear_cart_title">कार्ट खाली करें</string>
+    <string name="clear_cart_message">क्या आप वाकई अपने कार्ट से सभी आइटम्स हटाना चाहते हैं?</string>
+    <string name="cart_cleared">सभी आइटम्स सफलतापूर्वक हटा दिए गए</string>
     <string name="delete_cart_item_title">कार्ट आइटम हटाएं</string>
     <string name="delete_cart_item_message">क्या आप वाकई इस आइटम को हटाना चाहते हैं?</string>
     <string name="delete_cart_item_warning">आप अपने कार्ट से \"%s\" को हटाने वाले हैं।</string>
+    <string name="item_removed_succesfully">आइटम सफलतापूर्वक हटाया गया!</string>
+    <string name="item_added_successfully">आइटम सफलतापूर्वक जोड़ा गया!</string>
+    <string name="failed_to_add_item">आइटम जोड़ने में विफल</string>
 
     <string name="cart_settings">कार्ट सेटिंग्स</string>
     <string name="summary_preference_settings_cart">प्रबंधित करें कि आपका कार्ट कैसे व्यवहार करता है</string>

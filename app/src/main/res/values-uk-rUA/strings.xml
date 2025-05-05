@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Кошик успішно видалено!</string>
     <string name="your_shopping_cart_is_empty">Ваш кошик порожній</string>
+    <string name="empty_cart_info_message">Схоже, що ваш кошик наразі порожній. Щоб додати товари, перейдіть до бажаних категорій товарів і оберіть їх. Коли знайдете щось цікаве, натисніть на іконку кошика вгорі зліва, щоб додати його до кошика.</string>
+    <string name="add_cart_item">Додати товар до кошика</string>
+    <string name="edit_cart_item">Редагувати товар у кошику</string>
     <string name="in_cart">У кошику</string>
     <string name="items_to_pick_up">Товари для отримання</string>
     <string name="item_name">Назва товару</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Введіть кількість</string>
     <string name="dialog_info_cart_item">Щоб забезпечити безпроблемну оплату, будь ласка, надайте детальну інформацію про товари, які ви додаєте до кошика</string>
     <string name="total">Всього</string>
+    <string name="clear_cart_title">Очистити кошик</string>
+    <string name="clear_cart_message">Ви впевнені, що хочете видалити всі товари з кошика?</string>
+    <string name="cart_cleared">Усі товари успішно видалено</string>
     <string name="delete_cart_item_title">Видалити товар з кошика</string>
     <string name="delete_cart_item_message">Ви впевнені, що хочете видалити цей товар?</string>
     <string name="delete_cart_item_warning">Ви збираєтеся видалити \"%s\" зі свого кошика.</string>
+    <string name="item_removed_succesfully">Елемент успішно видалено!</string>
+    <string name="item_added_successfully">Елемент успішно додано!</string>
+    <string name="failed_to_add_item">Не вдалося додати елемент</string>
 
     <string name="cart_settings">Налаштування кошика</string>
     <string name="summary_preference_settings_cart">Керуйте поведінкою вашого кошика</string>

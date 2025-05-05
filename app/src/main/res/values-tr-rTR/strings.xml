@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
+    <string name="empty_cart_info_message">Alışveriş sepetiniz şu anda boş görünüyor. Ürün eklemeye başlamak için istediğiniz ürün kategorilerine göz atın ve seçim yapın. Beğendiğiniz bir ürün bulduğunuzda, sol üst köşede bulunan alışveriş sepeti simgesine dokunarak sepete ekleyin.</string>
+    <string name="add_cart_item">Sepete Ürün Ekle</string>
+    <string name="edit_cart_item">Sepet Ürünü Düzenle</string>
     <string name="in_cart">Sepette</string>
     <string name="items_to_pick_up">Alınacak Ürünler</string>
     <string name="item_name">Ürün adı</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Miktarı girin</string>
     <string name="dialog_info_cart_item">Sorunsuz bir ödeme deneyimi sağlamak için lütfen sepetinize eklediğiniz ürünlerle ilgili ayrıntıları girin</string>
     <string name="total">Toplam</string>
+    <string name="clear_cart_title">Sepeti Temizle</string>
+    <string name="clear_cart_message">Sepetinizdeki tüm ürünleri silmek istediğinizden emin misiniz?</string>
+    <string name="cart_cleared">Tüm ürünler başarıyla silindi</string>
     <string name="delete_cart_item_title">Sepet Ürününü Sil</string>
     <string name="delete_cart_item_message">Bu ürünü silmek istediğinizden emin misiniz?</string>
     <string name="delete_cart_item_warning">Sepetinizden "%s" ürününü silmek üzeresiniz.</string>
+    <string name="item_removed_succesfully">Öğe başarıyla silindi!</string>
+    <string name="item_added_successfully">Öğe başarıyla eklendi!</string>
+    <string name="failed_to_add_item">Öğe eklenemedi</string>
 
     <string name="cart_settings">Sepet ayarları</string>
     <string name="summary_preference_settings_cart">Sepetinizin nasıl davranacağını yönetin</string>

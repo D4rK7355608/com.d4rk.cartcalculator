@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
+    <string name="empty_cart_info_message">Coșul tău de cumpărături este gol. Pentru a începe să adaugi articole, navighează la categoriile de produse dorite și selectează-le. Odată ce ai găsit ceva ce îți place, atinge pictograma coșului din colțul stânga sus pentru a-l adăuga în coș.</string>
+    <string name="add_cart_item">Adaugă articol în coș</string>
+    <string name="edit_cart_item">Editează articolul din coș</string>
     <string name="in_cart">În coș</string>
     <string name="items_to_pick_up">Articole de ridicat</string>
     <string name="item_name">Nume articol</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Introdu cantitatea</string>
     <string name="dialog_info_cart_item">Pentru a asigura o experiență de finalizare a comenzii fără probleme, te rugăm să furnizezi detalii despre articolele pe care le adaugi în coș</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Golește coșul</string>
+    <string name="clear_cart_message">Ești sigur că vrei să ștergi toate produsele din coș?</string>
+    <string name="cart_cleared">Toate articolele au fost eliminate cu succes</string>
     <string name="delete_cart_item_title">Șterge articolul din coș</string>
     <string name="delete_cart_item_message">Ești sigur că vrei să ștergi acest articol?</string>
     <string name="delete_cart_item_warning">Ești pe cale să ștergi „%s” din coșul tău.</string>
+    <string name="item_removed_succesfully">Articol eliminat cu succes!</string>
+    <string name="item_added_successfully">Articol adăugat cu succes!</string>
+    <string name="failed_to_add_item">Nu s-a putut adăuga articolul</string>
 
     <string name="cart_settings">Setări coș</string>
     <string name="summary_preference_settings_cart">Gestionează modul în care se comportă coșul tău</string>

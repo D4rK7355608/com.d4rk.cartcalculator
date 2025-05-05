@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Keranjang berhasil dihapus!</string>
     <string name="your_shopping_cart_is_empty">Keranjang belanja Anda kosong</string>
+    <string name="empty_cart_info_message">Keranjang belanja Anda saat ini kosong. Untuk mulai menambahkan item, navigasikan ke kategori produk yang diinginkan dan pilih. Setelah menemukan sesuatu yang Anda suka, cukup ketuk ikon keranjang belanja di pojok kiri atas untuk menambahkannya ke keranjang Anda.</string>
+    <string name="add_cart_item">Tambah Item Keranjang</string>
+    <string name="edit_cart_item">Edit Item Keranjang</string>
     <string name="in_cart">Di Keranjang</string>
     <string name="items_to_pick_up">Item untuk Diambil</string>
     <string name="item_name">Nama item</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Masukkan kuantitas</string>
     <string name="dialog_info_cart_item">Untuk memastikan pengalaman checkout yang lancar, berikan detail tentang item yang Anda tambahkan ke keranjang Anda</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Kosongkan Keranjang</string>
+    <string name="clear_cart_message">Apakah Anda yakin ingin menghapus semua item dari keranjang Anda?</string>
+    <string name="cart_cleared">Semua item berhasil dihapus</string>
     <string name="delete_cart_item_title">Hapus Item Keranjang</string>
     <string name="delete_cart_item_message">Apakah Anda yakin ingin menghapus item ini?</string>
     <string name="delete_cart_item_warning">Anda akan menghapus \"%s\" dari keranjang Anda.</string>
+    <string name="item_removed_succesfully">Item berhasil dihapus!</string>
+    <string name="item_added_successfully">Item berhasil ditambahkan!</string>
+    <string name="failed_to_add_item">Gagal menambahkan item</string>
 
     <string name="cart_settings">Pengaturan keranjang</string>
     <string name="summary_preference_settings_cart">Kelola perilaku keranjang Anda</string>

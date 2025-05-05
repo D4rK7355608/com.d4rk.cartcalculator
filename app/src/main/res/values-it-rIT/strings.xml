@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Carrello eliminato con successo!</string>
     <string name="your_shopping_cart_is_empty">Il tuo carrello è vuoto</string>
+    <string name="empty_cart_info_message">Il tuo carrello è attualmente vuoto. Per iniziare ad aggiungere articoli, naviga facilmente alle categorie di prodotti desiderate e selezionale. Una volta trovato qualcosa che ti piace, tocca semplicemente l\'icona del carrello in alto a sinistra per aggiungerlo al carrello.</string>
+    <string name="add_cart_item">Aggiungi elemento al carrello</string>
+    <string name="edit_cart_item">Modifica elemento del carrello</string>
     <string name="in_cart">Nel carrello</string>
     <string name="items_to_pick_up">Articoli da ritirare</string>
     <string name="item_name">Nome articolo</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Inserisci la quantità</string>
     <string name="dialog_info_cart_item">Per garantire un\'esperienza di pagamento senza interruzioni, fornisci i dettagli sugli articoli che stai aggiungendo al carrello</string>
     <string name="total">Totale</string>
+    <string name="clear_cart_title">Svuota carrello</string>
+    <string name="clear_cart_message">Sei sicuro di voler eliminare tutti gli articoli dal carrello?</string>
+    <string name="cart_cleared">Tutti gli articoli sono stati rimossi con successo</string>
     <string name="delete_cart_item_title">Elimina articolo dal carrello</string>
     <string name="delete_cart_item_message">Sei sicuro di voler eliminare questo articolo?</string>
     <string name="delete_cart_item_warning">Stai per eliminare \"%s\" dal tuo carrello.</string>
+    <string name="item_removed_succesfully">Elemento rimosso con successo!</string>
+    <string name="item_added_successfully">Elemento aggiunto con successo!</string>
+    <string name="failed_to_add_item">Impossibile aggiungere l\'elemento</string>
 
     <string name="cart_settings">Impostazioni carrello</string>
     <string name="summary_preference_settings_cart">Gestisci il comportamento del tuo carrello</string>

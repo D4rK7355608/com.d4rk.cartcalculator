@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">購物車已成功刪除！</string>
     <string name="your_shopping_cart_is_empty">您的購物車是空的</string>
+    <string name="empty_cart_info_message">看起來您的購物車目前是空的。您可以輕鬆地前往想要的商品分類並選擇，找到喜歡的商品後，只需點擊左上角的購物車圖示，即可將商品加入購物車。</string>
+    <string name="add_cart_item">新增購物項目</string>
+    <string name="edit_cart_item">編輯購物項目</string>
     <string name="in_cart">在購物車中</string>
     <string name="items_to_pick_up">待取商品</string>
     <string name="item_name">商品名稱</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">輸入數量</string>
     <string name="dialog_info_cart_item">為了確保順暢的結帳體驗，請提供您要加入購物車的商品詳細資料</string>
     <string name="total">總計</string>
+    <string name="clear_cart_title">清空購物車</string>
+    <string name="clear_cart_message">您確定要從購物車中刪除所有項目嗎？</string>
+    <string name="cart_cleared">所有項目已成功移除</string>
     <string name="delete_cart_item_title">刪除購物車商品</string>
     <string name="delete_cart_item_message">您確定要刪除此商品嗎？</string>
     <string name="delete_cart_item_warning">您即將從購物車中刪除「%s」。</string>
+    <string name="item_removed_succesfully">項目已成功移除！</string>
+    <string name="item_added_successfully">項目已成功加入！</string>
+    <string name="failed_to_add_item">加入項目失敗</string>
 
     <string name="cart_settings">購物車設定</string>
     <string name="summary_preference_settings_cart">管理您的購物車行為</string>

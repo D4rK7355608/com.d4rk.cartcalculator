@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Panier supprimé avec succès !</string>
     <string name="your_shopping_cart_is_empty">Votre panier est vide</string>
+    <string name="empty_cart_info_message">Il semble que votre panier soit vide. Pour commencer à ajouter des articles, naviguez simplement vers les catégories de produits souhaitées et sélectionnez-les. Une fois que vous avez trouvé quelque chose qui vous plaît, appuyez sur l\'icône du panier en haut à gauche pour l\'ajouter à votre panier.</string>
+    <string name="add_cart_item">Ajouter un article au panier</string>
+    <string name="edit_cart_item">Modifier un article du panier</string>
     <string name="in_cart">Dans le panier</string>
     <string name="items_to_pick_up">Articles à récupérer</string>
     <string name="item_name">Nom de l\'article</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Entrez la quantité</string>
     <string name="dialog_info_cart_item">Pour garantir une expérience de paiement fluide, veuillez fournir des détails sur les articles que vous ajoutez à votre panier</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Vider le panier</string>
+    <string name="clear_cart_message">Êtes-vous sûr de vouloir supprimer tous les articles de votre panier ?</string>
+    <string name="cart_cleared">Tous les articles ont été supprimés avec succès</string>
     <string name="delete_cart_item_title">Supprimer l\'article du panier</string>
     <string name="delete_cart_item_message">Êtes-vous sûr de vouloir supprimer cet article ?</string>
     <string name="delete_cart_item_warning">Vous êtes sur le point de supprimer \"%s\" de votre panier.</string>
+    <string name="item_removed_succesfully">Article supprimé avec succès !</string>
+    <string name="item_added_successfully">Article ajouté avec succès !</string>
+    <string name="failed_to_add_item">Échec de l\'ajout de l\'article</string>
 
     <string name="cart_settings">Paramètres du panier</string>
     <string name="summary_preference_settings_cart">Gérez le comportement de votre panier</string>

@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Корзина успешно удалена!</string>
     <string name="your_shopping_cart_is_empty">Ваша корзина пуста</string>
+    <string name="empty_cart_info_message">Похоже, ваша корзина пуста. Чтобы добавить товары, перейдите в нужные категории и выберите их. Когда вы найдете что-то подходящее, нажмите на значок корзины в левом верхнем углу, чтобы добавить товар в корзину.</string>
+    <string name="add_cart_item">Добавить товар в корзину</string>
+    <string name="edit_cart_item">Редактировать товар в корзине</string>
     <string name="in_cart">В корзине</string>
     <string name="items_to_pick_up">Товары для получения</string>
     <string name="item_name">Название товара</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Введите количество</string>
     <string name="dialog_info_cart_item">Чтобы обеспечить беспрепятственный процесс оформления заказа, пожалуйста, предоставьте подробную информацию о товарах, которые вы добавляете в корзину</string>
     <string name="total">Итого</string>
+    <string name="clear_cart_title">Очистить корзину</string>
+    <string name="clear_cart_message">Вы уверены, что хотите удалить все товары из корзины?</string>
+    <string name="cart_cleared">Все товары успешно удалены</string>
     <string name="delete_cart_item_title">Удалить товар из корзины</string>
     <string name="delete_cart_item_message">Вы уверены, что хотите удалить этот товар?</string>
     <string name="delete_cart_item_warning">Вы собираетесь удалить \"%s\" из корзины.</string>
+    <string name="item_removed_succesfully">Элемент успешно удален!</string>
+    <string name="item_added_successfully">Элемент успешно добавлен!</string>
+    <string name="failed_to_add_item">Не удалось добавить элемент</string>
 
     <string name="cart_settings">Настройки корзины</string>
     <string name="summary_preference_settings_cart">Управляйте поведением вашей корзины</string>

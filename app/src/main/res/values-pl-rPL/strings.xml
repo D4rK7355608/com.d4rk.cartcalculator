@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
+    <string name="empty_cart_info_message">Twój koszyk zakupowy jest obecnie pusty. Aby dodać produkty, przejdź do wybranych kategorii produktów i je wybierz. Gdy znajdziesz coś, co Ci się podoba, stuknij ikonę koszyka w lewym górnym rogu, aby dodać produkt do koszyka.</string>
+    <string name="add_cart_item">Dodaj produkt do koszyka</string>
+    <string name="edit_cart_item">Edytuj produkt w koszyku</string>
     <string name="in_cart">W koszyku</string>
     <string name="items_to_pick_up">Produkty do odbioru</string>
     <string name="item_name">Nazwa produktu</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Wprowadź ilość</string>
     <string name="dialog_info_cart_item">Aby zapewnić bezproblemową realizację transakcji, podaj szczegóły dotyczące przedmiotów, które dodajesz do koszyka</string>
     <string name="total">Suma</string>
+    <string name="clear_cart_title">Wyczyść koszyk</string>
+    <string name="clear_cart_message">Czy na pewno chcesz usunąć wszystkie elementy z koszyka?</string>
+    <string name="cart_cleared">Wszystkie elementy zostały pomyślnie usunięte</string>
     <string name="delete_cart_item_title">Usuń przedmiot z koszyka</string>
     <string name="delete_cart_item_message">Czy na pewno chcesz usunąć ten przedmiot?</string>
     <string name="delete_cart_item_warning">Za chwilę usuniesz „%s” ze swojego koszyka.</string>
+    <string name="item_removed_succesfully">Element został pomyślnie usunięty!</string>
+    <string name="item_added_successfully">Element został pomyślnie dodany!</string>
+    <string name="failed_to_add_item">Nie udało się dodać elementu</string>
 
     <string name="cart_settings">Ustawienia koszyka</string>
     <string name="summary_preference_settings_cart">Zarządzaj zachowaniem koszyka</string>

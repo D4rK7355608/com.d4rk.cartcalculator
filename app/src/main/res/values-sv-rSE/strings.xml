@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Varukorgen har tagits bort!</string>
     <string name="your_shopping_cart_is_empty">Din varukorg är tom</string>
+    <string name="empty_cart_info_message">Din varukorg verkar vara tom. För att lägga till artiklar, navigera till dina önskade produktkategorier och välj dem. När du hittar något du gillar, tryck på varukorgsikonen i det övre vänstra hörnet för att lägga till det i din varukorg.</string>
+    <string name="add_cart_item">Lägg till artikel i varukorg</string>
+    <string name="edit_cart_item">Redigera artikel i varukorg</string>
     <string name="in_cart">I varukorgen</string>
     <string name="items_to_pick_up">Objekt att hämta</string>
     <string name="item_name">Objektnamn</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Ange kvantitet</string>
     <string name="dialog_info_cart_item">För att säkerställa en smidig kassaupplevelse, vänligen ange detaljer om de objekt du lägger till i din varukorg</string>
     <string name="total">Totalt</string>
+    <string name="clear_cart_title">Töm kundvagnen</string>
+    <string name="clear_cart_message">Är du säker på att du vill ta bort alla varor från kundvagnen?</string>
+    <string name="cart_cleared">Alla varor har tagits bort</string>
     <string name="delete_cart_item_title">Ta bort objekt från varukorgen</string>
     <string name="delete_cart_item_message">Är du säker på att du vill ta bort det här objektet?</string>
     <string name="delete_cart_item_warning">Du håller på att ta bort \"%s\" från din varukorg.</string>
+    <string name="item_removed_succesfully">Artikeln har tagits bort!</string>
+    <string name="item_added_successfully">Artikeln har lagts till!</string>
+    <string name="failed_to_add_item">Kunde inte lägga till artikeln</string>
 
     <string name="cart_settings">Varukorgsinställningar</string>
     <string name="summary_preference_settings_cart">Hantera hur din varukorg beter sig</string>

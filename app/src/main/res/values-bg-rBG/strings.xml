@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Количката е изтрита успешно!</string>
     <string name="your_shopping_cart_is_empty">Вашата пазарска количка е празна</string>
+    <string name="empty_cart_info_message">Изглежда, че вашата количка за пазаруване е празна. За да започнете да добавяте артикули, просто навигирайте до желаните продуктови категории и ги изберете. След като намерите нещо, което харесвате, докоснете иконата на количката в горния ляв ъгъл, за да го добавите в количката си.</string>
+    <string name="add_cart_item">Добави артикул в количката</string>
+    <string name="edit_cart_item">Редактирай артикул в количката</string>
     <string name="in_cart">В количката</string>
     <string name="items_to_pick_up">Артикули за взимане</string>
     <string name="item_name">Име на артикула</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Въведете количество</string>
     <string name="dialog_info_cart_item">За да осигурите безпроблемно плащане, моля, предоставете подробности за артикулите, които добавяте към вашата количка</string>
     <string name="total">Общо</string>
+    <string name="clear_cart_title">Изчистване на количката</string>
+    <string name="clear_cart_message">Сигурни ли сте, че искате да изтриете всички артикули от количката?</string>
+    <string name="cart_cleared">Всички артикули са успешно премахнати</string>
     <string name="delete_cart_item_title">Изтриване на артикул от количката</string>
     <string name="delete_cart_item_message">Сигурни ли сте, че искате да изтриете този артикул?</string>
     <string name="delete_cart_item_warning">Предстои да изтриете „%s“ от вашата количка.</string>
+    <string name="item_removed_succesfully">Артикулът беше премахнат успешно!</string>
+    <string name="item_added_successfully">Артикулът беше добавен успешно!</string>
+    <string name="failed_to_add_item">Неуспешно добавяне на артикула</string>
 
     <string name="cart_settings">Настройки на количката</string>
     <string name="summary_preference_settings_cart">Управлявайте как се държи вашата количка</string>

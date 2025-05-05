@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Warenkorb erfolgreich gelöscht!</string>
     <string name="your_shopping_cart_is_empty">Ihr Warenkorb ist leer</string>
+    <string name="empty_cart_info_message">Ihr Einkaufswagen ist derzeit leer. Um Artikel hinzuzufügen, navigieren Sie zu den gewünschten Produktkategorien und wählen Sie diese aus. Sobald Sie etwas gefunden haben, das Ihnen gefällt, tippen Sie auf das Einkaufswagen-Symbol oben links, um es Ihrem Warenkorb hinzuzufügen.</string>
+    <string name="add_cart_item">Artikel zum Warenkorb hinzufügen</string>
+    <string name="edit_cart_item">Artikel im Warenkorb bearbeiten</string>
     <string name="in_cart">Im Warenkorb</string>
     <string name="items_to_pick_up">Abzuholende Artikel</string>
     <string name="item_name">Artikelname</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Menge eingeben</string>
     <string name="dialog_info_cart_item">Um einen reibungslosen Bezahlvorgang zu gewährleisten, geben Sie bitte Details zu den Artikeln an, die Sie Ihrem Warenkorb hinzufügen.</string>
     <string name="total">Gesamt</string>
+    <string name="clear_cart_title">Warenkorb leeren</string>
+    <string name="clear_cart_message">Möchten Sie wirklich alle Artikel aus Ihrem Warenkorb löschen?</string>
+    <string name="cart_cleared">Alle Artikel wurden erfolgreich entfernt</string>
     <string name="delete_cart_item_title">Warenkorbartikel löschen</string>
     <string name="delete_cart_item_message">Möchten Sie diesen Artikel wirklich löschen?</string>
     <string name="delete_cart_item_warning">Sie sind dabei, \"%s\" aus Ihrem Warenkorb zu löschen.</string>
+    <string name="item_removed_succesfully">Artikel wurde erfolgreich entfernt!</string>
+    <string name="item_added_successfully">Artikel wurde erfolgreich hinzugefügt!</string>
+    <string name="failed_to_add_item">Artikel konnte nicht hinzugefügt werden</string>
 
     <string name="cart_settings">Warenkorb-Einstellungen</string>
     <string name="summary_preference_settings_cart">Verwalten Sie das Verhalten Ihres Warenkorbs</string>

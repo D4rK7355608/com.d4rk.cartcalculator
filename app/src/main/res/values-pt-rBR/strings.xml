@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Carrinho excluído com sucesso!</string>
     <string name="your_shopping_cart_is_empty">Seu carrinho de compras está vazio</string>
+    <string name="empty_cart_info_message">Parece que seu carrinho de compras está vazio. Para começar a adicionar itens, navegue pelas categorias de produtos desejadas e selecione-as. Quando encontrar algo que goste, toque no ícone do carrinho no canto superior esquerdo para adicioná-lo ao seu carrinho.</string>
+    <string name="add_cart_item">Adicionar item ao carrinho</string>
+    <string name="edit_cart_item">Editar item do carrinho</string>
     <string name="in_cart">No carrinho</string>
     <string name="items_to_pick_up">Itens para retirar</string>
     <string name="item_name">Nome do item</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Digite a quantidade</string>
     <string name="dialog_info_cart_item">Para garantir uma experiência de finalização de compra perfeita, forneça detalhes sobre os itens que você está adicionando ao seu carrinho</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Esvaziar carrinho</string>
+    <string name="clear_cart_message">Tem certeza de que deseja remover todos os itens do carrinho?</string>
+    <string name="cart_cleared">Todos os itens foram removidos com sucesso</string>
     <string name="delete_cart_item_title">Excluir item do carrinho</string>
     <string name="delete_cart_item_message">Tem certeza de que deseja excluir este item?</string>
     <string name="delete_cart_item_warning">Você está prestes a excluir \"%s\" do seu carrinho.</string>
+    <string name="item_removed_succesfully">Item removido com sucesso!</string>
+    <string name="item_added_successfully">Item adicionado com sucesso!</string>
+    <string name="failed_to_add_item">Falha ao adicionar o item</string>
 
     <string name="cart_settings">Configurações do carrinho</string>
     <string name="summary_preference_settings_cart">Gerenciar como seu carrinho se comporta</string>

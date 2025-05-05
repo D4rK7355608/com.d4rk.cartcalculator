@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>
     <string name="your_shopping_cart_is_empty">Az Ön bevásárlókosara üres</string>
+    <string name="empty_cart_info_message">Úgy tűnik, hogy a bevásárlókosarad jelenleg üres. A tételek hozzáadásához egyszerűen navigálj a kívánt termékkategóriákhoz és válaszd ki őket. Ha találtál valamit, ami tetszik, koppints a bal felső sarokban található bevásárlókosár ikonra, hogy hozzáadd.</string>
+    <string name="add_cart_item">Tétel hozzáadása a kosárhoz</string>
+    <string name="edit_cart_item">Kosár tétel szerkesztése</string>
     <string name="in_cart">A kosárban</string>
     <string name="items_to_pick_up">Átveendő tételek</string>
     <string name="item_name">Tétel neve</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">Adja meg a mennyiséget</string>
     <string name="dialog_info_cart_item">A zökkenőmentes fizetési élmény érdekében kérjük, adja meg a kosárba helyezett tételek adatait</string>
     <string name="total">Összesen</string>
+    <string name="clear_cart_title">Kosár ürítése</string>
+    <string name="clear_cart_message">Biztosan törölni szeretnél minden elemet a kosárból?</string>
+    <string name="cart_cleared">Minden elem sikeresen eltávolítva</string>
     <string name="delete_cart_item_title">Kosártétel törlése</string>
     <string name="delete_cart_item_message">Biztosan törölni szeretné ezt a tételt?</string>
     <string name="delete_cart_item_warning">A(z) \"%s\" tételt hamarosan törli a kosarából.</string>
+    <string name="item_removed_succesfully">Elem sikeresen eltávolítva!</string>
+    <string name="item_added_successfully">Elem sikeresen hozzáadva!</string>
+    <string name="failed_to_add_item">Az elem hozzáadása sikertelen</string>
 
     <string name="cart_settings">Kosár beállításai</string>
     <string name="summary_preference_settings_cart">A kosár viselkedésének kezelése</string>

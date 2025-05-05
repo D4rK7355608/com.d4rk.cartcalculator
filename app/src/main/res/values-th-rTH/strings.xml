@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">ลบรถเข็นเรียบร้อยแล้ว!</string>
     <string name="your_shopping_cart_is_empty">ตะกร้าสินค้าของคุณว่างเปล่า</string>
+    <string name="empty_cart_info_message">ดูเหมือนว่ารถเข็นของคุณว่างเปล่า ขณะนี้คุณสามารถเริ่มเพิ่มรายการได้โดยไปยังหมวดหมู่สินค้าที่คุณต้องการและเลือกสิ่งที่ต้องการ เมื่อพบสิ่งที่ต้องการแล้ว ให้แตะที่ไอคอนรถเข็นที่มุมซ้ายบนเพื่อเพิ่มลงในรถเข็นของคุณ</string>
+    <string name="add_cart_item">เพิ่มรายการในรถเข็น</string>
+    <string name="edit_cart_item">แก้ไขรายการในรถเข็น</string>
     <string name="in_cart">ในรถเข็น</string>
     <string name="items_to_pick_up">สินค้าที่จะรับ</string>
     <string name="item_name">ชื่อสินค้า</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">ป้อนจำนวน</string>
     <string name="dialog_info_cart_item">เพื่อให้แน่ใจว่าได้รับประสบการณ์การชำระเงินที่ราบรื่น โปรดระบุรายละเอียดเกี่ยวกับสินค้าที่คุณกำลังเพิ่มลงในรถเข็นของคุณ</string>
     <string name="total">ทั้งหมด</string>
+    <string name="clear_cart_title">ล้างรถเข็น</string>
+    <string name="clear_cart_message">คุณแน่ใจหรือไม่ว่าต้องการลบรายการทั้งหมดออกจากรถเข็นของคุณ?</string>
+    <string name="cart_cleared">ลบรายการทั้งหมดเรียบร้อยแล้ว</string>
     <string name="delete_cart_item_title">ลบรายการในรถเข็น</string>
     <string name="delete_cart_item_message">คุณแน่ใจหรือไม่ว่าต้องการลบสินค้านี้</string>
     <string name="delete_cart_item_warning">คุณกำลังจะลบ \"%s\" ออกจากรถเข็นของคุณ</string>
+    <string name="item_removed_succesfully">ลบรายการเรียบร้อยแล้ว!</string>
+    <string name="item_added_successfully">เพิ่มรายการเรียบร้อยแล้ว!</string>
+    <string name="failed_to_add_item">ไม่สามารถเพิ่มรายการได้</string>
 
     <string name="cart_settings">การตั้งค่ารถเข็น</string>
     <string name="summary_preference_settings_cart">จัดการลักษณะการทำงานของรถเข็นของคุณ</string>

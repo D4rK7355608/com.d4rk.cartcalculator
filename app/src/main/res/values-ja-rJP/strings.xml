@@ -36,6 +36,9 @@
 
     <string name="snackbar_cart_deleted_success">カートが正常に削除されました！</string>
     <string name="your_shopping_cart_is_empty">ショッピングカートは空です</string>
+    <string name="empty_cart_info_message">現在、ショッピングカートは空です。商品を追加するには、希望するカテゴリに移動し、それらを選択してください。気に入った商品が見つかったら、左上隅にあるカートアイコンをタップしてカートに追加してください。</string>
+    <string name="add_cart_item">カートに商品を追加</string>
+    <string name="edit_cart_item">カート内商品を編集</string>
     <string name="in_cart">カート内</string>
     <string name="items_to_pick_up">集荷するアイテム</string>
     <string name="item_name">商品名</string>
@@ -46,9 +49,15 @@
     <string name="enter_quantity">数量を入力</string>
     <string name="dialog_info_cart_item">シームレスなチェックアウト体験を保証するために、カートに追加するアイテムの詳細を入力してください</string>
     <string name="total">合計</string>
+    <string name="clear_cart_title">カートを空にする</string>
+    <string name="clear_cart_message">カート内のすべての商品を削除してもよろしいですか？</string>
+    <string name="cart_cleared">すべての商品が正常に削除されました</string>
     <string name="delete_cart_item_title">カートアイテムを削除</string>
     <string name="delete_cart_item_message">このアイテムを削除してもよろしいですか？</string>
     <string name="delete_cart_item_warning">カートから「%s」を削除しようとしています。</string>
+    <string name="item_removed_succesfully">アイテムが正常に削除されました！</string>
+    <string name="item_added_successfully">アイテムが正常に追加されました！</string>
+    <string name="failed_to_add_item">アイテムの追加に失敗しました</string>
 
     <string name="cart_settings">カートの設定</string>
     <string name="summary_preference_settings_cart">カートの動作を管理する</string>
