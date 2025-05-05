@@ -11,11 +11,11 @@ import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 @Composable
-fun DeleteCartItemAlertDialog(cartItem : ShoppingCartItemsTable? , onDismiss : () -> Unit , onDeleteConfirmed : (ShoppingCartItemsTable) -> Unit) {
+fun DeleteCartItemAlertDialog(cartItem : ShoppingCartItemsTable , onDismiss : () -> Unit , onDeleteConfirmed : (ShoppingCartItemsTable) -> Unit) {
     BasicAlertDialog(onDismiss = onDismiss , onConfirm = {
-        onDeleteConfirmed(cartItem !!)
+        onDeleteConfirmed(cartItem)
         onDismiss()
     } , iconTint = MaterialTheme.colorScheme.error , onCancel = onDismiss , icon = Icons.Outlined.RemoveShoppingCart , title = stringResource(id = R.string.delete_cart_item_title) , content = {
         Text(text = stringResource(id = R.string.delete_cart_item_message) + " " + stringResource(id = R.string.delete_cart_item_warning , cartItem?.name ?: ""))
-    } , confirmButtonText = stringResource(id = android.R.string.ok))
+    })
 }

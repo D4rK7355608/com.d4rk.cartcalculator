@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Paylaşılan bir sepeti içe aktarmak için, oluşturulan bağlantıyı yukarıdaki alana yapıştırın.\nPaylaşılan sepet, içe aktarıldıktan sonra otomatik olarak listenizde görünecektir.\n\nSepet nasıl paylaşılır:\n1. Sepetinizi açın.\n2. \'Paylaş\' düğmesine dokunun.\n3. Oluşturulan bağlantıyı kopyalayın ve birine gönderin.\n\nPaylaşılan sepet nasıl içe aktarılır:\n1. Aldığınız paylaşılan bağlantıyı kopyalayın.\n2. Yukarıdaki giriş alanına yapıştırın.\n3. \'İçe Aktar\'a dokunun ve yeni giriş için sepet listenizi kontrol edin."</string>
     <string name="no_carts_available">Kullanılabilir sepet yok</string>
     <string name="add_new_cart">Yeni sepet ekle</string>
+    <string name="create_a_new_cart">Yeni Sepet Oluştur</string>
+    <string name="enter_cart_name">Sepet adını girin</string>
+    <string name="rename_cart">Sepeti Yeniden Adlandır</string>
     <string name="shopping_cart">Alışveriş sepeti</string>
     <string name="summary_cart_dialog">Herkese kişiselleştirilmiş bir alışveriş deneyimi sunmaya kararlıyız. Seçimlerinizi takip etmenizi kolaylaştırmak ve alışveriş yolculuğunuzu geliştirmek için ürün eklemeden önce sepetinize bir ad vermeyi düşünün.</string>
+    <string name="create">Oluştur</string>
+    <string name="cart_category_device">Bu cihazda</string>
+    <string name="cart_category_owner">Sahip</string>
     <string name="created_on">%1$s tarihinde oluşturuldu</string>
     <string name="decrease_quantity">Miktarı azalt</string>
     <string name="increase_quantity">Miktarı artır</string>
     <string name="delete_cart">Sepeti Sil</string>
     <string name="delete_cart_warning">Bu sepeti silmek, \"%s\" içindeki tüm ürünleri kalıcı olarak kaldıracak ve geri alınamaz.</string>
+    <string name="delete">Sil</string>
+    <string name="more_options">Daha fazla seçenek</string>
+    <string name="share_cart">Sepeti Paylaş</string>
+    <string name="category_icon_description">%1$s için simge</string>
+    <string name="cart_added_successfully">Sepet başarıyla eklendi!</string>
+    <string name="cart_renamed_successfully">Sepet başarıyla yeniden adlandırıldı!</string>
+    <string name="cart_deleted_successfully">Sepet başarıyla silindi!</string>
+
     <string name="snackbar_cart_deleted_success">Sepet başarıyla silindi!</string>
     <string name="your_shopping_cart_is_empty">Alışveriş sepetiniz boş</string>
     <string name="in_cart">Sepette</string>

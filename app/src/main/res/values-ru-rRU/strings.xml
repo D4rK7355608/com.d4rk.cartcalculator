@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Чтобы импортировать общую корзину, вставьте сгенерированную ссылку в поле выше.\nОбщая корзина автоматически появится в вашем списке после импорта.\n\nКак поделиться корзиной:\n1. Откройте свою корзину.\n2. Нажмите кнопку \"Поделиться\".\n3. Скопируйте сгенерированную ссылку и отправьте ее кому-нибудь.\n\nКак импортировать общую корзину:\n1. Скопируйте общую ссылку, которую вы получили.\n2. Вставьте ее в поле ввода выше.\n3. Нажмите \"Импортировать\" и проверьте свой список корзин на наличие новой записи."</string>
     <string name="no_carts_available">Корзины отсутствуют</string>
     <string name="add_new_cart">Добавить новую корзину</string>
+    <string name="create_a_new_cart">Создать новую корзину</string>
+    <string name="enter_cart_name">Введите название корзины</string>
+    <string name="rename_cart">Переименовать корзину</string>
     <string name="shopping_cart">Корзина покупок</string>
     <string name="summary_cart_dialog">Мы стремимся создать персонализированный опыт покупок для каждого. Чтобы вам было легче отслеживать свои выборы и улучшать свой покупательский опыт, подумайте о том, чтобы дать своей корзине имя, прежде чем добавлять товары.</string>
+    <string name="create">Создать</string>
+    <string name="cart_category_device">На этом устройстве</string>
+    <string name="cart_category_owner">Владелец</string>
     <string name="created_on">Создано %1$s</string>
     <string name="decrease_quantity">Уменьшить количество</string>
     <string name="increase_quantity">Увеличить количество</string>
     <string name="delete_cart">Удалить корзину</string>
     <string name="delete_cart_warning">Удаление этой корзины навсегда удалит все товары из \"%s\", и это действие нельзя будет отменить.</string>
+    <string name="delete">Удалить</string>
+    <string name="more_options">Дополнительные параметры</string>
+    <string name="share_cart">Поделиться корзиной</string>
+    <string name="category_icon_description">Значок для %1$s</string>
+    <string name="cart_added_successfully">Корзина успешно добавлена!</string>
+    <string name="cart_renamed_successfully">Корзина успешно переименована!</string>
+    <string name="cart_deleted_successfully">Корзина успешно удалена!</string>
+
     <string name="snackbar_cart_deleted_success">Корзина успешно удалена!</string>
     <string name="your_shopping_cart_is_empty">Ваша корзина пуста</string>
     <string name="in_cart">В корзине</string>

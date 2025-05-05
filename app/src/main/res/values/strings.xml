@@ -40,6 +40,7 @@
     <string name="your_shopping_cart_is_empty">Your shopping cart is empty</string>
     <string name="empty_cart_info_message">It appears your shopping cart is currently empty. To begin adding items, you can easily navigate to your desired product categories and select them. Once you\'ve found something you\'d like, simply tap on the shopping cart icon, conveniently located in the upper left corner, to add it to your cart.</string>
     <string name="add_cart_item">Add Cart Item</string>
+    <string name="edit_cart_item">Edit Cart Item</string>
     <string name="in_cart">In Cart</string>
     <string name="items_to_pick_up">Items to Pick Up</string>
     <string name="item_name">Item name</string>
@@ -50,6 +51,9 @@
     <string name="enter_quantity">Enter quantity</string>
     <string name="dialog_info_cart_item">To ensure a seamless checkout experience, please provide details about the items you\'re adding to your cart</string>
     <string name="total">Total</string>
+    <string name="clear_cart_title">Clear Cart</string>
+    <string name="clear_cart_message">Are you sure you want to delete all items from your cart?</string>
+    <string name="cart_cleared">All items removed successfully</string>
     <string name="delete_cart_item_title">Delete Cart Item</string>
     <string name="delete_cart_item_message">Are you sure you want to delete this item?</string>
     <string name="delete_cart_item_warning">You are about to delete "%s" from your cart.</string>

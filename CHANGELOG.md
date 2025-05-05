@@ -1,9 +1,16 @@
 # Version 2.0.0:
 
-- **New**: Added a new way to share carts directly from the home screen.
-- **New**: Added default values for new carts.
-- **New**: Improved the UI and UX for a better user experience.
-- **Major**: Improved the app's code structure for better maintainability and future updates.
+- **Major**: The app has been fully rewritten for better modularity and future maintainability. This is a breaking update and may require users to uninstall and reinstall the app if the update fails to install.
+- **Minor**: You can now share carts directly from the home screen, not just from inside a cart.
+- **Minor**: Carts can now be renamed anytime.
+- **Minor**: A new cart sorting feature has been added, with 4 options: Alphabetical, Newest, Oldest, and Default.
+- **Minor**: The "Clear All Items" button now appears only when all items are checked.
+- **Minor**: The first cart you add now triggers a small surprise celebration 🎉.
+- **Minor**: The app now handles missing input fields more gracefully when adding items.
+- **Minor**: The home screen has been visually refreshed with a cleaner layout.
+- **Minor**: The cart total section now only appears when there’s something to calculate, for a less cluttered UI.
+- **Minor**: Dialogs for adding or editing items now provide a smoother keyboard experience.
+- **Minor**: Under-the-hood improvements for a better overall app experience.
 
 # Version 1.2.1: 
 

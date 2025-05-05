@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Pentru a importa un coș partajat, inserați linkul generat în câmpul de mai sus.\nCoșul partajat va apărea automat în lista dvs. odată importat.\n\nCum să partajați un coș:\n1. Deschideți coșul.\n2. Atingeți butonul \'Partajare\'.\n3. Copiați linkul generat și trimiteți-l cuiva.\n\nCum să importați un coș partajat:\n1. Copiați linkul partajat pe care l-ați primit.\n2. Inserați-l în câmpul de introducere de mai sus.\n3. Atingeți \'Import\' și verificați lista de coșuri pentru noua intrare."</string>
     <string name="no_carts_available">Niciun coș disponibil</string>
     <string name="add_new_cart">Adaugă un coș nou</string>
+    <string name="create_a_new_cart">Creează un coș nou</string>
+    <string name="enter_cart_name">Introdu numele coșului</string>
+    <string name="rename_cart">Redenumește coșul</string>
     <string name="shopping_cart">Coș de cumpărături</string>
     <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a-ți fi mai ușor să urmărești selecțiile tale și pentru a-ți îmbunătăți experiența de cumpărături, ia în considerare să dai un nume coșului tău înainte de a adăuga articole.</string>
+    <string name="create">Creează</string>
+    <string name="cart_category_device">Pe acest dispozitiv</string>
+    <string name="cart_category_owner">Proprietar</string>
     <string name="created_on">Creat pe %1$s</string>
     <string name="decrease_quantity">Micșorează cantitatea</string>
     <string name="increase_quantity">Mărește cantitatea</string>
     <string name="delete_cart">Șterge coșul</string>
     <string name="delete_cart_warning">Ștergerea acestui coș va elimina definitiv toate articolele din „%s” și nu poate fi anulată.</string>
+    <string name="delete">Șterge</string>
+    <string name="more_options">Mai multe opțiuni</string>
+    <string name="share_cart">Distribuie coșul</string>
+    <string name="category_icon_description">Pictogramă pentru %1$s</string>
+    <string name="cart_added_successfully">Coșul a fost adăugat cu succes!</string>
+    <string name="cart_renamed_successfully">Coșul a fost redenumit cu succes!</string>
+    <string name="cart_deleted_successfully">Coșul a fost șters cu succes!</string>
+
     <string name="snackbar_cart_deleted_success">Coșul a fost șters cu succes!</string>
     <string name="your_shopping_cart_is_empty">Coșul tău de cumpărături este gol</string>
     <string name="in_cart">În coș</string>

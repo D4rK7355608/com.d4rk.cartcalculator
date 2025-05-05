@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"För att importera en delad kundvagn, klistra in den genererade länken i fältet ovan.\nDen delade kundvagnen visas automatiskt i din lista när den har importerats.\n\nHur man delar en kundvagn:\n1. Öppna din kundvagn.\n2. Tryck på knappen \'Dela\'.\n3. Kopiera den genererade länken och skicka den till någon.\n\nHur man importerar en delad kundvagn:\n1. Kopiera den delade länken du fick.\n2. Klistra in den i inmatningsfältet ovan.\n3. Tryck på \'Importera\' och kontrollera din kundvagnslista för den nya posten."</string>
     <string name="no_carts_available">Inga varukorgar tillgängliga</string>
     <string name="add_new_cart">Lägg till ny varukorg</string>
+    <string name="create_a_new_cart">Skapa en ny kundvagn</string>
+    <string name="enter_cart_name">Ange kundvagnens namn</string>
+    <string name="rename_cart">Byt namn på kundvagnen</string>
     <string name="shopping_cart">Varukorg</string>
     <string name="summary_cart_dialog">Vi är fast beslutna att skapa en personlig shoppingupplevelse för alla. För att göra det lättare för dig att hålla reda på dina val och förbättra din shoppingresa, överväg att ge din varukorg ett namn innan du lägger till objekt.</string>
+    <string name="create">Skapa</string>
+    <string name="cart_category_device">På den här enheten</string>
+    <string name="cart_category_owner">Ägare</string>
     <string name="created_on">Skapad den %1$s</string>
     <string name="decrease_quantity">Minska kvantitet</string>
     <string name="increase_quantity">Öka kvantitet</string>
     <string name="delete_cart">Ta bort varukorg</string>
     <string name="delete_cart_warning">Om du tar bort den här varukorgen tas alla objekt från \"%s\" bort permanent och kan inte ångras.</string>
+    <string name="delete">Ta bort</string>
+    <string name="more_options">Fler alternativ</string>
+    <string name="share_cart">Dela kundvagn</string>
+    <string name="category_icon_description">Ikon för %1$s</string>
+    <string name="cart_added_successfully">Kundvagnen har lagts till!</string>
+    <string name="cart_renamed_successfully">Kundvagnen har bytt namn!</string>
+    <string name="cart_deleted_successfully">Kundvagnen har raderats!</string>
+
     <string name="snackbar_cart_deleted_success">Varukorgen har tagits bort!</string>
     <string name="your_shopping_cart_is_empty">Din varukorg är tom</string>
     <string name="in_cart">I varukorgen</string>

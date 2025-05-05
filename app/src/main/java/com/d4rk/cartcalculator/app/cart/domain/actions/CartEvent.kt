@@ -16,4 +16,6 @@ sealed class CartEvent : UiEvent {
     data class OpenEditDialog(val item : ShoppingCartItemsTable?) : CartEvent()
     data class OpenDeleteDialog(val item : ShoppingCartItemsTable?) : CartEvent()
     data object DismissSnackbar : CartEvent()
+    data class OpenClearAllDialog(val isOpen: Boolean) : CartEvent()
+    data object ClearAllItems : CartEvent()
 }

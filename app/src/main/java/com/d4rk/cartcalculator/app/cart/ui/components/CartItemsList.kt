@@ -1,6 +1,8 @@
 package com.d4rk.cartcalculator.app.cart.ui.components
 
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -14,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ads.AdsConfig
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.ads.AdBanner
@@ -25,6 +28,7 @@ import com.d4rk.cartcalculator.app.cart.domain.model.CartListItem
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.app.cart.ui.utils.helpers.CartListBuilderHelper
+import com.d4rk.cartcalculator.app.home.ui.utils.constants.UiConstants
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
@@ -34,7 +38,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel , adsConfig : 
     val uiState : UiStateScreen<UiCartScreen> by viewModel.screenState.collectAsState()
     val adsEnabled : Boolean by remember { viewModel.dataStore.ads(default = true) }.collectAsState(initial = true)
     val cartItems : List<ShoppingCartItemsTable> = uiState.data?.cartItems ?: emptyList()
-
+    val showTotalCard : Boolean = uiState.data?.totalPrice?.let { it > 0 } == true && uiState.data?.cartItems?.isNotEmpty() == true
     val listState : LazyListState = rememberLazyListState()
 
     val combinedList : List<CartListItem> = remember<List<CartListItem>>(key1 = cartItems , key2 = adsEnabled) {
@@ -84,6 +88,15 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel , adsConfig : 
                     )
                 }
             }
+        }
+
+        item {
+            Spacer(
+                modifier = Modifier.height(
+                    height = if (showTotalCard) UiConstants.BOTTOM_SPACER_WITH_TOTAL.dp
+                    else UiConstants.BOTTOM_SPACER_HEIGHT.dp
+                )
+            )
         }
     }
 }

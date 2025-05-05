@@ -6,30 +6,32 @@ import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.CartViewModel
 import com.d4rk.cartcalculator.app.cart.ui.components.dialogs.AddNewCartItemAlertDialog
+import com.d4rk.cartcalculator.app.cart.ui.components.dialogs.CartClearAllDialog
 import com.d4rk.cartcalculator.app.cart.ui.components.dialogs.DeleteCartItemAlertDialog
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 @Composable
 fun CartScreenDialogs(screenState : UiStateScreen<UiCartScreen> , viewModel : CartViewModel) {
-    val uiCartScreen : UiCartScreen = screenState.data ?: return
+    val data : UiCartScreen = screenState.data ?: return
+    val cartId : Int = data.cart?.cartId ?: return
 
-    // Add New Item Dialog
-    if (uiCartScreen.openDialog) {
-        AddNewCartItemAlertDialog(cartId = uiCartScreen.cart?.cartId ?: 0 , onDismiss = { viewModel.onEvent(event = CartEvent.OpenNewCartItemDialog(isOpen = false)) } , onCartCreated = { cartItem ->
-            viewModel.onEvent(event = CartEvent.AddCartItem(cartId = uiCartScreen.cart?.cartId ?: 0 , item = cartItem))
-        })
+    // Add Dialog
+    if (data.openDialog) {
+        AddNewCartItemAlertDialog(cartId = cartId , onDismiss = { viewModel.onEvent(event = CartEvent.OpenNewCartItemDialog(isOpen = false)) } , onCartCreated = { item -> viewModel.onEvent(event = CartEvent.AddCartItem(cartId = cartId , item = item)) })
     }
 
-    // Edit Item Dialog
-    if (uiCartScreen.openEditDialog && uiCartScreen.currentCartItemForEdit != null) {
-        AddNewCartItemAlertDialog(
-            cartId = uiCartScreen.cart?.cartId ?: 0 ,
-                                  existingCartItem = uiCartScreen.currentCartItemForEdit ,
-                                  onDismiss = { viewModel.onEvent(event = CartEvent.OpenEditDialog(item = null)) } ,
-                                  onCartCreated = { updatedCartItem -> viewModel.onEvent(event = CartEvent.UpdateCartItem(item = updatedCartItem)) })
+    // Edit Dialog
+    data.currentCartItemForEdit?.takeIf { data.openEditDialog }?.let { item : ShoppingCartItemsTable ->
+        AddNewCartItemAlertDialog(cartId = cartId , existingCartItem = item , onDismiss = { viewModel.onEvent(event = CartEvent.OpenEditDialog(item = null)) } , onCartCreated = { updated -> viewModel.onEvent(event = CartEvent.UpdateCartItem(item = updated)) })
     }
 
-    // Delete Item Dialog
-    if (uiCartScreen.openDeleteDialog && uiCartScreen.currentCartItemForDeletion != null) {
-        DeleteCartItemAlertDialog(cartItem = uiCartScreen.currentCartItemForDeletion , onDismiss = { viewModel.onEvent(event = CartEvent.OpenDeleteDialog(item = null)) } , onDeleteConfirmed = { cartItem -> viewModel.onEvent(event = CartEvent.DeleteCartItem(item = cartItem)) })
+    // Delete Dialog
+    data.currentCartItemForDeletion?.takeIf { data.openDeleteDialog }?.let { item : ShoppingCartItemsTable ->
+        DeleteCartItemAlertDialog(cartItem = item , onDismiss = { viewModel.onEvent(event = CartEvent.OpenDeleteDialog(item = null)) } , onDeleteConfirmed = { confirmed -> viewModel.onEvent(event = CartEvent.DeleteCartItem(item = confirmed)) })
+    }
+
+    // Clear All Dialog
+    if (data.openClearAllDialog) {
+        CartClearAllDialog(onDismiss = { viewModel.onEvent(event = CartEvent.OpenClearAllDialog(isOpen = false)) } , onConfirm = { viewModel.onEvent(event = CartEvent.ClearAllItems) })
     }
 }

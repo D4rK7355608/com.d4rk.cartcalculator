@@ -64,6 +64,8 @@ class CartViewModel(
 
             is CartEvent.ItemCheckedChange -> updateItemChecked(item = event.item , isChecked = event.isChecked)
             is CartEvent.DismissSnackbar -> screenState.dismissSnackbar()
+            is CartEvent.OpenClearAllDialog -> updateUi { copy(openClearAllDialog = event.isOpen) }
+            is CartEvent.ClearAllItems -> clearAllItems()
         }
     }
 
@@ -162,6 +164,23 @@ class CartViewModel(
             })
         }
         updateCartItem(item = updatedItem)
+    }
+
+    private fun clearAllItems() {
+        launch(context = dispatcherProvider.io) {
+            val itemsToDelete : List<ShoppingCartItemsTable> = screenData?.cartItems ?: emptyList()
+
+            itemsToDelete.forEach { item : ShoppingCartItemsTable ->
+                deleteCartItem(item = item)
+            }
+
+            updateUi { copy(openClearAllDialog = false) }
+        }
+    }
+
+    fun areAllItemsChecked(): Boolean {
+        val items : List<ShoppingCartItemsTable> = screenData?.cartItems.orEmpty()
+        return items.isNotEmpty() && items.all { it.isChecked }
     }
 
     private fun updateItemChecked(item : ShoppingCartItemsTable , isChecked : Boolean) {

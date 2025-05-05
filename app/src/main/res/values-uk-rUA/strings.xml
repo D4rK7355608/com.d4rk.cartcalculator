@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Щоб імпортувати спільний кошик, вставте згенероване посилання в поле вище.\nСпільний кошик автоматично з’явиться у вашому списку після імпорту.\n\nЯк поділитися кошиком:\n1. Відкрийте свій кошик.\n2. Торкніться кнопки \'Поділитися\'.\n3. Скопіюйте згенероване посилання та надішліть його комусь.\n\nЯк імпортувати спільний кошик:\n1. Скопіюйте спільне посилання, яке ви отримали.\n2. Вставте його у вхідне поле вище.\n3. Торкніться \'Імпортувати\' та перевірте свій список кошиків на наявність нового запису."</string>
     <string name="no_carts_available">Кошики відсутні</string>
     <string name="add_new_cart">Додати новий кошик</string>
+    <string name="create_a_new_cart">Створити новий кошик</string>
+    <string name="enter_cart_name">Введіть назву кошика</string>
+    <string name="rename_cart">Перейменувати кошик</string>
     <string name="shopping_cart">Кошик для покупок</string>
     <string name="summary_cart_dialog">Ми прагнемо створити персоналізований досвід покупок для кожного. Щоб вам було легше відстежувати вибране та покращувати процес покупок, подумайте про те, щоб дати кошику назву, перш ніж додавати товари.</string>
+    <string name="create">Створити</string>
+    <string name="cart_category_device">На цьому пристрої</string>
+    <string name="cart_category_owner">Власник</string>
     <string name="created_on">Створено %1$s</string>
     <string name="decrease_quantity">Зменшити кількість</string>
     <string name="increase_quantity">Збільшити кількість</string>
     <string name="delete_cart">Видалити кошик</string>
     <string name="delete_cart_warning">Видалення цього кошика назавжди видалить усі товари з \"%s\", і цю дію неможливо буде скасувати.</string>
+    <string name="delete">Видалити</string>
+    <string name="more_options">Більше опцій</string>
+    <string name="share_cart">Поділитися кошиком</string>
+    <string name="category_icon_description">Значок для %1$s</string>
+    <string name="cart_added_successfully">Кошик успішно додано!</string>
+    <string name="cart_renamed_successfully">Кошик успішно перейменовано!</string>
+    <string name="cart_deleted_successfully">Кошик успішно видалено!</string>
+
     <string name="snackbar_cart_deleted_success">Кошик успішно видалено!</string>
     <string name="your_shopping_cart_is_empty">Ваш кошик порожній</string>
     <string name="in_cart">У кошику</string>

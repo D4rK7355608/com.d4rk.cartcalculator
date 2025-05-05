@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Um einen freigegebenen Warenkorb zu importieren, fügen Sie den generierten Link in das Feld oben ein.\nDer freigegebene Warenkorb wird nach dem Import automatisch in Ihrer Liste angezeigt.\n\nSo geben Sie einen Warenkorb frei:\n1. Öffnen Sie Ihren Warenkorb.\n2. Tippen Sie auf die Schaltfläche \'Teilen\'.\n3. Kopieren Sie den generierten Link und senden Sie ihn an jemanden.\n\nSo importieren Sie einen freigegebenen Warenkorb:\n1. Kopieren Sie den freigegebenen Link, den Sie erhalten haben.\n2. Fügen Sie ihn in das Eingabefeld oben ein.\n3. Tippen Sie auf \'Importieren\' und überprüfen Sie Ihre Warenkorbliste auf den neuen Eintrag."</string>
     <string name="no_carts_available">Keine Warenkörbe verfügbar</string>
     <string name="add_new_cart">Neuen Warenkorb hinzufügen</string>
+    <string name="create_a_new_cart">Neuen Warenkorb erstellen</string>
+    <string name="enter_cart_name">Warenkorbname eingeben</string>
+    <string name="rename_cart">Warenkorb umbenennen</string>
     <string name="shopping_cart">Einkaufswagen</string>
     <string name="summary_cart_dialog">Wir möchten ein personalisiertes Einkaufserlebnis für alle schaffen. Um Ihnen das Verfolgen Ihrer Auswahl zu erleichtern und Ihre Einkaufsreise zu verbessern, sollten Sie Ihrem Warenkorb einen Namen geben, bevor Sie Artikel hinzufügen.</string>
+    <string name="create">Erstellen</string>
+    <string name="cart_category_device">Auf diesem Gerät</string>
+    <string name="cart_category_owner">Besitzer</string>
     <string name="created_on">Erstellt am %1$s</string>
     <string name="decrease_quantity">Menge verringern</string>
     <string name="increase_quantity">Menge erhöhen</string>
     <string name="delete_cart">Warenkorb löschen</string>
     <string name="delete_cart_warning">Das Löschen dieses Warenkorbs entfernt dauerhaft alle Artikel aus \"%s\" und kann nicht rückgängig gemacht werden.</string>
+    <string name="delete">Löschen</string>
+    <string name="more_options">Weitere Optionen</string>
+    <string name="share_cart">Warenkorb teilen</string>
+    <string name="category_icon_description">Symbol für %1$s</string>
+    <string name="cart_added_successfully">Warenkorb erfolgreich hinzugefügt!</string>
+    <string name="cart_renamed_successfully">Warenkorb erfolgreich umbenannt!</string>
+    <string name="cart_deleted_successfully">Warenkorb erfolgreich gelöscht!</string>
+
     <string name="snackbar_cart_deleted_success">Warenkorb erfolgreich gelöscht!</string>
     <string name="your_shopping_cart_is_empty">Ihr Warenkorb ist leer</string>
     <string name="in_cart">Im Warenkorb</string>

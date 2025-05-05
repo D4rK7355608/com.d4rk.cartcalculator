@@ -46,7 +46,9 @@ fun handleNavigationItemClick(context : Context , item : NavigationDrawerItem , 
         com.d4rk.android.libs.apptoolkit.R.string.updates -> IntentsHelper.openUrl(context = context , url = AppLinks.githubChangelog(context.packageName))
         com.d4rk.android.libs.apptoolkit.R.string.share -> IntentsHelper.shareApp(context = context , shareMessageFormat = com.d4rk.android.libs.apptoolkit.R.string.summary_share_message)
     }
-    if (drawerState != null && coroutineScope != null) {
-        coroutineScope.launch { drawerState.close() }
+    drawerState?.let { drawerState : DrawerState ->
+        coroutineScope?.let { scope : CoroutineScope ->
+            scope.launch { drawerState.close() }
+        }
     }
 }

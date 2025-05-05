@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"ในการนำเข้าตะกร้าสินค้าที่แชร์ ให้วางลิงก์ที่สร้างขึ้นในช่องด้านบน\nตะกร้าสินค้าที่แชร์จะปรากฏในรายการของคุณโดยอัตโนมัติเมื่อนำเข้าแล้ว\n\nวิธีแชร์ตะกร้าสินค้า:\n1. เปิดตะกร้าสินค้าของคุณ\n2. แตะปุ่ม \'แชร์\'\n3. คัดลอกลิงก์ที่สร้างขึ้นและส่งให้ผู้อื่น\n\nวิธีนำเข้าตะกร้าสินค้าที่แชร์:\n1. คัดลอกลิงก์ที่แชร์ที่คุณได้รับ\n2. วางลงในช่องป้อนข้อมูลด้านบน\n3. แตะ \'นำเข้า\' และตรวจสอบรายการตะกร้าสินค้าของคุณสำหรับรายการใหม่"</string>
     <string name="no_carts_available">ไม่มีรถเข็นที่ใช้ได้</string>
     <string name="add_new_cart">เพิ่มรถเข็นใหม่</string>
+    <string name="create_a_new_cart">สร้างรถเข็นใหม่</string>
+    <string name="enter_cart_name">ป้อนชื่อรถเข็น</string>
+    <string name="rename_cart">เปลี่ยนชื่อรถเข็น</string>
     <string name="shopping_cart">ตะกร้าสินค้า</string>
     <string name="summary_cart_dialog">เรามุ่งมั่นที่จะสร้างประสบการณ์การช็อปปิ้งที่เป็นส่วนตัวสำหรับทุกคน เพื่อให้คุณติดตามการเลือกของคุณได้ง่ายขึ้นและปรับปรุงเส้นทางการช็อปปิ้งของคุณ ให้ลองตั้งชื่อรถเข็นของคุณก่อนที่จะเพิ่มสินค้า</string>
+    <string name="create">สร้าง</string>
+    <string name="cart_category_device">บนอุปกรณ์นี้</string>
+    <string name="cart_category_owner">เจ้าของ</string>
     <string name="created_on">สร้างเมื่อ %1$s</string>
     <string name="decrease_quantity">ลดจำนวน</string>
     <string name="increase_quantity">เพิ่มจำนวน</string>
     <string name="delete_cart">ลบรถเข็น</string>
     <string name="delete_cart_warning">การลบรถเข็นนี้จะลบสินค้าทั้งหมดออกจาก \"%s\" อย่างถาวรและไม่สามารถยกเลิกได้</string>
+    <string name="delete">ลบ</string>
+    <string name="more_options">ตัวเลือกเพิ่มเติม</string>
+    <string name="share_cart">แชร์ตะกร้า</string>
+    <string name="category_icon_description">ไอคอนสำหรับ %1$s</string>
+    <string name="cart_added_successfully">เพิ่มตะกร้าเรียบร้อยแล้ว!</string>
+    <string name="cart_renamed_successfully">เปลี่ยนชื่อตะกร้าเรียบร้อยแล้ว!</string>
+    <string name="cart_deleted_successfully">ลบตะกร้าเรียบร้อยแล้ว!</string>
+
     <string name="snackbar_cart_deleted_success">ลบรถเข็นเรียบร้อยแล้ว!</string>
     <string name="your_shopping_cart_is_empty">ตะกร้าสินค้าของคุณว่างเปล่า</string>
     <string name="in_cart">ในรถเข็น</string>

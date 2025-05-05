@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Aby zaimportować udostępniony koszyk, wklej wygenerowany link w polu powyżej.\nUdostępniony koszyk pojawi się automatycznie na Twojej liście po zaimportowaniu.\n\nJak udostępnić koszyk:\n1. Otwórz swój koszyk.\n2. Stuknij przycisk \'Udostępnij\'.\n3. Skopiuj wygenerowany link i wyślij go komuś.\n\nJak zaimportować udostępniony koszyk:\n1. Skopiuj otrzymany link udostępniony.\n2. Wklej go w polu wprowadzania powyżej.\n3. Stuknij \'Importuj\' i sprawdź listę koszyków pod kątem nowego wpisu."</string>
     <string name="no_carts_available">Brak dostępnych koszyków</string>
     <string name="add_new_cart">Dodaj nowy koszyk</string>
+    <string name="create_a_new_cart">Utwórz nowy koszyk</string>
+    <string name="enter_cart_name">Wprowadź nazwę koszyka</string>
+    <string name="rename_cart">Zmień nazwę koszyka</string>
     <string name="shopping_cart">Koszyk</string>
     <string name="summary_cart_dialog">Dążymy do tworzenia spersonalizowanych doświadczeń zakupowych dla każdego. Aby ułatwić Ci śledzenie swoich wyborów i usprawnić proces zakupów, rozważ nadanie nazwy swojemu koszykowi przed dodaniem pozycji.</string>
+    <string name="create">Utwórz</string>
+    <string name="cart_category_device">Na tym urządzeniu</string>
+    <string name="cart_category_owner">Właściciel</string>
     <string name="created_on">Utworzono %1$s</string>
     <string name="decrease_quantity">Zmniejsz ilość</string>
     <string name="increase_quantity">Zwiększ ilość</string>
     <string name="delete_cart">Usuń koszyk</string>
     <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich pozycji z „%s” i nie można tego cofnąć.</string>
+    <string name="delete">Usuń</string>
+    <string name="more_options">Więcej opcji</string>
+    <string name="share_cart">Udostępnij koszyk</string>
+    <string name="category_icon_description">Ikona dla %1$s</string>
+    <string name="cart_added_successfully">Koszyk został pomyślnie dodany!</string>
+    <string name="cart_renamed_successfully">Koszyk został pomyślnie zmieniony!</string>
+    <string name="cart_deleted_successfully">Koszyk został pomyślnie usunięty!</string>
+
     <string name="snackbar_cart_deleted_success">Koszyk został pomyślnie usunięty!</string>
     <string name="your_shopping_cart_is_empty">Twój koszyk jest pusty</string>
     <string name="in_cart">W koszyku</string>

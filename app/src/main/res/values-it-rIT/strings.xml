@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Per importare un carrello condiviso, incolla il link generato nel campo sopra.\nIl carrello condiviso apparirà automaticamente nella tua lista una volta importato.\n\nCome condividere un carrello:\n1. Apri il tuo carrello.\n2. Tocca il pulsante \'Condividi\'.\n3. Copia il link generato e invialo a qualcuno.\n\nCome importare un carrello condiviso:\n1. Copia il link condiviso che hai ricevuto.\n2. Incollalo nel campo di input sopra.\n3. Tocca \'Importa\' e controlla la tua lista carrello per la nuova voce."</string>
     <string name="no_carts_available">Nessun carrello disponibile</string>
     <string name="add_new_cart">Aggiungi nuovo carrello</string>
+    <string name="create_a_new_cart">Crea un nuovo carrello</string>
+    <string name="enter_cart_name">Inserisci il nome del carrello</string>
+    <string name="rename_cart">Rinomina carrello</string>
     <string name="shopping_cart">Carrello</string>
     <string name="summary_cart_dialog">Ci impegniamo a creare un\'esperienza di acquisto personalizzata per tutti. Per semplificare il monitoraggio delle tue selezioni e migliorare il tuo percorso di acquisto, valuta la possibilità di assegnare un nome al tuo carrello prima di aggiungere articoli.</string>
+    <string name="create">Crea</string>
+    <string name="cart_category_device">Su questo dispositivo</string>
+    <string name="cart_category_owner">Proprietario</string>
     <string name="created_on">Creato il %1$s</string>
     <string name="decrease_quantity">Diminuisci quantità</string>
     <string name="increase_quantity">Aumenta quantità</string>
     <string name="delete_cart">Elimina carrello</string>
     <string name="delete_cart_warning">L\'eliminazione di questo carrello rimuoverà definitivamente tutti gli articoli da \"%s\" e non potrà essere annullata.</string>
+    <string name="delete">Elimina</string>
+    <string name="more_options">Altre opzioni</string>
+    <string name="share_cart">Condividi carrello</string>
+    <string name="category_icon_description">Icona per %1$s</string>
+    <string name="cart_added_successfully">Carrello aggiunto con successo!</string>
+    <string name="cart_renamed_successfully">Carrello rinominato con successo!</string>
+    <string name="cart_deleted_successfully">Carrello eliminato con successo!</string>
+
     <string name="snackbar_cart_deleted_success">Carrello eliminato con successo!</string>
     <string name="your_shopping_cart_is_empty">Il tuo carrello è vuoto</string>
     <string name="in_cart">Nel carrello</string>

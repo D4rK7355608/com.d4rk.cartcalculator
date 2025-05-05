@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"За да импортирате споделена количка, поставете генерираната връзка в полето по-горе.\nСподелената количка автоматично ще се появи във вашия списък, след като бъде импортирана.\n\nКак да споделите количка:\n1. Отворете количката си.\n2. Докоснете бутона \'Споделяне\'.\n3. Копирайте генерираната връзка и я изпратете на някого.\n\nКак да импортирате споделена количка:\n1. Копирайте споделената връзка, която сте получили.\n2. Поставете я във входното поле по-горе.\n3. Докоснете \'Импортиране\' и проверете списъка си с колички за новия запис."</string>
     <string name="no_carts_available">Няма налични колички</string>
     <string name="add_new_cart">Добавете нова количка</string>
+    <string name="create_a_new_cart">Създаване на нова количка</string>
+    <string name="enter_cart_name">Въведете име на количката</string>
+    <string name="rename_cart">Преименуване на количката</string>
     <string name="shopping_cart">Пазарска количка</string>
     <string name="summary_cart_dialog">Ние се ангажираме да създадем персонализирано пазаруване за всеки. За да ви е по-лесно да следите вашите селекции и да подобрите вашето пазаруване, помислете за именуване на количката си, преди да добавите артикули.</string>
+    <string name="create">Създай</string>
+    <string name="cart_category_device">На това устройство</string>
+    <string name="cart_category_owner">Собственик</string>
     <string name="created_on">Създадена на %1$s</string>
     <string name="decrease_quantity">Намалете количеството</string>
     <string name="increase_quantity">Увеличете количеството</string>
     <string name="delete_cart">Изтриване на количката</string>
     <string name="delete_cart_warning">Изтриването на тази количка ще премахне за постоянно всички артикули от „%s“ и не може да бъде отменено.</string>
+    <string name="delete">Изтрий</string>
+    <string name="more_options">Още опции</string>
+    <string name="share_cart">Сподели количката</string>
+    <string name="category_icon_description">Икона за %1$s</string>
+    <string name="cart_added_successfully">Количката беше добавена успешно!</string>
+    <string name="cart_renamed_successfully">Количката беше преименувана успешно!</string>
+    <string name="cart_deleted_successfully">Количката беше изтрита успешно!</string>
+
     <string name="snackbar_cart_deleted_success">Количката е изтрита успешно!</string>
     <string name="your_shopping_cart_is_empty">Вашата пазарска количка е празна</string>
     <string name="in_cart">В количката</string>

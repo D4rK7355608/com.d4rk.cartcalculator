@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Megosztott kosár importálásához illessze be a generált hivatkozást a fenti mezőbe.\nA megosztott kosár importálás után automatikusan megjelenik a listában.\n\nKosár megosztása:\n1. Nyissa meg a kosarát.\n2. Koppintson a \'Megosztás\' gombra.\n3. Másolja ki a generált hivatkozást, és küldje el valakinek.\n\nMegosztott kosár importálása:\n1. Másolja ki a kapott megosztott hivatkozást.\n2. Illessze be a fenti beviteli mezőbe.\n3. Koppintson az \'Importálás\' gombra, és ellenőrizze a kosárlistában az új bejegyzést."</string>
     <string name="no_carts_available">Nincs elérhető kosár</string>
     <string name="add_new_cart">Új kosár hozzáadása</string>
+    <string name="create_a_new_cart">Új kosár létrehozása</string>
+    <string name="enter_cart_name">Adja meg a kosár nevét</string>
+    <string name="rename_cart">Kosár átnevezése</string>
     <string name="shopping_cart">Bevásárlókosár</string>
     <string name="summary_cart_dialog">Elkötelezettek vagyunk a személyre szabott vásárlási élmény megteremtése mellett mindenki számára. Annak érdekében, hogy könnyebben nyomon követhesse a kiválasztott termékeket és javítsa a vásárlási élményt, fontolja meg, hogy nevet adjon a kosarának, mielőtt hozzáadná a tételeket.</string>
+    <string name="create">Létrehozás</string>
+    <string name="cart_category_device">Ezen az eszközön</string>
+    <string name="cart_category_owner">Tulajdonos</string>
     <string name="created_on">Létrehozva: %1$s</string>
     <string name="decrease_quantity">Mennyiség csökkentése</string>
     <string name="increase_quantity">Mennyiség növelése</string>
     <string name="delete_cart">Kosár törlése</string>
     <string name="delete_cart_warning">A kosár törlése véglegesen eltávolítja az összes tételt a(z) \"%s\" kosárból, és nem vonható vissza.</string>
+    <string name="delete">Törlés</string>
+    <string name="more_options">További lehetőségek</string>
+    <string name="share_cart">Kosár megosztása</string>
+    <string name="category_icon_description">%1$s ikonja</string>
+    <string name="cart_added_successfully">A kosár sikeresen hozzáadva!</string>
+    <string name="cart_renamed_successfully">A kosár sikeresen átnevezve!</string>
+    <string name="cart_deleted_successfully">A kosár sikeresen törölve!</string>
+
     <string name="snackbar_cart_deleted_success">Kosár sikeresen törölve!</string>
     <string name="your_shopping_cart_is_empty">Az Ön bevásárlókosara üres</string>
     <string name="in_cart">A kosárban</string>

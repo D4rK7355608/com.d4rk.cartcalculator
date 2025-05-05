@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"साझा कार्ट आयात करने के लिए, ऊपर दिए गए फ़ील्ड में जेनरेट किया गया लिंक पेस्ट करें।\nआयात करने के बाद साझा कार्ट अपने आप आपकी सूची में दिखाई देगा।\n\nकार्ट कैसे साझा करें:\n1. अपना कार्ट खोलें।\n2. \'साझा करें\' बटन पर टैप करें।\n3. जेनरेट किए गए लिंक को कॉपी करें और इसे किसी को भेजें।\n\nसाझा कार्ट कैसे आयात करें:\n1. आपके द्वारा प्राप्त साझा लिंक को कॉपी करें।\n2. इसे ऊपर दिए गए इनपुट फ़ील्ड में पेस्ट करें।\n3. \'आयात करें\' पर टैप करें और नई प्रविष्टि के लिए अपनी कार्ट सूची देखें।"</string>
     <string name="no_carts_available">कोई कार्ट उपलब्ध नहीं है</string>
     <string name="add_new_cart">नया कार्ट जोड़ें</string>
+    <string name="create_a_new_cart">नया कार्ट बनाएं</string>
+    <string name="enter_cart_name">कार्ट का नाम दर्ज करें</string>
+    <string name="rename_cart">कार्ट का नाम बदलें</string>
     <string name="shopping_cart">शॉपिंग कार्ट</string>
     <string name="summary_cart_dialog">हम सभी के लिए एक व्यक्तिगत खरीदारी अनुभव बनाने के लिए प्रतिबद्ध हैं। आपके लिए अपने चयनों पर नज़र रखना और अपनी खरीदारी यात्रा को बेहतर बनाना आसान बनाने के लिए, आइटम जोड़ने से पहले अपने कार्ट को एक नाम देने पर विचार करें।</string>
+    <string name="create">बनाएं</string>
+    <string name="cart_category_device">इस डिवाइस पर</string>
+    <string name="cart_category_owner">मालिक</string>
     <string name="created_on">%1$s को बनाया गया</string>
     <string name="decrease_quantity">मात्रा घटाएं</string>
     <string name="increase_quantity">मात्रा बढ़ाएँ</string>
     <string name="delete_cart">कार्ट हटाएं</string>
     <string name="delete_cart_warning">इस कार्ट को हटाने से \"%s\" से सभी आइटम स्थायी रूप से हट जाएंगे और इसे पूर्ववत नहीं किया जा सकता।</string>
+    <string name="delete">हटाएं</string>
+    <string name="more_options">अधिक विकल्प</string>
+    <string name="share_cart">कार्ट साझा करें</string>
+    <string name="category_icon_description">%1$s के लिए आइकन</string>
+    <string name="cart_added_successfully">कार्ट सफलतापूर्वक जोड़ा गया!</string>
+    <string name="cart_renamed_successfully">कार्ट का नाम सफलतापूर्वक बदला गया!</string>
+    <string name="cart_deleted_successfully">कार्ट सफलतापूर्वक हटाया गया!</string>
+
     <string name="snackbar_cart_deleted_success">कार्ट सफलतापूर्वक हटा दिया गया!</string>
     <string name="your_shopping_cart_is_empty">आपका शॉपिंग कार्ट खाली है</string>
     <string name="in_cart">कार्ट में</string>

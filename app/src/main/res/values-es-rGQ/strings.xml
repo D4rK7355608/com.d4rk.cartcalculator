@@ -13,13 +13,27 @@
     <string name="import_cart_instructions">"Para importar un carrito compartido, pegue el enlace generado en el campo de arriba.\nEl carrito compartido aparecerá automáticamente en su lista una vez importado.\n\nCómo compartir un carrito:\n1. Abra su carrito.\n2. Toque el botón \'Compartir\'.\n3. Copie el enlace generado y envíelo a alguien.\n\nCómo importar un carrito compartido:\n1. Copie el enlace compartido que recibió.\n2. Péguelo en el campo de entrada de arriba.\n3. Toque \'Importar\' y verifique su lista de carritos para ver la nueva entrada."</string>
     <string name="no_carts_available">No hay carritos disponibles</string>
     <string name="add_new_cart">Añadir nuevo carrito</string>
+    <string name="create_a_new_cart">Crear un nuevo carrito</string>
+    <string name="enter_cart_name">Ingrese el nombre del carrito</string>
+    <string name="rename_cart">Renombrar carrito</string>
     <string name="shopping_cart">Carrito de compras</string>
     <string name="summary_cart_dialog">Estamos comprometidos a crear una experiencia de compra personalizada para todos. Para que le sea más fácil hacer un seguimiento de sus selecciones y mejorar su experiencia de compra, considere darle un nombre a su carrito antes de agregar artículos.</string>
+    <string name="create">Crear</string>
+    <string name="cart_category_device">En este dispositivo</string>
+    <string name="cart_category_owner">Propietario</string>
     <string name="created_on">Creado el %1$s</string>
     <string name="decrease_quantity">Disminuir cantidad</string>
     <string name="increase_quantity">Aumentar cantidad</string>
     <string name="delete_cart">Eliminar carrito</string>
     <string name="delete_cart_warning">Eliminar este carrito eliminará permanentemente todos los artículos de \"%s\" y no se puede deshacer.</string>
+    <string name="delete">Eliminar</string>
+    <string name="more_options">Más opciones</string>
+    <string name="share_cart">Compartir carrito</string>
+    <string name="category_icon_description">Icono para %1$s</string>
+    <string name="cart_added_successfully">¡Carrito agregado con éxito!</string>
+    <string name="cart_renamed_successfully">¡Carrito renombrado con éxito!</string>
+    <string name="cart_deleted_successfully">¡Carrito eliminado con éxito!</string>
+
     <string name="snackbar_cart_deleted_success">¡Carrito eliminado con éxito!</string>
     <string name="your_shopping_cart_is_empty">Su carrito de compras está vacío</string>
     <string name="in_cart">En el carrito</string>
