@@ -57,7 +57,7 @@
     <string name="delete_cart_item_title">Delete Cart Item</string>
     <string name="delete_cart_item_message">Are you sure you want to delete this item?</string>
     <string name="delete_cart_item_warning">You are about to delete "%s" from your cart.</string>
-    <string name="item_removed_succesfully">Item removed successfully!</string>
+    <string name="item_removed_successfully">Item removed successfully!</string>
     <string name="item_added_successfully">Item added successfully!</string>
     <string name="failed_to_add_item">Failed to add item</string>
 

@@ -24,6 +24,7 @@
     <string name="created_on">Erstellt am %1$s</string>
     <string name="decrease_quantity">Menge verringern</string>
     <string name="increase_quantity">Menge erhöhen</string>
+    <string name="delete_cart_question">Warenkorb löschen?</string>
     <string name="delete_cart">Warenkorb löschen</string>
     <string name="delete_cart_warning">Das Löschen dieses Warenkorbs entfernt dauerhaft alle Artikel aus \"%s\" und kann nicht rückgängig gemacht werden.</string>
     <string name="delete">Löschen</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Warenkorbartikel löschen</string>
     <string name="delete_cart_item_message">Möchten Sie diesen Artikel wirklich löschen?</string>
     <string name="delete_cart_item_warning">Sie sind dabei, \"%s\" aus Ihrem Warenkorb zu löschen.</string>
-    <string name="item_removed_succesfully">Artikel wurde erfolgreich entfernt!</string>
+    <string name="item_removed_successfully">Artikel wurde erfolgreich entfernt!</string>
     <string name="item_added_successfully">Artikel wurde erfolgreich hinzugefügt!</string>
     <string name="failed_to_add_item">Artikel konnte nicht hinzugefügt werden</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Verwalten Sie das Verhalten Ihres Warenkorbs</string>
 
     <string name="currency">Währung</string>
+    <string name="select_currency">Währung auswählen</string>
     <string name="summary_preference_settings_currency">Legen Sie Ihre bevorzugte Währung für die Anzeige von Preisen fest</string>
     <string name="dialog_currency_subtitle">Wählen Sie Ihre bevorzugte Währung aus</string>
     <string name="dialog_info_currency">Diese Währungsauswahl wird plattformübergreifend verwendet, um Produktpreise anzuzeigen, Transaktionen zu verarbeiten und ein personalisierteres Einkaufserlebnis zu bieten</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Ja! Der Warenkorb-Rechner ist stolz freie Software, die unter der GNU General Public License Version 3 vertrieben wird.</string>
     <string name="question_9">Wie kann ich zum Warenkorb-Rechner beitragen?</string>
     <string name="summary_preference_faq_9">Der beste Weg, zum Warenkorb-Rechner beizutragen, ist über sein <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-Repository. Von dort aus können Sie es forken und an Ihren Beiträgen arbeiten und diese später per Pull-Request zurücksenden. Sie können auch den Issue-Tracker verwenden, um Fehler zu melden, neue Funktionen oder Verbesserungen vorzuschlagen oder Ideen zu bekommen, wie Sie helfen könnten.</string>
+
+    <string name="empty_cart">Ihr Warenkorb ist derzeit leer.</string>
+    <string name="compression_failed">Warenkorbdaten konnten nicht vorbereitet werden. Bitte versuchen Sie es erneut.</string>
+    <string name="failed_to_import_cart">Warenkorb konnte nicht importiert werden. Bitte überprüfen Sie die Datei und versuchen Sie es erneut.</string>
+    <string name="failed_to_encrypt_cart">Warenkorb konnte nicht gesichert werden. Bitte versuchen Sie es erneut.</string>
+    <string name="database_cart_not_found">Warenkorb nicht gefunden.</string>
+    <string name="failed_to_load_cart">Warenkorb konnte nicht geladen werden.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet ist nicht installiert</string>
+    <string name="failed_to_update_cart_item">Warenkorbartikel konnte nicht aktualisiert werden.</string>
+    <string name="failed_to_delete_cart_item">Warenkorbartikel konnte nicht gelöscht werden.</string>
+    <string name="failed_to_add_cart_item">Artikel konnte dem Warenkorb nicht hinzugefügt werden.</string>
+    <string name="request_no_internet">Keine Internetverbindung. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.</string>
+    <string name="request_timeout">Zeitüberschreitung bei der Anfrage. Bitte versuchen Sie es erneut.</string>
+    <string name="request_server_not_found">Serverfehler. Bitte versuchen Sie es später erneut.</string>
+    <string name="request_payload_error">Datenfehler. Bitte versuchen Sie es erneut.</string>
+    <string name="failed_to_delete_cart">Warenkorb konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.</string>
+    <string name="failed_to_decrypt_cart">Warenkorbdaten konnten nicht geladen werden. Der Warenkorb ist möglicherweise beschädigt.</string>
+    <string name="database_operation_failed">Es ist ein Fehler mit den lokalen Daten aufgetreten. Bitte versuchen Sie es erneut.</string>
+    <string name="cart_not_found">Warenkorb nicht gefunden.</string>
 </resources>

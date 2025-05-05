@@ -24,6 +24,7 @@
     <string name="created_on">Creato il %1$s</string>
     <string name="decrease_quantity">Diminuisci quantità</string>
     <string name="increase_quantity">Aumenta quantità</string>
+    <string name="delete_cart_question">Eliminare il carrello?</string>
     <string name="delete_cart">Elimina carrello</string>
     <string name="delete_cart_warning">L\'eliminazione di questo carrello rimuoverà definitivamente tutti gli articoli da \"%s\" e non potrà essere annullata.</string>
     <string name="delete">Elimina</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Elimina articolo dal carrello</string>
     <string name="delete_cart_item_message">Sei sicuro di voler eliminare questo articolo?</string>
     <string name="delete_cart_item_warning">Stai per eliminare \"%s\" dal tuo carrello.</string>
-    <string name="item_removed_succesfully">Elemento rimosso con successo!</string>
+    <string name="item_removed_successfully">Elemento rimosso con successo!</string>
     <string name="item_added_successfully">Elemento aggiunto con successo!</string>
     <string name="failed_to_add_item">Impossibile aggiungere l\'elemento</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Gestisci il comportamento del tuo carrello</string>
 
     <string name="currency">Valuta</string>
+    <string name="select_currency">Pilih mata uang</string>
     <string name="summary_preference_settings_currency">Imposta la tua valuta preferita per la visualizzazione dei prezzi</string>
     <string name="dialog_currency_subtitle">Seleziona la tua valuta preferita</string>
     <string name="dialog_info_currency">Questa selezione di valuta verrà utilizzata su tutta la piattaforma per visualizzare i prezzi dei prodotti, elaborare le transazioni e fornire un\'esperienza di acquisto più personalizzata</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Sì! Cart Calculator è orgogliosamente un software gratuito distribuito con licenza GNU General Public License versione 3.</string>
     <string name="question_9">Come posso contribuire a Cart Calculator?</string>
     <string name="summary_preference_faq_9">Il modo migliore per contribuire a Cart Calculator è tramite il suo repository <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Da lì, puoi eseguirne il fork e lavorare sui tuoi contributi, per poi inviarli tramite pull request. Puoi anche utilizzare il tracker dei problemi per segnalare bug, proporre nuove funzionalità o miglioramenti oppure ottenere idee su come potresti aiutare.</string>
+
+    <string name="empty_cart">Il tuo carrello è vuoto.</string>
+    <string name="compression_failed">Impossibile preparare i dati del carrello. Riprova.</string>
+    <string name="failed_to_import_cart">Impossibile importare il carrello. Controlla il file e riprova.</string>
+    <string name="failed_to_encrypt_cart">Impossibile proteggere il carrello. Riprova.</string>
+    <string name="database_cart_not_found">Carrello non trovato.</string>
+    <string name="failed_to_load_cart">Impossibile caricare il carrello.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet non è installato</string>
+    <string name="failed_to_update_cart_item">Impossibile aggiornare l'articolo del carrello.</string>
+    <string name="failed_to_delete_cart_item">Impossibile eliminare l'articolo del carrello.</string>
+    <string name="failed_to_add_cart_item">Impossibile aggiungere l'articolo al carrello.</string>
+    <string name="request_no_internet">Nessuna connessione a Internet. Controlla la connessione e riprova.</string>
+    <string name="request_timeout">Richiesta scaduta. Riprova.</string>
+    <string name="request_server_not_found">Errore del server. Riprova più tardi.</string>
+    <string name="request_payload_error">Errore nei dati. Riprova.</string>
+    <string name="failed_to_delete_cart">Impossibile eliminare il carrello. Riprova.</string>
+    <string name="failed_to_decrypt_cart">Impossibile caricare i dati del carrello. Potrebbe essere corrotto.</string>
+    <string name="database_operation_failed">Qualcosa è andato storto con i dati locali. Riprova.</string>
+    <string name="cart_not_found">Carrello non trovato.</string>
 </resources>

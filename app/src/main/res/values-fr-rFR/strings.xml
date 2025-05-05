@@ -24,6 +24,7 @@
     <string name="created_on">Créé le %1$s</string>
     <string name="decrease_quantity">Diminuer la quantité</string>
     <string name="increase_quantity">Augmenter la quantité</string>
+    <string name="delete_cart_question">Supprimer le panier?</string>
     <string name="delete_cart">Supprimer le panier</string>
     <string name="delete_cart_warning">La suppression de ce panier supprimera définitivement tous les articles de \"%s\" et ne pourra pas être annulée.</string>
     <string name="delete">Supprimer</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Supprimer l\'article du panier</string>
     <string name="delete_cart_item_message">Êtes-vous sûr de vouloir supprimer cet article ?</string>
     <string name="delete_cart_item_warning">Vous êtes sur le point de supprimer \"%s\" de votre panier.</string>
-    <string name="item_removed_succesfully">Article supprimé avec succès !</string>
+    <string name="item_removed_successfully">Article supprimé avec succès !</string>
     <string name="item_added_successfully">Article ajouté avec succès !</string>
     <string name="failed_to_add_item">Échec de l\'ajout de l\'article</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Gérez le comportement de votre panier</string>
 
     <string name="currency">Devise</string>
+    <string name="select_currency">Sélectionner une devise</string>
     <string name="summary_preference_settings_currency">Définissez votre devise préférée pour l\'affichage des prix</string>
     <string name="dialog_currency_subtitle">Sélectionnez votre devise préférée</string>
     <string name="dialog_info_currency">Cette sélection de devise sera utilisée sur toute la plateforme pour afficher les prix des produits, traiter les transactions et offrir une expérience d\'achat plus personnalisée</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Oui ! Cart Calculator est fièrement un logiciel gratuit distribué sous la licence publique générale GNU version 3.</string>
     <string name="question_9">Comment puis-je contribuer à Cart Calculator ?</string>
     <string name="summary_preference_faq_9">La meilleure façon de contribuer à Cart Calculator est de passer par son référentiel <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. De là, vous pouvez le forker et travailler sur vos contributions, puis les renvoyer via une demande d\'extraction. Vous pouvez également utiliser l\'outil de suivi des problèmes pour signaler des bogues, proposer de nouvelles fonctionnalités ou améliorations, ou obtenir des idées sur la façon dont vous pourriez aider.</string>
+
+    <string name="empty_cart">Votre panier est vide.</string>
+    <string name="compression_failed">Les données du panier n\'ont pas pu être préparées. Veuillez réessayer.</string>
+    <string name="failed_to_import_cart">Impossible d\'importer le panier. Veuillez vérifier le fichier et réessayer.</string>
+    <string name="failed_to_encrypt_cart">Le panier n\'a pas pu être sécurisé. Veuillez réessayer.</string>
+    <string name="database_cart_not_found">Panier introuvable.</string>
+    <string name="failed_to_load_cart">Échec du chargement du panier.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet n\'est pas installé</string>
+    <string name="failed_to_update_cart_item">Échec de la mise à jour de l\'article du panier.</string>
+    <string name="failed_to_delete_cart_item">Échec de la suppression de l\'article du panier.</string>
+    <string name="failed_to_add_cart_item">Échec de l\'ajout de l\'article au panier.</string>
+    <string name="request_no_internet">Pas de connexion Internet. Veuillez vérifier votre connexion et réessayer.</string>
+    <string name="request_timeout">Délai d\'attente dépassé. Veuillez réessayer.</string>
+    <string name="request_server_not_found">Erreur serveur. Veuillez réessayer plus tard.</string>
+    <string name="request_payload_error">Erreur de données. Veuillez réessayer.</string>
+    <string name="failed_to_delete_cart">Impossible de supprimer le panier. Veuillez réessayer.</string>
+    <string name="failed_to_decrypt_cart">Impossible de charger les données du panier. Le panier pourrait être corrompu.</string>
+    <string name="database_operation_failed">Un problème est survenu avec les données locales. Veuillez réessayer.</string>
+    <string name="cart_not_found">Panier introuvable.</string>
 </resources>

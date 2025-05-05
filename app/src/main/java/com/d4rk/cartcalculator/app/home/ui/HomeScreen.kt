@@ -75,7 +75,7 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
 fun HomeScreenContent(paddingValues : PaddingValues = PaddingValues() , uiState : UiHomeData , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , adsConfig : AdsConfig = koinInject(qualifier = named(name = "banner_medium_rectangle"))) {
 
     val context : Context = LocalContext.current
-    val dataStore: DataStore = koinInject()
+    val dataStore : DataStore = koinInject()
     val adsEnabled : Boolean by remember { dataStore.ads(default = true) }.collectAsState(initial = true)
 
     val currentCount : Int = uiState.carts.size

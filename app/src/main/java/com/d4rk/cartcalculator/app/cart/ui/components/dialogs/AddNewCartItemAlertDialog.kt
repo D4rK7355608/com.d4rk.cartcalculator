@@ -60,35 +60,35 @@ fun AddNewCartItemAlertDialogContent(
     Column {
         OutlinedTextField(
             value = name.value ,
-            onValueChange = { name.value = it } ,
-            label = { Text(text = stringResource(id = R.string.item_name)) } ,
-            placeholder = { Text(text = stringResource(id = R.string.enter_item_name)) } ,
-            singleLine = true ,
-            keyboardOptions = KeyboardOptions.Default.copy(capitalization = KeyboardCapitalization.Sentences , imeAction = ImeAction.Next) ,
-            keyboardActions = KeyboardActions(onNext = { priceFocus.requestFocus() }) ,
-            modifier = Modifier.focusRequester(focusRequester = nameFocus)
+                          onValueChange = { name.value = it } ,
+                          label = { Text(text = stringResource(id = R.string.item_name)) } ,
+                          placeholder = { Text(text = stringResource(id = R.string.enter_item_name)) } ,
+                          singleLine = true ,
+                          keyboardOptions = KeyboardOptions.Default.copy(capitalization = KeyboardCapitalization.Sentences , imeAction = ImeAction.Next) ,
+                          keyboardActions = KeyboardActions(onNext = { priceFocus.requestFocus() }) ,
+                          modifier = Modifier.focusRequester(focusRequester = nameFocus)
         )
 
         OutlinedTextField(
             value = price.value ,
-            onValueChange = { price.value = it } ,
-            label = { Text(text = stringResource(id = R.string.item_price)) } ,
-            placeholder = { Text(text = stringResource(id = R.string.enter_item_price)) } ,
-            singleLine = true ,
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number , imeAction = ImeAction.Next) ,
-            keyboardActions = KeyboardActions(onNext = { quantityFocus.requestFocus() }) ,
-            modifier = Modifier.focusRequester(focusRequester = priceFocus)
+                          onValueChange = { price.value = it } ,
+                          label = { Text(text = stringResource(id = R.string.item_price)) } ,
+                          placeholder = { Text(text = stringResource(id = R.string.enter_item_price)) } ,
+                          singleLine = true ,
+                          keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number , imeAction = ImeAction.Next) ,
+                          keyboardActions = KeyboardActions(onNext = { quantityFocus.requestFocus() }) ,
+                          modifier = Modifier.focusRequester(focusRequester = priceFocus)
         )
 
         OutlinedTextField(
             value = quantity.value ,
-            onValueChange = { quantity.value = it } ,
-            label = { Text(text = stringResource(id = R.string.quantity)) } ,
-            placeholder = { Text(text = stringResource(id = R.string.enter_quantity)) } ,
-            singleLine = true ,
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number , imeAction = ImeAction.Done) ,
-            keyboardActions = KeyboardActions(onDone = { keyboardController?.hide() }) ,
-            modifier = Modifier.focusRequester(focusRequester = quantityFocus)
+                          onValueChange = { quantity.value = it } ,
+                          label = { Text(text = stringResource(id = R.string.quantity)) } ,
+                          placeholder = { Text(text = stringResource(id = R.string.enter_quantity)) } ,
+                          singleLine = true ,
+                          keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number , imeAction = ImeAction.Done) ,
+                          keyboardActions = KeyboardActions(onDone = { keyboardController?.hide() }) ,
+                          modifier = Modifier.focusRequester(focusRequester = quantityFocus)
         )
 
         MediumVerticalSpacer()

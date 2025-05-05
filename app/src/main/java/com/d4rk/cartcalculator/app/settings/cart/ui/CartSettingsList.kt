@@ -30,7 +30,7 @@ import org.koin.compose.koinInject
 
 @Composable
 fun CartSettingsList(paddingValues : PaddingValues) {
-    val dataStore: DataStore = koinInject()
+    val dataStore : DataStore = koinInject()
     val showDialog = remember { mutableStateOf(value = false) }
     val openCartsAfterCreation by dataStore.openCartsAfterCreation.collectAsState(initial = true)
     val coroutineScope = rememberCoroutineScope()

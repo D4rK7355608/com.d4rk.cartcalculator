@@ -24,6 +24,7 @@
     <string name="created_on">Створено %1$s</string>
     <string name="decrease_quantity">Зменшити кількість</string>
     <string name="increase_quantity">Збільшити кількість</string>
+    <string name="delete_cart_question">Видалити кошик?</string>
     <string name="delete_cart">Видалити кошик</string>
     <string name="delete_cart_warning">Видалення цього кошика назавжди видалить усі товари з \"%s\", і цю дію неможливо буде скасувати.</string>
     <string name="delete">Видалити</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Видалити товар з кошика</string>
     <string name="delete_cart_item_message">Ви впевнені, що хочете видалити цей товар?</string>
     <string name="delete_cart_item_warning">Ви збираєтеся видалити \"%s\" зі свого кошика.</string>
-    <string name="item_removed_succesfully">Елемент успішно видалено!</string>
+    <string name="item_removed_successfully">Елемент успішно видалено!</string>
     <string name="item_added_successfully">Елемент успішно додано!</string>
     <string name="failed_to_add_item">Не вдалося додати елемент</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Керуйте поведінкою вашого кошика</string>
 
     <string name="currency">Валюта</string>
+    <string name="select_currency">Виберіть валюту</string>
     <string name="summary_preference_settings_currency">Встановіть бажану валюту для відображення цін</string>
     <string name="dialog_currency_subtitle">Виберіть бажану валюту</string>
     <string name="dialog_info_currency">Цей вибір валюти буде використовуватися на всій платформі для відображення цін на продукти, обробки транзакцій і забезпечення більш персоналізованого досвіду покупок</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Так! Cart Calculator є безкоштовним програмним забезпеченням, яке розповсюджується за ліцензією GNU General Public License версії 3.</string>
     <string name="question_9">Як я можу зробити внесок у Cart Calculator?</string>
     <string name="summary_preference_faq_9">Найкращий спосіб зробити внесок у Cart Calculator – це через його репозиторій <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Звідти ви можете зробити форк і працювати над своїми внесками, а потім надіслати їх назад через запит на злиття. Ви також можете використовувати трекер проблем, щоб повідомляти про помилки, пропонувати нові функції чи вдосконалення або отримувати ідеї щодо того, як ви можете допомогти.</string>
+
+    <string name="empty_cart">Ваш кошик наразі порожній.</string>
+    <string name="compression_failed">Не вдалося підготувати дані кошика. Будь ласка, спробуйте ще раз.</string>
+    <string name="failed_to_import_cart">Не вдалося імпортувати кошик. Перевірте файл і спробуйте ще раз.</string>
+    <string name="failed_to_encrypt_cart">Не вдалося захистити кошик. Будь ласка, спробуйте ще раз.</string>
+    <string name="database_cart_not_found">Кошик не знайдено.</string>
+    <string name="failed_to_load_cart">Не вдалося завантажити кошик.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet не встановлено</string>
+    <string name="failed_to_update_cart_item">Не вдалося оновити товар у кошику.</string>
+    <string name="failed_to_delete_cart_item">Не вдалося видалити товар з кошика.</string>
+    <string name="failed_to_add_cart_item">Не вдалося додати товар до кошика.</string>
+    <string name="request_no_internet">Немає підключення до інтернету. Перевірте з’єднання та спробуйте ще раз.</string>
+    <string name="request_timeout">Час очікування минув. Спробуйте ще раз.</string>
+    <string name="request_server_not_found">Помилка сервера. Будь ласка, спробуйте пізніше.</string>
+    <string name="request_payload_error">Помилка даних. Спробуйте ще раз.</string>
+    <string name="failed_to_delete_cart">Не вдалося видалити кошик. Спробуйте ще раз.</string>
+    <string name="failed_to_decrypt_cart">Не вдалося завантажити дані кошика. Можливо, кошик пошкоджений.</string>
+    <string name="database_operation_failed">Щось пішло не так з локальними даними. Спробуйте ще раз.</string>
+    <string name="cart_not_found">Кошик не знайдено.</string>
 </resources>

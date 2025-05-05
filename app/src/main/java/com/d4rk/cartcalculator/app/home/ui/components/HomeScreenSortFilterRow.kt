@@ -23,8 +23,7 @@ fun HomeScreenSortFilterRow(viewModel : HomeViewModel) {
     val filters : List<String> = listOf(defaultSortString , alphabeticalString , dateSortString , lastAddedSortString)
     val selectedFilter : MutableState<String> = remember { mutableStateOf(value = filters[0]) }
 
-    TopListFilters(
-        filters = filters , selectedFilter = selectedFilter.value , onFilterSelected = { filter : String ->
+    TopListFilters(filters = filters , selectedFilter = selectedFilter.value , onFilterSelected = { filter : String ->
         selectedFilter.value = filter
         val sortOption : SortOption = when (filter) {
             alphabeticalString -> SortOption.ALPHABETICAL

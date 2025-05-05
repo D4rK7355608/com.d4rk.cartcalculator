@@ -24,6 +24,7 @@
     <string name="created_on">%1$s को बनाया गया</string>
     <string name="decrease_quantity">मात्रा घटाएं</string>
     <string name="increase_quantity">मात्रा बढ़ाएँ</string>
+    <string name="delete_cart_question">क्या कार्ट हटाना है?</string>
     <string name="delete_cart">कार्ट हटाएं</string>
     <string name="delete_cart_warning">इस कार्ट को हटाने से \"%s\" से सभी आइटम स्थायी रूप से हट जाएंगे और इसे पूर्ववत नहीं किया जा सकता।</string>
     <string name="delete">हटाएं</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">कार्ट आइटम हटाएं</string>
     <string name="delete_cart_item_message">क्या आप वाकई इस आइटम को हटाना चाहते हैं?</string>
     <string name="delete_cart_item_warning">आप अपने कार्ट से \"%s\" को हटाने वाले हैं।</string>
-    <string name="item_removed_succesfully">आइटम सफलतापूर्वक हटाया गया!</string>
+    <string name="item_removed_successfully">आइटम सफलतापूर्वक हटाया गया!</string>
     <string name="item_added_successfully">आइटम सफलतापूर्वक जोड़ा गया!</string>
     <string name="failed_to_add_item">आइटम जोड़ने में विफल</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">प्रबंधित करें कि आपका कार्ट कैसे व्यवहार करता है</string>
 
     <string name="currency">मुद्रा</string>
+    <string name="select_currency">मुद्रा चुनें</string>
     <string name="summary_preference_settings_currency">मूल्य प्रदर्शित करने के लिए अपनी पसंदीदा मुद्रा सेट करें</string>
     <string name="dialog_currency_subtitle">अपनी पसंदीदा मुद्रा चुनें</string>
     <string name="dialog_info_currency">इस मुद्रा चयन का उपयोग पूरे प्लेटफ़ॉर्म पर उत्पाद की कीमतें प्रदर्शित करने, लेन-देन को संसाधित करने और अधिक व्यक्तिगत खरीदारी अनुभव प्रदान करने के लिए किया जाएगा</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">हां! कार्ट कैलकुलेटर गर्व से GNU जनरल पब्लिक लाइसेंस संस्करण 3 के तहत वितरित मुफ्त सॉफ्टवेयर है।</string>
     <string name="question_9">मैं कार्ट कैलकुलेटर में कैसे योगदान कर सकता हूं?</string>
     <string name="summary_preference_faq_9">कार्ट कैलकुलेटर में योगदान करने का सबसे अच्छा तरीका इसके <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> रिपॉजिटरी के माध्यम से है। वहां से, आप इसे फोर्क कर सकते हैं और अपने योगदान पर काम कर सकते हैं, और बाद में उन्हें पुल अनुरोध के माध्यम से वापस भेज सकते हैं। आप बग की रिपोर्ट करने, नई सुविधाओं या संवर्द्धन का प्रस्ताव करने, या आप कैसे मदद कर सकते हैं, इसके लिए विचार प्राप्त करने के लिए इश्यू ट्रैकर का भी उपयोग कर सकते हैं।</string>
+
+    <string name="empty_cart">आपकी कार्ट खाली है।</string>
+    <string name="compression_failed">कार्ट डेटा तैयार नहीं किया जा सका। कृपया पुनः प्रयास करें।</string>
+    <string name="failed_to_import_cart">कार्ट आयात नहीं हो सका। कृपया फ़ाइल की जांच करें और फिर से प्रयास करें।</string>
+    <string name="failed_to_encrypt_cart">कार्ट सुरक्षित नहीं किया जा सका। कृपया पुनः प्रयास करें।</string>
+    <string name="database_cart_not_found">कार्ट नहीं मिला।</string>
+    <string name="failed_to_load_cart">कार्ट लोड करने में विफल।</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet इंस्टॉल नहीं है</string>
+    <string name="failed_to_update_cart_item">कार्ट आइटम को अपडेट करने में विफल।</string>
+    <string name="failed_to_delete_cart_item">कार्ट आइटम को हटाने में विफल।</string>
+    <string name="failed_to_add_cart_item">आइटम को कार्ट में जोड़ने में विफल।</string>
+    <string name="request_no_internet">कोई इंटरनेट कनेक्शन नहीं है। कृपया कनेक्शन जांचें और पुनः प्रयास करें।</string>
+    <string name="request_timeout">अनुरोध का समय समाप्त हो गया। कृपया पुनः प्रयास करें।</string>
+    <string name="request_server_not_found">सर्वर त्रुटि। कृपया बाद में पुनः प्रयास करें।</string>
+    <string name="request_payload_error">डेटा त्रुटि। कृपया पुनः प्रयास करें।</string>
+    <string name="failed_to_delete_cart">कार्ट हटाया नहीं जा सका। कृपया पुनः प्रयास करें।</string>
+    <string name="failed_to_decrypt_cart">कार्ट डेटा लोड नहीं किया जा सका। कार्ट भ्रष्ट हो सकता है।</string>
+    <string name="database_operation_failed">स्थानीय डेटा में कुछ गड़बड़ हो गई है। कृपया पुनः प्रयास करें।</string>
+    <string name="cart_not_found">कार्ट नहीं मिला।</string>
 </resources>

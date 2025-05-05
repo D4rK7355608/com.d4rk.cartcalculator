@@ -24,6 +24,7 @@
     <string name="created_on">Создано %1$s</string>
     <string name="decrease_quantity">Уменьшить количество</string>
     <string name="increase_quantity">Увеличить количество</string>
+    <string name="delete_cart_question">Удалить корзину?</string>
     <string name="delete_cart">Удалить корзину</string>
     <string name="delete_cart_warning">Удаление этой корзины навсегда удалит все товары из \"%s\", и это действие нельзя будет отменить.</string>
     <string name="delete">Удалить</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Удалить товар из корзины</string>
     <string name="delete_cart_item_message">Вы уверены, что хотите удалить этот товар?</string>
     <string name="delete_cart_item_warning">Вы собираетесь удалить \"%s\" из корзины.</string>
-    <string name="item_removed_succesfully">Элемент успешно удален!</string>
+    <string name="item_removed_successfully">Элемент успешно удален!</string>
     <string name="item_added_successfully">Элемент успешно добавлен!</string>
     <string name="failed_to_add_item">Не удалось добавить элемент</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Управляйте поведением вашей корзины</string>
 
     <string name="currency">Валюта</string>
+    <string name="select_currency">Выберите валюту</string>
     <string name="summary_preference_settings_currency">Установите предпочитаемую валюту для отображения цен</string>
     <string name="dialog_currency_subtitle">Выберите предпочитаемую валюту</string>
     <string name="dialog_info_currency">Выбранная валюта будет использоваться на всей платформе для отображения цен на товары, обработки транзакций и обеспечения более персонализированного опыта покупок</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Да! Калькулятор корзины с гордостью является бесплатным программным обеспечением, распространяемым по лицензии GNU General Public License версии 3.</string>
     <string name="question_9">Как я могу внести свой вклад в Калькулятор корзины?</string>
     <string name="summary_preference_faq_9">Лучший способ внести свой вклад в Калькулятор корзины — это через его репозиторий <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Оттуда вы можете сделать форк и работать над своим вкладом, а затем отправить его обратно через запрос на включение. Вы также можете использовать трекер проблем, чтобы сообщать об ошибках, предлагать новые функции или улучшения или получать идеи о том, как вы можете помочь.</string>
+
+    <string name="empty_cart">Ваша корзина пуста.</string>
+    <string name="compression_failed">Не удалось подготовить данные корзины. Попробуйте еще раз.</string>
+    <string name="failed_to_import_cart">Не удалось импортировать корзину. Проверьте файл и повторите попытку.</string>
+    <string name="failed_to_encrypt_cart">Не удалось защитить корзину. Попробуйте еще раз.</string>
+    <string name="database_cart_not_found">Корзина не найдена.</string>
+    <string name="failed_to_load_cart">Не удалось загрузить корзину.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Кошелёк не установлен</string>
+    <string name="failed_to_update_cart_item">Не удалось обновить элемент корзины.</string>
+    <string name="failed_to_delete_cart_item">Не удалось удалить элемент корзины.</string>
+    <string name="failed_to_add_cart_item">Не удалось добавить товар в корзину.</string>
+    <string name="request_no_internet">Нет подключения к интернету. Проверьте подключение и повторите попытку.</string>
+    <string name="request_timeout">Время ожидания запроса истекло. Попробуйте еще раз.</string>
+    <string name="request_server_not_found">Ошибка сервера. Попробуйте позже.</string>
+    <string name="request_payload_error">Ошибка данных. Попробуйте еще раз.</string>
+    <string name="failed_to_delete_cart">Не удалось удалить корзину. Попробуйте еще раз.</string>
+    <string name="failed_to_decrypt_cart">Не удалось загрузить данные корзины. Возможно, она повреждена.</string>
+    <string name="database_operation_failed">Произошла ошибка с локальными данными. Попробуйте еще раз.</string>
+    <string name="cart_not_found">Корзина не найдена.</string>
 </resources>

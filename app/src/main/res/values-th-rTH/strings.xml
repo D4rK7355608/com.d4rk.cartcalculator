@@ -24,6 +24,7 @@
     <string name="created_on">สร้างเมื่อ %1$s</string>
     <string name="decrease_quantity">ลดจำนวน</string>
     <string name="increase_quantity">เพิ่มจำนวน</string>
+    <string name="delete_cart_question">ลบรถเข็นหรือไม่?</string>
     <string name="delete_cart">ลบรถเข็น</string>
     <string name="delete_cart_warning">การลบรถเข็นนี้จะลบสินค้าทั้งหมดออกจาก \"%s\" อย่างถาวรและไม่สามารถยกเลิกได้</string>
     <string name="delete">ลบ</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">ลบรายการในรถเข็น</string>
     <string name="delete_cart_item_message">คุณแน่ใจหรือไม่ว่าต้องการลบสินค้านี้</string>
     <string name="delete_cart_item_warning">คุณกำลังจะลบ \"%s\" ออกจากรถเข็นของคุณ</string>
-    <string name="item_removed_succesfully">ลบรายการเรียบร้อยแล้ว!</string>
+    <string name="item_removed_successfully">ลบรายการเรียบร้อยแล้ว!</string>
     <string name="item_added_successfully">เพิ่มรายการเรียบร้อยแล้ว!</string>
     <string name="failed_to_add_item">ไม่สามารถเพิ่มรายการได้</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">จัดการลักษณะการทำงานของรถเข็นของคุณ</string>
 
     <string name="currency">สกุลเงิน</string>
+    <string name="select_currency">เลือกสกุลเงิน</string>
     <string name="summary_preference_settings_currency">ตั้งค่าสกุลเงินที่คุณต้องการสำหรับการแสดงราคา</string>
     <string name="dialog_currency_subtitle">เลือกสกุลเงินที่คุณต้องการ</string>
     <string name="dialog_info_currency">การเลือกสกุลเงินนี้จะถูกนำไปใช้ทั่วทั้งแพลตฟอร์มสำหรับการแสดงราคาสินค้า การประมวลผลธุรกรรม และมอบประสบการณ์การช็อปปิ้งที่เป็นส่วนตัวยิ่งขึ้น</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">ใช่! เครื่องคิดเลขในรถเข็นเป็นซอฟต์แวร์ฟรีที่เผยแพร่อย่างภาคภูมิใจภายใต้ GNU General Public License เวอร์ชัน 3</string>
     <string name="question_9">ฉันจะมีส่วนร่วมกับเครื่องคิดเลขในรถเข็นได้อย่างไร</string>
     <string name="summary_preference_faq_9">วิธีที่ดีที่สุดในการมีส่วนร่วมกับเครื่องคิดเลขในรถเข็นคือผ่านที่เก็บ <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> จากนั้น คุณสามารถแยก (fork) และดำเนินการกับผลงานของคุณ และส่งกลับในภายหลังผ่าน pull request คุณยังสามารถใช้ตัวติดตามปัญหาเพื่อรายงานข้อบกพร่อง เสนอคุณสมบัติใหม่หรือการปรับปรุง หรือรับแนวคิดเกี่ยวกับวิธีที่คุณสามารถช่วยได้</string>
+
+    <string name="empty_cart">รถเข็นของคุณว่างเปล่าในขณะนี้</string>
+    <string name="compression_failed">ไม่สามารถเตรียมข้อมูลรถเข็นได้ โปรดลองอีกครั้ง</string>
+    <string name="failed_to_import_cart">ไม่สามารถนำเข้ารถเข็นได้ โปรดตรวจสอบไฟล์และลองอีกครั้ง</string>
+    <string name="failed_to_encrypt_cart">ไม่สามารถรักษาความปลอดภัยของรถเข็นได้ โปรดลองอีกครั้ง</string>
+    <string name="database_cart_not_found">ไม่พบรถเข็น</string>
+    <string name="failed_to_load_cart">ไม่สามารถโหลดรถเข็นได้</string>
+    <string name="google_pay_wallet_not_installed">ยังไม่ได้ติดตั้ง Google Pay/Wallet</string>
+    <string name="failed_to_update_cart_item">ไม่สามารถอัปเดตรายการในรถเข็นได้</string>
+    <string name="failed_to_delete_cart_item">ไม่สามารถลบรายการในรถเข็นได้</string>
+    <string name="failed_to_add_cart_item">ไม่สามารถเพิ่มรายการในรถเข็นได้</string>
+    <string name="request_no_internet">ไม่มีการเชื่อมต่ออินเทอร์เน็ต กรุณาตรวจสอบและลองอีกครั้ง</string>
+    <string name="request_timeout">หมดเวลารอคำขอ กรุณาลองอีกครั้ง</string>
+    <string name="request_server_not_found">เกิดข้อผิดพลาดของเซิร์ฟเวอร์ กรุณาลองใหม่ภายหลัง</string>
+    <string name="request_payload_error">เกิดข้อผิดพลาดของข้อมูล กรุณาลองอีกครั้ง</string>
+    <string name="failed_to_delete_cart">ไม่สามารถลบรถเข็นได้ กรุณาลองอีกครั้ง</string>
+    <string name="failed_to_decrypt_cart">ไม่สามารถโหลดข้อมูลรถเข็นได้ รถเข็นอาจเสียหาย</string>
+    <string name="database_operation_failed">เกิดข้อผิดพลาดกับข้อมูลภายในเครื่อง กรุณาลองอีกครั้ง</string>
+    <string name="cart_not_found">ไม่พบรถเข็น</string>
 </resources>

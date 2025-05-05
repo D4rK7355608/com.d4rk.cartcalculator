@@ -24,6 +24,7 @@
     <string name="created_on">Dibuat pada %1$s</string>
     <string name="decrease_quantity">Kurangi kuantitas</string>
     <string name="increase_quantity">Tambah kuantitas</string>
+    <string name="delete_cart_question">Hapus keranjang?</string>
     <string name="delete_cart">Hapus Keranjang</string>
     <string name="delete_cart_warning">Menghapus keranjang ini akan menghapus semua item dari \"%s\" secara permanen dan tidak dapat dibatalkan.</string>
     <string name="delete">Hapus</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Hapus Item Keranjang</string>
     <string name="delete_cart_item_message">Apakah Anda yakin ingin menghapus item ini?</string>
     <string name="delete_cart_item_warning">Anda akan menghapus \"%s\" dari keranjang Anda.</string>
-    <string name="item_removed_succesfully">Item berhasil dihapus!</string>
+    <string name="item_removed_successfully">Item berhasil dihapus!</string>
     <string name="item_added_successfully">Item berhasil ditambahkan!</string>
     <string name="failed_to_add_item">Gagal menambahkan item</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Kelola perilaku keranjang Anda</string>
 
     <string name="currency">Mata uang</string>
+    <string name="select_currency">Pilih mata uang</string>
     <string name="summary_preference_settings_currency">Tetapkan mata uang pilihan Anda untuk menampilkan harga</string>
     <string name="dialog_currency_subtitle">Pilih mata uang pilihan Anda</string>
     <string name="dialog_info_currency">Pilihan mata uang ini akan digunakan di seluruh platform untuk menampilkan harga produk, memproses transaksi, dan memberikan pengalaman berbelanja yang lebih dipersonalisasi</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Ya! Kalkulator Keranjang dengan bangga merupakan perangkat lunak gratis yang didistribusikan di bawah Lisensi Publik Umum GNU versi 3.</string>
     <string name="question_9">Bagaimana saya dapat berkontribusi pada Kalkulator Keranjang?</string>
     <string name="summary_preference_faq_9">Cara terbaik untuk berkontribusi pada Kalkulator Keranjang adalah melalui repositori <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-nya. Dari sana, Anda dapat melakukan fork dan mengerjakan kontribusi Anda, dan kemudian mengirimkannya kembali melalui pull request. Anda juga dapat menggunakan pelacak masalah untuk melaporkan bug, mengusulkan fitur atau penyempurnaan baru, atau mendapatkan ide tentang bagaimana Anda dapat membantu.</string>
+
+    <string name="empty_cart">Keranjang Anda kosong.</string>
+    <string name="compression_failed">Data keranjang tidak dapat disiapkan. Silakan coba lagi.</string>
+    <string name="failed_to_import_cart">Gagal mengimpor keranjang. Periksa file dan coba lagi.</string>
+    <string name="failed_to_encrypt_cart">Keranjang tidak dapat diamankan. Silakan coba lagi.</string>
+    <string name="database_cart_not_found">Keranjang tidak ditemukan.</string>
+    <string name="failed_to_load_cart">Gagal memuat keranjang.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet belum terpasang</string>
+    <string name="failed_to_update_cart_item">Gagal memperbarui item di keranjang.</string>
+    <string name="failed_to_delete_cart_item">Gagal menghapus item dari keranjang.</string>
+    <string name="failed_to_add_cart_item">Gagal menambahkan item ke keranjang.</string>
+    <string name="request_no_internet">Tidak ada koneksi internet. Periksa koneksi Anda dan coba lagi.</string>
+    <string name="request_timeout">Permintaan melebihi batas waktu. Silakan coba lagi.</string>
+    <string name="request_server_not_found">Kesalahan server. Silakan coba lagi nanti.</string>
+    <string name="request_payload_error">Terjadi kesalahan data. Silakan coba lagi.</string>
+    <string name="failed_to_delete_cart">Tidak dapat menghapus keranjang. Silakan coba lagi.</string>
+    <string name="failed_to_decrypt_cart">Tidak dapat memuat data keranjang. Kemungkinan keranjang rusak.</string>
+    <string name="database_operation_failed">Terjadi kesalahan pada data lokal. Silakan coba lagi.</string>
+    <string name="cart_not_found">Keranjang tidak ditemukan.</string>
 </resources>

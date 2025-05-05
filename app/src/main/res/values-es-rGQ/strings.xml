@@ -24,6 +24,7 @@
     <string name="created_on">Creado el %1$s</string>
     <string name="decrease_quantity">Disminuir cantidad</string>
     <string name="increase_quantity">Aumentar cantidad</string>
+    <string name="delete_cart_question">¿Eliminar el carrito?</string>
     <string name="delete_cart">Eliminar carrito</string>
     <string name="delete_cart_warning">Eliminar este carrito eliminará permanentemente todos los artículos de \"%s\" y no se puede deshacer.</string>
     <string name="delete">Eliminar</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Eliminar artículo del carrito</string>
     <string name="delete_cart_item_message">¿Está seguro de que desea eliminar este artículo?</string>
     <string name="delete_cart_item_warning">Está a punto de eliminar \"%s\" de su carrito.</string>
-    <string name="item_removed_succesfully">¡Artículo eliminado con éxito!</string>
+    <string name="item_removed_successfully">¡Artículo eliminado con éxito!</string>
     <string name="item_added_successfully">¡Artículo añadido con éxito!</string>
     <string name="failed_to_add_item">No se pudo añadir el artículo</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Administre cómo se comporta su carrito</string>
 
     <string name="currency">Moneda</string>
+    <string name="select_currency">Seleccionar moneda</string>
     <string name="summary_preference_settings_currency">Establezca su moneda preferida para mostrar los precios</string>
     <string name="dialog_currency_subtitle">Seleccione su moneda preferida</string>
     <string name="dialog_info_currency">Esta selección de moneda se utilizará en toda la plataforma para mostrar los precios de los productos, procesar transacciones y brindar una experiencia de compra más personalizada</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">¡Sí! La Calculadora de Carrito es un software orgullosamente gratuito distribuido bajo la Licencia Pública General GNU versión 3.</string>
     <string name="question_9">¿Cómo puedo contribuir a la Calculadora de Carrito?</string>
     <string name="summary_preference_faq_9">La mejor manera de contribuir a la Calculadora de Carrito es a través de su repositorio <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Desde allí, puede bifurcarlo y trabajar en sus contribuciones, y luego enviarlas de vuelta a través de una solicitud de extracción. También puede usar el rastreador de problemas para informar errores, proponer nuevas funciones o mejoras, u obtener ideas sobre cómo podría ayudar.</string>
+
+    <string name="empty_cart">Tu carrito está vacío.</string>
+    <string name="compression_failed">No se pudieron preparar los datos del carrito. Por favor, inténtalo de nuevo.</string>
+    <string name="failed_to_import_cart">No se pudo importar el carrito. Por favor, verifica el archivo e inténtalo de nuevo.</string>
+    <string name="failed_to_encrypt_cart">No se pudo asegurar el carrito. Por favor, inténtalo de nuevo.</string>
+    <string name="database_cart_not_found">Carrito no encontrado.</string>
+    <string name="failed_to_load_cart">Error al cargar el carrito.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet no está instalado</string>
+    <string name="failed_to_update_cart_item">Error al actualizar el artículo del carrito.</string>
+    <string name="failed_to_delete_cart_item">Error al eliminar el artículo del carrito.</string>
+    <string name="failed_to_add_cart_item">Error al agregar el artículo al carrito.</string>
+    <string name="request_no_internet">Sin conexión a internet. Por favor, verifica tu conexión e inténtalo de nuevo.</string>
+    <string name="request_timeout">La solicitud ha caducado. Por favor, inténtalo de nuevo.</string>
+    <string name="request_server_not_found">Error del servidor. Por favor, inténtalo más tarde.</string>
+    <string name="request_payload_error">Error de datos. Por favor, inténtalo de nuevo.</string>
+    <string name="failed_to_delete_cart">No se pudo eliminar el carrito. Por favor, inténtalo de nuevo.</string>
+    <string name="failed_to_decrypt_cart">No se pudieron cargar los datos del carrito. Es posible que el carrito esté dañado.</string>
+    <string name="database_operation_failed">Ocurrió un problema con los datos locales. Por favor, inténtalo de nuevo.</string>
+    <string name="cart_not_found">Carrito no encontrado.</string>
 </resources>

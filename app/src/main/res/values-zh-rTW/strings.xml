@@ -24,6 +24,7 @@
     <string name="created_on">建立於 %1$s</string>
     <string name="decrease_quantity">減少數量</string>
     <string name="increase_quantity">增加數量</string>
+    <string name="delete_cart_question">要刪除購物車嗎？</string>
     <string name="delete_cart">刪除購物車</string>
     <string name="delete_cart_warning">刪除此購物車將永久移除「%s」中的所有商品，且此操作無法復原。</string>
     <string name="delete">刪除</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">刪除購物車商品</string>
     <string name="delete_cart_item_message">您確定要刪除此商品嗎？</string>
     <string name="delete_cart_item_warning">您即將從購物車中刪除「%s」。</string>
-    <string name="item_removed_succesfully">項目已成功移除！</string>
+    <string name="item_removed_successfully">項目已成功移除！</string>
     <string name="item_added_successfully">項目已成功加入！</string>
     <string name="failed_to_add_item">加入項目失敗</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">管理您的購物車行為</string>
 
     <string name="currency">貨幣</string>
+    <string name="select_currency">選擇貨幣</string>
     <string name="summary_preference_settings_currency">設定顯示價格的偏好貨幣</string>
     <string name="dialog_currency_subtitle">選擇您的偏好貨幣</string>
     <string name="dialog_info_currency">此貨幣選擇將在整個平台用於顯示產品價格、處理交易，並提供更個人化的購物體驗</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">是的！購物車計算機是自豪地根據 GNU 通用公共許可證版本 3 分發的免費軟體。</string>
     <string name="question_9">我如何為購物車計算機做出貢獻？</string>
     <string name="summary_preference_faq_9">為購物車計算機做出貢獻的最佳方式是通過其 <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> 存儲庫。從那裡，您可以分叉它並處理您的貢獻，然後通過拉取請求將它們發回。您還可以使用問題跟踪器來報告錯誤、提出新功能或增強功能，或獲取有關如何提供幫助的想法。</string>
+
+    <string name="empty_cart">您的購物車目前是空的。</string>
+    <string name="compression_failed">無法準備購物車資料。請再試一次。</string>
+    <string name="failed_to_import_cart">無法匯入購物車。請檢查檔案後再試一次。</string>
+    <string name="failed_to_encrypt_cart">無法保護購物車。請再試一次。</string>
+    <string name="database_cart_not_found">找不到購物車。</string>
+    <string name="failed_to_load_cart">載入購物車失敗。</string>
+    <string name="google_pay_wallet_not_installed">尚未安裝 Google Pay/Wallet</string>
+    <string name="failed_to_update_cart_item">更新購物車項目失敗。</string>
+    <string name="failed_to_delete_cart_item">刪除購物車項目失敗。</string>
+    <string name="failed_to_add_cart_item">加入商品至購物車失敗。</string>
+    <string name="request_no_internet">沒有網路連線。請檢查您的連線後再試一次。</string>
+    <string name="request_timeout">請求逾時。請再試一次。</string>
+    <string name="request_server_not_found">伺服器錯誤。請稍後再試一次。</string>
+    <string name="request_payload_error">資料錯誤。請再試一次。</string>
+    <string name="failed_to_delete_cart">無法刪除購物車。請再試一次。</string>
+    <string name="failed_to_decrypt_cart">無法載入購物車資料。購物車可能已損壞。</string>
+    <string name="database_operation_failed">本機資料發生錯誤。請再試一次。</string>
+    <string name="cart_not_found">找不到購物車。</string>
 </resources>

@@ -24,6 +24,7 @@
     <string name="created_on">%1$s tarihinde oluşturuldu</string>
     <string name="decrease_quantity">Miktarı azalt</string>
     <string name="increase_quantity">Miktarı artır</string>
+    <string name="delete_cart_question">Sepeti sil?</string>
     <string name="delete_cart">Sepeti Sil</string>
     <string name="delete_cart_warning">Bu sepeti silmek, \"%s\" içindeki tüm ürünleri kalıcı olarak kaldıracak ve geri alınamaz.</string>
     <string name="delete">Sil</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Sepet Ürününü Sil</string>
     <string name="delete_cart_item_message">Bu ürünü silmek istediğinizden emin misiniz?</string>
     <string name="delete_cart_item_warning">Sepetinizden "%s" ürününü silmek üzeresiniz.</string>
-    <string name="item_removed_succesfully">Öğe başarıyla silindi!</string>
+    <string name="item_removed_successfully">Öğe başarıyla silindi!</string>
     <string name="item_added_successfully">Öğe başarıyla eklendi!</string>
     <string name="failed_to_add_item">Öğe eklenemedi</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Sepetinizin nasıl davranacağını yönetin</string>
 
     <string name="currency">Para Birimi</string>
+    <string name="select_currency">Para birimini seç</string>
     <string name="summary_preference_settings_currency">Fiyatları görüntülemek için tercih ettiğiniz para birimini ayarlayın</string>
     <string name="dialog_currency_subtitle">Tercih ettiğiniz para birimini seçin</string>
     <string name="dialog_info_currency">Bu para birimi seçimi, ürün fiyatlarını görüntülemek, işlemleri gerçekleştirmek ve daha kişiselleştirilmiş bir alışveriş deneyimi sağlamak için platform genelinde kullanılacaktır</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Evet! Sepet Hesaplayıcı, GNU Genel Kamu Lisansı sürüm 3 kapsamında dağıtılan gurur verici bir ücretsiz yazılımdır.</string>
     <string name="question_9">Sepet Hesaplayıcı\'ya nasıl katkıda bulunabilirim?</string>
     <string name="summary_preference_faq_9">Sepet Hesaplayıcı\'ya katkıda bulunmanın en iyi yolu <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> deposudur. Oradan, onu çatallayabilir ve katkılarınız üzerinde çalışabilir ve daha sonra bunları çekme isteği yoluyla geri gönderebilirsiniz. Ayrıca hata izleyiciyi hataları bildirmek, yeni özellikler veya geliştirmeler önermek veya nasıl yardımcı olabileceğiniz konusunda fikir edinmek için de kullanabilirsiniz.</string>
+
+    <string name="empty_cart">Sepetiniz şu anda boş.</string>
+    <string name="compression_failed">Sepet verileri hazırlanamadı. Lütfen tekrar deneyin.</string>
+    <string name="failed_to_import_cart">Sepet içe aktarılamadı. Lütfen dosyayı kontrol edip tekrar deneyin.</string>
+    <string name="failed_to_encrypt_cart">Sepet güvence altına alınamadı. Lütfen tekrar deneyin.</string>
+    <string name="database_cart_not_found">Sepet bulunamadı.</string>
+    <string name="failed_to_load_cart">Sepet yüklenemedi.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet yüklü değil</string>
+    <string name="failed_to_update_cart_item">Sepet öğesi güncellenemedi.</string>
+    <string name="failed_to_delete_cart_item">Sepet öğesi silinemedi.</string>
+    <string name="failed_to_add_cart_item">Öğe sepete eklenemedi.</string>
+    <string name="request_no_internet">İnternet bağlantısı yok. Lütfen bağlantınızı kontrol edip tekrar deneyin.</string>
+    <string name="request_timeout">İstek zaman aşımına uğradı. Lütfen tekrar deneyin.</string>
+    <string name="request_server_not_found">Sunucu hatası. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="request_payload_error">Veri hatası. Lütfen tekrar deneyin.</string>
+    <string name="failed_to_delete_cart">Sepet silinemedi. Lütfen tekrar deneyin.</string>
+    <string name="failed_to_decrypt_cart">Sepet verileri yüklenemedi. Sepet bozulmuş olabilir.</string>
+    <string name="database_operation_failed">Yerel verilerle ilgili bir hata oluştu. Lütfen tekrar deneyin.</string>
+    <string name="cart_not_found">Sepet bulunamadı.</string>
 </resources>

@@ -24,6 +24,7 @@
     <string name="created_on">Utworzono %1$s</string>
     <string name="decrease_quantity">Zmniejsz ilość</string>
     <string name="increase_quantity">Zwiększ ilość</string>
+    <string name="delete_cart_question">Usunąć koszyk?</string>
     <string name="delete_cart">Usuń koszyk</string>
     <string name="delete_cart_warning">Usunięcie tego koszyka spowoduje trwałe usunięcie wszystkich pozycji z „%s” i nie można tego cofnąć.</string>
     <string name="delete">Usuń</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Usuń przedmiot z koszyka</string>
     <string name="delete_cart_item_message">Czy na pewno chcesz usunąć ten przedmiot?</string>
     <string name="delete_cart_item_warning">Za chwilę usuniesz „%s” ze swojego koszyka.</string>
-    <string name="item_removed_succesfully">Element został pomyślnie usunięty!</string>
+    <string name="item_removed_successfully">Element został pomyślnie usunięty!</string>
     <string name="item_added_successfully">Element został pomyślnie dodany!</string>
     <string name="failed_to_add_item">Nie udało się dodać elementu</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Zarządzaj zachowaniem koszyka</string>
 
     <string name="currency">Waluta</string>
+    <string name="select_currency">Wybierz walutę</string>
     <string name="summary_preference_settings_currency">Ustaw preferowaną walutę do wyświetlania cen</string>
     <string name="dialog_currency_subtitle">Wybierz preferowaną walutę</string>
     <string name="dialog_info_currency">Ten wybór waluty będzie używany na całej platformie do wyświetlania cen produktów, przetwarzania transakcji i zapewniania bardziej spersonalizowanych zakupów</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Tak! Kalkulator Koszyka to z dumą darmowe oprogramowanie rozpowszechniane na licencji GNU General Public License w wersji 3.</string>
     <string name="question_9">Jak mogę przyczynić się do rozwoju Kalkulatora Koszyka?</string>
     <string name="summary_preference_faq_9">Najlepszym sposobem na wniesienie wkładu w rozwój Kalkulatora Koszyka jest jego repozytorium <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Stamtąd możesz go rozwidlić i pracować nad swoim wkładem, a następnie odesłać go za pośrednictwem żądania ściągnięcia. Możesz również skorzystać z narzędzia do śledzenia problemów, aby zgłaszać błędy, proponować nowe funkcje lub ulepszenia lub uzyskać pomysły, w jaki sposób możesz pomóc.</string>
+
+    <string name="empty_cart">Twój koszyk jest pusty.</string>
+    <string name="compression_failed">Nie udało się przygotować danych koszyka. Spróbuj ponownie.</string>
+    <string name="failed_to_import_cart">Nie można zaimportować koszyka. Sprawdź plik i spróbuj ponownie.</string>
+    <string name="failed_to_encrypt_cart">Nie udało się zabezpieczyć koszyka. Spróbuj ponownie.</string>
+    <string name="database_cart_not_found">Koszyk nie został znaleziony.</string>
+    <string name="failed_to_load_cart">Nie udało się załadować koszyka.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet nie jest zainstalowany</string>
+    <string name="failed_to_update_cart_item">Nie udało się zaktualizować elementu koszyka.</string>
+    <string name="failed_to_delete_cart_item">Nie udało się usunąć elementu koszyka.</string>
+    <string name="failed_to_add_cart_item">Nie udało się dodać elementu do koszyka.</string>
+    <string name="request_no_internet">Brak połączenia z internetem. Sprawdź połączenie i spróbuj ponownie.</string>
+    <string name="request_timeout">Przekroczono limit czasu żądania. Spróbuj ponownie.</string>
+    <string name="request_server_not_found">Błąd serwera. Spróbuj ponownie później.</string>
+    <string name="request_payload_error">Błąd danych. Spróbuj ponownie.</string>
+    <string name="failed_to_delete_cart">Nie można usunąć koszyka. Spróbuj ponownie.</string>
+    <string name="failed_to_decrypt_cart">Nie można załadować danych koszyka. Koszyk może być uszkodzony.</string>
+    <string name="database_operation_failed">Wystąpił błąd z danymi lokalnymi. Spróbuj ponownie.</string>
+    <string name="cart_not_found">Koszyk nie został znaleziony.</string>
 </resources>

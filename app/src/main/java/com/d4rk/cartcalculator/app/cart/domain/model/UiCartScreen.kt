@@ -12,7 +12,7 @@ data class UiCartScreen(
     val cart : ShoppingCartTable? = null ,
     val currentCartItemForEdit : ShoppingCartItemsTable? = null ,
     val openDialog : Boolean = false ,
-    val openClearAllDialog: Boolean = false,
+    val openClearAllDialog : Boolean = false ,
     val openDeleteDialog : Boolean = false ,
     val openEditDialog : Boolean = false ,
     val currentCartItemForDeletion : ShoppingCartItemsTable? = null ,

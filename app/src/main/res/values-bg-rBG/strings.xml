@@ -24,6 +24,7 @@
     <string name="created_on">Създадена на %1$s</string>
     <string name="decrease_quantity">Намалете количеството</string>
     <string name="increase_quantity">Увеличете количеството</string>
+    <string name="delete_cart_question">Изтриване на количката?</string>
     <string name="delete_cart">Изтриване на количката</string>
     <string name="delete_cart_warning">Изтриването на тази количка ще премахне за постоянно всички артикули от „%s“ и не може да бъде отменено.</string>
     <string name="delete">Изтрий</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Изтриване на артикул от количката</string>
     <string name="delete_cart_item_message">Сигурни ли сте, че искате да изтриете този артикул?</string>
     <string name="delete_cart_item_warning">Предстои да изтриете „%s“ от вашата количка.</string>
-    <string name="item_removed_succesfully">Артикулът беше премахнат успешно!</string>
+    <string name="item_removed_successfully">Артикулът беше премахнат успешно!</string>
     <string name="item_added_successfully">Артикулът беше добавен успешно!</string>
     <string name="failed_to_add_item">Неуспешно добавяне на артикула</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Управлявайте как се държи вашата количка</string>
 
     <string name="currency">Валута</string>
+    <string name="select_currency">Изберете валута</string>
     <string name="summary_preference_settings_currency">Задайте предпочитаната от вас валута за показване на цените</string>
     <string name="dialog_currency_subtitle">Изберете предпочитаната от вас валута</string>
     <string name="dialog_info_currency">Този избор на валута ще се използва в цялата платформа за показване на цените на продуктите, обработка на транзакции и осигуряване на по-персонализирано пазаруване</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Да! Cart Calculator е горд безплатен софтуер, разпространяван под GNU General Public License версия 3.</string>
     <string name="question_9">Как мога да допринеса за Cart Calculator?</string>
     <string name="summary_preference_faq_9">Най-добрият начин да допринесете за Cart Calculator е чрез неговото хранилище <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Оттам можете да го разклоните и да работите върху вашите приноси, а по-късно да ги изпратите обратно чрез заявка за изтегляне. Можете също да използвате тракера за проблеми, за да докладвате за грешки, да предлагате нови функции или подобрения или да получавате идеи как бихте могли да помогнете.</string>
+
+    <string name="empty_cart">Вашата количка е празна.</string>
+    <string name="compression_failed">Данните на количката не можаха да бъдат подготвени. Моля, опитайте отново.</string>
+    <string name="failed_to_import_cart">Неуспешен импорт на количката. Моля, проверете файла и опитайте отново.</string>
+    <string name="failed_to_encrypt_cart">Количката не можа да бъде защитена. Моля, опитайте отново.</string>
+    <string name="database_cart_not_found">Количката не е намерена.</string>
+    <string name="failed_to_load_cart">Неуспешно зареждане на количката.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet не е инсталиран</string>
+    <string name="failed_to_update_cart_item">Неуспешно обновяване на елемента в количката.</string>
+    <string name="failed_to_delete_cart_item">Неуспешно изтриване на елемента от количката.</string>
+    <string name="failed_to_add_cart_item">Неуспешно добавяне на елемента в количката.</string>
+    <string name="request_no_internet">Няма интернет връзка. Моля, проверете връзката си и опитайте отново.</string>
+    <string name="request_timeout">Времето за заявката изтече. Моля, опитайте отново.</string>
+    <string name="request_server_not_found">Сървърна грешка. Моля, опитайте отново по-късно.</string>
+    <string name="request_payload_error">Грешка в данните. Моля, опитайте отново.</string>
+    <string name="failed_to_delete_cart">Неуспешно изтриване на количката. Моля, опитайте отново.</string>
+    <string name="failed_to_decrypt_cart">Неуспешно зареждане на данните от количката. Възможно е количката да е повредена.</string>
+    <string name="database_operation_failed">Възникна проблем с локалните данни. Моля, опитайте отново.</string>
+    <string name="cart_not_found">Количката не е намерена.</string>
 </resources>

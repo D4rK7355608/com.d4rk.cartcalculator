@@ -122,7 +122,7 @@ class CartViewModel(
                         copy(cartItems = cartItems.filter { it.itemId != item.itemId })
                     }
                     calculateTotalPrice()
-                    postSnackbar(resId = R.string.item_removed_succesfully , isError = false)
+                    postSnackbar(resId = R.string.item_removed_successfully , isError = false)
                     checkForEmptyItems()
                 }
             }
@@ -178,7 +178,7 @@ class CartViewModel(
         }
     }
 
-    fun areAllItemsChecked(): Boolean {
+    fun areAllItemsChecked() : Boolean {
         val items : List<ShoppingCartItemsTable> = screenData?.cartItems.orEmpty()
         return items.isNotEmpty() && items.all { it.isChecked }
     }

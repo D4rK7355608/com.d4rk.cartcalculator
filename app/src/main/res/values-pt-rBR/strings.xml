@@ -24,6 +24,7 @@
     <string name="created_on">Criado em %1$s</string>
     <string name="decrease_quantity">Diminuir quantidade</string>
     <string name="increase_quantity">Aumentar quantidade</string>
+    <string name="delete_cart_question">Usunąć koszyk?</string>
     <string name="delete_cart">Excluir carrinho</string>
     <string name="delete_cart_warning">Excluir este carrinho removerá permanentemente todos os itens de \"%s\" e não poderá ser desfeito.</string>
     <string name="delete">Excluir</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Excluir item do carrinho</string>
     <string name="delete_cart_item_message">Tem certeza de que deseja excluir este item?</string>
     <string name="delete_cart_item_warning">Você está prestes a excluir \"%s\" do seu carrinho.</string>
-    <string name="item_removed_succesfully">Item removido com sucesso!</string>
+    <string name="item_removed_successfully">Item removido com sucesso!</string>
     <string name="item_added_successfully">Item adicionado com sucesso!</string>
     <string name="failed_to_add_item">Falha ao adicionar o item</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Gerenciar como seu carrinho se comporta</string>
 
     <string name="currency">Moeda</string>
+    <string name="select_currency">Selecionar moeda</string>
     <string name="summary_preference_settings_currency">Defina sua moeda preferida para exibir preços</string>
     <string name="dialog_currency_subtitle">Selecione sua moeda preferida</string>
     <string name="dialog_info_currency">Esta seleção de moeda será utilizada em toda a plataforma para exibir preços de produtos, processar transações e fornecer uma experiência de compra mais personalizada</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Sim! O Cart Calculator é orgulhosamente um software livre distribuído sob a Licença Pública Geral GNU versão 3.</string>
     <string name="question_9">Como posso contribuir para o Cart Calculator?</string>
     <string name="summary_preference_faq_9">A melhor maneira de contribuir para o Cart Calculator é através do repositório <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> dele. De lá, você pode bifurcá-lo e trabalhar em suas contribuições e, posteriormente, enviá-las de volta por meio de um pull request. Você também pode usar o rastreador de problemas para relatar bugs, propor novos recursos ou melhorias ou obter ideias de como você pode ajudar.</string>
+
+    <string name="empty_cart">Seu carrinho está vazio.</string>
+    <string name="compression_failed">Não foi possível preparar os dados do carrinho. Tente novamente.</string>
+    <string name="failed_to_import_cart">Não foi possível importar o carrinho. Verifique o arquivo e tente novamente.</string>
+    <string name="failed_to_encrypt_cart">Não foi possível proteger o carrinho. Tente novamente.</string>
+    <string name="database_cart_not_found">Carrinho não encontrado.</string>
+    <string name="failed_to_load_cart">Falha ao carregar o carrinho.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Carteira não está instalado</string>
+    <string name="failed_to_update_cart_item">Falha ao atualizar o item do carrinho.</string>
+    <string name="failed_to_delete_cart_item">Falha ao excluir o item do carrinho.</string>
+    <string name="failed_to_add_cart_item">Falha ao adicionar o item ao carrinho.</string>
+    <string name="request_no_internet">Sem conexão com a internet. Verifique sua conexão e tente novamente.</string>
+    <string name="request_timeout">Tempo de solicitação esgotado. Tente novamente.</string>
+    <string name="request_server_not_found">Erro no servidor. Tente novamente mais tarde.</string>
+    <string name="request_payload_error">Erro de dados. Tente novamente.</string>
+    <string name="failed_to_delete_cart">Não foi possível excluir o carrinho. Tente novamente.</string>
+    <string name="failed_to_decrypt_cart">Não foi possível carregar os dados do carrinho. O carrinho pode estar corrompido.</string>
+    <string name="database_operation_failed">Algo deu errado com os dados locais. Tente novamente.</string>
+    <string name="cart_not_found">Carrinho não encontrado.</string>
 </resources>

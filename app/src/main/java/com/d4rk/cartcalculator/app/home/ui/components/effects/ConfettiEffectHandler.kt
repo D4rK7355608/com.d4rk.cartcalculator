@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit
 
 @Composable
 fun ConfettiEffectHandler(firstCartId : Int? , cartSize : Int) {
-    val dataStore: DataStore = koinInject()
+    val dataStore : DataStore = koinInject()
     val hasSeenConfetti : Boolean by dataStore.hasSeenConfetti().collectAsState(initial = false)
     val shouldShowConfetti : Boolean = remember {
         cartSize == 1 && firstCartId == 1 && ! hasSeenConfetti

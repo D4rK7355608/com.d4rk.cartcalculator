@@ -24,6 +24,7 @@
     <string name="created_on">Creat pe %1$s</string>
     <string name="decrease_quantity">Micșorează cantitatea</string>
     <string name="increase_quantity">Mărește cantitatea</string>
+    <string name="delete_cart_question">Ștergi coșul?</string>
     <string name="delete_cart">Șterge coșul</string>
     <string name="delete_cart_warning">Ștergerea acestui coș va elimina definitiv toate articolele din „%s” și nu poate fi anulată.</string>
     <string name="delete">Șterge</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Șterge articolul din coș</string>
     <string name="delete_cart_item_message">Ești sigur că vrei să ștergi acest articol?</string>
     <string name="delete_cart_item_warning">Ești pe cale să ștergi „%s” din coșul tău.</string>
-    <string name="item_removed_succesfully">Articol eliminat cu succes!</string>
+    <string name="item_removed_successfully">Articol eliminat cu succes!</string>
     <string name="item_added_successfully">Articol adăugat cu succes!</string>
     <string name="failed_to_add_item">Nu s-a putut adăuga articolul</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Gestionează modul în care se comportă coșul tău</string>
 
     <string name="currency">Monedă</string>
+    <string name="select_currency">Selectează moneda</string>
     <string name="summary_preference_settings_currency">Setează moneda preferată pentru afișarea prețurilor</string>
     <string name="dialog_currency_subtitle">Selectează moneda preferată</string>
     <string name="dialog_info_currency">Această selecție de monedă va fi utilizată pe platformă pentru afișarea prețurilor produselor, procesarea tranzacțiilor și oferirea unei experiențe de cumpărături mai personalizate</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Da! Cart Calculator este cu mândrie un software gratuit distribuit sub licența GNU General Public License versiunea 3.</string>
     <string name="question_9">Cum pot contribui la Cart Calculator?</string>
     <string name="summary_preference_faq_9">Cea mai bună modalitate de a contribui la Cart Calculator este prin intermediul depozitului său <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. De acolo, îl poți bifurca (fork) și poți lucra la contribuțiile tale, iar mai târziu le poți trimite înapoi printr-o solicitare de extragere (pull request). De asemenea, poți utiliza instrumentul de urmărire a problemelor pentru a raporta erori, a propune noi funcții sau îmbunătățiri sau pentru a obține idei despre cum ai putea ajuta.</string>
+
+    <string name="empty_cart">Coșul tău este gol.</string>
+    <string name="compression_failed">Datele coșului nu au putut fi pregătite. Încearcă din nou.</string>
+    <string name="failed_to_import_cart">Nu s-a putut importa coșul. Verifică fișierul și încearcă din nou.</string>
+    <string name="failed_to_encrypt_cart">Coșul nu a putut fi securizat. Încearcă din nou.</string>
+    <string name="database_cart_not_found">Coșul nu a fost găsit.</string>
+    <string name="failed_to_load_cart">Nu s-a putut încărca coșul.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet nu este instalat</string>
+    <string name="failed_to_update_cart_item">Nu s-a putut actualiza produsul din coș.</string>
+    <string name="failed_to_delete_cart_item">Nu s-a putut șterge produsul din coș.</string>
+    <string name="failed_to_add_cart_item">Nu s-a putut adăuga produsul în coș.</string>
+    <string name="request_no_internet">Nu există conexiune la internet. Verifică conexiunea și încearcă din nou.</string>
+    <string name="request_timeout">Cererea a expirat. Încearcă din nou.</string>
+    <string name="request_server_not_found">Eroare de server. Încearcă din nou mai târziu.</string>
+    <string name="request_payload_error">Eroare de date. Încearcă din nou.</string>
+    <string name="failed_to_delete_cart">Nu s-a putut șterge coșul. Încearcă din nou.</string>
+    <string name="failed_to_decrypt_cart">Nu s-au putut încărca datele coșului. Este posibil ca acesta să fie corupt.</string>
+    <string name="database_operation_failed">Ceva nu a mers bine cu datele locale. Încearcă din nou.</string>
+    <string name="cart_not_found">Coșul nu a fost găsit.</string>
 </resources>

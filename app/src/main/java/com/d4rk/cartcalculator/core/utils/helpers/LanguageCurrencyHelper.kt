@@ -8,23 +8,7 @@ import java.util.Locale
 object LanguageCurrencyHelper {
 
     private val languageToCurrency : Map<String , String> = mapOf<String , String>(
-        "bg" to "EUR" ,
-        "de" to "EUR" ,
-        "es" to "EUR" ,
-        "fr" to "EUR" ,
-        "it" to "EUR" ,
-        "ro" to "RON" ,
-        "pt" to "BRL" ,
-        "ru" to "RUB" ,
-        "hi" to "INR" ,
-        "in" to "IDR" ,
-        "ja" to "JPY" ,
-        "pl" to "PLN" ,
-        "th" to "THB" ,
-        "tr" to "TRY" ,
-        "uk" to "UAH" ,
-        "zh-hant" to "HKD" ,
-        "hu" to "HUF"
+        "bg" to "EUR" , "de" to "EUR" , "es" to "EUR" , "fr" to "EUR" , "it" to "EUR" , "ro" to "RON" , "pt" to "BRL" , "ru" to "RUB" , "hi" to "INR" , "in" to "IDR" , "ja" to "JPY" , "pl" to "PLN" , "th" to "THB" , "tr" to "TRY" , "uk" to "UAH" , "zh-hant" to "HKD" , "hu" to "HUF"
     )
 
     fun getDefaultCurrencyForLocale(applicationContext : Context) : String? {

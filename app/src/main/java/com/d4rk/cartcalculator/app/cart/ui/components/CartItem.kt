@@ -31,10 +31,7 @@ import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -56,7 +53,6 @@ import java.util.Locale
 @Composable
 fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onMinusClick : (ShoppingCartItemsTable) -> Unit , onPlusClick : (ShoppingCartItemsTable) -> Unit , uiState : UiStateScreen<UiCartScreen> , modifier : Modifier) {
     val view : View = LocalView.current
-    var checkedState by remember { mutableStateOf(cartItem.isChecked) }
     val quantityState = viewModel.getQuantityStateForItem(item = cartItem)
     val interactionSource = remember { MutableInteractionSource() }
     val dismissState = rememberSwipeToDismissBoxState(confirmValueChange = { target ->
@@ -100,9 +96,8 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
                     Checkbox(modifier = Modifier
                             .bounceClick()
                             .padding(end = SizeConstants.LargeSize)
-                            .wrapContentSize() , checked = checkedState , onCheckedChange = { isChecked ->
+                            .wrapContentSize() , checked = cartItem.isChecked , onCheckedChange = { isChecked : Boolean ->
                         view.playSoundEffect(SoundEffectConstants.CLICK)
-                        checkedState = isChecked
                         viewModel.onEvent(event = CartEvent.ItemCheckedChange(item = cartItem , isChecked = isChecked))
                     })
                     Column(modifier = Modifier.weight(weight = 1f)) {

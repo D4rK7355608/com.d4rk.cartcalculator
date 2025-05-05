@@ -24,6 +24,7 @@
     <string name="created_on">Skapad den %1$s</string>
     <string name="decrease_quantity">Minska kvantitet</string>
     <string name="increase_quantity">Öka kvantitet</string>
+    <string name="delete_cart_question">Ta bort kundvagnen?</string>
     <string name="delete_cart">Ta bort varukorg</string>
     <string name="delete_cart_warning">Om du tar bort den här varukorgen tas alla objekt från \"%s\" bort permanent och kan inte ångras.</string>
     <string name="delete">Ta bort</string>
@@ -55,7 +56,7 @@
     <string name="delete_cart_item_title">Ta bort objekt från varukorgen</string>
     <string name="delete_cart_item_message">Är du säker på att du vill ta bort det här objektet?</string>
     <string name="delete_cart_item_warning">Du håller på att ta bort \"%s\" från din varukorg.</string>
-    <string name="item_removed_succesfully">Artikeln har tagits bort!</string>
+    <string name="item_removed_successfully">Artikeln har tagits bort!</string>
     <string name="item_added_successfully">Artikeln har lagts till!</string>
     <string name="failed_to_add_item">Kunde inte lägga till artikeln</string>
 
@@ -63,6 +64,7 @@
     <string name="summary_preference_settings_cart">Hantera hur din varukorg beter sig</string>
 
     <string name="currency">Valuta</string>
+    <string name="select_currency">Välj valuta</string>
     <string name="summary_preference_settings_currency">Ställ in önskad valuta för att visa priser</string>
     <string name="dialog_currency_subtitle">Välj önskad valuta</string>
     <string name="dialog_info_currency">Detta valutaval kommer att användas över hela plattformen för att visa produktpriser, bearbeta transaktioner och ge en mer personlig shoppingupplevelse</string>
@@ -106,4 +108,23 @@
     <string name="summary_preference_faq_8">Ja! Varukorgsberäknaren är stolt gratis programvara som distribueras under GNU General Public License version 3.</string>
     <string name="question_9">Hur kan jag bidra till Varukorgsberäknaren?</string>
     <string name="summary_preference_faq_9">Det bästa sättet att bidra till Varukorgsberäknaren är genom dess <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>-lagringsplats. Därifrån kan du gaffla den och arbeta med dina bidrag och senare skicka tillbaka dem via pull-begäran. Du kan också använda problemspåraren för att rapportera fel, föreslå nya funktioner eller förbättringar, eller få idéer om hur du kan hjälpa till.</string>
+
+    <string name="empty_cart">Din kundvagn är tom.</string>
+    <string name="compression_failed">Kundvagnsdata kunde inte förberedas. Försök igen.</string>
+    <string name="failed_to_import_cart">Det gick inte att importera kundvagnen. Kontrollera filen och försök igen.</string>
+    <string name="failed_to_encrypt_cart">Kundvagnen kunde inte säkras. Försök igen.</string>
+    <string name="database_cart_not_found">Kundvagn hittades inte.</string>
+    <string name="failed_to_load_cart">Det gick inte att ladda kundvagnen.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet är inte installerat</string>
+    <string name="failed_to_update_cart_item">Det gick inte att uppdatera varan i kundvagnen.</string>
+    <string name="failed_to_delete_cart_item">Det gick inte att ta bort varan från kundvagnen.</string>
+    <string name="failed_to_add_cart_item">Det gick inte att lägga till varan i kundvagnen.</string>
+    <string name="request_no_internet">Ingen internetanslutning. Kontrollera anslutningen och försök igen.</string>
+    <string name="request_timeout">Begäran tog för lång tid. Försök igen.</string>
+    <string name="request_server_not_found">Serverfel. Försök igen senare.</string>
+    <string name="request_payload_error">Datafel. Försök igen.</string>
+    <string name="failed_to_delete_cart">Det gick inte att ta bort kundvagnen. Försök igen.</string>
+    <string name="failed_to_decrypt_cart">Kundvagnsdata kunde inte laddas. Den kan vara korrupt.</string>
+    <string name="database_operation_failed">Ett fel uppstod med lokala data. Försök igen.</string>
+    <string name="cart_not_found">Kundvagn hittades inte.</string>
 </resources>
