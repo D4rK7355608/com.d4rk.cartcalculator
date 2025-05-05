@@ -53,8 +53,6 @@ class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : R
         val outputStream = ByteArrayOutputStream()
         val packer : MessagePacker = MessagePack.newDefaultPacker(outputStream)
 
-        packer.packArrayHeader(2)
-
         packer.packArrayHeader(3)
         packer.packInt(cart.cartId)
         packer.packString(cart.name)

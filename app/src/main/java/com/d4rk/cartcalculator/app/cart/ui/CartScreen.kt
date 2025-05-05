@@ -34,6 +34,7 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.AnimatedFloatingActionButton
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.LoadingScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.layouts.ScreenStateHandler
+import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHandler
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
 import com.d4rk.cartcalculator.app.cart.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.domain.model.UiCartScreen
@@ -41,7 +42,6 @@ import com.d4rk.cartcalculator.app.cart.ui.components.CartItemsList
 import com.d4rk.cartcalculator.app.cart.ui.components.CartTotalCard
 import com.d4rk.cartcalculator.app.cart.ui.components.EmptyCartScreen
 import com.d4rk.cartcalculator.app.cart.ui.components.effects.CartScreenDialogs
-import com.d4rk.cartcalculator.app.cart.ui.components.effects.CartSnackbarHandler
 import com.d4rk.cartcalculator.app.cart.ui.components.navigation.CartScreenTopAppBar
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
@@ -86,8 +86,7 @@ fun CartScreenStates(paddingValues : PaddingValues , screenState : UiStateScreen
     } , onSuccess = {
         CartScreenContent(viewModel = viewModel , paddingValues = paddingValues)
     })
-
-    CartSnackbarHandler(screenState = screenState , viewModel = viewModel , snackbarHostState = snackbarHostState)
+    DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackbarHostState , getDismissEvent = { CartEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(event = it) })
     CartScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 

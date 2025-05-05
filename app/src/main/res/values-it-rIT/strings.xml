@@ -116,9 +116,9 @@
     <string name="database_cart_not_found">Carrello non trovato.</string>
     <string name="failed_to_load_cart">Impossibile caricare il carrello.</string>
     <string name="google_pay_wallet_not_installed">Google Pay/Wallet non è installato</string>
-    <string name="failed_to_update_cart_item">Impossibile aggiornare l'articolo del carrello.</string>
-    <string name="failed_to_delete_cart_item">Impossibile eliminare l'articolo del carrello.</string>
-    <string name="failed_to_add_cart_item">Impossibile aggiungere l'articolo al carrello.</string>
+    <string name="failed_to_update_cart_item">Impossibile aggiornare l\'articolo del carrello.</string>
+    <string name="failed_to_delete_cart_item">Impossibile eliminare l\'articolo del carrello.</string>
+    <string name="failed_to_add_cart_item">Impossibile aggiungere l\'articolo al carrello.</string>
     <string name="request_no_internet">Nessuna connessione a Internet. Controlla la connessione e riprova.</string>
     <string name="request_timeout">Richiesta scaduta. Riprova.</string>
     <string name="request_server_not_found">Errore del server. Riprova più tardi.</string>
