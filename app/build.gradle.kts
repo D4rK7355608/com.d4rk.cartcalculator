@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     alias(notation = libs.plugins.androidApplication)
     alias(notation = libs.plugins.jetbrainsKotlinAndroid)
@@ -48,7 +46,7 @@ android {
         }
     }
 
-    signingConfigs {
+/*    signingConfigs {
         create("release")
 
         val signingProps = Properties()
@@ -67,11 +65,11 @@ android {
         else {
             android.buildTypes.getByName("release").signingConfig = null
         }
-    }
+    }*/
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            // signingConfig = signingConfigs.getByName("release")
             isDebuggable = false
         }
         debug {
