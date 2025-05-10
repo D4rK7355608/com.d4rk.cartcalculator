@@ -48,9 +48,9 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnack
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ScreenHelper
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
-import com.d4rk.cartcalculator.app.home.ui.HomeScreen
-import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
+import com.d4rk.cartcalculator.app.cart.list.domain.model.ui.UiHomeData
+import com.d4rk.cartcalculator.app.cart.list.ui.HomeScreen
+import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.AppNavigationHost
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.NavigationDrawer

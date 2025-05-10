@@ -71,7 +71,7 @@
         </activity>
 
         <activity
-            android:name="com.d4rk.cartcalculator.app.cart.ui.CartActivity"
+            android:name="com.d4rk.cartcalculator.app.cart.details.ui.CartActivity"
             android:launchMode="singleTask"
             android:parentActivityName=".app.main.ui.MainActivity"
             android:windowSoftInputMode="adjustResize" />

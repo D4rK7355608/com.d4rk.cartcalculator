@@ -20,7 +20,7 @@
     <string name="summary_cart_dialog">Wir möchten ein personalisiertes Einkaufserlebnis für alle schaffen. Um Ihnen das Verfolgen Ihrer Auswahl zu erleichtern und Ihre Einkaufsreise zu verbessern, sollten Sie Ihrem Warenkorb einen Namen geben, bevor Sie Artikel hinzufügen.</string>
     <string name="create">Erstellen</string>
     <string name="cart_category_device">Auf diesem Gerät</string>
-    <string name="cart_category_owner">Besitzer</string>
+    <string name="owner">Besitzer</string>
     <string name="created_on">Erstellt am %1$s</string>
     <string name="decrease_quantity">Menge verringern</string>
     <string name="increase_quantity">Menge erhöhen</string>

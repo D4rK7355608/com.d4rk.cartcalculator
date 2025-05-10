@@ -16,10 +16,10 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationD
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.links.AppLinks
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
-import com.d4rk.cartcalculator.app.home.domain.model.UiHomeData
-import com.d4rk.cartcalculator.app.home.ui.HomeScreen
-import com.d4rk.cartcalculator.app.home.ui.HomeViewModel
-import com.d4rk.cartcalculator.app.home.ui.components.effects.HomeEventHandler
+import com.d4rk.cartcalculator.app.cart.list.domain.model.ui.UiHomeData
+import com.d4rk.cartcalculator.app.cart.list.ui.HomeScreen
+import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
+import com.d4rk.cartcalculator.app.cart.list.ui.components.effects.HomeEventHandler
 import com.d4rk.cartcalculator.app.main.utils.constants.NavigationRoutes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

@@ -20,7 +20,7 @@
     <string name="summary_cart_dialog">Ne angajăm să creăm o experiență de cumpărături personalizată pentru toată lumea. Pentru a-ți fi mai ușor să urmărești selecțiile tale și pentru a-ți îmbunătăți experiența de cumpărături, ia în considerare să dai un nume coșului tău înainte de a adăuga articole.</string>
     <string name="create">Creează</string>
     <string name="cart_category_device">Pe acest dispozitiv</string>
-    <string name="cart_category_owner">Proprietar</string>
+    <string name="owner">Proprietar</string>
     <string name="created_on">Creat pe %1$s</string>
     <string name="decrease_quantity">Micșorează cantitatea</string>
     <string name="increase_quantity">Mărește cantitatea</string>

@@ -1,5 +1,6 @@
 package com.d4rk.cartcalculator.core.domain.usecases.cart
 
+import android.os.Build
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.usecases.Repository
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
@@ -9,97 +10,60 @@ import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.utils.extensions.toError
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import net.jpountz.lz4.LZ4Compressor
-import net.jpountz.lz4.LZ4Factory
-import org.msgpack.core.MessagePack
-import org.msgpack.core.MessagePacker
+import kotlinx.serialization.ExperimentalSerializationApi
 import java.io.ByteArrayOutputStream
-import java.math.BigInteger
-import java.net.URLEncoder
-import java.util.Locale
+import java.util.Base64
+import java.util.zip.GZIPOutputStream
+import kotlin.io.encoding.ExperimentalEncodingApi
 
 class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : Repository<Int , Flow<DataState<String , Errors>>> {
 
+    @OptIn(ExperimentalSerializationApi::class , ExperimentalEncodingApi::class)
     override suspend fun invoke(param : Int) : Flow<DataState<String , Errors>> = flow {
-        emit(DataState.Loading())
         runCatching {
-            database.getCartById(cartId = param)?.let { cart : ShoppingCartTable ->
-                val cartItems : List<ShoppingCartItemsTable> = database.getItemsByCartId(cartId = param)
+            val cart : ShoppingCartTable = database.getCartById(cartId = param) ?: error("Cart not found")
+            val details : List<ShoppingCartItemsTable> = database.getItemsByCartId(cartId = param)
+            if (details.isEmpty()) error(message = "Empty details")
 
-                if (cartItems.isEmpty()) {
-                    throw IllegalStateException(Errors.UseCase.EMPTY_CART.toString())
-                }
+            val rawString : String = flatten(event = cart , item = details.first())
+            val compressed : ByteArray = compressGzip(input = rawString.encodeToByteArray())
+            val encoded : String = encodeBase64UrlSafe(data = compressed)
 
-                val serializedCart : ByteArray = serializeToMessagePack(cart = cart , cartItems = cartItems)
-                val compressedCartData : ByteArray = compressLZ4(data = serializedCart)
-
-                if (compressedCartData.isEmpty()) {
-                    throw IllegalStateException(Errors.UseCase.COMPRESSION_FAILED.toString())
-                }
-
-                val encodedData : String = encodeBase62(input = compressedCartData)
-                val urlEncodedCartData : String = URLEncoder.encode(encodedData , "UTF-8")
-
-                "https://cartcalculator.com/import?d=$urlEncodedCartData"
-            } ?: throw IllegalStateException(Errors.UseCase.CART_NOT_FOUND.toString())
-        }.onSuccess { url : String ->
-            emit(value = DataState.Success(data = url))
-        }.onFailure { throwable : Throwable ->
-            emit(value = DataState.Error(error = throwable.toError()))
+            "https://cartcalculator/i?d=$encoded"
+        }.onSuccess {
+            emit(value = DataState.Success(data = it))
+        }.onFailure {
+            emit(value = DataState.Error(error = it.toError()))
         }
     }
 
-    private fun serializeToMessagePack(cart : ShoppingCartTable , cartItems : List<ShoppingCartItemsTable>) : ByteArray {
-        val outputStream = ByteArrayOutputStream()
-        val packer : MessagePacker = MessagePack.newDefaultPacker(outputStream)
-
-        packer.packArrayHeader(3)
-        packer.packInt(cart.cartId)
-        packer.packString(cart.name)
-        packer.packLong(cart.date)
-
-        packer.packArrayHeader(cartItems.size)
-        for (item in cartItems) {
-            packer.packArrayHeader(4)
-            packer.packInt(item.itemId)
-            packer.packString(item.name)
-            packer.packInt(item.quantity)
-            packer.packFloat(item.price.toFloat())
-        }
-
-        packer.close()
-        return outputStream.toByteArray()
+    private fun flatten(event : ShoppingCartTable , item : ShoppingCartItemsTable) : String {
+        val values : List<String> = listOf(
+            "id=${event.cartId}" ,
+            "name=${event.name}" ,
+            "date=${event.date}" ,
+            "shared=${true}" ,
+            "iid=${item.itemId}" ,
+            "iname=${item.name}" ,
+            "quantity=${item.quantity}" ,
+            "price=${item.price}",
+            "checked=${item.isChecked}"
+        )
+        return values.joinToString(separator = ";")
     }
 
-    private fun compressLZ4(data : ByteArray) : ByteArray {
-        val factory : LZ4Factory = LZ4Factory.fastestInstance()
-        val compressor : LZ4Compressor = factory.fastCompressor()
-        val maxCompressedLength : Int = compressor.maxCompressedLength(data.size)
-        val compressedData = ByteArray(maxCompressedLength)
-
-        val compressedSize : Int = compressor.compress(data , 0 , data.size , compressedData , 0 , maxCompressedLength)
-
-        return ByteArray(4 + compressedSize).apply {
-            this[0] = (data.size shr 24).toByte()
-            this[1] = (data.size shr 16).toByte()
-            this[2] = (data.size shr 8).toByte()
-            this[3] = data.size.toByte()
-            System.arraycopy(compressedData , 0 , this , 4 , compressedSize)
-        }
+    private fun compressGzip(input : ByteArray) : ByteArray {
+        val output = ByteArrayOutputStream()
+        GZIPOutputStream(output).use { it.write(input) }
+        return output.toByteArray()
     }
 
-    private fun encodeBase62(input : ByteArray) : String {
-        if (input.isEmpty()) return ""
-        val characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        var numericValue = BigInteger(1 , input)
-        val encoded : StringBuilder = StringBuilder()
-
-        while (numericValue > BigInteger.ZERO) {
-            val index : BigInteger = numericValue.mod(BigInteger.valueOf(62))
-            encoded.insert(0 , characters[index.toInt()])
-            numericValue = numericValue.divide(BigInteger.valueOf(62))
+    private fun encodeBase64UrlSafe(data : ByteArray) : String {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Base64.getUrlEncoder().withoutPadding().encodeToString(data)
         }
-        val dataSizePrefix : String = String.format(Locale.getDefault() , "%04d" , input.size)
-        return dataSizePrefix + encoded.toString()
+        else {
+            @Suppress("DEPRECATION") android.util.Base64.encodeToString(data , android.util.Base64.URL_SAFE or android.util.Base64.NO_WRAP).trimEnd('=')
+        }
     }
 }

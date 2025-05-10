@@ -21,7 +21,8 @@
     <string name="summary_cart_dialog">We\'re committed to creating a personalized shopping experience for everyone. To make it easier for you to keep track of your selections and enhance your shopping journey, consider giving your cart a name before adding items.</string>
     <string name="create">Create</string>
     <string name="cart_category_device">On this device</string>
-    <string name="cart_category_owner">Owner</string>
+    <string name="shared">Shared</string>
+    <string name="owner">Owner</string>
     <string name="created_on">Created on %1$s</string>
     <string name="decrease_quantity">Decrease quantity</string>
     <string name="increase_quantity">Increase quantity</string>

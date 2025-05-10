@@ -24,9 +24,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.d4rk.cartcalculator" />
-                  <option name="mobileSdkAppId" value="1:289497233341:android:b6cda4b7325bf96e2c84d4" />
-                  <option name="projectId" value="d4rk-apps" />
-                  <option name="projectNumber" value="289497233341" />
+                  <option name="mobileSdkAppId" value="1:492348704028:android:62a3e97f08ee64e75026d9" />
+                  <option name="projectId" value="cart-calculator-for-android" />
+                  <option name="projectNumber" value="492348704028" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -20,7 +20,7 @@
     <string name="summary_cart_dialog">Dążymy do tworzenia spersonalizowanych doświadczeń zakupowych dla każdego. Aby ułatwić Ci śledzenie swoich wyborów i usprawnić proces zakupów, rozważ nadanie nazwy swojemu koszykowi przed dodaniem pozycji.</string>
     <string name="create">Utwórz</string>
     <string name="cart_category_device">Na tym urządzeniu</string>
-    <string name="cart_category_owner">Właściciel</string>
+    <string name="owner">Właściciel</string>
     <string name="created_on">Utworzono %1$s</string>
     <string name="decrease_quantity">Zmniejsz ilość</string>
     <string name="increase_quantity">Zwiększ ilość</string>
