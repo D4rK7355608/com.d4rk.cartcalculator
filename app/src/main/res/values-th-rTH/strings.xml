@@ -20,7 +20,7 @@
     <string name="summary_cart_dialog">เรามุ่งมั่นที่จะสร้างประสบการณ์การช็อปปิ้งที่เป็นส่วนตัวสำหรับทุกคน เพื่อให้คุณติดตามการเลือกของคุณได้ง่ายขึ้นและปรับปรุงเส้นทางการช็อปปิ้งของคุณ ให้ลองตั้งชื่อรถเข็นของคุณก่อนที่จะเพิ่มสินค้า</string>
     <string name="create">สร้าง</string>
     <string name="cart_category_device">บนอุปกรณ์นี้</string>
-    <string name="cart_category_owner">เจ้าของ</string>
+    <string name="owner">เจ้าของ</string>
     <string name="created_on">สร้างเมื่อ %1$s</string>
     <string name="decrease_quantity">ลดจำนวน</string>
     <string name="increase_quantity">เพิ่มจำนวน</string>

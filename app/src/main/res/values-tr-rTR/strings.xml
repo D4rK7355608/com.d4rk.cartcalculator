@@ -20,7 +20,7 @@
     <string name="summary_cart_dialog">Herkese kişiselleştirilmiş bir alışveriş deneyimi sunmaya kararlıyız. Seçimlerinizi takip etmenizi kolaylaştırmak ve alışveriş yolculuğunuzu geliştirmek için ürün eklemeden önce sepetinize bir ad vermeyi düşünün.</string>
     <string name="create">Oluştur</string>
     <string name="cart_category_device">Bu cihazda</string>
-    <string name="cart_category_owner">Sahip</string>
+    <string name="owner">Sahip</string>
     <string name="created_on">%1$s tarihinde oluşturuldu</string>
     <string name="decrease_quantity">Miktarı azalt</string>
     <string name="increase_quantity">Miktarı artır</string>

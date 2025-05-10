@@ -20,7 +20,7 @@
     <string name="summary_cart_dialog">Ci impegniamo a creare un\'esperienza di acquisto personalizzata per tutti. Per semplificare il monitoraggio delle tue selezioni e migliorare il tuo percorso di acquisto, valuta la possibilità di assegnare un nome al tuo carrello prima di aggiungere articoli.</string>
     <string name="create">Crea</string>
     <string name="cart_category_device">Su questo dispositivo</string>
-    <string name="cart_category_owner">Proprietario</string>
+    <string name="owner">Proprietario</string>
     <string name="created_on">Creato il %1$s</string>
     <string name="decrease_quantity">Diminuisci quantità</string>
     <string name="increase_quantity">Aumenta quantità</string>

@@ -118,16 +118,15 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.7") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.10") {
         isTransitive = true
     }
 
     // Konfetti
     implementation(dependencyNotation = libs.konfetti.compose)
 
-    // Compression
-    implementation(dependencyNotation = libs.msgpack.core)
-    implementation(dependencyNotation = libs.lz4.java)
+    // Kotlin
+    implementation(dependencyNotation = libs.kotlinx.serialization.cbor)
 
     // KSP
     ksp(dependencyNotation = libs.androidx.room.compiler)
