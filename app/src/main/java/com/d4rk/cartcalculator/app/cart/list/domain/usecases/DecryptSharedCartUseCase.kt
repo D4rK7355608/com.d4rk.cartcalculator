@@ -1,6 +1,5 @@
 package com.d4rk.cartcalculator.app.cart.list.domain.usecases
 
-import android.net.Uri
 import android.os.Build
 import androidx.core.net.toUri
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
@@ -19,17 +18,17 @@ class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<Shoppin
 
     override suspend fun invoke(param : String) : Flow<DataState<Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> , Errors>> = flow {
         runCatching {
-            val uri : Uri = param.toUri()
-            val encoded : String = uri.getQueryParameter("d") ?: error(message = "Missing 'd'")
-            val decoded : ByteArray = decodeBase64UrlSafe(encoded = encoded)
-            val decompressed : ByteArray = decompressGzip(input = decoded)
-            val raw : String = decompressed.decodeToString()
+            val uri = param.toUri()
+            val encoded = uri.getQueryParameter("d") ?: error("Missing 'd'")
+            val decoded = decodeBase64UrlSafe(encoded)
+            val decompressed = decompressGzip(decoded)
+            val raw = decompressed.decodeToString()
 
-            parseRawData(raw = raw)
+            parseRawData(raw)
         }.onSuccess {
-            emit(value = DataState.Success(data = it))
+            emit(DataState.Success(it))
         }.onFailure {
-            emit(value = DataState.Error(error = it.toError()))
+            emit(DataState.Error(error = it.toError()))
         }
     }
 
@@ -49,27 +48,30 @@ class DecryptSharedCartUseCase : Repository<String , Flow<DataState<Pair<Shoppin
     }
 
     private fun parseRawData(raw : String) : Pair<ShoppingCartTable , List<ShoppingCartItemsTable>> {
-        val map : Map<String , String> = raw.split(";").associate {
-            val (key : String , value : String) = it.split("=")
-            key to value
+        val parts = raw.split(";;")
+        val cartPart = parts.getOrNull(0) ?: ""
+        val itemsPart = parts.getOrNull(1).orEmpty()
+
+        val map = cartPart.split(";").associate {
+            val (key , value) = it.split("=")
+            key to value.replace("_" , " ")
         }
 
         val cart = ShoppingCartTable(
-            cartId = map["id"]?.toIntOrNull() ?: 0 ,
-            name = map["name"]?.replace(oldValue = "_" , newValue = " ") ?: "Untitled" ,
-            date = map["date"]?.toLongOrNull() ?: 0L ,
-            sharedCart = map["shared"] == "true" ,
+            cartId = map["id"]?.toIntOrNull() ?: 0 , name = map["name"] ?: "Untitled" , date = map["date"]?.toLongOrNull() ?: 0L , sharedCart = map["shared"] == "true"
         )
 
-        val cartItems = ShoppingCartItemsTable(
-            itemId = map["iid"]?.toIntOrNull() ?: 0 ,
-            cartId = cart.cartId,
-            name = map["iname"]?.replace(oldValue = "_" , newValue = " ") ?: "Unknown Item" ,
-            quantity = map["quantity"]?.toIntOrNull() ?: 0,
-            price = map["price"] ?: "0.00",
-            isChecked = map["checked"] == "true"
-        )
+        val items = itemsPart.split("|").mapNotNull { itemEntry ->
+            runCatching {
+                val itemMap = itemEntry.split(";").associate {
+                    val (key , value) = it.split("=")
+                    key to value.replace("_" , " ")
+                }
 
-        return cart to listOf<ShoppingCartItemsTable>(element = cartItems)
+                ShoppingCartItemsTable(itemId = itemMap["iid"]?.toIntOrNull() ?: 0 , cartId = cart.cartId , name = itemMap["iname"] ?: "Item" , quantity = itemMap["quantity"]?.toIntOrNull() ?: 1 , price = itemMap["price"] ?: "0.00" , isChecked = itemMap["checked"] == "true")
+            }.getOrNull()
+        }
+
+        return cart to items
     }
 }

@@ -10,24 +10,23 @@ import com.d4rk.cartcalculator.core.domain.model.network.Errors
 import com.d4rk.cartcalculator.core.utils.extensions.toError
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.serialization.ExperimentalSerializationApi
 import java.io.ByteArrayOutputStream
 import java.util.Base64
 import java.util.zip.GZIPOutputStream
-import kotlin.io.encoding.ExperimentalEncodingApi
 
-class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : Repository<Int , Flow<DataState<String , Errors>>> {
+class GenerateCartShareLinkUseCase(
+    private val database : DatabaseInterface
+) : Repository<Int , Flow<DataState<String , Errors>>> {
 
-    @OptIn(ExperimentalSerializationApi::class , ExperimentalEncodingApi::class)
     override suspend fun invoke(param : Int) : Flow<DataState<String , Errors>> = flow {
         runCatching {
-            val cart : ShoppingCartTable = database.getCartById(cartId = param) ?: error("Cart not found")
-            val details : List<ShoppingCartItemsTable> = database.getItemsByCartId(cartId = param)
-            if (details.isEmpty()) error(message = "Empty details")
+            val cart = database.getCartById(cartId = param) ?: error("Cart not found")
+            val items = database.getItemsByCartId(cartId = param)
+            if (items.isEmpty()) error("Empty cart")
 
-            val rawString : String = flatten(event = cart , item = details.first())
-            val compressed : ByteArray = compressGzip(input = rawString.encodeToByteArray())
-            val encoded : String = encodeBase64UrlSafe(data = compressed)
+            val rawString = flatten(cart , items)
+            val compressed = compressGzip(rawString.encodeToByteArray())
+            val encoded = encodeBase64UrlSafe(compressed)
 
             "https://cartcalculator/i?d=$encoded"
         }.onSuccess {
@@ -37,19 +36,18 @@ class GenerateCartShareLinkUseCase(private val database : DatabaseInterface) : R
         }
     }
 
-    private fun flatten(event : ShoppingCartTable , item : ShoppingCartItemsTable) : String {
-        val values : List<String> = listOf(
-            "id=${event.cartId}" ,
-            "name=${event.name}" ,
-            "date=${event.date}" ,
-            "shared=${true}" ,
-            "iid=${item.itemId}" ,
-            "iname=${item.name}" ,
-            "quantity=${item.quantity}" ,
-            "price=${item.price}",
-            "checked=${item.isChecked}"
+    private fun flatten(cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) : String {
+        val header = listOf(
+            "id=${cart.cartId}" , "name=${cart.name.replace(" " , "_")}" , "date=${cart.date}" , "shared=true"
         )
-        return values.joinToString(separator = ";")
+
+        val itemChunks = items.joinToString(separator = "|") { item ->
+            listOf(
+                "iid=${item.itemId}" , "iname=${item.name.replace(" " , "_")}" , "quantity=${item.quantity}" , "price=${item.price}" , "checked=${item.isChecked}"
+            ).joinToString(";")
+        }
+
+        return header.joinToString(";") + ";;" + itemChunks // Split cart from items with ';;'
     }
 
     private fun compressGzip(input : ByteArray) : ByteArray {
