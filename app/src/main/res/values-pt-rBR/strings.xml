@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">Estamos comprometidos em criar uma experiência de compra personalizada para todos. Para tornar mais fácil para você acompanhar suas seleções e melhorar sua jornada de compras, considere dar um nome ao seu carrinho antes de adicionar itens.</string>
     <string name="create">Criar</string>
     <string name="cart_category_device">Neste dispositivo</string>
+    <string name="shared">Compartilhado</string>
     <string name="owner">Proprietário</string>
     <string name="created_on">Criado em %1$s</string>
     <string name="decrease_quantity">Diminuir quantidade</string>

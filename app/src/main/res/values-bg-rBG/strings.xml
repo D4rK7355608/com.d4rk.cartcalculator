@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">Ние се ангажираме да създадем персонализирано пазаруване за всеки. За да ви е по-лесно да следите вашите селекции и да подобрите вашето пазаруване, помислете за именуване на количката си, преди да добавите артикули.</string>
     <string name="create">Създай</string>
     <string name="cart_category_device">На това устройство</string>
+    <string name="shared">Споделено</string>
     <string name="owner">Собственик</string>
     <string name="created_on">Създадена на %1$s</string>
     <string name="decrease_quantity">Намалете количеството</string>

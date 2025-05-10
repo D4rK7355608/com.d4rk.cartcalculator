@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">Ми прагнемо створити персоналізований досвід покупок для кожного. Щоб вам було легше відстежувати вибране та покращувати процес покупок, подумайте про те, щоб дати кошику назву, перш ніж додавати товари.</string>
     <string name="create">Створити</string>
     <string name="cart_category_device">На цьому пристрої</string>
+    <string name="shared">Спільно</string>
     <string name="owner">Власник</string>
     <string name="created_on">Створено %1$s</string>
     <string name="decrease_quantity">Зменшити кількість</string>

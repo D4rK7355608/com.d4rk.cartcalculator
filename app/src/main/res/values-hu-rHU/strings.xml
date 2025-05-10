@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">Elkötelezettek vagyunk a személyre szabott vásárlási élmény megteremtése mellett mindenki számára. Annak érdekében, hogy könnyebben nyomon követhesse a kiválasztott termékeket és javítsa a vásárlási élményt, fontolja meg, hogy nevet adjon a kosarának, mielőtt hozzáadná a tételeket.</string>
     <string name="create">Létrehozás</string>
     <string name="cart_category_device">Ezen az eszközön</string>
+    <string name="shared">Megosztva</string>
     <string name="owner">Tulajdonos</string>
     <string name="created_on">Létrehozva: %1$s</string>
     <string name="decrease_quantity">Mennyiség csökkentése</string>

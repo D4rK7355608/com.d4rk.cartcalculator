@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">Nous nous engageons à créer une expérience d\'achat personnalisée pour tous. Pour vous faciliter le suivi de vos sélections et améliorer votre parcours d\'achat, pensez à donner un nom à votre panier avant d\'ajouter des articles.</string>
     <string name="create">Créer</string>
     <string name="cart_category_device">Sur cet appareil</string>
+    <string name="shared">Partagé</string>
     <string name="owner">Propriétaire</string>
     <string name="created_on">Créé le %1$s</string>
     <string name="decrease_quantity">Diminuer la quantité</string>

@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">私たちは、すべての人にパーソナライズされたショッピング体験を提供することに取り組んでいます。選択内容を簡単に追跡し、ショッピング体験を向上させるために、アイテムを追加する前にカートに名前を付けることを検討してください。</string>
     <string name="create">作成</string>
     <string name="cart_category_device">このデバイス上</string>
+    <string name="shared">共有済み</string>
     <string name="owner">所有者</string>
     <string name="created_on">%1$sに作成</string>
     <string name="decrease_quantity">数量を減らす</string>

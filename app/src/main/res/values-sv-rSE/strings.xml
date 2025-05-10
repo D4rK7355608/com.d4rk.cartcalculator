@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">Vi är fast beslutna att skapa en personlig shoppingupplevelse för alla. För att göra det lättare för dig att hålla reda på dina val och förbättra din shoppingresa, överväg att ge din varukorg ett namn innan du lägger till objekt.</string>
     <string name="create">Skapa</string>
     <string name="cart_category_device">På den här enheten</string>
+    <string name="shared">Delat</string>
     <string name="owner">Ägare</string>
     <string name="created_on">Skapad den %1$s</string>
     <string name="decrease_quantity">Minska kvantitet</string>

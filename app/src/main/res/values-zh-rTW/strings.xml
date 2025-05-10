@@ -20,6 +20,7 @@
     <string name="summary_cart_dialog">我們致力於為每個人創造個人化的購物體驗。為了讓您更輕鬆地追蹤您的選擇並提升您的購物旅程，請考慮在新增商品前為您的購物車命名。</string>
     <string name="create">建立</string>
     <string name="cart_category_device">在此裝置上</string>
+    <string name="shared">已分享</string>
     <string name="owner">擁有者</string>
     <string name="created_on">建立於 %1$s</string>
     <string name="decrease_quantity">減少數量</string>
