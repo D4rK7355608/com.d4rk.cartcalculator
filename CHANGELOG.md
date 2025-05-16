@@ -1,3 +1,7 @@
+# Version 2.0.1:
+
+- **Minor**: Under-the-hood improvements for a better overall app experience.
+
 # Version 2.0.0:
 
 - **Major**: The app has been fully rewritten for better modularity and future maintainability. This is a breaking update and may require users to uninstall and reinstall the app if the update fails to install.

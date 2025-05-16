@@ -5,8 +5,6 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.d4rk.android.libs.apptoolkit.app.help.ui.HelpActivity
@@ -23,17 +21,12 @@ import com.d4rk.cartcalculator.app.cart.list.ui.components.effects.HomeEventHand
 import com.d4rk.cartcalculator.app.main.utils.constants.NavigationRoutes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun AppNavigationHost(navController : NavHostController , snackbarHostState : SnackbarHostState , onFabVisibilityChanged : (Boolean) -> Unit , paddingValues : PaddingValues) {
+fun AppNavigationHost(navController : NavHostController , snackbarHostState : SnackbarHostState , onFabVisibilityChanged : (Boolean) -> Unit , paddingValues : PaddingValues , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData>) {
     NavigationHost(navController = navController , startDestination = NavigationRoutes.ROUTE_HOME) {
         composable(route = NavigationRoutes.ROUTE_HOME) { backStackEntry ->
-            val homeViewModel : HomeViewModel = koinViewModel()
-            val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.uiState.collectAsState()
-
             HomeEventHandler(homeViewModel = homeViewModel , backStackEntry = backStackEntry)
-
             HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState)
         }
     }

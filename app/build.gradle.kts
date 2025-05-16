@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     alias(notation = libs.plugins.androidApplication)
     alias(notation = libs.plugins.jetbrainsKotlinAndroid)
@@ -19,8 +17,8 @@ android {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
         targetSdk = 35
-        versionCode = 102
-        versionName = "2.0.0"
+        versionCode = 103
+        versionName = "2.0.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage") androidResources.localeFilters += listOf(
             "en" ,
@@ -48,7 +46,7 @@ android {
         }
     }
 
-    signingConfigs {
+    /*signingConfigs {
         create("release")
 
         val signingProps = Properties()
@@ -67,11 +65,11 @@ android {
         else {
             android.buildTypes.getByName("release").signingConfig = null
         }
-    }
+    }*/
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            //signingConfig = signingConfigs.getByName("release")
             isDebuggable = false
         }
         debug {
@@ -118,7 +116,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.10") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.11") {
         isTransitive = true
     }
 

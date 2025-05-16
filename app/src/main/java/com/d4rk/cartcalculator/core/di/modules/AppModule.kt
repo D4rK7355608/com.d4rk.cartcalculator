@@ -37,7 +37,7 @@ val appModule : Module = module {
     }
 
     viewModel { (launcher : ActivityResultLauncher<IntentSenderRequest>) ->
-        MainViewModel(performInAppUpdateUseCase = get { parametersOf(launcher) })
+        MainViewModel(dispatcherProvider = get() , performInAppUpdateUseCase = get { parametersOf(launcher) })
     }
 
     single<GetCartsUseCase> { GetCartsUseCase(database = get()) }
