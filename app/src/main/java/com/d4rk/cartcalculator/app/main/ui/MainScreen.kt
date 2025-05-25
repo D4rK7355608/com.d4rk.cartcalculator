@@ -1,22 +1,16 @@
 package com.d4rk.cartcalculator.app.main.ui
 
 import android.content.Context
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuOpen
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.outlined.EditCalendar
-import androidx.compose.material.icons.outlined.ImportExport
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -26,11 +20,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -38,18 +30,14 @@ import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.LeftNa
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.MainTopAppBar
 import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.AnimatedExtendedFloatingActionButton
-import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.fab.SmallFloatingActionButton
-import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
-import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ScreenHelper
-import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.list.domain.model.ui.UiHomeData
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeScreen
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
 import com.d4rk.cartcalculator.app.main.domain.model.MainScreenState
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
+import com.d4rk.cartcalculator.app.main.ui.components.FloatingActionButtonsColumn
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.AppNavigationHost
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.NavigationDrawer
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.handleNavigationItemClick
@@ -99,15 +87,7 @@ fun MainScaffoldContent(drawerState : DrawerState , mainScreenState : MainScreen
     } , snackbarHost = {
         DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
     } , floatingActionButton = {
-        Column(horizontalAlignment = Alignment.End) {
-            SmallFloatingActionButton(modifier = Modifier.padding(bottom = SizeConstants.MediumSize) , isVisible = mainScreenState.isFabVisible.value , isExtended = mainScreenState.isFabExtended.value , icon = Icons.Outlined.ImportExport , onClick = {
-                mainScreenState.navController.currentBackStackEntry?.savedStateHandle?.set("toggleImportDialog" , true)
-            })
-
-            AnimatedExtendedFloatingActionButton(visible = mainScreenState.isFabVisible.value , onClick = {
-                mainScreenState.navController.currentBackStackEntry?.savedStateHandle?.set("openNewCartDialog" , true)
-            } , text = { Text(text = stringResource(id = R.string.add_new_cart)) } , icon = { Icon(imageVector = Icons.Outlined.EditCalendar , contentDescription = null) } , modifier = Modifier.bounceClick() , expanded = mainScreenState.isFabExtended.value)
-        }
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState)
     }) { paddingValues : PaddingValues ->
         AppNavigationHost(navController = mainScreenState.navController , snackbarHostState = mainScreenState.snackbarHostState , onFabVisibilityChanged = { mainScreenState.isFabVisible.value = it } , paddingValues = paddingValues , homeViewModel = homeViewModel , homeScreenState = homeScreenState)
     }
@@ -126,15 +106,7 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
             mainScreenState.coroutineScope.launch { isRailExpanded = ! isRailExpanded }
         } , scrollBehavior = mainScreenState.scrollBehavior)
     } , floatingActionButton = {
-        Column(horizontalAlignment = Alignment.End) {
-            SmallFloatingActionButton(modifier = Modifier.padding(bottom = SizeConstants.MediumSize) , isVisible = mainScreenState.isFabVisible.value , isExtended = mainScreenState.isFabExtended.value , icon = Icons.Outlined.ImportExport , onClick = {
-                mainScreenState.navController.currentBackStackEntry?.savedStateHandle?.set("toggleImportDialog" , true)
-            })
-
-            AnimatedExtendedFloatingActionButton(visible = mainScreenState.isFabVisible.value , onClick = {
-                mainScreenState.navController.currentBackStackEntry?.savedStateHandle?.set("openNewCartDialog" , true)
-            } , text = { Text(text = stringResource(id = R.string.add_new_cart)) } , icon = { Icon(imageVector = Icons.Outlined.EditCalendar , contentDescription = null) } , modifier = Modifier.bounceClick() , expanded = mainScreenState.isFabExtended.value)
-        }
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState)
     }) { paddingValues : PaddingValues ->
         LeftNavigationRail(drawerItems = mainScreenState.uiState.navigationDrawerItems , currentRoute = currentRoute , isRailExpanded = isRailExpanded , paddingValues = paddingValues , onDrawerItemClick = { item : NavigationDrawerItem ->
             handleNavigationItemClick(context = context , item = item)

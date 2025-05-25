@@ -23,14 +23,10 @@ import com.d4rk.cartcalculator.app.main.domain.actions.MainEvent
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
 import kotlinx.coroutines.flow.flowOn
 
-class MainViewModel(
-    private val performInAppUpdateUseCase : PerformInAppUpdateUseCase , private val dispatcherProvider : DispatcherProvider
-) : ScreenViewModel<UiMainScreen , MainEvent , MainAction>(
-    initialState = UiStateScreen(data = UiMainScreen())
-) {
+class MainViewModel(private val performInAppUpdateUseCase : PerformInAppUpdateUseCase , private val dispatcherProvider : DispatcherProvider) : ScreenViewModel<UiMainScreen , MainEvent , MainAction>(initialState = UiStateScreen(data = UiMainScreen())) {
 
     init {
-        onEvent(MainEvent.LoadNavigation)
+        onEvent(event = MainEvent.LoadNavigation)
     }
 
     override fun onEvent(event : MainEvent) {
@@ -41,18 +37,18 @@ class MainViewModel(
     }
 
     private fun checkAppUpdate() {
-        launch(dispatcherProvider.io) {
+        launch(context = dispatcherProvider.io) {
             performInAppUpdateUseCase(Unit).flowOn(dispatcherProvider.default).collect { result : DataState<Int , Errors> ->
                 if (result is DataState.Error) {
-                    screenState.showSnackbar(UiSnackbar(message = UiTextHelper.StringResource(R.string.snack_update_failed) , isError = true , timeStamp = System.currentTimeMillis() , type = ScreenMessageType.SNACKBAR))
+                    screenState.showSnackbar<UiMainScreen>(snackbar = UiSnackbar(message = UiTextHelper.StringResource(R.string.snack_update_failed) , isError = true , timeStamp = System.currentTimeMillis() , type = ScreenMessageType.SNACKBAR))
                 }
             }
         }
     }
 
     private fun loadNavigationItems() {
-        launch(dispatcherProvider.default) {
-            screenState.successData {
+        launch(context = dispatcherProvider.default) {
+            screenState.successData<UiMainScreen> {
                 copy(
                     navigationDrawerItems = listOf(
                         NavigationDrawerItem(
