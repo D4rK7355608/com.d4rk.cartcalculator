@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Apri carrelli dopo la creazione</string>
     <string name="summary_preference_settings_open_carts_after_creation">Apri automaticamente un carrello subito dopo la sua creazione.</string>
 
-    <string name="ad_id">ID pubblicità [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Consente all\'app di recuperare e utilizzare l\'identificatore pubblicitario associato al dispositivo dell\'utente, fornendo annunci personalizzati, misurando l\'efficacia degli annunci e mostrando annunci su dispositivi Android 13 o versioni successive.</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Consente all\'app di stabilire una connessione a Internet per inviare segnalazioni di errori o verificare la disponibilità di aggiornamenti.</string>
-    <string name="post_notifications">Pubblica notifiche [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Consente all\'app di visualizzare notifiche sui dispositivi con Android 13 o versioni successive.</string>
-    <string name="access_network_state">Accedi allo stato della rete [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Consente all\'app di verificare la connettività di rete e recuperare informazioni sul Wi-Fi, inclusi lo stato abilitato e i nomi dei dispositivi Wi-Fi connessi.</string>
-    <string name="access_notification_policy">Accedi alla politica di notifica [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Consente all\'app di accedere e modificare la politica di notifica del dispositivo, controllando come e quando le notifiche vengono visualizzate all\'utente e fornendo funzionalità di gestione delle notifiche personalizzate.</string>
-    <string name="billing">Fatturazione [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Consente all\'app di utilizzare la libreria di fatturazione di Google Play per gestire acquisti e donazioni in-app</string>
-    <string name="check_license">Controlla licenza [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Consente all\'app di verificare la propria conformità al contratto di licenza e applicare i termini di licenza per proteggere la proprietà intellettuale.</string>
-    <string name="foreground_service">Servizio in primo piano [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Consente all\'app di creare e utilizzare servizi eseguiti in primo piano, assegnando loro la priorità rispetto ad altri processi in background e migliorando le prestazioni e l\'affidabilità.</string>
-
     <string name="summary_preference_settings_about">Ulteriori informazioni su Cart Calculator</string>
 
     <string name="question_1">Che cos\'è Cart Calculator?</string>

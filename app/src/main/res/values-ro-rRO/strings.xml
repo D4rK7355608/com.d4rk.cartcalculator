@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Deschide coșurile după creare</string>
     <string name="summary_preference_settings_open_carts_after_creation">Deschide automat un coș imediat după ce este creat.</string>
 
-    <string name="ad_id">ID anunț [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Permite aplicației să preia și să utilizeze identificatorul de publicitate asociat dispozitivului utilizatorului, oferind anunțuri personalizate, măsurând eficacitatea anunțurilor și afișând anunțuri pe dispozitivele cu Android 13 sau o versiune ulterioară.</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Permite aplicației să stabilească o conexiune la internet pentru a trimite rapoarte de erori sau pentru a verifica actualizările.</string>
-    <string name="post_notifications">Postează notificări [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Permite aplicației să afișeze notificări pe dispozitivele cu Android 13 sau o versiune ulterioară.</string>
-    <string name="access_network_state">Accesează starea rețelei [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Permite aplicației să verifice conectivitatea la rețea și să preia informații despre Wi-Fi, inclusiv starea activată și numele dispozitivelor Wi-Fi conectate.</string>
-    <string name="access_notification_policy">Accesează politica de notificare [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Permite aplicației să acceseze și să modifice politica de notificare a dispozitivului, controlând modul și momentul în care notificările sunt afișate utilizatorului și oferind funcții personalizate de gestionare a notificărilor.</string>
-    <string name="billing">Facturare [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Permite aplicației să utilizeze Biblioteca de facturare Google Play pentru a gestiona achizițiile și donațiile în aplicație</string>
-    <string name="check_license">Verifică licența [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Permite aplicației să își verifice conformitatea cu acordul de licență și să aplice termenii de licențiere pentru a proteja proprietatea intelectuală.</string>
-    <string name="foreground_service">Serviciu în prim-plan [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Permite aplicației să creeze și să utilizeze servicii care rulează în prim-plan, acordându-le prioritate față de alte procese de fundal și îmbunătățind performanța și fiabilitatea.</string>
-
     <string name="summary_preference_settings_about">Află mai multe despre Cart Calculator</string>
 
     <string name="question_1">Ce este Cart Calculator?</string>

@@ -1,18 +1,18 @@
 package com.d4rk.cartcalculator.app.settings.settings.utils.providers
 
 import android.content.Context
+import com.d4rk.android.libs.apptoolkit.R
 import com.d4rk.android.libs.apptoolkit.app.permissions.utils.interfaces.PermissionsProvider
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsCategory
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsConfig
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.domain.model.SettingsPreference
-import com.d4rk.cartcalculator.R
 
 class PermissionsSettingsProvider : PermissionsProvider {
     override fun providePermissionsConfig(context : Context) : SettingsConfig {
         return SettingsConfig(
-            title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.permissions) , categories = listOf(
+            title = context.getString(R.string.permissions) , categories = listOf(
                 SettingsCategory(
-                    title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.normal) ,
+                    title = context.getString(R.string.normal) ,
                     preferences = listOf(
                         SettingsPreference(
                             title = context.getString(R.string.ad_id) ,
@@ -28,7 +28,7 @@ class PermissionsSettingsProvider : PermissionsProvider {
                         ) ,
                     ) ,
                 ) , SettingsCategory(
-                    title = context.getString(com.d4rk.android.libs.apptoolkit.R.string.normal) ,
+                    title = context.getString(R.string.normal) ,
                     preferences = listOf(
                         SettingsPreference(
                             title = context.getString(R.string.access_network_state) ,

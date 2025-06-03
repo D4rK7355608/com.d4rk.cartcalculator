@@ -15,6 +15,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupActivity
 import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentManagerHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.main.domain.actions.MainEvent
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     private fun initializeDependencies() {
         CoroutineScope(context = Dispatchers.IO).launch {
             MobileAds.initialize(this@MainActivity) {}
+            ConsentManagerHelper.applyInitialConsent(dataStore = dataStore)
         }
 
         updateResultLauncher = registerForActivityResult(contract = ActivityResultContracts.StartIntentSenderForResult()) {}

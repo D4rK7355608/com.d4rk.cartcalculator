@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Star
-import com.d4rk.cartcalculator.app.onboarding.ui.tabs.WeddingBehaviorOnboardingTab
+import com.d4rk.cartcalculator.app.onboarding.ui.tabs.CartBehaviorOnboardingTab
 import com.d4rk.cartcalculator.app.onboarding.utils.constants.OnboardingKeys
 import com.d4rk.android.libs.apptoolkit.app.oboarding.domain.data.model.ui.OnboardingPage
 import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.CrashlyticsOnboardingPageTab
@@ -34,7 +34,7 @@ class AppOnboardingProvider : OnboardingProvider {
             OnboardingPage.CustomPage(
                 key = OnboardingKeys.CART_BEHAVIOR_OPTIONS,
                 content = {
-                    WeddingBehaviorOnboardingTab()
+                    CartBehaviorOnboardingTab()
                 }
             ),
             OnboardingPage.CustomPage(

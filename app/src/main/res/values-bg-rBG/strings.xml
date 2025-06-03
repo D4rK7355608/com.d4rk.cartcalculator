@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Отворете количките след създаването им</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматично отваряне на количка веднага след създаването й.</string>
 
-    <string name="ad_id">Идентификационен номер на реклама [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Позволява на приложението да извлича и използва рекламния идентификатор, свързан с устройството на потребителя, като предоставя персонализирани реклами, измерва ефективността на рекламите и показва реклами на устройства с Android 13 или по-нова версия.</string>
-    <string name="internet">Интернет [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Позволява на приложението да установи интернет връзка, за да изпраща отчети за грешки или да проверява за актуализации.</string>
-    <string name="post_notifications">Публикуване на известия [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Позволява на приложението да показва известия на устройства с Android 13 или по-нова версия.</string>
-    <string name="access_network_state">Достъп до състоянието на мрежата [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Позволява на приложението да проверява мрежовата връзка и да извлича информация за Wi-Fi, включително статус на активиране и имена на свързани Wi-Fi устройства.</string>
-    <string name="access_notification_policy">Достъп до правилата за уведомяване [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Позволява на приложението да осъществява достъп и да променя правилата за уведомяване на устройството, като контролира как и кога се показват известия на потребителя и предоставя персонализирани функции за управление на известия.</string>
-    <string name="billing">Таксуване [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Позволява на приложението да използва библиотеката за таксуване на Google Play за обработка на покупки и дарения в приложението</string>
-    <string name="check_license">Проверка на лиценза [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Позволява на приложението да проверява съответствието си с лицензионното споразумение и да прилага условията за лицензиране, за да защити интелектуалната собственост.</string>
-    <string name="foreground_service">Услуга на преден план [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Позволява на приложението да създава и използва услуги, които се изпълняват на преден план, като им дава приоритет пред други фонови процеси и подобрява производителността и надеждността.</string>
-
     <string name="summary_preference_settings_about">Научете повече за Cart Calculator</string>
 
     <string name="question_1">Какво е Cart Calculator?</string>

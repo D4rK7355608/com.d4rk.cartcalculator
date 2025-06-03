@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">เปิดรถเข็นหลังการสร้าง</string>
     <string name="summary_preference_settings_open_carts_after_creation">เปิดรถเข็นโดยอัตโนมัติทันทีหลังจากสร้าง</string>
 
-    <string name="ad_id">รหัสโฆษณา [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">อนุญาตให้แอปดึงและใช้ตัวระบุโฆษณาที่เชื่อมโยงกับอุปกรณ์ของผู้ใช้ โดยแสดงโฆษณาที่ปรับให้เหมาะกับแต่ละบุคคล วัดประสิทธิผลของโฆษณา และแสดงโฆษณาบนอุปกรณ์ Android 13 ขึ้นไป</string>
-    <string name="internet">อินเทอร์เน็ต [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">อนุญาตให้แอปสร้างการเชื่อมต่ออินเทอร์เน็ตเพื่อส่งรายงานข้อผิดพลาดหรือตรวจสอบการอัปเดต</string>
-    <string name="post_notifications">โพสต์การแจ้งเตือน [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">อนุญาตให้แอปแสดงการแจ้งเตือนบนอุปกรณ์ที่มี Android 13 ขึ้นไป</string>
-    <string name="access_network_state">เข้าถึงสถานะเครือข่าย [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">อนุญาตให้แอปตรวจสอบการเชื่อมต่อเครือข่ายและดึงข้อมูลเกี่ยวกับ Wi-Fi รวมถึงสถานะที่เปิดใช้งานและชื่ออุปกรณ์ Wi-Fi ที่เชื่อมต่อ</string>
-    <string name="access_notification_policy">เข้าถึงนโยบายการแจ้งเตือน [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">อนุญาตให้แอปเข้าถึงและแก้ไขนโยบายการแจ้งเตือนของอุปกรณ์ ควบคุมวิธีการและเวลาที่การแจ้งเตือนจะแสดงต่อผู้ใช้ และมอบคุณสมบัติการจัดการการแจ้งเตือนแบบกำหนดเอง</string>
-    <string name="billing">การเรียกเก็บเงิน [BILLING]</string>
-    <string name="summary_preference_permissions_billing">อนุญาตให้แอปใช้ไลบรารีการเรียกเก็บเงินของ Google Play เพื่อจัดการการซื้อและการบริจาคในแอป</string>
-    <string name="check_license">ตรวจสอบใบอนุญาต [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">อนุญาตให้แอปตรวจสอบการปฏิบัติตามข้อตกลงสิทธิ์การใช้งานและบังคับใช้เงื่อนไขการอนุญาตเพื่อปกป้องทรัพย์สินทางปัญญา</string>
-    <string name="foreground_service">บริการเบื้องหน้า [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">อนุญาตให้แอปสร้างและใช้บริการที่ทำงานในเบื้องหน้า โดยจัดลำดับความสำคัญเหนือกว่ากระบวนการเบื้องหลังอื่นๆ และปรับปรุงประสิทธิภาพและความน่าเชื่อถือ</string>
-
     <string name="summary_preference_settings_about">เรียนรู้เพิ่มเติมเกี่ยวกับเครื่องคิดเลขในรถเข็น</string>
 
     <string name="question_1">เครื่องคิดเลขในรถเข็นคืออะไร</string>

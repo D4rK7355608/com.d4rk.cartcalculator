@@ -41,8 +41,6 @@ class ImportSharedCartUseCase(private val database : DatabaseInterface , private
                     is DataState.Loading -> {
                         emit(value = DataState.Loading())
                     }
-
-                    else -> {}
                 }
             }
         }.onSuccess {

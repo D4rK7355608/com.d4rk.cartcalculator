@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Відкривати кошики після створення</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматично відкривати кошик одразу після його створення.</string>
 
-    <string name="ad_id">Ідентифікатор оголошення [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Дозволяє програмі отримувати та використовувати рекламний ідентифікатор, пов’язаний із пристроєм користувача, надаючи персоналізовану рекламу, вимірюючи ефективність реклами та показуючи рекламу на пристроях Android 13 або новішої версії.</string>
-    <string name="internet">Інтернет [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Дозволяє програмі встановлювати підключення до Інтернету для надсилання звітів про помилки або перевірки наявності оновлень.</string>
-    <string name="post_notifications">Публікувати сповіщення [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Дозволяє програмі відображати сповіщення на пристроях з Android 13 або новішої версії.</string>
-    <string name="access_network_state">Доступ до стану мережі [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Дозволяє програмі перевіряти підключення до мережі та отримувати інформацію про Wi-Fi, включаючи статус увімкнення та імена підключених пристроїв Wi-Fi.</string>
-    <string name="access_notification_policy">Доступ до політики сповіщень [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Дозволяє програмі отримувати доступ і змінювати політику сповіщень пристрою, контролюючи, як і коли сповіщення відображаються користувачеві, а також надаючи спеціальні функції керування сповіщеннями.</string>
-    <string name="billing">Платежі [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Дозволяє програмі використовувати платіжну бібліотеку Google Play для обробки покупок і пожертв у програмі</string>
-    <string name="check_license">Перевірити ліцензію [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Дозволяє програмі перевіряти свою відповідність ліцензійній угоді та застосовувати умови ліцензування для захисту інтелектуальної власності.</string>
-    <string name="foreground_service">Фонова служба [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Дозволяє програмі створювати та використовувати служби, які працюють у фоновому режимі, надаючи їм пріоритет над іншими фоновими процесами та покращуючи продуктивність і надійність.</string>
-
     <string name="summary_preference_settings_about">Дізнайтеся більше про Cart Calculator</string>
 
     <string name="question_1">Що таке Cart Calculator?</string>

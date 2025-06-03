@@ -1,3 +1,6 @@
+import java.util.Properties
+import kotlin.toString
+
 plugins {
     alias(notation = libs.plugins.androidApplication)
     alias(notation = libs.plugins.jetbrainsKotlinAndroid)
@@ -16,37 +19,19 @@ android {
     defaultConfig {
         applicationId = "com.d4rk.cartcalculator"
         minSdk = 23
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 104
         versionName = "2.0.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage") androidResources.localeFilters += listOf(
-            "en" ,
-            "bg-rBG" ,
-            "de-rDE" ,
-            "es-rGQ" ,
-            "fr-rFR" ,
-            "hi-rIN" ,
-            "hu-rHU" ,
-            "in-rID" ,
-            "it-rIT" ,
-            "ja-rJP" ,
-            "pl-rPL" ,
-            "pt-rBR" ,
-            "ro-rRO" ,
-            "ru-rRU" ,
-            "sv-rSE" ,
-            "th-rTH" ,
-            "tr-rTR" ,
-            "uk-rUA" ,
-            "zh-rTW" ,
+            "ar-rEG" , "bg-rBG" , "bn-rBD" , "de-rDE" , "en" , "es-rGQ" , "es-rMX" , "fil-rPH" , "fr-rFR" , "hi-rIN" , "hu-rHU" , "in-rID" , "it-rIT" , "ja-rJP" , "ko-rKR" , "pl-rPL" , "pt-rBR" , "ro-rRO" , "ru-rRU" , "sv-rSE" , "th-rTH" , "tr-rTR" , "uk-rUA" , "ur-rPK" , "vi-rVN" , "zh-rTW"
         )
         vectorDrawables {
             useSupportLibrary = true
         }
     }
 
-    /*signingConfigs {
+    signingConfigs {
         create("release")
 
         val signingProps = Properties()
@@ -65,17 +50,23 @@ android {
         else {
             android.buildTypes.getByName("release").signingConfig = null
         }
-    }*/
+    }
 
     buildTypes {
         release {
-            //signingConfig = signingConfigs.getByName("release")
+            val signingFile = rootProject.file("signing.properties")
+            signingConfig = if (signingFile.exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                null
+            }
             isDebuggable = false
         }
         debug {
             isDebuggable = true
         }
     }
+
 
     buildTypes.forEach { buildType ->
         with(receiver = buildType) {
@@ -116,7 +107,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.14") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.17") {
         isTransitive = true
     }
 

@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Otwieraj koszyki po utworzeniu</string>
     <string name="summary_preference_settings_open_carts_after_creation">Automatycznie otwieraj koszyk natychmiast po jego utworzeniu.</string>
 
-    <string name="ad_id">Identyfikator reklamy [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Zezwala aplikacji na pobieranie i używanie identyfikatora reklamowego powiązanego z urządzeniem użytkownika, dostarczanie spersonalizowanych reklam, mierzenie skuteczności reklam i wyświetlanie reklam na urządzeniach z systemem Android 13 lub nowszym.</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Umożliwia aplikacji nawiązanie połączenia internetowego w celu wysyłania raportów o błędach lub sprawdzania dostępności aktualizacji.</string>
-    <string name="post_notifications">Publikuj powiadomienia [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Umożliwia aplikacji wyświetlanie powiadomień na urządzeniach z systemem Android 13 lub nowszym.</string>
-    <string name="access_network_state">Uzyskaj dostęp do stanu sieci [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Umożliwia aplikacji sprawdzanie łączności sieciowej i pobieranie informacji o Wi-Fi, w tym o stanie włączenia i nazwach podłączonych urządzeń Wi-Fi.</string>
-    <string name="access_notification_policy">Uzyskaj dostęp do zasad powiadomień [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Umożliwia aplikacji dostęp do zasad powiadomień urządzenia i ich modyfikowanie, kontrolowanie, w jaki sposób i kiedy powiadomienia są wyświetlane użytkownikowi oraz udostępnianie niestandardowych funkcji zarządzania powiadomieniami.</string>
-    <string name="billing">Płatności [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Umożliwia aplikacji korzystanie z Biblioteki płatności Google Play do obsługi zakupów i darowizn w aplikacji</string>
-    <string name="check_license">Sprawdź licencję [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Umożliwia aplikacji weryfikację zgodności z umową licencyjną i egzekwowanie warunków licencji w celu ochrony własności intelektualnej.</string>
-    <string name="foreground_service">Usługa działająca na pierwszym planie [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Umożliwia aplikacji tworzenie i używanie usług działających na pierwszym planie, nadając im priorytet nad innymi procesami działającymi w tle oraz poprawiając wydajność i niezawodność.</string>
-
     <string name="summary_preference_settings_about">Dowiedz się więcej o Kalkulatorze Koszyka</string>
 
     <string name="question_1">Co to jest Kalkulator Koszyka?</string>

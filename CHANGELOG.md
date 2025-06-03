@@ -1,5 +1,15 @@
 # Version 2.0.1:
 
+- **Minor**: Updated target SDK to 36 (Android 16).
+- **Minor**: Secured the signing key.
+- **Minor**: Updated the signing config code for Gradle.
+- **Minor**: Removed duplicate strings.
+- **Minor**: Updated Gradle dependencies.
+- **New**: Added manifest tags for consent mode.
+- **New**: Added consent check on onResume for MainActivity.
+- **Minor**: Updated the app toolkit to 1.0.17, which brings several improvements and fixes.
+- **New**: Added new onboarding screens.
+- **Minor**: Enhanced privacy data handling from consents for the EEA and GDPR.
 - **Minor**: Under-the-hood improvements for a better overall app experience.
 
 # Version 2.0.0:

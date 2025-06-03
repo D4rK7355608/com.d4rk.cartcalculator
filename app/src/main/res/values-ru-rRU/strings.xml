@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Открывать корзины после создания</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматически открывать корзину сразу после ее создания.</string>
 
-    <string name="ad_id">Рекламный идентификатор [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Позволяет приложению получать и использовать рекламный идентификатор, связанный с устройством пользователя, предоставляя персонализированную рекламу, измеряя эффективность рекламы и показывая рекламу на устройствах Android 13 и выше.</string>
-    <string name="internet">Интернет [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Позволяет приложению устанавливать подключение к Интернету для отправки отчетов об ошибках или проверки обновлений.</string>
-    <string name="post_notifications">Публикация уведомлений [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Позволяет приложению отображать уведомления на устройствах с Android 13 и выше.</string>
-    <string name="access_network_state">Доступ к состоянию сети [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Позволяет приложению проверять сетевое подключение и получать информацию о Wi-Fi, включая статус и имена подключенных устройств Wi-Fi.</string>
-    <string name="access_notification_policy">Доступ к политике уведомлений [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Позволяет приложению получать доступ и изменять политику уведомлений устройства, контролируя, как и когда уведомления отображаются пользователю, и предоставляя настраиваемые функции управления уведомлениями.</string>
-    <string name="billing">Платежи [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Позволяет приложению использовать библиотеку Google Play Billing для обработки покупок и пожертвований в приложении</string>
-    <string name="check_license">Проверка лицензии [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Позволяет приложению проверять свое соответствие лицензионному соглашению и применять условия лицензирования для защиты интеллектуальной собственности.</string>
-    <string name="foreground_service">Служба переднего плана [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Позволяет приложению создавать и использовать службы, работающие на переднем плане, предоставляя им приоритет над другими фоновыми процессами и повышая производительность и надежность.</string>
-
     <string name="summary_preference_settings_about">Подробнее о Калькуляторе корзины</string>
 
     <string name="question_1">Что такое Калькулятор корзины?</string>

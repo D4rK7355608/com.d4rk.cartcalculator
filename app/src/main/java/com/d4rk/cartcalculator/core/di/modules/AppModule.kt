@@ -3,6 +3,7 @@ package com.d4rk.cartcalculator.core.di.modules
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import com.d4rk.android.libs.apptoolkit.app.main.domain.usecases.PerformInAppUpdateUseCase
+import com.d4rk.android.libs.apptoolkit.app.oboarding.utils.interfaces.providers.OnboardingProvider
 import com.d4rk.android.libs.apptoolkit.data.core.ads.AdsCoreManager
 import com.d4rk.cartcalculator.app.cart.details.domain.usecases.AddCartItemUseCase
 import com.d4rk.cartcalculator.app.cart.details.domain.usecases.DeleteCartItemUseCase
@@ -18,6 +19,7 @@ import com.d4rk.cartcalculator.app.cart.list.domain.usecases.OpenCartUseCase
 import com.d4rk.cartcalculator.app.cart.list.domain.usecases.UpdateCartNameUseCase
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
 import com.d4rk.cartcalculator.app.main.ui.MainViewModel
+import com.d4rk.cartcalculator.app.onboarding.utils.interfaces.providers.AppOnboardingProvider
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -31,6 +33,8 @@ val appModule : Module = module {
     single<DataStore> { DataStore(context = get()) }
     single<AdsCoreManager> { AdsCoreManager(context = get() , buildInfoProvider = get()) }
     single<AppUpdateManager> { AppUpdateManagerFactory.create(get()) }
+
+    single<OnboardingProvider> { AppOnboardingProvider() }
 
     factory { (launcher : ActivityResultLauncher<IntentSenderRequest>) ->
         PerformInAppUpdateUseCase(appUpdateManager = get() , updateResultLauncher = launcher)

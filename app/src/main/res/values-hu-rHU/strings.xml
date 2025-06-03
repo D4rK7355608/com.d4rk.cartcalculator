@@ -72,23 +72,6 @@
     <string name="open_carts_after_creation">Kosarak megnyitása a létrehozás után</string>
     <string name="summary_preference_settings_open_carts_after_creation">A kosár automatikus megnyitása közvetlenül a létrehozása után.</string>
 
-    <string name="ad_id">Hirdetésazonosító [AD_ID]</string>
-    <string name="summary_preference_permissions_ad_id">Lehetővé teszi az alkalmazás számára a felhasználó eszközéhez társított hirdetési azonosító lekérését és felhasználását, személyre szabott hirdetések biztosítását, a hirdetések hatékonyságának mérését, valamint hirdetések megjelenítését Android 13 vagy újabb rendszereken.</string>
-    <string name="internet">Internet [INTERNET]</string>
-    <string name="summary_preference_permissions_internet">Lehetővé teszi az alkalmazás számára, hogy internetkapcsolatot létesítsen hibajelentések küldéséhez vagy frissítések kereséséhez.</string>
-    <string name="post_notifications">Értesítések közzététele [POST_NOTIFICATIONS]</string>
-    <string name="summary_preference_permissions_post_notifications">Lehetővé teszi az alkalmazás számára, hogy értesítéseket jelenítsen meg Android 13 vagy újabb rendszereken.</string>
-    <string name="access_network_state">Hálózati állapot elérése [ACCESS_NETWORK_STATE]</string>
-    <string name="summary_preference_permissions_access_network_state">Lehetővé teszi az alkalmazás számára a hálózati kapcsolat ellenőrzését és a Wi-Fi-vel kapcsolatos információk lekérését, beleértve az engedélyezett állapotot és a csatlakoztatott Wi-Fi eszközök nevét.</string>
-    <string name="access_notification_policy">Értesítési házirend elérése [ACCESS_NOTIFICATION_POLICY]</string>
-    <string name="summary_preference_permissions_access_notification_policy">Lehetővé teszi az alkalmazás számára az eszköz értesítési házirendjének elérését és módosítását, szabályozva, hogy az értesítések hogyan és mikor jelenjenek meg a felhasználó számára, valamint egyéni értesítéskezelési funkciókat biztosítva.</string>
-    <string name="billing">Számlázás [BILLING]</string>
-    <string name="summary_preference_permissions_billing">Lehetővé teszi az alkalmazás számára a Google Play Billing Library használatát az alkalmazáson belüli vásárlások és adományok kezelésére</string>
-    <string name="check_license">Licenc ellenőrzése [CHECK_LICENSE]</string>
-    <string name="summary_preference_permissions_check_license">Lehetővé teszi az alkalmazás számára a licencszerződésnek való megfelelés ellenőrzését és a licencfeltételek betartatását a szellemi tulajdon védelme érdekében.</string>
-    <string name="foreground_service">Előtérszolgáltatás [FOREGROUND_SERVICE]</string>
-    <string name="summary_preference_permissions_foreground_service">Lehetővé teszi az alkalmazás számára az előtérben futó szolgáltatások létrehozását és használatát, prioritást biztosítva számukra a többi háttérfolyamattal szemben, valamint javítva a teljesítményt és a megbízhatóságot.</string>
-
     <string name="summary_preference_settings_about">Tudjon meg többet a Kosár Kalkulátorról</string>
 
     <string name="question_1">Mi az a Kosár Kalkulátor?</string>
