@@ -3,6 +3,19 @@
     <string name="app_short_description">使用購物車計算機，高效管理和計算您的購物車商品。 🛒</string>
     <string name="summary_notification_last_time_used">讓我們高效地管理您的購物車商品！</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">歡迎使用購物車計算器！</string>
+    <string name="onboarding_welcome_description">輕鬆管理您的購物清單並計算開銷。</string>
+    <string name="onboarding_personalization_title">個人化您的體驗</string>
+    <string name="onboarding_personalization_description">依您的需求自訂應用程式。這些設定稍後可在應用程式設定中修改。</string>
+    <string name="onboarding_cart_settings_title">購物車行為</string>
+    <string name="onboarding_cart_settings_description">自訂應用程式中購物車的行為。這些設定可於稍後變更。</string>
+    <string name="onboarding_open_carts_after_creation">建立後開啟購物車</string>
+    <string name="onboarding_cart_settings_icon_description">購物車設定指引的購物車圖示</string>
+    <string name="onboarding_summary_open_carts_after_creation">建立購物車後自動開啟。</string>
+    <string name="onboarding_summary_select_currency_placeholder">選擇您偏好的貨幣</string>
+    <string name="select_currency_icon_description">選擇貨幣的圖示</string>
+
     <string name="import_shared_cart">匯入共享購物車</string>
     <string name="default_sort">預設排序</string>
     <string name="date">最舊的優先</string>

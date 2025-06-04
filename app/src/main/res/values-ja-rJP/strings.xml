@@ -3,6 +3,19 @@
     <string name="app_short_description">カート計算機でカートアイテムを効率的に管理および計算します。🛒</string>
     <string name="summary_notification_last_time_used">カートアイテムを効率的に管理しましょう！</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">カートカリキュレーターへようこそ！</string>
+    <string name="onboarding_welcome_description">買い物リストを管理し、簡単に支出を計算できます。</string>
+    <string name="onboarding_personalization_title">体験をパーソナライズ</string>
+    <string name="onboarding_personalization_description">アプリをあなたのニーズに合わせてカスタマイズしましょう。これらの設定は後からアプリ設定で変更できます。</string>
+    <string name="onboarding_cart_settings_title">カートの動作</string>
+    <string name="onboarding_cart_settings_description">アプリ内でのカートの動作をカスタマイズしましょう。これらの設定は後から変更できます。</string>
+    <string name="onboarding_open_carts_after_creation">作成後にカートを開く</string>
+    <string name="onboarding_cart_settings_icon_description">カート設定オンボーディング用ショッピングカートアイコン</string>
+    <string name="onboarding_summary_open_carts_after_creation">カートを作成した直後に自動で開きます。</string>
+    <string name="onboarding_summary_select_currency_placeholder">ご希望の通貨を選択してください</string>
+    <string name="select_currency_icon_description">通貨選択アイコン</string>
+
     <string name="import_shared_cart">共有カートをインポート</string>
     <string name="default_sort">デフォルトの順序</string>
     <string name="date">古い順</string>

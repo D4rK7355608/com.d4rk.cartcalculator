@@ -3,6 +3,19 @@
     <string name="app_short_description">Hantera och beräkna dina varukorgsobjekt effektivt med Varukorgsberäknaren. 🛒</string>
     <string name="summary_notification_last_time_used">Låt oss hantera dina varukorgsobjekt effektivt!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Välkommen till Varukorgskalkylatorn!</string>
+    <string name="onboarding_welcome_description">Hantera dina inköpslistor och beräkna utgifter enkelt.</string>
+    <string name="onboarding_personalization_title">Anpassa din upplevelse</string>
+    <string name="onboarding_personalization_description">Anpassa appen efter dina behov. Du kan ändra dessa inställningar senare i appens inställningar.</string>
+    <string name="onboarding_cart_settings_title">Varukorgens beteende</string>
+    <string name="onboarding_cart_settings_description">Anpassa hur varukorgar beter sig i appen. Du kan ändra dessa inställningar senare.</string>
+    <string name="onboarding_open_carts_after_creation">Öppna varukorg efter skapande</string>
+    <string name="onboarding_cart_settings_icon_description">Varukorgsikon för introduktion till varukorgsinställningar</string>
+    <string name="onboarding_summary_open_carts_after_creation">Öppna en varukorg automatiskt direkt efter att du skapat den.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Välj din föredragna valuta</string>
+    <string name="select_currency_icon_description">Ikon för valutaval</string>
+
     <string name="import_shared_cart">Importera delad kundvagn</string>
     <string name="default_sort">Standardordning</string>
     <string name="date">Äldst först</string>

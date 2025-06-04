@@ -3,6 +3,19 @@
     <string name="app_short_description">Ефективно управлявайте и изчислявайте артикулите в количката си с Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Нека ефективно да управляваме артикулите в количката ви!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Добре дошли в Калкулатор за колички!</string>
+    <string name="onboarding_welcome_description">Управлявайте списъците си за пазаруване и изчислявайте разходите си с лекота.</string>
+    <string name="onboarding_personalization_title">Персонализирайте изживяването си</string>
+    <string name="onboarding_personalization_description">Настройте приложението според нуждите си. Можете да промените тези настройки по-късно в настройките на приложението.</string>
+    <string name="onboarding_cart_settings_title">Поведение на количката</string>
+    <string name="onboarding_cart_settings_description">Настройте поведението на количките в приложението. Можете да промените тези настройки по-късно.</string>
+    <string name="onboarding_open_carts_after_creation">Отваряне на количката след създаване</string>
+    <string name="onboarding_cart_settings_icon_description">Икона на пазарска количка за настройките на количката при въвеждане</string>
+    <string name="onboarding_summary_open_carts_after_creation">Автоматично отваряне на количката веднага след като я създадете.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Изберете предпочитаната от вас валута</string>
+    <string name="select_currency_icon_description">Икона за избор на валута</string>
+
     <string name="import_shared_cart">Импортиране на споделена количка</string>
     <string name="default_sort">Подразбиране</string>
     <string name="date">Най-старите първо</string>

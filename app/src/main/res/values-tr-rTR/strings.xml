@@ -3,6 +3,19 @@
     <string name="app_short_description">Alışveriş sepeti ürünlerinizi Sepet Hesaplayıcı ile verimli bir şekilde yönetin ve hesaplayın. 🛒</string>
     <string name="summary_notification_last_time_used">Sepetinizdeki ürünleri verimli bir şekilde yönetelim!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Sepet Hesaplayıcı\'ya Hoş Geldiniz!</string>
+    <string name="onboarding_welcome_description">Alışveriş listelerinizi yönetin ve harcamalarınızı kolaylıkla hesaplayın.</string>
+    <string name="onboarding_personalization_title">Deneyiminizi Kişiselleştirin</string>
+    <string name="onboarding_personalization_description">Uygulamayı ihtiyaçlarınıza göre özelleştirin. Bu ayarları daha sonra uygulama ayarlarından değiştirebilirsiniz.</string>
+    <string name="onboarding_cart_settings_title">Sepet Davranışı</string>
+    <string name="onboarding_cart_settings_description">Uygulamada sepetlerin nasıl davranacağını özelleştirin. Bu ayarları daha sonra değiştirebilirsiniz.</string>
+    <string name="onboarding_open_carts_after_creation">Oluşturduktan sonra sepeti aç</string>
+    <string name="onboarding_cart_settings_icon_description">Sepet ayarları tanıtımı için alışveriş sepeti simgesi</string>
+    <string name="onboarding_summary_open_carts_after_creation">Oluşturduktan hemen sonra bir sepeti otomatik olarak açar.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Tercih ettiğiniz para birimini seçin</string>
+    <string name="select_currency_icon_description">Para birimi seçimi için simge</string>
+
     <string name="import_shared_cart">Paylaşılan Sepeti İçe Aktar</string>
     <string name="default_sort">Varsayılan Sıralama</string>
     <string name="date">En eskiden yeniye</string>

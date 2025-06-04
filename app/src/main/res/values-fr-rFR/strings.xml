@@ -3,6 +3,19 @@
     <string name="app_short_description">Gérez et calculez efficacement les articles de votre panier avec Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gérons efficacement les articles de votre panier !</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Bienvenue dans Calculateur de Panier !</string>
+    <string name="onboarding_welcome_description">Gérez vos listes de courses et calculez facilement vos dépenses.</string>
+    <string name="onboarding_personalization_title">Personnalisez votre expérience</string>
+    <string name="onboarding_personalization_description">Adaptez l\'application à vos besoins. Vous pourrez modifier ces paramètres ultérieurement dans les réglages de l\'application.</string>
+    <string name="onboarding_cart_settings_title">Comportement du panier</string>
+    <string name="onboarding_cart_settings_description">Personnalisez le comportement des paniers dans l\'application. Vous pourrez modifier ces paramètres ultérieurement.</string>
+    <string name="onboarding_open_carts_after_creation">Ouvrir le panier après sa création</string>
+    <string name="onboarding_cart_settings_icon_description">Icône de panier d\'achat pour la configuration initiale des paramètres du panier.</string>
+    <string name="onboarding_summary_open_carts_after_creation">Ouvrir automatiquement un panier juste après l\'avoir créé.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Choisissez votre devise préférée</string>
+    <string name="select_currency_icon_description">Icône de sélection de devise</string>
+
     <string name="import_shared_cart">Importer le panier partagé</string>
     <string name="default_sort">Ordre par défaut</string>
     <string name="date">Les plus anciens en premier</string>

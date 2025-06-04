@@ -3,6 +3,19 @@
     <string name="app_short_description">Efektywnie zarządzaj i obliczaj pozycje w koszyku za pomocą Kalkulatora Koszyka. 🛒</string>
     <string name="summary_notification_last_time_used">Zarządzajmy efektywnie pozycjami w Twoim koszyku!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Witamy w Kalkulatorze Koszyka!</string>
+    <string name="onboarding_welcome_description">Zarządzaj listami zakupów i obliczaj wydatki z łatwością.</string>
+    <string name="onboarding_personalization_title">Spersonalizuj swoje doświadczenie</string>
+    <string name="onboarding_personalization_description">Dostosuj aplikację do swoich potrzeb. Możesz zmienić te ustawienia później w ustawieniach aplikacji.</string>
+    <string name="onboarding_cart_settings_title">Zachowanie koszyka</string>
+    <string name="onboarding_cart_settings_description">Dostosuj, jak zachowują się koszyki w aplikacji. Możesz zmienić te ustawienia później.</string>
+    <string name="onboarding_open_carts_after_creation">Otwórz koszyk po utworzeniu</string>
+    <string name="onboarding_cart_settings_icon_description">Ikona koszyka na zakupy dla ustawień koszyka podczas wprowadzania</string>
+    <string name="onboarding_summary_open_carts_after_creation">Automatycznie otwieraj koszyk zaraz po jego utworzeniu.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Wybierz preferowaną walutę</string>
+    <string name="select_currency_icon_description">Ikona wyboru waluty</string>
+
     <string name="import_shared_cart">Importuj współdzielony koszyk</string>
     <string name="default_sort">Domyślna kolejność</string>
     <string name="date">Najstarsze najpierw</string>

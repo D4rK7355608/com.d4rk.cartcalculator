@@ -3,6 +3,19 @@
     <string name="app_short_description">Gerencie e calcule com eficiência os itens do seu carrinho com o Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Vamos gerenciar os itens do seu carrinho com eficiência!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Bem-vindo(a) à Calculadora de Carrinho!</string>
+    <string name="onboarding_welcome_description">Gerencie suas listas de compras e calcule despesas com facilidade.</string>
+    <string name="onboarding_personalization_title">Personalize Sua Experiência</string>
+    <string name="onboarding_personalization_description">Personalize o aplicativo para atender às suas necessidades. Você pode alterar essas configurações mais tarde nas configurações do aplicativo.</string>
+    <string name="onboarding_cart_settings_title">Comportamento do Carrinho</string>
+    <string name="onboarding_cart_settings_description">Personalize como os carrinhos se comportam no aplicativo. Você pode alterar essas configurações mais tarde.</string>
+    <string name="onboarding_open_carts_after_creation">Abrir carrinho após a criação</string>
+    <string name="onboarding_cart_settings_icon_description">Ícone do carrinho de compras para a introdução às configurações do carrinho.</string>
+    <string name="onboarding_summary_open_carts_after_creation">Abrir automaticamente um carrinho logo após você criá-lo.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Escolha sua moeda preferida</string>
+    <string name="select_currency_icon_description">Ícone para selecionar moeda</string>
+
     <string name="import_shared_cart">Importar carrinho compartilhado</string>
     <string name="default_sort">Ordem padrão</string>
     <string name="date">Mais antigos primeiro</string>

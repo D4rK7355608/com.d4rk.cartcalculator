@@ -3,6 +3,19 @@
     <string name="app_short_description">Ефективно керуйте та розраховуйте товари у кошику за допомогою Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Давайте ефективно керуватимемо товарами у вашому кошику!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Ласкаво просимо до Калькулятора Кошика!</string>
+    <string name="onboarding_welcome_description">Керуйте списками покупок та легко розраховуйте витрати.</string>
+    <string name="onboarding_personalization_title">Персоналізуйте свій досвід</string>
+    <string name="onboarding_personalization_description">Налаштуйте додаток відповідно до ваших потреб. Ви можете змінити ці налаштування пізніше в налаштуваннях додатка.</string>
+    <string name="onboarding_cart_settings_title">Поведінка кошика</string>
+    <string name="onboarding_cart_settings_description">Налаштуйте поведінку кошиків у додатку. Ви можете змінити ці налаштування пізніше.</string>
+    <string name="onboarding_open_carts_after_creation">Відкривати кошик після створення</string>
+    <string name="onboarding_cart_settings_icon_description">Іконка кошика для налаштувань кошика під час ознайомлення</string>
+    <string name="onboarding_summary_open_carts_after_creation">Автоматично відкривати кошик одразу після його створення.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Оберіть бажану валюту</string>
+    <string name="select_currency_icon_description">Іконка для вибору валюти</string>
+
     <string name="import_shared_cart">Імпортувати спільний кошик</string>
     <string name="default_sort">Сортування за замовчуванням</string>
     <string name="date">Спочатку найстаріші</string>

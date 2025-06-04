@@ -3,6 +3,19 @@
     <string name="app_short_description">Verwalten und berechnen Sie Ihre Warenkorbartikel effizient mit dem Warenkorb-Rechner. 🛒</string>
     <string name="summary_notification_last_time_used">Lassen Sie uns Ihre Warenkorbartikel effizient verwalten!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Willkommen beim Warenkorb-Rechner!</string>
+    <string name="onboarding_welcome_description">Verwalte deine Einkaufslisten und berechne Ausgaben ganz einfach.</string>
+    <string name="onboarding_personalization_title">Personalisiere dein Erlebnis</string>
+    <string name="onboarding_personalization_description">Passe die App an deine Bedürfnisse an. Diese Einstellungen kannst du später in den App-Einstellungen ändern.</string>
+    <string name="onboarding_cart_settings_title">Warenkorbverhalten</string>
+    <string name="onboarding_cart_settings_description">Passe das Verhalten von Warenkörben in der App an. Diese Einstellungen kannst du später ändern.</string>
+    <string name="onboarding_open_carts_after_creation">Warenkorb nach Erstellung öffnen</string>
+    <string name="onboarding_cart_settings_icon_description">Einkaufswagen-Symbol für das Onboarding der Warenkorbeinstellungen</string>
+    <string name="onboarding_summary_open_carts_after_creation">Öffnet einen Warenkorb automatisch, direkt nachdem du ihn erstellt hast.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Wähle deine bevorzugte Währung</string>
+    <string name="select_currency_icon_description">Symbol für die Währungsauswahl</string>
+
     <string name="import_shared_cart">Geteilten Warenkorb importieren</string>
     <string name="default_sort">Standardreihenfolge</string>
     <string name="date">Älteste zuerst</string>

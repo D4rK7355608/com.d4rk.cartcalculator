@@ -3,6 +3,19 @@
     <string name="app_short_description">Hatékonyan kezelheti és számíthatja ki kosara tételeit a Kosár Kalkulátorral. 🛒</string>
     <string name="summary_notification_last_time_used">Kezeljük hatékonyan a kosara tételeit!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Üdvözlünk a Kosár Kalkulátorban!</string>
+    <string name="onboarding_welcome_description">Kezeld bevásárlólistáidat, és könnyedén számítsd ki kiadásaidat.</string>
+    <string name="onboarding_personalization_title">Tedd személyessé az élményedet</string>
+    <string name="onboarding_personalization_description">Szabd testre az alkalmazást az igényeidnek megfelelően. Ezeket a beállításokat később módosíthatod az alkalmazás beállításaiban.</string>
+    <string name="onboarding_cart_settings_title">Kosár viselkedése</string>
+    <string name="onboarding_cart_settings_description">Szabd testre, hogyan viselkedjenek a kosarak az alkalmazásban. Ezeket a beállításokat később módosíthatod.</string>
+    <string name="onboarding_open_carts_after_creation">Kosár megnyitása létrehozás után</string>
+    <string name="onboarding_cart_settings_icon_description">Bevásárlókosár ikon a kosárbeállítások bevezetőjéhez</string>
+    <string name="onboarding_summary_open_carts_after_creation">A kosár automatikus megnyitása közvetlenül a létrehozása után.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Válaszd ki a preferált pénznemet</string>
+    <string name="select_currency_icon_description">Ikon pénznem kiválasztásához</string>
+
     <string name="import_shared_cart">Megosztott kosár importálása</string>
     <string name="default_sort">Alapértelmezett sorrend</string>
     <string name="date">Legrégebbi elöl</string>

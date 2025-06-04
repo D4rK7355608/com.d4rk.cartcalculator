@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_short_description">Efficiently manage and calculate your cart items with Cart Calculator. 🛒</string>
-    <string name="summary_notification_last_time_used"> Let\'s manage your cart items efficiently!</string>
+    <string name="summary_notification_last_time_used">Let\'s manage your cart items efficiently!</string>
 
     <!-- Onboarding -->
     <string name="onboarding_welcome_title">Welcome to Cart Calculator!</string>

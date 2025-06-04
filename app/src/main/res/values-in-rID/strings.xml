@@ -3,6 +3,19 @@
     <string name="app_short_description">Kelola dan hitung item keranjang Anda secara efisien dengan Kalkulator Keranjang. 🛒</string>
     <string name="summary_notification_last_time_used">Ayo kelola item keranjang Anda secara efisien!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Selamat datang di Kalkulator Keranjang!</string>
+    <string name="onboarding_welcome_description">Kelola daftar belanja Anda dan hitung pengeluaran dengan mudah.</string>
+    <string name="onboarding_personalization_title">Personalisasi Pengalaman Anda</string>
+    <string name="onboarding_personalization_description">Sesuaikan aplikasi agar sesuai dengan kebutuhan Anda. Anda dapat mengubah pengaturan ini nanti di pengaturan aplikasi.</string>
+    <string name="onboarding_cart_settings_title">Perilaku Keranjang</string>
+    <string name="onboarding_cart_settings_description">Sesuaikan bagaimana keranjang berperilaku di aplikasi. Anda dapat mengubah pengaturan ini nanti.</string>
+    <string name="onboarding_open_carts_after_creation">Buka keranjang setelah dibuat</string>
+    <string name="onboarding_cart_settings_icon_description">Ikon keranjang belanja untuk orientasi pengaturan keranjang</string>
+    <string name="onboarding_summary_open_carts_after_creation">Buka keranjang secara otomatis setelah Anda membuatnya.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Pilih mata uang pilihan Anda</string>
+    <string name="select_currency_icon_description">Ikon untuk memilih mata uang</string>
+
     <string name="import_shared_cart">Impor Keranjang Bersama</string>
     <string name="default_sort">Urutan Default</string>
     <string name="date">Terlama dulu</string>

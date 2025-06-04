@@ -3,6 +3,19 @@
     <string name="app_short_description">Gestisci e calcola in modo efficiente gli articoli del tuo carrello con Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Gestiamo gli articoli del tuo carrello in modo efficiente!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Benvenuto su Calcolatore Carrello!</string>
+    <string name="onboarding_welcome_description">Gestisci le tue liste della spesa e calcola le spese con facilità.</string>
+    <string name="onboarding_personalization_title">Personalizza la tua esperienza</string>
+    <string name="onboarding_personalization_description">Personalizza l\'app in base alle tue esigenze. Puoi modificare queste impostazioni in seguito nelle impostazioni dell\'app.</string>
+    <string name="onboarding_cart_settings_title">Comportamento del carrello</string>
+    <string name="onboarding_cart_settings_description">Personalizza il comportamento dei carrelli nell\'app. Puoi modificare queste impostazioni in seguito.</string>
+    <string name="onboarding_open_carts_after_creation">Apri carrello dopo la creazione</string>
+    <string name="onboarding_cart_settings_icon_description">Icona del carrello della spesa per la configurazione iniziale delle impostazioni del carrello</string>
+    <string name="onboarding_summary_open_carts_after_creation">Apri automaticamente un carrello subito dopo averlo creato.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Scegli la tua valuta preferita</string>
+    <string name="select_currency_icon_description">Icona per la selezione della valuta</string>
+
     <string name="import_shared_cart">Importa carrello condiviso</string>
     <string name="default_sort">Ordine predefinito</string>
     <string name="date">Più vecchi prima</string>

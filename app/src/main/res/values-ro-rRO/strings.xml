@@ -3,6 +3,19 @@
     <string name="app_short_description">Gestionează și calculează eficient articolele din coș cu Cart Calculator. 🛒</string>
     <string name="summary_notification_last_time_used">Haide să gestionăm eficient articolele din coșul tău!</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Bun venit la Calculatorul de Coș!</string>
+    <string name="onboarding_welcome_description">Gestionați-vă listele de cumpărături și calculați cheltuielile cu ușurință.</string>
+    <string name="onboarding_personalization_title">Personalizați-vă experiența</string>
+    <string name="onboarding_personalization_description">Personalizați aplicația pentru a se potrivi nevoilor dvs. Puteți modifica aceste setări ulterior în setările aplicației.</string>
+    <string name="onboarding_cart_settings_title">Comportamentul coșului</string>
+    <string name="onboarding_cart_settings_description">Personalizați modul în care se comportă coșurile în aplicație. Puteți modifica aceste setări ulterior.</string>
+    <string name="onboarding_open_carts_after_creation">Deschide coșul după creare</string>
+    <string name="onboarding_cart_settings_icon_description">Pictogramă coș de cumpărături pentru inițializarea setărilor coșului</string>
+    <string name="onboarding_summary_open_carts_after_creation">Deschide automat un coș imediat după ce îl creați.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Alegeți moneda preferată</string>
+    <string name="select_currency_icon_description">Pictogramă pentru selectarea monedei</string>
+
     <string name="import_shared_cart">Importă coș partajat</string>
     <string name="default_sort">Ordine implicită</string>
     <string name="date">Cele mai vechi primele</string>
