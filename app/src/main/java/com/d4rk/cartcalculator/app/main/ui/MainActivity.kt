@@ -15,12 +15,15 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.d4rk.android.libs.apptoolkit.app.startup.ui.StartupActivity
 import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentFormHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentManagerHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.main.domain.actions.MainEvent
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.utils.helpers.LanguageCurrencyHelper
 import com.google.android.gms.ads.MobileAds
+import com.google.android.ump.ConsentInformation
+import com.google.android.ump.UserMessagingPlatform
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -34,10 +37,12 @@ class MainActivity : AppCompatActivity() {
     private val dataStore : DataStore by inject()
     private lateinit var updateResultLauncher : ActivityResultLauncher<IntentSenderRequest>
     private lateinit var viewModel : MainViewModel
+    private var keepSplashVisible : Boolean = true
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
+        val splashScreen = installSplashScreen()
+        splashScreen.setKeepOnScreenCondition { keepSplashVisible }
         enableEdgeToEdge()
         initializeDependencies()
         handleStartup()
@@ -46,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         viewModel.onEvent(event = MainEvent.CheckForUpdates)
+        checkUserConsent()
     }
 
     private fun initializeDependencies() {
@@ -71,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            keepSplashVisible = false
             if (isFirstLaunch) {
                 startStartupActivity()
             }
@@ -93,5 +100,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun checkUserConsent() {
+        val consentInfo: ConsentInformation = UserMessagingPlatform.getConsentInformation(this)
+        ConsentFormHelper.loadAndShow(activity = this , consentInfo = consentInfo)
     }
 }
