@@ -1,10 +1,6 @@
 package com.d4rk.cartcalculator.core.di.modules
 
 import com.d4rk.android.libs.apptoolkit.app.about.ui.AboutViewModel
-import com.d4rk.android.libs.apptoolkit.app.ads.data.ConsentRepository
-import com.d4rk.android.libs.apptoolkit.app.ads.data.ConsentRepositoryImpl
-import com.d4rk.android.libs.apptoolkit.app.ads.domain.usecases.LoadConsentInfoUseCase
-import com.d4rk.android.libs.apptoolkit.app.ads.ui.AdsSettingsViewModel
 import com.d4rk.android.libs.apptoolkit.app.permissions.ui.PermissionsViewModel
 import com.d4rk.android.libs.apptoolkit.app.permissions.utils.interfaces.PermissionsProvider
 import com.d4rk.android.libs.apptoolkit.app.settings.general.ui.GeneralSettingsViewModel
@@ -24,7 +20,6 @@ import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppPrivacyS
 import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppSettingsProvider
 import com.d4rk.cartcalculator.app.settings.settings.utils.providers.AppSettingsScreens
 import com.d4rk.cartcalculator.app.settings.settings.utils.providers.PermissionsSettingsProvider
-import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
@@ -50,12 +45,6 @@ val settingsModule = module {
     single<PermissionsProvider> { PermissionsSettingsProvider() }
     viewModel {
         PermissionsViewModel(settingsProvider = get() , dispatcherProvider = get())
-    }
-
-    single<ConsentRepository> { ConsentRepositoryImpl(context = androidContext()) }
-    single<LoadConsentInfoUseCase> { LoadConsentInfoUseCase(repository = get()) }
-    viewModel {
-        AdsSettingsViewModel(loadConsentInfoUseCase = get() , dispatcherProvider = get())
     }
 
     viewModel {
