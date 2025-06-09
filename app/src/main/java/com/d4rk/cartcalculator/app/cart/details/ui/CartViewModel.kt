@@ -120,9 +120,12 @@ class CartViewModel(
             deleteCartItemUseCase(param = item).collect { result : DataState<Unit , Errors> ->
                 if (result is DataState.Success) {
                     updateUi {
-                        copy(cartItems = cartItems.filter { it.itemId != item.itemId })
+                        val updatedItems = cartItems.filter { it.itemId != item.itemId }
+                        copy(
+                            cartItems = updatedItems ,
+                            totalPrice = updatedItems.sumOf { it.price.toDouble() * it.quantity }
+                        )
                     }
-                    calculateTotalPrice()
                     postSnackbar(resId = R.string.item_removed_successfully , isError = false)
                     checkForEmptyItems()
                 }
