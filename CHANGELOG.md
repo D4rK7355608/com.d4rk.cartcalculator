@@ -1,3 +1,13 @@
+# Version 2.0.2:
+
+- **New**: Added translations for Arabic (Egypt).
+- **New**: Added translations for Bengali (Bangladesh).
+- **New**: Added translations for Spanish (Mexico).
+- **New**: Added translations for Filipino (Philippines).
+- **New**: Added translations for Korean (South Korea).
+- **New**: Added translations for Urdu (Pakistan).
+- **New**: Added translations for Vietnamese (Vietnam).
+
 # Version 2.0.1:
 
 - **Minor**: Updated target SDK to 36 (Android 16).
