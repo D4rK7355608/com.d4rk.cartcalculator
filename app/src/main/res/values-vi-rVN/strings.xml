@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">Quản lý và tính toán các mặt hàng trong giỏ hàng của bạn một cách hiệu quả với Cart Calculator. 🛒</string>
+    <string name="summary_notification_last_time_used">Hãy quản lý các mặt hàng trong giỏ hàng của bạn một cách hiệu quả!</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Chào mừng đến với Cart Calculator!</string>
+    <string name="onboarding_welcome_description">Quản lý danh sách mua sắm và tính toán chi phí một cách dễ dàng.</string>
+    <string name="onboarding_personalization_title">Cá nhân hóa trải nghiệm của bạn</string>
+    <string name="onboarding_personalization_description">Tùy chỉnh ứng dụng cho phù hợp với nhu cầu của bạn. Bạn có thể thay đổi các cài đặt này sau trong cài đặt ứng dụng.</string>
+    <string name="onboarding_cart_settings_title">Hành vi giỏ hàng</string>
+    <string name="onboarding_cart_settings_description">Tùy chỉnh cách giỏ hàng hoạt động trong ứng dụng. Bạn có thể thay đổi các cài đặt này sau.</string>
+    <string name="onboarding_open_carts_after_creation">Mở giỏ hàng sau khi tạo</string>
+    <string name="onboarding_cart_settings_icon_description">Biểu tượng giỏ hàng cho phần giới thiệu cài đặt giỏ hàng</string>
+    <string name="onboarding_summary_open_carts_after_creation">Tự động mở giỏ hàng ngay sau khi bạn tạo.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Chọn đơn vị tiền tệ ưa thích của bạn</string>
+    <string name="select_currency_icon_description">Biểu tượng chọn đơn vị tiền tệ</string>
+
+    <!-- Home screen -->
+    <string name="import_shared_cart">Nhập giỏ hàng được chia sẻ</string>
+    <string name="default_sort">Thứ tự mặc định</string>
+    <string name="date">Cũ nhất trước</string>
+    <string name="last_added">Mới nhất trước</string>
+    <string name="alphabetical">Theo thứ tự bảng chữ cái</string>
+    <string name="button_import">Nhập</string>
+    <string name="paste_cart_link">Dán liên kết giỏ hàng</string>
+    <string name="import_cart_instructions">Để nhập một giỏ hàng được chia sẻ, hãy dán liên kết đã tạo vào trường ở trên.\nGiỏ hàng được chia sẻ sẽ tự động xuất hiện trong danh sách của bạn sau khi được nhập.\n\nCách chia sẻ giỏ hàng:\n1. Mở giỏ hàng của bạn.\n2. Nhấn vào nút \'Chia sẻ\'.\n3. Sao chép liên kết đã tạo và gửi cho ai đó.\n\nCách nhập một giỏ hàng được chia sẻ:\n1. Sao chép liên kết được chia sẻ bạn đã nhận.\n2. Dán nó vào trường nhập liệu ở trên.\n3. Nhấn \'Nhập\' và kiểm tra danh sách giỏ hàng của bạn để tìm mục mới.</string>
+    <string name="no_carts_available">Không có giỏ hàng nào</string>
+    <string name="add_new_cart">Thêm giỏ hàng mới</string>
+    <string name="create_a_new_cart">Tạo giỏ hàng mới</string>
+    <string name="enter_cart_name">Nhập tên giỏ hàng</string>
+    <string name="rename_cart">Đổi tên giỏ hàng</string>
+    <string name="shopping_cart">Giỏ hàng</string>
+    <string name="summary_cart_dialog">Chúng tôi cam kết tạo ra trải nghiệm mua sắm được cá nhân hóa cho mọi người. Để giúp bạn dễ dàng theo dõi các lựa chọn của mình và nâng cao hành trình mua sắm, hãy cân nhắc đặt tên cho giỏ hàng của bạn trước khi thêm mặt hàng.</string>
+    <string name="create">Tạo</string>
+    <string name="cart_category_device">Trên thiết bị này</string>
+    <string name="shared">Được chia sẻ</string>
+    <string name="owner">Chủ sở hữu</string>
+    <string name="created_on">Tạo vào %1$s</string>
+    <string name="decrease_quantity">Giảm số lượng</string>
+    <string name="increase_quantity">Tăng số lượng</string>
+    <string name="delete_cart_question">Xóa giỏ hàng?</string>
+    <string name="delete_cart">Xóa giỏ hàng</string>
+    <string name="delete_cart_warning">Việc xóa giỏ hàng này sẽ xóa vĩnh viễn tất cả các mặt hàng khỏi \"%s\" và không thể hoàn tác.</string>
+    <string name="delete">Xóa</string>
+    <string name="more_options">Tùy chọn khác</string>
+    <string name="share_cart">Chia sẻ giỏ hàng</string>
+    <string name="category_icon_description">Biểu tượng cho %1$s</string>
+    <string name="cart_added_successfully">Đã thêm giỏ hàng thành công!</string>
+    <string name="cart_renamed_successfully">Đã đổi tên giỏ hàng thành công!</string>
+    <string name="cart_deleted_successfully">Đã xóa giỏ hàng thành công!</string>
+
+    <!-- Cart screen -->
+    <string name="your_shopping_cart_is_empty">Giỏ hàng của bạn trống</string>
+    <string name="empty_cart_info_message">Có vẻ như giỏ hàng của bạn hiện đang trống. Để bắt đầu thêm mặt hàng, bạn có thể dễ dàng điều hướng đến các danh mục sản phẩm mong muốn và chọn chúng. Khi bạn tìm thấy thứ gì đó mình thích, chỉ cần nhấn vào biểu tượng giỏ hàng, nằm ở góc trên bên trái, để thêm vào giỏ hàng của bạn.</string>
+    <string name="add_cart_item">Thêm mặt hàng vào giỏ</string>
+    <string name="edit_cart_item">Sửa mặt hàng trong giỏ</string>
+    <string name="in_cart">Trong giỏ hàng</string>
+    <string name="items_to_pick_up">Mặt hàng cần mua</string>
+    <string name="item_name">Tên mặt hàng</string>
+    <string name="enter_item_name">Nhập tên mặt hàng</string>
+    <string name="item_price">Giá mặt hàng</string>
+    <string name="enter_item_price">Nhập giá mặt hàng</string>
+    <string name="quantity">Số lượng</string>
+    <string name="enter_quantity">Nhập số lượng</string>
+    <string name="dialog_info_cart_item">Để đảm bảo trải nghiệm thanh toán liền mạch, vui lòng cung cấp chi tiết về các mặt hàng bạn đang thêm vào giỏ hàng</string>
+    <string name="total">Tổng cộng</string>
+    <string name="clear_cart_title">Xóa sạch giỏ hàng</string>
+    <string name="clear_cart_message">Bạn có chắc chắn muốn xóa tất cả các mặt hàng khỏi giỏ hàng của mình không?</string>
+    <string name="cart_cleared">Đã xóa thành công tất cả mặt hàng</string>
+    <string name="delete_cart_item_title">Xóa mặt hàng khỏi giỏ</string>
+    <string name="delete_cart_item_message">Bạn có chắc chắn muốn xóa mặt hàng này không?</string>
+    <string name="delete_cart_item_warning">Bạn sắp xóa \"%s\" khỏi giỏ hàng của mình.</string>
+    <string name="item_removed_successfully">Đã xóa mặt hàng thành công!</string>
+    <string name="item_added_successfully">Đã thêm mặt hàng thành công!</string>
+    <string name="failed_to_add_item">Không thể thêm mặt hàng</string>
+
+    <!-- Cart settings screen -->
+    <string name="cart_settings">Cài đặt giỏ hàng</string>
+    <string name="summary_preference_settings_cart">Quản lý cách giỏ hàng của bạn hoạt động</string>
+
+    <!-- Currency settings screen -->
+    <string name="currency">Đơn vị tiền tệ</string>
+    <string name="select_currency">Chọn đơn vị tiền tệ</string>
+    <string name="summary_preference_settings_currency">Đặt đơn vị tiền tệ ưa thích của bạn để hiển thị giá</string>
+    <string name="dialog_currency_subtitle">Chọn đơn vị tiền tệ ưa thích của bạn</string>
+    <string name="dialog_info_currency">Lựa chọn đơn vị tiền tệ này sẽ được sử dụng trên toàn nền tảng để hiển thị giá sản phẩm, xử lý giao dịch và cung cấp trải nghiệm mua sắm được cá nhân hóa hơn</string>
+    <string name="open_carts_after_creation">Mở giỏ hàng sau khi tạo</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Tự động mở giỏ hàng ngay sau khi được tạo.</string>
+
+    <!-- About screen -->
+    <string name="summary_preference_settings_about">Tìm hiểu thêm về Cart Calculator</string>
+
+    <!-- Help screen -->
+    <string name="question_1">Cart Calculator là gì?</string>
+    <string name="summary_preference_faq_1">Cart Calculator là một trình quản lý giỏ hàng và máy tính tổng tiền đơn giản, chung chung và miễn phí, thay thế máy tính thông thường của thiết bị khi bạn ở cửa hàng tạp hóa hoặc chợ.</string>
+    <string name="question_2">Cart Calculator hoạt động như thế nào?</string>
+    <string name="summary_preference_faq_2">Cart Calculator cho phép bạn quản lý giỏ hàng bằng cách thêm sản phẩm và tăng hoặc giảm số lượng của chúng. Bất cứ lúc nào, Cart Calculator sẽ hiển thị tổng số tiền phải trả của các sản phẩm trong giỏ hàng dựa trên giá và số lượng của chúng.</string>
+    <string name="question_3">Tại sao tôi nên sử dụng Cart Calculator?</string>
+    <string name="summary_preference_faq_3">Cart Calculator giúp bạn luôn biết mình đang chi tiêu bao nhiêu ngay cả trước khi đến quầy thanh toán. Điều này đặc biệt hữu ích khi bạn phải mua sắm với ngân sách eo hẹp.</string>
+    <string name="question_4">Tôi có thể sử dụng Cart Calculator bên ngoài cửa hàng tạp hóa hoặc chợ không?</string>
+    <string name="summary_preference_faq_4">Có! Vì Cart Calculator cực kỳ đơn giản và chung chung, bạn cũng có thể sử dụng nó trong các quán rượu, nhà hàng, rạp chiếu phim, v.v.</string>
+    <string name="question_5">Làm cách nào để thêm một mặt hàng vào giỏ hàng của tôi bằng Cart Calculator?</string>
+    <string name="summary_preference_faq_5">Mở giỏ hàng của bạn và nhấn nút \"Thêm mặt hàng\" trên Thanh Hành động để thêm một sản phẩm mới vào giỏ hàng. Bạn cung cấp tên, giá và số lượng của nó, sau đó nhấp vào nút \"Thêm\".</string>
+    <string name="question_6">Làm cách nào để tăng hoặc giảm số lượng của một mặt hàng trong giỏ hàng bằng Cart Calculator?</string>
+    <string name="summary_preference_faq_6">Chỉ cần tìm mặt hàng trong danh sách và sau đó nhấn nút \"+ (cộng)\" để tăng số lượng hoặc nút \"- (trừ)\" để giảm số lượng của nó.</string>
+    <string name="question_7">Làm cách nào để xóa một mặt hàng khỏi giỏ hàng bằng Cart Calculator?</string>
+    <string name="summary_preference_faq_7">Để xóa một sản phẩm khỏi giỏ hàng, chỉ cần vuốt sang phải hoặc trái hoặc giảm số lượng của nó xuống không rồi chọn nút \"Xóa mặt hàng\".</string>
+    <string name="question_8">Cart Calculator có phải là phần mềm miễn phí không?</string>
+    <string name="summary_preference_faq_8">Có! Cart Calculator là phần mềm miễn phí được tự hào phân phối theo Giấy phép Công cộng GNU phiên bản 3.</string>
+    <string name="question_9">Làm cách nào tôi có thể đóng góp cho Cart Calculator?</string>
+    <string name="summary_preference_faq_9">Cách tốt nhất để đóng góp cho Cart Calculator là thông qua kho lưu trữ <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> của nó. Từ đó, bạn có thể fork nó và làm việc trên các đóng góp của mình, sau đó gửi lại chúng thông qua pull request. Bạn cũng có thể sử dụng trình theo dõi vấn đề để báo cáo lỗi, đề xuất các tính năng hoặc cải tiến mới, hoặc lấy ý tưởng về cách bạn có thể giúp đỡ.</string>
+
+    <!-- Confirmations -->
+    <string name="snackbar_cart_deleted_success">Đã xóa giỏ hàng thành công!</string>
+
+    <!-- Error messages -->
+    <string name="empty_cart">Giỏ hàng của bạn hiện đang trống.</string>
+    <string name="compression_failed">Không thể chuẩn bị dữ liệu giỏ hàng. Vui lòng thử lại.</string>
+    <string name="failed_to_import_cart">Không thể nhập giỏ hàng. Vui lòng kiểm tra tệp và thử lại.</string>
+    <string name="failed_to_encrypt_cart">Không thể bảo mật giỏ hàng. Vui lòng thử lại.</string>
+    <string name="database_cart_not_found">Không tìm thấy giỏ hàng.</string>
+    <string name="failed_to_load_cart">Không thể tải giỏ hàng.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet chưa được cài đặt</string>
+    <string name="failed_to_update_cart_item">Không thể cập nhật mặt hàng trong giỏ.</string>
+    <string name="failed_to_delete_cart_item">Không thể xóa mặt hàng khỏi giỏ.</string>
+    <string name="failed_to_add_cart_item">Không thể thêm mặt hàng vào giỏ.</string>
+    <string name="request_no_internet">Không có kết nối internet. Vui lòng kiểm tra kết nối của bạn và thử lại.</string>
+    <string name="request_timeout">Yêu cầu đã hết thời gian chờ. Vui lòng thử lại.</string>
+    <string name="request_server_not_found">Lỗi máy chủ. Vui lòng thử lại sau.</string>
+    <string name="request_payload_error">Lỗi dữ liệu. Vui lòng thử lại.</string>
+    <string name="failed_to_delete_cart">Không thể xóa giỏ hàng. Vui lòng thử lại.</string>
+    <string name="failed_to_decrypt_cart">Không thể tải dữ liệu giỏ hàng. Giỏ hàng có thể bị hỏng.</string>
+    <string name="database_operation_failed">Đã xảy ra lỗi với dữ liệu cục bộ. Vui lòng thử lại.</string>
+    <string name="cart_not_found">Không tìm thấy giỏ hàng.</string>
+</resources>

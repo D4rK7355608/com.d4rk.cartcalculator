@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">Mahusay na pamahalaan at kalkulahin ang iyong mga item sa cart gamit ang Cart Calculator. 🛒</string>
+    <string name="summary_notification_last_time_used">Pamahalaan natin nang mahusay ang iyong mga item sa cart!</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome sa Cart Calculator!</string>
+    <string name="onboarding_welcome_description">Pamahalaan ang iyong mga listahan ng pamimili at kalkulahin ang mga gastos nang madali.</string>
+    <string name="onboarding_personalization_title">I-personalize ang Iyong Karanasan</string>
+    <string name="onboarding_personalization_description">I-customize ang app para umangkop sa iyong mga pangangailangan. Maaari mong baguhin ang mga setting na ito mamaya sa mga setting ng app.</string>
+    <string name="onboarding_cart_settings_title">Pag-uugali ng Cart</string>
+    <string name="onboarding_cart_settings_description">I-customize kung paano kumikilos ang mga cart sa app. Maaari mong baguhin ang mga setting na ito mamaya.</string>
+    <string name="onboarding_open_carts_after_creation">Buksan ang cart pagkatapos gawin</string>
+    <string name="onboarding_cart_settings_icon_description">Icon ng shopping cart para sa onboarding ng mga setting ng cart</string>
+    <string name="onboarding_summary_open_carts_after_creation">Awtomatikong buksan ang cart pagkatapos mo itong gawin.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Piliin ang iyong gustong currency</string>
+    <string name="select_currency_icon_description">Icon para sa pagpili ng currency</string>
+
+    <!-- Home screen -->
+    <string name="import_shared_cart">I-import ang Ibinahaging Cart</string>
+    <string name="default_sort">Default na Pagkakasunud-sunod</string>
+    <string name="date">Pinakaluma Muna</string>
+    <string name="last_added">Pinakabago Muna</string>
+    <string name="alphabetical">Paalpabeto</string>
+    <string name="button_import">I-import</string>
+    <string name="paste_cart_link">I-paste ang Link ng Cart</string>
+    <string name="import_cart_instructions">Para mag-import ng ibinahaging cart, i-paste ang nabuong link sa field sa itaas.\nAwtomatikong lalabas ang ibinahaging cart sa iyong listahan kapag na-import na.\n\nPaano magbahagi ng cart:\n1. Buksan ang iyong cart.\n2. I-tap ang \'Share\' button.\n3. Kopyahin ang nabuong link at ipadala ito sa iba.\n\nPaano mag-import ng ibinahaging cart:\n1. Kopyahin ang natanggap mong ibinahaging link.\n2. I-paste ito sa input field sa itaas.\n3. I-tap ang \'Import\' at tingnan ang iyong listahan ng cart para sa bagong entry.</string>
+    <string name="no_carts_available">Walang available na mga cart</string>
+    <string name="add_new_cart">Magdagdag ng bagong cart</string>
+    <string name="create_a_new_cart">Gumawa ng Bagong Cart</string>
+    <string name="enter_cart_name">Ilagay ang pangalan ng cart</string>
+    <string name="rename_cart">Palitan ang Pangalan ng Cart</string>
+    <string name="shopping_cart">Shopping cart</string>
+    <string name="summary_cart_dialog">Nakatuon kami sa paglikha ng personalized na karanasan sa pamimili para sa lahat. Upang mas madali mong masubaybayan ang iyong mga napili at mapahusay ang iyong paglalakbay sa pamimili, isaalang-alang ang pagbibigay ng pangalan sa iyong cart bago magdagdag ng mga item.</string>
+    <string name="create">Gawin</string>
+    <string name="cart_category_device">Sa device na ito</string>
+    <string name="shared">Ibinahagi</string>
+    <string name="owner">May-ari</string>
+    <string name="created_on">Ginawa noong %1$s</string>
+    <string name="decrease_quantity">Bawasan ang dami</string>
+    <string name="increase_quantity">Dagdagan ang dami</string>
+    <string name="delete_cart_question">Burahin ang cart?</string>
+    <string name="delete_cart">Burahin ang Cart</string>
+    <string name="delete_cart_warning">Ang pagbura sa cart na ito ay permanenteng mag-aalis ng lahat ng item mula sa \"%s\" at hindi na maibabalik.</string>
+    <string name="delete">Burahin</string>
+    <string name="more_options">Higit pang mga opsyon</string>
+    <string name="share_cart">Ibahagi ang Cart</string>
+    <string name="category_icon_description">Icon para sa %1$s</string>
+    <string name="cart_added_successfully">Matagumpay na naidagdag ang cart!</string>
+    <string name="cart_renamed_successfully">Matagumpay na napalitan ang pangalan ng cart!</string>
+    <string name="cart_deleted_successfully">Matagumpay na nabura ang cart!</string>
+
+    <!-- Cart screen -->
+    <string name="your_shopping_cart_is_empty">Walang laman ang iyong shopping cart</string>
+    <string name="empty_cart_info_message">Mukhang walang laman ang iyong shopping cart sa kasalukuyan. Upang magsimulang magdagdag ng mga item, madali kang makakapag-navigate sa iyong nais na mga kategorya ng produkto at piliin ang mga ito. Kapag may nahanap ka nang gusto mo, i-tap lang ang icon ng shopping cart, na matatagpuan sa kaliwang itaas na sulok, upang idagdag ito sa iyong cart.</string>
+    <string name="add_cart_item">Magdagdag ng Item sa Cart</string>
+    <string name="edit_cart_item">I-edit ang Item sa Cart</string>
+    <string name="in_cart">Nasa Cart</string>
+    <string name="items_to_pick_up">Mga Item na Bibilhin</string>
+    <string name="item_name">Pangalan ng item</string>
+    <string name="enter_item_name">Ilagay ang pangalan ng item</string>
+    <string name="item_price">Presyo ng item</string>
+    <string name="enter_item_price">Ilagay ang presyo ng item</string>
+    <string name="quantity">Dami</string>
+    <string name="enter_quantity">Ilagay ang dami</string>
+    <string name="dialog_info_cart_item">Upang matiyak ang maayos na karanasan sa pag-checkout, mangyaring magbigay ng mga detalye tungkol sa mga item na idinadagdag mo sa iyong cart</string>
+    <string name="total">Kabuuan</string>
+    <string name="clear_cart_title">Alisan ng Laman ang Cart</string>
+    <string name="clear_cart_message">Sigurado ka bang gusto mong burahin ang lahat ng item sa iyong cart?</string>
+    <string name="cart_cleared">Matagumpay na naalis ang lahat ng item</string>
+    <string name="delete_cart_item_title">Burahin ang Item sa Cart</string>
+    <string name="delete_cart_item_message">Sigurado ka bang gusto mong burahin ang item na ito?</string>
+    <string name="delete_cart_item_warning">Malapit mo nang burahin ang \"%s\" mula sa iyong cart.</string>
+    <string name="item_removed_successfully">Matagumpay na naalis ang item!</string>
+    <string name="item_added_successfully">Matagumpay na naidagdag ang item!</string>
+    <string name="failed_to_add_item">Nabigong idagdag ang item</string>
+
+    <!-- Cart settings screen -->
+    <string name="cart_settings">Mga setting ng cart</string>
+    <string name="summary_preference_settings_cart">Pamahalaan kung paano kumikilos ang iyong cart</string>
+
+    <!-- Currency settings screen -->
+    <string name="currency">Currency</string>
+    <string name="select_currency">Pumili ng Currency</string>
+    <string name="summary_preference_settings_currency">Itakda ang iyong gustong currency para sa pagpapakita ng mga presyo</string>
+    <string name="dialog_currency_subtitle">Piliin ang iyong gustong currency</string>
+    <string name="dialog_info_currency">Ang pagpili ng currency na ito ay gagamitin sa buong platform para sa pagpapakita ng mga presyo ng produkto, pagproseso ng mga transaksyon, at pagbibigay ng mas personalized na karanasan sa pamimili</string>
+    <string name="open_carts_after_creation">Buksan ang Mga Cart Pagkatapos Gawin</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Awtomatikong buksan ang cart kaagad pagkatapos itong gawin.</string>
+
+    <!-- About screen -->
+    <string name="summary_preference_settings_about">Matuto pa tungkol sa Cart Calculator</string>
+
+    <!-- Help screen -->
+    <string name="question_1">Ano ang Cart Calculator?</string>
+    <string name="summary_preference_faq_1">Ang Cart Calculator ay isang simple, generic at libreng tagapamahala ng shopping cart at calculator ng kabuuang babayaran na pumapalit sa ordinaryong calculator ng device kapag ikaw ay nasa grocery store o palengke.</string>
+    <string name="question_2">Paano gumagana ang Cart Calculator?</string>
+    <string name="summary_preference_faq_2">Pinapayagan ka ng Cart Calculator na pamahalaan ang iyong shopping cart sa pamamagitan ng pagdaragdag ng mga produkto at pagdaragdag o pagbabawas ng kanilang dami. Anumang oras, ipinapakita ng Cart Calculator ang kabuuang babayaran ng mga produkto sa iyong cart batay sa kanilang mga presyo at dami.</string>
+    <string name="question_3">Bakit ko dapat gamitin ang Cart Calculator?</string>
+    <string name="summary_preference_faq_3">Tinutulungan ka ng Cart Calculator na laging malaman kung magkano ang iyong ginagastos bago pa man makarating sa checkout. Ito ay lalong kapaki-pakinabang kapag kailangan mong mamili nang may budget.</string>
+    <string name="question_4">Maaari ko bang gamitin ang Cart Calculator sa labas ng mga grocery store o palengke?</string>
+    <string name="summary_preference_faq_4">Oo! Dahil ang Cart Calculator ay napakasimple at generic, maaari mo rin itong gamitin sa mga pub, restaurant, sinehan atbp.</string>
+    <string name="question_5">Paano ako magdaragdag ng item sa aking cart gamit ang Cart Calculator?</string>
+    <string name="summary_preference_faq_5">Buksan ang iyong cart at pindutin ang \"Add item\" na button sa Action Bar para magdagdag ng bagong produkto sa iyong cart. Ibibigay mo ang pangalan, presyo at dami nito at pagkatapos ay i-click ang \"Add\" na button.</string>
+    <string name="question_6">Paano ko dadagdagan o babawasan ang dami ng isang item sa aking cart gamit ang Cart Calculator?</string>
+    <string name="summary_preference_faq_6">Hanapin lang ang item sa listahan at pagkatapos ay pindutin ang \"+ (plus)\" na button para dagdagan ang dami nito o ang \"- (less)\" na button para bawasan ang dami nito.</string>
+    <string name="question_7">Paano ko aalisin ang isang item sa aking cart gamit ang Cart Calculator?</string>
+    <string name="summary_preference_faq_7">Para alisin ang isang produkto sa iyong cart, i-swipe lang pakanan o pakaliwa o babaan ang dami nito sa zero at pagkatapos ay piliin ang \"Delete item\" na button.</string>
+    <string name="question_8">Libre bang software ang Cart Calculator?</string>
+    <string name="summary_preference_faq_8">Oo! Ang Cart Calculator ay ipinagmamalaking libreng software na ipinamamahagi sa ilalim ng GNU General Public License version 3.</string>
+    <string name="question_9">Paano ako makakapag-ambag sa Cart Calculator?</string>
+    <string name="summary_preference_faq_9">Ang pinakamahusay na paraan para mag-ambag sa Cart Calculator ay sa pamamagitan ng <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> repository nito. Mula doon, maaari mo itong i-fork at gawin ang iyong mga kontribusyon, at pagkatapos ay ipadala ang mga ito pabalik sa pamamagitan ng pull request. Maaari mo ring gamitin ang issue tracker para mag-report ng mga bug, magmungkahi ng mga bagong feature o pagpapahusay, o makakuha ng mga ideya kung paano ka makakatulong.</string>
+
+    <!-- Confirmations -->
+    <string name="snackbar_cart_deleted_success">Matagumpay na nabura ang cart!</string>
+
+    <!-- Error messages -->
+    <string name="empty_cart">Walang laman ang iyong cart sa kasalukuyan.</string>
+    <string name="compression_failed">Hindi maihanda ang data ng cart. Pakisubukang muli.</string>
+    <string name="failed_to_import_cart">Hindi ma-import ang cart. Pakisuri ang file at subukang muli.</string>
+    <string name="failed_to_encrypt_cart">Hindi ma-secure ang cart. Pakisubukang muli.</string>
+    <string name="database_cart_not_found">Hindi nahanap ang cart.</string>
+    <string name="failed_to_load_cart">Nabigong i-load ang cart.</string>
+    <string name="google_pay_wallet_not_installed">Hindi naka-install ang Google Pay/Wallet</string>
+    <string name="failed_to_update_cart_item">Nabigong i-update ang item sa cart.</string>
+    <string name="failed_to_delete_cart_item">Nabigong burahin ang item sa cart.</string>
+    <string name="failed_to_add_cart_item">Nabigong idagdag ang item sa cart.</string>
+    <string name="request_no_internet">Walang koneksyon sa internet. Pakisuri ang iyong koneksyon at subukang muli.</string>
+    <string name="request_timeout">Nag-time out ang request. Pakisubukang muli.</string>
+    <string name="request_server_not_found">Error sa server. Pakisubukang muli mamaya.</string>
+    <string name="request_payload_error">Error sa data. Pakisubukang muli.</string>
+    <string name="failed_to_delete_cart">Hindi mabura ang cart. Pakisubukang muli.</string>
+    <string name="failed_to_decrypt_cart">Hindi ma-load ang data ng cart. Maaaring sira ang cart.</string>
+    <string name="database_operation_failed">May nangyaring mali sa lokal na data. Pakisubukang muli.</string>
+    <string name="cart_not_found">Hindi nahanap ang cart.</string>
+</resources>

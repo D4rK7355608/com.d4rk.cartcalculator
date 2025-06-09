@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">Administra y calcula eficientemente los artículos de tu carrito con Cart Calculator. 🛒</string>
+    <string name="summary_notification_last_time_used">¡Vamos a administrar eficientemente los artículos de tu carrito!</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">¡Bienvenido a Cart Calculator!</string>
+    <string name="onboarding_welcome_description">Administra tus listas de compras y calcula los gastos con facilidad.</string>
+    <string name="onboarding_personalization_title">Personaliza Tu Experiencia</string>
+    <string name="onboarding_personalization_description">Personaliza la aplicación para que se ajuste a tus necesidades. Puedes cambiar estos ajustes más tarde en la configuración de la aplicación.</string>
+    <string name="onboarding_cart_settings_title">Comportamiento del Carrito</string>
+    <string name="onboarding_cart_settings_description">Personaliza cómo se comportan los carritos en la aplicación. Puedes cambiar estos ajustes más tarde.</string>
+    <string name="onboarding_open_carts_after_creation">Abrir carrito después de crearlo</string>
+    <string name="onboarding_cart_settings_icon_description">Ícono de carrito de compras para la configuración inicial de ajustes del carrito</string>
+    <string name="onboarding_summary_open_carts_after_creation">Abrir automáticamente un carrito justo después de crearlo.</string>
+    <string name="onboarding_summary_select_currency_placeholder">Elige tu moneda preferida</string>
+    <string name="select_currency_icon_description">Ícono para seleccionar moneda</string>
+
+    <!-- Home screen -->
+    <string name="import_shared_cart">Importar Carrito Compartido</string>
+    <string name="default_sort">Orden Predeterminado</string>
+    <string name="date">Más Antiguos Primero</string>
+    <string name="last_added">Más Recientes Primero</string>
+    <string name="alphabetical">Alfabético</string>
+    <string name="button_import">Importar</string>
+    <string name="paste_cart_link">Pegar Enlace del Carrito</string>
+    <string name="import_cart_instructions">Para importar un carrito compartido, pega el enlace generado en el campo de arriba.\nEl carrito compartido aparecerá automáticamente en tu lista una vez importado.\n\nCómo compartir un carrito:\n1. Abre tu carrito.\n2. Toca el botón \'Compartir\'.\n3. Copia el enlace generado y envíaselo a alguien.\n\nCómo importar un carrito compartido:\n1. Copia el enlace compartido que recibiste.\n2. Pégalo en el campo de entrada de arriba.\n3. Toca \'Importar\' y revisa tu lista de carritos para ver la nueva entrada.</string>
+    <string name="no_carts_available">No hay carritos disponibles</string>
+    <string name="add_new_cart">Agregar nuevo carrito</string>
+    <string name="create_a_new_cart">Crear un Nuevo Carrito</string>
+    <string name="enter_cart_name">Ingresa el nombre del carrito</string>
+    <string name="rename_cart">Renombrar Carrito</string>
+    <string name="shopping_cart">Carrito de compras</string>
+    <string name="summary_cart_dialog">Estamos comprometidos a crear una experiencia de compra personalizada para todos. Para que te sea más fácil llevar un seguimiento de tus selecciones y mejorar tu experiencia de compra, considera darle un nombre a tu carrito antes de agregar artículos.</string>
+    <string name="create">Crear</string>
+    <string name="cart_category_device">En este dispositivo</string>
+    <string name="shared">Compartido</string>
+    <string name="owner">Propietario</string>
+    <string name="created_on">Creado el %1$s</string>
+    <string name="decrease_quantity">Disminuir cantidad</string>
+    <string name="increase_quantity">Aumentar cantidad</string>
+    <string name="delete_cart_question">¿Eliminar carrito?</string>
+    <string name="delete_cart">Eliminar Carrito</string>
+    <string name="delete_cart_warning">Eliminar este carrito eliminará permanentemente todos los artículos de \"%s\" y no se podrá deshacer.</string>
+    <string name="delete">Eliminar</string>
+    <string name="more_options">Más opciones</string>
+    <string name="share_cart">Compartir Carrito</string>
+    <string name="category_icon_description">Ícono para %1$s</string>
+    <string name="cart_added_successfully">¡Carrito agregado exitosamente!</string>
+    <string name="cart_renamed_successfully">¡Carrito renombrado exitosamente!</string>
+    <string name="cart_deleted_successfully">¡Carrito eliminado exitosamente!</string>
+
+    <!-- Cart screen -->
+    <string name="your_shopping_cart_is_empty">Tu carrito de compras está vacío</string>
+    <string name="empty_cart_info_message">Parece que tu carrito de compras está vacío actualmente. Para comenzar a agregar artículos, puedes navegar fácilmente a las categorías de productos deseadas y seleccionarlas. Una vez que hayas encontrado algo que te guste, simplemente toca el ícono del carrito de compras, convenientemente ubicado en la esquina superior izquierda, para agregarlo a tu carrito.</string>
+    <string name="add_cart_item">Agregar Artículo al Carrito</string>
+    <string name="edit_cart_item">Editar Artículo del Carrito</string>
+    <string name="in_cart">En el Carrito</string>
+    <string name="items_to_pick_up">Artículos para Comprar</string>
+    <string name="item_name">Nombre del artículo</string>
+    <string name="enter_item_name">Ingresa el nombre del artículo</string>
+    <string name="item_price">Precio del artículo</string>
+    <string name="enter_item_price">Ingresa el precio del artículo</string>
+    <string name="quantity">Cantidad</string>
+    <string name="enter_quantity">Ingresa la cantidad</string>
+    <string name="dialog_info_cart_item">Para garantizar una experiencia de pago fluida, proporciona los detalles de los artículos que estás agregando a tu carrito</string>
+    <string name="total">Total</string>
+    <string name="clear_cart_title">Vaciar Carrito</string>
+    <string name="clear_cart_message">¿Estás seguro de que quieres eliminar todos los artículos de tu carrito?</string>
+    <string name="cart_cleared">Todos los artículos eliminados exitosamente</string>
+    <string name="delete_cart_item_title">Eliminar Artículo del Carrito</string>
+    <string name="delete_cart_item_message">¿Estás seguro de que quieres eliminar este artículo?</string>
+    <string name="delete_cart_item_warning">Estás a punto de eliminar \"%s\" de tu carrito.</string>
+    <string name="item_removed_successfully">¡Artículo eliminado exitosamente!</string>
+    <string name="item_added_successfully">¡Artículo agregado exitosamente!</string>
+    <string name="failed_to_add_item">Error al agregar el artículo</string>
+
+    <!-- Cart settings screen -->
+    <string name="cart_settings">Ajustes del carrito</string>
+    <string name="summary_preference_settings_cart">Administra cómo se comporta tu carrito</string>
+
+    <!-- Currency settings screen -->
+    <string name="currency">Moneda</string>
+    <string name="select_currency">Seleccionar Moneda</string>
+    <string name="summary_preference_settings_currency">Establece tu moneda preferida para mostrar los precios</string>
+    <string name="dialog_currency_subtitle">Selecciona tu moneda preferida</string>
+    <string name="dialog_info_currency">Esta selección de moneda se utilizará en toda la plataforma para mostrar los precios de los productos, procesar transacciones y proporcionar una experiencia de compra más personalizada</string>
+    <string name="open_carts_after_creation">Abrir Carritos Después de Crearlos</string>
+    <string name="summary_preference_settings_open_carts_after_creation">Abrir automáticamente un carrito inmediatamente después de crearlo.</string>
+
+    <!-- About screen -->
+    <string name="summary_preference_settings_about">Aprende más sobre Cart Calculator</string>
+
+    <!-- Help screen -->
+    <string name="question_1">¿Qué es Cart Calculator?</string>
+    <string name="summary_preference_faq_1">Cart Calculator es un administrador de carritos de compra y calculador de total a pagar simple, genérico y gratuito que reemplaza la calculadora ordinaria del dispositivo para cuando estás en el supermercado o en el mercado.</string>
+    <string name="question_2">¿Cómo funciona Cart Calculator?</string>
+    <string name="summary_preference_faq_2">Cart Calculator te permite administrar tu carrito de compras agregando productos y aumentando o disminuyendo sus cantidades. En cualquier momento, Cart Calculator muestra el total a pagar de los productos en tu carrito según sus precios y cantidades.</string>
+    <string name="question_3">¿Por qué debería usar Cart Calculator?</string>
+    <string name="summary_preference_faq_3">Cart Calculator te ayuda a estar siempre al tanto de cuánto estás gastando incluso antes de llegar a la caja. Esto es especialmente útil cuando tienes que comprar con un presupuesto limitado.</string>
+    <string name="question_4">¿Puedo usar Cart Calculator fuera de supermercados o mercados?</string>
+    <string name="summary_preference_faq_4">¡Sí! Dado que Cart Calculator es sorprendentemente simple y genérico, también puedes usarlo en bares, restaurantes, el cine, etc.</string>
+    <string name="question_5">¿Cómo agrego un artículo a mi carrito usando Cart Calculator?</string>
+    <string name="summary_preference_faq_5">Abre tu carrito y presiona el botón \"Agregar artículo\" en la Barra de Acciones para agregar un nuevo producto a tu carrito. Ingresas su nombre, precio y cantidad y luego haces clic en el botón \"Agregar\".</string>
+    <string name="question_6">¿Cómo aumento o disminuyo la cantidad de un artículo en mi carrito usando Cart Calculator?</string>
+    <string name="summary_preference_faq_6">Simplemente encuentra el artículo en la lista y luego presiona el botón \"+ (más)\" para aumentar su cantidad o el botón \"- (menos)\" para disminuir su cantidad.</string>
+    <string name="question_7">¿Cómo elimino un artículo de mi carrito usando Cart Calculator?</string>
+    <string name="summary_preference_faq_7">Para eliminar un producto de tu carrito, simplemente desliza hacia la derecha o izquierda o reduce su cantidad a cero y luego selecciona el botón \"Eliminar artículo\".</string>
+    <string name="question_8">¿Es Cart Calculator software libre?</string>
+    <string name="summary_preference_faq_8">¡Sí! Cart Calculator es orgullosamente software libre distribuido bajo la Licencia Pública General de GNU versión 3.</string>
+    <string name="question_9">¿Cómo puedo contribuir a Cart Calculator?</string>
+    <string name="summary_preference_faq_9">La mejor manera de contribuir a Cart Calculator es a través de su repositorio de <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. Desde allí, puedes hacer un fork y trabajar en tus contribuciones, y luego enviarlas de vuelta mediante un pull request. También puedes usar el seguimiento de incidencias para reportar errores, proponer nuevas funciones o mejoras, u obtener ideas sobre cómo podrías ayudar.</string>
+
+    <!-- Confirmations -->
+    <string name="snackbar_cart_deleted_success">¡Carrito eliminado exitosamente!</string>
+
+    <!-- Error messages -->
+    <string name="empty_cart">Tu carrito está vacío actualmente.</string>
+    <string name="compression_failed">No se pudieron preparar los datos del carrito. Inténtalo de nuevo.</string>
+    <string name="failed_to_import_cart">No se pudo importar el carrito. Revisa el archivo e inténtalo de nuevo.</string>
+    <string name="failed_to_encrypt_cart">No se pudo asegurar el carrito. Inténtalo de nuevo.</string>
+    <string name="database_cart_not_found">Carrito no encontrado.</string>
+    <string name="failed_to_load_cart">Error al cargar el carrito.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet no está instalado</string>
+    <string name="failed_to_update_cart_item">Error al actualizar el artículo del carrito.</string>
+    <string name="failed_to_delete_cart_item">Error al eliminar el artículo del carrito.</string>
+    <string name="failed_to_add_cart_item">Error al agregar el artículo al carrito.</string>
+    <string name="request_no_internet">Sin conexión a internet. Revisa tu conexión e inténtalo de nuevo.</string>
+    <string name="request_timeout">Tiempo de espera de la solicitud agotado. Inténtalo de nuevo.</string>
+    <string name="request_server_not_found">Error del servidor. Inténtalo más tarde.</string>
+    <string name="request_payload_error">Error de datos. Inténtalo de nuevo.</string>
+    <string name="failed_to_delete_cart">No se pudo eliminar el carrito. Inténtalo de nuevo.</string>
+    <string name="failed_to_decrypt_cart">No se pudieron cargar los datos del carrito. El carrito podría estar dañado.</string>
+    <string name="database_operation_failed">Algo salió mal con los datos locales. Inténtalo de nuevo.</string>
+    <string name="cart_not_found">Carrito no encontrado.</string>
+</resources>

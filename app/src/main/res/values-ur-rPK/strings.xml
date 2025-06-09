@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">کارٹ کیلکولیٹر کے ساتھ اپنی کارٹ آئٹمز کو مؤثر طریقے سے منظم اور حساب کریں۔ 🛒</string>
+    <string name="summary_notification_last_time_used">آئیے اپنی کارٹ آئٹمز کو مؤثر طریقے سے منظم کریں!</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">کارٹ کیلکولیٹر میں خوش آمدید!</string>
+    <string name="onboarding_welcome_description">اپنی خریداری کی فہرستوں کا نظم کریں اور آسانی سے اخراجات کا حساب لگائیں۔</string>
+    <string name="onboarding_personalization_title">اپنے تجربے کو ذاتی بنائیں</string>
+    <string name="onboarding_personalization_description">ایپ کو اپنی ضروریات کے مطابق بنائیں۔ آپ یہ ترتیبات بعد میں ایپ کی ترتیبات میں تبدیل کر سکتے ہیں۔</string>
+    <string name="onboarding_cart_settings_title">کارٹ کا طرز عمل</string>
+    <string name="onboarding_cart_settings_description">ایپ میں کارٹس کے طرز عمل کو حسب ضرورت بنائیں۔ آپ یہ ترتیبات بعد میں تبدیل کر سکتے ہیں۔</string>
+    <string name="onboarding_open_carts_after_creation">بنانے کے بعد کارٹ کھولیں</string>
+    <string name="onboarding_cart_settings_icon_description">کارٹ سیٹنگز آن بورڈنگ کے لیے شاپنگ کارٹ آئیکن</string>
+    <string name="onboarding_summary_open_carts_after_creation">بنانے کے فوراً بعد کارٹ خود بخود کھولیں۔</string>
+    <string name="onboarding_summary_select_currency_placeholder">اپنی ترجیحی کرنسی منتخب کریں</string>
+    <string name="select_currency_icon_description">کرنسی منتخب کرنے کے لیے آئیکن</string>
+
+    <!-- Home screen -->
+    <string name="import_shared_cart">مشترکہ کارٹ درآمد کریں</string>
+    <string name="default_sort">پہلے سے طے شدہ ترتیب</string>
+    <string name="date">سب سے پرانا پہلے</string>
+    <string name="last_added">سب سے نیا پہلے</string>
+    <string name="alphabetical">حروف تہجی کے مطابق</string>
+    <string name="button_import">درآمد کریں</string>
+    <string name="paste_cart_link">کارٹ کا لنک پیسٹ کریں</string>
+    <string name="import_cart_instructions">مشترکہ کارٹ درآمد کرنے کے لیے، اوپر دیے گئے فیلڈ میں تیار کردہ لنک پیسٹ کریں۔\nدرآمد ہونے کے بعد مشترکہ کارٹ خود بخود آپ کی فہرست میں ظاہر ہو جائے گا۔\n\nکارٹ کیسے شیئر کریں:\n1. اپنی کارٹ کھولیں۔\n2. \'شیئر\' بٹن پر ٹیپ کریں۔\n3. تیار کردہ لنک کاپی کریں اور کسی کو بھیجیں۔\n\nمشترکہ کارٹ کیسے درآمد کریں:\n1. موصول شدہ مشترکہ لنک کاپی کریں۔\n2. اسے اوپر دیے گئے ان پٹ فیلڈ میں پیسٹ کریں۔\n3. \'درآمد کریں\' پر ٹیپ کریں اور نئی اندراج کے لیے اپنی کارٹ کی فہرست چیک کریں۔</string>
+    <string name="no_carts_available">کوئی کارٹ دستیاب نہیں</string>
+    <string name="add_new_cart">نیا کارٹ شامل کریں</string>
+    <string name="create_a_new_cart">نیا کارٹ بنائیں</string>
+    <string name="enter_cart_name">کارٹ کا نام درج کریں</string>
+    <string name="rename_cart">کارٹ کا نام تبدیل کریں</string>
+    <string name="shopping_cart">شاپنگ کارٹ</string>
+    <string name="summary_cart_dialog">ہم سب کے لیے ذاتی نوعیت کا خریداری کا تجربہ بنانے کے لیے پرعزم ہیں۔ آپ کے انتخاب پر نظر رکھنا آسان بنانے اور آپ کے خریداری کے سفر کو بڑھانے کے لیے، آئٹمز شامل کرنے سے پہلے اپنی کارٹ کو ایک نام دینے پر غور کریں۔</string>
+    <string name="create">بنائیں</string>
+    <string name="cart_category_device">اس ڈیوائس پر</string>
+    <string name="shared">مشترکہ</string>
+    <string name="owner">مالک</string>
+    <string name="created_on">%1$s کو بنایا گیا</string>
+    <string name="decrease_quantity">مقدار کم کریں</string>
+    <string name="increase_quantity">مقدار بڑھائیں</string>
+    <string name="delete_cart_question">کارٹ حذف کریں؟</string>
+    <string name="delete_cart">کارٹ حذف کریں</string>
+    <string name="delete_cart_warning">اس کارٹ کو حذف کرنے سے \"%s\" سے تمام آئٹمز مستقل طور پر ہٹ جائیں گے اور اسے واپس نہیں لایا جا سکے گا۔</string>
+    <string name="delete">حذف کریں</string>
+    <string name="more_options">مزید اختیارات</string>
+    <string name="share_cart">کارٹ شیئر کریں</string>
+    <string name="category_icon_description">%1$s کے لیے آئیکن</string>
+    <string name="cart_added_successfully">کارٹ کامیابی سے شامل ہو گیا!</string>
+    <string name="cart_renamed_successfully">کارٹ کا نام کامیابی سے تبدیل ہو گیا!</string>
+    <string name="cart_deleted_successfully">کارٹ کامیابی سے حذف ہو گیا!</string>
+
+    <!-- Cart screen -->
+    <string name="your_shopping_cart_is_empty">آپ کی شاپنگ کارٹ خالی ہے</string>
+    <string name="empty_cart_info_message">ایسا لگتا ہے کہ آپ کی شاپنگ کارٹ فی الحال خالی ہے۔ آئٹمز شامل کرنا شروع کرنے کے لیے، آپ آسانی سے اپنی مطلوبہ پروڈکٹ کیٹیگریز پر جا کر انہیں منتخب کر سکتے ہیں۔ جب آپ کو اپنی پسند کی کوئی چیز مل جائے، تو بس اوپر بائیں کونے میں موجود شاپنگ کارٹ آئیکن پر ٹیپ کریں تاکہ اسے اپنی کارٹ میں شامل کیا جا سکے۔</string>
+    <string name="add_cart_item">کارٹ آئٹم شامل کریں</string>
+    <string name="edit_cart_item">کارٹ آئٹم میں ترمیم کریں</string>
+    <string name="in_cart">کارٹ میں</string>
+    <string name="items_to_pick_up">اٹھانے کے لیے آئٹمز</string>
+    <string name="item_name">آئٹم کا نام</string>
+    <string name="enter_item_name">آئٹم کا نام درج کریں</string>
+    <string name="item_price">آئٹم کی قیمت</string>
+    <string name="enter_item_price">آئٹم کی قیمت درج کریں</string>
+    <string name="quantity">مقدار</string>
+    <string name="enter_quantity">مقدار درج کریں</string>
+    <string name="dialog_info_cart_item">بغیر کسی رکاوٹ کے چیک آؤٹ کے تجربے کو یقینی بنانے کے لیے، براہ کرم اپنی کارٹ میں شامل کردہ آئٹمز کے بارے میں تفصیلات فراہم کریں</string>
+    <string name="total">کل</string>
+    <string name="clear_cart_title">کارٹ صاف کریں</string>
+    <string name="clear_cart_message">کیا آپ واقعی اپنی کارٹ سے تمام آئٹمز حذف کرنا چاہتے ہیں؟</string>
+    <string name="cart_cleared">تمام آئٹمز کامیابی سے ہٹا دیے گئے</string>
+    <string name="delete_cart_item_title">کارٹ آئٹم حذف کریں</string>
+    <string name="delete_cart_item_message">کیا آپ واقعی اس آئٹم کو حذف کرنا چاہتے ہیں؟</string>
+    <string name="delete_cart_item_warning">آپ اپنی کارٹ سے \"%s\" کو حذف کرنے والے ہیں۔</string>
+    <string name="item_removed_successfully">آئٹم کامیابی سے ہٹا دیا گیا!</string>
+    <string name="item_added_successfully">آئٹم کامیابی سے شامل ہو گیا!</string>
+    <string name="failed_to_add_item">آئٹم شامل کرنے میں ناکامی</string>
+
+    <!-- Cart settings screen -->
+    <string name="cart_settings">کارٹ کی ترتیبات</string>
+    <string name="summary_preference_settings_cart">اپنی کارٹ کے طرز عمل کا نظم کریں</string>
+
+    <!-- Currency settings screen -->
+    <string name="currency">کرنسی</string>
+    <string name="select_currency">کرنسی منتخب کریں</string>
+    <string name="summary_preference_settings_currency">قیمتیں دکھانے کے لیے اپنی ترجیحی کرنسی سیٹ کریں</string>
+    <string name="dialog_currency_subtitle">اپنی ترجیحی کرنسی منتخب کریں</string>
+    <string name="dialog_info_currency">یہ کرنسی انتخاب پلیٹ فارم پر مصنوعات کی قیمتیں دکھانے، لین دین پر کارروائی کرنے، اور زیادہ ذاتی نوعیت کا خریداری کا تجربہ فراہم کرنے کے لیے استعمال کیا جائے گا</string>
+    <string name="open_carts_after_creation">بنانے کے بعد کارٹس کھولیں</string>
+    <string name="summary_preference_settings_open_carts_after_creation">بنانے کے فوراً بعد کارٹ خود بخود کھولیں۔</string>
+
+    <!-- About screen -->
+    <string name="summary_preference_settings_about">کارٹ کیلکولیٹر کے بارے میں مزید جانیں</string>
+
+    <!-- Help screen -->
+    <string name="question_1">کارٹ کیلکولیٹر کیا ہے؟</string>
+    <string name="summary_preference_faq_1">کارٹ کیلکولیٹر ایک سادہ، عام اور مفت شاپنگ کارٹ مینیجر اور کل واجب الادا کیلکولیٹر ہے جو گروسری اسٹور یا مارکیٹ میں ہونے پر ڈیوائس کے عام کیلکولیٹر کی جگہ لے لیتا ہے۔</string>
+    <string name="question_2">کارٹ کیلکولیٹر کیسے کام کرتا ہے؟</string>
+    <string name="summary_preference_faq_2">کارٹ کیلکولیٹر آپ کو مصنوعات شامل کرکے اور ان کی مقدار بڑھا کر یا کم کرکے اپنی شاپنگ کارٹ کا نظم کرنے کی اجازت دیتا ہے۔ کسی بھی وقت، کارٹ کیلکولیٹر آپ کی کارٹ میں موجود مصنوعات کی قیمتوں اور مقداروں کی بنیاد پر کل واجب الادا رقم دکھاتا ہے۔</string>
+    <string name="question_3">مجھے کارٹ کیلکولیٹر کیوں استعمال کرنا چاہیے؟</string>
+    <string name="summary_preference_faq_3">کارٹ کیلکولیٹر آپ کو چیک آؤٹ تک پہنچنے سے پہلے ہی ہمیشہ اس بات سے آگاہ رہنے میں مدد کرتا ہے کہ آپ کتنا خرچ کر رہے ہیں۔ یہ خاص طور پر اس وقت مفید ہے جب آپ کو بجٹ پر خریداری کرنی ہو۔</string>
+    <string name="question_4">کیا میں گروسری اسٹورز یا مارکیٹوں سے باہر کارٹ کیلکولیٹر استعمال کر سکتا ہوں؟</string>
+    <string name="summary_preference_faq_4">جی ہاں! چونکہ کارٹ کیلکولیٹر حیرت انگیز طور پر سادہ اور عام ہے، اس لیے آپ اسے پب، ریستوران، سینما وغیرہ میں بھی استعمال کر سکتے ہیں۔</string>
+    <string name="question_5">میں کارٹ کیلکولیٹر کا استعمال کرتے ہوئے اپنی کارٹ میں آئٹم کیسے شامل کروں؟</string>
+    <string name="summary_preference_faq_5">اپنی کارٹ کھولیں اور ایکشن بار میں \"آئٹم شامل کریں\" بٹن دبائیں تاکہ اپنی کارٹ میں نیا پروڈکٹ شامل کیا جا سکے۔ آپ اس کا نام، قیمت اور مقدار بتاتے ہیں اور پھر \"شامل کریں\" بٹن پر کلک کرتے ہیں۔</string>
+    <string name="question_6">میں کارٹ کیلکولیٹر کا استعمال کرتے ہوئے اپنی کارٹ میں کسی آئٹم کی مقدار کیسے بڑھاؤں یا کم کروں؟</string>
+    <string name="summary_preference_faq_6">بس فہرست میں آئٹم تلاش کریں اور پھر اس کی مقدار بڑھانے کے لیے \"+ (جمع)\" بٹن یا اس کی مقدار کم کرنے کے لیے \"- (منفی)\" بٹن دبائیں۔</string>
+    <string name="question_7">میں کارٹ کیلکولیٹر کا استعمال کرتے ہوئے اپنی کارٹ سے آئٹم کیسے ہٹاؤں؟</string>
+    <string name="summary_preference_faq_7">اپنی کارٹ سے پروڈکٹ ہٹانے کے لیے، بس دائیں یا بائیں سوائپ کریں یا اس کی مقدار صفر کر دیں اور پھر \"آئٹم حذف کریں\" بٹن منتخب کریں۔</string>
+    <string name="question_8">کیا کارٹ کیلکولیٹر مفت سافٹ ویئر ہے؟</string>
+    <string name="summary_preference_faq_8">جی ہاں! کارٹ کیلکولیٹر فخریہ طور پر جی این یو جنرل پبلک لائسنس ورژن 3 کے تحت تقسیم کیا جانے والا مفت سافٹ ویئر ہے۔</string>
+    <string name="question_9">میں کارٹ کیلکولیٹر میں کیسے حصہ ڈال سکتا ہوں؟</string>
+    <string name="summary_preference_faq_9">کارٹ کیلکولیٹر میں حصہ ڈالنے کا بہترین طریقہ اس کے <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a> ریپوزٹری کے ذریعے ہے۔ وہاں سے، آپ اسے فورک کر سکتے ہیں اور اپنے تعاون پر کام کر سکتے ہیں، اور بعد میں انہیں پل درخواست کے ذریعے واپس بھیج سکتے ہیں۔ آپ بگ کی اطلاع دینے، نئی خصوصیات یا اضافہ تجویز کرنے، یا آپ کس طرح مدد کر سکتے ہیں اس کے بارے میں خیالات حاصل کرنے کے لیے ایشو ٹریکر بھی استعمال کر سکتے ہیں۔</string>
+
+    <!-- Confirmations -->
+    <string name="snackbar_cart_deleted_success">کارٹ کامیابی سے حذف ہو گیا!</string>
+
+    <!-- Error messages -->
+    <string name="empty_cart">آپ کی کارٹ فی الحال خالی ہے۔</string>
+    <string name="compression_failed">کارٹ کا ڈیٹا تیار نہیں کیا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔</string>
+    <string name="failed_to_import_cart">کارٹ درآمد نہیں کیا جا سکا۔ براہ کرم فائل چیک کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="failed_to_encrypt_cart">کارٹ کو محفوظ نہیں کیا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔</string>
+    <string name="database_cart_not_found">کارٹ نہیں ملا۔</string>
+    <string name="failed_to_load_cart">کارٹ لوڈ کرنے میں ناکامی۔</string>
+    <string name="google_pay_wallet_not_installed">گوگل پے/والیٹ انسٹال نہیں ہے</string>
+    <string name="failed_to_update_cart_item">کارٹ آئٹم کو اپ ڈیٹ کرنے میں ناکامی۔</string>
+    <string name="failed_to_delete_cart_item">کارٹ آئٹم کو حذف کرنے میں ناکامی۔</string>
+    <string name="failed_to_add_cart_item">آئٹم کو کارٹ میں شامل کرنے میں ناکامی۔</string>
+    <string name="request_no_internet">کوئی انٹرنیٹ کنکشن نہیں۔ براہ کرم اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="request_timeout">درخواست کا وقت ختم ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔</string>
+    <string name="request_server_not_found">سرور کی خرابی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔</string>
+    <string name="request_payload_error">ڈیٹا کی خرابی۔ براہ کرم دوبارہ کوشش کریں۔</string>
+    <string name="failed_to_delete_cart">کارٹ حذف نہیں کیا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔</string>
+    <string name="failed_to_decrypt_cart">کارٹ کا ڈیٹا لوڈ نہیں کیا جا سکا۔ کارٹ خراب ہو سکتا ہے۔</string>
+    <string name="database_operation_failed">مقامی ڈیٹا کے ساتھ کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔</string>
+    <string name="cart_not_found">کارٹ نہیں ملا۔</string>
+</resources>

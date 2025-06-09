@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_short_description">نظّم واحسب أصناف عربيتك بكفاءة مع حاسبة المشتريات. 🛒</string>
+    <string name="summary_notification_last_time_used">يلا ننظم أصناف عربيتك بكفاءة!</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">أهلاً بك في حاسبة المشتريات!</string>
+    <string name="onboarding_welcome_description">نظّم قوايم مشترياتك واحسب مصاريفك بسهولة.</string>
+    <string name="onboarding_personalization_title">خصص تجربتك</string>
+    <string name="onboarding_personalization_description">خصص التطبيق ليناسب احتياجاتك. تقدر تغير الإعدادات دي بعدين من إعدادات التطبيق.</string>
+    <string name="onboarding_cart_settings_title">سلوك عربية التسوق</string>
+    <string name="onboarding_cart_settings_description">خصص سلوك عربات التسوق في التطبيق. تقدر تغير الإعدادات دي بعدين.</string>
+    <string name="onboarding_open_carts_after_creation">فتح العربية بعد إنشائها</string>
+    <string name="onboarding_cart_settings_icon_description">أيقونة عربة تسوق لإعدادات عربة التسوق في مرحلة الإعداد</string>
+    <string name="onboarding_summary_open_carts_after_creation">فتح العربية تلقائيًا فور إنشائها.</string>
+    <string name="onboarding_summary_select_currency_placeholder">اختار عملتك المفضلة</string>
+    <string name="select_currency_icon_description">أيقونة اختيار العملة</string>
+
+    <!-- Home screen -->
+    <string name="import_shared_cart">استيراد عربية مشتركة</string>
+    <string name="default_sort">الترتيب الافتراضي</string>
+    <string name="date">الأقدم أولاً</string>
+    <string name="last_added">الأحدث أولاً</string>
+    <string name="alphabetical">أبجدي</string>
+    <string name="button_import">استيراد</string>
+    <string name="paste_cart_link">الصق رابط العربية</string>
+    <string name="import_cart_instructions">لاستيراد عربية مشتركة، الصق الرابط اللي اتعمل في الخانة اللي فوق.\nالعربية المشتركة هتظهر تلقائيًا في قايمتك بمجرد استيرادها.\n\nإزاي تشارك عربية:\n1. افتح عربيتك.\n2. دوس على زر "مشاركة".\n3. انسخ الرابط اللي اتعمل وابعته لحد.\n\nإزاي تستورد عربية مشتركة:\n1. انسخ الرابط المشترك اللي وصلك.\n2. الصقه في خانة الإدخال اللي فوق.\n3. دوس "استيراد" وشوف قايمة عربياتك عشان تلاقي العربية الجديدة.</string>
+    <string name="no_carts_available">لا توجد عربات متاحة</string>
+    <string name="add_new_cart">إضافة عربية جديدة</string>
+    <string name="create_a_new_cart">إنشاء عربية جديدة</string>
+    <string name="enter_cart_name">ادخل اسم العربية</string>
+    <string name="rename_cart">إعادة تسمية العربية</string>
+    <string name="shopping_cart">عربية تسوق</string>
+    <string name="summary_cart_dialog">إحنا ملتزمين بإنشاء تجربة تسوق مخصصة للكل. عشان نسهل عليك تتبع اختياراتك ونحسن رحلة تسوقك، فكر تسمي عربيتك قبل ما تضيف الأصناف.</string>
+    <string name="create">إنشاء</string>
+    <string name="cart_category_device">على هذا الجهاز</string>
+    <string name="shared">مشتركة</string>
+    <string name="owner">المالك</string>
+    <string name="created_on">أُنشئت في %1$s</string>
+    <string name="decrease_quantity">تقليل الكمية</string>
+    <string name="increase_quantity">زيادة الكمية</string>
+    <string name="delete_cart_question">مسح العربية؟</string>
+    <string name="delete_cart">مسح العربية</string>
+    <string name="delete_cart_warning">مسح العربية دي هيشيل كل الأصناف من "%s" بشكل نهائي ومش هينفع تتراجع عن الخطوة دي.</string>
+    <string name="delete">مسح</string>
+    <string name="more_options">خيارات إضافية</string>
+    <string name="share_cart">مشاركة العربية</string>
+    <string name="category_icon_description">أيقونة لـ %1$s</string>
+    <string name="cart_added_successfully">تمت إضافة العربية بنجاح!</string>
+    <string name="cart_renamed_successfully">تمت إعادة تسمية العربية بنجاح!</string>
+    <string name="cart_deleted_successfully">تم مسح العربية بنجاح!</string>
+
+    <!-- Cart screen -->
+    <string name="your_shopping_cart_is_empty">عربية تسوقك فاضية</string>
+    <string name="empty_cart_info_message">يبدو إن عربية تسوقك فاضية حاليًا. عشان تبدأ تضيف أصناف، تقدر تتنقل بسهولة لأقسام المنتجات اللي عايزها وتختارها. بمجرد ما تلاقي حاجة عجبتك، دوس ببساطة على أيقونة عربة التسوق، الموجودة في الزاوية الشمال فوق، عشان تضيفها لعربيتك.</string>
+    <string name="add_cart_item">إضافة صنف للعربية</string>
+    <string name="edit_cart_item">تعديل صنف في العربية</string>
+    <string name="in_cart">في العربية</string>
+    <string name="items_to_pick_up">الأصناف المطلوب شراؤها</string>
+    <string name="item_name">اسم الصنف</string>
+    <string name="enter_item_name">ادخل اسم الصنف</string>
+    <string name="item_price">سعر الصنف</string>
+    <string name="enter_item_price">ادخل سعر الصنف</string>
+    <string name="quantity">الكمية</string>
+    <string name="enter_quantity">ادخل الكمية</string>
+    <string name="dialog_info_cart_item">لضمان تجربة دفع سلسة، يرجى تقديم تفاصيل عن الأصناف اللي بتضيفها لعربيتك</string>
+    <string name="total">الإجمالي</string>
+    <string name="clear_cart_title">إفراغ العربية</string>
+    <string name="clear_cart_message">متأكد إنك عايز تمسح كل الأصناف من عربيتك؟</string>
+    <string name="cart_cleared">تمت إزالة جميع الأصناف بنجاح</string>
+    <string name="delete_cart_item_title">مسح صنف من العربية</string>
+    <string name="delete_cart_item_message">متأكد إنك عايز تمسح الصنف ده؟</string>
+    <string name="delete_cart_item_warning">أنت على وشك مسح "%s" من عربيتك.</string>
+    <string name="item_removed_successfully">تمت إزالة الصنف بنجاح!</string>
+    <string name="item_added_successfully">تمت إضافة الصنف بنجاح!</string>
+    <string name="failed_to_add_item">فشلت إضافة الصنف</string>
+
+    <!-- Cart settings screen -->
+    <string name="cart_settings">إعدادات العربية</string>
+    <string name="summary_preference_settings_cart">تحكم في سلوك عربيتك</string>
+
+    <!-- Currency settings screen -->
+    <string name="currency">العملة</string>
+    <string name="select_currency">اختار العملة</string>
+    <string name="summary_preference_settings_currency">حدد عملتك المفضلة لعرض الأسعار</string>
+    <string name="dialog_currency_subtitle">اختار عملتك المفضلة</string>
+    <string name="dialog_info_currency">اختيار العملة ده هيستخدم في كل المنصة لعرض أسعار المنتجات، ومعالجة المعاملات، وتقديم تجربة تسوق مخصصة أكتر</string>
+    <string name="open_carts_after_creation">فتح العربات بعد إنشائها</string>
+    <string name="summary_preference_settings_open_carts_after_creation">فتح العربية تلقائيًا فور إنشائها.</string>
+
+    <!-- About screen -->
+    <string name="summary_preference_settings_about">اعرف المزيد عن حاسبة المشتريات</string>
+
+    <!-- Help screen -->
+    <string name="question_1">إيه هو تطبيق حاسبة المشتريات؟</string>
+    <string name="summary_preference_faq_1">حاسبة المشتريات هو تطبيق بسيط، عام ومجاني لإدارة عربة التسوق وحساب الإجمالي المستحق، وبيحل محل الآلة الحاسبة العادية بتاعة الجهاز لما بتكون في السوبر ماركت أو السوق.</string>
+    <string name="question_2">إزاي حاسبة المشتريات بتشتغل؟</string>
+    <string name="summary_preference_faq_2">حاسبة المشتريات بتسمحلك تدير عربة تسوقك عن طريق إضافة المنتجات وزيادة أو تقليل كمياتها. في أي وقت، حاسبة المشتريات بتعرضلك الإجمالي المستحق للمنتجات اللي في عربيتك بناءً على أسعارها وكمياتها.</string>
+    <string name="question_3">ليه أستخدم حاسبة المشتريات؟</string>
+    <string name="summary_preference_faq_3">حاسبة المشتريات بتساعدك تكون دايمًا عارف بتصرف كام حتى قبل ما توصل للكاشير. ده مفيد بشكل خاص لما بتكون محتاج تتسوق بميزانية محدودة.</string>
+    <string name="question_4">أقدر أستخدم حاسبة المشتريات بره محلات البقالة أو الأسواق؟</string>
+    <string name="summary_preference_faq_4">أيوة! بما إن حاسبة المشتريات بسيطة وعامة بشكل مدهش، تقدر تستخدمها كمان في الكافيهات، المطاعم، السينمات، إلخ.</string>
+    <string name="question_5">إزاي أضيف صنف لعربيتي باستخدام حاسبة المشتريات؟</string>
+    <string name="summary_preference_faq_5">افتح عربيتك ودوس على زر "إضافة صنف" في شريط الإجراءات عشان تضيف منتج جديد لعربيتك. بتدخل اسمه، سعره وكميته وبعدين بتدوس على زر "إضافة".</string>
+    <string name="question_6">إزاي أزود أو أقلل كمية صنف في عربيتي باستخدام حاسبة المشتريات؟</string>
+    <string name="summary_preference_faq_6">ببساطة، لاقي الصنف في القايمة وبعدين دوس على زر "+ (زائد)" عشان تزود كميته أو زر "- (ناقص)" عشان تقلل كميته.</string>
+    <string name="question_7">إزاي أشيل صنف من عربيتي باستخدام حاسبة المشتريات؟</string>
+    <string name="summary_preference_faq_7">عشان تشيل منتج من عربيتك، ببساطة اسحب يمين أو شمال أو قلل كميته لصفر وبعدين اختار زر "مسح الصنف".</string>
+    <string name="question_8">هل حاسبة المشتريات برنامج مجاني؟</string>
+    <string name="summary_preference_faq_8">أيوة! حاسبة المشتريات برنامج مجاني بكل فخر، وموزع تحت رخصة جنو العمومية الإصدار 3.</string>
+    <string name="question_9">إزاي أقدر أساهم في حاسبة المشتريات؟</string>
+    <string name="summary_preference_faq_9">أفضل طريقة للمساهمة في حاسبة المشتريات هي عن طريق مستودعها على <a href="https://github.com/D4rK7355608/com.d4rk.cartcalculator">GitHub</a>. من هناك، تقدر تعمل fork وتشتغل على مساهماتك، وبعدين تبعتها تاني عن طريق pull request. تقدر كمان تستخدم متتبع المشاكل للإبلاغ عن الأخطاء، اقتراح ميزات أو تحسينات جديدة، أو الحصول على أفكار عن إزاي ممكن تساعد.</string>
+
+    <!-- Confirmations -->
+    <string name="snackbar_cart_deleted_success">تم مسح العربية بنجاح!</string>
+
+    <!-- Error messages -->
+    <string name="empty_cart">عربيتك فاضية حاليًا.</string>
+    <string name="compression_failed">تعذر تجهيز بيانات العربية. حاول مرة تانية.</string>
+    <string name="failed_to_import_cart">تعذر استيراد العربية. اتأكد من الملف وحاول مرة تانية.</string>
+    <string name="failed_to_encrypt_cart">تعذر تأمين العربية. حاول مرة تانية.</string>
+    <string name="database_cart_not_found">العربية مش موجودة.</string>
+    <string name="failed_to_load_cart">فشل تحميل العربية.</string>
+    <string name="google_pay_wallet_not_installed">Google Pay/Wallet مش متثبت</string>
+    <string name="failed_to_update_cart_item">فشل تحديث الصنف في العربية.</string>
+    <string name="failed_to_delete_cart_item">فشل مسح الصنف من العربية.</string>
+    <string name="failed_to_add_cart_item">فشلت إضافة الصنف للعربية.</string>
+    <string name="request_no_internet">لا يوجد اتصال بالإنترنت. اتأكد من اتصالك وحاول مرة تانية.</string>
+    <string name="request_timeout">انتهى وقت الطلب. حاول مرة تانية.</string>
+    <string name="request_server_not_found">خطأ في السيرفر. حاول مرة تانية بعدين.</string>
+    <string name="request_payload_error">خطأ في البيانات. حاول مرة تانية.</string>
+    <string name="failed_to_delete_cart">تعذر مسح العربية. حاول مرة تانية.</string>
+    <string name="failed_to_decrypt_cart">تعذر تحميل بيانات العربية. ممكن تكون العربية تالفة.</string>
+    <string name="database_operation_failed">حصل مشكلة في البيانات المحلية. حاول مرة تانية.</string>
+    <string name="cart_not_found">العربية مش موجودة.</string>
+</resources>
