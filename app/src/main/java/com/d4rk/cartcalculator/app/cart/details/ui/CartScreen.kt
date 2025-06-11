@@ -42,6 +42,7 @@ import com.d4rk.cartcalculator.app.cart.details.ui.components.CartItemsList
 import com.d4rk.cartcalculator.app.cart.details.ui.components.CartTotalCard
 import com.d4rk.cartcalculator.app.cart.details.ui.components.EmptyCartScreen
 import com.d4rk.cartcalculator.app.cart.details.ui.components.effects.CartScreenDialogs
+import com.d4rk.cartcalculator.app.cart.details.ui.components.effects.CartScreenSideEffects
 import com.d4rk.cartcalculator.app.cart.details.ui.components.navigation.CartScreenTopAppBar
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
@@ -54,6 +55,12 @@ fun CartScreen(activity : Activity , viewModel : CartViewModel) {
     val screenState : UiStateScreen<UiCartScreen> by viewModel.uiState.collectAsState()
 
     val uiState : UiCartScreen = screenState.data ?: UiCartScreen()
+
+    CartScreenSideEffects(
+        shareLink = uiState.shareCartLink,
+        context = context,
+        viewModel = viewModel,
+    )
 
     val totalPrice : Double = uiState.totalPrice
     val cartItems : List<ShoppingCartItemsTable> = uiState.cartItems
