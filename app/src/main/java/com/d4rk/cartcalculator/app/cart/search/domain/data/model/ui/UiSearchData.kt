@@ -1,10 +1,10 @@
 package com.d4rk.cartcalculator.app.cart.search.domain.data.model.ui
 
-import com.d4rk.android.apps.weddix.app.events.list.domain.model.UiEventWithDetails
+import com.d4rk.cartcalculator.app.cart.list.domain.model.UiCartListWithDetails // FIXME ADD CLASS
 
 data class UiSearchData(
     val currentQuery: String = "",
-    val uiEventsWithDetails: UiEventWithDetails = UiEventWithDetails(),
+    val uiEventsWithDetails: UiCartListWithDetails = UiCartListWithDetails(),
     val isLoading: Boolean = false,
     val initialQueryProcessed: Boolean = false
 )
