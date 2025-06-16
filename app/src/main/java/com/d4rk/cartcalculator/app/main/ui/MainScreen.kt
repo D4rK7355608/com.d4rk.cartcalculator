@@ -105,7 +105,7 @@ fun MainScaffoldContent(drawerState : DrawerState , mainScreenState : MainScreen
     } , snackbarHost = {
         DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
     } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState , homeViewModel = homeViewModel)
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState , homeViewModel = homeViewModel) // FIXME: No parameter with name 'homeViewModel' found.
     }) { paddingValues : PaddingValues ->
         AppNavigationHost(
             navController = mainScreenState.navController ,
@@ -130,7 +130,7 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
     Scaffold(modifier = Modifier.fillMaxSize() , topBar = {
         MainTopAppBar(navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
             mainScreenState.coroutineScope.launch { isRailExpanded = ! isRailExpanded }
-        } , scrollBehavior = mainScreenState.scrollBehavior)
+        } , scrollBehavior = mainScreenState.scrollBehavior) // FIXME: 'No value passed for parameter 'currentRoute'.
     } , floatingActionButton = {
         FloatingActionButtonsColumn(mainScreenState = mainScreenState)
     }) { paddingValues : PaddingValues ->
