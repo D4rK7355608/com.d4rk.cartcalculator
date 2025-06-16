@@ -23,4 +23,7 @@ interface NewCartDao {
 
     @Update
     suspend fun updateCart(cart : ShoppingCartTable)
+
+    @Query("SELECT * FROM ShoppingCartTable WHERE name LIKE '%' || :query || '%'")
+    suspend fun searchCartsByName(query: String): List<ShoppingCartTable>
 }

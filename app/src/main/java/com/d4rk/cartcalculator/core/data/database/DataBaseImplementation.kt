@@ -44,4 +44,8 @@ class DataBaseImplementation(private val database : AppDatabase) : DatabaseInter
     override suspend fun deleteItemsFromCart(cartId : Int) {
         database.shoppingCartItemsDao().deleteItemsFromCart(cartId)
     }
+
+    override suspend fun searchCartsByName(query: String): List<ShoppingCartTable> {
+        return database.newCartDao().searchCartsByName(query)
+    }
 }
