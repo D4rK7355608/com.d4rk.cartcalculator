@@ -29,6 +29,16 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val githubProps = Properties()
+        val githubFile = rootProject.file("github.properties")
+        val githubToken = if (githubFile.exists()) {
+            githubProps.load(githubFile.inputStream())
+            githubProps["GITHUB_TOKEN"].toString()
+        } else {
+            ""
+        }
+        buildConfigField("String", "GITHUB_TOKEN", "\"$githubToken\"")
     }
 
     signingConfigs {
@@ -107,7 +117,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.26") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.27") {
         isTransitive = true
     }
 
