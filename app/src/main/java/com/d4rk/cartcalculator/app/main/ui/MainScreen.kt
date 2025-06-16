@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.outlined.MenuOpen
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerState
@@ -19,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -27,7 +29,6 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.LeftNavigationRail
-import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.MainTopAppBar
 import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
@@ -39,8 +40,10 @@ import com.d4rk.cartcalculator.app.main.domain.model.MainScreenState
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
 import com.d4rk.cartcalculator.app.main.ui.components.FloatingActionButtonsColumn
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.AppNavigationHost
+import com.d4rk.cartcalculator.app.main.ui.components.navigation.MainTopAppBar
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.NavigationDrawer
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.handleNavigationItemClick
+import com.d4rk.cartcalculator.app.main.utils.constants.NavigationRoutes
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -80,16 +83,39 @@ fun MainScreen() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScaffoldContent(drawerState : DrawerState , mainScreenState : MainScreenState , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData>) {
+    val navBackStackEntry : NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
+    val currentRoute : String? = navBackStackEntry?.destination?.route
+    val isSearchScreen : Boolean = currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
+
+    var currentSearchQuery by rememberSaveable { mutableStateOf("") }
+
     Scaffold(modifier = Modifier
-            .imePadding()
-            .nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection) , topBar = {
-        MainTopAppBar(navigationIcon = if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = { mainScreenState.coroutineScope.launch { drawerState.open() } } , scrollBehavior = mainScreenState.scrollBehavior)
+        .imePadding()
+        .nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection) , topBar = {
+        MainTopAppBar(navigationIcon = if (isSearchScreen) Icons.AutoMirrored.Filled.ArrowBack else if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
+            if (isSearchScreen) {
+                mainScreenState.navController.popBackStack()
+            }
+            else {
+                mainScreenState.coroutineScope.launch { drawerState.open() }
+            }
+        } , scrollBehavior = mainScreenState.scrollBehavior ,
+
+            currentSearchQuery = currentSearchQuery , onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery } , navController = mainScreenState.navController , currentRoute = currentRoute)
     } , snackbarHost = {
         DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
     } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState)
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState , homeViewModel = homeViewModel)
     }) { paddingValues : PaddingValues ->
-        AppNavigationHost(navController = mainScreenState.navController , snackbarHostState = mainScreenState.snackbarHostState , onFabVisibilityChanged = { mainScreenState.isFabVisible.value = it } , paddingValues = paddingValues , homeViewModel = homeViewModel , homeScreenState = homeScreenState)
+        AppNavigationHost(
+            navController = mainScreenState.navController ,
+            snackBarHostState = mainScreenState.snackbarHostState ,
+            onFabVisibilityChanged = { mainScreenState.isFabVisible.value = it } ,
+            paddingValues = paddingValues ,
+            homeViewModel = homeViewModel ,
+            homeScreenState = homeScreenState ,
+            currentSearchQuery = currentSearchQuery ,
+            onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery })
     }
 }
 

@@ -18,6 +18,7 @@ import com.d4rk.android.libs.apptoolkit.app.theme.style.AppTheme
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentFormHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ConsentManagerHelper
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
+import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ReviewHelper
 import com.d4rk.cartcalculator.app.main.domain.actions.MainEvent
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.utils.helpers.LanguageCurrencyHelper
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         initializeDependencies()
         handleStartup()
+        checkInAppReview()
     }
 
     override fun onResume() {
@@ -105,5 +107,20 @@ class MainActivity : AppCompatActivity() {
     private fun checkUserConsent() {
         val consentInfo: ConsentInformation = UserMessagingPlatform.getConsentInformation(this)
         ConsentFormHelper.showConsentFormIfRequired(activity = this , consentInfo = consentInfo)
+    }
+
+    private fun checkInAppReview() {
+        lifecycleScope.launch {
+            val sessionCount: Int = dataStore.sessionCount.first()
+            val hasPrompted: Boolean = dataStore.hasPromptedReview.first()
+            ReviewHelper.launchInAppReviewIfEligible(
+                activity = this@MainActivity,
+                sessionCount = sessionCount,
+                hasPromptedBefore = hasPrompted
+            ) {
+                lifecycleScope.launch { dataStore.setHasPromptedReview(true) }
+            }
+            dataStore.incrementSessionCount()
+        }
     }
 }

@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">Icon for selecting currency</string>
 
     <!-- Home screen -->
+    <string name="search">Search</string>
+    <string name="search_placeholder_focused">Search…</string>
+    <string name="search_placeholder_refine">Refine your search…</string>
+    <string name="search_placeholder_default">Search in events</string>
+    <string name="content_description_back">Back</string>
+    <string name="content_description_open_menu">Open menu</string>
+    <string name="content_description_clear_search">Clear search</string>
+    <string name="content_description_voice_search">Voice search</string>
+    <string name="voice_search_prompt">Speak now…</string>
+    <string name="voice_recognition_not_available">Voice recognition not available</string>
+    <string name="content_description_more_options">More options</string>
     <string name="import_shared_cart">Import Shared Cart</string>
     <string name="default_sort">Default Order</string>
     <string name="date">Oldest First</string>

@@ -6,7 +6,9 @@ import androidx.compose.material3.DrawerState
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.d4rk.android.libs.apptoolkit.app.help.ui.HelpActivity
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.NavigationHost
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.ui.SettingsActivity
@@ -23,11 +25,28 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun AppNavigationHost(navController : NavHostController , snackbarHostState : SnackbarHostState , onFabVisibilityChanged : (Boolean) -> Unit , paddingValues : PaddingValues , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData>) {
-    NavigationHost(navController = navController , startDestination = NavigationRoutes.ROUTE_HOME) {
-        composable(route = NavigationRoutes.ROUTE_HOME) { backStackEntry ->
-            HomeEventHandler(homeViewModel = homeViewModel , backStackEntry = backStackEntry)
-            HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackbarHostState = snackbarHostState , screenState = homeScreenState)
+fun AppNavigationHost(
+    navController : NavHostController ,
+    snackBarHostState : SnackbarHostState ,
+    onFabVisibilityChanged : (Boolean) -> Unit ,
+    paddingValues : PaddingValues ,
+    homeViewModel : HomeViewModel ,
+    homeScreenState : UiStateScreen<UiHomeData> ,
+    currentSearchQuery : String ,
+    onSearchQueryChange : (String) -> Unit
+) {
+    NavigationHost(navController = navController , startDestination = NavigationRoutes.ROUTE_EVENTS_LIST) {
+        composable(route = NavigationRoutes.ROUTE_EVENTS_LIST) { backStackEntry ->
+            HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackBarHostState = snackBarHostState , screenState = homeScreenState)
+        }
+        composable(
+            route = NavigationRoutes.ROUTE_SEARCH , arguments = listOf(navArgument(NavigationRoutes.ARG_INITIAL_QUERY) {
+                type = NavType.StringType
+                nullable = true
+            })
+        ) { backStackEntry ->
+            val initialQueryArg = backStackEntry.arguments?.getString(NavigationRoutes.ARG_INITIAL_QUERY)
+            SearchScreen(initialQueryEncoded = initialQueryArg , paddingValues = paddingValues)
         }
     }
 }
