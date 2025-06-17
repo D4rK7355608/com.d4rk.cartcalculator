@@ -18,7 +18,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-// FIXME: MAke this class backup all data from our tables
 object DatabaseBackupHelper {
 
     private const val TAG = "DatabaseBackupHelper"
