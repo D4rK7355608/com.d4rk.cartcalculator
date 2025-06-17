@@ -121,6 +121,11 @@
     <string name="backup_successful_detail">Backup created successfully!\nLocation: %s</string>
     <string name="backup_cancelled_by_user">Backup cancelled by user.</string>
     <string name="backup_failed">Backup failed: %s</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="unknown_location">Unknown location</string>
+    <string name="restore_successful_detail">Data restored successfully from backup.</string>
+    <string name="restore_failed">Restore failed: %s</string>
+    <string name="restore_cancelled_by_user">Restore cancelled by user.</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">Learn more about Cart Calculator</string>

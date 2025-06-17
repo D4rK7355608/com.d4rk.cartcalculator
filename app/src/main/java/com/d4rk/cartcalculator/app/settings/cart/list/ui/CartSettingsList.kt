@@ -73,6 +73,12 @@ fun CartSettingsList(paddingValues : PaddingValues) {
                         dataStore.saveOpenCartsAfterCreation(isChecked)
                     }
                 })
+                ExtraTinyVerticalSpacer()
+                SettingsPreferenceItem(
+                    title = stringResource(id = R.string.sort_order_preference),
+                    summary = stringResource(id = R.string.sort_order_summary),
+                    onClick = { showSortDialog = true }
+                )
             }
         }
 
