@@ -1,3 +1,14 @@
+# Version 2.1.0:
+
+- Many under the hood improvements
+- New search screen to search trought carts
+- Improvements
+- New translations
+- New onboarding screens
+- New privacy settings
+- New help center
+- New cart sorting
+
 # Version 2.0.2:
 
 - **New**: Added translations for Arabic (Egypt).

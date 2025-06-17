@@ -29,7 +29,7 @@
     <string name="content_description_more_options">その他のオプション</string>
     <string name="import_shared_cart">共有カートをインポート</string>
     <string name="default_sort">デフォルトの順序</string>
-    <string name="date">古い順</string>
+    <string name="oldest_first">古い順</string>
     <string name="last_added">新しい順</string>
     <string name="alphabetical">アルファベット順</string>
     <string name="button_import">インポート</string>

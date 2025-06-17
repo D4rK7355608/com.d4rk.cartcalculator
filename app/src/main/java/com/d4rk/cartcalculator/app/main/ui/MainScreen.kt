@@ -105,7 +105,7 @@ fun MainScaffoldContent(drawerState : DrawerState , mainScreenState : MainScreen
     } , snackbarHost = {
         DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
     } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState)
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState, homeViewModel = homeViewModel)
     }) { paddingValues : PaddingValues ->
         AppNavigationHost(
             navController = mainScreenState.navController ,
@@ -142,7 +142,7 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
             currentRoute = currentRoute
         )
     } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState)
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState, homeViewModel = homeViewModel)
     }) { paddingValues : PaddingValues ->
         LeftNavigationRail(drawerItems = mainScreenState.uiState.navigationDrawerItems , currentRoute = currentRoute , isRailExpanded = isRailExpanded , paddingValues = paddingValues , onDrawerItemClick = { item : NavigationDrawerItem ->
             handleNavigationItemClick(context = context , item = item)

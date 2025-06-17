@@ -30,7 +30,7 @@
     <string name="content_description_more_options">المزيد من الخيارات</string>
     <string name="import_shared_cart">استيراد عربية مشتركة</string>
     <string name="default_sort">الترتيب الافتراضي</string>
-    <string name="date">الأقدم أولاً</string>
+    <string name="oldest_first">الأقدم أولاً</string>
     <string name="last_added">الأحدث أولاً</string>
     <string name="alphabetical">أبجدي</string>
     <string name="button_import">استيراد</string>

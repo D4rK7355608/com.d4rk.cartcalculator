@@ -29,7 +29,7 @@
     <string name="content_description_more_options">更多選項</string>
     <string name="import_shared_cart">匯入共享購物車</string>
     <string name="default_sort">預設排序</string>
-    <string name="date">最舊的優先</string>
+    <string name="oldest_first">最舊的優先</string>
     <string name="last_added">最新的優先</string>
     <string name="alphabetical">按字母順序</string>
     <string name="button_import">匯入</string>

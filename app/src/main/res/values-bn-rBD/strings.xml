@@ -30,7 +30,7 @@
     <string name="content_description_more_options">আরও বিকল্প</string>
     <string name="import_shared_cart">শেয়ার করা কার্ট ইম্পোর্ট করুন</string>
     <string name="default_sort">ডিফল্ট ক্রম</string>
-    <string name="date">পুরানো প্রথমে</string>
+    <string name="oldest_first">পুরানো প্রথমে</string>
     <string name="last_added">নতুন প্রথমে</string>
     <string name="alphabetical">বর্ণানুক্রমিক</string>
     <string name="button_import">ইম্পোর্ট</string>

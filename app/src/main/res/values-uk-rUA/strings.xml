@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Більше варіантів</string>
     <string name="import_shared_cart">Імпортувати спільний кошик</string>
     <string name="default_sort">Сортування за замовчуванням</string>
-    <string name="date">Спочатку найстаріші</string>
+    <string name="oldest_first">Спочатку найстаріші</string>
     <string name="last_added">Спочатку найновіші</string>
     <string name="alphabetical">За алфавітом</string>
     <string name="button_import">Імпортувати</string>

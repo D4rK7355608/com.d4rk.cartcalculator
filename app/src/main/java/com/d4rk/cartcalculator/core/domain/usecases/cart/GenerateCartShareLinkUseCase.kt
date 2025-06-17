@@ -38,7 +38,7 @@ class GenerateCartShareLinkUseCase(
 
     private fun flatten(cart : ShoppingCartTable , items : List<ShoppingCartItemsTable>) : String {
         val header = listOf(
-            "id=${cart.cartId}" , "name=${cart.name.replace(" " , "_")}" , "date=${cart.date}" , "shared=true"
+            "id=${cart.cartId}" , "name=${cart.name.replace(" " , "_")}" , "oldest_first=${cart.date}" , "shared=true"
         )
 
         val itemChunks = items.joinToString(separator = "|") { item ->

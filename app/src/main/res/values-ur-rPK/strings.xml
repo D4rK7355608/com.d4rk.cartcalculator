@@ -30,7 +30,7 @@
     <string name="content_description_more_options">مزید اختیارات</string>
     <string name="import_shared_cart">مشترکہ کارٹ درآمد کریں</string>
     <string name="default_sort">پہلے سے طے شدہ ترتیب</string>
-    <string name="date">سب سے پرانا پہلے</string>
+    <string name="oldest_first">سب سے پرانا پہلے</string>
     <string name="last_added">سب سے نیا پہلے</string>
     <string name="alphabetical">حروف تہجی کے مطابق</string>
     <string name="button_import">درآمد کریں</string>

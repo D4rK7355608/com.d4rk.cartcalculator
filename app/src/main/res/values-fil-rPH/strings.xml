@@ -30,7 +30,7 @@
     <string name="content_description_more_options">Higit pang mga pagpipilian</string>
     <string name="import_shared_cart">I-import ang Ibinahaging Cart</string>
     <string name="default_sort">Default na Pagkakasunud-sunod</string>
-    <string name="date">Pinakaluma Muna</string>
+    <string name="oldest_first">Pinakaluma Muna</string>
     <string name="last_added">Pinakabago Muna</string>
     <string name="alphabetical">Paalpabeto</string>
     <string name="button_import">I-import</string>

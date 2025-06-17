@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Больше вариантов</string>
     <string name="import_shared_cart">Импортировать общий корзину</string>
     <string name="default_sort">Сортировка по умолчанию</string>
-    <string name="date">Сначала старые</string>
+    <string name="oldest_first">Сначала старые</string>
     <string name="last_added">Сначала новые</string>
     <string name="alphabetical">По алфавиту</string>
     <string name="button_import">Импортировать</string>

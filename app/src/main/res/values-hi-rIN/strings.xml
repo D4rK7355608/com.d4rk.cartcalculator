@@ -29,7 +29,7 @@
     <string name="content_description_more_options">अधिक विकल्प</string>
     <string name="import_shared_cart">साझा कार्ट आयात करें</string>
     <string name="default_sort">डिफ़ॉल्ट क्रम</string>
-    <string name="date">सबसे पुराने पहले</string>
+    <string name="oldest_first">सबसे पुराने पहले</string>
     <string name="last_added">सबसे नए पहले</string>
     <string name="alphabetical">वर्णानुक्रम</string>
     <string name="button_import">आयात करें</string>

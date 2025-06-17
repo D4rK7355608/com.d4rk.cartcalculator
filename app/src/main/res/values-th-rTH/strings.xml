@@ -29,7 +29,7 @@
     <string name="content_description_more_options">ตัวเลือกเพิ่มเติม</string>
     <string name="import_shared_cart">นำเข้ารถเข็นที่แชร์</string>
     <string name="default_sort">ลำดับเริ่มต้น</string>
-    <string name="date">เก่าที่สุดก่อน</string>
+    <string name="oldest_first">เก่าที่สุดก่อน</string>
     <string name="last_added">ใหม่ที่สุดก่อน</string>
     <string name="alphabetical">เรียงตามตัวอักษร</string>
     <string name="button_import">นำเข้า</string>

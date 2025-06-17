@@ -17,7 +17,7 @@ import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
 @Composable
 fun HomeScreenSortFilterRow(viewModel : HomeViewModel) {
     val defaultSortString : String = stringResource(id = R.string.default_sort)
-    val dateSortString : String = stringResource(id = R.string.date)
+    val dateSortString : String = stringResource(id = R.string.oldest_first)
     val lastAddedSortString : String = stringResource(id = R.string.last_added)
     val alphabeticalString : String = stringResource(id = R.string.alphabetical)
     val filters : List<String> = listOf(defaultSortString , alphabeticalString , dateSortString , lastAddedSortString)

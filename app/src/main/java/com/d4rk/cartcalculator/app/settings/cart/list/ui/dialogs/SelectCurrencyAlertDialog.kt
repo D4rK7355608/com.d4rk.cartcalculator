@@ -1,4 +1,4 @@
-package com.d4rk.cartcalculator.app.settings.cart.ui.components.dialogs
+package com.d4rk.cartcalculator.app.settings.cart.list.ui.dialogs
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

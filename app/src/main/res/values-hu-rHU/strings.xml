@@ -29,7 +29,7 @@
     <string name="content_description_more_options">További lehetőségek</string>
     <string name="import_shared_cart">Megosztott kosár importálása</string>
     <string name="default_sort">Alapértelmezett sorrend</string>
-    <string name="date">Legrégebbi elöl</string>
+    <string name="oldest_first">Legrégebbi elöl</string>
     <string name="last_added">Legújabb elöl</string>
     <string name="alphabetical">Betűrend</string>
     <string name="button_import">Importálás</string>

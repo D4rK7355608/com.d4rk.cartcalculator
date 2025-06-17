@@ -1,5 +1,6 @@
-package com.d4rk.cartcalculator.app.settings.cart.ui
+package com.d4rk.cartcalculator.app.settings.cart.list.ui
 
+import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,9 +14,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.d4rk.android.libs.apptoolkit.app.settings.general.ui.GeneralSettingsActivity
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.PreferenceCategoryItem
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.SettingsPreferenceItem
 import com.d4rk.android.libs.apptoolkit.core.ui.components.preferences.SwitchPreferenceItem
@@ -23,8 +27,12 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ExtraTinyVert
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.SmallVerticalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.settings.cart.ui.components.dialogs.SelectCurrencyAlertDialog
+import com.d4rk.cartcalculator.app.cart.list.domain.model.SortOption
+import com.d4rk.cartcalculator.app.settings.cart.list.ui.dialogs.SelectCurrencyAlertDialog
+import com.d4rk.cartcalculator.app.settings.cart.list.ui.dialogs.SortOrderDialog
+import com.d4rk.cartcalculator.app.settings.settings.utils.constants.SettingsConstants
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 
@@ -33,7 +41,10 @@ fun CartSettingsList(paddingValues : PaddingValues) {
     val dataStore : DataStore = koinInject()
     val showDialog = remember { mutableStateOf(value = false) }
     val openCartsAfterCreation by dataStore.openCartsAfterCreation.collectAsState(initial = true)
-    val coroutineScope = rememberCoroutineScope()
+    val currentSort by dataStore.sortOption.collectAsState(initial = SortOption.DEFAULT)
+    val coroutineScope : CoroutineScope = rememberCoroutineScope()
+    val context : Context = LocalContext.current
+    var showSortDialog by remember { mutableStateOf(false) }
 
     if (showDialog.value) {
         Box(modifier = Modifier.padding(paddingValues)) {
@@ -62,6 +73,38 @@ fun CartSettingsList(paddingValues : PaddingValues) {
                         dataStore.saveOpenCartsAfterCreation(isChecked)
                     }
                 })
+            }
+        }
+
+        item {
+            SmallVerticalSpacer()
+            PreferenceCategoryItem(title = stringResource(id = R.string.backup_events_title))
+            SmallVerticalSpacer()
+            Column(
+                modifier = Modifier
+                    .padding(horizontal = SizeConstants.LargeSize)
+                    .clip(shape = RoundedCornerShape(size = SizeConstants.LargeSize))
+            ) {
+                SettingsPreferenceItem(
+                    title = stringResource(id = R.string.preference_title_backup_events),
+                    summary = stringResource(id = R.string.preference_summary_backup_events),
+                    onClick = {
+                        GeneralSettingsActivity.start(
+                            context = context,
+                            title = context.getString(R.string.backup_events_title),
+                            contentKey = SettingsConstants.KEY_SETTINGS_BACKUP_CARTS
+                        )
+                    }
+                )
+            }
+        }
+    }
+
+    if (showSortDialog) {
+        SortOrderDialog(current = currentSort, onDismiss = { showSortDialog = false }) { option ->
+            showSortDialog = false
+            coroutineScope.launch {
+                dataStore.saveSortOption(option)
             }
         }
     }

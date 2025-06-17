@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Още опции</string>
     <string name="import_shared_cart">Импортиране на споделена количка</string>
     <string name="default_sort">Подразбиране</string>
-    <string name="date">Най-старите първо</string>
+    <string name="oldest_first">Най-старите първо</string>
     <string name="last_added">Най-новите първо</string>
     <string name="alphabetical">Азбучен ред</string>
     <string name="button_import">Импортиране</string>

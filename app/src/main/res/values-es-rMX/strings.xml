@@ -30,7 +30,7 @@
     <string name="content_description_more_options">Más opciones</string>
     <string name="import_shared_cart">Importar Carrito Compartido</string>
     <string name="default_sort">Orden Predeterminado</string>
-    <string name="date">Más Antiguos Primero</string>
+    <string name="oldest_first">Más Antiguos Primero</string>
     <string name="last_added">Más Recientes Primero</string>
     <string name="alphabetical">Alfabético</string>
     <string name="button_import">Importar</string>

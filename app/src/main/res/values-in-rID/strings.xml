@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Lebih banyak opsi</string>
     <string name="import_shared_cart">Impor Keranjang Bersama</string>
     <string name="default_sort">Urutan Default</string>
-    <string name="date">Terlama dulu</string>
+    <string name="oldest_first">Terlama dulu</string>
     <string name="last_added">Terbaru dulu</string>
     <string name="alphabetical">Alfabetis</string>
     <string name="button_import">Impor</string>

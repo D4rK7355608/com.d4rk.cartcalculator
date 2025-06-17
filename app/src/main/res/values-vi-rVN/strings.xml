@@ -30,7 +30,7 @@
     <string name="content_description_more_options">Nhiều lựa chọn hơn</string>
     <string name="import_shared_cart">Nhập giỏ hàng được chia sẻ</string>
     <string name="default_sort">Thứ tự mặc định</string>
-    <string name="date">Cũ nhất trước</string>
+    <string name="oldest_first">Cũ nhất trước</string>
     <string name="last_added">Mới nhất trước</string>
     <string name="alphabetical">Theo thứ tự bảng chữ cái</string>
     <string name="button_import">Nhập</string>

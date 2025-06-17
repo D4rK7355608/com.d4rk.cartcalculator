@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Daha Fazla Seçenekler</string>
     <string name="import_shared_cart">Paylaşılan Sepeti İçe Aktar</string>
     <string name="default_sort">Varsayılan Sıralama</string>
-    <string name="date">En eskiden yeniye</string>
+    <string name="oldest_first">En eskiden yeniye</string>
     <string name="last_added">En yeniden eskiye</string>
     <string name="alphabetical">Alfabetik</string>
     <string name="button_import">İçe Aktar</string>

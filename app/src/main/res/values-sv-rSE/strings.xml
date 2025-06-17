@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Fler alternativ</string>
     <string name="import_shared_cart">Importera delad kundvagn</string>
     <string name="default_sort">Standardordning</string>
-    <string name="date">Äldst först</string>
+    <string name="oldest_first">Äldst först</string>
     <string name="last_added">Nyast först</string>
     <string name="alphabetical">Alfabetisk</string>
     <string name="button_import">Importera</string>

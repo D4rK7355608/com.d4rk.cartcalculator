@@ -33,7 +33,7 @@ import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.LargeVertical
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.MediumHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
-import com.d4rk.cartcalculator.app.settings.cart.ui.components.dialogs.SelectCurrencyAlertDialog
+import com.d4rk.cartcalculator.app.settings.cart.list.ui.dialogs.SelectCurrencyAlertDialog
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

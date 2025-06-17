@@ -29,7 +29,7 @@
     <string name="content_description_more_options">Mai multe opțiuni</string>
     <string name="import_shared_cart">Importă coș partajat</string>
     <string name="default_sort">Ordine implicită</string>
-    <string name="date">Cele mai vechi primele</string>
+    <string name="oldest_first">Cele mai vechi primele</string>
     <string name="last_added">Cele mai noi primele</string>
     <string name="alphabetical">Alfabetic</string>
     <string name="button_import">Importă</string>
