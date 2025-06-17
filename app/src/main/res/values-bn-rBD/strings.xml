@@ -96,6 +96,10 @@
     <string name="summary_preference_settings_currency">মূল্য প্রদর্শনের জন্য আপনার পছন্দের মুদ্রা সেট করুন</string>
     <string name="dialog_currency_subtitle">আপনার পছন্দের মুদ্রা নির্বাচন করুন</string>
     <string name="dialog_info_currency">এই মুদ্রা নির্বাচনটি প্ল্যাটফর্ম জুড়ে পণ্যের মূল্য প্রদর্শন, লেনদেন প্রক্রিয়াকরণ এবং আরও ব্যক্তিগতকৃত কেনাকাটার অভিজ্ঞতা প্রদানের জন্য ব্যবহৃত হবে</string>
+    <string name="sort_order_preference">কার্ট সাজানোর ক্রম</string>
+    <string name="sort_order_summary">কার্টগুলো কীভাবে সাজানো হবে বেছে নিন</string>
+    <string name="sort_order_dialog_title">সাজানোর ক্রম নির্বাচন করুন</string>
+    <string name="save">সংরক্ষণ করুন</string>
     <string name="open_carts_after_creation">তৈরির পর কার্ট খুলুন</string>
     <string name="summary_preference_settings_open_carts_after_creation">তৈরি হওয়ার সাথে সাথেই একটি কার্ট স্বয়ংক্রিয়ভাবে খুলুন।</string>
 

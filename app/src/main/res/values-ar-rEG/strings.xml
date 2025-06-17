@@ -96,6 +96,10 @@
     <string name="summary_preference_settings_currency">حدد عملتك المفضلة لعرض الأسعار</string>
     <string name="dialog_currency_subtitle">اختار عملتك المفضلة</string>
     <string name="dialog_info_currency">اختيار العملة ده هيستخدم في كل المنصة لعرض أسعار المنتجات، ومعالجة المعاملات، وتقديم تجربة تسوق مخصصة أكتر</string>
+    <string name="sort_order_preference">ترتيب عرض العربات</string>
+    <string name="sort_order_summary">اختار طريقة ترتيب العربات</string>
+    <string name="sort_order_dialog_title">اختار ترتيب الفرز</string>
+    <string name="save">حفظ</string>
     <string name="open_carts_after_creation">فتح العربات بعد إنشائها</string>
     <string name="summary_preference_settings_open_carts_after_creation">فتح العربية تلقائيًا فور إنشائها.</string>
 

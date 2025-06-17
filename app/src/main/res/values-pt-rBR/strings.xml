@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Defina sua moeda preferida para exibir preços</string>
     <string name="dialog_currency_subtitle">Selecione sua moeda preferida</string>
     <string name="dialog_info_currency">Esta seleção de moeda será utilizada em toda a plataforma para exibir preços de produtos, processar transações e fornecer uma experiência de compra mais personalizada</string>
+    <string name="sort_order_preference">Ordem de classificação dos carrinhos</string>
+    <string name="sort_order_summary">Escolha como os carrinhos são ordenados</string>
+    <string name="sort_order_dialog_title">Selecionar ordem de classificação</string>
+    <string name="save">Salvar</string>
     <string name="open_carts_after_creation">Abrir carrinhos após a criação</string>
     <string name="summary_preference_settings_open_carts_after_creation">Abrir automaticamente um carrinho imediatamente após sua criação.</string>
 

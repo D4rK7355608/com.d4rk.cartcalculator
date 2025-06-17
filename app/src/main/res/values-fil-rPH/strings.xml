@@ -96,6 +96,10 @@
     <string name="summary_preference_settings_currency">Itakda ang iyong gustong currency para sa pagpapakita ng mga presyo</string>
     <string name="dialog_currency_subtitle">Piliin ang iyong gustong currency</string>
     <string name="dialog_info_currency">Ang pagpili ng currency na ito ay gagamitin sa buong platform para sa pagpapakita ng mga presyo ng produkto, pagproseso ng mga transaksyon, at pagbibigay ng mas personalized na karanasan sa pamimili</string>
+    <string name="sort_order_preference">Pagkakasunud-sunod ng Cart</string>
+    <string name="sort_order_summary">Piliin kung paano iaayos ang mga cart</string>
+    <string name="sort_order_dialog_title">Piliin ang pagkakasunud-sunod</string>
+    <string name="save">I-save</string>
     <string name="open_carts_after_creation">Buksan ang Mga Cart Pagkatapos Gawin</string>
     <string name="summary_preference_settings_open_carts_after_creation">Awtomatikong buksan ang cart kaagad pagkatapos itong gawin.</string>
 

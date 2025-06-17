@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">ตั้งค่าสกุลเงินที่คุณต้องการสำหรับการแสดงราคา</string>
     <string name="dialog_currency_subtitle">เลือกสกุลเงินที่คุณต้องการ</string>
     <string name="dialog_info_currency">การเลือกสกุลเงินนี้จะถูกนำไปใช้ทั่วทั้งแพลตฟอร์มสำหรับการแสดงราคาสินค้า การประมวลผลธุรกรรม และมอบประสบการณ์การช็อปปิ้งที่เป็นส่วนตัวยิ่งขึ้น</string>
+    <string name="sort_order_preference">ลำดับการจัดเรียงตะกร้า</string>
+    <string name="sort_order_summary">เลือกวิธีจัดเรียงตะกร้า</string>
+    <string name="sort_order_dialog_title">เลือกลำดับการจัดเรียง</string>
+    <string name="save">บันทึก</string>
     <string name="open_carts_after_creation">เปิดรถเข็นหลังการสร้าง</string>
     <string name="summary_preference_settings_open_carts_after_creation">เปิดรถเข็นโดยอัตโนมัติทันทีหลังจากสร้าง</string>
 

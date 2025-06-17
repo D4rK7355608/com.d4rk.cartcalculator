@@ -96,6 +96,10 @@
     <string name="summary_preference_settings_currency">가격 표시에 사용할 선호 통화 설정</string>
     <string name="dialog_currency_subtitle">선호하는 통화를 선택하세요</string>
     <string name="dialog_info_currency">이 통화 선택은 플랫폼 전체에서 제품 가격 표시, 거래 처리 및 보다 개인화된 쇼핑 경험 제공에 활용됩니다</string>
+    <string name="sort_order_preference">카트 정렬 순서</string>
+    <string name="sort_order_summary">카트를 어떻게 정렬할지 선택하세요</string>
+    <string name="sort_order_dialog_title">정렬 순서 선택</string>
+    <string name="save">저장</string>
     <string name="open_carts_after_creation">생성 후 장바구니 열기</string>
     <string name="summary_preference_settings_open_carts_after_creation">장바구니 생성 직후 자동으로 엽니다.</string>
 

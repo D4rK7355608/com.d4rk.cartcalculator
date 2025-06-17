@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">価格を表示するための希望の通貨を設定します</string>
     <string name="dialog_currency_subtitle">希望の通貨を選択してください</string>
     <string name="dialog_info_currency">この通貨の選択は、プラットフォーム全体で製品価格の表示、取引の処理、およびよりパーソナライズされたショッピング体験の提供に利用されます</string>
+    <string name="sort_order_preference">カートの並び順</string>
+    <string name="sort_order_summary">カートをどの順番で並べるか選択</string>
+    <string name="sort_order_dialog_title">並び順を選択</string>
+    <string name="save">保存</string>
     <string name="open_carts_after_creation">作成後にカートを開く</string>
     <string name="summary_preference_settings_open_carts_after_creation">作成後すぐにカートを自動的に開きます。</string>
 

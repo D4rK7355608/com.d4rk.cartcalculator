@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Legen Sie Ihre bevorzugte Währung für die Anzeige von Preisen fest</string>
     <string name="dialog_currency_subtitle">Wählen Sie Ihre bevorzugte Währung aus</string>
     <string name="dialog_info_currency">Diese Währungsauswahl wird plattformübergreifend verwendet, um Produktpreise anzuzeigen, Transaktionen zu verarbeiten und ein personalisierteres Einkaufserlebnis zu bieten</string>
+    <string name="sort_order_preference">Sortierreihenfolge der Warenkörbe</string>
+    <string name="sort_order_summary">Wählen Sie, wie die Warenkörbe sortiert werden</string>
+    <string name="sort_order_dialog_title">Sortierreihenfolge auswählen</string>
+    <string name="save">Speichern</string>
     <string name="open_carts_after_creation">Warenkörbe nach Erstellung öffnen</string>
     <string name="summary_preference_settings_open_carts_after_creation">Warenkorb nach der Erstellung automatisch öffnen.</string>
 

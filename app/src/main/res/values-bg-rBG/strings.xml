@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Задайте предпочитаната от вас валута за показване на цените</string>
     <string name="dialog_currency_subtitle">Изберете предпочитаната от вас валута</string>
     <string name="dialog_info_currency">Този избор на валута ще се използва в цялата платформа за показване на цените на продуктите, обработка на транзакции и осигуряване на по-персонализирано пазаруване</string>
+    <string name="sort_order_preference">Ред на сортиране на количките</string>
+    <string name="sort_order_summary">Изберете как да се сортират количките</string>
+    <string name="sort_order_dialog_title">Изберете ред на сортиране</string>
+    <string name="save">Запази</string>
     <string name="open_carts_after_creation">Отворете количките след създаването им</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматично отваряне на количка веднага след създаването й.</string>
 

@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">設定顯示價格的偏好貨幣</string>
     <string name="dialog_currency_subtitle">選擇您的偏好貨幣</string>
     <string name="dialog_info_currency">此貨幣選擇將在整個平台用於顯示產品價格、處理交易，並提供更個人化的購物體驗</string>
+    <string name="sort_order_preference">購物車排序方式</string>
+    <string name="sort_order_summary">選擇購物車排序方式</string>
+    <string name="sort_order_dialog_title">選擇排序方式</string>
+    <string name="save">儲存</string>
     <string name="open_carts_after_creation">建立後開啟購物車</string>
     <string name="summary_preference_settings_open_carts_after_creation">建立購物車後立即自動開啟。</string>
 

@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Ställ in önskad valuta för att visa priser</string>
     <string name="dialog_currency_subtitle">Välj önskad valuta</string>
     <string name="dialog_info_currency">Detta valutaval kommer att användas över hela plattformen för att visa produktpriser, bearbeta transaktioner och ge en mer personlig shoppingupplevelse</string>
+    <string name="sort_order_preference">Sorteringsordning för kundvagnar</string>
+    <string name="sort_order_summary">Välj hur vagnarna sorteras</string>
+    <string name="sort_order_dialog_title">Välj sorteringsordning</string>
+    <string name="save">Spara</string>
     <string name="open_carts_after_creation">Öppna varukorgar efter skapande</string>
     <string name="summary_preference_settings_open_carts_after_creation">Öppna en varukorg automatiskt direkt efter att den skapats.</string>
 

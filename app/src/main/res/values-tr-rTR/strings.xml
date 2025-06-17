@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Fiyatları görüntülemek için tercih ettiğiniz para birimini ayarlayın</string>
     <string name="dialog_currency_subtitle">Tercih ettiğiniz para birimini seçin</string>
     <string name="dialog_info_currency">Bu para birimi seçimi, ürün fiyatlarını görüntülemek, işlemleri gerçekleştirmek ve daha kişiselleştirilmiş bir alışveriş deneyimi sağlamak için platform genelinde kullanılacaktır</string>
+    <string name="sort_order_preference">Sepet Sıralama Düzeni</string>
+    <string name="sort_order_summary">Sepetlerin nasıl sıralanacağını seçin</string>
+    <string name="sort_order_dialog_title">Sıralama düzenini seçin</string>
+    <string name="save">Kaydet</string>
     <string name="open_carts_after_creation">Oluşturulduktan Sonra Sepetleri Aç</string>
     <string name="summary_preference_settings_open_carts_after_creation">Oluşturulduktan hemen sonra bir sepeti otomatik olarak açın.</string>
 

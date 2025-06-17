@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Установите предпочитаемую валюту для отображения цен</string>
     <string name="dialog_currency_subtitle">Выберите предпочитаемую валюту</string>
     <string name="dialog_info_currency">Выбранная валюта будет использоваться на всей платформе для отображения цен на товары, обработки транзакций и обеспечения более персонализированного опыта покупок</string>
+    <string name="sort_order_preference">Порядок сортировки корзин</string>
+    <string name="sort_order_summary">Выберите, как сортируются корзины</string>
+    <string name="sort_order_dialog_title">Выберите порядок сортировки</string>
+    <string name="save">Сохранить</string>
     <string name="open_carts_after_creation">Открывать корзины после создания</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматически открывать корзину сразу после ее создания.</string>
 
