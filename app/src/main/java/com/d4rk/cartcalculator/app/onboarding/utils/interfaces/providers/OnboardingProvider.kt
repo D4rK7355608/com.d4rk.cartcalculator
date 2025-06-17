@@ -3,10 +3,8 @@ package com.d4rk.cartcalculator.app.onboarding.utils.interfaces.providers
 import android.content.Context
 import android.content.Intent
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AccountCircle
-import androidx.compose.material.icons.outlined.Star
-import com.d4rk.cartcalculator.app.onboarding.ui.tabs.CartBehaviorOnboardingTab
-import com.d4rk.cartcalculator.app.onboarding.utils.constants.OnboardingKeys
+import androidx.compose.material.icons.outlined.ShoppingBag
+import androidx.compose.material.icons.outlined.ShoppingCart
 import com.d4rk.android.libs.apptoolkit.app.oboarding.domain.data.model.ui.OnboardingPage
 import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.CrashlyticsOnboardingPageTab
 import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.FinalOnboardingPageTab
@@ -14,6 +12,8 @@ import com.d4rk.android.libs.apptoolkit.app.oboarding.ui.components.pages.ThemeO
 import com.d4rk.android.libs.apptoolkit.app.oboarding.utils.interfaces.providers.OnboardingProvider
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.ui.MainActivity
+import com.d4rk.cartcalculator.app.onboarding.ui.tabs.CartBehaviorOnboardingTab
+import com.d4rk.cartcalculator.app.onboarding.utils.constants.OnboardingKeys
 
 class AppOnboardingProvider : OnboardingProvider {
 
@@ -23,13 +23,13 @@ class AppOnboardingProvider : OnboardingProvider {
                 key = OnboardingKeys.WELCOME,
                 title = context.getString(R.string.onboarding_welcome_title),
                 description = context.getString(R.string.onboarding_welcome_description),
-                imageVector = Icons.Outlined.Star
+                imageVector = Icons.Outlined.ShoppingCart
             ),
             OnboardingPage.DefaultPage(
                 key = OnboardingKeys.PERSONALIZATION_OPTIONS,
                 title = context.getString(R.string.onboarding_personalization_title),
                 description = context.getString(R.string.onboarding_personalization_description),
-                imageVector = Icons.Outlined.AccountCircle
+                imageVector = Icons.Outlined.ShoppingBag
             ),
             OnboardingPage.CustomPage(
                 key = OnboardingKeys.CART_BEHAVIOR_OPTIONS,
