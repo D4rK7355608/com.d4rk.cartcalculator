@@ -47,9 +47,17 @@ class HomeViewModel(
 ) : ScreenViewModel<UiHomeData , HomeEvent , HomeAction>(
     initialState = UiStateScreen(data = UiHomeData())
 ) {
+    private var sortOptionCache: SortOption = SortOption.DEFAULT
 
     init {
-        onEvent(HomeEvent.LoadCarts)
+        launch {
+            val savedSort = dataStore.sortOption.first()
+            sortOptionCache = savedSort
+            screenState.updateData(screenState.value.screenState) { current ->
+                current.copy(currentSort = savedSort)
+            }
+            onEvent(HomeEvent.LoadCarts)
+        }
     }
 
     override fun onEvent(event : HomeEvent) {
@@ -79,8 +87,12 @@ class HomeViewModel(
                 screenState.applyResult(result) { carts , current ->
                     current.copy(carts = carts.toMutableList())
                 }
-                if (result is DataState.Success && result.data.isEmpty()) {
-                    screenState.updateState(ScreenState.NoData())
+                if (result is DataState.Success) {
+                    if (result.data.isEmpty()) {
+                        screenState.updateState(ScreenState.NoData())
+                    } else {
+                        sortCarts(sortOptionCache)
+                    }
                 }
             }
         }
@@ -100,6 +112,7 @@ class HomeViewModel(
                     if (shouldOpen) {
                         onEvent(HomeEvent.OpenCart(result.data))
                     }
+                    sortCarts(sortOptionCache)
                 }
             }
         }
@@ -117,6 +130,7 @@ class HomeViewModel(
 
                 if (result is DataState.Success) {
                     postSnackbar(UiTextHelper.StringResource(R.string.cart_renamed_successfully) , false)
+                    sortCarts(sortOptionCache)
                 }
             }
         }
@@ -135,6 +149,8 @@ class HomeViewModel(
             updateUi {
                 copy(carts = sorted.toMutableList() , currentSort = sortOption)
             }
+            sortOptionCache = sortOption
+            launch(dispatcherProvider.io) { dataStore.saveSortOption(sortOption) }
         }
     }
 
@@ -156,6 +172,8 @@ class HomeViewModel(
                     else {
                         updateUi { copy(carts = updatedList) }
                     }
+
+                    sortCarts(sortOptionCache)
 
                     postSnackbar(UiTextHelper.StringResource(R.string.cart_deleted_successfully) , false)
                 }
