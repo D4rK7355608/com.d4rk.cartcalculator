@@ -223,11 +223,9 @@ class HomeViewModel(
         screenState.updateState(if (isEmpty) ScreenState.NoData() else ScreenState.Success())
     }
 
-    internal inline fun updateUi(crossinline transform : UiHomeData.() -> UiHomeData) {
-        launch {
-            screenState.updateData(screenState.value.screenState) { current ->
-                transform(current)
-            }
+    internal fun updateUi(transform: UiHomeData.() -> UiHomeData) {
+        screenState.updateData(screenState.value.screenState) { current ->
+            transform(current)
         }
     }
 }
