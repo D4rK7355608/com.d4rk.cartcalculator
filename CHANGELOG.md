@@ -1,13 +1,15 @@
 # Version 2.1.0:
 
-- Many under the hood improvements
-- New search screen to search trought carts
-- Improvements
-- New translations
-- New onboarding screens
-- New privacy settings
-- New help center
-- New cart sorting
+- **New**: Sort carts your way from Settings.
+- **New**: Search page for finding carts faster.
+- **New**: Fresh onboarding screens.
+- **New**: Help center for tips and support.
+- **Minor**: Added translations for backup and sorting screens.
+- **Minor**: Updated dependencies and enabled crash reporting.
+- **Minor**: More privacy options.
+- **Minor**: Improved translations.
+- **Minor**: Minor fixes and clean up.
+- **Minor**: Many behind-the-scenes tweaks.
 
 # Version 2.0.2:
 
