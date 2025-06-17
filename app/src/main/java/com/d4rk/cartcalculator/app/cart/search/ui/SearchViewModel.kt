@@ -1,12 +1,11 @@
-package com.d4rk.android.apps.weddix.app.events.search.ui
+package com.d4rk.cartcalculator.app.cart.search.ui
 
 import android.net.Uri
-import com.d4rk.android.apps.weddix.app.events.list.domain.model.UiEventWithDetails
 import com.d4rk.cartcalculator.app.cart.search.domain.actions.SearchAction
 import com.d4rk.cartcalculator.app.cart.search.domain.actions.SearchEvent
 import com.d4rk.cartcalculator.app.cart.search.domain.data.model.ui.UiSearchData
 import com.d4rk.cartcalculator.app.cart.search.domain.usecases.SearchEventsUseCase
-import com.d4rk.android.apps.weddix.core.data.database.table.EventsListTable
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.RootError
@@ -22,26 +21,24 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 
 class SearchViewModel(
-    private val searchEventsUseCase : SearchEventsUseCase ,
-    private val dispatcherProvider : DispatcherProvider ,
-) : ScreenViewModel<UiSearchData , SearchEvent , SearchAction>(
+    private val searchEventsUseCase: SearchEventsUseCase,
+    private val dispatcherProvider: DispatcherProvider,
+) : ScreenViewModel<UiSearchData, SearchEvent, SearchAction>(
     initialState = UiStateScreen(data = UiSearchData())
 ) {
 
-    private var searchJob : Job? = null
+    private var searchJob: Job? = null
 
-    override fun onEvent(event : SearchEvent) {
+    override fun onEvent(event: SearchEvent) {
         when (event) {
             is SearchEvent.UpdateQuery -> {
-                screenState.updateData(newState = screenState.value.screenState) {
-
+                screenState.updateData(screenState.value.screenState) {
                     it.copy(currentQuery = event.query)
                 }
-
             }
 
             is SearchEvent.SubmitSearch -> {
-                screenState.updateData(newState = screenState.value.screenState) {
+                screenState.updateData(screenState.value.screenState) {
                     it.copy(currentQuery = event.query)
                 }
                 triggerSearch(event.query)
@@ -49,9 +46,11 @@ class SearchViewModel(
 
             is SearchEvent.ClearSearch -> {
                 searchJob?.cancel()
-                screenState.updateData(newState = ScreenState.NoData()) {
+                screenState.updateData(ScreenState.NoData()) {
                     it.copy(
-                        currentQuery = "" , uiEventsWithDetails = UiEventWithDetails() , isLoading = false
+                        currentQuery = "",
+                        carts = mutableListOf(),
+                        isLoading = false
                     )
                 }
             }
@@ -62,92 +61,71 @@ class SearchViewModel(
                         event.encodedQuery?.let { Uri.decode(it) } ?: ""
                     }.getOrDefault("")
 
-                    screenState.updateData(newState = screenState.value.screenState) {
-                        it.copy(currentQuery = decodedQuery , initialQueryProcessed = true)
+                    screenState.updateData(screenState.value.screenState) {
+                        it.copy(currentQuery = decodedQuery, initialQueryProcessed = true)
                     }
 
                     if (decodedQuery.isNotEmpty()) {
                         triggerSearch(decodedQuery)
-                    }
-                    else {
-                        screenState.updateState(newValues = ScreenState.NoData())
+                    } else {
+                        screenState.updateState(ScreenState.NoData())
                     }
                 }
             }
         }
     }
 
-    private fun triggerSearch(query : String , debounce : Boolean = false) {
+    private fun triggerSearch(query: String, debounce: Boolean = false) {
         searchJob?.cancel()
 
         if (query.isBlank()) {
-            screenState.updateData(newState = ScreenState.NoData()) {
-                it.copy(
-                    uiEventsWithDetails = UiEventWithDetails() , isLoading = false
-                )
+            screenState.updateData(ScreenState.NoData()) {
+                it.copy(carts = mutableListOf(), isLoading = false)
             }
             return
         }
 
-        searchJob = launch(context = dispatcherProvider.io) {
+        searchJob = launch(dispatcherProvider.io) {
             if (debounce) delay(500)
 
             screenState.setLoading()
-            screenState.updateData(newState = ScreenState.IsLoading()) {
-                it.copy(isLoading = true)
-            }
+            screenState.updateData(ScreenState.IsLoading()) { it.copy(isLoading = true) }
 
-            searchEventsUseCase.invoke(param = query).collect { result : DataState<List<EventsListTable> , RootError> ->
+            searchEventsUseCase.invoke(query).collect { result: DataState<List<ShoppingCartTable>, RootError> ->
 
-                screenState.applyResult<List<EventsListTable> , UiSearchData , RootError>(
-                    result = result , errorMessage = UiTextHelper.DynamicString("Search failed. Please try again.")
-                ) { searchResultsList : List<EventsListTable> , currentSearchData : UiSearchData ->
+                screenState.applyResult<List<ShoppingCartTable>, UiSearchData, RootError>(
+                    result = result,
+                    errorMessage = UiTextHelper.DynamicString("Search failed. Please try again.")
+                ) { list: List<ShoppingCartTable>, current: UiSearchData ->
 
-                    if (searchResultsList.isEmpty() && result is DataState.Success) {
-
-                        screenState.updateState(newValues = ScreenState.NoData())
+                    if (list.isEmpty() && result is DataState.Success) {
+                        screenState.updateState(ScreenState.NoData())
                     }
 
-                    currentSearchData.copy(
-                        uiEventsWithDetails = currentSearchData.uiEventsWithDetails.copy(
-                            events = searchResultsList.toMutableList()
-                        ) , isLoading = false
-                    )
+                    current.copy(carts = list.toMutableList(), isLoading = false)
                 }
 
                 when (result) {
                     is DataState.Success -> {
                         if (result.data.isEmpty()) {
-                            screenState.updateState(newValues = ScreenState.NoData())
-                            screenState.updateData(newState = ScreenState.NoData()) {
-                                it.copy(isLoading = false , uiEventsWithDetails = UiEventWithDetails())
+                            screenState.updateState(ScreenState.NoData())
+                            screenState.updateData(ScreenState.NoData()) {
+                                it.copy(isLoading = false, carts = mutableListOf())
                             }
-                        }
-                        else {
-
-                            screenState.updateState(newValues = ScreenState.Success())
-                            screenState.updateData(newState = ScreenState.Success()) {
-                                it.copy(
-                                    isLoading = false , uiEventsWithDetails = it.uiEventsWithDetails.copy(
-                                        events = result.data.toMutableList()
-                                    )
-                                )
+                        } else {
+                            screenState.updateState(ScreenState.Success())
+                            screenState.updateData(ScreenState.Success()) {
+                                it.copy(isLoading = false, carts = result.data.toMutableList())
                             }
                         }
                     }
 
                     is DataState.Error -> {
-
-                        screenState.updateData(newState = ScreenState.Error()) {
-                            it.copy(isLoading = false)
-                        }
+                        screenState.updateData(ScreenState.Error()) { it.copy(isLoading = false) }
                     }
 
                     is DataState.Loading -> {
-
-                        screenState.updateData(newState = ScreenState.IsLoading()) {
-                            it.copy(isLoading = true)
-                        }
+                        screenState.updateData(ScreenState.IsLoading()) { it.copy(isLoading = true) }
                     }
                 }
             }

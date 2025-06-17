@@ -20,7 +20,7 @@
     <string name="search">Search</string>
     <string name="search_placeholder_focused">Search…</string>
     <string name="search_placeholder_refine">Refine your search…</string>
-    <string name="search_placeholder_default">Search in events</string>
+    <string name="search_placeholder_default">Search in carts</string>
     <string name="content_description_back">Back</string>
     <string name="content_description_open_menu">Open menu</string>
     <string name="content_description_clear_search">Clear search</string>
