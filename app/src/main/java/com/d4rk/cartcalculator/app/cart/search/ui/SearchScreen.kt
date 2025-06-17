@@ -55,10 +55,8 @@ fun SearchScreen(
     val uiData = screenStateValue.data ?: UiSearchData()
     val context = LocalContext.current
 
-    LaunchedEffect(Unit) {
-        if (!uiData.initialQueryProcessed) {
-            searchViewModel.onEvent(SearchEvent.ProcessInitialQuery(initialQueryEncoded))
-        }
+    LaunchedEffect(initialQueryEncoded) {
+        searchViewModel.onEvent(SearchEvent.ProcessInitialQuery(initialQueryEncoded))
     }
 
     ScreenStateHandler(

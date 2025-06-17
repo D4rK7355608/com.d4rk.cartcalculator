@@ -56,11 +56,11 @@ class SearchViewModel(
             }
 
             is SearchEvent.ProcessInitialQuery -> {
-                if (screenData?.initialQueryProcessed == false) {
-                    val decodedQuery = runCatching {
-                        event.encodedQuery?.let { Uri.decode(it) } ?: ""
-                    }.getOrDefault("")
+                val decodedQuery = runCatching {
+                    event.encodedQuery?.let { Uri.decode(it) } ?: ""
+                }.getOrDefault("")
 
+                if (decodedQuery != screenData?.currentQuery || screenData?.initialQueryProcessed == false) {
                     screenState.updateData(screenState.value.screenState) {
                         it.copy(currentQuery = decodedQuery, initialQueryProcessed = true)
                     }
