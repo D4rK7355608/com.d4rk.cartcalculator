@@ -55,7 +55,7 @@ import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
 
 @Composable
-fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFabVisibilityChanged : (Boolean) -> Unit , snackbarHostState : SnackbarHostState , screenState : UiStateScreen<UiHomeData>) {
+fun HomeScreen(paddingValues : PaddingValues, viewModel : HomeViewModel, onFabVisibilityChanged : (Boolean) -> Unit, snackBarHostState : SnackbarHostState, screenState : UiStateScreen<UiHomeData>) {
     ScreenStateHandler(screenState = screenState , onLoading = {
         onFabVisibilityChanged(false)
         LoadingScreen()
@@ -66,7 +66,7 @@ fun HomeScreen(paddingValues : PaddingValues , viewModel : HomeViewModel , onFab
         HomeScreenContent(paddingValues = paddingValues , uiState = uiState , viewModel = viewModel , onFabVisibilityChanged = onFabVisibilityChanged)
     })
 
-    DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackbarHostState , getDismissEvent = { HomeEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(event = it) })
+    DefaultSnackbarHandler(screenState = screenState , snackbarHostState = snackBarHostState , getDismissEvent = { HomeEvent.DismissSnackbar } , onEvent = { viewModel.onEvent(event = it) })
     HomeScreenDialogs(screenState = screenState , viewModel = viewModel)
 }
 

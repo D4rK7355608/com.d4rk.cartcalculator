@@ -149,7 +149,7 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
         } , content = {
             HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = {
                 mainScreenState.isFabVisible.value = it
-            } , snackbarHostState = mainScreenState.snackbarHostState , screenState = homeScreenState)
+            } , snackBarHostState = mainScreenState.snackbarHostState , screenState = homeScreenState)
         })
     }
 }

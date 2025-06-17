@@ -19,7 +19,7 @@ import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.cart.list.domain.model.ui.UiHomeData
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeScreen
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
-import com.d4rk.cartcalculator.app.cart.list.ui.components.effects.HomeEventHandler
+import com.d4rk.cartcalculator.app.cart.search.ui.SearchScreen
 import com.d4rk.cartcalculator.app.main.utils.constants.NavigationRoutes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -35,8 +35,8 @@ fun AppNavigationHost(
     currentSearchQuery : String ,
     onSearchQueryChange : (String) -> Unit
 ) {
-    NavigationHost(navController = navController , startDestination = NavigationRoutes.ROUTE_EVENTS_LIST) {
-        composable(route = NavigationRoutes.ROUTE_EVENTS_LIST) { backStackEntry ->
+    NavigationHost(navController = navController , startDestination = NavigationRoutes.ROUTE_CARTS_LIST) {
+        composable(route = NavigationRoutes.ROUTE_CARTS_LIST) { backStackEntry ->
             HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = onFabVisibilityChanged , snackBarHostState = snackBarHostState , screenState = homeScreenState)
         }
         composable(
