@@ -105,7 +105,7 @@ fun MainScaffoldContent(drawerState : DrawerState , mainScreenState : MainScreen
     } , snackbarHost = {
         DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
     } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState , homeViewModel = homeViewModel) // FIXME: No parameter with name 'homeViewModel' found.
+        FloatingActionButtonsColumn(mainScreenState = mainScreenState)
     }) { paddingValues : PaddingValues ->
         AppNavigationHost(
             navController = mainScreenState.navController ,
@@ -127,10 +127,20 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
     val navBackStackEntry : NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
     val currentRoute : String? = navBackStackEntry?.destination?.route
 
+    var currentSearchQuery by rememberSaveable { mutableStateOf("") }
+
     Scaffold(modifier = Modifier.fillMaxSize() , topBar = {
-        MainTopAppBar(navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
-            mainScreenState.coroutineScope.launch { isRailExpanded = ! isRailExpanded }
-        } , scrollBehavior = mainScreenState.scrollBehavior) // FIXME: 'No value passed for parameter 'currentRoute'.
+        MainTopAppBar(
+            navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
+            onNavigationIconClick = {
+                mainScreenState.coroutineScope.launch { isRailExpanded = !isRailExpanded }
+            },
+            scrollBehavior = mainScreenState.scrollBehavior,
+            currentSearchQuery = currentSearchQuery,
+            onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery },
+            navController = mainScreenState.navController,
+            currentRoute = currentRoute
+        )
     } , floatingActionButton = {
         FloatingActionButtonsColumn(mainScreenState = mainScreenState)
     }) { paddingValues : PaddingValues ->
