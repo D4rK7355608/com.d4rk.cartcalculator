@@ -99,6 +99,31 @@
     <string name="save">Enregistrer</string>
     <string name="open_carts_after_creation">Ouvrir les paniers après la création</string>
     <string name="summary_preference_settings_open_carts_after_creation">Ouvrir automatiquement un panier immédiatement après sa création.</string>
+    <string name="backup_carts_title">Données de sauvegarde et de restauration du panier</string>
+    <string name="backup_now">Sauvegarde maintenant</string>
+    <string name="restore_from_backup">Restaurer à partir de la sauvegarde</string>
+    <string name="backup_successful">Le processus de sauvegarde a commencé!</string>
+    <string name="restore_successful">Restaurer le processus initié!</string>
+    <string name="preference_title_cart_backup">Sauvegarde et restauration</string>
+    <string name="preference_summary_cart_backup">Gérez vos sauvegardes de panier</string>
+    <string name="backup_now_card_title">Créer une nouvelle sauvegarde</string>
+    <string name="backup_now_card_description">Sécurisez vos données de panier d'achat en créant une sauvegarde vers le stockage local ou le cloud.</string>
+    <string name="restore_card_title">Restaurer à partir de la sauvegarde</string>
+    <string name="restore_card_description">Récupérez vos données de panier d'achat à partir d'un fichier de sauvegarde précédemment créé.</string>
+    <string name="backup_information_title">Informations de sauvegarde</string>
+    <string name="last_backup_date_label">Dernière sauvegarde:</string>
+    <string name="never_backed_up">Jamais</string>
+    <string name="auto_backup_title">Sauvegardes automatiques</string>
+    <string name="auto_backup_summary">Sauvegardez automatiquement vos données CART quotidiennement.</string>
+    <string name="backup_successful_detail">La sauvegarde a créé avec succès!
+Emplacement: %s</string>
+    <string name="backup_cancelled_by_user">Sauvegarde annulée par l'utilisateur.</string>
+    <string name="backup_failed">Échec de la sauvegarde: %s</string>
+    <string name="unknown_error">Erreur inconnue</string>
+    <string name="unknown_location">Emplacement inconnu</string>
+    <string name="restore_successful_detail">Les données ont été restaurées avec succès à partir de la sauvegarde.</string>
+    <string name="restore_failed">RESTORE Échec: %s</string>
+    <string name="restore_cancelled_by_user">Restauration annulée par l'utilisateur.</string>
 
     <string name="summary_preference_settings_about">En savoir plus sur Cart Calculator</string>
 

@@ -102,6 +102,31 @@
     <string name="save">محفوظ کریں</string>
     <string name="open_carts_after_creation">بنانے کے بعد کارٹس کھولیں</string>
     <string name="summary_preference_settings_open_carts_after_creation">بنانے کے فوراً بعد کارٹ خود بخود کھولیں۔</string>
+    <string name="backup_carts_title">بیک اپ اور کارٹ ڈیٹا کو بحال کریں</string>
+    <string name="backup_now">اب بیک اپ</string>
+    <string name="restore_from_backup">بیک اپ سے بحال کریں</string>
+    <string name="backup_successful">بیک اپ کا عمل شروع ہوا!</string>
+    <string name="restore_successful">بحالی عمل شروع کیا گیا!</string>
+    <string name="preference_title_cart_backup">بیک اپ اور بحالی</string>
+    <string name="preference_summary_cart_backup">اپنے کارٹ بیک اپ کا نظم کریں</string>
+    <string name="backup_now_card_title">ایک نیا بیک اپ بنائیں</string>
+    <string name="backup_now_card_description">مقامی اسٹوریج یا بادل کا بیک اپ بنا کر اپنے شاپنگ کارٹ ڈیٹا کو محفوظ کریں۔</string>
+    <string name="restore_card_title">بیک اپ سے بحال کریں</string>
+    <string name="restore_card_description">پہلے سے تیار کردہ بیک اپ فائل سے اپنے شاپنگ کارٹ ڈیٹا کو بازیافت کریں۔</string>
+    <string name="backup_information_title">بیک اپ کی معلومات</string>
+    <string name="last_backup_date_label">آخری بیک اپ:</string>
+    <string name="never_backed_up">کبھی نہیں</string>
+    <string name="auto_backup_title">خودکار بیک اپ</string>
+    <string name="auto_backup_summary">روزانہ اپنے کارٹ ڈیٹا کو خود بخود بیک اپ کریں۔</string>
+    <string name="backup_successful_detail">بیک اپ کامیابی کے ساتھ تخلیق کیا!
+مقام: %s</string>
+    <string name="backup_cancelled_by_user">بیک اپ صارف کے ذریعہ منسوخ.</string>
+    <string name="backup_failed">بیک اپ ناکام ہوگیا: %s</string>
+    <string name="unknown_error">نامعلوم غلطی</string>
+    <string name="unknown_location">نامعلوم مقام</string>
+    <string name="restore_successful_detail">ڈیٹا بیک اپ سے کامیابی کے ساتھ بحال ہوا۔</string>
+    <string name="restore_failed">بحالی ناکام: %s</string>
+    <string name="restore_cancelled_by_user">صارف کے ذریعہ منسوخ بحال کریں۔</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">کارٹ کیلکولیٹر کے بارے میں مزید جانیں</string>

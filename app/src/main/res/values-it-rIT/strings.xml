@@ -99,6 +99,31 @@
     <string name="save">Salva</string>
     <string name="open_carts_after_creation">Apri carrelli dopo la creazione</string>
     <string name="summary_preference_settings_open_carts_after_creation">Apri automaticamente un carrello subito dopo la sua creazione.</string>
+    <string name="backup_carts_title">Backup e ripristino dei dati del carrello</string>
+    <string name="backup_now">Backup ora</string>
+    <string name="restore_from_backup">Ripristina dal backup</string>
+    <string name="backup_successful">Processo di backup è iniziato!</string>
+    <string name="restore_successful">Ripristina il processo avviato!</string>
+    <string name="preference_title_cart_backup">Backup e ripristino</string>
+    <string name="preference_summary_cart_backup">Gestisci i tuoi backup del carrello</string>
+    <string name="backup_now_card_title">Crea un nuovo backup</string>
+    <string name="backup_now_card_description">Proteggi i dati del carrello della spesa creando un backup su archiviazione locale o cloud.</string>
+    <string name="restore_card_title">Ripristina dal backup</string>
+    <string name="restore_card_description">Recupera i dati del carrello della spesa da un file di backup precedentemente creato.</string>
+    <string name="backup_information_title">Informazioni di backup</string>
+    <string name="last_backup_date_label">Ultimo backup:</string>
+    <string name="never_backed_up">Mai</string>
+    <string name="auto_backup_title">Backup automatici</string>
+    <string name="auto_backup_summary">Esegui automaticamente il backup dei dati del carrello ogni giorno.</string>
+    <string name="backup_successful_detail">Backup creato con successo!
+Posizione: %s</string>
+    <string name="backup_cancelled_by_user">Backup annullato dall'utente.</string>
+    <string name="backup_failed">Backup non riuscito: %s</string>
+    <string name="unknown_error">Errore sconosciuto</string>
+    <string name="unknown_location">Posizione sconosciuta</string>
+    <string name="restore_successful_detail">Dati ripristinati correttamente dal backup.</string>
+    <string name="restore_failed">Restore fallito: %s</string>
+    <string name="restore_cancelled_by_user">Ripristina cancellato dall'utente.</string>
 
     <string name="summary_preference_settings_about">Ulteriori informazioni su Cart Calculator</string>
 

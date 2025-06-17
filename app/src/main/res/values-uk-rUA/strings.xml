@@ -99,6 +99,31 @@
     <string name="save">Зберегти</string>
     <string name="open_carts_after_creation">Відкривати кошики після створення</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматично відкривати кошик одразу після його створення.</string>
+    <string name="backup_carts_title">Резервне копіювання та відновлення даних кошика</string>
+    <string name="backup_now">Резервне копіювання зараз</string>
+    <string name="restore_from_backup">Відновити з резервного копіювання</string>
+    <string name="backup_successful">Процес резервного копіювання розпочався!</string>
+    <string name="restore_successful">Ініційований процес відновлення!</string>
+    <string name="preference_title_cart_backup">Резервне копіювання та відновлення</string>
+    <string name="preference_summary_cart_backup">Керуйте резервними копіями візка</string>
+    <string name="backup_now_card_title">Створіть нову резервну копію</string>
+    <string name="backup_now_card_description">Забезпечте дані кошика, створивши резервну копію для місцевого зберігання або хмари.</string>
+    <string name="restore_card_title">Відновити з резервного копіювання</string>
+    <string name="restore_card_description">Отримайте дані про кошиків із раніше створеного резервного файлу.</string>
+    <string name="backup_information_title">Резервна інформація</string>
+    <string name="last_backup_date_label">Останнє резервне копіювання:</string>
+    <string name="never_backed_up">Ніколи</string>
+    <string name="auto_backup_title">Автоматичні резервні копії</string>
+    <string name="auto_backup_summary">Автоматично створюйте резервні копії даних кошика щодня.</string>
+    <string name="backup_successful_detail">Резервне копіювання створено успішно!
+Розташування: %s</string>
+    <string name="backup_cancelled_by_user">Резервне копіювання скасовано користувачем.</string>
+    <string name="backup_failed">Не вдалося резервне копіювання: %s</string>
+    <string name="unknown_error">Невідома помилка</string>
+    <string name="unknown_location">Невідоме місце розташування</string>
+    <string name="restore_successful_detail">Дані успішно відновлюються з резервного копіювання.</string>
+    <string name="restore_failed">Відновлення не вдалося: %s</string>
+    <string name="restore_cancelled_by_user">Відновити скасовано користувачем.</string>
 
     <string name="summary_preference_settings_about">Дізнайтеся більше про Cart Calculator</string>
 

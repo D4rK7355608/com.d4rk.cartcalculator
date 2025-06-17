@@ -102,6 +102,31 @@
     <string name="save">저장</string>
     <string name="open_carts_after_creation">생성 후 장바구니 열기</string>
     <string name="summary_preference_settings_open_carts_after_creation">장바구니 생성 직후 자동으로 엽니다.</string>
+    <string name="backup_carts_title">백업 및 카트 데이터를 복원합니다</string>
+    <string name="backup_now">지금 백업</string>
+    <string name="restore_from_backup">백업에서 복원하십시오</string>
+    <string name="backup_successful">백업 프로세스가 시작되었습니다!</string>
+    <string name="restore_successful">프로세스가 시작되었습니다!</string>
+    <string name="preference_title_cart_backup">백업 및 복원</string>
+    <string name="preference_summary_cart_backup">카트 백업을 관리하십시오</string>
+    <string name="backup_now_card_title">새 백업을 만듭니다</string>
+    <string name="backup_now_card_description">로컬 스토리지 또는 클라우드에 대한 백업을 만들어 쇼핑 카트 데이터를 보호하십시오.</string>
+    <string name="restore_card_title">백업에서 복원하십시오</string>
+    <string name="restore_card_description">이전에 생성 된 백업 파일에서 쇼핑 카트 데이터를 검색하십시오.</string>
+    <string name="backup_information_title">백업 정보</string>
+    <string name="last_backup_date_label">마지막 백업 :</string>
+    <string name="never_backed_up">절대</string>
+    <string name="auto_backup_title">자동 백업</string>
+    <string name="auto_backup_summary">매일 카트 데이터를 자동으로 백업하십시오.</string>
+    <string name="backup_successful_detail">백업이 성공적으로 만들어졌습니다!
+위치: %s</string>
+    <string name="backup_cancelled_by_user">백업은 사용자가 취소했습니다.</string>
+    <string name="backup_failed">백업 실패 : %s</string>
+    <string name="unknown_error">알 수없는 오류</string>
+    <string name="unknown_location">알 수없는 위치</string>
+    <string name="restore_successful_detail">백업에서 데이터가 성공적으로 복원되었습니다.</string>
+    <string name="restore_failed">복원 실패 : %s</string>
+    <string name="restore_cancelled_by_user">사용자가 취소 한 복원.</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">카트 계산기에 대해 자세히 알아보기</string>

@@ -102,6 +102,31 @@
     <string name="save">حفظ</string>
     <string name="open_carts_after_creation">فتح العربات بعد إنشائها</string>
     <string name="summary_preference_settings_open_carts_after_creation">فتح العربية تلقائيًا فور إنشائها.</string>
+    <string name="backup_carts_title">النسخ الاحتياطي واستعادة بيانات العربة</string>
+    <string name="backup_now">النسخ الاحتياطي الآن</string>
+    <string name="restore_from_backup">استعادة من النسخ الاحتياطي</string>
+    <string name="backup_successful">بدأت عملية النسخ الاحتياطي!</string>
+    <string name="restore_successful">عملية استعادة العملية!</string>
+    <string name="preference_title_cart_backup">النسخ الاحتياطي واستعادة</string>
+    <string name="preference_summary_cart_backup">إدارة النسخ الاحتياطية لك العربة</string>
+    <string name="backup_now_card_title">إنشاء نسخة احتياطية جديدة</string>
+    <string name="backup_now_card_description">تأمين بيانات عربة التسوق عن طريق إنشاء نسخة احتياطية للتخزين المحلي أو السحابة.</string>
+    <string name="restore_card_title">استعادة من النسخ الاحتياطي</string>
+    <string name="restore_card_description">استرجع بيانات عربة التسوق الخاصة بك من ملف نسخ احتياطي تم إنشاؤه مسبقًا.</string>
+    <string name="backup_information_title">معلومات النسخ الاحتياطي</string>
+    <string name="last_backup_date_label">آخر نسخة احتياطية:</string>
+    <string name="never_backed_up">أبداً</string>
+    <string name="auto_backup_title">النسخ الاحتياطية التلقائية</string>
+    <string name="auto_backup_summary">النسخ الاحتياطي تلقائيا بيانات العربة الخاصة بك يوميا.</string>
+    <string name="backup_successful_detail">النسخ الاحتياطي التي تم إنشاؤها بنجاح!
+موقع: %s</string>
+    <string name="backup_cancelled_by_user">نسخة احتياطية من قبل المستخدم.</string>
+    <string name="backup_failed">فشل النسخ الاحتياطي: %s</string>
+    <string name="unknown_error">خطأ غير معروف</string>
+    <string name="unknown_location">موقع غير معروف</string>
+    <string name="restore_successful_detail">تم استعادة البيانات بنجاح من النسخ الاحتياطي.</string>
+    <string name="restore_failed">فشل الاستعادة: %s</string>
+    <string name="restore_cancelled_by_user">استعادة إلغاء المستخدم.</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">اعرف المزيد عن حاسبة المشتريات</string>

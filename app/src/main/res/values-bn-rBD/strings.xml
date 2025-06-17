@@ -102,6 +102,31 @@
     <string name="save">সংরক্ষণ করুন</string>
     <string name="open_carts_after_creation">তৈরির পর কার্ট খুলুন</string>
     <string name="summary_preference_settings_open_carts_after_creation">তৈরি হওয়ার সাথে সাথেই একটি কার্ট স্বয়ংক্রিয়ভাবে খুলুন।</string>
+    <string name="backup_carts_title">ব্যাকআপ এবং কার্টের ডেটা পুনরুদ্ধার করুন</string>
+    <string name="backup_now">এখন ব্যাকআপ</string>
+    <string name="restore_from_backup">ব্যাকআপ থেকে পুনরুদ্ধার</string>
+    <string name="backup_successful">ব্যাকআপ প্রক্রিয়া শুরু!</string>
+    <string name="restore_successful">পুনরুদ্ধার প্রক্রিয়া শুরু!</string>
+    <string name="preference_title_cart_backup">ব্যাকআপ এবং পুনরুদ্ধার</string>
+    <string name="preference_summary_cart_backup">আপনার কার্ট ব্যাকআপ পরিচালনা করুন</string>
+    <string name="backup_now_card_title">একটি নতুন ব্যাকআপ তৈরি করুন</string>
+    <string name="backup_now_card_description">স্থানীয় স্টোরেজ বা ক্লাউডে ব্যাকআপ তৈরি করে আপনার শপিং কার্টের ডেটা সুরক্ষিত করুন।</string>
+    <string name="restore_card_title">ব্যাকআপ থেকে পুনরুদ্ধার</string>
+    <string name="restore_card_description">পূর্বে তৈরি ব্যাকআপ ফাইল থেকে আপনার শপিং কার্টের ডেটা পুনরুদ্ধার করুন।</string>
+    <string name="backup_information_title">ব্যাকআপ তথ্য</string>
+    <string name="last_backup_date_label">শেষ ব্যাকআপ:</string>
+    <string name="never_backed_up">কখনও না</string>
+    <string name="auto_backup_title">স্বয়ংক্রিয় ব্যাকআপ</string>
+    <string name="auto_backup_summary">আপনার কার্টের ডেটা প্রতিদিন স্বয়ংক্রিয়ভাবে ব্যাক আপ করুন।</string>
+    <string name="backup_successful_detail">ব্যাকআপ সফলভাবে তৈরি!
+অবস্থান: %s</string>
+    <string name="backup_cancelled_by_user">ব্যাকআপ ব্যবহারকারী দ্বারা বাতিল।</string>
+    <string name="backup_failed">ব্যাকআপ ব্যর্থ: %s</string>
+    <string name="unknown_error">অজানা ত্রুটি</string>
+    <string name="unknown_location">অজানা অবস্থান</string>
+    <string name="restore_successful_detail">ব্যাকআপ থেকে সফলভাবে ডেটা পুনরুদ্ধার করা হয়েছে।</string>
+    <string name="restore_failed">পুনরুদ্ধার ব্যর্থ: %s</string>
+    <string name="restore_cancelled_by_user">ব্যবহারকারী দ্বারা বাতিল পুনরুদ্ধার।</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">কার্ট ক্যালকুলেটর সম্পর্কে আরও জানুন</string>

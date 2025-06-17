@@ -99,6 +99,31 @@
     <string name="save">Kaydet</string>
     <string name="open_carts_after_creation">Oluşturulduktan Sonra Sepetleri Aç</string>
     <string name="summary_preference_settings_open_carts_after_creation">Oluşturulduktan hemen sonra bir sepeti otomatik olarak açın.</string>
+    <string name="backup_carts_title">Sepet verilerini yedekleme ve geri yükleme</string>
+    <string name="backup_now">Şimdi yedekleme</string>
+    <string name="restore_from_backup">Yedeklemeden geri yükleme</string>
+    <string name="backup_successful">Yedekleme işlemi başladı!</string>
+    <string name="restore_successful">Geri yükleme işlemi başlatıldı!</string>
+    <string name="preference_title_cart_backup">Yedekleme ve Geri Yükle</string>
+    <string name="preference_summary_cart_backup">Sepet yedeklemelerinizi yönetin</string>
+    <string name="backup_now_card_title">Yeni Bir Yedekleme Oluşturun</string>
+    <string name="backup_now_card_description">Yerel depolama veya buluta bir yedek oluşturarak alışveriş sepeti verilerinizi koruyun.</string>
+    <string name="restore_card_title">Yedeklemeden geri yükleme</string>
+    <string name="restore_card_description">Alışveriş sepeti verilerinizi daha önce oluşturulan bir yedekleme dosyasından alın.</string>
+    <string name="backup_information_title">Yedek Bilgiler</string>
+    <string name="last_backup_date_label">Son yedekleme:</string>
+    <string name="never_backed_up">Asla</string>
+    <string name="auto_backup_title">Otomatik Yedeklemeler</string>
+    <string name="auto_backup_summary">Sepet verilerinizi günlük olarak otomatik olarak yedekleyin.</string>
+    <string name="backup_successful_detail">Yedekleme başarıyla yaratıldı!
+Konum: %s</string>
+    <string name="backup_cancelled_by_user">Yedekleme kullanıcı tarafından iptal edildi.</string>
+    <string name="backup_failed">Yedekleme başarısız oldu: %s</string>
+    <string name="unknown_error">Bilinmeyen hata</string>
+    <string name="unknown_location">Bilinmeyen Konum</string>
+    <string name="restore_successful_detail">Veriler yedeklemeden başarıyla geri yüklendi.</string>
+    <string name="restore_failed">Geri yükleme başarısız: %s</string>
+    <string name="restore_cancelled_by_user">Kullanıcı tarafından iptal edildi.</string>
 
     <string name="summary_preference_settings_about">Sepet Hesaplayıcı hakkında daha fazla bilgi edinin</string>
 

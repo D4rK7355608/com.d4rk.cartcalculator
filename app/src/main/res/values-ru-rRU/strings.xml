@@ -99,6 +99,31 @@
     <string name="save">Сохранить</string>
     <string name="open_carts_after_creation">Открывать корзины после создания</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматически открывать корзину сразу после ее создания.</string>
+    <string name="backup_carts_title">Резервное копирование и восстановление данных корзины</string>
+    <string name="backup_now">Резервное копирование сейчас</string>
+    <string name="restore_from_backup">Восстановите из резервного копирования</string>
+    <string name="backup_successful">Начался процесс резервного копирования!</string>
+    <string name="restore_successful">Восстановить процесс инициирован!</string>
+    <string name="preference_title_cart_backup">Резервное копирование и восстановление</string>
+    <string name="preference_summary_cart_backup">Управляйте своими резервными копиями корзины</string>
+    <string name="backup_now_card_title">Создать новую резервную копию</string>
+    <string name="backup_now_card_description">Защитите данные корзины покупок, создав резервное копирование на локальное хранилище или облако.</string>
+    <string name="restore_card_title">Восстановите из резервного копирования</string>
+    <string name="restore_card_description">Получите данные корзины покупок из ранее созданного файла резервного копирования.</string>
+    <string name="backup_information_title">Резервная информация</string>
+    <string name="last_backup_date_label">Последняя резервная копия:</string>
+    <string name="never_backed_up">Никогда</string>
+    <string name="auto_backup_title">Автоматические резервные копии</string>
+    <string name="auto_backup_summary">Автоматическое резервное копирование данных вашей корзины ежедневно.</string>
+    <string name="backup_successful_detail">Резервная копия создана успешно!
+Расположение: %s</string>
+    <string name="backup_cancelled_by_user">Резервное копирование отменено пользователем.</string>
+    <string name="backup_failed">Резервная копия не удалась: %s</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="unknown_location">Неизвестное место</string>
+    <string name="restore_successful_detail">Данные успешно восстановлены из резервного копирования.</string>
+    <string name="restore_failed">Восстановление не удалось: %s</string>
+    <string name="restore_cancelled_by_user">Восстановить отменен пользователем.</string>
 
     <string name="summary_preference_settings_about">Подробнее о Калькуляторе корзины</string>
 

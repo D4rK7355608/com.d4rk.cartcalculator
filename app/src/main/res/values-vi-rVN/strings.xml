@@ -102,6 +102,31 @@
     <string name="save">Lưu</string>
     <string name="open_carts_after_creation">Mở giỏ hàng sau khi tạo</string>
     <string name="summary_preference_settings_open_carts_after_creation">Tự động mở giỏ hàng ngay sau khi được tạo.</string>
+    <string name="backup_carts_title">Sao lưu và khôi phục dữ liệu giỏ hàng</string>
+    <string name="backup_now">Sao lưu ngay bây giờ</string>
+    <string name="restore_from_backup">Khôi phục từ sao lưu</string>
+    <string name="backup_successful">Quá trình sao lưu bắt đầu!</string>
+    <string name="restore_successful">Khôi phục quá trình bắt đầu!</string>
+    <string name="preference_title_cart_backup">Sao lưu &amp; Khôi phục</string>
+    <string name="preference_summary_cart_backup">Quản lý sao lưu giỏ hàng của bạn</string>
+    <string name="backup_now_card_title">Tạo một bản sao lưu mới</string>
+    <string name="backup_now_card_description">Bảo mật dữ liệu giỏ hàng của bạn bằng cách tạo bản sao lưu vào bộ nhớ cục bộ hoặc đám mây.</string>
+    <string name="restore_card_title">Khôi phục từ sao lưu</string>
+    <string name="restore_card_description">Lấy dữ liệu giỏ hàng của bạn từ một tệp sao lưu được tạo trước đó.</string>
+    <string name="backup_information_title">Thông tin sao lưu</string>
+    <string name="last_backup_date_label">Bản sao lưu cuối cùng:</string>
+    <string name="never_backed_up">Không bao giờ</string>
+    <string name="auto_backup_title">Sao lưu tự động</string>
+    <string name="auto_backup_summary">Tự động sao lưu dữ liệu giỏ hàng của bạn hàng ngày.</string>
+    <string name="backup_successful_detail">Sao lưu đã tạo ra thành công!
+Vị trí: %s</string>
+    <string name="backup_cancelled_by_user">Sao lưu bị hủy bởi người dùng.</string>
+    <string name="backup_failed">Sao lưu không thành công: %s</string>
+    <string name="unknown_error">Lỗi không xác định</string>
+    <string name="unknown_location">Vị trí không xác định</string>
+    <string name="restore_successful_detail">Dữ liệu được khôi phục thành công từ bản sao lưu.</string>
+    <string name="restore_failed">Khôi phục thất bại: %s</string>
+    <string name="restore_cancelled_by_user">Khôi phục bị hủy bởi người dùng.</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">Tìm hiểu thêm về Cart Calculator</string>

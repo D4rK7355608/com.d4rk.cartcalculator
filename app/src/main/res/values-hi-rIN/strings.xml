@@ -99,6 +99,31 @@
     <string name="save">सहेजें</string>
     <string name="open_carts_after_creation">निर्माण के बाद कार्ट खोलें</string>
     <string name="summary_preference_settings_open_carts_after_creation">कार्ट बनते ही उसे अपने आप खोलें।</string>
+    <string name="backup_carts_title">बैकअप और कार्ट डेटा को पुनर्स्थापित करें</string>
+    <string name="backup_now">अब समर्थन देना</string>
+    <string name="restore_from_backup">बैकअप से पुनर्स्थापित करें</string>
+    <string name="backup_successful">बैकअप प्रक्रिया शुरू हुई!</string>
+    <string name="restore_successful">पुनर्स्थापना प्रक्रिया शुरू की गई!</string>
+    <string name="preference_title_cart_backup">बैकअप और पुनर्स्थापना</string>
+    <string name="preference_summary_cart_backup">अपने कार्ट बैकअप को प्रबंधित करें</string>
+    <string name="backup_now_card_title">एक नया बैकअप बनाएं</string>
+    <string name="backup_now_card_description">स्थानीय भंडारण या क्लाउड के लिए एक बैकअप बनाकर अपने शॉपिंग कार्ट डेटा को सुरक्षित करें।</string>
+    <string name="restore_card_title">बैकअप से पुनर्स्थापित करें</string>
+    <string name="restore_card_description">पहले से बनाई गई बैकअप फ़ाइल से अपने शॉपिंग कार्ट डेटा को पुनः प्राप्त करें।</string>
+    <string name="backup_information_title">बैकअप सूचना</string>
+    <string name="last_backup_date_label">अंतिम बैकअप:</string>
+    <string name="never_backed_up">कभी नहीं</string>
+    <string name="auto_backup_title">स्वत: बैकअप</string>
+    <string name="auto_backup_summary">अपने कार्ट डेटा को दैनिक रूप से वापस करें।</string>
+    <string name="backup_successful_detail">बैकअप सफलतापूर्वक बनाया!
+जगह: %s</string>
+    <string name="backup_cancelled_by_user">उपयोगकर्ता द्वारा रद्द किया गया बैकअप।</string>
+    <string name="backup_failed">बैकअप विफल: %s</string>
+    <string name="unknown_error">अज्ञात त्रुटि</string>
+    <string name="unknown_location">अज्ञात स्थान</string>
+    <string name="restore_successful_detail">डेटा बैकअप से सफलतापूर्वक बहाल किया गया।</string>
+    <string name="restore_failed">पुनर्स्थापना विफल: %s</string>
+    <string name="restore_cancelled_by_user">उपयोगकर्ता द्वारा रद्द किए गए पुनर्स्थापना।</string>
 
     <string name="summary_preference_settings_about">कार्ट कैलकुलेटर के बारे में अधिक जानें</string>
 

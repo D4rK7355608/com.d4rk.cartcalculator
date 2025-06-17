@@ -99,6 +99,31 @@
     <string name="save">儲存</string>
     <string name="open_carts_after_creation">建立後開啟購物車</string>
     <string name="summary_preference_settings_open_carts_after_creation">建立購物車後立即自動開啟。</string>
+    <string name="backup_carts_title">備份和還原購物車數據</string>
+    <string name="backup_now">現在備份</string>
+    <string name="restore_from_backup">從備份還原</string>
+    <string name="backup_successful">備份過程開始了！</string>
+    <string name="restore_successful">恢復過程啟動！</string>
+    <string name="preference_title_cart_backup">備份和還原</string>
+    <string name="preference_summary_cart_backup">管理您的購物車備用</string>
+    <string name="backup_now_card_title">創建一個新的備份</string>
+    <string name="backup_now_card_description">通過創建本地存儲或云的備份來保護購物車數據。</string>
+    <string name="restore_card_title">從備份還原</string>
+    <string name="restore_card_description">從先前創建的備份文件中檢索購物車數據。</string>
+    <string name="backup_information_title">備份信息</string>
+    <string name="last_backup_date_label">最後備份：</string>
+    <string name="never_backed_up">絕不</string>
+    <string name="auto_backup_title">自動備份</string>
+    <string name="auto_backup_summary">每天自動備份購物車數據。</string>
+    <string name="backup_successful_detail">備份成功創建了！
+地點： %s</string>
+    <string name="backup_cancelled_by_user">用戶取消備份。</string>
+    <string name="backup_failed">備份失敗： %s</string>
+    <string name="unknown_error">未知錯誤</string>
+    <string name="unknown_location">未知位置</string>
+    <string name="restore_successful_detail">數據從備份成功恢復。</string>
+    <string name="restore_failed">還原失敗： %s</string>
+    <string name="restore_cancelled_by_user">用戶取消還原。</string>
 
     <string name="summary_preference_settings_about">瞭解更多關於購物車計算機</string>
 

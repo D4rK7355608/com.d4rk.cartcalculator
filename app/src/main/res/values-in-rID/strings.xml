@@ -99,6 +99,31 @@
     <string name="save">Simpan</string>
     <string name="open_carts_after_creation">Buka Keranjang Setelah Dibuat</string>
     <string name="summary_preference_settings_open_carts_after_creation">Buka keranjang secara otomatis segera setelah dibuat.</string>
+    <string name="backup_carts_title">Cadangan dan Pulihkan Data Keranjang</string>
+    <string name="backup_now">Cadangan sekarang</string>
+    <string name="restore_from_backup">Kembalikan dari cadangan</string>
+    <string name="backup_successful">Proses cadangan dimulai!</string>
+    <string name="restore_successful">Proses pemulihan dimulai!</string>
+    <string name="preference_title_cart_backup">Cadangan &amp; Pemulihan</string>
+    <string name="preference_summary_cart_backup">Kelola Cadangan Keranjang Anda</string>
+    <string name="backup_now_card_title">Buat cadangan baru</string>
+    <string name="backup_now_card_description">Amankan data keranjang belanja Anda dengan membuat cadangan ke penyimpanan lokal atau cloud.</string>
+    <string name="restore_card_title">Kembalikan dari cadangan</string>
+    <string name="restore_card_description">Ambil data keranjang belanja Anda dari file cadangan yang dibuat sebelumnya.</string>
+    <string name="backup_information_title">Informasi cadangan</string>
+    <string name="last_backup_date_label">Cadangan Terakhir:</string>
+    <string name="never_backed_up">Tidak pernah</string>
+    <string name="auto_backup_title">Cadangan Otomatis</string>
+    <string name="auto_backup_summary">Cadangkan data keranjang Anda secara otomatis setiap hari.</string>
+    <string name="backup_successful_detail">Cadangan dibuat dengan sukses!
+Lokasi: %s</string>
+    <string name="backup_cancelled_by_user">Cadangan dibatalkan oleh pengguna.</string>
+    <string name="backup_failed">Cadangan Gagal: %s</string>
+    <string name="unknown_error">Kesalahan yang tidak diketahui</string>
+    <string name="unknown_location">Lokasi yang tidak diketahui</string>
+    <string name="restore_successful_detail">Data berhasil dipulihkan dari cadangan.</string>
+    <string name="restore_failed">Kembalikan Gagal: %s</string>
+    <string name="restore_cancelled_by_user">Kembalikan dibatalkan oleh pengguna.</string>
 
     <string name="summary_preference_settings_about">Pelajari lebih lanjut tentang Kalkulator Keranjang</string>
 

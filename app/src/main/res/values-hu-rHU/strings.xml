@@ -99,6 +99,31 @@
     <string name="save">Mentés</string>
     <string name="open_carts_after_creation">Kosarak megnyitása a létrehozás után</string>
     <string name="summary_preference_settings_open_carts_after_creation">A kosár automatikus megnyitása közvetlenül a létrehozása után.</string>
+    <string name="backup_carts_title">Biztonsági másolat és visszaállítja a kosár adatait</string>
+    <string name="backup_now">Biztonsági másolat most</string>
+    <string name="restore_from_backup">Visszaállítás a biztonsági mentésből</string>
+    <string name="backup_successful">A biztonsági mentési folyamat megkezdődött!</string>
+    <string name="restore_successful">Visszaállítja a folyamat kezdeményezett folyamatát!</string>
+    <string name="preference_title_cart_backup">Biztonsági másolat és visszaállítás</string>
+    <string name="preference_summary_cart_backup">Kezelje a kosár biztonsági mentéseit</string>
+    <string name="backup_now_card_title">Hozzon létre egy új biztonsági mentést</string>
+    <string name="backup_now_card_description">Biztosítsa a bevásárlókosár -adatait a helyi tároló vagy a felhő készítésével.</string>
+    <string name="restore_card_title">Visszaállítás a biztonsági mentésből</string>
+    <string name="restore_card_description">Töltse le a bevásárlókosár -adatait egy korábban létrehozott biztonsági mentési fájlból.</string>
+    <string name="backup_information_title">Biztonsági mentési információk</string>
+    <string name="last_backup_date_label">Utolsó biztonsági mentés:</string>
+    <string name="never_backed_up">Soha</string>
+    <string name="auto_backup_title">Automatikus biztonsági mentések</string>
+    <string name="auto_backup_summary">Naponta automatikusan készítsen biztonsági másolatot a kosár adatainak.</string>
+    <string name="backup_successful_detail">A biztonsági mentés sikeresen létrehozta!
+Elhelyezkedés: %s</string>
+    <string name="backup_cancelled_by_user">Biztonsági másolat a felhasználó által törölt.</string>
+    <string name="backup_failed">A biztonsági mentés sikertelen: %s</string>
+    <string name="unknown_error">Ismeretlen hiba</string>
+    <string name="unknown_location">Ismeretlen hely</string>
+    <string name="restore_successful_detail">Az adatok sikeresen helyreállnak a biztonsági mentésből.</string>
+    <string name="restore_failed">A helyreállítás sikertelen: %s</string>
+    <string name="restore_cancelled_by_user">A felhasználó által lemondott visszaállítás.</string>
 
     <string name="summary_preference_settings_about">Tudjon meg többet a Kosár Kalkulátorról</string>
 
