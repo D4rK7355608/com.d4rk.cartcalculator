@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">Ícono para seleccionar moneda</string>
 
     <!-- Home screen -->
+    <string name="search">Buscar</string>
+    <string name="search_placeholder_focused">Buscar…</string>
+    <string name="search_placeholder_refine">Refina tu búsqueda ...</string>
+    <string name="search_placeholder_default">Buscar en carros</string>
+    <string name="content_description_back">Atrás</string>
+    <string name="content_description_open_menu">Menú abierto</string>
+    <string name="content_description_clear_search">Búsqueda clara</string>
+    <string name="content_description_voice_search">Búsqueda de voz</string>
+    <string name="voice_search_prompt">Habla ahora…</string>
+    <string name="voice_recognition_not_available">Reconocimiento de voz no disponible</string>
+    <string name="content_description_more_options">Más opciones</string>
     <string name="import_shared_cart">Importar Carrito Compartido</string>
     <string name="default_sort">Orden Predeterminado</string>
     <string name="date">Más Antiguos Primero</string>

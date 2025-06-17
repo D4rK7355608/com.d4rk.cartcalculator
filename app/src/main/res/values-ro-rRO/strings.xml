@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">Alegeți moneda preferată</string>
     <string name="select_currency_icon_description">Pictogramă pentru selectarea monedei</string>
 
+    <string name="search">Căutare</string>
+    <string name="search_placeholder_focused">Căutare…</string>
+    <string name="search_placeholder_refine">Rafinați -vă căutarea ...</string>
+    <string name="search_placeholder_default">Căutați în căruțe</string>
+    <string name="content_description_back">Spate</string>
+    <string name="content_description_open_menu">Meniu Deschide</string>
+    <string name="content_description_clear_search">Căutare clară</string>
+    <string name="content_description_voice_search">Căutare vocală</string>
+    <string name="voice_search_prompt">Vorbește acum…</string>
+    <string name="voice_recognition_not_available">Recunoașterea vocală nu este disponibilă</string>
+    <string name="content_description_more_options">Mai multe opțiuni</string>
     <string name="import_shared_cart">Importă coș partajat</string>
     <string name="default_sort">Ordine implicită</string>
     <string name="date">Cele mai vechi primele</string>

@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">เลือกสกุลเงินที่คุณต้องการ</string>
     <string name="select_currency_icon_description">ไอคอนสำหรับเลือกสกุลเงิน</string>
 
+    <string name="search">ค้นหา</string>
+    <string name="search_placeholder_focused">ค้นหา…</string>
+    <string name="search_placeholder_refine">ปรับแต่งการค้นหาของคุณ ...</string>
+    <string name="search_placeholder_default">ค้นหาในรถเข็น</string>
+    <string name="content_description_back">กลับ</string>
+    <string name="content_description_open_menu">เปิดเมนู</string>
+    <string name="content_description_clear_search">ล้างการค้นหา</string>
+    <string name="content_description_voice_search">การค้นหาด้วยเสียง</string>
+    <string name="voice_search_prompt">พูดตอนนี้ ...</string>
+    <string name="voice_recognition_not_available">ไม่มีการจดจำเสียง</string>
+    <string name="content_description_more_options">ตัวเลือกเพิ่มเติม</string>
     <string name="import_shared_cart">นำเข้ารถเข็นที่แชร์</string>
     <string name="default_sort">ลำดับเริ่มต้น</string>
     <string name="date">เก่าที่สุดก่อน</string>

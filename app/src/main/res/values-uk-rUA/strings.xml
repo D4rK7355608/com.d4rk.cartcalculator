@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">Оберіть бажану валюту</string>
     <string name="select_currency_icon_description">Іконка для вибору валюти</string>
 
+    <string name="search">Обшук</string>
+    <string name="search_placeholder_focused">Пошук ...</string>
+    <string name="search_placeholder_refine">Вдосконалити свій пошук ...</string>
+    <string name="search_placeholder_default">Пошук у візках</string>
+    <string name="content_description_back">Спинка</string>
+    <string name="content_description_open_menu">Відкрите меню</string>
+    <string name="content_description_clear_search">Чіткий пошук</string>
+    <string name="content_description_voice_search">Голосовий пошук</string>
+    <string name="voice_search_prompt">Говоріть зараз ...</string>
+    <string name="voice_recognition_not_available">Розпізнавання голосу недоступне</string>
+    <string name="content_description_more_options">Більше варіантів</string>
     <string name="import_shared_cart">Імпортувати спільний кошик</string>
     <string name="default_sort">Сортування за замовчуванням</string>
     <string name="date">Спочатку найстаріші</string>

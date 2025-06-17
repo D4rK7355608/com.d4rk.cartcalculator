@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">Biểu tượng chọn đơn vị tiền tệ</string>
 
     <!-- Home screen -->
+    <string name="search">Tìm kiếm</string>
+    <string name="search_placeholder_focused">Tìm kiếm…</string>
+    <string name="search_placeholder_refine">Tinh chỉnh tìm kiếm của bạn…</string>
+    <string name="search_placeholder_default">Tìm kiếm trong xe đẩy</string>
+    <string name="content_description_back">Mặt sau</string>
+    <string name="content_description_open_menu">Mở menu</string>
+    <string name="content_description_clear_search">Tìm kiếm rõ ràng</string>
+    <string name="content_description_voice_search">Tìm kiếm bằng giọng nói</string>
+    <string name="voice_search_prompt">Nói ngay bây giờ…</string>
+    <string name="voice_recognition_not_available">Không có được nhận dạng giọng nói</string>
+    <string name="content_description_more_options">Nhiều lựa chọn hơn</string>
     <string name="import_shared_cart">Nhập giỏ hàng được chia sẻ</string>
     <string name="default_sort">Thứ tự mặc định</string>
     <string name="date">Cũ nhất trước</string>

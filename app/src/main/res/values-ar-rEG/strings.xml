@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">أيقونة اختيار العملة</string>
 
     <!-- Home screen -->
+    <string name="search">يبحث</string>
+    <string name="search_placeholder_focused">يبحث…</string>
+    <string name="search_placeholder_refine">صقل بحثك ...</string>
+    <string name="search_placeholder_default">ابحث في العربات</string>
+    <string name="content_description_back">خلف</string>
+    <string name="content_description_open_menu">افتح القائمة</string>
+    <string name="content_description_clear_search">بحث واضح</string>
+    <string name="content_description_voice_search">البحث الصوتي</string>
+    <string name="voice_search_prompt">تكلم الآن…</string>
+    <string name="voice_recognition_not_available">التعرف على الصوت غير متوفر</string>
+    <string name="content_description_more_options">المزيد من الخيارات</string>
     <string name="import_shared_cart">استيراد عربية مشتركة</string>
     <string name="default_sort">الترتيب الافتراضي</string>
     <string name="date">الأقدم أولاً</string>
