@@ -99,6 +99,31 @@
     <string name="save">Salvează</string>
     <string name="open_carts_after_creation">Deschide coșurile după creare</string>
     <string name="summary_preference_settings_open_carts_after_creation">Deschide automat un coș imediat după ce este creat.</string>
+    <string name="backup_carts_title">Backup și restaurarea datelor coșului</string>
+    <string name="backup_now">Backup acum</string>
+    <string name="restore_from_backup">Restaurați din backup</string>
+    <string name="backup_successful">Procesul de rezervă a început!</string>
+    <string name="restore_successful">Restaurarea procesului inițiat!</string>
+    <string name="preference_title_cart_backup">Backup și restaurare</string>
+    <string name="preference_summary_cart_backup">Gestionați -vă copiile de rezervă pentru coșuri</string>
+    <string name="backup_now_card_title">Creați o nouă copie de rezervă</string>
+    <string name="backup_now_card_description">Asigurați -vă datele coșului de cumpărături creând o copie de rezervă la stocarea locală sau în cloud.</string>
+    <string name="restore_card_title">Restaurați din backup</string>
+    <string name="restore_card_description">Recuperați datele coșului de cumpărături dintr -un fișier de rezervă creat anterior.</string>
+    <string name="backup_information_title">Informații de rezervă</string>
+    <string name="last_backup_date_label">Ultima copie de rezervă:</string>
+    <string name="never_backed_up">Nu</string>
+    <string name="auto_backup_title">Backup -uri automate</string>
+    <string name="auto_backup_summary">Copiați automat pe datele de coș zilnic.</string>
+    <string name="backup_successful_detail">Backup creat cu succes!
+Locaţie: %s</string>
+    <string name="backup_cancelled_by_user">Backup anulat de utilizator.</string>
+    <string name="backup_failed">Backup a eșuat: %s</string>
+    <string name="unknown_error">Eroare necunoscută</string>
+    <string name="unknown_location">Locație necunoscută</string>
+    <string name="restore_successful_detail">Datele restabilite cu succes din backup.</string>
+    <string name="restore_failed">Restaurarea a eșuat: %s</string>
+    <string name="restore_cancelled_by_user">Restaurați anulat de către utilizator.</string>
 
     <string name="summary_preference_settings_about">Află mai multe despre Cart Calculator</string>
 

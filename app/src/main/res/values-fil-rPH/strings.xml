@@ -102,6 +102,31 @@
     <string name="save">I-save</string>
     <string name="open_carts_after_creation">Buksan ang Mga Cart Pagkatapos Gawin</string>
     <string name="summary_preference_settings_open_carts_after_creation">Awtomatikong buksan ang cart kaagad pagkatapos itong gawin.</string>
+    <string name="backup_carts_title">Backup at ibalik ang data ng cart</string>
+    <string name="backup_now">Backup ngayon</string>
+    <string name="restore_from_backup">Ibalik mula sa backup</string>
+    <string name="backup_successful">Nagsimula ang proseso ng pag -backup!</string>
+    <string name="restore_successful">Ibalik ang proseso ng pagpapanumbalik!</string>
+    <string name="preference_title_cart_backup">Backup at ibalik</string>
+    <string name="preference_summary_cart_backup">Pamahalaan ang iyong mga backup ng cart</string>
+    <string name="backup_now_card_title">Lumikha ng isang bagong backup</string>
+    <string name="backup_now_card_description">I -secure ang iyong data ng shopping cart sa pamamagitan ng paglikha ng isang backup sa lokal na imbakan o ang ulap.</string>
+    <string name="restore_card_title">Ibalik mula sa backup</string>
+    <string name="restore_card_description">Kunin ang iyong data ng shopping cart mula sa isang dating nilikha na backup file.</string>
+    <string name="backup_information_title">Impormasyon sa Pag -backup</string>
+    <string name="last_backup_date_label">Huling backup:</string>
+    <string name="never_backed_up">Hindi kailanman</string>
+    <string name="auto_backup_title">Mga awtomatikong backup</string>
+    <string name="auto_backup_summary">Awtomatikong i -back up ang iyong data sa cart araw -araw.</string>
+    <string name="backup_successful_detail">Matagumpay na nilikha ang backup!
+Lokasyon: %s</string>
+    <string name="backup_cancelled_by_user">Ang backup na kinansela ng gumagamit.</string>
+    <string name="backup_failed">Nabigo ang backup: %s</string>
+    <string name="unknown_error">Hindi kilalang error</string>
+    <string name="unknown_location">Hindi kilalang lokasyon</string>
+    <string name="restore_successful_detail">Matagumpay na naibalik ang data mula sa backup.</string>
+    <string name="restore_failed">Nabigo ang pagpapanumbalik: %s</string>
+    <string name="restore_cancelled_by_user">Ibalik ang kanselado ng gumagamit.</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">Matuto pa tungkol sa Cart Calculator</string>

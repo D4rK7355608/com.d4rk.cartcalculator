@@ -99,6 +99,31 @@
     <string name="save">Speichern</string>
     <string name="open_carts_after_creation">Warenkörbe nach Erstellung öffnen</string>
     <string name="summary_preference_settings_open_carts_after_creation">Warenkorb nach der Erstellung automatisch öffnen.</string>
+    <string name="backup_carts_title">Sicherung und Wiederherstellung von Wagendaten</string>
+    <string name="backup_now">Backup jetzt</string>
+    <string name="restore_from_backup">Vom Backup wiederherstellen</string>
+    <string name="backup_successful">Sicherungsprozess begann!</string>
+    <string name="restore_successful">Wiederherstellungsprozess initiiert!</string>
+    <string name="preference_title_cart_backup">Backup &amp; Wiederherstellung</string>
+    <string name="preference_summary_cart_backup">Verwalten Sie Ihre Karren -Backups</string>
+    <string name="backup_now_card_title">Erstellen Sie eine neue Sicherung</string>
+    <string name="backup_now_card_description">Sichern Sie Ihre Einkaufswagendaten, indem Sie eine Sicherung für den lokalen Speicher oder die Cloud erstellen.</string>
+    <string name="restore_card_title">Vom Backup wiederherstellen</string>
+    <string name="restore_card_description">Rufen Sie Ihre Einkaufswagendaten von einer zuvor erstellten Sicherungsdatei ab.</string>
+    <string name="backup_information_title">Sicherungsinformationen</string>
+    <string name="last_backup_date_label">Letzte Sicherung:</string>
+    <string name="never_backed_up">Niemals</string>
+    <string name="auto_backup_title">Automatische Backups</string>
+    <string name="auto_backup_summary">Sichern Sie Ihre Karren -Daten automatisch täglich.</string>
+    <string name="backup_successful_detail">Backup erfolgreich erstellt!
+Standort: %s</string>
+    <string name="backup_cancelled_by_user">Sicherung durch den Benutzer abgebrochen.</string>
+    <string name="backup_failed">Backup fehlgeschlagen: %s</string>
+    <string name="unknown_error">Unbekannter Fehler</string>
+    <string name="unknown_location">Unbekannter Ort</string>
+    <string name="restore_successful_detail">Daten wurden erfolgreich aus der Backup wiederhergestellt.</string>
+    <string name="restore_failed">Wiederherstellung fehlgeschlagen: %s</string>
+    <string name="restore_cancelled_by_user">Storniert vom Benutzer storniert.</string>
 
     <string name="summary_preference_settings_about">Erfahren Sie mehr über den Warenkorb-Rechner</string>
 

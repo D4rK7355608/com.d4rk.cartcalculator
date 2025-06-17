@@ -99,6 +99,31 @@
     <string name="save">บันทึก</string>
     <string name="open_carts_after_creation">เปิดรถเข็นหลังการสร้าง</string>
     <string name="summary_preference_settings_open_carts_after_creation">เปิดรถเข็นโดยอัตโนมัติทันทีหลังจากสร้าง</string>
+    <string name="backup_carts_title">การสำรองข้อมูลและกู้คืนข้อมูลรถเข็น</string>
+    <string name="backup_now">สำรองข้อมูลตอนนี้</string>
+    <string name="restore_from_backup">กู้คืนจากการสำรองข้อมูล</string>
+    <string name="backup_successful">กระบวนการสำรองเริ่มต้น!</string>
+    <string name="restore_successful">กู้คืนกระบวนการเริ่มต้น!</string>
+    <string name="preference_title_cart_backup">สำรองและกู้คืน</string>
+    <string name="preference_summary_cart_backup">จัดการการสำรองข้อมูลรถเข็นของคุณ</string>
+    <string name="backup_now_card_title">สร้างการสำรองข้อมูลใหม่</string>
+    <string name="backup_now_card_description">รักษาความปลอดภัยข้อมูลตะกร้าสินค้าของคุณโดยการสร้างการสำรองข้อมูลไปยังที่เก็บข้อมูลท้องถิ่นหรือคลาวด์</string>
+    <string name="restore_card_title">กู้คืนจากการสำรองข้อมูล</string>
+    <string name="restore_card_description">ดึงข้อมูลตะกร้าสินค้าของคุณจากไฟล์สำรองที่สร้างขึ้นก่อนหน้านี้</string>
+    <string name="backup_information_title">ข้อมูลสำรอง</string>
+    <string name="last_backup_date_label">การสำรองข้อมูลครั้งสุดท้าย:</string>
+    <string name="never_backed_up">ไม่เคย</string>
+    <string name="auto_backup_title">การสำรองข้อมูลอัตโนมัติ</string>
+    <string name="auto_backup_summary">สำรองข้อมูลรถเข็นของคุณโดยอัตโนมัติทุกวัน</string>
+    <string name="backup_successful_detail">การสำรองข้อมูลสร้างสำเร็จ!
+ที่ตั้ง: %s</string>
+    <string name="backup_cancelled_by_user">การสำรองข้อมูลยกเลิกโดยผู้ใช้</string>
+    <string name="backup_failed">การสำรองข้อมูลล้มเหลว: %s</string>
+    <string name="unknown_error">ข้อผิดพลาดที่ไม่รู้จัก</string>
+    <string name="unknown_location">ตำแหน่งที่ไม่รู้จัก</string>
+    <string name="restore_successful_detail">ข้อมูลที่กู้คืนได้สำเร็จจากการสำรองข้อมูล</string>
+    <string name="restore_failed">กู้คืนล้มเหลว: %s</string>
+    <string name="restore_cancelled_by_user">กู้คืนโดยผู้ใช้</string>
 
     <string name="summary_preference_settings_about">เรียนรู้เพิ่มเติมเกี่ยวกับเครื่องคิดเลขในรถเข็น</string>
 

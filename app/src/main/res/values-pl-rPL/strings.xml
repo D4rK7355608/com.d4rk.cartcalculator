@@ -99,6 +99,31 @@
     <string name="save">Zapisz</string>
     <string name="open_carts_after_creation">Otwieraj koszyki po utworzeniu</string>
     <string name="summary_preference_settings_open_carts_after_creation">Automatycznie otwieraj koszyk natychmiast po jego utworzeniu.</string>
+    <string name="backup_carts_title">Tworzenie kopii zapasowych i przywracania danych wózka</string>
+    <string name="backup_now">Kopia zapasowa teraz</string>
+    <string name="restore_from_backup">Przywróć z kopii zapasowej</string>
+    <string name="backup_successful">Rozpoczął się proces tworzenia kopii zapasowych!</string>
+    <string name="restore_successful">Zainicjowany proces przywrócenia!</string>
+    <string name="preference_title_cart_backup">Kopie zapasowe i przywracanie</string>
+    <string name="preference_summary_cart_backup">Zarządzaj kopii zapasowych wózków</string>
+    <string name="backup_now_card_title">Utwórz nową kopię zapasową</string>
+    <string name="backup_now_card_description">Zabezpiecz dane koszyka na zakupy, tworząc kopię zapasową do przechowywania lokalnego lub chmury.</string>
+    <string name="restore_card_title">Przywróć z kopii zapasowej</string>
+    <string name="restore_card_description">Odzyskaj dane w koszyku z wcześniej utworzonego pliku kopii zapasowej.</string>
+    <string name="backup_information_title">Informacje o tworzeniu kopii zapasowych</string>
+    <string name="last_backup_date_label">Ostatnia kopia zapasowa:</string>
+    <string name="never_backed_up">Nigdy</string>
+    <string name="auto_backup_title">Automatyczne kopie zapasowe</string>
+    <string name="auto_backup_summary">Codziennie automatycznie tworz kopie zapasowe danych wózka.</string>
+    <string name="backup_successful_detail">Kopia zapasowa utworzona pomyślnie!
+Lokalizacja: %s</string>
+    <string name="backup_cancelled_by_user">Kopia zapasowa anulowana przez użytkownika.</string>
+    <string name="backup_failed">Kopia zapasowa nie powiodła się: %s</string>
+    <string name="unknown_error">Nieznany błąd</string>
+    <string name="unknown_location">Nieznana lokalizacja</string>
+    <string name="restore_successful_detail">Dane zostały pomyślnie przywrócone po tworzeniu kopii zapasowej.</string>
+    <string name="restore_failed">Przywróć nieudane: %s</string>
+    <string name="restore_cancelled_by_user">Przywróć anulowane przez użytkownika.</string>
 
     <string name="summary_preference_settings_about">Dowiedz się więcej o Kalkulatorze Koszyka</string>
 

@@ -99,6 +99,31 @@
     <string name="save">Запази</string>
     <string name="open_carts_after_creation">Отворете количките след създаването им</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматично отваряне на количка веднага след създаването й.</string>
+    <string name="backup_carts_title">Резервно копие и възстановяване на данните за количката</string>
+    <string name="backup_now">Резервно копие сега</string>
+    <string name="restore_from_backup">Възстановяване от резервно копие</string>
+    <string name="backup_successful">Процесът на архивиране започна!</string>
+    <string name="restore_successful">Иницииран процес на възстановяване!</string>
+    <string name="preference_title_cart_backup">Резервно копие и възстановяване</string>
+    <string name="preference_summary_cart_backup">Управлявайте резервните си колички за колички</string>
+    <string name="backup_now_card_title">Създайте ново резервно копие</string>
+    <string name="backup_now_card_description">Осигурете данните за пазаруването си, като създадете резервно копие на локалното съхранение или облака.</string>
+    <string name="restore_card_title">Възстановяване от резервно копие</string>
+    <string name="restore_card_description">Изтеглете данните за пазаруването си от създаден по -рано резервен файл.</string>
+    <string name="backup_information_title">Информация за архивиране</string>
+    <string name="last_backup_date_label">Последно архивиране:</string>
+    <string name="never_backed_up">Никога</string>
+    <string name="auto_backup_title">Автоматични резервни копия</string>
+    <string name="auto_backup_summary">Автоматично архивирайте данните за количката всеки ден.</string>
+    <string name="backup_successful_detail">Резервно копие създадено успешно!
+Местоположение: %s</string>
+    <string name="backup_cancelled_by_user">Резервно копие от потребителя.</string>
+    <string name="backup_failed">Резервното копие не успя: %s</string>
+    <string name="unknown_error">Неизвестна грешка</string>
+    <string name="unknown_location">Неизвестно местоположение</string>
+    <string name="restore_successful_detail">Данните се възстановяват успешно от архивиране.</string>
+    <string name="restore_failed">Възстановяването не е успешно: %s</string>
+    <string name="restore_cancelled_by_user">Възстановете анулирана от потребителя.</string>
 
     <string name="summary_preference_settings_about">Научете повече за Cart Calculator</string>
 

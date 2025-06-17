@@ -102,6 +102,31 @@
     <string name="save">Guardar</string>
     <string name="open_carts_after_creation">Abrir Carritos Después de Crearlos</string>
     <string name="summary_preference_settings_open_carts_after_creation">Abrir automáticamente un carrito inmediatamente después de crearlo.</string>
+    <string name="backup_carts_title">Copia de seguridad y restauración de datos del carrito</string>
+    <string name="backup_now">Copia de seguridad ahora</string>
+    <string name="restore_from_backup">Restaurar desde la copia de seguridad</string>
+    <string name="backup_successful">¡Comenzando el proceso de copia de seguridad!</string>
+    <string name="restore_successful">¡Iniciado el proceso de restauración!</string>
+    <string name="preference_title_cart_backup">Copia de seguridad y restauración</string>
+    <string name="preference_summary_cart_backup">Administre las copias de seguridad de su carrito</string>
+    <string name="backup_now_card_title">Crea una nueva copia de seguridad</string>
+    <string name="backup_now_card_description">Asegure los datos de su carrito de compras creando una copia de seguridad del almacenamiento local o la nube.</string>
+    <string name="restore_card_title">Restaurar desde la copia de seguridad</string>
+    <string name="restore_card_description">Recupere los datos de su carrito de compras de un archivo de copia de seguridad creado anteriormente.</string>
+    <string name="backup_information_title">Información de respaldo</string>
+    <string name="last_backup_date_label">Última copia de seguridad:</string>
+    <string name="never_backed_up">Nunca</string>
+    <string name="auto_backup_title">Copias de seguridad automáticas</string>
+    <string name="auto_backup_summary">Haga una copia de seguridad automáticamente de los datos de su carrito diariamente.</string>
+    <string name="backup_successful_detail">¡Copia de seguridad creada con éxito!
+Ubicación: %s</string>
+    <string name="backup_cancelled_by_user">Copia de seguridad cancelada por el usuario.</string>
+    <string name="backup_failed">Falló la copia de seguridad: %s</string>
+    <string name="unknown_error">Error desconocido</string>
+    <string name="unknown_location">Ubicación desconocida</string>
+    <string name="restore_successful_detail">Los datos restaurados con éxito desde la copia de seguridad.</string>
+    <string name="restore_failed">Restaurar fallado: %s</string>
+    <string name="restore_cancelled_by_user">Restaurar cancelado por el usuario.</string>
 
     <!-- About screen -->
     <string name="summary_preference_settings_about">Aprende más sobre Cart Calculator</string>

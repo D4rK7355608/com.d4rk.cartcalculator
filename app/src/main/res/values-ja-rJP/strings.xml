@@ -99,6 +99,31 @@
     <string name="save">保存</string>
     <string name="open_carts_after_creation">作成後にカートを開く</string>
     <string name="summary_preference_settings_open_carts_after_creation">作成後すぐにカートを自動的に開きます。</string>
+    <string name="backup_carts_title">カートデータをバックアップして復元します</string>
+    <string name="backup_now">今バックアップ</string>
+    <string name="restore_from_backup">バックアップから復元します</string>
+    <string name="backup_successful">バックアッププロセスが開始されました！</string>
+    <string name="restore_successful">開始されたプロセスの復元！</string>
+    <string name="preference_title_cart_backup">バックアップと復元</string>
+    <string name="preference_summary_cart_backup">カートのバックアップを管理します</string>
+    <string name="backup_now_card_title">新しいバックアップを作成します</string>
+    <string name="backup_now_card_description">ローカルストレージまたはクラウドにバックアップを作成して、ショッピングカートデータを保護します。</string>
+    <string name="restore_card_title">バックアップから復元します</string>
+    <string name="restore_card_description">以前に作成されたバックアップファイルからショッピングカートデータを取得します。</string>
+    <string name="backup_information_title">バックアップ情報</string>
+    <string name="last_backup_date_label">最後のバックアップ：</string>
+    <string name="never_backed_up">一度もない</string>
+    <string name="auto_backup_title">自動バックアップ</string>
+    <string name="auto_backup_summary">毎日カートデータを自動的にバックアップします。</string>
+    <string name="backup_successful_detail">バックアップが正常に作成されました！
+位置： %s</string>
+    <string name="backup_cancelled_by_user">ユーザーによってキャンセルされたバックアップ。</string>
+    <string name="backup_failed">バックアップが失敗しました： %s</string>
+    <string name="unknown_error">不明なエラー</string>
+    <string name="unknown_location">不明な場所</string>
+    <string name="restore_successful_detail">データはバックアップから正常に復元されました。</string>
+    <string name="restore_failed">復元が失敗しました： %s</string>
+    <string name="restore_cancelled_by_user">ユーザーがキャンセルした復元。</string>
 
     <string name="summary_preference_settings_about">カート計算機の詳細</string>
 

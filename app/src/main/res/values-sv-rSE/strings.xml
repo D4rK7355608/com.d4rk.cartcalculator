@@ -99,6 +99,31 @@
     <string name="save">Spara</string>
     <string name="open_carts_after_creation">Öppna varukorgar efter skapande</string>
     <string name="summary_preference_settings_open_carts_after_creation">Öppna en varukorg automatiskt direkt efter att den skapats.</string>
+    <string name="backup_carts_title">Säkerhetskopiera och återställa vagnsdata</string>
+    <string name="backup_now">Säkerhetskopiering nu</string>
+    <string name="restore_from_backup">Återställ från backup</string>
+    <string name="backup_successful">Säkerhetskopieringsprocess startade!</string>
+    <string name="restore_successful">Återställ processen initierad!</string>
+    <string name="preference_title_cart_backup">Säkerhetskopiering och återställning</string>
+    <string name="preference_summary_cart_backup">Hantera dina säkerhetskopior av kundvagn</string>
+    <string name="backup_now_card_title">Skapa en ny säkerhetskopia</string>
+    <string name="backup_now_card_description">Säkra dina kundvagnsdata genom att skapa en säkerhetskopia till lokal lagring eller molnet.</string>
+    <string name="restore_card_title">Återställ från backup</string>
+    <string name="restore_card_description">Hämta dina kundvagnsdata från en tidigare skapad säkerhetskopieringsfil.</string>
+    <string name="backup_information_title">Backupinformation</string>
+    <string name="last_backup_date_label">Senaste säkerhetskopiering:</string>
+    <string name="never_backed_up">Aldrig</string>
+    <string name="auto_backup_title">Automatiska säkerhetskopior</string>
+    <string name="auto_backup_summary">Säkerhetskopiera automatiskt din vagnsdata dagligen.</string>
+    <string name="backup_successful_detail">Säkerhetskopiering skapades framgångsrikt!
+Plats: %s</string>
+    <string name="backup_cancelled_by_user">Säkerhetskopiering avbröts av användaren.</string>
+    <string name="backup_failed">Säkerhetskopiering misslyckades: %s</string>
+    <string name="unknown_error">Okänt fel</string>
+    <string name="unknown_location">Okänd plats</string>
+    <string name="restore_successful_detail">Data återställdes framgångsrikt från säkerhetskopiering.</string>
+    <string name="restore_failed">Återställ misslyckades: %s</string>
+    <string name="restore_cancelled_by_user">Återställ avbruten av användaren.</string>
 
     <string name="summary_preference_settings_about">Läs mer om Varukorgsberäknaren</string>
 
