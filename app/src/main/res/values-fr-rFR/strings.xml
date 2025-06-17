@@ -26,7 +26,7 @@
     <string name="content_description_voice_search">Recherche vocale</string>
     <string name="voice_search_prompt">Parlez maintenant…</string>
     <string name="voice_recognition_not_available">Reconnaissance vocale non disponible</string>
-    <string name="content_description_more_options">Plus d'options</string>
+    <string name="content_description_more_options">Plus d\'options</string>
     <string name="import_shared_cart">Importer le panier partagé</string>
     <string name="default_sort">Ordre par défaut</string>
     <string name="date">Les plus anciens en premier</string>
