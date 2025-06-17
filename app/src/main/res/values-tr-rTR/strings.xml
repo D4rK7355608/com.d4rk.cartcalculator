@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">Tercih ettiğiniz para birimini seçin</string>
     <string name="select_currency_icon_description">Para birimi seçimi için simge</string>
 
+    <string name="search">Aramak</string>
+    <string name="search_placeholder_focused">Aramak…</string>
+    <string name="search_placeholder_refine">Aramanızı hassaslaştırın…</string>
+    <string name="search_placeholder_default">Arabalarda arama</string>
+    <string name="content_description_back">Geri</string>
+    <string name="content_description_open_menu">Açık Menü</string>
+    <string name="content_description_clear_search">Arama</string>
+    <string name="content_description_voice_search">Sesli arama</string>
+    <string name="voice_search_prompt">Şimdi konuşun…</string>
+    <string name="voice_recognition_not_available">Ses tanıma mevcut değil</string>
+    <string name="content_description_more_options">Daha Fazla Seçenekler</string>
     <string name="import_shared_cart">Paylaşılan Sepeti İçe Aktar</string>
     <string name="default_sort">Varsayılan Sıralama</string>
     <string name="date">En eskiden yeniye</string>

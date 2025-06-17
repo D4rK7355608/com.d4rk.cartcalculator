@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">Выберите предпочитаемую валюту</string>
     <string name="select_currency_icon_description">Значок для выбора валюты</string>
 
+    <string name="search">Поиск</string>
+    <string name="search_placeholder_focused">Поиск…</string>
+    <string name="search_placeholder_refine">Уточните свой поиск ...</string>
+    <string name="search_placeholder_default">Поиск в тележках</string>
+    <string name="content_description_back">Назад</string>
+    <string name="content_description_open_menu">Открытое меню</string>
+    <string name="content_description_clear_search">Чистый поиск</string>
+    <string name="content_description_voice_search">Голосовой поиск</string>
+    <string name="voice_search_prompt">Говорите сейчас…</string>
+    <string name="voice_recognition_not_available">Распознавание голоса недоступно</string>
+    <string name="content_description_more_options">Больше вариантов</string>
     <string name="import_shared_cart">Импортировать общий корзину</string>
     <string name="default_sort">Сортировка по умолчанию</string>
     <string name="date">Сначала старые</string>

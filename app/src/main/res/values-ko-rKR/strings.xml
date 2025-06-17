@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">통화 선택 아이콘</string>
 
     <!-- Home screen -->
+    <string name="search">찾다</string>
+    <string name="search_placeholder_focused">찾다…</string>
+    <string name="search_placeholder_refine">검색을 개선하십시오…</string>
+    <string name="search_placeholder_default">카트로 검색하십시오</string>
+    <string name="content_description_back">뒤쪽에</string>
+    <string name="content_description_open_menu">메뉴 열기</string>
+    <string name="content_description_clear_search">명확한 검색</string>
+    <string name="content_description_voice_search">음성 검색</string>
+    <string name="voice_search_prompt">지금 말하세요…</string>
+    <string name="voice_recognition_not_available">음성 인식을 사용할 수 없습니다</string>
+    <string name="content_description_more_options">더 많은 옵션</string>
     <string name="import_shared_cart">공유된 장바구니 가져오기</string>
     <string name="default_sort">기본 정렬</string>
     <string name="date">오래된 순</string>

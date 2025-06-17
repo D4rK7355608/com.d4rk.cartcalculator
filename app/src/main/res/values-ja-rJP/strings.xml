@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">ご希望の通貨を選択してください</string>
     <string name="select_currency_icon_description">通貨選択アイコン</string>
 
+    <string name="search">検索</string>
+    <string name="search_placeholder_focused">検索…</string>
+    <string name="search_placeholder_refine">検索を改良してください…</string>
+    <string name="search_placeholder_default">カートで検索します</string>
+    <string name="content_description_back">戻る</string>
+    <string name="content_description_open_menu">メニューを開きます</string>
+    <string name="content_description_clear_search">クリア検索</string>
+    <string name="content_description_voice_search">音声検索</string>
+    <string name="voice_search_prompt">今話せ…</string>
+    <string name="voice_recognition_not_available">音声認識は利用できません</string>
+    <string name="content_description_more_options">その他のオプション</string>
     <string name="import_shared_cart">共有カートをインポート</string>
     <string name="default_sort">デフォルトの順序</string>
     <string name="date">古い順</string>

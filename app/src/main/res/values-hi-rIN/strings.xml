@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">अपनी पसंदीदा मुद्रा चुनें</string>
     <string name="select_currency_icon_description">मुद्रा चुनने के लिए आइकन</string>
 
+    <string name="search">खोज</string>
+    <string name="search_placeholder_focused">खोजना…</string>
+    <string name="search_placeholder_refine">अपनी खोज को परिष्कृत करें ...</string>
+    <string name="search_placeholder_default">गाड़ियों में खोजें</string>
+    <string name="content_description_back">पीछे</string>
+    <string name="content_description_open_menu">खुला मेनू</string>
+    <string name="content_description_clear_search">स्पष्ट खोज</string>
+    <string name="content_description_voice_search">आवाज खोज</string>
+    <string name="voice_search_prompt">अब बोलो…</string>
+    <string name="voice_recognition_not_available">आवाज की पहचान उपलब्ध नहीं है</string>
+    <string name="content_description_more_options">अधिक विकल्प</string>
     <string name="import_shared_cart">साझा कार्ट आयात करें</string>
     <string name="default_sort">डिफ़ॉल्ट क्रम</string>
     <string name="date">सबसे पुराने पहले</string>

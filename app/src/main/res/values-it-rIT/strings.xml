@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">Scegli la tua valuta preferita</string>
     <string name="select_currency_icon_description">Icona per la selezione della valuta</string>
 
+    <string name="search">Ricerca</string>
+    <string name="search_placeholder_focused">Ricerca…</string>
+    <string name="search_placeholder_refine">Raffina la tua ricerca ...</string>
+    <string name="search_placeholder_default">Cerca nei carrelli</string>
+    <string name="content_description_back">Indietro</string>
+    <string name="content_description_open_menu">Menu aperto</string>
+    <string name="content_description_clear_search">Ricerca chiara</string>
+    <string name="content_description_voice_search">Ricerca vocale</string>
+    <string name="voice_search_prompt">Parla adesso…</string>
+    <string name="voice_recognition_not_available">Riconoscimento vocale non disponibile</string>
+    <string name="content_description_more_options">Più opzioni</string>
     <string name="import_shared_cart">Importa carrello condiviso</string>
     <string name="default_sort">Ordine predefinito</string>
     <string name="date">Più vecchi prima</string>

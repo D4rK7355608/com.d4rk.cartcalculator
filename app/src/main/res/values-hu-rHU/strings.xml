@@ -16,6 +16,17 @@
     <string name="onboarding_summary_select_currency_placeholder">Válaszd ki a preferált pénznemet</string>
     <string name="select_currency_icon_description">Ikon pénznem kiválasztásához</string>
 
+    <string name="search">Keresés</string>
+    <string name="search_placeholder_focused">Keresés…</string>
+    <string name="search_placeholder_refine">Finomítsa a keresést ...</string>
+    <string name="search_placeholder_default">Keresés kocsikban</string>
+    <string name="content_description_back">Vissza</string>
+    <string name="content_description_open_menu">Nyissa meg a menüt</string>
+    <string name="content_description_clear_search">Átkutatás</string>
+    <string name="content_description_voice_search">Hangkeresés</string>
+    <string name="voice_search_prompt">Beszélj most ...</string>
+    <string name="voice_recognition_not_available">A hangfelismerés nem áll rendelkezésre</string>
+    <string name="content_description_more_options">További lehetőségek</string>
     <string name="import_shared_cart">Megosztott kosár importálása</string>
     <string name="default_sort">Alapértelmezett sorrend</string>
     <string name="date">Legrégebbi elöl</string>

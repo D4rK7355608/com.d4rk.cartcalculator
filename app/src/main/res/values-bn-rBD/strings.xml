@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">মুদ্রা নির্বাচনের জন্য আইকন</string>
 
     <!-- Home screen -->
+    <string name="search">অনুসন্ধান</string>
+    <string name="search_placeholder_focused">অনুসন্ধান…</string>
+    <string name="search_placeholder_refine">আপনার অনুসন্ধান পরিমার্জন…</string>
+    <string name="search_placeholder_default">কার্টে অনুসন্ধান করুন</string>
+    <string name="content_description_back">পিছনে</string>
+    <string name="content_description_open_menu">খোলা মেনু</string>
+    <string name="content_description_clear_search">পরিষ্কার অনুসন্ধান</string>
+    <string name="content_description_voice_search">ভয়েস অনুসন্ধান</string>
+    <string name="voice_search_prompt">এখন কথা বলুন…</string>
+    <string name="voice_recognition_not_available">ভয়েস স্বীকৃতি পাওয়া যায় না</string>
+    <string name="content_description_more_options">আরও বিকল্প</string>
     <string name="import_shared_cart">শেয়ার করা কার্ট ইম্পোর্ট করুন</string>
     <string name="default_sort">ডিফল্ট ক্রম</string>
     <string name="date">পুরানো প্রথমে</string>

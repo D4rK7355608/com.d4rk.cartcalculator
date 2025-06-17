@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">Icon para sa pagpili ng currency</string>
 
     <!-- Home screen -->
+    <string name="search">Maghanap</string>
+    <string name="search_placeholder_focused">Maghanap…</string>
+    <string name="search_placeholder_refine">Pinuhin ang iyong paghahanap ...</string>
+    <string name="search_placeholder_default">Maghanap sa mga cart</string>
+    <string name="content_description_back">Balik</string>
+    <string name="content_description_open_menu">Buksan ang menu</string>
+    <string name="content_description_clear_search">Malinaw na paghahanap</string>
+    <string name="content_description_voice_search">Paghahanap ng boses</string>
+    <string name="voice_search_prompt">Magsalita ngayon ...</string>
+    <string name="voice_recognition_not_available">Hindi magagamit ang pagkilala sa boses</string>
+    <string name="content_description_more_options">Higit pang mga pagpipilian</string>
     <string name="import_shared_cart">I-import ang Ibinahaging Cart</string>
     <string name="default_sort">Default na Pagkakasunud-sunod</string>
     <string name="date">Pinakaluma Muna</string>

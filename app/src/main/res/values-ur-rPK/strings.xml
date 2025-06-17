@@ -17,6 +17,17 @@
     <string name="select_currency_icon_description">کرنسی منتخب کرنے کے لیے آئیکن</string>
 
     <!-- Home screen -->
+    <string name="search">تلاش</string>
+    <string name="search_placeholder_focused">تلاش…</string>
+    <string name="search_placeholder_refine">اپنی تلاش کو بہتر بنائیں…</string>
+    <string name="search_placeholder_default">گاڑیوں میں تلاش کریں</string>
+    <string name="content_description_back">واپس</string>
+    <string name="content_description_open_menu">مینو کھولیں</string>
+    <string name="content_description_clear_search">واضح تلاش</string>
+    <string name="content_description_voice_search">آواز کی تلاش</string>
+    <string name="voice_search_prompt">اب بولیں…</string>
+    <string name="voice_recognition_not_available">آواز کی پہچان دستیاب نہیں ہے</string>
+    <string name="content_description_more_options">مزید اختیارات</string>
     <string name="import_shared_cart">مشترکہ کارٹ درآمد کریں</string>
     <string name="default_sort">پہلے سے طے شدہ ترتیب</string>
     <string name="date">سب سے پرانا پہلے</string>
