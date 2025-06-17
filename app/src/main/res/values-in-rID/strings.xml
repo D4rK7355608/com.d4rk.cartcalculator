@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Tetapkan mata uang pilihan Anda untuk menampilkan harga</string>
     <string name="dialog_currency_subtitle">Pilih mata uang pilihan Anda</string>
     <string name="dialog_info_currency">Pilihan mata uang ini akan digunakan di seluruh platform untuk menampilkan harga produk, memproses transaksi, dan memberikan pengalaman berbelanja yang lebih dipersonalisasi</string>
+    <string name="sort_order_preference">Urutan Penyortiran Keranjang</string>
+    <string name="sort_order_summary">Pilih bagaimana keranjang diurutkan</string>
+    <string name="sort_order_dialog_title">Pilih urutan penyortiran</string>
+    <string name="save">Simpan</string>
     <string name="open_carts_after_creation">Buka Keranjang Setelah Dibuat</string>
     <string name="summary_preference_settings_open_carts_after_creation">Buka keranjang secara otomatis segera setelah dibuat.</string>
 

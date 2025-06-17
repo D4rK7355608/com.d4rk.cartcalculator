@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Setează moneda preferată pentru afișarea prețurilor</string>
     <string name="dialog_currency_subtitle">Selectează moneda preferată</string>
     <string name="dialog_info_currency">Această selecție de monedă va fi utilizată pe platformă pentru afișarea prețurilor produselor, procesarea tranzacțiilor și oferirea unei experiențe de cumpărături mai personalizate</string>
+    <string name="sort_order_preference">Ordinea de sortare a coșurilor</string>
+    <string name="sort_order_summary">Alege cum sunt sortate coșurile</string>
+    <string name="sort_order_dialog_title">Selectează ordinea de sortare</string>
+    <string name="save">Salvează</string>
     <string name="open_carts_after_creation">Deschide coșurile după creare</string>
     <string name="summary_preference_settings_open_carts_after_creation">Deschide automat un coș imediat după ce este creat.</string>
 

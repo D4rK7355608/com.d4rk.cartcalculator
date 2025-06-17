@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Définissez votre devise préférée pour l\'affichage des prix</string>
     <string name="dialog_currency_subtitle">Sélectionnez votre devise préférée</string>
     <string name="dialog_info_currency">Cette sélection de devise sera utilisée sur toute la plateforme pour afficher les prix des produits, traiter les transactions et offrir une expérience d\'achat plus personnalisée</string>
+    <string name="sort_order_preference">Ordre de tri du panier</string>
+    <string name="sort_order_summary">Choisissez comment les paniers sont triés</string>
+    <string name="sort_order_dialog_title">Sélectionnez l'ordre de tri</string>
+    <string name="save">Enregistrer</string>
     <string name="open_carts_after_creation">Ouvrir les paniers après la création</string>
     <string name="summary_preference_settings_open_carts_after_creation">Ouvrir automatiquement un panier immédiatement après sa création.</string>
 

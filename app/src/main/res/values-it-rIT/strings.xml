@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Imposta la tua valuta preferita per la visualizzazione dei prezzi</string>
     <string name="dialog_currency_subtitle">Seleziona la tua valuta preferita</string>
     <string name="dialog_info_currency">Questa selezione di valuta verrà utilizzata su tutta la piattaforma per visualizzare i prezzi dei prodotti, elaborare le transazioni e fornire un\'esperienza di acquisto più personalizzata</string>
+    <string name="sort_order_preference">Ordine di ordinamento dei carrelli</string>
+    <string name="sort_order_summary">Scegli come vengono ordinati i carrelli</string>
+    <string name="sort_order_dialog_title">Seleziona l'ordine di ordinamento</string>
+    <string name="save">Salva</string>
     <string name="open_carts_after_creation">Apri carrelli dopo la creazione</string>
     <string name="summary_preference_settings_open_carts_after_creation">Apri automaticamente un carrello subito dopo la sua creazione.</string>
 

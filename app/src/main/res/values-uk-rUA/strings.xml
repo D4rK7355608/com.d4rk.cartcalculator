@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Встановіть бажану валюту для відображення цін</string>
     <string name="dialog_currency_subtitle">Виберіть бажану валюту</string>
     <string name="dialog_info_currency">Цей вибір валюти буде використовуватися на всій платформі для відображення цін на продукти, обробки транзакцій і забезпечення більш персоналізованого досвіду покупок</string>
+    <string name="sort_order_preference">Порядок сортування кошиків</string>
+    <string name="sort_order_summary">Виберіть, як сортувати кошики</string>
+    <string name="sort_order_dialog_title">Виберіть порядок сортування</string>
+    <string name="save">Зберегти</string>
     <string name="open_carts_after_creation">Відкривати кошики після створення</string>
     <string name="summary_preference_settings_open_carts_after_creation">Автоматично відкривати кошик одразу після його створення.</string>
 

@@ -96,6 +96,10 @@
     <string name="summary_preference_settings_currency">قیمتیں دکھانے کے لیے اپنی ترجیحی کرنسی سیٹ کریں</string>
     <string name="dialog_currency_subtitle">اپنی ترجیحی کرنسی منتخب کریں</string>
     <string name="dialog_info_currency">یہ کرنسی انتخاب پلیٹ فارم پر مصنوعات کی قیمتیں دکھانے، لین دین پر کارروائی کرنے، اور زیادہ ذاتی نوعیت کا خریداری کا تجربہ فراہم کرنے کے لیے استعمال کیا جائے گا</string>
+    <string name="sort_order_preference">کارٹ ترتیب کا آرڈر</string>
+    <string name="sort_order_summary">کارٹ کس ترتیب سے لگیں گے منتخب کریں</string>
+    <string name="sort_order_dialog_title">ترتیب منتخب کریں</string>
+    <string name="save">محفوظ کریں</string>
     <string name="open_carts_after_creation">بنانے کے بعد کارٹس کھولیں</string>
     <string name="summary_preference_settings_open_carts_after_creation">بنانے کے فوراً بعد کارٹ خود بخود کھولیں۔</string>
 

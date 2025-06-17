@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">मूल्य प्रदर्शित करने के लिए अपनी पसंदीदा मुद्रा सेट करें</string>
     <string name="dialog_currency_subtitle">अपनी पसंदीदा मुद्रा चुनें</string>
     <string name="dialog_info_currency">इस मुद्रा चयन का उपयोग पूरे प्लेटफ़ॉर्म पर उत्पाद की कीमतें प्रदर्शित करने, लेन-देन को संसाधित करने और अधिक व्यक्तिगत खरीदारी अनुभव प्रदान करने के लिए किया जाएगा</string>
+    <string name="sort_order_preference">कार्ट छंटाई क्रम</string>
+    <string name="sort_order_summary">निर्धारित करें कि कार्ट कैसे छांटे जाएं</string>
+    <string name="sort_order_dialog_title">छंटाई क्रम चुनें</string>
+    <string name="save">सहेजें</string>
     <string name="open_carts_after_creation">निर्माण के बाद कार्ट खोलें</string>
     <string name="summary_preference_settings_open_carts_after_creation">कार्ट बनते ही उसे अपने आप खोलें।</string>
 

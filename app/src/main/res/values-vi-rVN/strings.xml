@@ -96,6 +96,10 @@
     <string name="summary_preference_settings_currency">Đặt đơn vị tiền tệ ưa thích của bạn để hiển thị giá</string>
     <string name="dialog_currency_subtitle">Chọn đơn vị tiền tệ ưa thích của bạn</string>
     <string name="dialog_info_currency">Lựa chọn đơn vị tiền tệ này sẽ được sử dụng trên toàn nền tảng để hiển thị giá sản phẩm, xử lý giao dịch và cung cấp trải nghiệm mua sắm được cá nhân hóa hơn</string>
+    <string name="sort_order_preference">Thứ tự sắp xếp giỏ hàng</string>
+    <string name="sort_order_summary">Chọn cách sắp xếp các giỏ hàng</string>
+    <string name="sort_order_dialog_title">Chọn thứ tự sắp xếp</string>
+    <string name="save">Lưu</string>
     <string name="open_carts_after_creation">Mở giỏ hàng sau khi tạo</string>
     <string name="summary_preference_settings_open_carts_after_creation">Tự động mở giỏ hàng ngay sau khi được tạo.</string>
 

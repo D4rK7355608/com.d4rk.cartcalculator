@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Ustaw preferowaną walutę do wyświetlania cen</string>
     <string name="dialog_currency_subtitle">Wybierz preferowaną walutę</string>
     <string name="dialog_info_currency">Ten wybór waluty będzie używany na całej platformie do wyświetlania cen produktów, przetwarzania transakcji i zapewniania bardziej spersonalizowanych zakupów</string>
+    <string name="sort_order_preference">Kolejność sortowania koszyków</string>
+    <string name="sort_order_summary">Wybierz sposób sortowania koszyków</string>
+    <string name="sort_order_dialog_title">Wybierz kolejność sortowania</string>
+    <string name="save">Zapisz</string>
     <string name="open_carts_after_creation">Otwieraj koszyki po utworzeniu</string>
     <string name="summary_preference_settings_open_carts_after_creation">Automatycznie otwieraj koszyk natychmiast po jego utworzeniu.</string>
 

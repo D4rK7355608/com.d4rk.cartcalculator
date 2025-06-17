@@ -93,6 +93,10 @@
     <string name="summary_preference_settings_currency">Állítsa be a preferált pénznemet az árak megjelenítéséhez</string>
     <string name="dialog_currency_subtitle">Válassza ki a kívánt pénznemet</string>
     <string name="dialog_info_currency">Ez a pénznemválasztás a platformon mindenhol használható lesz a termékárak megjelenítéséhez, a tranzakciók feldolgozásához és a személyre szabottabb vásárlási élmény biztosításához</string>
+    <string name="sort_order_preference">Kosarak rendezési sorrendje</string>
+    <string name="sort_order_summary">Válaszd ki, hogyan legyenek rendezve a kosarak</string>
+    <string name="sort_order_dialog_title">Rendezési sorrend kiválasztása</string>
+    <string name="save">Mentés</string>
     <string name="open_carts_after_creation">Kosarak megnyitása a létrehozás után</string>
     <string name="summary_preference_settings_open_carts_after_creation">A kosár automatikus megnyitása közvetlenül a létrehozása után.</string>
 
