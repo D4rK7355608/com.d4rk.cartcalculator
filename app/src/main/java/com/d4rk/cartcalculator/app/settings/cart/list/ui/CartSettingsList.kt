@@ -78,7 +78,7 @@ fun CartSettingsList(paddingValues : PaddingValues) {
 
         item {
             SmallVerticalSpacer()
-            PreferenceCategoryItem(title = stringResource(id = R.string.backup_events_title))
+            PreferenceCategoryItem(title = stringResource(id = R.string.backup_carts_title))
             SmallVerticalSpacer()
             Column(
                 modifier = Modifier
@@ -86,12 +86,12 @@ fun CartSettingsList(paddingValues : PaddingValues) {
                     .clip(shape = RoundedCornerShape(size = SizeConstants.LargeSize))
             ) {
                 SettingsPreferenceItem(
-                    title = stringResource(id = R.string.preference_title_backup_events),
-                    summary = stringResource(id = R.string.preference_summary_backup_events),
+                    title = stringResource(id = R.string.preference_title_cart_backup),
+                    summary = stringResource(id = R.string.preference_summary_cart_backup),
                     onClick = {
                         GeneralSettingsActivity.start(
                             context = context,
-                            title = context.getString(R.string.backup_events_title),
+                            title = context.getString(R.string.backup_carts_title),
                             contentKey = SettingsConstants.KEY_SETTINGS_BACKUP_CARTS
                         )
                     }

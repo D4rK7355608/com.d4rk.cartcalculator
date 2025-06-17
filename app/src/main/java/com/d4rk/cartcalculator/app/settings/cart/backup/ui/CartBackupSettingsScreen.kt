@@ -1,4 +1,4 @@
-package com.d4rk.android.apps.weddix.app.settings.events.backup.ui
+package com.d4rk.cartcalculator.app.settings.cart.backup.ui
 
 import android.net.Uri
 import android.widget.Toast
@@ -46,7 +46,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.d4rk.android.apps.weddix.R
+import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.settings.cart.utils.helpers.DatabaseBackupHelper
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
@@ -58,7 +58,7 @@ import java.util.Date
 import java.util.Locale
 
 @Composable
-fun EventBackupSettingsScreen(
+fun CartBackupSettingsScreen(
     paddingValues: PaddingValues,
     databaseInterface: DatabaseInterface = koinInject(),
     dataStore: DataStore = koinInject()
@@ -186,7 +186,7 @@ fun EventBackupSettingsScreen(
                         "yyyyMMdd_HHmmss",
                         Locale.getDefault()
                     ).format(Date())
-                    val proposedFileName = "weddix_backup_$timestamp.json"
+                    val proposedFileName = "cart_backup_$timestamp.json"
                     createDocumentLauncher.launch(proposedFileName)
                 }
             }
