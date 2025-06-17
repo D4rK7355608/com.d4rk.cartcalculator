@@ -18,7 +18,7 @@
 
     <string name="search">खोज</string>
     <string name="search_placeholder_focused">खोजना…</string>
-    <string name="search_placeholder_refine">अपनी खोज को परिष्कृत करें ...</string>
+    <string name="search_placeholder_refine">अपनी खोज को परिष्कृत करें …</string>
     <string name="search_placeholder_default">गाड़ियों में खोजें</string>
     <string name="content_description_back">पीछे</string>
     <string name="content_description_open_menu">खुला मेनू</string>

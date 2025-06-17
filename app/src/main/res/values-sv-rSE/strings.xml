@@ -18,13 +18,13 @@
 
     <string name="search">Söka</string>
     <string name="search_placeholder_focused">Söka…</string>
-    <string name="search_placeholder_refine">Förfina din sökning ...</string>
+    <string name="search_placeholder_refine">Förfina din sökning …</string>
     <string name="search_placeholder_default">Sök i vagnar</string>
     <string name="content_description_back">Tillbaka</string>
     <string name="content_description_open_menu">Öppna meny</string>
     <string name="content_description_clear_search">Tydlig sökning</string>
     <string name="content_description_voice_search">Röstsökning</string>
-    <string name="voice_search_prompt">Tala nu ...</string>
+    <string name="voice_search_prompt">Tala nu …</string>
     <string name="voice_recognition_not_available">Röstigenkänning inte tillgängligt</string>
     <string name="content_description_more_options">Fler alternativ</string>
     <string name="import_shared_cart">Importera delad kundvagn</string>

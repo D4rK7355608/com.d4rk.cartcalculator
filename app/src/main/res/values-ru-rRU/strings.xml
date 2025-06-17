@@ -18,7 +18,7 @@
 
     <string name="search">Поиск</string>
     <string name="search_placeholder_focused">Поиск…</string>
-    <string name="search_placeholder_refine">Уточните свой поиск ...</string>
+    <string name="search_placeholder_refine">Уточните свой поиск …</string>
     <string name="search_placeholder_default">Поиск в тележках</string>
     <string name="content_description_back">Назад</string>
     <string name="content_description_open_menu">Открытое меню</string>

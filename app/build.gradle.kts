@@ -1,5 +1,4 @@
 import java.util.Properties
-import kotlin.toString
 
 plugins {
     alias(notation = libs.plugins.androidApplication)
@@ -14,7 +13,7 @@ plugins {
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
     namespace = "com.d4rk.cartcalculator"
     defaultConfig {
         applicationId = "com.d4rk.cartcalculator"
@@ -116,7 +115,7 @@ android {
 dependencies {
 
     // App Core
-    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.27") {
+    implementation(dependencyNotation = "com.github.D4rK7355608:AppToolkit:1.0.28") {
         isTransitive = true
     }
 

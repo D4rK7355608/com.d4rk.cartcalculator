@@ -17,14 +17,14 @@
     <string name="select_currency_icon_description">Икона за избор на валута</string>
 
     <string name="search">Търсене</string>
-    <string name="search_placeholder_focused">Търсене ...</string>
-    <string name="search_placeholder_refine">Прецизирайте търсенето си ...</string>
+    <string name="search_placeholder_focused">Търсене …</string>
+    <string name="search_placeholder_refine">Прецизирайте търсенето си …</string>
     <string name="search_placeholder_default">Търсене в колички</string>
     <string name="content_description_back">Назад</string>
     <string name="content_description_open_menu">Отворете менюто</string>
     <string name="content_description_clear_search">Ясно търсене</string>
     <string name="content_description_voice_search">Гласово търсене</string>
-    <string name="voice_search_prompt">Говорете сега ...</string>
+    <string name="voice_search_prompt">Говорете сега …</string>
     <string name="voice_recognition_not_available">Разпознаването на глас не е налично</string>
     <string name="content_description_more_options">Още опции</string>
     <string name="import_shared_cart">Импортиране на споделена количка</string>

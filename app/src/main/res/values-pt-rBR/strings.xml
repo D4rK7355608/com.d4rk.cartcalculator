@@ -18,7 +18,7 @@
 
     <string name="search">Procurar</string>
     <string name="search_placeholder_focused">Procurar…</string>
-    <string name="search_placeholder_refine">Refine sua pesquisa ...</string>
+    <string name="search_placeholder_refine">Refine sua pesquisa …</string>
     <string name="search_placeholder_default">Pesquise em carrinhos</string>
     <string name="content_description_back">Voltar</string>
     <string name="content_description_open_menu">Abrir menu</string>

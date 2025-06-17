@@ -19,7 +19,7 @@
     <!-- Home screen -->
     <string name="search">Buscar</string>
     <string name="search_placeholder_focused">Buscar…</string>
-    <string name="search_placeholder_refine">Refina tu búsqueda ...</string>
+    <string name="search_placeholder_refine">Refina tu búsqueda …</string>
     <string name="search_placeholder_default">Buscar en carros</string>
     <string name="content_description_back">Atrás</string>
     <string name="content_description_open_menu">Menú abierto</string>

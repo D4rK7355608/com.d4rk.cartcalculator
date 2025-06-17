@@ -19,7 +19,7 @@
     <!-- Home screen -->
     <string name="search">يبحث</string>
     <string name="search_placeholder_focused">يبحث…</string>
-    <string name="search_placeholder_refine">صقل بحثك ...</string>
+    <string name="search_placeholder_refine">صقل بحثك …</string>
     <string name="search_placeholder_default">ابحث في العربات</string>
     <string name="content_description_back">خلف</string>
     <string name="content_description_open_menu">افتح القائمة</string>
