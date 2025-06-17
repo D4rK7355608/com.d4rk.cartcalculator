@@ -3,9 +3,9 @@ package com.d4rk.cartcalculator.app.settings.cart.utils.helpers
 import android.content.Context
 import android.net.Uri
 import com.d4rk.cartcalculator.app.settings.cart.backup.domain.data.model.AppBackupData
-import com.d4rk.android.apps.weddix.core.data.database.DatabaseInterface
-import com.d4rk.android.apps.weddix.core.data.database.table.EventDetailsTable
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -22,7 +22,7 @@ import java.util.Locale
 object DatabaseBackupHelper {
 
     private const val TAG = "DatabaseBackupHelper"
-    private const val BACKUP_FILE_PREFIX = "weddix_backup_"
+    private const val BACKUP_FILE_PREFIX = "cart_backup_"
     private const val BACKUP_FILE_EXTENSION = ".json"
 
     @OptIn(ExperimentalSerializationApi::class)
@@ -40,13 +40,13 @@ object DatabaseBackupHelper {
     ): Result<String> = withContext(Dispatchers.IO) {
         runCatching {
             println("$TAG: Starting database backup...")
-            val allEvents = database.getAllEvents()
-            val allEventDetails = mutableListOf<EventDetailsTable>()
-            allEvents.forEach { event ->
-                allEventDetails.addAll(database.getItemsByEventId(event.eventId))
+            val allCarts = database.getAllCarts()
+            val allCartItems = mutableListOf<ShoppingCartItemsTable>()
+            allCarts.forEach { cart ->
+                allCartItems.addAll(database.getItemsByCartId(cart.cartId))
             }
 
-            val backupData = AppBackupData(events = allEvents, eventDetails = allEventDetails)
+            val backupData = AppBackupData(carts = allCarts, cartItems = allCartItems)
             val jsonString = json.encodeToString(backupData)
 
             val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
@@ -100,17 +100,16 @@ object DatabaseBackupHelper {
 
             val backupData = json.decodeFromString<AppBackupData>(jsonString)
 
-            println("$TAG: Inserting/Updating ${backupData.events.size} events...")
+            println("$TAG: Inserting/Updating ${backupData.carts.size} carts...")
 
-            for (event in backupData.events) {
-
-                database.insertEvent(event)
+            for (cart in backupData.carts) {
+                database.insertCart(cart)
             }
 
-            println("$TAG: Inserting/Updating ${backupData.eventDetails.size} event details...")
+            println("$TAG: Inserting/Updating ${backupData.cartItems.size} cart items...")
 
-            for (detail in backupData.eventDetails) {
-                database.insertItem(detail)
+            for (item in backupData.cartItems) {
+                database.insertItem(item)
             }
 
             println("$TAG: Database restore (add/update mode) completed successfully.")

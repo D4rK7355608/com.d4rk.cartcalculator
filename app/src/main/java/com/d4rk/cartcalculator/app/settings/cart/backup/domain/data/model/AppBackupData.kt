@@ -7,6 +7,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class AppBackupData(
-    val events: List<ShoppingCartTable>,
-    val eventDetails: List<ShoppingCartItemsTable>
+    val carts: List<ShoppingCartTable>,
+    val cartItems: List<ShoppingCartItemsTable>
 )
