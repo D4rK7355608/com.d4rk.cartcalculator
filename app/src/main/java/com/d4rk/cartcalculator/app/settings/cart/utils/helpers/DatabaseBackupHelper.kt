@@ -5,11 +5,12 @@ import android.net.Uri
 import com.d4rk.cartcalculator.app.settings.cart.backup.domain.data.model.AppBackupData
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
-import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromStream
+import kotlinx.serialization.json.encodeToStream
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -30,6 +31,7 @@ object DatabaseBackupHelper {
         explicitNulls = false
     }
 
+    @OptIn(ExperimentalSerializationApi::class)
     suspend fun createBackup(
         context: Context,
         database: DatabaseInterface,
@@ -75,6 +77,7 @@ object DatabaseBackupHelper {
         }
     }
 
+    @OptIn(ExperimentalSerializationApi::class)
     suspend fun restoreBackup(
         context: Context,
         database: DatabaseInterface,
