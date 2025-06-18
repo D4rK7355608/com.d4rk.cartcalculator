@@ -10,10 +10,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
-import java.io.BufferedReader
 import java.io.File
 import java.io.FileOutputStream
-import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -46,7 +44,6 @@ object DatabaseBackupHelper {
             }
 
             val backupData = AppBackupData(carts = allCarts, cartItems = allCartItems)
-            val jsonString = json.encodeToString(backupData)
 
             val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
             val fileName = "$BACKUP_FILE_PREFIX$timestamp$BACKUP_FILE_EXTENSION"
@@ -55,7 +52,7 @@ object DatabaseBackupHelper {
 
             if (outputFileUri != null) {
                 context.contentResolver.openOutputStream(outputFileUri)?.use { outputStream ->
-                    outputStream.write(jsonString.toByteArray())
+                    json.encodeToStream(backupData, outputStream)
                     filePath = outputFileUri.path ?: fileName
                     println("$TAG: Backup successfully written to SAF URI: $outputFileUri")
                 } ?: throw Exception("Failed to open output stream for SAF URI.")
@@ -67,7 +64,7 @@ object DatabaseBackupHelper {
                 }
                 val backupFile = File(backupDir, fileName)
                 FileOutputStream(backupFile).use { fos ->
-                    fos.write(jsonString.toByteArray())
+                    json.encodeToStream(backupData, fos)
                 }
                 filePath = backupFile.absolutePath
                 println("$TAG: Backup successfully created at: $filePath")
@@ -86,18 +83,9 @@ object DatabaseBackupHelper {
         runCatching {
             println("$TAG: Starting database restore (add/update mode) from URI: $inputFileUri")
 
-            val jsonString =
-                context.contentResolver.openInputStream(inputFileUri)?.use { inputStream ->
-                    BufferedReader(InputStreamReader(inputStream)).use { reader ->
-                        reader.readText()
-                    }
-                } ?: throw Exception("Failed to open input stream for SAF URI or file is empty.")
-
-            if (jsonString.isBlank()) {
-                throw Exception("Backup file is empty.")
-            }
-
-            val backupData = json.decodeFromString<AppBackupData>(jsonString)
+            val backupData = context.contentResolver.openInputStream(inputFileUri)?.use { inputStream ->
+                json.decodeFromStream<AppBackupData>(inputStream)
+            } ?: throw Exception("Failed to open input stream for SAF URI or file is empty.")
 
             println("$TAG: Inserting/Updating ${backupData.carts.size} carts...")
 
