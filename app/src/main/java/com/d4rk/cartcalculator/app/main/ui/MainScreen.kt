@@ -125,14 +125,18 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
     val context : Context = LocalContext.current
     val navBackStackEntry : NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
     val currentRoute : String? = navBackStackEntry?.destination?.route
-
+    val isSearchScreen : Boolean = currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
     var currentSearchQuery by rememberSaveable { mutableStateOf("") }
 
     Scaffold(modifier = Modifier.fillMaxSize().imePadding().nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection) , topBar = {
         MainTopAppBar(
-            navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
+            navigationIcon = if (isSearchScreen) Icons.AutoMirrored.Filled.ArrowBack else if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
             onNavigationIconClick = {
-                mainScreenState.coroutineScope.launch { isRailExpanded = !isRailExpanded }
+                if (isSearchScreen) {
+                    mainScreenState.navController.popBackStack()
+                } else {
+                    mainScreenState.coroutineScope.launch { isRailExpanded = !isRailExpanded }
+                }
             },
             scrollBehavior = mainScreenState.scrollBehavior,
             currentSearchQuery = currentSearchQuery,
