@@ -63,7 +63,7 @@ fun SearchScreen(
         screenState = screenStateValue,
         onLoading = { LoadingScreen() },
         onEmpty = {
-            NoDataScreen(text = R.string.no_carts_available, icon = Icons.Outlined.RemoveShoppingCart)
+            NoDataScreen(textMessage = R.string.no_carts_available, icon = Icons.Outlined.RemoveShoppingCart)
         },
         onSuccess = { successData ->
             SearchScreenContent(

@@ -32,6 +32,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.update
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HomeViewModel(
@@ -182,7 +183,7 @@ class HomeViewModel(
                         updateUi { copy(carts = updatedList) }
                     }
 
-                    sortCarts(sortOptionCache)
+                    sortCarts(sortOption = sortOptionCache)
 
                     postSnackbar(UiTextHelper.StringResource(R.string.cart_deleted_successfully) , false)
                 }

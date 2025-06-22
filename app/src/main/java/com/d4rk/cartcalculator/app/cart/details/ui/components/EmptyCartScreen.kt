@@ -20,7 +20,7 @@ fun EmptyCartScreen(modifier : Modifier = Modifier) {
     Column(modifier = modifier , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.SpaceBetween) {
         LazyColumn(modifier = Modifier.weight(1f) , horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement = Arrangement.Center) {
             item {
-                NoDataScreen(text = R.string.your_shopping_cart_is_empty , icon = Icons.Outlined.ShoppingCart)
+                NoDataScreen(textMessage = R.string.your_shopping_cart_is_empty , icon = Icons.Outlined.ShoppingCart)
             }
         }
         InfoMessageSection(message = stringResource(id = R.string.empty_cart_info_message) , modifier = Modifier.padding(all = SizeConstants.LargeSize))
