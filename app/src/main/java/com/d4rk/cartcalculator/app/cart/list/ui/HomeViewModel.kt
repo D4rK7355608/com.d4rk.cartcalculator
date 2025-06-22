@@ -29,9 +29,9 @@ import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import com.d4rk.cartcalculator.core.domain.usecases.cart.GenerateCartShareLinkUseCase
 import com.d4rk.cartcalculator.core.utils.extensions.asUiText
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.update
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class HomeViewModel(
@@ -57,6 +57,13 @@ class HomeViewModel(
                 current.copy(currentSort = savedSort)
             }
             onEvent(HomeEvent.LoadCarts)
+        }
+        launch {
+            dataStore.sortOption.drop(1).collect { option ->
+                if (option != sortOptionCache) {
+                    sortCarts(option, persist = false)
+                }
+            }
         }
     }
 
@@ -136,7 +143,7 @@ class HomeViewModel(
         }
     }
 
-    private fun sortCarts(sortOption : SortOption) {
+    private fun sortCarts(sortOption : SortOption, persist: Boolean = true) {
         launch(dispatcherProvider.default) {
             val currentData = screenState.value.data ?: return@launch
             val sorted = when (sortOption) {
@@ -150,7 +157,9 @@ class HomeViewModel(
                 copy(carts = sorted.toMutableList() , currentSort = sortOption)
             }
             sortOptionCache = sortOption
-            launch(dispatcherProvider.io) { dataStore.saveSortOption(sortOption) }
+            if (persist) {
+                launch(dispatcherProvider.io) { dataStore.saveSortOption(sortOption) }
+            }
         }
     }
 
