@@ -129,7 +129,7 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
 
     var currentSearchQuery by rememberSaveable { mutableStateOf("") }
 
-    Scaffold(modifier = Modifier.fillMaxSize() , topBar = {
+    Scaffold(modifier = Modifier.fillMaxSize().imePadding().nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection) , topBar = {
         MainTopAppBar(
             navigationIcon = if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
             onNavigationIconClick = {
@@ -143,11 +143,13 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
         )
     } , floatingActionButton = {
         FloatingActionButtonsColumn(mainScreenState = mainScreenState, homeViewModel = homeViewModel)
-    }) { paddingValues : PaddingValues ->
+    }, snackbarHost = {
+            DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
+        }) { paddingValues : PaddingValues ->
         LeftNavigationRail(drawerItems = mainScreenState.uiState.navigationDrawerItems , currentRoute = currentRoute , isRailExpanded = isRailExpanded , paddingValues = paddingValues , onDrawerItemClick = { item : NavigationDrawerItem ->
             handleNavigationItemClick(context = context , item = item)
         } , content = {
-            HomeScreen(paddingValues = paddingValues , viewModel = homeViewModel , onFabVisibilityChanged = {
+            HomeScreen(paddingValues = PaddingValues() , viewModel = homeViewModel , onFabVisibilityChanged = {
                 mainScreenState.isFabVisible.value = it
             } , snackBarHostState = mainScreenState.snackbarHostState , screenState = homeScreenState)
         })
