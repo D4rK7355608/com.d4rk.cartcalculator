@@ -34,7 +34,6 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.ScreenHelper
 import com.d4rk.cartcalculator.app.cart.list.domain.model.ui.UiHomeData
-import com.d4rk.cartcalculator.app.cart.list.ui.HomeScreen
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
 import com.d4rk.cartcalculator.app.main.domain.model.MainScreenState
 import com.d4rk.cartcalculator.app.main.domain.model.UiMainScreen
@@ -146,12 +145,26 @@ fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel 
     }, snackbarHost = {
             DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
         }) { paddingValues : PaddingValues ->
-        LeftNavigationRail(drawerItems = mainScreenState.uiState.navigationDrawerItems , currentRoute = currentRoute , isRailExpanded = isRailExpanded , paddingValues = paddingValues , onDrawerItemClick = { item : NavigationDrawerItem ->
-            handleNavigationItemClick(context = context , item = item)
-        } , content = {
-            HomeScreen(paddingValues = PaddingValues() , viewModel = homeViewModel , onFabVisibilityChanged = {
-                mainScreenState.isFabVisible.value = it
-            } , snackBarHostState = mainScreenState.snackbarHostState , screenState = homeScreenState)
-        })
+        LeftNavigationRail(
+            drawerItems = mainScreenState.uiState.navigationDrawerItems,
+            currentRoute = currentRoute,
+            isRailExpanded = isRailExpanded,
+            paddingValues = paddingValues,
+            onDrawerItemClick = { item: NavigationDrawerItem ->
+                handleNavigationItemClick(context = context, item = item)
+            },
+            content = {
+                AppNavigationHost(
+                    navController = mainScreenState.navController,
+                    snackBarHostState = mainScreenState.snackbarHostState,
+                    onFabVisibilityChanged = { mainScreenState.isFabVisible.value = it },
+                    paddingValues = PaddingValues(),
+                    homeViewModel = homeViewModel,
+                    homeScreenState = homeScreenState,
+                    currentSearchQuery = currentSearchQuery,
+                    onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery }
+                )
+            }
+        )
     }
 }

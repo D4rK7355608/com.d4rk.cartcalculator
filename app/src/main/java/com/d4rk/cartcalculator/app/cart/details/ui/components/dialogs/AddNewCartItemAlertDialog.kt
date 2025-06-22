@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.app.cart.details.ui.components.dialogs
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -66,7 +67,7 @@ fun AddNewCartItemAlertDialogContent(
                           singleLine = true ,
                           keyboardOptions = KeyboardOptions.Default.copy(capitalization = KeyboardCapitalization.Sentences , imeAction = ImeAction.Next) ,
                           keyboardActions = KeyboardActions(onNext = { priceFocus.requestFocus() }) ,
-                          modifier = Modifier.focusRequester(focusRequester = nameFocus)
+                          modifier = Modifier.fillMaxWidth().focusRequester(focusRequester = nameFocus)
         )
 
         OutlinedTextField(
@@ -77,7 +78,7 @@ fun AddNewCartItemAlertDialogContent(
                           singleLine = true ,
                           keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number , imeAction = ImeAction.Next) ,
                           keyboardActions = KeyboardActions(onNext = { quantityFocus.requestFocus() }) ,
-                          modifier = Modifier.focusRequester(focusRequester = priceFocus)
+                          modifier = Modifier.fillMaxWidth().focusRequester(focusRequester = priceFocus)
         )
 
         OutlinedTextField(
@@ -88,7 +89,7 @@ fun AddNewCartItemAlertDialogContent(
                           singleLine = true ,
                           keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number , imeAction = ImeAction.Done) ,
                           keyboardActions = KeyboardActions(onDone = { keyboardController?.hide() }) ,
-                          modifier = Modifier.focusRequester(focusRequester = quantityFocus)
+                          modifier = Modifier.fillMaxWidth().focusRequester(focusRequester = quantityFocus)
         )
 
         MediumVerticalSpacer()

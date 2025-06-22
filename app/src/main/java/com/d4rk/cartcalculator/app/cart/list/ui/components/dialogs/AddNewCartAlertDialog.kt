@@ -1,6 +1,7 @@
 package com.d4rk.cartcalculator.app.cart.list.ui.components.dialogs
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -11,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
@@ -50,6 +52,7 @@ fun AddNewCartAlertDialogContent(
 
     Column {
         OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
             value = nameText.value ,
                           singleLine = true ,
                           onValueChange = { nameText.value = it } ,
