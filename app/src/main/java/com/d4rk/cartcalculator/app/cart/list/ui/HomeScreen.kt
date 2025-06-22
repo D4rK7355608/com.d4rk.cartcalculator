@@ -61,7 +61,7 @@ fun HomeScreen(paddingValues : PaddingValues, viewModel : HomeViewModel, onFabVi
         LoadingScreen()
     } , onEmpty = {
         onFabVisibilityChanged(true)
-        NoDataScreen(text = R.string.no_carts_available , icon = Icons.Outlined.RemoveShoppingCart)
+        NoDataScreen(textMessage = R.string.no_carts_available , icon = Icons.Outlined.RemoveShoppingCart)
     } , onSuccess = { uiState : UiHomeData ->
         HomeScreenContent(paddingValues = paddingValues , uiState = uiState , viewModel = viewModel , onFabVisibilityChanged = onFabVisibilityChanged)
     })

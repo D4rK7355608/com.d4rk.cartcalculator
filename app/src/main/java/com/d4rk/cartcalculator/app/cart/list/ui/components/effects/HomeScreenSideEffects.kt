@@ -5,7 +5,7 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableIntState
-import com.d4rk.android.libs.apptoolkit.core.ui.effects.OnResumeEffect
+import com.d4rk.android.libs.apptoolkit.core.ui.effects.OnActivityResumeEffect
 import com.d4rk.cartcalculator.app.cart.list.domain.actions.HomeEvent
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeViewModel
 import com.d4rk.cartcalculator.app.cart.list.ui.utils.constants.ui.UiConstants
@@ -45,7 +45,7 @@ fun HomeScreenSideEffects(
         onFabVisibilityChanged(isFabVisible)
     }
 
-    OnResumeEffect {
+    OnActivityResumeEffect {
         viewModel.onEvent(event = HomeEvent.LoadCarts)
     }
 }
