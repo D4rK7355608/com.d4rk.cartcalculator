@@ -49,111 +49,153 @@ import org.koin.compose.viewmodel.koinViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen() {
-    val viewModel : MainViewModel = koinViewModel()
-    val screenState : UiStateScreen<UiMainScreen> by viewModel.screenState.collectAsState()
-    val context : Context = LocalContext.current
-    val isTabletOrLandscape : Boolean = ScreenHelper.isLandscapeOrTablet(context = context)
+    val viewModel: MainViewModel = koinViewModel()
+    val screenState: UiStateScreen<UiMainScreen> by viewModel.screenState.collectAsState()
+    val context: Context = LocalContext.current
+    val isTabletOrLandscape: Boolean = ScreenHelper.isLandscapeOrTablet(context = context)
 
     val mainScreenState = MainScreenState(
-        navController = rememberNavController() ,
-        isFabVisible = remember { mutableStateOf(value = false) } ,
-        isFabExtended = remember { mutableStateOf(value = true) } ,
-        snackbarHostState = remember { SnackbarHostState() } ,
-        scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior() ,
-        coroutineScope = rememberCoroutineScope() ,
-        mainViewModel = viewModel ,
+        navController = rememberNavController(),
+        isFabVisible = remember { mutableStateOf(value = false) },
+        isFabExtended = remember { mutableStateOf(value = true) },
+        snackbarHostState = remember { SnackbarHostState() },
+        scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
+        coroutineScope = rememberCoroutineScope(),
+        mainViewModel = viewModel,
         uiState = screenState.data ?: UiMainScreen())
 
-    val homeViewModel : HomeViewModel = koinViewModel()
-    val homeScreenState : UiStateScreen<UiHomeData> by homeViewModel.uiState.collectAsState()
+    val homeViewModel: HomeViewModel = koinViewModel()
+    val homeScreenState: UiStateScreen<UiHomeData> by homeViewModel.uiState.collectAsState()
 
     LaunchedEffect(key1 = mainScreenState.scrollBehavior.state.contentOffset) {
-        mainScreenState.isFabExtended.value = mainScreenState.scrollBehavior.state.contentOffset >= 0f
+        mainScreenState.isFabExtended.value =
+            mainScreenState.scrollBehavior.state.contentOffset >= 0f
     }
 
     if (isTabletOrLandscape) {
-        MainScaffoldTabletContent(mainScreenState = mainScreenState , homeViewModel = homeViewModel , homeScreenState = homeScreenState)
-    }
-    else {
-        NavigationDrawer(mainScreenState = mainScreenState , homeViewModel = homeViewModel , homeScreenState = homeScreenState)
+        MainScaffoldTabletContent(
+            mainScreenState = mainScreenState,
+            homeViewModel = homeViewModel,
+            homeScreenState = homeScreenState
+        )
+    } else {
+        NavigationDrawer(
+            mainScreenState = mainScreenState,
+            homeViewModel = homeViewModel,
+            homeScreenState = homeScreenState
+        )
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScaffoldContent(drawerState : DrawerState , mainScreenState : MainScreenState , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData>) {
-    val navBackStackEntry : NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
-    val currentRoute : String? = navBackStackEntry?.destination?.route
-    val isSearchScreen : Boolean = currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
+fun MainScaffoldContent(
+    drawerState: DrawerState,
+    mainScreenState: MainScreenState,
+    homeViewModel: HomeViewModel,
+    homeScreenState: UiStateScreen<UiHomeData>
+) {
+    val navBackStackEntry: NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
+    val currentRoute: String? = navBackStackEntry?.destination?.route
+    val isSearchScreen: Boolean =
+        currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
 
     var currentSearchQuery by rememberSaveable { mutableStateOf("") }
 
-    Scaffold(modifier = Modifier
-        .imePadding()
-        .nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection) , topBar = {
-        MainTopAppBar(navigationIcon = if (isSearchScreen) Icons.AutoMirrored.Filled.ArrowBack else if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu , onNavigationIconClick = {
-            if (isSearchScreen) {
-                mainScreenState.navController.popBackStack()
-            }
-            else {
-                mainScreenState.coroutineScope.launch { drawerState.open() }
-            }
-        } , scrollBehavior = mainScreenState.scrollBehavior ,
+    Scaffold(
+        modifier = Modifier
+            .imePadding()
+            .nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection),
+        topBar = {
+            MainTopAppBar(
+                navigationIcon = if (isSearchScreen) Icons.AutoMirrored.Filled.ArrowBack else if (drawerState.isOpen) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
+                onNavigationIconClick = {
+                    if (isSearchScreen) {
+                        mainScreenState.navController.popBackStack()
+                    } else {
+                        mainScreenState.coroutineScope.launch { drawerState.open() }
+                    }
+                },
+                scrollBehavior = mainScreenState.scrollBehavior,
 
-            currentSearchQuery = currentSearchQuery , onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery } , navController = mainScreenState.navController , currentRoute = currentRoute)
-    } , snackbarHost = {
-        DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
-    } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState, homeViewModel = homeViewModel)
-    }) { paddingValues : PaddingValues ->
+                currentSearchQuery = currentSearchQuery,
+                onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery },
+                navController = mainScreenState.navController,
+                currentRoute = currentRoute)
+        },
+        snackbarHost = {
+            DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
+        },
+        floatingActionButton = {
+            FloatingActionButtonsColumn(
+                mainScreenState = mainScreenState,
+                homeViewModel = homeViewModel
+            )
+        }) { paddingValues: PaddingValues ->
         AppNavigationHost(
-            navController = mainScreenState.navController ,
-            snackBarHostState = mainScreenState.snackbarHostState ,
-            onFabVisibilityChanged = { mainScreenState.isFabVisible.value = it } ,
-            paddingValues = paddingValues ,
-            homeViewModel = homeViewModel ,
-            homeScreenState = homeScreenState ,
-            currentSearchQuery = currentSearchQuery ,
+            navController = mainScreenState.navController,
+            snackBarHostState = mainScreenState.snackbarHostState,
+            onFabVisibilityChanged = { mainScreenState.isFabVisible.value = it },
+            paddingValues = paddingValues,
+            homeViewModel = homeViewModel,
+            homeScreenState = homeScreenState,
+            currentSearchQuery = currentSearchQuery,
             onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery })
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScaffoldTabletContent(mainScreenState : MainScreenState , homeViewModel : HomeViewModel , homeScreenState : UiStateScreen<UiHomeData>) {
-    var isRailExpanded : Boolean by remember { mutableStateOf(value = false) }
-    val context : Context = LocalContext.current
-    val navBackStackEntry : NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
-    val currentRoute : String? = navBackStackEntry?.destination?.route
-    val isSearchScreen : Boolean = currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
+fun MainScaffoldTabletContent(
+    mainScreenState: MainScreenState,
+    homeViewModel: HomeViewModel,
+    homeScreenState: UiStateScreen<UiHomeData>
+) {
+    var isRailExpanded: Boolean by remember { mutableStateOf(value = false) }
+    val context: Context = LocalContext.current
+    val navBackStackEntry: NavBackStackEntry? by mainScreenState.navController.currentBackStackEntryAsState()
+    val currentRoute: String? = navBackStackEntry?.destination?.route
+    val isSearchScreen: Boolean =
+        currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
     var currentSearchQuery by rememberSaveable { mutableStateOf("") }
 
-    Scaffold(modifier = Modifier.fillMaxSize().imePadding().nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection) , topBar = {
-        MainTopAppBar(
-            navigationIcon = if (isSearchScreen) Icons.AutoMirrored.Filled.ArrowBack else if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
-            onNavigationIconClick = {
-                if (isSearchScreen) {
-                    mainScreenState.navController.popBackStack()
-                } else {
-                    mainScreenState.coroutineScope.launch { isRailExpanded = !isRailExpanded }
-                }
-            },
-            scrollBehavior = mainScreenState.scrollBehavior,
-            currentSearchQuery = currentSearchQuery,
-            onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery },
-            navController = mainScreenState.navController,
-            currentRoute = currentRoute
-        )
-    } , floatingActionButton = {
-        FloatingActionButtonsColumn(mainScreenState = mainScreenState, homeViewModel = homeViewModel)
-    }, snackbarHost = {
+    Scaffold(
+        modifier = Modifier
+            .fillMaxSize()
+            .imePadding()
+            .nestedScroll(connection = mainScreenState.scrollBehavior.nestedScrollConnection),
+        topBar = {
+            MainTopAppBar(
+                navigationIcon = if (isSearchScreen) Icons.AutoMirrored.Filled.ArrowBack else if (isRailExpanded) Icons.AutoMirrored.Outlined.MenuOpen else Icons.Default.Menu,
+                onNavigationIconClick = {
+                    if (isSearchScreen) {
+                        mainScreenState.navController.popBackStack()
+                    } else {
+                        mainScreenState.coroutineScope.launch { isRailExpanded = !isRailExpanded }
+                    }
+                },
+                scrollBehavior = mainScreenState.scrollBehavior,
+                currentSearchQuery = currentSearchQuery,
+                onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery },
+                navController = mainScreenState.navController,
+                currentRoute = currentRoute
+            )
+        },
+        floatingActionButton = {
+            FloatingActionButtonsColumn(
+                mainScreenState = mainScreenState,
+                homeViewModel = homeViewModel
+            )
+        },
+        snackbarHost = {
             DefaultSnackbarHost(snackbarState = mainScreenState.snackbarHostState)
-        }) { paddingValues : PaddingValues ->
+        }) { paddingValues: PaddingValues ->
         LeftNavigationRail(
             drawerItems = mainScreenState.uiState.navigationDrawerItems,
             currentRoute = currentRoute,
             isRailExpanded = isRailExpanded,
             paddingValues = paddingValues,
+            centerContent = 0.8f,
             onDrawerItemClick = { item: NavigationDrawerItem ->
                 handleNavigationItemClick(context = context, item = item)
             },
