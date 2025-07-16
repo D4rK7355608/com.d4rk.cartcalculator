@@ -44,7 +44,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.navigation.NavHostController
 import com.d4rk.android.libs.apptoolkit.app.support.ui.SupportActivity
-import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedButtonDirection
+import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedIconButtonDirection
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
@@ -76,7 +76,6 @@ fun MainTopAppBar(
     val context = LocalContext.current
     val focusManager = LocalFocusManager.current
     val focusRequester = remember { FocusRequester() }
-    var isVoiceSearchActive by remember { mutableStateOf(false) }
     var isSearchTextFieldFocused by remember { mutableStateOf(false) }
 
     val isCurrentlyOnSearchScreenPage =
@@ -99,7 +98,6 @@ fun MainTopAppBar(
                     focusRequester.requestFocus()
                 }
             }
-            isVoiceSearchActive = false
         }
 
     TopAppBar(
@@ -148,7 +146,7 @@ fun MainTopAppBar(
                 }
             })
     }, navigationIcon = {
-        AnimatedButtonDirection(
+            AnimatedIconButtonDirection(
             icon = navigationIcon,
             contentDescription = if (isCurrentlyOnSearchScreenPage) stringResource(id = R.string.content_description_back) else stringResource(
                 id = R.string.content_description_open_menu
@@ -159,7 +157,7 @@ fun MainTopAppBar(
             })
     }, actions = {
         if (isSearchTextFieldFocused || (isCurrentlyOnSearchScreenPage)) {
-            AnimatedButtonDirection(
+            AnimatedIconButtonDirection(
                 fromRight = true,
                 icon = Icons.Default.Clear,
                 contentDescription = stringResource(id = R.string.content_description_clear_search),
@@ -171,14 +169,13 @@ fun MainTopAppBar(
             val voiceSearchPromptText = stringResource(id = R.string.voice_search_prompt)
             val voiceRecognitionNotAvailableMessage =
                 stringResource(id = R.string.voice_recognition_not_available)
-            AnimatedButtonDirection(
+            AnimatedIconButtonDirection(
                 fromRight = true,
                 icon = Icons.Outlined.MicNone,
                 durationMillis = 400,
                 contentDescription = stringResource(id = R.string.content_description_voice_search),
                 onClick = {
                     runCatching {
-                        isVoiceSearchActive = true
                         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
                             putExtra(
                                 RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -191,11 +188,10 @@ fun MainTopAppBar(
                         Toast.makeText(
                             context, voiceRecognitionNotAvailableMessage, Toast.LENGTH_SHORT
                         ).show()
-                        isVoiceSearchActive = false
                     }
                 },
             )
-            AnimatedButtonDirection(
+            AnimatedIconButtonDirection(
                 fromRight = true,
                 icon = Icons.Outlined.MoreVert,
                 contentDescription = stringResource(id = R.string.content_description_more_options),

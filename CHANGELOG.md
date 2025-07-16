@@ -1,3 +1,7 @@
+# Version 2.1.1:
+
+- **Minor**: Under-the-hood improvements for a better overall app experience.
+
 # Version 2.1.0:
 
 - **New**: Sort carts your way from Settings.

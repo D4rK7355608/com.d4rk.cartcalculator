@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedButtonDirection
+import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedIconButtonDirection
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.details.domain.actions.CartEvent
 import com.d4rk.cartcalculator.app.cart.details.domain.model.ui.UiCartScreen
@@ -34,21 +34,21 @@ fun CartScreenTopAppBar(screenState : UiStateScreen<UiCartScreen> , viewModel : 
     LargeTopAppBar(title = {
         Text(text = screenState.data?.cart?.name ?: stringResource(id = R.string.shopping_cart) , modifier = Modifier.animateContentSize() , maxLines = 1 , softWrap = false , overflow = TextOverflow.Ellipsis)
     } , navigationIcon = {
-        AnimatedButtonDirection(
+        AnimatedIconButtonDirection(
             icon = Icons.AutoMirrored.Filled.ArrowBack ,
             contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.go_back) ,
             onClick = { activity.finish() } ,
         )
     } , actions = {
-        AnimatedButtonDirection(icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = {
+        AnimatedIconButtonDirection(icon = Icons.Outlined.AddShoppingCart , contentDescription = "Add Item" , onClick = {
             viewModel.onEvent(event = CartEvent.OpenNewCartItemDialog(isOpen = true))
         } , fromRight = true)
 
-        AnimatedButtonDirection(visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = {
+        AnimatedIconButtonDirection(visible = isGooglePayInstalled && cartButtonsVisible , icon = Icons.Outlined.CreditCard , contentDescription = "Open Google Pay" , onClick = {
             WalletAppsHelper.openGooglePayOrWallet(context = context)
         } , durationMillis = 400 , fromRight = true)
 
-        AnimatedButtonDirection(visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = {
+        AnimatedIconButtonDirection(visible = cartButtonsVisible , icon = Icons.Outlined.Share , durationMillis = 500 , contentDescription = "Share Cart" , onClick = {
             viewModel.onEvent(event = CartEvent.GenerateCartShareLink(cartId = screenState.data?.cart?.cartId ?: 0))
         } , fromRight = true)
     } , scrollBehavior = scrollBehavior)
