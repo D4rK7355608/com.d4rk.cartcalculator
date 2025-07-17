@@ -1,21 +1,20 @@
 package com.d4rk.cartcalculator.app.cart.details.ui.utils.helpers
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.stringResource
-import com.d4rk.cartcalculator.app.R
+import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.cart.details.domain.model.ui.CartListItem
 import com.d4rk.cartcalculator.app.cart.list.ui.utils.constants.ui.UiConstants
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 
 object CartListBuilderHelper {
 
-    @Composable
-    fun buildUnifiedCartList(items : List<ShoppingCartItemsTable> , adsEnabled : Boolean) : List<CartListItem> {
+    fun buildUnifiedCartList(
+        items : List<ShoppingCartItemsTable>,
+        adsEnabled : Boolean,
+        inCartLabel: String,
+        itemsToPickUpLabel: String
+    ) : List<CartListItem> {
         val checked : List<ShoppingCartItemsTable> = items.filter { it.isChecked }
         val unchecked : List<ShoppingCartItemsTable> = items.filter { ! it.isChecked }
-
-        val inCartLabel = stringResource(id = R.string.in_cart)
-        val itemsToPickUpLabel = stringResource(id = R.string.items_to_pick_up)
 
         return buildList {
             if (checked.isNotEmpty()) {

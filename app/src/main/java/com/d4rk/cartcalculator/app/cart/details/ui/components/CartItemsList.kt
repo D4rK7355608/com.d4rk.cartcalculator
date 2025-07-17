@@ -15,6 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ads.AdsConfig
@@ -30,6 +31,7 @@ import com.d4rk.cartcalculator.app.cart.details.ui.CartViewModel
 import com.d4rk.cartcalculator.app.cart.details.ui.utils.helpers.CartListBuilderHelper
 import com.d4rk.cartcalculator.app.cart.list.ui.utils.constants.ui.UiConstants
 import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
+import com.d4rk.cartcalculator.R
 import org.koin.compose.koinInject
 import org.koin.core.qualifier.named
 
@@ -41,8 +43,16 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel , adsConfig : 
     val showTotalCard : Boolean = uiState.data?.totalPrice?.let { it > 0 } == true && uiState.data?.cartItems?.isNotEmpty() == true
     val listState : LazyListState = rememberLazyListState()
 
-    val combinedList : List<CartListItem> = remember<List<CartListItem>>(key1 = cartItems , key2 = adsEnabled) {
-        CartListBuilderHelper.buildUnifiedCartList(items = cartItems , adsEnabled = adsEnabled)
+    val inCartLabel = stringResource(id = R.string.in_cart)
+    val itemsToPickUpLabel = stringResource(id = R.string.items_to_pick_up)
+
+    val combinedList : List<CartListItem> = remember(cartItems, adsEnabled, inCartLabel, itemsToPickUpLabel) {
+        CartListBuilderHelper.buildUnifiedCartList(
+            items = cartItems,
+            adsEnabled = adsEnabled,
+            inCartLabel = inCartLabel,
+            itemsToPickUpLabel = itemsToPickUpLabel
+        )
     }
 
     val (visibilityStates : SnapshotStateList<Boolean>) = rememberAnimatedVisibilityState(listState = listState , itemCount = combinedList.count { it is CartListItem.CartItem })
