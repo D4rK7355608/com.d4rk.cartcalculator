@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 fun ConfettiEffectHandler(firstCartId : Int? , cartSize : Int) {
 
     val dataStore : DataStore = koinInject()
-    val hasSeenConfetti : Boolean by remember<Flow<Boolean>>(key1 = dataStore) {
+    val hasSeenConfetti : Boolean by remember(key1 = dataStore) {
         dataStore.hasSeenConfetti().map { value : Boolean ->
             value
         }
@@ -48,7 +48,7 @@ fun ConfettiEffectHandler(firstCartId : Int? , cartSize : Int) {
                     maxSpeed = 30f ,
                     damping = 0.9f ,
                     spread = 360 ,
-                    colors = listOf<Int>(0xfce18a , 0xff726d , 0xf4306d , 0xb48def) ,
+                    colors = listOf(0xfce18a , 0xff726d , 0xf4306d , 0xb48def) ,
                     emitter = Emitter(duration = 100 , timeUnit = TimeUnit.MILLISECONDS).max(amount = 100) ,
                     position = Position.Relative(x = 0.5 , y = 0.3)
                 )

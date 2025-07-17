@@ -46,7 +46,7 @@ fun CartBehaviorOnboardingTab() {
     val preferredCurrency by dataStore.getCurrency().collectAsState(initial = "")
     val coroutineScope: CoroutineScope = rememberCoroutineScope()
 
-    var showCurrencyDialog: Boolean by remember { mutableStateOf<Boolean>(value = false) }
+    var showCurrencyDialog: Boolean by remember { mutableStateOf(value = false) }
 
     Column(
         modifier = Modifier
@@ -95,7 +95,7 @@ fun CartBehaviorOnboardingTab() {
 
         PreferenceCard(
             title = stringResource(id = R.string.select_currency),
-            summary = if (preferredCurrency.isNotEmpty()) preferredCurrency else stringResource(R.string.onboarding_summary_select_currency_placeholder),
+            summary = preferredCurrency.ifEmpty { stringResource(R.string.onboarding_summary_select_currency_placeholder) },
             onClick = { showCurrencyDialog = true },
             control = {
                 Icon(

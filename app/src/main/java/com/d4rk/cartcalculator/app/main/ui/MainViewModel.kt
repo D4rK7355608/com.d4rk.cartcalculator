@@ -40,7 +40,7 @@ class MainViewModel(private val performInAppUpdateUseCase : PerformInAppUpdateUs
         launch(context = dispatcherProvider.io) {
             performInAppUpdateUseCase(Unit).flowOn(dispatcherProvider.default).collect { result : DataState<Int , Errors> ->
                 if (result is DataState.Error) {
-                    screenState.showSnackbar<UiMainScreen>(snackbar = UiSnackbar(message = UiTextHelper.StringResource(R.string.snack_update_failed) , isError = true , timeStamp = System.currentTimeMillis() , type = ScreenMessageType.SNACKBAR))
+                    screenState.showSnackbar(snackbar = UiSnackbar(message = UiTextHelper.StringResource(R.string.snack_update_failed) , isError = true , timeStamp = System.currentTimeMillis() , type = ScreenMessageType.SNACKBAR))
                 }
             }
         }
@@ -48,7 +48,7 @@ class MainViewModel(private val performInAppUpdateUseCase : PerformInAppUpdateUs
 
     private fun loadNavigationItems() {
         launch(context = dispatcherProvider.default) {
-            screenState.successData<UiMainScreen> {
+            screenState.successData {
                 copy(
                     navigationDrawerItems = listOf(
                         NavigationDrawerItem(

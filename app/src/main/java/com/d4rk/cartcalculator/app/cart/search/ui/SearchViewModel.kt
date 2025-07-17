@@ -93,7 +93,7 @@ class SearchViewModel(
 
             searchEventsUseCase.invoke(query).collect { result: DataState<List<ShoppingCartTable>, RootError> ->
 
-                screenState.applyResult<List<ShoppingCartTable>, UiSearchData, RootError>(
+                screenState.applyResult(
                     result = result,
                     errorMessage = UiTextHelper.DynamicString("Search failed. Please try again.")
                 ) { list: List<ShoppingCartTable>, current: UiSearchData ->

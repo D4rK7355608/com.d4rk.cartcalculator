@@ -91,7 +91,7 @@ class CartViewModel(
         launch(context = dispatcherProvider.io) {
             val itemWithCart = item.copy(cartId = cartId)
             addCartItemUseCase(param = itemWithCart).flowOn(dispatcherProvider.default).collect { result : DataState<ShoppingCartItemsTable , Errors> ->
-                screenState.applyResult<ShoppingCartItemsTable , UiCartScreen , Errors>(result = result , errorMessage = UiTextHelper.StringResource(R.string.failed_to_add_item)) { newItem : ShoppingCartItemsTable , current : UiCartScreen ->
+                screenState.applyResult(result = result , errorMessage = UiTextHelper.StringResource(R.string.failed_to_add_item)) { newItem : ShoppingCartItemsTable, current : UiCartScreen ->
                     current.copy(cartItems = current.cartItems + newItem)
                 }
                 if (result is DataState.Success) {
@@ -136,7 +136,7 @@ class CartViewModel(
     private fun generateCartShareLink(cartId : Int) {
         launch(context = dispatcherProvider.io) {
             generateCartShareLinkUseCase(cartId).flowOn(context = dispatcherProvider.default).collect { result : DataState<String , Errors> ->
-                screenState.applyResult<String , UiCartScreen , Errors>(result = result) { link : String , current : UiCartScreen ->
+                screenState.applyResult(result = result) { link : String, current : UiCartScreen ->
                     current.copy(shareCartLink = link)
                 }
             }
@@ -205,19 +205,19 @@ class CartViewModel(
     private fun checkForEmptyItems() {
         launch {
             val isEmpty : Boolean = screenData?.cartItems?.isEmpty() != false
-            screenState.updateState<UiCartScreen>(newValues = if (isEmpty) ScreenState.NoData() else ScreenState.Success())
+            screenState.updateState(newValues = if (isEmpty) ScreenState.NoData() else ScreenState.Success())
         }
     }
 
     private fun postSnackbar(@StringRes resId : Int , isError : Boolean) {
         launch {
-            screenState.showSnackbar<UiCartScreen>(snackbar = UiSnackbar(message = UiTextHelper.StringResource(resourceId = resId) , isError = isError , timeStamp = System.currentTimeMillis() , type = ScreenMessageType.SNACKBAR))
+            screenState.showSnackbar(snackbar = UiSnackbar(message = UiTextHelper.StringResource(resourceId = resId) , isError = isError , timeStamp = System.currentTimeMillis() , type = ScreenMessageType.SNACKBAR))
         }
     }
 
     internal inline fun updateUi(crossinline transform : UiCartScreen.() -> UiCartScreen) {
         launch {
-            screenState.updateData<UiCartScreen>(newState = screenState.value.screenState) { current : UiCartScreen ->
+            screenState.updateData(newState = screenState.value.screenState) { current : UiCartScreen ->
                 transform(current)
             }
         }

@@ -41,7 +41,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel , adsConfig : 
     val showTotalCard : Boolean = uiState.data?.totalPrice?.let { it > 0 } == true && uiState.data?.cartItems?.isNotEmpty() == true
     val listState : LazyListState = rememberLazyListState()
 
-    val combinedList : List<CartListItem> = remember<List<CartListItem>>(key1 = cartItems , key2 = adsEnabled) {
+    val combinedList : List<CartListItem> = remember(key1 = cartItems , key2 = adsEnabled) {
         CartListBuilderHelper.buildUnifiedCartList(items = cartItems , adsEnabled = adsEnabled)
     }
 
@@ -66,7 +66,7 @@ fun CartItemsList(modifier : Modifier , viewModel : CartViewModel , adsConfig : 
 
                 is CartListItem.CartItem -> {
                     val visibleIndex : Int = combinedList.take(n = index).count { it is CartListItem.CartItem }
-                    val isVisible : Boolean = visibilityStates.getOrElse<Boolean>(index = visibleIndex) { false }
+                    val isVisible : Boolean = visibilityStates.getOrElse(index = visibleIndex) { false }
 
                     CartItem(
                         viewModel = viewModel ,

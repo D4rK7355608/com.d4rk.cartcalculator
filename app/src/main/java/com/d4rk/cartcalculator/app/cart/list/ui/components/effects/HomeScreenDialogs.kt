@@ -16,14 +16,14 @@ fun HomeScreenDialogs(screenState : UiStateScreen<UiHomeData> , viewModel : Home
 
     // Import Cart Dialog
     screenState.data?.showImportDialog?.let { showImportDialog ->
-        if (showImportDialog == true) {
+        if (showImportDialog) {
             ImportCartAlertDialog(onDismiss = { viewModel.onEvent(event = HomeEvent.ToggleImportDialog(isOpen = false)) } , onImport = { cartLink : String -> viewModel.onEvent(event = HomeEvent.ImportSharedCart(encodedData = cartLink)) })
         }
     }
 
     // New Cart Dialog
     screenState.data?.showCreateCartDialog?.let { isNewCartDialogVisible ->
-        if (isNewCartDialogVisible == true) {
+        if (isNewCartDialogVisible) {
             AddNewCartAlertDialog(onDismiss = { viewModel.onEvent(event = HomeEvent.DismissNewCartDialog) } , onCartCreated = { cart : ShoppingCartTable ->
                 viewModel.onEvent(event = HomeEvent.AddCart(cart = cart))
             })
@@ -32,7 +32,7 @@ fun HomeScreenDialogs(screenState : UiStateScreen<UiHomeData> , viewModel : Home
 
     // Delete Cart Dialog
     screenState.data?.showDeleteCartDialog?.let { showDeleteCartDialog ->
-        if (showDeleteCartDialog == true) {
+        if (showDeleteCartDialog) {
             DeleteCartAlertDialog(cart = screenState.data?.cartToDelete , onDismiss = { viewModel.onEvent(event = HomeEvent.DismissDeleteCartDialog) } , onDeleteConfirmed = { cart : ShoppingCartTable -> viewModel.onEvent(event = HomeEvent.DeleteCart(cart = cart)) })
         }
     }

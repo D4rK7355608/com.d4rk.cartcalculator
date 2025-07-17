@@ -52,7 +52,6 @@ fun SearchScreen(
     searchViewModel: SearchViewModel = koinViewModel(),
 ) {
     val screenStateValue by searchViewModel.uiState.collectAsState()
-    val uiData = screenStateValue.data ?: UiSearchData()
     val context = LocalContext.current
 
     LaunchedEffect(initialQueryEncoded) {

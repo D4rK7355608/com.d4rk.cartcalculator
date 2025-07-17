@@ -32,7 +32,7 @@ import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartItemsTable
 fun AddNewCartItemAlertDialog(
     cartId : Int , onDismiss : () -> Unit , onCartCreated : (ShoppingCartItemsTable) -> Unit , existingCartItem : ShoppingCartItemsTable? = null
 ) {
-    val newCartItem : MutableState<ShoppingCartItemsTable?> = remember<MutableState<ShoppingCartItemsTable?>> { mutableStateOf<ShoppingCartItemsTable?>(value = existingCartItem) }
+    val newCartItem : MutableState<ShoppingCartItemsTable?> = remember { mutableStateOf(value = existingCartItem) }
 
     BasicAlertDialog(onDismiss = onDismiss , onConfirm = {
         newCartItem.value?.let {
@@ -49,13 +49,13 @@ fun AddNewCartItemAlertDialog(
 fun AddNewCartItemAlertDialogContent(
     cartId : Int , existingItem : ShoppingCartItemsTable? , onItemChanged : (ShoppingCartItemsTable?) -> Unit
 ) {
-    val name : MutableState<String> = rememberSaveable<MutableState<String>> { mutableStateOf<String>(value = existingItem?.name.orEmpty()) }
-    val price : MutableState<String> = rememberSaveable<MutableState<String>> { mutableStateOf<String>(value = existingItem?.price.orEmpty()) }
-    val quantity : MutableState<String> = rememberSaveable<MutableState<String>> { mutableStateOf<String>(value = existingItem?.quantity?.toString().orEmpty()) }
+    val name : MutableState<String> = rememberSaveable { mutableStateOf(value = existingItem?.name.orEmpty()) }
+    val price : MutableState<String> = rememberSaveable { mutableStateOf(value = existingItem?.price.orEmpty()) }
+    val quantity : MutableState<String> = rememberSaveable { mutableStateOf(value = existingItem?.quantity?.toString().orEmpty()) }
 
-    val nameFocus : FocusRequester = remember<FocusRequester> { FocusRequester() }
-    val priceFocus : FocusRequester = remember<FocusRequester> { FocusRequester() }
-    val quantityFocus : FocusRequester = remember<FocusRequester> { FocusRequester() }
+    val nameFocus : FocusRequester = remember { FocusRequester() }
+    val priceFocus : FocusRequester = remember { FocusRequester() }
+    val quantityFocus : FocusRequester = remember { FocusRequester() }
     val keyboardController : SoftwareKeyboardController? = LocalSoftwareKeyboardController.current
 
     Column {
