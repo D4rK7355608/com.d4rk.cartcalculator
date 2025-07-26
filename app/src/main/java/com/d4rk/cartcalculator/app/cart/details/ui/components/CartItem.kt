@@ -1,7 +1,6 @@
 package com.d4rk.cartcalculator.app.cart.details.ui.components
 
 import android.view.SoundEffectConstants
-import android.view.View
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.basicMarquee
@@ -43,6 +42,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.hapticSwipeToDismissBox
 import com.d4rk.android.libs.apptoolkit.core.ui.components.spacers.ExtraSmallHorizontalSpacer
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.cartcalculator.R
@@ -89,7 +89,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
         }
     }
 
-    SwipeToDismissBox(modifier = modifier , state = dismissState , backgroundContent = { /* Optional background */ } , content = {
+    SwipeToDismissBox(modifier = modifier.hapticSwipeToDismissBox(swipeToDismissBoxState = dismissState) , state = dismissState , backgroundContent = { /* Optional background */ } , content = {
         Box(
             modifier = modifier
                     .fillMaxWidth()
