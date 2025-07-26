@@ -1,11 +1,6 @@
 package com.d4rk.cartcalculator.app.cart.search.ui
 
 import android.net.Uri
-import com.d4rk.cartcalculator.app.cart.search.domain.actions.SearchAction
-import com.d4rk.cartcalculator.app.cart.search.domain.actions.SearchEvent
-import com.d4rk.cartcalculator.app.cart.search.domain.data.model.ui.UiSearchData
-import com.d4rk.cartcalculator.app.cart.search.domain.usecases.SearchEventsUseCase
-import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import com.d4rk.android.libs.apptoolkit.core.di.DispatcherProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.DataState
 import com.d4rk.android.libs.apptoolkit.core.domain.model.network.RootError
@@ -17,6 +12,11 @@ import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateData
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.updateState
 import com.d4rk.android.libs.apptoolkit.core.ui.base.ScreenViewModel
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.UiTextHelper
+import com.d4rk.cartcalculator.app.cart.search.domain.actions.SearchAction
+import com.d4rk.cartcalculator.app.cart.search.domain.actions.SearchEvent
+import com.d4rk.cartcalculator.app.cart.search.domain.data.model.ui.UiSearchData
+import com.d4rk.cartcalculator.app.cart.search.domain.usecases.SearchEventsUseCase
+import com.d4rk.cartcalculator.core.data.database.table.ShoppingCartTable
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 

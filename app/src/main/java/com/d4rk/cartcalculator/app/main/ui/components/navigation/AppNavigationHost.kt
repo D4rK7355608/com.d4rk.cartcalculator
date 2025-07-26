@@ -14,7 +14,6 @@ import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.Naviga
 import com.d4rk.android.libs.apptoolkit.app.settings.settings.ui.SettingsActivity
 import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
-import com.d4rk.android.libs.apptoolkit.core.utils.constants.links.AppLinks
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.app.cart.list.domain.model.ui.UiHomeData
 import com.d4rk.cartcalculator.app.cart.list.ui.HomeScreen

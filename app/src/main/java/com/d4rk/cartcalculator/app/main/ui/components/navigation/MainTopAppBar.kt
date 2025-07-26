@@ -20,7 +20,6 @@ import androidx.compose.material.icons.outlined.MoreVert
 import androidx.compose.material.icons.outlined.VolunteerActivism
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -44,22 +43,11 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.navigation.NavHostController
 import com.d4rk.android.libs.apptoolkit.app.support.ui.SupportActivity
 import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedIconButtonDirection
-import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.android.libs.apptoolkit.core.ui.components.dropdown.CommonDropdownMenuItem
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.main.utils.constants.NavigationRoutes
-import kotlin.apply
-import kotlin.collections.firstOrNull
-import kotlin.jvm.java
-import kotlin.onFailure
-import kotlin.runCatching
-import kotlin.text.isEmpty
-import kotlin.text.isNotEmpty
-import kotlin.text.isNullOrEmpty
-import kotlin.text.startsWith
-import kotlin.text.substringBefore
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -102,111 +90,114 @@ fun MainTopAppBar(
 
     TopAppBar(
         modifier = Modifier.fillMaxWidth(), title = {
-        BasicTextField(
-            value = currentSearchQuery,
-            onValueChange = {
-                onSearchQueryChange(it)
-            },
-            singleLine = true,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = SizeConstants.ExtraSmallSize)
-                .focusRequester(focusRequester)
-                .onFocusChanged { focusState ->
-                    isSearchTextFieldFocused = focusState.isFocused
+            BasicTextField(
+                value = currentSearchQuery,
+                onValueChange = {
+                    onSearchQueryChange(it)
                 },
-            textStyle = MaterialTheme.typography.bodyLarge.copy(
-                color = MaterialTheme.colorScheme.onSurface
-            ),
-            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-            keyboardActions = KeyboardActions(onSearch = {
-                if (currentSearchQuery.isNotEmpty()) {
-                    navController.navigate(NavigationRoutes.searchScreenRoute(currentSearchQuery)) {
-                        launchSingleTop = true
-                    }
-                }
-                focusManager.clearFocus()
-            }),
-            decorationBox = { innerTextField ->
-                Box(contentAlignment = Alignment.CenterStart) {
-                    innerTextField()
-                    if (currentSearchQuery.isEmpty()) {
-                        val placeholderText = when {
-                            isSearchTextFieldFocused -> stringResource(id = R.string.search_placeholder_focused)
-                            isCurrentlyOnSearchScreenPage -> stringResource(id = R.string.search_placeholder_refine)
-                            else -> stringResource(id = R.string.search_placeholder_default)
+                singleLine = true,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = SizeConstants.ExtraSmallSize)
+                    .focusRequester(focusRequester)
+                    .onFocusChanged { focusState ->
+                        isSearchTextFieldFocused = focusState.isFocused
+                    },
+                textStyle = MaterialTheme.typography.bodyLarge.copy(
+                    color = MaterialTheme.colorScheme.onSurface
+                ),
+                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                keyboardActions = KeyboardActions(onSearch = {
+                    if (currentSearchQuery.isNotEmpty()) {
+                        navController.navigate(NavigationRoutes.searchScreenRoute(currentSearchQuery)) {
+                            launchSingleTop = true
                         }
-                        Text(
-                            modifier = Modifier.animateContentSize(),
-                            text = placeholderText,
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
-                        )
                     }
-                }
-            })
-    }, navigationIcon = {
-            AnimatedIconButtonDirection(
-            icon = navigationIcon,
-            contentDescription = if (isCurrentlyOnSearchScreenPage) stringResource(id = R.string.content_description_back) else stringResource(
-                id = R.string.content_description_open_menu
-            ),
-            onClick = {
-                onNavigationIconClick()
-                focusManager.clearFocus()
-            })
-    }, actions = {
-        if (isSearchTextFieldFocused || (isCurrentlyOnSearchScreenPage)) {
-            AnimatedIconButtonDirection(
-                fromRight = true,
-                icon = Icons.Default.Clear,
-                contentDescription = stringResource(id = R.string.content_description_clear_search),
-                onClick = {
-                    onSearchQueryChange("")
                     focusManager.clearFocus()
-                })
-        } else {
-            val voiceSearchPromptText = stringResource(id = R.string.voice_search_prompt)
-            val voiceRecognitionNotAvailableMessage =
-                stringResource(id = R.string.voice_recognition_not_available)
-            AnimatedIconButtonDirection(
-                fromRight = true,
-                icon = Icons.Outlined.MicNone,
-                durationMillis = 400,
-                contentDescription = stringResource(id = R.string.content_description_voice_search),
-                onClick = {
-                    runCatching {
-                        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-                            putExtra(
-                                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                }),
+                decorationBox = { innerTextField ->
+                    Box(contentAlignment = Alignment.CenterStart) {
+                        innerTextField()
+                        if (currentSearchQuery.isEmpty()) {
+                            val placeholderText = when {
+                                isSearchTextFieldFocused -> stringResource(id = R.string.search_placeholder_focused)
+                                isCurrentlyOnSearchScreenPage -> stringResource(id = R.string.search_placeholder_refine)
+                                else -> stringResource(id = R.string.search_placeholder_default)
+                            }
+                            Text(
+                                modifier = Modifier.animateContentSize(),
+                                text = placeholderText,
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
                             )
-                            putExtra(RecognizerIntent.EXTRA_PROMPT, voiceSearchPromptText)
                         }
-                        voiceLauncher.launch(intent)
-                    }.onFailure {
-                        Toast.makeText(
-                            context, voiceRecognitionNotAvailableMessage, Toast.LENGTH_SHORT
-                        ).show()
                     }
-                },
-            )
+                })
+        }, navigationIcon = {
             AnimatedIconButtonDirection(
-                fromRight = true,
-                icon = Icons.Outlined.MoreVert,
-                contentDescription = stringResource(id = R.string.content_description_more_options),
-                onClick = { expandedMenu = true },
+                icon = navigationIcon,
+                contentDescription = if (isCurrentlyOnSearchScreenPage) stringResource(id = R.string.content_description_back) else stringResource(
+                    id = R.string.content_description_open_menu
+                ),
+                onClick = {
+                    onNavigationIconClick()
+                    focusManager.clearFocus()
+                },
+                vibrate = false
             )
-            DropdownMenu(expanded = expandedMenu, onDismissRequest = { expandedMenu = false }) {
-                CommonDropdownMenuItem(
-                    textResId = com.d4rk.android.libs.apptoolkit.R.string.support_us,
-                    icon = Icons.Outlined.VolunteerActivism,
+        }, actions = {
+            if (isSearchTextFieldFocused || (isCurrentlyOnSearchScreenPage)) {
+                AnimatedIconButtonDirection(
+                    fromRight = true,
+                    icon = Icons.Default.Clear,
+                    contentDescription = stringResource(id = R.string.content_description_clear_search),
                     onClick = {
-                        expandedMenu = false
-                        IntentsHelper.openActivity(context , SupportActivity::class.java)
-                    }
+                        onSearchQueryChange("")
+                        focusManager.clearFocus()
+                    })
+            } else {
+                val voiceSearchPromptText = stringResource(id = R.string.voice_search_prompt)
+                val voiceRecognitionNotAvailableMessage =
+                    stringResource(id = R.string.voice_recognition_not_available)
+                AnimatedIconButtonDirection(
+                    fromRight = true,
+                    icon = Icons.Outlined.MicNone,
+                    durationMillis = 400,
+                    contentDescription = stringResource(id = R.string.content_description_voice_search),
+                    onClick = {
+                        runCatching {
+                            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                                putExtra(
+                                    RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                                )
+                                putExtra(RecognizerIntent.EXTRA_PROMPT, voiceSearchPromptText)
+                            }
+                            voiceLauncher.launch(intent)
+                        }.onFailure {
+                            Toast.makeText(
+                                context, voiceRecognitionNotAvailableMessage, Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    },
                 )
+                AnimatedIconButtonDirection(
+                    fromRight = true,
+                    icon = Icons.Outlined.MoreVert,
+                    contentDescription = stringResource(id = R.string.content_description_more_options),
+                    onClick = { expandedMenu = true },
+                )
+                DropdownMenu(expanded = expandedMenu, onDismissRequest = { expandedMenu = false }) {
+                    CommonDropdownMenuItem(
+                        textResId = com.d4rk.android.libs.apptoolkit.R.string.support_us,
+                        icon = Icons.Outlined.VolunteerActivism,
+                        onClick = {
+                            expandedMenu = false
+                            IntentsHelper.openActivity(context, SupportActivity::class.java)
+                        }
+                    )
+                }
             }
-        }
-    }, scrollBehavior = scrollBehavior, windowInsets = TopAppBarDefaults.windowInsets)
+        }, scrollBehavior = scrollBehavior, windowInsets = TopAppBarDefaults.windowInsets
+    )
 }

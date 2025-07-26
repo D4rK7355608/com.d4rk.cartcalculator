@@ -46,9 +46,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.R
 import com.d4rk.cartcalculator.app.settings.cart.utils.helpers.DatabaseBackupHelper
-import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
 import com.d4rk.cartcalculator.core.data.database.DatabaseInterface
 import com.d4rk.cartcalculator.core.data.datastore.DataStore
 import kotlinx.coroutines.launch
@@ -276,7 +276,9 @@ fun BackupActionCard(
                 OutlinedButton(
                     onClick = onButtonClick,
                     enabled = !isLoading,
-                    modifier = Modifier.fillMaxWidth(0.8f).bounceClick(),
+                    modifier = Modifier
+                        .fillMaxWidth(0.8f)
+                        .bounceClick(),
                     shape = RoundedCornerShape(8.dp),
                     contentPadding = ButtonDefaults.ButtonWithIconContentPadding
                 ) {
@@ -292,7 +294,9 @@ fun BackupActionCard(
                 ElevatedButton(
                     onClick = onButtonClick,
                     enabled = !isLoading,
-                    modifier = Modifier.fillMaxWidth(0.8f).bounceClick(),
+                    modifier = Modifier
+                        .fillMaxWidth(0.8f)
+                        .bounceClick(),
                     shape = RoundedCornerShape(8.dp),
                     contentPadding = ButtonDefaults.ButtonWithIconContentPadding
                 ) {
