@@ -9,10 +9,10 @@ import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.MoreVert
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
+import com.d4rk.android.libs.apptoolkit.core.ui.components.dropdown.CommonDropdownMenuItem
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalView
@@ -34,18 +34,21 @@ fun CartDropdownMenu(
             Icon(imageVector = Icons.Outlined.MoreVert , contentDescription = stringResource(id = R.string.more_options))
         }
         DropdownMenu(expanded = expanded , onDismissRequest = { onDismissRequest() }) {
-            DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.rename_cart)) } , onClick = {
-                view.playSoundEffect(SoundEffectConstants.CLICK)
-                onRename()
-            } , leadingIcon = { Icon(Icons.Outlined.Edit , contentDescription = stringResource(id = R.string.rename_cart)) })
-            DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.share)) } , onClick = {
-                view.playSoundEffect(SoundEffectConstants.CLICK)
-                onShare()
-            } , leadingIcon = { Icon(Icons.Outlined.Share , contentDescription = stringResource(id = R.string.share_cart)) })
-            DropdownMenuItem(modifier = Modifier.bounceClick() , text = { Text(text = stringResource(id = R.string.delete_cart)) } , onClick = {
-                view.playSoundEffect(SoundEffectConstants.CLICK)
-                onDelete()
-            } , leadingIcon = { Icon(Icons.Outlined.Delete , contentDescription = stringResource(id = R.string.delete_cart)) })
+            CommonDropdownMenuItem(
+                textResId = R.string.rename_cart,
+                icon = Icons.Outlined.Edit,
+                onClick = onRename
+            )
+            CommonDropdownMenuItem(
+                textResId = com.d4rk.android.libs.apptoolkit.R.string.share,
+                icon = Icons.Outlined.Share,
+                onClick = onShare
+            )
+            CommonDropdownMenuItem(
+                textResId = R.string.delete_cart,
+                icon = Icons.Outlined.Delete,
+                onClick = onDelete
+            )
         }
     }
 }
