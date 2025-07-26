@@ -19,7 +19,6 @@ import androidx.compose.material.icons.outlined.MicNone
 import androidx.compose.material.icons.outlined.MoreVert
 import androidx.compose.material.icons.outlined.VolunteerActivism
 import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -46,6 +45,7 @@ import androidx.navigation.NavHostController
 import com.d4rk.android.libs.apptoolkit.app.support.ui.SupportActivity
 import com.d4rk.android.libs.apptoolkit.core.ui.components.buttons.AnimatedIconButtonDirection
 import com.d4rk.android.libs.apptoolkit.core.ui.components.modifiers.bounceClick
+import com.d4rk.android.libs.apptoolkit.core.ui.components.dropdown.CommonDropdownMenuItem
 import com.d4rk.android.libs.apptoolkit.core.utils.constants.ui.SizeConstants
 import com.d4rk.android.libs.apptoolkit.core.utils.helpers.IntentsHelper
 import com.d4rk.cartcalculator.R
@@ -198,20 +198,14 @@ fun MainTopAppBar(
                 onClick = { expandedMenu = true },
             )
             DropdownMenu(expanded = expandedMenu, onDismissRequest = { expandedMenu = false }) {
-                DropdownMenuItem(
-                    modifier = Modifier.bounceClick(),
-
-                    text = { Text(stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.support_us)) },
+                CommonDropdownMenuItem(
+                    textResId = com.d4rk.android.libs.apptoolkit.R.string.support_us,
+                    icon = Icons.Outlined.VolunteerActivism,
                     onClick = {
                         expandedMenu = false
                         IntentsHelper.openActivity(context , SupportActivity::class.java)
-                    },
-                    leadingIcon = {
-                        Icon(
-                            Icons.Outlined.VolunteerActivism,
-                            contentDescription = stringResource(id = com.d4rk.android.libs.apptoolkit.R.string.support_us)
-                        )
-                    })
+                    }
+                )
             }
         }
     }, scrollBehavior = scrollBehavior, windowInsets = TopAppBarDefaults.windowInsets)
