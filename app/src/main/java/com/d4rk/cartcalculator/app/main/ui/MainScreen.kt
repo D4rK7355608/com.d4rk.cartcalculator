@@ -28,7 +28,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.d4rk.android.libs.apptoolkit.app.main.ui.components.dialogs.ChangelogDialog
 import com.d4rk.android.libs.apptoolkit.app.main.ui.components.navigation.LeftNavigationRail
+import com.d4rk.android.libs.apptoolkit.app.settings.utils.providers.BuildInfoProvider
 import com.d4rk.android.libs.apptoolkit.core.domain.model.navigation.NavigationDrawerItem
 import com.d4rk.android.libs.apptoolkit.core.domain.model.ui.UiStateScreen
 import com.d4rk.android.libs.apptoolkit.core.ui.components.snackbar.DefaultSnackbarHost
@@ -44,7 +46,9 @@ import com.d4rk.cartcalculator.app.main.ui.components.navigation.NavigationDrawe
 import com.d4rk.cartcalculator.app.main.ui.components.navigation.handleNavigationItemClick
 import com.d4rk.cartcalculator.app.main.utils.constants.NavigationRoutes
 import kotlinx.coroutines.launch
+import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.qualifier.named
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -158,6 +162,9 @@ fun MainScaffoldTabletContent(
     val isSearchScreen: Boolean =
         currentRoute?.startsWith(NavigationRoutes.ROUTE_SEARCH.substringBefore(delimiter = "/{")) == true
     var currentSearchQuery by rememberSaveable { mutableStateOf("") }
+    val changelogUrl: String = koinInject(qualifier = named("github_changelog"))
+    val buildInfoProvider: BuildInfoProvider = koinInject()
+    var showChangelog by remember { mutableStateOf(false) }
 
     Scaffold(
         modifier = Modifier
@@ -197,7 +204,11 @@ fun MainScaffoldTabletContent(
             paddingValues = paddingValues,
             centerContent = 0.8f,
             onDrawerItemClick = { item: NavigationDrawerItem ->
-                handleNavigationItemClick(context = context, item = item)
+                handleNavigationItemClick(
+                    context = context,
+                    item = item,
+                    onChangelogRequested = { showChangelog = true },
+                )
             },
             content = {
                 AppNavigationHost(
@@ -211,6 +222,14 @@ fun MainScaffoldTabletContent(
                     onSearchQueryChange = { newQuery -> currentSearchQuery = newQuery }
                 )
             }
+        )
+    }
+
+    if (showChangelog) {
+        ChangelogDialog(
+            changelogUrl = changelogUrl,
+            buildInfoProvider = buildInfoProvider,
+            onDismiss = { showChangelog = false }
         )
     }
 }

@@ -51,16 +51,20 @@ fun AppNavigationHost(
     }
 }
 
-fun handleNavigationItemClick(context : Context , item : NavigationDrawerItem , drawerState : DrawerState? = null , coroutineScope : CoroutineScope? = null) {
+fun handleNavigationItemClick(
+    context: Context,
+    item: NavigationDrawerItem,
+    drawerState: DrawerState? = null,
+    coroutineScope: CoroutineScope? = null,
+    onChangelogRequested: () -> Unit = {},
+) {
     when (item.title) {
         com.d4rk.android.libs.apptoolkit.R.string.settings -> IntentsHelper.openActivity(context = context , activityClass = SettingsActivity::class.java)
         com.d4rk.android.libs.apptoolkit.R.string.help_and_feedback -> IntentsHelper.openActivity(context = context , activityClass = HelpActivity::class.java)
-        com.d4rk.android.libs.apptoolkit.R.string.updates -> IntentsHelper.openUrl(context = context , url = AppLinks.githubChangelog(context.packageName))
+        com.d4rk.android.libs.apptoolkit.R.string.updates -> onChangelogRequested()
         com.d4rk.android.libs.apptoolkit.R.string.share -> IntentsHelper.shareApp(context = context , shareMessageFormat = com.d4rk.android.libs.apptoolkit.R.string.summary_share_message)
     }
-    drawerState?.let { drawerState : DrawerState ->
-        coroutineScope?.let { scope : CoroutineScope ->
-            scope.launch { drawerState.close() }
-        }
+    if (drawerState != null && coroutineScope != null) {
+        coroutineScope.launch { drawerState.close() }
     }
 }

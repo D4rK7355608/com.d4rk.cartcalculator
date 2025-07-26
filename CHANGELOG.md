@@ -1,5 +1,6 @@
 # Version 2.1.1:
 
+- **Minor**: UI/UX improvements over the entire app.
 - **Minor**: Under-the-hood improvements for a better overall app experience.
 
 # Version 2.1.0:
