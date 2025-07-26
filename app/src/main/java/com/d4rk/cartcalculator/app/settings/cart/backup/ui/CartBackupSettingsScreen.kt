@@ -1,6 +1,8 @@
 package com.d4rk.cartcalculator.app.settings.cart.backup.ui
 
 import android.net.Uri
+import android.view.SoundEffectConstants
+import android.view.View
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -41,7 +43,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.hapticfeedback.HapticFeedback
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -239,6 +245,9 @@ fun BackupActionCard(
     isLoading: Boolean = false,
     onButtonClick: () -> Unit
 ) {
+    val view: View = LocalView.current
+    val hapticFeedback: HapticFeedback = LocalHapticFeedback.current
+
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
@@ -274,7 +283,11 @@ fun BackupActionCard(
 
             if (isOutlinedButton) {
                 OutlinedButton(
-                    onClick = onButtonClick,
+                    onClick = {
+                        view.playSoundEffect(SoundEffectConstants.CLICK)
+                        hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
+                        onButtonClick()
+                    },
                     enabled = !isLoading,
                     modifier = Modifier
                         .fillMaxWidth(0.8f)
@@ -292,7 +305,11 @@ fun BackupActionCard(
                 }
             } else {
                 ElevatedButton(
-                    onClick = onButtonClick,
+                    onClick = {
+                        view.playSoundEffect(SoundEffectConstants.CLICK)
+                        hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
+                        onButtonClick()
+                    },
                     enabled = !isLoading,
                     modifier = Modifier
                         .fillMaxWidth(0.8f)

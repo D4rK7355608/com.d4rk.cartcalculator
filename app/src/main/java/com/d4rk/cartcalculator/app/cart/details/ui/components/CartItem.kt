@@ -35,6 +35,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.hapticfeedback.HapticFeedback
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -52,7 +55,8 @@ import java.util.Locale
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onMinusClick : (ShoppingCartItemsTable) -> Unit , onPlusClick : (ShoppingCartItemsTable) -> Unit , uiState : UiStateScreen<UiCartScreen> , modifier : Modifier) {
-    val view : View = LocalView.current
+    val view = LocalView.current
+    val hapticFeedback : HapticFeedback = LocalHapticFeedback.current
     val quantityState = viewModel.getQuantityStateForItem(item = cartItem)
     val interactionSource = remember { MutableInteractionSource() }
     val dismissState = rememberSwipeToDismissBoxState(confirmValueChange = { target ->
@@ -98,6 +102,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
                             .padding(end = SizeConstants.LargeSize)
                             .wrapContentSize() , checked = cartItem.isChecked , onCheckedChange = { isChecked : Boolean ->
                         view.playSoundEffect(SoundEffectConstants.CLICK)
+                        hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
                         viewModel.onEvent(event = CartEvent.ItemCheckedChange(item = cartItem , isChecked = isChecked))
                     })
                     Column(modifier = Modifier.weight(weight = 1f)) {
@@ -117,6 +122,7 @@ fun CartItem(viewModel : CartViewModel , cartItem : ShoppingCartItemsTable , onM
                                 .clip(shape = CircleShape)
                                 .combinedClickable(interactionSource = interactionSource , indication = remember { ripple() } , onClick = {
                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                    hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
                                     onMinusClick(cartItem)
                                 } , onLongClick = {
                                     viewModel.onEvent(event = CartEvent.OpenDeleteDialog(item = cartItem))

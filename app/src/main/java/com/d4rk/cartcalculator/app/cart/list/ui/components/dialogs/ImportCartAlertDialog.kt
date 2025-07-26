@@ -20,9 +20,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedback
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.ClipEntry
 import androidx.compose.ui.platform.Clipboard
 import androidx.compose.ui.platform.LocalClipboard
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.dialogs.BasicAlertDialog
@@ -51,6 +54,7 @@ fun ImportCartAlertDialog(onDismiss : () -> Unit , onImport : (String) -> Unit) 
 @Composable
 fun ImportCartAlertDialogContent(cartLink : String , onCartLinkChange : (String) -> Unit) {
     val view : View = LocalView.current
+    val hapticFeedback : HapticFeedback = LocalHapticFeedback.current
     val clipboard : Clipboard = LocalClipboard.current
     val coroutineScope : CoroutineScope = rememberCoroutineScope()
 
@@ -63,6 +67,7 @@ fun ImportCartAlertDialogContent(cartLink : String , onCartLinkChange : (String)
                             clipEntry.clipData.getItemAt(0)?.let { textFieldValue ->
                                 textFieldValue.text?.let {
                                     view.playSoundEffect(SoundEffectConstants.CLICK)
+                                    hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
                                     onCartLinkChange(it.toString())
                                 }
                             }

@@ -23,7 +23,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedback
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -102,6 +105,7 @@ fun SearchScreenContent(
 @Composable
 fun SearchCartItem(cart: ShoppingCartTable, onClick: () -> Unit) {
     val view = LocalView.current
+    val hapticFeedback : HapticFeedback = LocalHapticFeedback.current
     val dateString = remember(cart.date) {
         SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(Date(cart.date))
     }
@@ -111,6 +115,7 @@ fun SearchCartItem(cart: ShoppingCartTable, onClick: () -> Unit) {
         modifier = Modifier.fillMaxWidth(),
         onClick = {
             view.playSoundEffect(SoundEffectConstants.CLICK)
+            hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
             onClick()
         }
     ) {

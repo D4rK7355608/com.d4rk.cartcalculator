@@ -13,6 +13,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedback
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import com.d4rk.android.libs.apptoolkit.core.ui.components.dropdown.CommonDropdownMenuItem
@@ -24,10 +27,12 @@ fun CartDropdownMenu(
     expanded : Boolean , onDismissRequest : () -> Unit , onDelete : () -> Unit , onShare : () -> Unit , onOpen : () -> Unit , onRename : () -> Unit
 ) {
     val view : View = LocalView.current
+    val hapticFeedback : HapticFeedback = LocalHapticFeedback.current
 
     Box {
         IconButton(modifier = Modifier.bounceClick() , onClick = {
             view.playSoundEffect(SoundEffectConstants.CLICK)
+            hapticFeedback.performHapticFeedback(hapticFeedbackType = HapticFeedbackType.ContextClick)
             onOpen()
         }) {
             Icon(imageVector = Icons.Outlined.MoreVert , contentDescription = stringResource(id = R.string.more_options))
